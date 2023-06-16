@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="90" Height="150" GridSpacing="1" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="90" Height="150" BorderWidth="2" BorderColor="TextInfo" FillColor="NoAlarmGreen" FillPatternColor="TextInfo" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Ellipse BorderColor="TextInfo" FillColor="TextInfo" CenterX="13" CenterY="75" RadiusX="5" RadiusY="5">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<Rectangle Width="90" Height="150" BorderWidth="2" BorderColor="TextInfo" FillColor="Transparent" FillPatternColor="TextInfo" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Polyline Width="2" LineColor="TextInfo" ClosedOutline="True" FillColor="AlarmRed">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="89;1"/>
+				<Point Coord="20;30"/>
+				<Point Coord="20;181"/>
+				<Point Coord="89;149"/>
+				<Point Coord="89;1"/>
+			</Points>
+		</Polyline>
+		<Ellipse BorderColor="TextInfo" FillColor="TextInfo" CenterX="29" CenterY="105.5" RadiusX="3" RadiusY="5">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+	</Children>
+</RootElement>

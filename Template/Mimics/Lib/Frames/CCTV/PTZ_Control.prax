@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="180" Height="255" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Panel Width="180" Height="255" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="LightingOff" FillPatternColor="LightingOff" CornerRoundRadius="5">
+			<Children>
+				<Button Width="50" Height="50" X="65" Y="15" ClipToBounds="True" Text="" Font="Praxis;18.0;B;N;N">
+					<Children>
+						<Polyline>
+							<Points>
+								<Point Coord="20;25"/>
+								<Point Coord="25;15"/>
+								<Point Coord="30;25"/>
+								<Point Coord="30;25"/>
+							</Points>
+						</Polyline>
+					</Children>
+					<ClickActions>
+						<CamContPTZClickAction CameraAddress="192.168.4.130">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CameraAddress" ExportedPropertyName="CAM_IP"/>
+							</Bindings>
+						</CamContPTZClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="50" Height="50" X="65" Y="125" ClipToBounds="True" Text="" Font="Praxis;18.0;B;N;N">
+					<Children>
+						<Polyline>
+							<Points>
+								<Point Coord="30;25"/>
+								<Point Coord="25;35"/>
+								<Point Coord="20;25"/>
+								<Point Coord="20;25"/>
+							</Points>
+						</Polyline>
+					</Children>
+					<ClickActions>
+						<CamContPTZClickAction PTZActions="Tilt Down" CameraAddress="192.168.4.130">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CameraAddress" ExportedPropertyName="CAM_IP"/>
+							</Bindings>
+						</CamContPTZClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="50" Height="50" X="120" Y="70" ClipToBounds="True" Text="" Font="Praxis;18.0;B;N;N">
+					<Children>
+						<Polyline>
+							<Points>
+								<Point Coord="25;20"/>
+								<Point Coord="35;25"/>
+								<Point Coord="25;30"/>
+								<Point Coord="25;30"/>
+							</Points>
+						</Polyline>
+					</Children>
+					<ClickActions>
+						<CamContPTZClickAction PTZActions="Pan Right" CameraAddress="192.168.4.130">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CameraAddress" ExportedPropertyName="CAM_IP"/>
+							</Bindings>
+						</CamContPTZClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="50" Height="50" X="10" Y="70" ClipToBounds="True" Text="" Font="Praxis;18.0;B;N;N">
+					<Children>
+						<Polyline>
+							<Points>
+								<Point Coord="25;30"/>
+								<Point Coord="15;25"/>
+								<Point Coord="25;20"/>
+								<Point Coord="25;20"/>
+							</Points>
+						</Polyline>
+					</Children>
+					<ClickActions>
+						<CamContPTZClickAction PTZActions="Pan Left" CameraAddress="192.168.4.130">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CameraAddress" ExportedPropertyName="CAM_IP"/>
+							</Bindings>
+						</CamContPTZClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="50" Height="50" X="65" Y="70" ClipToBounds="True" Text="O" Font="Praxis;18.0;B;N;N">
+					<ClickActions>
+						<StopPTZClickAction CameraAddress="192.168.4.130">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CameraAddress" ExportedPropertyName="CAM_IP"/>
+							</Bindings>
+						</StopPTZClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="50" Height="50" X="95" Y="190" ClipToBounds="True" Text="-" Font="Praxis;28.0;B;N;N">
+					<ClickActions>
+						<CamContPTZClickAction PTZActions="Zoom Out" CameraAddress="192.168.4.130">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CameraAddress" ExportedPropertyName="CAM_IP"/>
+							</Bindings>
+						</CamContPTZClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="50" Height="50" X="35" Y="190" ClipToBounds="True" Text="+" Font="Praxis;28.0;B;N;N">
+					<ClickActions>
+						<CamContPTZClickAction PTZActions="Zoom In" CameraAddress="192.168.4.130">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CameraAddress" ExportedPropertyName="CAM_IP"/>
+							</Bindings>
+						</CamContPTZClickAction>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

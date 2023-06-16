@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Frame Width="1425" Height="50" X="425" Y="75" Path="..\recentalarmlog\frame_recentalarms.prax"/>
+		<Frame Width="40" Height="40" X="305" Y="80" Path="..\menu\icons\Icon_Settings.prax"/>
+		<NavFrame LockOverlayColor="WhiteAlpha" Width="1785" Height="945" X="65" Y="70" NavFrameName="NAVFRAME_PMS_Settings" ClipToBounds="True">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="UserActionsLocked" CompareTolerance="0">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\Mimic PMS MENU 1.prax"/>
+				<Address Value=".\Mimic PMS MENU 2.prax"/>
+				<Address Value=".\Mimic PMS MENU 3.prax"/>
+				<Address Value=".\Mimic PMS MENU 4.prax"/>
+				<Address Value=".\Mimic PMS MENU 5.prax"/>
+			</AddressList>
+		</NavFrame>
+		<Button Width="50" Height="50" X="240" Y="75" Text="" CornerRoundRadius="25" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="ButtonFillActionRunning" DefaultValue="ButtonFill">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="Mimics"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Children>
+				<Ellipse CenterX="25" CenterY="25" RadiusX="20" RadiusY="20"/>
+				<Line X0="40" Y0="25" X1="15" Y1="25"/>
+				<Line X0="15" Y0="25" X1="25" Y1="15"/>
+				<Line X0="25" Y0="35" X1="15" Y1="25"/>
+			</Children>
+			<ClickActions>
+				<NavigateToPreviousUserAction NavFrameName="NAVFRAME_PMS_Settings"/>
+			</ClickActions>
+		</Button>
+		<Button Width="50" Height="50" X="360" Y="75" Text="" CornerRoundRadius="25" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="ButtonFillActionRunning" DefaultValue="ButtonFill">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="Mimics"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Children>
+				<Ellipse CenterX="25" CenterY="25" RadiusX="20" RadiusY="20" ArcBegin="-180" ArcEnd="-540" ArcLength="-360"/>
+				<Line X0="25" Y0="35" X1="35" Y1="25"/>
+				<Line X0="10" Y0="25" X1="35" Y1="25"/>
+				<Line X0="35" Y0="25" X1="25" Y1="15"/>
+			</Children>
+			<ClickActions>
+				<NavigateToNextUserAction NavFrameName="NAVFRAME_PMS_Settings"/>
+			</ClickActions>
+		</Button>
+		<Button Width="40" Height="40" X="1865" Y="80" ClipToBounds="True" Text="X" FillColor="Transparent" Font="Segoe UI;26.0;N;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="60"/>
+			</ClickActions>
+		</Button>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+	</Children>
+</RootElement>

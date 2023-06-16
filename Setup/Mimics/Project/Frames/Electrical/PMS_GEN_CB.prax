@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="120" Height="185" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button Width="110" Height="175" X="5" Y="5" Text="" FillColor="Transparent" OutlineColor="White" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="UserActionsLocked" ExportedPropertyName="CTRL_Blocked"/>
+				<SelectFirstColorBinding TargetPropertyName="OutlineColor" SelectedValue0="Transparent" DefaultValue="White">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="CTRL_Blocked"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Children>
+				<Ellipse BorderColor="White" FillColor="Transparent" LightingStyle="Radial" CenterX="55" CenterY="125" RadiusX="-40" RadiusY="-40">
+					<Bindings>
+						<SelectFirstCoordBinding TargetPropertyName="BorderWidth" SelectedValue0="2">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Engine_Ready"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstCoordBinding>
+						<ChannelAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61083">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Running"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="Background" ColorWhenTrue="NoAlarmGreen"/>
+							</ConvertParams>
+						</ChannelAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="BorderColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Engine_Ready"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="White" ColorWhenTrue="Comment"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</Ellipse>
+				<TextBox Width="50" Height="50" X="30" Y="99" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Praxis;26.0;B;N;N" Text="DG">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+					</Bindings>
+				</TextBox>
+				<Line Width="2" Color="White" X0="55" Y0="85" X1="55" Y1="-5"/>
+				<Rectangle FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="OutlineOnly" FlashColor="NoAlarmGreen" Width="60" Height="60" X="15" Y="10" BorderWidth="2" BorderColor="White" FillPatternColor="PageInfoLine">
+					<Bindings>
+						<SelectFirstFlashStateBinding TargetPropertyName="FlashState">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Sync"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Offload"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstFlashStateBinding>
+						<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="White">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Tripped"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstColorBinding TargetPropertyName="FlashColor" SelectedValue0="NoAlarmGreen" SelectedValue1="White" DefaultValue="ButtonFill">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Sync"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Offload"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Rectangle>
+				<Rectangle Width="10" Height="50" X="50" Y="15" BorderWidth="0" FillColor="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</Rectangle>
+				<Rectangle Width="8" Height="36" X="25" Y="22" BorderColor="White" FillPatternColor="White">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+				</Rectangle>
+				<Rectangle Width="8" Height="8" X="51" Y="15" BorderColor="White"/>
+				<Rectangle Width="8" Height="8" X="51" Y="57" BorderColor="White"/>
+				<Rectangle Width="8" Height="36" X="51" Y="22" BorderColor="White" FillColor="NoAlarmGreen">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</Rectangle>
+				<TextBox Visible="False" Width="80" Height="20" X="5" Y="30" BorderColor="PageInfoLine" TextColor="White" Font="Praxis;14.0;N;N;N" Text="INTERLOCK">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Interlock"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<Line Width="2" Color="White" X0="55" Y0="65" X1="55" Y1="68"/>
+				<Line Width="2" Color="White" X0="55" Y0="12" X1="55" Y1="15"/>
+				<TextBox Width="50" Height="20" X="30" Y="135" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Praxis;14.0;N;N;N" Text="30 sec">
+					<Bindings>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="Local" SelectedValue1="pre-lub" DefaultValue="">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cooldown_Time"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelValueBinding TargetPropertyName="SelectedValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cooldown_Time"/>
+									</Bindings>
+									<ConvertParams>
+										<FloatToStringConvertParams Suffix=" sec"/>
+									</ConvertParams>
+								</ChannelValueBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Lubricate"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" InvertCondition="True">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Engine_Remote"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Visible="False" Width="110" Height="20" Y="30" BorderColor="PageInfoLine" FillColor="AlarmRed" CornerRoundRadius="5" TextColor="White" Font="Praxis;14.0;N;N;N" Text="SHORT CIRCUIT">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Short_Circuit"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Visible="False" Width="110" Height="20" Y="115" BorderWidth="0" FillColor="Orange" CornerRoundRadius="5" TextColor="White" Font="Praxis;14.0;N;N;N" Text="MAJOR ALARM">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61101">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pre_Alarm"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Visible="False" Width="110" Height="20" Y="115" BorderColor="PageInfoLine" FillColor="AlarmRed" CornerRoundRadius="5" TextColor="White" Font="Praxis;14.0;N;N;N" Text="SHUTDOWN">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shutdown"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Visible="False" Width="110" Height="20" Y="30" BorderColor="PageInfoLine" FillColor="AlarmRed" CornerRoundRadius="5" TextColor="White" Font="Praxis;14.0;N;N;N" Text="REVERSE POWER">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Reverse_Power"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Visible="False" Width="110" Height="20" Y="115" BorderColor="PageInfoLine" FillColor="AlarmRed" CornerRoundRadius="5" TextColor="White" Font="Praxis;14.0;N;N;N" Text="ACTUATOR FAIL">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ActuatorFail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="30" XOffset="-135" YOffset="76.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="140" Height="320" X="-145" Y="9" Cmd_Auto="0" Cmd_Manual="0" Cmd_Start="0" Cmd_Stop="0" Cmd_Close="0" Cmd_Open="0" Cmd_Reset="0" Path=".\PopUp_CMD_DG_Control.prax" CMD_Reset="0" Cmd_OverrideWBShutdown="0" CMD_Stop="0" CMD_Start="0" BUTTON04_Text="Cancel" BUTTON03_Text="Reset" BUTTON01_Text="Start" ID="Motor1" BUTTON02_Text="Stop">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+								<FrameBinding TargetPropertyName="BUTTON01_Text" ExportedPropertyName="BUTTON01_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON02_Text" ExportedPropertyName="BUTTON02_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON03_Text" ExportedPropertyName="BUTTON03_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON04_Text" ExportedPropertyName="BUTTON04_Text"/>
+								<FrameBinding TargetPropertyName="Cmd_Auto" ExportedPropertyName="CMD_Auto"/>
+								<FrameBinding TargetPropertyName="Cmd_Manual" ExportedPropertyName="CMD_Manual"/>
+								<FrameBinding TargetPropertyName="Cmd_Start" ExportedPropertyName="CMD_Start"/>
+								<FrameBinding TargetPropertyName="Cmd_Stop" ExportedPropertyName="CMD_Stop"/>
+								<FrameBinding TargetPropertyName="Cmd_Close" ExportedPropertyName="CMD_Close"/>
+								<FrameBinding TargetPropertyName="Cmd_Open" ExportedPropertyName="CMD_Open"/>
+								<FrameBinding TargetPropertyName="Cmd_Reset" ExportedPropertyName="CMD_Reset"/>
+								<FrameBinding TargetPropertyName="Cmd_OverrideWBShutdown" ExportedPropertyName="CMD_OverrideWBShutdown"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

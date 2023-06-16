@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="800" Height="400" GridSpacing="5">
+	<Children>
+		<Rectangle Width="800" Height="400" BorderWidth="0" FillColor="PageInfoLine" CornerRoundRadius="10"/>
+		<Trending Width="760" Height="380" X="30" Y="10" DurationShown="300" ScrollBarSize="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="DurationShown" ExportedPropertyName="DurationShown"/>
+				<FrameBinding TargetPropertyName="DurationStored" ExportedPropertyName="DurationStored"/>
+			</Bindings>
+			<Runs>
+				<TrendingRun Title="1" LineColor="ColorTrendLine01" LineWidth="1" FillPatternColor="ColorTrendLine01" BottomValue="100" TopValue="600">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BottomValue" ExportedPropertyName="Trend_Range_Low"/>
+						<FrameBinding TargetPropertyName="TopValue" ExportedPropertyName="Trend_Range_High"/>
+						<FrameBinding TargetPropertyName="LineWidth" ExportedPropertyName="Trend_LineWith"/>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel1"/>
+						<FrameBinding TargetPropertyName="Title" ExportedPropertyName="Title1"/>
+					</Bindings>
+				</TrendingRun>
+				<TrendingRun Title="2" LineColor="ColorTrendLine02" LineWidth="1" FillPatternColor="ColorTrendLine02" BottomValue="100" TopValue="600">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BottomValue" ExportedPropertyName="Trend_Range_Low"/>
+						<FrameBinding TargetPropertyName="TopValue" ExportedPropertyName="Trend_Range_High"/>
+						<FrameBinding TargetPropertyName="LineWidth" ExportedPropertyName="Trend_LineWith"/>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel2"/>
+						<FrameBinding TargetPropertyName="Title" ExportedPropertyName="Title2"/>
+					</Bindings>
+				</TrendingRun>
+				<TrendingRun Title="3" LineColor="ColorTrendLine03" LineWidth="1" FillPatternColor="ColorTrendLine03" BottomValue="100" TopValue="600">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BottomValue" ExportedPropertyName="Trend_Range_Low"/>
+						<FrameBinding TargetPropertyName="TopValue" ExportedPropertyName="Trend_Range_High"/>
+						<FrameBinding TargetPropertyName="LineWidth" ExportedPropertyName="Trend_LineWith"/>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel3"/>
+						<FrameBinding TargetPropertyName="Title" ExportedPropertyName="Title3"/>
+					</Bindings>
+				</TrendingRun>
+				<TrendingRun Title="4" LineColor="ColorTrendLine04" LineWidth="1" FillPatternColor="ColorTrendLine04" BottomValue="100" TopValue="600">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BottomValue" ExportedPropertyName="Trend_Range_Low"/>
+						<FrameBinding TargetPropertyName="TopValue" ExportedPropertyName="Trend_Range_High"/>
+						<FrameBinding TargetPropertyName="LineWidth" ExportedPropertyName="Trend_LineWith"/>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel4"/>
+						<FrameBinding TargetPropertyName="Title" ExportedPropertyName="Title4"/>
+					</Bindings>
+				</TrendingRun>
+			</Runs>
+		</Trending>
+		<TextBox Width="30" Height="20" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Segoe UI;14.0;N;N;N" Text="999">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Trend_Range_High">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</FrameBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" Y="380" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Segoe UI;14.0;N;N;N" Text="100">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Trend_Range_Low">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</FrameBinding>
+			</Bindings>
+		</TextBox>
+		<Line X0="30" Y0="10" X1="30" Y1="390"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="530" Height="250" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="530" Height="250" BorderWidth="0" BorderColor="StatusInactive" FillColor="TextActive"/>
+		<Trending Width="526" Height="243" X="2" Y="5" BorderColor="Transparent" FillColor="Transparent" ShowLegend="False" ShowTime="False" ScrollBarSize="0" SmoothScrolling="True">
+			<Runs>
+				<TrendingRun Title="" LineColor="Transparent" LineWidth="1" FillColor="ColorTrendBackGround" FillPatternColor="Background" TopValue="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Depth_Ch"/>
+						<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="Color"/>
+					</Bindings>
+				</TrendingRun>
+			</Runs>
+		</Trending>
+		<TextBox Width="40" Height="20" X="-50" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="0 m"/>
+		<TextBox Width="40" Height="20" X="-50" Y="230" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="-100"/>
+		<Frame Width="195" Height="65" X="330" Y="-50" Path=".\Frame_Vessel.prax"/>
+	</Children>
+</RootElement>

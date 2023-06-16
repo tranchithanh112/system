@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<Frame Width="50" Height="300" X="1420" Y="145" Value="100612" Color="PipingFuel" RangeLow="0" RangeHigh="16" USE_BEGIN_CH="False" ID_1="FO" ID_2="PRESS IN" Unit="bar" RangeHigh_="16" RangeLow_="0" SENSOR_FAIL_CH="100612" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<TextBox Width="300" Height="55" X="825" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="GENERATOR 3"/>
+		<Frame Width="500" Height="300" X="10" Y="55" Base_Ch="100683" Bar_Color="Barfill02" Range_Min="0" Range_Max="750" Limit_Type="HighAndVeryHigh" First_Limit="580" Second_Limit="590" Unit="°C" Name_Ch="EXHAUST GAS TEMP CYL" Title_Color="TextInfo" Value_Ch_Dec="0" Value_Color="Gray" LR_ALM_CH="100687" SF_GT_CH="100685" AVG_CH="100682" Path=".\Frames\FillBars\Exh Temp-PS.prax" Back_Color="ColorTrendBackGround"/>
+		<Frame Width="450" Height="400" X="10" Y="320" Base_Ch="100688" Value_Ch_Dec="0" Value_Color="Gray" Name_Ch="DEV EXHAUST GAS TEMP CYL" Title_Color="TextInfo" Second_Limit="130" First_Limit="110" Path=".\Frames\FillBars\Exh Temp Dev-PS.prax" Bar_Color="Barfill01" Range_Min="0" Back_Color="ColorTrendBackGround" Range_Max="900" Limit_Type="HighAndVeryHigh"/>
+		<TextBox Width="90" Height="25" X="825" Y="380" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="TOTAL FUEL"/>
+		<TextBox Width="125" Height="25" X="825" Y="345" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="RUNNING HOUR"/>
+		<TextBox Width="300" Height="25" X="825" Y="240" BorderColor="Transparent" FillColor="Transparent" TextColor="Green" Font="Praxis;20.0;N;N;N" Text="STATUS"/>
+		<TextBox Width="160" Height="30" X="895" Y="605" BorderColor="Transparent" FillColor="Transparent" TextColor="AlarmRed" Font="Praxis;20.0;N;N;N" Text="SHUTDOWN"/>
+		<TextBox Width="160" Height="30" X="895" Y="445" BorderColor="Transparent" FillColor="Transparent" TextColor="IndicatorOrange" Font="Praxis;20.0;N;N;N" Text="ALARMS"/>
+		<Frame Width="300" Height="25" X="1135" Y="635" Alarm_Ch="100641" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO PRESS SHD" Alarm_Text="LO PRESS SHD" Width_Text="250" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="515" Y="510" Alarm_Ch="2304" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="COMMON ENGINE ALARM" Alarm_Text="COMMON ENGINE ALARM" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<TextBox Width="300" Height="25" X="825" Y="310" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" TextColor="StatusInactive" Font="Praxis;16.0;N;N;N" Text="AUTO MODE">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="StatusActive" SelectedValue1="StatusActive" SelectedValue2="IndicatorOrange" SelectedValue5="StatusActive" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100887"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100888"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100889"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100890"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="100892"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5" ChannelNumber="100891"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="START MODE" SelectedValue1="READY FOR START" SelectedValue2="STOP MODE" SelectedValue3="SHD MODE" SelectedValue4="EMERGENCY STOP MODE" SelectedValue5="RUN MODE" DefaultValue="ENGINE STATE">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100887"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100888"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100889"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100890"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="100892"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5" ChannelNumber="100891"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="135" Height="25" X="990" Y="380" Channel_Num="1847" Channel_Initial="0" Text_Color="TextActive" Left_Space="10" Unit="L" Path=".\Frames\Parameter\Frame_Process_Value_L.prax"/>
+		<Frame Width="135" Height="25" X="990" Y="345" Channel_Num="109005" Channel_Initial="0" Text_Color="TextActive" Left_Space="10" Unit="H" Path=".\Frames\Parameter\Frame_Process_Value_L.prax"/>
+		<TextBox Width="85" Height="25" X="1135" Y="275" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="FUEL RATE"/>
+		<Frame Width="95" Height="25" X="1295" Y="275" Channel_Num="1842" Left_Space="2" Unit="L/H" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<Frame Width="265" Height="265" X="555" Y="50" DialColor="BackgroundConning" CentralDigitsColor="TextActive" DialValue1_CH="100626" DialValue_MAX="1600" Smoothness="1000" Filling="True" Pointer="True" MultiplyingFactor="0" Decimals_Outside="0" TextDigitsColor="TextActive" Full="True" MultiFactorVisible="False" x10="x10" Units="RPM" Description="ME PS" Path=".\Frames\Gauges\Gauge_RPM.prax"/>
+		<Frame Width="265" Height="265" X="1130" Y="50" DialColor="BackgroundConning" CentralDigitsColor="TextActive" DialValue1_CH="100630" DialValue_MAX="120" Smoothness="1000" Filling="True" Pointer="True" MultiplyingFactor="0" Decimals_Outside="0" TextDigitsColor="TextActive" Full="True" MultiFactorVisible="False" x10="x10" Units="LOAD" Description="ME PS" Path=".\Frames\Gauges\Gauge_RPM.prax"/>
+		<TextBox Width="300" Height="25" X="825" Y="275" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" TextColor="StatusInactive" Font="Praxis;16.0;N;N;N" Text="NORMAL MODE">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="DIESEL MODE" SelectedValue1="BACKUP MODE" SelectedValue2="READY FOR GAS MODE" SelectedValue3="GAS MODE" SelectedValue4="TRANSFER MODE" SelectedValue5="LOAD REDUCTION" DefaultValue="NORMAL MODE">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2201"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2202"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2203"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2204"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="100867"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5" ChannelNumber="100873"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="StatusActive" SelectedValue1="StatusActive" SelectedValue2="StatusActive" SelectedValue3="StatusActive" SelectedValue4="StatusActive" SelectedValue5="StatusActive" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2201"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2202"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2203"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2204"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="100867"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5" ChannelNumber="100873"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Button Width="85" Height="30" X="1040" Y="165" ClipToBounds="True" Text="DIESEL" BorderWidth="1" BorderStyle="Raised" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="2112"/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="150" Height="25" X="10" Y="345" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="COMBUSTION CHECK">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="100813">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Button Height="30" X="925" Y="165" ClipToBounds="True" Text="BACK-UP" BorderWidth="1" BorderStyle="Raised" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="2111"/>
+			</ClickActions>
+		</Button>
+		<Button Width="85" Height="30" X="825" Y="165" ClipToBounds="True" Text="GAS" BorderWidth="1" BorderStyle="Raised" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="2110"/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="150" Height="25" X="285" Y="345" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="PILOT INJECTION">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="100815">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="55" Height="25" X="180" Y="345" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="--">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="TextColor" SecondValue="0.5" CompareOperator=">">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100812"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="TextActive"/>
+					</ConvertParams>
+				</ValueCompareBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="A1" SelectedValue1="A2" SelectedValue2="A3" SelectedValue3="A4" SelectedValue4="A5" SelectedValue5="A6" SelectedValue6="A7" SelectedValue7="A8" DefaultValue="--">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100812"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100812"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100812"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100812"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue4" SecondValue="5">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100812"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue5" SecondValue="6">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100812"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue6" SecondValue="7">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100812"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="8">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100812"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="55" Height="25" X="455" Y="345" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="--">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="TextColor" SecondValue="0.5" CompareOperator=">">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100814"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="TextActive"/>
+					</ConvertParams>
+				</ValueCompareBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="A1" SelectedValue1="A2" SelectedValue2="A3" SelectedValue3="A4" SelectedValue4="A5" SelectedValue5="A6" SelectedValue6="A7" SelectedValue7="A8" DefaultValue="--">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100814"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100814"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100814"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100814"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue4" SecondValue="5">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100814"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue5" SecondValue="6">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100814"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue6" SecondValue="7">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100814"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="8">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100814"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="160" Height="25" X="895" Y="130" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="MODE CONTROL"/>
+		<Button Height="45" X="1605" Y="80" ClipToBounds="True" Text="PG2" BorderWidth="1" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="22"/>
+				<SetVariableValueClickAction>
+					<Variable>
+						<StringVariable Name="Top_Page_Title" DefaultValue="GENERAL INFO"/>
+					</Variable>
+					<VariableSetter>
+						<StringVariableSetter Value="PROPULSION GENERATOR 2"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button Height="45" X="1450" Y="80" ClipToBounds="True" Text="PG1" BorderWidth="1" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="21"/>
+				<SetVariableValueClickAction>
+					<Variable>
+						<StringVariable Name="Top_Page_Title" DefaultValue="GENERAL INFO"/>
+					</Variable>
+					<VariableSetter>
+						<StringVariableSetter Value="PROPULSION GENERATOR 1"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button Height="45" X="1760" Y="80" ClipToBounds="True" Text="PG4" BorderWidth="1" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="24"/>
+				<SetVariableValueClickAction>
+					<Variable>
+						<StringVariable Name="Top_Page_Title" DefaultValue="GENERAL INFO"/>
+					</Variable>
+					<VariableSetter>
+						<StringVariableSetter Value="PROPULSION GENERATOR 4"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="50" Height="300" X="1525" Y="145" Value="100614" Color="PipingFuel" RangeLow="0" RangeHigh="160" USE_BEGIN_CH="False" ID_1="FO" ID_2="TEMP IN" Unit="°C" RangeHigh_="160" RangeLow_="0" SENSOR_FAIL_CH="100614" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1630" Y="145" Value="100616" Color="PipingFuel" RangeLow="0" RangeHigh="16" USE_BEGIN_CH="False" ID_1="PILOT" ID_2="PRESS IN" Unit="bar" RangeHigh_="16" RangeLow_="0" SENSOR_FAIL_CH="100616" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1735" Y="145" Value="100619" Color="PipingFuel" RangeLow="0" RangeHigh="160" USE_BEGIN_CH="False" ID_1="PILOT" ID_2="TEMP IN" Unit="°C" RangeHigh_="160" RangeLow_="0" SENSOR_FAIL_CH="100619" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1420" Y="435" Value="100643" Color="PipingOilNoFuel" RangeLow="0" RangeHigh="10" USE_BEGIN_CH="False" ID_1="LO" ID_2="PRESS IN" Unit="bar" RangeHigh_="10" RangeLow_="0" SENSOR_FAIL_CH="100643" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1525" Y="435" Value="100647" Color="PipingOilNoFuel" RangeLow="0" RangeHigh="160" USE_BEGIN_CH="False" ID_1="LO" ID_2="TEMP IN" Unit="°C" RangeHigh_="160" RangeLow_="0" SENSOR_FAIL_CH="100647" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="840" Y="735" Value="100658" Color="Barfill02" RangeLow="0" RangeHigh="16" USE_BEGIN_CH="False" ID_1="START AIR" ID_2="PRESS IN" Unit="bar" RangeHigh_="16" RangeLow_="0" SENSOR_FAIL_CH="100658" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="940" Y="735" Value="100661" Color="Barfill02" RangeLow="0" RangeHigh="40" USE_BEGIN_CH="False" ID_1="CTRL AIR" ID_2="PRESS" Unit="bar" RangeHigh_="40" RangeLow_="0" SENSOR_FAIL_CH="100661" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1040" Y="735" Value="100663" Color="Barfill02" RangeLow="0" RangeHigh="10" USE_BEGIN_CH="False" ID_1="INSTRU AIR" ID_2="PRESS" Unit="bar" RangeHigh_="10" RangeLow_="0" SENSOR_FAIL_CH="100663" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1630" Y="435" Value="100650" Color="PipingOilNoFuel" RangeLow="0" RangeHigh="10" USE_BEGIN_CH="False" ID_1="LO FILTER" ID_2="PRESS" Unit="bar" RangeHigh_="10" RangeLow_="0" SENSOR_FAIL_CH="100650" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1735" Y="435" Value="100651" Color="PipingOilNoFuel" RangeLow="0" RangeHigh="2" USE_BEGIN_CH="False" ID_1="LO FILTER" ID_2="PRESS DIFF" Unit="bar" RangeHigh_="2" RangeLow_="0" SENSOR_FAIL_CH="100651" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="640" Y="735" Value="100655" Color="PipingOilNoFuel" RangeLow="0" RangeHigh="10" USE_BEGIN_CH="False" ID_1="CTRL OIL" ID_2="PRESS" Unit="bar" RangeHigh_="10" RangeLow_="0" SENSOR_FAIL_CH="100655" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1840" Y="435" Value="100653" Color="PipingOilNoFuel" RangeLow="0" RangeHigh="10" USE_BEGIN_CH="False" ID_1="LO TC A" ID_2="PRESS IN" Unit="bar" RangeHigh_="10" RangeLow_="0" SENSOR_FAIL_CH="100653" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1140" Y="735" Value="100667" Color="IndicationLine" RangeLow="0" RangeHigh="6" USE_BEGIN_CH="False" ID_1="H.T.W.J" ID_2="PRESS IN" Unit="bar" RangeHigh_="6" RangeLow_="0" SENSOR_FAIL_CH="100667" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1240" Y="735" Value="100670" Color="IndicationLine" RangeLow="0" RangeHigh="160" USE_BEGIN_CH="False" ID_1="H.T.W.J" ID_2="TEMP IN" Unit="°C" RangeHigh_="160" RangeLow_="0" SENSOR_FAIL_CH="100670" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1340" Y="735" Value="100672" Color="IndicationLine" RangeLow="0" RangeHigh="160" USE_BEGIN_CH="False" ID_1="H.T.W.J" ID_2="TEMP OUT" Unit="°C" RangeHigh_="160" RangeLow_="0" SENSOR_FAIL_CH="100672" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1440" Y="735" Value="100674" Color="IndicationLine" RangeLow="0" RangeHigh="6" USE_BEGIN_CH="False" ID_1="LT CAC" ID_2="PRESS IN" Unit="bar" RangeHigh_="6" RangeLow_="0" SENSOR_FAIL_CH="100674" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1640" Y="735" Value="100677" Color="IndicationLine" RangeLow="0" RangeHigh="160" USE_BEGIN_CH="False" ID_1="LT LOC" ID_2="TEMP OUT" Unit="°C" RangeHigh_="160" RangeLow_="0" SENSOR_FAIL_CH="100677" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1740" Y="735" Value="100678" Color="IndicationLine" RangeLow="0" RangeHigh="100" USE_BEGIN_CH="False" ID_1="L.T.C.W" ID_2="THERMOS" Unit="%" RangeHigh_="100" RangeLow_="0" SENSOR_FAIL_CH="100678" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="1840" Y="735" Value="100680" Color="IndicationLine" RangeLow="-100" RangeHigh="100" USE_BEGIN_CH="True" ID_1="L.T.C.W" ID_2="VLV DEV" Unit="%" RangeHigh_="100" RangeLow_="-100" SENSOR_FAIL_CH="100680" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<TextBox Width="120" Height="25" X="1135" Y="415" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="VIBRATION"/>
+		<Frame Width="95" Height="25" X="1295" Y="415" Channel_Num="100627" Left_Space="0" Unit="°" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="50" Height="25" X="1420" Y="630" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="STB">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100646"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="25" X="640" Y="820" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100657"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="25" X="640" Y="935" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="LOW">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100656"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="300" Height="25" X="515" Y="670" Alarm_Ch="100666" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="HT WATER TEMP SHD" Alarm_Text="HT WATER TEMP SHD" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<TextBox Width="50" Height="25" X="1440" Y="930" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="LOW">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100675"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="50" Height="300" X="1540" Y="735" Value="100676" Color="IndicationLine" RangeLow="0" RangeHigh="160" USE_BEGIN_CH="False" ID_1="LT CAC" ID_2="TEMP IN" Unit="°C" RangeHigh_="160" RangeLow_="0" SENSOR_FAIL_CH="100676" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="300" Height="25" X="1135" Y="670" Alarm_Ch="100860" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="OMD SHUTDOWN" Alarm_Text="OMD SHUTDOWN" Width_Text="250" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="515" Y="635" Alarm_Ch="100868" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="EXT SHD 4, FRM EMG CIRCUIT" Alarm_Text="EXT SHD 4, FRM EMG CIRCUIT" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="825" Y="635" Alarm_Ch="100869" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="EXT SD1 FROM RUPTURE DISCS" Alarm_Text="EXT SD1 FROM RUPTURE DISCS" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="825" Y="670" Alarm_Ch="100870" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="EXT SD2 FRM SWITCHBOARD" Alarm_Text="EXT SD2 FRM SWITCHBOARD" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="825" Y="475" Alarm_Ch="100600" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="FO LEAK CLEAN PRI A-BANK" Alarm_Text="FO LEAK CLEAN PRI A-BANK" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="1135" Y="580" Alarm_Ch="100913" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="DEGASDING FAILURE" Alarm_Text="DEGASDING FAILURE" Width_Text="250" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="825" Y="580" Alarm_Ch="100602" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="PILOT FUEL PRESS SWING" Alarm_Text="PILOT FUEL PRESS SWING" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="825" Y="545" Alarm_Ch="100603" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="PILOT FUEL FILLTER PRESS DIFF" Alarm_Text="PILOT FUEL FILLTER PRESS DIFF" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="515" Y="580" Alarm_Ch="2306" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="ECS MAJOR FAILURE" Alarm_Text="ECS MAJOR FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="1135" Y="510" Alarm_Ch="100911" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="GAS TRIP" Alarm_Text="GAS TRIP" Width_Text="250" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="1135" Y="545" Alarm_Ch="100912" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="PILOT TRIP" Alarm_Text="PILOT TRIP" Width_Text="250" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="1135" Y="475" Alarm_Ch="100609" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="ACTUATOR MAJOR FAILURE" Alarm_Text="ACTUATOR MAJOR FAILURE" Width_Text="250" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="515" Y="545" Alarm_Ch="2305" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="ECS MINOR FAILURE" Alarm_Text="ECS MINOR FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="515" Y="475" Alarm_Ch="2302" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="POWER UNIT COMMON ALM" Alarm_Text="POWER UNIT COMMON ALM" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="825" Y="705" Alarm_Ch="100607" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="OVERSPEED SHD" Alarm_Text="OVERSPEED SHD" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<TextBox Width="85" Height="25" X="560" Y="345" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="CRANK CASE PRESS"/>
+		<Frame Width="95" Height="25" X="720" Y="345" Channel_Num="100882" Left_Space="0" Unit="mba" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<Frame Width="50" Height="300" X="740" Y="735" Value="100919" Color="Barfill02" RangeLow="0" RangeHigh="10" USE_BEGIN_CH="False" ID_1="MAIN GAS" ID_2="PRESS" Unit="bar" RangeHigh_="10" RangeLow_="0" SENSOR_FAIL_CH="100919" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<TextBox Width="85" Height="25" X="1135" Y="310" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="WINDING TEMP U"/>
+		<Frame Width="95" Height="25" X="1295" Y="310" Channel_Num="2608" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="1135" Y="345" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="WINDING TEMP V"/>
+		<Frame Width="95" Height="25" X="1295" Y="345" Channel_Num="2609" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="1135" Y="380" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="WINDING TEMP W"/>
+		<Frame Width="95" Height="25" X="1295" Y="380" Channel_Num="2610" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="560" Y="380" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="DE BEARING TEMP"/>
+		<Frame Width="95" Height="25" X="720" Y="380" Channel_Num="2611" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="560" Y="415" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="NDE BEARING TEMP"/>
+		<Frame Width="95" Height="25" X="720" Y="415" Channel_Num="2612" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="560" Y="310" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="COLD AIR TEMP"/>
+		<Frame Width="95" Height="25" X="720" Y="310" Channel_Num="2614" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<Button Width="85" Height="30" X="825" Y="205" ClipToBounds="True" Text="RPM LIMIT" BorderWidth="1" BorderStyle="Raised" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="2113"/>
+			</ClickActions>
+		</Button>
+		<Button Height="30" X="925" Y="205" ClipToBounds="True" Text="OVER-TEMP" BorderWidth="1" BorderStyle="Raised" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="2114"/>
+			</ClickActions>
+		</Button>
+		<Button Width="85" Height="30" X="1040" Y="205" ClipToBounds="True" Text="ON GAS" BorderWidth="1" BorderStyle="Raised" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="2115"/>
+			</ClickActions>
+		</Button>
+		<Frame Width="50" Height="300" X="135" Y="735" Value="100766" Color="Barfill02" RangeLow="0" RangeHigh="750" USE_BEGIN_CH="False" ID_1="EXH TC A" ID_2="TEMP OUT" Unit="bar" RangeHigh_="750" RangeLow_="0" SENSOR_FAIL_CH="100766" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="335" Y="735" Value="100816" Color="Barfill02" RangeLow="-50" RangeHigh="100" USE_BEGIN_CH="True" ID_1="AIR TEMP" ID_2="TC INLET" Unit="bar" RangeHigh_="100" RangeLow_="-50" SENSOR_FAIL_CH="100816" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="435" Y="735" Value="100817" Color="Barfill02" RangeLow="0" RangeHigh="6" USE_BEGIN_CH="False" ID_1="CA PRESS" ID_2="ENG INLET" Unit="bar" RangeHigh_="6" RangeLow_="0" SENSOR_FAIL_CH="100817" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="235" Y="735" Value="100769" Color="TextActive" RangeLow="0" RangeHigh="750" USE_BEGIN_CH="False" ID_1="TC SPEED" ID_2="x100" Unit="rpm" RangeHigh_="750" RangeLow_="0" SENSOR_FAIL_CH="100769" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Frame Width="50" Height="300" X="535" Y="735" Value="100819" Color="IndicationLine" RangeLow="0" RangeHigh="6" USE_BEGIN_CH="False" ID_1="CA TEMP" ID_2="ENG INLET" Unit="bar" RangeHigh_="6" RangeLow_="0" SENSOR_FAIL_CH="100819" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<TextBox Width="50" Height="25" X="435" Y="820" BorderColor="Background" TextColor="AlarmRed" Font="Praxis;16.0;N;N;N" Text="SF GT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100818"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="50" Height="300" X="30" Y="735" Value="100763" Color="Barfill02" RangeLow="0" RangeHigh="750" USE_BEGIN_CH="False" ID_1="EXH TC A" ID_2="TEMP IN" Unit="bar" RangeHigh_="750" RangeLow_="0" SENSOR_FAIL_CH="100763" Path=".\Frames\FillBars\Frame_Bar.prax"/>
+		<Button Height="45" X="185" Y="670" ClipToBounds="True" Text="MORE INFO" BorderWidth="1" CornerRoundRadius="2" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" XOffset="47" YOffset="123.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="550" Height="380" X="7" Y="626" Base_Ch="100772" Bar_Color="Barfill01" Range_Min="0" Range_Max="350" Limit_Type="HighAndVeryHigh" First_Limit="210" Second_Limit="225" Unit="°C" Name_Ch="CYLINDER PEAK PRESSURE" Title_Color="Orange" Value_Ch_Dec="0" Value_Color="TextActive" GT_HIGH_CH="100774" SF_LR_CH="100775" BASE_MISFIR_CH="100804" BASE_KNOCK_SF_CH="100822" BASE_KNOCK-STATUS_CH="100837" Path=".\Frames\FillBars\Exh Temp-MORE INFO.prax" LR_ALM_CH="0" SF_GT_CH="0" AVG_CH="0"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="50" Height="25" X="535" Y="820" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100820"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="25" X="535" Y="850" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100821"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="300" Height="25" X="825" Y="510" Alarm_Ch="100601" Nomal_Color="StatusInactive" Active_Color="IndicatorOrange" Normal_Text="FO FILTER PRESS DIFF SW" Alarm_Text="FO FILTER PRESS DIFF SW" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Rectangle Width="20" Height="175" X="1855" Y="215" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning"/>
+		<FillBar FlashFast="True" FlashColor="Yellow" Width="20" Height="175" X="1855" Y="215" FillDirection="BottomToTop" RangeEnd="2000" FirstLimit="90" SecondLimit="1900" LimitMarkerType="Triangle" LimitMarkerSize="5" Value="120.5" NormalColor="PipingFuel" BorderWidth="1" BorderColor="Transparent" CornerRoundRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="100621"/>
+				<SelectFirstFloatBinding TargetPropertyName="FirstLimit" SelectedValue0="800" SelectedValue1="850" SelectedValue2="900">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="300">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100626"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="700">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100626"/>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="950">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100626"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstFloatBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="40" Height="30" X="1825" Y="390" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="1250">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="100621">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="110" Height="25" X="1810" Y="155" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="PILOT"/>
+		<TextBox Width="110" Height="25" X="1810" Y="180" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text=" PRESS OUT"/>
+		<TextBox Width="40" Height="30" X="1865" Y="390" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="KPa">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Unit"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="15" X="1800" Y="215" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="PipingFuel" Font="Praxis;18.0;N;N;N" Text="2000"/>
+		<Panel Width="20" Height="175" X="1855" Y="215" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Gray" FillColor="Background" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible" ChannelNumber="100621"/>
+			</Bindings>
+			<Children>
+				<Line Color="Red" X0="0" Y0="0" X1="20" Y1="175"/>
+				<Line Color="Red" X0="0" Y0="175" X1="20" Y1="0"/>
+				<TextBox Width="20" Height="20" Y="75" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF"/>
+			</Children>
+		</Panel>
+		<TextBox Width="50" Height="15" X="1800" Y="375" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="PipingFuel" Font="Praxis;18.0;N;N;N" Text="0"/>
+		<TextBox Width="50" Height="25" X="1840" Y="230" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="SFPT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100622"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="85" Height="25" X="560" Y="275" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="HOT AIR TEMP"/>
+		<Frame Width="95" Height="25" X="720" Y="275" Channel_Num="2613" Left_Space="5" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive" Channel_Initial="0"/>
+		<TextBox Width="50" Height="25" X="30" Y="850" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100764"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="25" X="235" Y="820" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100771"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

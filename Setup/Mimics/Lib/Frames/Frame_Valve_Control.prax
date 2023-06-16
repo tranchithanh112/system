@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="60" Height="60" GridSpacing="5">
+	<Children>
+		<Polyline FlashColor="ButtonOutline" ClosedOutline="True" FillColor="ButtonFill">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_CMD"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_CMD"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+				<SelectFirstColorBinding TargetPropertyName="FlashColor" SelectedValue0="Comment" SelectedValue1="White">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_CMD"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_CMD"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="NoAlarmGreen" SelectedValue1="White" SelectedValue2="NoAlarmGreen" SelectedValue3="White" DefaultValue="OldAlarm">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_FB"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_FB"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="40;0"/>
+				<Point Coord="0;0"/>
+				<Point Coord="20;30"/>
+				<Point Coord="40;60"/>
+				<Point Coord="0;60"/>
+			</Points>
+		</Polyline>
+		<Ellipse CenterX="20" CenterY="30" RadiusX="10" RadiusY="10" ArcBegin="90" ArcEnd="450" FillColor="ButtonFill" LightingStyle="Radial"/>
+		<Line X0="30" Y0="30" X1="50" Y1="30"/>
+		<Rectangle Width="10" Height="30" X="50" Y="15" FillColor="ButtonFill">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Button Width="60" Height="60" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<OpenFrameUserAction>
+					<Frame>
+						<FloatingFrame Width="75" Height="125" X="-7.5" Y="-32.5" Open_Ch="0" Close_Ch="0" Frame_Text="(Text)" Path=".\Popup_Open_Close.prax" Start_Ch="0" Stop_Ch="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Open_Ch" ExportedPropertyName="Open_Ch"/>
+								<FrameBinding TargetPropertyName="Close_Ch" ExportedPropertyName="Close_ch"/>
+								<FrameBinding TargetPropertyName="Frame_Text" ExportedPropertyName="Frame_Text"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

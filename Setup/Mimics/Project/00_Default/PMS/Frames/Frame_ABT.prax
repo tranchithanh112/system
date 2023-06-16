@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="200" Height="170" GridSpacing="2" ColorTableFile="..\ColorfileTable.colortable">
+	<Children>
+		<Rectangle Width="198" Height="168" X="2" Y="2" BorderWidth="0" FillColor="Transparent">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Not_Present"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Frame Width="46" Height="48" X="10" Y="102" Channel_CB="0" Ch_Unload="0" Ch_Sync="0" Path=".\Frame_CB.prax" CenterY="246" CenterX="170">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="Channel_CB" ChannelOffset="188">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+				<ChannelOffsetBinding TargetPropertyName="Ch_Unload" ChannelOffset="81">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+				<ChannelOffsetBinding TargetPropertyName="Ch_Sync" ChannelOffset="80">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<TextBox Width="108" Height="20" X="62" Y="88" FillColor="AlarmRed" CornerRoundRadius="5" Font="Segoe UI;16.0;N;N;N" Text="SWBD" FillStyle="HorizontalLighting">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="Manual" SelectedValue1="Auto" DefaultValue="SWBD">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="8">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="8">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Foreground" ColorWhenTrue="Black"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="Yellow" SelectedValue1="NoAlarmGreen" DefaultValue="AlarmRed">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="8">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Button Width="52" Height="26" X="88" Y="136" Text="Cmd" Font="Segoe UI;14.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="15" XOffset="0.5" YOffset="-65" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="75" Height="170" X="77" Y="-1" Base_Channel="0" Path=".\Popup_PMS_ABT.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Base_Channel" ExportedPropertyName="Base_Channel"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="108" Height="20" X="62" Y="52" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;24.0;B;N;N" Text="ABT">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Header"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="108" Height="20" X="62" Y="110" FillColor="InactivePanelFace" CornerRoundRadius="5" Font="Segoe UI;16.0;N;N;N" Text="STATUS" FillStyle="HorizontalLighting">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue3="Orange" SelectedValue4="Yellow" SelectedValue5="Yellow" SelectedValue6="Color_FF0080FF" SelectedValue7="Cyan" DefaultValue="InactivePanelFace">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="86">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="49">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="250">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="88">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="82">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="76">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="77">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="200">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" SelectedValue1="Foreground" SelectedValue2="Foreground" SelectedValue3="Foreground" SelectedValue4="Black" SelectedValue5="Black" SelectedValue6="Black" SelectedValue7="Black" DefaultValue="Foreground">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="88">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="82">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="76">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="77">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SHUTDOWN" SelectedValue1="CB-TRIP" SelectedValue2="FAIL" SelectedValue3="PRE-AL" SelectedValue4="1st ST-BY" SelectedValue5="2nd ST-BY" SelectedValue6="1st TO STOP" SelectedValue7="COOLDOWN" DefaultValue="STATUS">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="86">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="49">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="250">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="88">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="82">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="76">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="77">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="200">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

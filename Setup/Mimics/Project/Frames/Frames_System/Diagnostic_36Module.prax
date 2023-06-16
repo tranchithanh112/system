@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="120" Height="109" GridSpacing="1">
+	<Children>
+		<Rectangle Width="120" Height="109" BorderColor="Black" FillColor="Black"/>
+		<Rectangle Visible="False" Width="121" Height="110" FillColor="AlarmRed">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="FAIL"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="82" Height="99" X="20" Y="5" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="OldAlarm" DefaultValue="PanelFaceBorder">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EarthFail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="47" Height="22" X="37" Y="21" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Arial;36.0;N;N;N" Text="DI">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Type"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="47" Height="22" X="37" Y="65" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Arial;36.0;N;N;N" Text="052">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Number"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="8" Height="99" X="107" Y="5" BorderWidth="1.5" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="8" Height="99" X="6" Y="5" BorderWidth="1.5" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+	</Children>
+</RootElement>

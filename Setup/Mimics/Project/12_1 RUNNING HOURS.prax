@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Children>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Width="120" Height="40" X="900" Y="108" BorderWidth="0" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="RUNNING HOURS"/>
+		<Line Width="2" X0="1110" Y0="145" X1="810" Y1="145"/>
+		<TextBox Width="120" Height="40" X="447" Y="176" BorderWidth="0" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="PORT SIDE"/>
+		<TextBox Width="300" Height="50" X="30" Y="294.5" BorderWidth="0" BorderStyle="Sunken" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="ENGINE 1"/>
+		<Frame Width="266" Height="50" X="374" Y="294.5" Channel_Num="109003" Channel_Initial="0" Text_Color="TextActive" Left_Space="10" Unit="H" Path=".\Frames\Parameter\Frame_Process_Value_L.prax"/>
+		<TextBox Width="120" Height="50" X="30" Y="392.5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="ENGINE 2"/>
+		<Frame Width="266" Height="50" X="374" Y="392.5" Channel_Num="109004" Channel_Initial="0" Text_Color="TextActive" Left_Space="10" Unit="H" Path=".\Frames\Parameter\Frame_Process_Value_L.prax"/>
+		<TextBox Width="120" Height="50" X="30" Y="489.5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="THURSTER-PORT"/>
+		<Frame Width="266" Height="50" X="374" Y="489.5" Channel_Num="1268" Channel_Initial="0" Text_Color="TextActive" Left_Space="10" Unit="H" Path=".\Frames\Parameter\Frame_Process_Value_L.prax"/>
+		<Button Width="160" Height="50" X="704" Y="294.5" ClipToBounds="True" Text="RESET" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" FillColorActionRunning="IndicatorBlueTrans" LightingStyle="None" CornerRoundRadius="2" Font="Praxis;36.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="1022" PulseLength="500"/>
+			</ClickActions>
+		</Button>
+		<Button Width="160" Height="50" X="704" Y="392.5" ClipToBounds="True" Text="RESET" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" FillColorActionRunning="IndicatorBlueTrans" LightingStyle="None" CornerRoundRadius="2" Font="Praxis;36.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="1023" PulseLength="500"/>
+			</ClickActions>
+		</Button>
+		<Button Width="160" Height="50" X="704" Y="489.5" ClipToBounds="True" Text="RESET" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" FillColorActionRunning="IndicatorBlueTrans" LightingStyle="None" CornerRoundRadius="2" Font="Praxis;36.0;N;N;N">
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="1024"/>
+			</ClickActions>
+		</Button>
+		<Button Width="160" Height="50" X="1055" Y="294.5" ClipToBounds="True" Text="RESET" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" FillColorActionRunning="IndicatorBlueTrans" LightingStyle="None" CornerRoundRadius="2" Font="Praxis;36.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="2022" PulseLength="500"/>
+			</ClickActions>
+		</Button>
+		<Button Width="160" Height="50" X="1055" Y="392.5" ClipToBounds="True" Text="RESET" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" FillColorActionRunning="IndicatorBlueTrans" LightingStyle="None" CornerRoundRadius="2" Font="Praxis;36.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="2023" PulseLength="500"/>
+			</ClickActions>
+		</Button>
+		<Button Width="160" Height="50" X="1055" Y="489.5" ClipToBounds="True" Text="RESET" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" FillColorActionRunning="IndicatorBlueTrans" LightingStyle="None" CornerRoundRadius="2" Font="Praxis;36.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="2024" PulseLength="500"/>
+			</ClickActions>
+		</Button>
+		<Frame Width="266" Height="50" X="1280" Y="294.5" Channel_Num="109005" Channel_Initial="0" Text_Color="TextActive" Left_Space="10" Unit="H" Path=".\Frames\Parameter\Frame_Process_Value_L.prax"/>
+		<Frame Width="266" Height="50" X="1280" Y="393" Channel_Num="109006" Channel_Initial="0" Text_Color="TextActive" Left_Space="10" Unit="H" Path=".\Frames\Parameter\Frame_Process_Value_L.prax"/>
+		<Frame Width="266" Height="50" X="1280" Y="490" Channel_Num="2268" Channel_Initial="0" Text_Color="TextActive" Left_Space="10" Unit="H" Path=".\Frames\Parameter\Frame_Process_Value_L.prax"/>
+		<TextBox Width="120" Height="50" X="1770" Y="294.5" BorderWidth="0" BorderStyle="Sunken" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="ENGINE 3"/>
+		<TextBox Width="120" Height="50" X="1770" Y="393" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="ENGINE 4"/>
+		<TextBox Width="120" Height="50" X="1770" Y="490" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="THURSTER-STBD"/>
+		<TextBox Width="120" Height="40" X="1353" Y="176" BorderWidth="0" TextColor="TextInfo" Font="Praxis;36.0;B;N;N" Text="STBD SIDE"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="95" Height="40" OnScreenNumpadFramePath=".\Popup_Numpad_Large.prax" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="95" Height="40" BorderColor="Grid" TextColor="TextActive" Font="Praxis;20.0;B;N;N" Text="-1.0000">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="BorderColor"/>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Text_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Number"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Number"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Number"/>
+					</Bindings>
+				</SetChannelValueTEA>
+			</TextEnteredActions>
+		</TextBox>
+	</Children>
+</RootElement>

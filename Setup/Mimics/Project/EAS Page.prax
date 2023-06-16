@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1680" Height="1050" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<SelectFirstFloatBinding TargetPropertyName="SelectedThemeTest">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="101">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="102">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue0">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue1">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER2"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="111">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue2">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="112">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue3">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT2"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</SelectFirstFloatBinding>
+	</Bindings>
+	<Children>
+		<Frame Width="1680" Height="1050" Highlight_Button_NR="1" Page_Title="DIAGNOSTICS" AutoShow_Page_Title="False" Path=".\Frames\01. Standard\CommonMenuFrame.prax" Hightlight_Sub_Button_NR_31="0" Hightlight_Sub_Button_NR_52="0" Hightlight_Sub_Button_NR_53="0" Hightlight_Sub_Button_NR_43="0" Hightlight_Sub_Button_NR_42="0" Hightlight_Sub_Button_NR_33="0" Hightlight_Sub_Button_NR_41="0"/>
+		<NavFrame Width="1440" Height="780" Y="65" OriginOffsetX="0" OriginOffsetY="0" NavFrameName="Diagnostic" ClipToBounds="True">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1680" ActivateValue="1440" TransitionTime="250">
+					<Bindings>
+						<RetainValueBinding TargetPropertyName="Activate" RetainKey="VAR_ShowSideMenu" RetainValueType="Bool"/>
+					</Bindings>
+				</ValueTransitionBinding>
+				<VariableBinding TargetPropertyName="NavFrameCurrentAddress">
+					<Variable>
+						<FloatVariable Name="Navframe_Index" IsLocal="False"/>
+					</Variable>
+				</VariableBinding>
+				<ValueTransitionBinding TargetPropertyName="Height" DefaultValue="930" ActivateValue="795" TransitionTime="250">
+					<Bindings>
+						<RetainValueBinding TargetPropertyName="Activate" RetainKey="VAR_ShowSideMenu" RetainValueType="Bool"/>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\Standard mimics\10. EAS.prax"/>
+			</AddressList>
+		</NavFrame>
+	</Children>
+</RootElement>

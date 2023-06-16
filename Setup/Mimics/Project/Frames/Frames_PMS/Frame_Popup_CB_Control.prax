@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="130" Height="185" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="130" Height="185" BorderWidth="2" BorderColor="BackgroundShadow" FillColor="BackgroundMenu" CornerRoundRadius="5"/>
+		<TextBox Width="130" Height="30" Y="10" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="BREAKER">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Bottom"/>
+			</Bindings>
+		</TextBox>
+		<Button Height="30" X="15" Y="60" ClipToBounds="True" Text="CLOSE" FillColorActionRunning="IndicationLineTransparent" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Ch"/>
+					</Bindings>
+				</PulseChannelClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Height="30" X="15" Y="105" ClipToBounds="True" Text="OPEN" FillColorActionRunning="IndicationLineTransparent" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+					</Bindings>
+				</PulseChannelClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

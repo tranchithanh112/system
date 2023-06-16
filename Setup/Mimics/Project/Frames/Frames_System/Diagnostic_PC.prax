@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="240" Height="160" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="240" Height="160" BorderColor="Black" FillColor="Black" CornerRoundRadius="5"/>
+		<Rectangle Width="75" Height="13" X="83" Y="143" BorderWidth="0" BorderColor="PanelFaceBorder" FillColor="BackgroundMenu" CornerRoundRadius="3"/>
+		<Rectangle Width="216" Height="130" X="12" Y="10" BorderWidth="3" BorderColor="PanelFaceBorder" FillColor="NoAlarmGreen" CornerRoundRadius="5">
+			<Bindings>
+				<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="Fail"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="11" Height="11" X="85" Y="144" BorderColor="PanelFaceBorder" FillColor="Transparent" CornerRoundRadius="2"/>
+		<Rectangle Width="11" Height="11" X="145" Y="144" BorderColor="PanelFaceBorder" FillColor="Transparent" CornerRoundRadius="2"/>
+		<TextBox Width="120" Height="40" X="60" Y="49" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;24.0;B;N;N" Text="SERVER_1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="PC_Name"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="47" Height="11.0156" X="97" Y="144" Path="..\Logos\Frame_PRAXIS_LOGO.prax"/>
+	</Children>
+</RootElement>

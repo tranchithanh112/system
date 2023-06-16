@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PAL1131 version="1.0">
+  <VMSPEC>
+    <USER>
+      <title>Common Virtual Machine Specification</title>
+      <version>2.6.0</version>
+      <extraver/>
+      <builddate>2009.07-26 20:22</builddate>
+      <exportdate>#now</exportdate>
+      <!-- Last function code: 1C32, and few other -->
+    </USER>
+    <HARDWARE>
+      <MaxCodeAddress>0xFFFF</MaxCodeAddress>
+      <MaxDataAddress>0xFFFF</MaxDataAddress>
+      <FlashSize>0x0000</FlashSize>
+      <AddressSize>4</AddressSize>
+    </HARDWARE>
+    <!-- Since 2.6.0 -->
+    <INCLUDE>
+      <PRE order="0">VMCore.xml</PRE>
+      <POST order="0">lreals.xml</POST>
+      <POST order="1">le-IF.xml</POST>
+      <POST order="2">flash.xml</POST>
+    </INCLUDE>
+
+    <TYPES>
+      <!--deny-type name="STRING" /-->
+    </TYPES>
+    <FUNCTIONS />
+    <!-- Since 2.4.7 -->
+    <SYSTEM>
+      <sysproc name="HWFBC" vmcode="1D00">
+        <args>
+          <arg no="0" name="selector" type=":imm.WORD">
+            <comment>Type of function block</comment>
+          </arg>
+          <arg no="1" name="instance" type=":rdlabel">
+            <comment>Function block instance to work on it</comment>
+          </arg>
+        </args>
+        <comment>Hardware function block call (see initialization in HWFBI)</comment>
+      </sysproc>
+      <sysproc name="HWFBI" vmcode="1D01">
+        <args>
+          <arg no="0" name="selector" type=":imm.WORD">
+            <comment>Type of function block</comment>
+          </arg>
+          <arg no="1" name="instance" type=":rdlabel">
+            <comment>Function block instance to work on it</comment>
+          </arg>
+        </args>
+        <comment>Initialize hardware function block (see calling in HWFBC)</comment>
+      </sysproc>
+    </SYSTEM>
+    <FUN_BLOCKS>
+    </FUN_BLOCKS>
+    <INLINE />
+  </VMSPEC>
+</PAL1131>

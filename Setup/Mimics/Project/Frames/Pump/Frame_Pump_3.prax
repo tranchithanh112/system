@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="300" Height="210" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="300" Height="210" BorderColor="White" FillColor="GaugeBackground" CornerRoundRadius="10"/>
+		<TextBox Width="280" Height="35" X="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="White" Font="Praxis;18.0;N;N;N" Text="SEA WATER PUMP 1" Multiline="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Pump_name"/>
+			</Bindings>
+		</TextBox>
+		<Ellipse BorderWidth="2" BorderColor="White" LinePosition="Centered" FillColor="Transparent" CenterX="50" CenterY="90" RadiusX="36" RadiusY="36" ArcBegin="-35" ArcEnd="270" ArcLength="305"/>
+		<Polyline Width="2" LineColor="White" FillColor="Transparent">
+			<Points>
+				<Point Coord="80;70"/>
+				<Point Coord="90.8;70"/>
+				<Point Coord="90.8;76"/>
+				<Point Coord="91.8;77"/>
+				<Point Coord="96.8;77"/>
+				<Point Coord="96.8;46"/>
+				<Point Coord="91.8;46"/>
+				<Point Coord="90.8;47"/>
+				<Point Coord="90.8;54"/>
+				<Point Coord="49.8;54"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="2" LineColor="White" ClosedOutline="True" FillColor="Transparent">
+			<Points>
+				<Point Coord="101.1;46"/>
+				<Point Coord="106.1;46"/>
+				<Point Coord="107.1;47"/>
+				<Point Coord="107.1;53"/>
+				<Point Coord="121.1;53"/>
+				<Point Coord="121.1;69"/>
+				<Point Coord="107.1;69"/>
+				<Point Coord="107.1;76"/>
+				<Point Coord="106.1;77"/>
+				<Point Coord="101.1;77"/>
+			</Points>
+		</Polyline>
+		<Line Color="White" X0="5" Y0="35" X1="295" Y1="35"/>
+		<Frame Width="90" Height="90" X="5" Y="45" Path=".\PUMP_BLADE_2.prax">
+			<Bindings>
+				<FastTickBinding TargetPropertyName="Rotation" Divisor="20">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Running">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Running_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</FastTickBinding>
+			</Bindings>
+		</Frame>
+		<Line Color="White" X0="5" Y0="150" X1="295" Y1="150"/>
+		<TextBox Width="70" Height="20" X="5" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="White" Font="Praxis;18.0;N;N;N" Text="Manual "/>
+		<TextBox Width="75" Height="20" X="135" Y="45" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="White" Font="Praxis;12.0;N;N;N" Text="Status" Multiline="True"/>
+		<Frame Width="70" Height="20" X="210" Y="45" Value_CH="0" Path="..\Standard\Process_value.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Value_CH" ExportedPropertyName="Status_CH"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="75" Height="20" X="135" Y="65" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="White" Font="Praxis;12.0;N;N;N" Text="Start time" Multiline="True"/>
+		<TextBox Width="75" Height="20" X="135" Y="85" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="White" Font="Praxis;12.0;N;N;N" Text="RFU" Multiline="True"/>
+		<Frame Width="70" Height="20" X="210" Y="85" Channel="0" Color_normal="InactivePanelFace" Color_active="Green" Text_active="ON" Text_normal="OFF" Path="..\Standard\Alarm_box.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Channel" ExportedPropertyName="RFU_CH"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="75" Height="20" X="135" Y="125" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="White" Font="Praxis;12.0;N;N;N" Text="Failure" Multiline="True"/>
+		<Frame Width="70" Height="20" X="210" Y="125" Channel="0" Color_normal="InactivePanelFace" Color_active="AlarmRed" Text_active="Normal" Text_normal="Alarm" Path="..\Standard\Alarm_box.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Channel" ExportedPropertyName="Failure_CH"/>
+			</Bindings>
+		</Frame>
+		<Line Color="White" X0="5" Y0="40" X1="295" Y1="40"/>
+		<Button Width="90" Height="35" X="5" Y="170" ClipToBounds="True" Text="Start" FillColor="Background" FillColorActionRunning="Green" OutlineColor="White" TextColor="White" Font="Praxis;18.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="M_Start_CH"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="90" Height="35" X="105" Y="170" ClipToBounds="True" Text="Stop" FillColor="Background" FillColorActionRunning="Green" OutlineColor="White" TextColor="White" Font="Praxis;18.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="M_Stop_CH"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="90" Height="35" X="205" Y="170" ClipToBounds="True" Text="Reset" FillColor="Background" FillColorActionRunning="Green" OutlineColor="White" TextColor="White" Font="Praxis;18.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="M_Reset_CH"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+		<Bezier LineColor="White" ClosedOutline="True" FillColor="Transparent">
+			<Points>
+				<Point Coord="38;130"/>
+				<Point Coord="51;134"/>
+				<Point Coord="62;130"/>
+				<Point Coord="62;130"/>
+				<Point Coord="69.3;137"/>
+				<Point Coord="69.3;137"/>
+				<Point Coord="64;137"/>
+				<Point Coord="64;137"/>
+				<Point Coord="47;137"/>
+				<Point Coord="42;137"/>
+				<Point Coord="31;137"/>
+				<Point Coord="31;137"/>
+				<Point Coord="38;130"/>
+			</Points>
+		</Bezier>
+		<Polyline LineColor="White" ClosedOutline="True" FillColor="Transparent">
+			<Points>
+				<Point Coord="25;140"/>
+				<Point Coord="76;140"/>
+				<Point Coord="76;146"/>
+				<Point Coord="74;147"/>
+				<Point Coord="27;147"/>
+				<Point Coord="25;146"/>
+			</Points>
+		</Polyline>
+		<TextBox Width="75" Height="20" X="135" Y="105" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="White" Font="Praxis;12.0;N;N;N" Text="Running" Multiline="True"/>
+		<Frame Width="70" Height="20" X="210" Y="105" Channel="0" Color_normal="InactivePanelFace" Color_active="AlarmRed" Text_active="Normal" Text_normal="Alarm" Path="..\Standard\Alarm_box.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Channel" ExportedPropertyName="Running_CH"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="70" Height="20" X="210" Y="65" Value_CH="0" Path="..\Standard\Process_value.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Value_CH" ExportedPropertyName="Start_time_CH"/>
+			</Bindings>
+		</Frame>
+	</Children>
+</RootElement>

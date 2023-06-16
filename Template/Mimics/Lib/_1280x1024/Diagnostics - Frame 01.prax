@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="420;465"/>
+				<Point Coord="420;490"/>
+				<Point Coord="1701;490"/>
+				<Point Coord="1701;455"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="10" Height="10" X="635" Y="485" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="695" Y="485" BorderColor="Background"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="700;475"/>
+				<Point Coord="700;505"/>
+				<Point Coord="1721;505"/>
+				<Point Coord="1721;455"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="10" Height="10" X="915" Y="500" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="915" Y="485" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="975" Y="500" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="975" Y="485" BorderColor="Background"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="980;475"/>
+				<Point Coord="980;520"/>
+				<Point Coord="1741;520"/>
+				<Point Coord="1741;455"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="166;455"/>
+				<Point Coord="166;490"/>
+				<Point Coord="360;490"/>
+				<Point Coord="360;465"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="420" Height="250" X="150" Y="740" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="490" Height="250" X="75" Y="735" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<Frame Width="190" Height="130" X="856" Y="100" fail_Ch="100104" active_Ch="100103" PC_Name="SERVER_2" Path=".\Frames\Diagnostics\Panel_PC.prax" STATION_Name="SERVER_1"/>
+		<Frame Width="60" Height="60" X="170" Y="915" Board_Fail="100106" EarthFault="0" Board_Type="XP" Board_Number="01" Path=".\Frames\Diagnostics\Control_processor.prax"/>
+		<Frame Width="60" Height="60" X="170" Y="855" Board_Fail="100130" EarthFault="1100" XP_Fail="100106" Board_Type="AI" Board_Number="X11" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Line Width="3" Color="Gray" X0="466" Y0="175" X1="466" Y1="200"/>
+		<Frame Width="190" Height="130" X="1416" Y="325" fail_Ch="0" active_Ch="0" PC_Name="CLIENT_1" Path=".\Frames\Diagnostics\Panel_PC.prax" STATION_Name="SERVER_1"/>
+		<Frame Width="20" Height="20" X="1470" Y="455" Port_Fail="100002" Port_Fail1="100005" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="1530" Y="455" Port_Fail="100002" Port_Fail1="100006" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="190" Height="130" X="1136" Y="325" fail_Ch="0" active_Ch="0" PC_Name="CLIENT_2" Path=".\Frames\Diagnostics\Panel_PC.prax" STATION_Name="SERVER_1"/>
+		<Frame Width="20" Height="20" X="1190" Y="455" Port_Fail="100002" Port_Fail1="100005" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="1250" Y="455" Port_Fail="100002" Port_Fail1="100006" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="190" Height="130" X="856" Y="325" fail_Ch="0" active_Ch="0" PC_Name="CLIENT_3" Path=".\Frames\Diagnostics\Panel_PC.prax" STATION_Name="SERVER_1"/>
+		<Frame Width="20" Height="20" X="910" Y="455" Port_Fail="100002" Port_Fail1="100005" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="970" Y="455" Port_Fail="100002" Port_Fail1="100006" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="190" Height="130" X="576" Y="325" fail_Ch="0" active_Ch="0" PC_Name="CLIENT_4" Path=".\Frames\Diagnostics\Panel_PC.prax" STATION_Name="SERVER_1"/>
+		<Frame Width="20" Height="20" X="630" Y="455" Port_Fail="100002" Port_Fail1="100005" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="690" Y="455" Port_Fail="100002" Port_Fail1="100006" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="190" Height="130" X="296" Y="325" fail_Ch="0" active_Ch="0" PC_Name="CLIENT_5" Path=".\Frames\Diagnostics\Panel_PC.prax"/>
+		<Frame Width="20" Height="20" X="350" Y="455" Port_Fail="100002" Port_Fail1="100005" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="410" Y="455" Port_Fail="100002" Port_Fail1="100006" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="60" Height="60" X="170" Y="795" Board_Fail="100131" EarthFault="1200" XP_Fail="100106" Board_Type="DI" Board_Number="X12" Path=".\Frames\Diagnostics\IO-Module V2.prax" EarthFail_Ch="0" Fail_Ch="0" Board_Type_2=""/>
+		<Frame Width="60" Height="60" X="250" Y="855" Board_Fail="100133" EarthFault="1400" XP_Fail="100106" Board_Type="DI" Board_Number="X14" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="250" Y="915" Board_Fail="100132" EarthFault="1300" XP_Fail="100106" Board_Type="DI" Board_Number="X13" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="400" Y="915" Board_Fail="100107" EarthFault="0" Board_Type="XP" Board_Number="02" Path=".\Frames\Diagnostics\Control_processor.prax"/>
+		<Frame Width="60" Height="60" X="400" Y="855" Board_Fail="100134" EarthFault="2100" XP_Fail="100107" Board_Type="AI" Board_Number="X21" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="400" Y="795" Board_Fail="100135" EarthFault="2200" XP_Fail="100107" Board_Type="DIO" Board_Number="X22" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="480" Y="795" Board_Fail="100137" EarthFault="2400" XP_Fail="100107" Board_Type="DI" Board_Number="X24" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="480" Y="855" Board_Fail="100136" EarthFault="2300" XP_Fail="100107" Board_Type="DIO" Board_Number="X23" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<TextBox Width="50" Height="30" X="295" Y="740" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="ENGINE ROOM"/>
+		<TextBox Width="50" Height="30" X="295" Y="765" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="DAU 1&amp;2"/>
+		<Frame Width="20" Height="20" X="440" Y="955" Port_Fail="100107" Port_Fail1="2099" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Rectangle Width="190" Height="250" X="635" Y="740" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="190" Height="250" X="630" Y="735" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<Frame Width="60" Height="60" X="655" Y="915" Board_Fail="100109" EarthFault="0" Board_Type="XP" Board_Number="04" Path=".\Frames\Diagnostics\Control_processor.prax"/>
+		<Frame Width="60" Height="60" X="655" Y="855" Board_Fail="100141" EarthFault="4100" XP_Fail="100109" Board_Type="DI0" Board_Number="X41" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="655" Y="795" Board_Fail="100142" EarthFault="4200" XP_Fail="100109" Board_Type="DIO" Board_Number="X42" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="735" Y="795" Board_Fail="100144" EarthFault="4400" XP_Fail="100109" Board_Type="DIO" Board_Number="X44" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="735" Y="855" Board_Fail="100143" EarthFault="4300" XP_Fail="100109" Board_Type="DIO" Board_Number="X43" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="190" Height="130" X="857" Y="565" fail_Ch="100102" active_Ch="100101" PC_Name="SERVER_1" Path=".\Frames\Diagnostics\Panel_PC.prax" STATION_Name="SERVER_1"/>
+		<Rectangle Width="190" Height="250" X="885" Y="740" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="190" Height="250" X="880" Y="735" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<Frame Width="60" Height="60" X="905" Y="915" Board_Fail="100110" EarthFault="0" Board_Type="XP" Board_Number="05" Path=".\Frames\Diagnostics\Control_processor.prax"/>
+		<Frame Width="60" Height="60" X="905" Y="855" Board_Fail="100145" EarthFault="5100" XP_Fail="100110" Board_Type="DI0" Board_Number="X51" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="905" Y="795" Board_Fail="100146" EarthFault="5200" XP_Fail="100110" Board_Type="DIO" Board_Number="X52" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Rectangle Width="190" Height="250" X="1140" Y="740" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="190" Height="250" X="1135" Y="735" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<Frame Width="60" Height="60" X="1160" Y="915" Board_Fail="100111" EarthFault="0" Board_Type="XP" Board_Number="06" Path=".\Frames\Diagnostics\Control_processor.prax"/>
+		<Frame Width="60" Height="60" X="1160" Y="855" Board_Fail="100147" EarthFault="6100" XP_Fail="100111" Board_Type="DI0" Board_Number="X61" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="1160" Y="795" Board_Fail="100148" EarthFault="6200" XP_Fail="100111" Board_Type="DIO" Board_Number="X62" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Rectangle Width="190" Height="250" X="1390" Y="740" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="190" Height="250" X="1385" Y="735" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<Frame Width="60" Height="60" X="1410" Y="915" Board_Fail="100112" EarthFault="0" Board_Type="XP" Board_Number="07" Path=".\Frames\Diagnostics\Control_processor.prax"/>
+		<Frame Width="60" Height="60" X="1410" Y="855" Board_Fail="100149" EarthFault="7100" XP_Fail="100112" Board_Type="DI0" Board_Number="X71" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Rectangle Width="190" Height="250" X="1640" Y="740" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="190" Height="250" X="1635" Y="735" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<Frame Width="60" Height="60" X="1660" Y="915" Board_Fail="100113" EarthFault="0" Board_Type="XP" Board_Number="08" Path=".\Frames\Diagnostics\Control_processor.prax"/>
+		<Frame Width="60" Height="60" X="1660" Y="855" Board_Fail="100150" EarthFault="8100" XP_Fail="100113" Board_Type="DIO" Board_Number="X81" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="1660" Y="795" Board_Fail="100151" EarthFault="8200" XP_Fail="100113" Board_Type="DI" Board_Number="X82" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="1740" Y="855" Board_Fail="100152" EarthFault="8300" XP_Fail="100113" Board_Type="DI" Board_Number="X83" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Rectangle Width="190" Height="150" X="1295" Y="105" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="190" Height="150" X="1290" Y="100" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<Frame Width="60" Height="60" X="1315" Y="180" Board_Fail="100108" EarthFault="0" Board_Type="XP" Board_Number="03" Path=".\Frames\Diagnostics\Control_processor.prax"/>
+		<Frame Width="60" Height="60" X="1315" Y="120" Board_Fail="100138" EarthFault="3100" XP_Fail="100108" Board_Type="AI" Board_Number="X31" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="1396" Y="180" Board_Fail="100139" EarthFault="3200" XP_Fail="100108" Board_Type="DIO" Board_Number="X32" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="60" X="1396" Y="120" Board_Fail="100140" EarthFault="3300" XP_Fail="100108" Board_Type="DI" Board_Number="X33" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="20" Height="20" X="1315" Y="220" Port_Fail="100108" Port_Fail1="3098" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="1355" Y="220" Port_Fail="100108" Port_Fail1="3099" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<TextBox Width="50" Height="30" X="1705" Y="765" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="DAMPER SYSTEM"/>
+		<TextBox Width="50" Height="30" X="1705" Y="740" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="FIRE &amp; WATER TIGHT"/>
+		<TextBox Width="50" Height="30" X="1455" Y="765" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="VLV CTRL PANEL 4"/>
+		<TextBox Width="50" Height="30" X="1455" Y="740" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="GREY &amp; BLACK WATER"/>
+		<TextBox Width="50" Height="30" X="1205" Y="765" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="VLV CTRL PANEL 3"/>
+		<TextBox Width="50" Height="30" X="1205" Y="740" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="FUEL OIL"/>
+		<TextBox Width="50" Height="30" X="950" Y="765" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="VLV CTRL PANEL 2"/>
+		<TextBox Width="50" Height="30" X="950" Y="740" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="FRESH WATER"/>
+		<TextBox Width="50" Height="30" X="700" Y="740" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="BILGE &amp; FIRE"/>
+		<TextBox Width="50" Height="30" X="700" Y="765" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="VLV CTRL PANEL 1"/>
+		<TextBox Width="50" Height="30" X="1361" Y="95" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;16.0;N;N;N" Text="BRIDGE DAU"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100104"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100221"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100223"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1701;355"/>
+				<Point Coord="1701;280"/>
+				<Point Coord="980;280"/>
+				<Point Coord="980;235"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100104"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100201"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100203"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="86;355"/>
+				<Point Coord="86;280"/>
+				<Point Coord="920;280"/>
+				<Point Coord="920;235"/>
+			</Points>
+		</Polyline>
+		<Frame Width="65" Height="65" X="435" Y="125" fail_Ch="100153" Name_="NAV-1" Name_1="" Path=".\Frames\Diagnostics\TFT_panel_5.7.prax"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100153"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100154"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100201"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100207"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="46;355"/>
+				<Point Coord="46;90"/>
+				<Point Coord="445;90"/>
+				<Point Coord="445;110"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100153"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100155"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100221"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100227"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1741;355"/>
+				<Point Coord="1741;90"/>
+				<Point Coord="491;90"/>
+				<Point Coord="491;110"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="3099"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100108"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100221"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100225"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1365;240"/>
+				<Point Coord="1365;265"/>
+				<Point Coord="1721;265"/>
+				<Point Coord="1721;355"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100201"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100204"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100106"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="1098"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="26;450"/>
+				<Point Coord="26;995"/>
+				<Point Coord="180;995"/>
+				<Point Coord="180;975"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="8099"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100113"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100221"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100224"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1841;455"/>
+				<Point Coord="1841;995"/>
+				<Point Coord="1710;995"/>
+				<Point Coord="1710;975"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="1099"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2098"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100106"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100107"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="220;975"/>
+				<Point Coord="220;995"/>
+				<Point Coord="410;995"/>
+				<Point Coord="410;975"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="10" Height="10" X="915" Y="260" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="975" Y="260" BorderColor="Background"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100201"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100205"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100108"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="3098"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="66;355"/>
+				<Point Coord="66;265"/>
+				<Point Coord="1325;265"/>
+				<Point Coord="1325;240"/>
+			</Points>
+		</Polyline>
+		<TextBox Width="50" Height="30" X="365" Y="300" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;N;N;N" Text="MESS ROOM"/>
+		<TextBox Width="50" Height="30" X="645" Y="300" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;N;N;N" Text="CHIEF OFFICER"/>
+		<TextBox Width="50" Height="30" X="925" Y="300" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;N;N;N" Text="CHIEF ENGINEER"/>
+		<TextBox Width="50" Height="30" X="1205" Y="300" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;N;N;N" Text="2ND ENGINEER"/>
+		<TextBox Width="50" Height="30" X="1485" Y="300" BorderWidth="0" BorderColor="White" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;N;N;N" Text="FIRE FIGHTING"/>
+		<Frame Width="20" Height="20" X="970" Y="230" Port_Fail="100004" Port_Fail1="100223" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="910" Y="230" Port_Fail="100104" Port_Fail1="100203" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="146;455"/>
+				<Point Coord="146;505"/>
+				<Point Coord="640;505"/>
+				<Point Coord="640;475"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="106;455"/>
+				<Point Coord="106;520"/>
+				<Point Coord="920;520"/>
+				<Point Coord="920;475"/>
+			</Points>
+		</Polyline>
+		<Frame Width="20" Height="20" X="400" Y="955" Port_Fail="100107" Port_Fail1="2098" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="1700" Y="955" Port_Fail="100113" Port_Fail1="8099" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="1660" Y="955" Port_Fail="100113" Port_Fail1="8098" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="1450" Y="955" Port_Fail="100112" Port_Fail1="7099" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="1410" Y="955" Port_Fail="100112" Port_Fail1="7098" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="1200" Y="955" Port_Fail="100111" Port_Fail1="6099" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="1160" Y="955" Port_Fail="100111" Port_Fail1="6098" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="945" Y="955" Port_Fail="100110" Port_Fail1="5099" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="905" Y="955" Port_Fail="100110" Port_Fail1="5098" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="695" Y="955" Port_Fail="100109" Port_Fail1="4099" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="655" Y="955" Port_Fail="100109" Port_Fail1="4098" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="210" Y="955" Port_Fail="100106" Port_Fail1="1099" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="170" Y="955" Port_Fail="100106" Port_Fail1="1098" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100102"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100201"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100202"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="46;455"/>
+				<Point Coord="46;725"/>
+				<Point Coord="921;725"/>
+				<Point Coord="921;700"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="10" Height="10" X="1195" Y="485" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1255" Y="485" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1195" Y="500" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1255" Y="500" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1195" Y="515" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1255" Y="515" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1475" Y="485" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1475" Y="500" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1475" Y="515" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1535" Y="485" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1535" Y="500" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1535" Y="515" BorderColor="Background"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="86;455"/>
+				<Point Coord="86;535"/>
+				<Point Coord="1200;535"/>
+				<Point Coord="1200;475"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1260;475"/>
+				<Point Coord="1260;535"/>
+				<Point Coord="1761;535"/>
+				<Point Coord="1761;455"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100102"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100221"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100222"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1821;455"/>
+				<Point Coord="1821;725"/>
+				<Point Coord="980;725"/>
+				<Point Coord="980;700"/>
+			</Points>
+		</Polyline>
+		<Frame Width="20" Height="20" X="910" Y="695" Port_Fail="100102" Port_Fail1="100202" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="970" Y="695" Port_Fail="100002" Port_Fail1="100222" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="435" Y="105" Port_Fail="100153" Port_Fail1="100154" PORT="A" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Frame Width="20" Height="20" X="481" Y="105" Port_Fail="100153" Port_Fail1="100155" PORT="B" Path=".\Frames\Diagnostics\Ethernet_port.prax"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100201"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100221"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100217"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100237"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1761;355"/>
+				<Point Coord="1761;75"/>
+				<Point Coord="26;75"/>
+				<Point Coord="26;355"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2099"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="4098"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100107"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100109"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="450;975"/>
+				<Point Coord="450;995"/>
+				<Point Coord="665;995"/>
+				<Point Coord="665;975"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="4099"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="5098"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100109"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100110"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="705;975"/>
+				<Point Coord="705;995"/>
+				<Point Coord="915;995"/>
+				<Point Coord="915;975"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="5099"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="6098"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100110"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100111"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="955;975"/>
+				<Point Coord="955;995"/>
+				<Point Coord="1170;995"/>
+				<Point Coord="1170;975"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="6099"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="7098"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100111"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100112"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1210;975"/>
+				<Point Coord="1210;995"/>
+				<Point Coord="1420;995"/>
+				<Point Coord="1420;975"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100112"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100113"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="7099"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="8098"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1460;975"/>
+				<Point Coord="1460;995"/>
+				<Point Coord="1670;995"/>
+				<Point Coord="1670;975"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="10" Height="10" X="1475" Y="530" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1535" Y="530" BorderColor="Background"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="66;455"/>
+				<Point Coord="66;550"/>
+				<Point Coord="1480;550"/>
+				<Point Coord="1480;475"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1540;475"/>
+				<Point Coord="1540;550"/>
+				<Point Coord="1781;550"/>
+				<Point Coord="1781;455"/>
+			</Points>
+		</Polyline>
+		<Frame Width="60" Height="60" X="250" Y="795" Board_Fail="100129" EarthFault="1500" XP_Fail="100106" Board_Type="DIO" Board_Number="X15" Path=".\Frames\Diagnostics\IO-Module V2.prax"/>
+		<Frame Width="60" Height="20" X="110" Y="915" Board_Fail="1094" EarthFault="0" XP_Fail="100106" Board_Type="XL11" Path=".\Frames\Diagnostics\Serial_Interface.prax"/>
+		<Frame Width="60" Height="20" X="110" Y="935" Board_Fail="1095" EarthFault="0" XP_Fail="100106" Board_Type="XL12" Path=".\Frames\Diagnostics\Serial_Interface.prax"/>
+		<Frame Width="60" Height="20" X="340" Y="915" Board_Fail="2094" EarthFault="0" XP_Fail="100107" Board_Type="XL21" Path=".\Frames\Diagnostics\Serial_Interface.prax"/>
+		<Frame Width="60" Height="20" X="340" Y="935" Board_Fail="2095" EarthFault="0" XP_Fail="100107" Board_Type="XL22" Path=".\Frames\Diagnostics\Serial_Interface.prax"/>
+		<Frame Width="60" Height="60" X="436" Y="195" Board_Fail="100140" EarthFault="3300" XP_Fail="100108" Board_Type="IO" Board_Number="X331" Path=".\Frames\Diagnostics\IO-Module V2.prax" EarthFail_Ch="0" Board_Type_2="" Fail_Ch="0"/>
+		<Frame Width="215" X="16" Y="355" fail_Ch="100201" Board_Type="SWITCH 1" Port_01_Diag_CH="0" Show_Port_Numbers="True" Port1_Position="1" Port2_Position="2" Port3_Position="3" Port4_Position="4" Port5_Position="8" Port6_Position="6" Port7_Position="7" Port8_Position="5" Switch_16_Port="True" Port9_Position="9" Port10_Position="10" Port11_Position="11" Port12_Position="12" Port13_Position="13" Port14_Position="14" Port15_Position="15" Port16_Position="16" Port18_Position="18" Port17_Position="17" Path=".\Frames\Diagnostics\Ethernet_Switch_With_Port_diagnostics.prax"/>
+		<Rectangle Width="10" Height="10" X="1695" Y="465" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1715" Y="465" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1735" Y="465" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1755" Y="465" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1775" Y="465" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1815" Y="465" BorderColor="Background"/>
+		<Rectangle Width="10" Height="10" X="1835" Y="465" BorderColor="Background"/>
+		<Polyline Width="3" LineColor="NoAlarmGreen" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="LineColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="100153"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="100154"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="100201"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="100207"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="221;455"/>
+				<Point Coord="221;470"/>
+				<Point Coord="241;470"/>
+				<Point Coord="241;295"/>
+				<Point Coord="1666;290"/>
+				<Point Coord="1666;470"/>
+				<Point Coord="1896;470"/>
+				<Point Coord="1896;455"/>
+			</Points>
+		</Polyline>
+		<Frame Width="215" X="1691" Y="355" fail_Ch="100221" Board_Type="SWITCH 2" Port_01_Diag_CH="0" Show_Port_Numbers="True" Port1_Position="1" Port2_Position="2" Port3_Position="3" Port4_Position="4" Port5_Position="5" Port6_Position="6" Port7_Position="7" Port8_Position="8" Switch_16_Port="True" Port9_Position="9" Port10_Position="10" Port11_Position="11" Port12_Position="12" Port13_Position="13" Port14_Position="14" Port15_Position="15" Port16_Position="16" Port18_Position="18" Port17_Position="17" Path=".\Frames\Diagnostics\Ethernet_Switch_With_Port_diagnostics.prax"/>
+	</Children>
+</RootElement>

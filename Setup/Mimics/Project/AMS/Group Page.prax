@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1200" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<SelectFirstFloatBinding TargetPropertyName="SelectedThemeTest" DefaultValue="0">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="101">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="102">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="111">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="112">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue0">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue1">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER2"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue2">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue3">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT2"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</SelectFirstFloatBinding>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1200" Highlight_Button_NR="0" Page_Title="PAGE TITLE" AutoShow_Page_Title="False" Path="..\Frames\Menus\CommonMenuFrame.prax"/>
+		<GroupList Width="1630" Height="1055" X="5" Y="75" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;24.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="StatusInactive" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;24.0;N;N;N" OutlineColor="Transparent"/>
+	</Children>
+</RootElement>

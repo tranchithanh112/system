@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="Single_Pushbutton_LD">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2015" month="10" day="31" hour="8" minutes="56" seconds="12" milisec="890" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="00000004" />
+      <II value="00000038" />
+      <CPVis used="0" />
+      <LC year="2015" month="11" day="1" hour="8" minutes="40" seconds="26" milisec="562" />
+      <LCF>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\VM\VM-Praxis32.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis32.xml</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\VM\VM-Praxis32.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.1.1.19</CREATOR>
+      <LASTSAVEDWITH>1.1.1.19</LASTSAVEDWITH>
+      <DCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.dcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.dcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.dcp</ENVVARS>
+      </DCP>
+      <XCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.xcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.xcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.xcp</ENVVARS>
+      </XCP>
+      <HCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.hcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.hcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.hcp</ENVVARS>
+      </HCP>
+      <CST>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.cst</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.cst</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Single_Pushbutton_LD\Single_Pushbutton_LD.cst</ENVVARS>
+      </CST>
+      <HCPFlags enabled="0" />
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="C:\Program Files\CPDevFBD\Biblioteki\IEC 61131-3.lcp">
+        <CREATED year="2015" month="10" day="14" hour="13" minutes="0" seconds="9" milisec="969" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Biblioteki\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="LD" type="PRG" name="Single_Pushbutton" editor="LDEditor-MarcinJamro"><![CDATA[PROGRAM Single_Pushbutton
+
+VAR_EXTERNAL
+   ON_OFF: BOOL;
+   MOTOR: BOOL;
+END_VAR
+
+VAR
+   PULSE: BOOL;
+   out_contact_ON_OFF_90_140: BOOL;
+   out_contact_PULSE_90_220: BOOL;
+   out_contact_MOTOR_160_220: BOOL;
+   out_contact_PULSE_90_280: BOOL;
+   out_contact_MOTOR_160_280: BOOL;
+   out_coil_PULSE_290_140: BOOL;
+   out_coil_MOTOR_290_220: BOOL;
+   out_bp_180_210: BOOL;
+   r_trig1: R_TRIG;
+   out_r_trig1_Q: BOOL;
+END_VAR
+
+out_contact_ON_OFF_90_140 := ON_OFF;
+r_trig1(CLK:=out_contact_ON_OFF_90_140,Q=>out_r_trig1_Q);
+out_coil_PULSE_290_140 := out_r_trig1_Q;
+PULSE := out_r_trig1_Q;
+
+out_contact_PULSE_90_220 := NOT PULSE;
+out_contact_MOTOR_160_220 := out_contact_PULSE_90_220 AND MOTOR;
+out_contact_PULSE_90_280 := PULSE;
+out_contact_MOTOR_160_280 := out_contact_PULSE_90_280 AND NOT MOTOR;
+out_bp_180_210 := out_contact_MOTOR_160_220 OR out_contact_MOTOR_160_280;
+out_coil_MOTOR_290_220 := out_bp_180_210;
+MOTOR := out_bp_180_210;
+
+END_PROGRAM
+]]><EDITOR><![CDATA[<?xml version="1.0" encoding="utf-16"?><project><fileHeader companyName="" creationDateTime="2015-11-01T10:32:22" productName="Single_Pushbutton" productVersion="" contentType="Program" /><contentHeader name="prj"><coordinateInfo><fbd><scaling x="10" y="10" /></fbd><ld><scaling x="10" y="10" /></ld><sfc><scaling x="10" y="10" /></sfc></coordinateInfo></contentHeader><types><dataTypes /><pous><pou name="FBD Diagram" pouType="functionBlock"><interface><localVars><variable name="ON_OFF"><type><BOOL /></type></variable><variable name="PULSE"><type><BOOL /></type></variable><variable name="MOTOR"><type><BOOL /></type></variable><variable name="PULSE"><type><BOOL /></type></variable><variable name="MOTOR"><type><BOOL /></type></variable><variable name="PULSE"><type><BOOL /></type></variable><variable name="MOTOR"><type><BOOL /></type></variable></localVars></interface><body><LD><leftPowerRail localId="0" /><rightPowerRail localId="1"><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="4"><position x="340" y="140" /><position x="290" y="140" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="7"><position x="340" y="220" /><position x="290" y="220" /></connection></connectionPointIn></rightPowerRail><contact height="40" localId="3" width="20" type="NormallyOpenContact"><position x="60" y="110" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="140" /><position x="10" y="140" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>ON_OFF</expression></contact><contact height="40" localId="5" width="20" type="NormallyClosedContact"><position x="60" y="190" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="220" /><position x="10" y="220" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>PULSE</expression></contact><contact height="40" localId="6" width="20" type="NormallyOpenContact"><position x="130" y="190" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="5"><position x="120" y="220" /><position x="90" y="220" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>MOTOR</expression></contact><contact height="40" localId="8" width="20" type="NormallyOpenContact"><position x="60" y="250" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="280" /><position x="10" y="280" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>PULSE</expression></contact><contact height="40" localId="9" width="20" type="NormallyClosedContact"><position x="130" y="250" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="8"><position x="120" y="280" /><position x="90" y="280" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>MOTOR</expression></contact><block height="80" instanceName="r_trig1" localId="2" typeName="R_TRIG" width="70"><position x="130" y="90" /><inputVariables><variable formalParameter="CLK"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="3"><position x="120" y="140" /><position x="90" y="140" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q"><connectionPointOut><relPosition x="80" y="50" /></connectionPointOut></variable></outputVariables></block><coil height="40" localId="4" width="20" type="Coil"><position x="260" y="110" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="Q" refLocalId="2"><position x="250" y="140" /><position x="210" y="140" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>PULSE</expression></coil><coil height="40" localId="7" width="20" type="Coil"><position x="260" y="190" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="6"><position x="250" y="220" /><position x="200" y="220" branchPoint="Output" branchPointLocation="180;210" branchPointDirection="Right" /><position x="180" y="220" branchPoint="Input" branchPointLocation="180;210" branchPointDirection="Left" /><position x="160" y="220" /></connection><connection formalParameter="" refLocalId="9"><position x="250" y="220" /><position x="200" y="220" branchPoint="Output" branchPointLocation="180;210" branchPointDirection="Right" /><position x="190" y="230" branchPoint="Input" branchPointLocation="180;210" branchPointDirection="Down" /><position x="190" y="280" /><position x="160" y="280" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>MOTOR</expression></coil></LD></body></pou></pous></types><instances><configurations /></instances><globalVariables><globalVariable name="ON_OFF" type="BOOL" /><globalVariable name="MOTOR" type="BOOL" /></globalVariables><comments><comment localId="12" width="140" height="20"><position x="90" y="20" /><expression>SINGLE PUSHBUTTON</expression></comment><comment localId="13" width="50" height="20"><position x="40" y="80" /><expression>Button</expression></comment><comment localId="14" width="100" height="20"><position x="220" y="80" /><expression>One-cycle pulse</expression></comment></comments><breakpoints /><conditions /><safestatevalues /></project>]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="ON_OFF" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ON_OFF  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MOTOR" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MOTOR  : BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK" loop_kind="0" interval="50"><![CDATA[Single_Pushbutton
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

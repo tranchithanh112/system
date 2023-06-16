@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="500" Height="500" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" DialColor="ConningBackground" IndicatorLinesColor="ActiveText" Path=".\Frame_Gauge_Heel.prax" FullDial="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="IndicatorLinesColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</Frame>
+		<Ellipse BorderWidth="0" BorderColor="Background" BorderStyle="Raised" LinePosition="Outside" CenterX="250" CenterY="250" RadiusX="190" RadiusY="190" ArcBegin="540" ArcEnd="900"/>
+		<Line Color="IndicatorBlue" X0="60" Y0="250" X1="440" Y1="250"/>
+		<Ellipse BorderWidth="0" BorderColor="DarkShadow" LinePosition="Centered" FillColor="Barfill" CenterX="250" CenterY="250" RadiusX="190" RadiusY="190" ArcEnd="180" ArcLength="180"/>
+		<Frame Width="350" Height="350" X="75" Y="100" Path=".\Frame_Vessel_From_SB.prax">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Rotation" InRangeBegin="-5" InRangeEnd="5" OutRangeBegin="-45" OutRangeEnd="45">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Trim_Ch"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</Frame>
+		<TextBox Width="40" Height="30" X="230" Y="455" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;36.0;N;N;N" Text="5">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Trim_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="260" Y="455" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;36.0;N;N;N" Text="m"/>
+		<TextBox Width="40" Height="30" X="430" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="5">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="460" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="m">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="30" X="505" Y="235" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="540" Y="235" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="m">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="30" X="430" Y="425" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="-5">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="470" Y="425" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="m">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="30" X="-10" Y="425" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="-5">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="30" Y="425" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="m">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="-45" Y="235" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="m">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="30" X="-80" Y="235" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="5">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="30" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="m">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

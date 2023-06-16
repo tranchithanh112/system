@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" GridSpacing="2" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="5" Height="32" X="12" Y="8" BorderColor="PageInfoLineShaded" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_CB"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="5" Height="5" X="32" Y="4" BorderColor="PageInfoLineShaded"/>
+		<Rectangle Width="5" Height="5" X="32" Y="40" BorderColor="PageInfoLineShaded"/>
+		<Rectangle FlashState="Flashing" Flash="True" FlashArea="OutlineOnly" Width="50" Height="50" BorderWidth="2" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstFlashStateBinding TargetPropertyName="FlashState">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Unload"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstFlashStateBinding>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" SelectedValue0="Green" SelectedValue1="Green" DefaultValue="PageInfoLineShaded">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Unload"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Sync"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="14" Height="30" X="28" Y="10" BorderWidth="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_CB"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="5" Height="32" X="32" Y="8" BorderColor="PageInfoLineShaded" FillColor="NoAlarmGreen">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_CB"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+	</Children>
+</RootElement>

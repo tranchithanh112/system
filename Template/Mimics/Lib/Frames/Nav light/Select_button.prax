@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Height="30" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button Height="30" Text="In use" FillColor="Transparent" FillColorActionRunning="LightingIndigo" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Text" ChannelNumber="33158">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Inhibit_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToStringConvertParams TextWhenFalse="In use" TextWhenTrue="Not in use"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Inhibit_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Comment" ColorWhenTrue="ButtonFill"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" SetValueType="Toggle Digital">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Inhibit_Ch"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

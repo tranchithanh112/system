@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="560" Height="71" GridSpacing="1">
+	<Children>
+		<Polyline ClosedOutline="True" FillColor="AlarmRed">
+			<Bindings>
+				<SelectFirstFlashStateBinding TargetPropertyName="FlashState">
+					<Bindings>
+						<RangeFormulaBinding TargetPropertyName="ConditionValue0" InRangeBegin="0" InRangeEnd="1" OutRangeBegin="0" OutRangeEnd="1">
+							<Bindings>
+								<AlarmCountBinding TargetPropertyName="Value" AlarmPriorityFilter="Emergency"/>
+							</Bindings>
+						</RangeFormulaBinding>
+						<RangeFormulaBinding TargetPropertyName="ConditionValue1" InRangeBegin="0" InRangeEnd="1" OutRangeBegin="0" OutRangeEnd="1">
+							<Bindings>
+								<AlarmCountBinding TargetPropertyName="Value" AlarmPriorityFilter="Alarm"/>
+							</Bindings>
+						</RangeFormulaBinding>
+						<RangeFormulaBinding TargetPropertyName="ConditionValue2" InRangeBegin="0" InRangeEnd="1" OutRangeBegin="0" OutRangeEnd="1">
+							<Bindings>
+								<AlarmCountBinding TargetPropertyName="Value" AlarmPriorityFilter="Warning"/>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</SelectFirstFlashStateBinding>
+				<AlarmCountBinding TargetPropertyName="FillColor">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray" ColorWhenNonZero="Foreground"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="Flash">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FlashSteadyOn" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams ValueWhenZero="True" ValueWhenNonZero="False"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FlashFast" AlarmPriorityFilter="Emergency" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="241;64"/>
+				<Point Coord="282;2"/>
+				<Point Coord="321;64"/>
+			</Points>
+		</Polyline>
+		<Polyline ClosedOutline="True" FillColor="Background">
+			<Points>
+				<Point Coord="256;58"/>
+				<Point Coord="282;13"/>
+				<Point Coord="307;58"/>
+			</Points>
+		</Polyline>
+		<Bezier FillColor="Foreground" Width="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="FillColor">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray" ColorWhenNonZero="Foreground"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="281;46"/>
+				<Point Coord="279;30"/>
+				<Point Coord="275;19"/>
+				<Point Coord="282;19"/>
+				<Point Coord="285;30"/>
+				<Point Coord="283;46"/>
+			</Points>
+		</Bezier>
+		<TextBox Width="50" Height="25" X="183" Y="6" FillColor="AlarmRed" LightingStyle="Radial" CornerRoundRadius="50" TextColor="White" Font="Segoe UI-18.0-B-N-N" Text="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="FillColor" AlarmPriorityFilter="Emergency">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Emergency">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="25" X="183" Y="41" FillColor="AlarmRed" LightingStyle="Radial" CornerRoundRadius="50" TextColor="White" Font="Segoe UI-18.0-B-N-N" Text="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Alarm">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FillColor" AlarmPriorityFilter="Alarm">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="25" X="331" Y="5" FillColor="Orange" LightingStyle="Radial" CornerRoundRadius="50" TextColor="White" Font="Segoe UI-18.0-B-N-N" Text="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Warning">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FillColor" AlarmPriorityFilter="Warning">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray" ColorWhenNonZero="Orange"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="25" X="331" Y="40" FillColor="Yellow" LightingStyle="Radial" CornerRoundRadius="50" Font="Segoe UI-18.0-B-N-N" Text="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Caution">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FillColor" AlarmPriorityFilter="Caution">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray" ColorWhenNonZero="Yellow"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<Ellipse CenterX="282" CenterY="52" RadiusX="5" RadiusY="5" BorderWidth="0" FillColor="Foreground">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="FillColor">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray" ColorWhenNonZero="Foreground"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox FlashFast="True" FlashArea="TextOnly" Width="175" Height="25" X="4" Y="5" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI-18.0-B-N-N" Text="Emergency Alarm(s)">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Flash" AlarmPriorityFilter="Emergency" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox FlashArea="TextOnly" Width="175" Height="25" X="4" Y="40" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI-18.0-B-N-N" Text="Alarm(s)">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Flash" AlarmPriorityFilter="Alarm" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox FlashArea="TextOnly" FlashColor="Orange" Width="175" Height="25" X="381" Y="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI-18.0-B-N-N" Text="Warning(s)">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Flash" AlarmPriorityFilter="Warning" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox FlashArea="TextOnly" FlashColor="Yellow" Width="175" Height="25" X="381" Y="40" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI-18.0-B-N-N" Text="Caution(s)">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Flash" AlarmPriorityFilter="Caution" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

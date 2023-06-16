@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="225" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="150" Height="225" BorderWidth="2" BorderColor="BackgroundShadow" FillColor="BackgroundMenu" CornerRoundRadius="5"/>
+		<TextBox Width="130" Height="25" X="10" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Sequence">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+			</Bindings>
+		</TextBox>
+		<Button Width="130" Height="35" X="10" Y="40" Text="1" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SET_1ST"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="80" Text="2" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SET_2ND"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="180" Text="Cancel" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

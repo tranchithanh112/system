@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Frame Width="800" Height="135" X="985" Y="220" DurationShown_min="3" DurationStored_min="60" Trend_Range_Low="57" Trend_Range_High="63" Trend_LineWith="1" Channel1="61185" Colour1="ColorVerticalTrendLines" Title1="DG1" Channel2="62185" Title2="DG2" Colour2="Orange" Units="Hz" Path=".\Frames\Frame_Trend\Frame_Trend_2x_135H.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101020"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="800" Height="135" X="90" Y="220" DurationShown_min="10" DurationStored_min="60" Trend_Range_Low="57" Trend_Range_High="63" Trend_LineWith="1" Channel1="63185" Colour1="TextActive" Title1="DG3" Channel2="64185" Title2="DG4" Colour2="Yellow" Units="Hz" Path=".\Frames\Frame_Trend\Frame_Trend_2x_135H.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101020"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="800" Height="225" X="985" Y="355" DurationShown_min="3" DurationStored_min="60" Trend_Range_High="4000" Trend_LineWith="1" Channel1="61045" Title1="DG1" Colour1="ColorVerticalTrendLines" Trend_Range_Low="0" Channel2="62045" Title2="DG2" Colour2="Orange" Units="kW" Path=".\Frames\Frame_Trend\Frame_Trend_2x_300H.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Trend_Range_High" ChannelNumber="61092"/>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101020"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="800" Height="135" X="90" Y="80" DurationShown_min="10" DurationStored_min="60" Trend_Range_Low="600" Trend_Range_High="720" Trend_LineWith="1" Channel1="63184" Colour1="TextActive" Title1="DG3" Channel2="64184" Title2="DG4" Colour2="Yellow" Units="Volt" Path=".\Frames\Frame_Trend\Frame_Trend_2x_135H.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101020"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="800" Height="135" X="985" Y="80" DurationShown_min="3" DurationStored_min="60" Trend_Range_Low="600" Trend_Range_High="720" Trend_LineWith="1" Channel1="61184" Colour1="ColorVerticalTrendLines" Title1="DG1" Channel2="62184" Title2="DG2" Colour2="Orange" Units="Volt" Path=".\Frames\Frame_Trend\Frame_Trend_2x_135H.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101020"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="800" Height="225" X="90" Y="355" DurationShown_min="3" DurationStored_min="60" Trend_Range_High="600" Trend_LineWith="1" Channel1="63045" Title1="DG3" Colour1="TextActive" Trend_Range_Low="0" Channel2="64045" Title2="DG4" Colour2="Yellow" Units="kW" Path=".\Frames\Frame_Trend\Frame_Trend_2x_300H.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Trend_Range_High" ChannelNumber="63092"/>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101020"/>
+			</Bindings>
+		</Frame>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="1055" Y0="595" X1="1055" Y1="700"/>
+		<Frame Width="120" Height="200" X="985" Y="610" RevertContainerRotation="True" RevertContainerScaling="True" ID="BT1" CB_Tripped="65049" CB_Sync="65080" CB_Offload="65081" CB_Closed="65188" CB_Interlock="65676" CMD_Close="65488" CMD_Open="65491" CMD_Reset="65496" CMD_Auto="65486" CMD_Manual="65489" Activity_Counter="65677" Manual="65029" Auto="65023" Alarm_Group_INT="79" Alarm_Group_UINT="79" Path=".\Frames\Frames_PMS\BUSTIE_Main_Window.prax" KeepHorizontal="True"/>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="865" Y0="595" X1="865" Y1="700"/>
+		<Frame Width="120" Height="200" X="795" Y="610" RevertContainerRotation="True" RevertContainerScaling="True" ID="BT2" CB_Tripped="66049" CB_Sync="66080" CB_Offload="66081" CB_Closed="66188" CB_Interlock="66676" CMD_Close="66488" CMD_Open="66491" CMD_Reset="66496" CMD_Auto="66486" CMD_Manual="66489" Activity_Counter="66677" Manual="66029" Auto="66023" Alarm_Group_INT="82" Alarm_Group_UINT="82" Path=".\Frames\Frames_PMS\BUSTIE_Main_Window.prax" KeepHorizontal="True"/>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="864" Y0="700" X1="1056" Y1="700"/>
+		<TextBox Width="85" Height="20" X="40" Y="605" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="660V MSB 2"/>
+		<TextBox Width="70" Height="20" X="45" Y="630" BorderWidth="0" CornerRoundRadius="5" TextColor="Orange" Font="Praxis;14.0;N;N;N" Text="EARTH FAULT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="21109"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="85" Height="20" X="1775" Y="605" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="660V MSB 1"/>
+		<TextBox Width="80" Height="20" X="1775" Y="630" BorderWidth="0" CornerRoundRadius="3" TextColor="Orange" Font="Praxis;14.0;N;N;N" Text="EARTH FAULT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="12307"/>
+			</Bindings>
+		</TextBox>
+		<Line Width="4" Color="ColorVerticalTrendLines" X0="80" Y0="595" X1="895" Y1="595"/>
+		<Line Width="4" Color="ColorVerticalTrendLines" X0="1025" Y0="595" X1="1820" Y1="595"/>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Width="105" Height="30" X="1000" Y="915" BorderWidth="0" BorderColor="PageInfoLine" FillColor="Transparent" CornerRoundRadius="10" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Total SCC">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="65660">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix=" kA"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="65660">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextActive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="105" Height="30" X="795" Y="915" BorderWidth="0" BorderColor="PageInfoLine" FillColor="Transparent" CornerRoundRadius="10" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Total SCC">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="66660">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix=" kA"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="66660">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextActive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="105" Height="30" X="1000" Y="855" BorderWidth="0" BorderColor="PageInfoLine" FillColor="Transparent" CornerRoundRadius="10" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Res Load">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="65661">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kW"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="105" Height="30" X="795" Y="855" BorderWidth="0" BorderColor="PageInfoLine" FillColor="Transparent" CornerRoundRadius="10" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Res Load">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="66661">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kW"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Line Color="TextInfo" X0="1105" Y0="855" X1="795" Y1="855"/>
+		<TextBox Width="50" Height="20" X="1025" Y="835" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="MSB 1"/>
+		<TextBox Width="50" Height="20" X="825" Y="835" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="MSB 2"/>
+		<TextBox Height="30" X="900" Y="855" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Reserved"/>
+		<TextBox Height="30" X="900" Y="915" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Short Circuit"/>
+		<TextBox Height="30" X="900" Y="945" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Standby"/>
+		<TextBox Height="30" X="900" Y="975" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="LowLoadStop"/>
+		<TextBox Width="105" Height="30" X="795" Y="885" BorderWidth="0" BorderColor="PageInfoLine" FillColor="Transparent" CornerRoundRadius="10" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Avail Cap">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="66663">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kW"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="66663">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextActive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="105" Height="30" X="1000" Y="885" BorderWidth="0" BorderColor="PageInfoLine" FillColor="Transparent" CornerRoundRadius="10" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Avail Cap">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="65663">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kW"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="65663">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextActive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Height="30" X="900" Y="885" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Available"/>
+		<TextBox Width="80" Height="27" X="805" Y="945" BorderColor="PageInfoLine" FillColor="Barfill01" CornerRoundRadius="3" Font="Praxis;18.0;N;N;N" Text="Request">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="66671"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="27" X="805" Y="977" BorderColor="PageInfoLine" FillColor="Barfill01" CornerRoundRadius="3" Font="Praxis;16.0;N;N;N" Text="Active">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="66669"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="27" X="1010" Y="945" BorderColor="PageInfoLine" FillColor="Barfill01" CornerRoundRadius="3" Font="Praxis;18.0;N;N;N" Text="Request">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="65671"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="27" X="1010" Y="977" BorderColor="PageInfoLine" FillColor="Barfill01" CornerRoundRadius="3" Font="Praxis;16.0;N;N;N" Text="Active">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="65669"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="240" Height="390" X="480" Y="670" RevertContainerRotation="True" RevertContainerScaling="True" Gen_KWp="63071" Gen_KVARp="63072" Engine_Ready="63112" Running="63083" Manual="63029" Auto="63023" Gen_Volts="63184" Gen_KW="63045" Gen_Hz="63185" Gen_Amps="63199" Gen_KVAR="63047" ID="DG3" Lubricate="63120" Engine_Remote="63114" Cooldown_Time="63097" Starting="63079" Synchronizing="63080" Offloading="63081" Stopping="63084" First_To_Start="63076" First_To_Stop="63088" CB_Closed="63188" Load_SP_KW="63479" Load_SP_KVAr="63478" I_L1="63142" I_L2="63143" I_L3="63144" KW_L1="63150" KW_L2="63151" KW_L3="63152" KVAR_L1="63153" KVAR_L2="63154" KVAR_L3="63155" Alarm_Group_INT="75" Alarm_Group_UINT="75" Path=".\Frames\Frames_PMS\PMS_DG_Main_Window_updated.prax" KeepHorizontal="True" CMD_Close="63488" Pre_Alarm="63101" Synchonizing="63080" ActuatorFail="63258" CMD_Manual="63489" Short_Circuit="63267" CMD_Auto="63486" Engine_Local="0" CMD_Start="63487" CMD_Open="63491" CMD_Stop="63490" Shutdown="63249" Reverse_Power="63264" CMD_Reset="63496" CB_Tripped="63049"/>
+		<Frame Width="240" Height="390" X="155" Y="670" RevertContainerRotation="True" RevertContainerScaling="True" Gen_KWp="64071" Gen_KVARp="64072" Engine_Ready="64112" Running="64083" Manual="64029" Auto="64023" Gen_Volts="64184" Gen_KW="64045" Gen_Hz="64185" Gen_Amps="64199" Gen_KVAR="64047" ID="DG4" Lubricate="64120" Engine_Remote="64114" Cooldown_Time="64097" Starting="64079" Synchronizing="64080" Offloading="64081" Stopping="64084" First_To_Start="64076" First_To_Stop="64088" CB_Closed="64188" Load_SP_KW="64479" Load_SP_KVAr="64478" I_L1="64142" I_L2="64143" I_L3="64144" KW_L1="64150" KW_L2="64151" KW_L3="64152" KVAR_L1="64153" KVAR_L2="64154" KVAR_L3="64155" Alarm_Group_INT="77" Alarm_Group_UINT="77" Path=".\Frames\Frames_PMS\PMS_DG_Main_Window_updated.prax" KeepHorizontal="True" Reverse_Power="64264" Synchonizing="64080" CMD_Open="64491" Shutdown="64249" CMD_Stop="64490" ActuatorFail="64258" CMD_Close="64488" CB_Tripped="64049" CMD_Auto="64486" Short_Circuit="64267" CMD_Start="64487" CMD_Reset="64496" CMD_Manual="64489" Pre_Alarm="64101" Engine_Local="0"/>
+		<Frame Width="60" Height="60" X="330" Y="605" CTRL_Blocked="False" CB_Sync="64080" CB_Offload="64081" CB_Tripped="64049" CB_Closed="64188" CMD_Auto="64486" CMD_Manual="64489" CMD_Start="64487" CMD_Stop="64490" CMD_Close="64488" CMD_Open="64491" CMD_Reset="64496" CB_Interlock="0" Pre_Alarm="64101" Shutdown="0" ActuatorFail="64258" Short_Circuit="0" Reverse_Power="64264" Path=".\Frames\Frames_PMS\PMS_GEN_CB.prax" Lubricate="0" CMD_OverrideWBShutdown="0" Engine_Local="0" Engine_Ready="61112" ID="DG-1" Cooldown_Time="61097" GovernorFail="0" Engine_Remote="0" Running="61083">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+				<FrameBinding TargetPropertyName="Running" ExportedPropertyName="Running"/>
+				<FrameBinding TargetPropertyName="Cooldown_Time" ExportedPropertyName="Cooldown_Time"/>
+				<FrameBinding TargetPropertyName="Lubricate" ExportedPropertyName="Lubricate"/>
+				<FrameBinding TargetPropertyName="Engine_Remote" ExportedPropertyName="Engine_Remote"/>
+				<FrameBinding TargetPropertyName="Engine_Local" ExportedPropertyName="Engine_Local"/>
+				<FrameBinding TargetPropertyName="Engine_Ready" ExportedPropertyName="Engine_Ready"/>
+				<FrameBinding TargetPropertyName="CMD_OverrideWBShutdown" ExportedPropertyName="CMD_OverrideWBShutdown"/>
+			</Bindings>
+		</Frame>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="695" Y0="610" X1="695" Y1="595"/>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="695" Y0="670" X1="695" Y1="660"/>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="370" Y0="670" X1="370" Y1="660"/>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="370" Y0="610" X1="370" Y1="595"/>
+		<Frame Width="60" Height="60" X="655" Y="605" CTRL_Blocked="False" CB_Sync="63080" CB_Offload="63081" CB_Tripped="63049" CB_Closed="63188" CMD_Auto="63486" CMD_Manual="63489" CMD_Start="63487" CMD_Stop="63490" CMD_Close="63488" CMD_Open="63491" CMD_Reset="63496" CB_Interlock="0" Pre_Alarm="63101" Shutdown="0" ActuatorFail="63258" Short_Circuit="0" Reverse_Power="63264" Path=".\Frames\Frames_PMS\PMS_GEN_CB.prax" Lubricate="0" Engine_Remote="0" Cooldown_Time="61097" Running="61083" Engine_Ready="61112" ID="DG-1" Engine_Local="0" GovernorFail="0" CMD_OverrideWBShutdown="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+				<FrameBinding TargetPropertyName="Running" ExportedPropertyName="Running"/>
+				<FrameBinding TargetPropertyName="Cooldown_Time" ExportedPropertyName="Cooldown_Time"/>
+				<FrameBinding TargetPropertyName="Lubricate" ExportedPropertyName="Lubricate"/>
+				<FrameBinding TargetPropertyName="Engine_Remote" ExportedPropertyName="Engine_Remote"/>
+				<FrameBinding TargetPropertyName="Engine_Local" ExportedPropertyName="Engine_Local"/>
+				<FrameBinding TargetPropertyName="Engine_Ready" ExportedPropertyName="Engine_Ready"/>
+				<FrameBinding TargetPropertyName="CMD_OverrideWBShutdown" ExportedPropertyName="CMD_OverrideWBShutdown"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="60" Height="60" X="1355" Y="605" CTRL_Blocked="False" CB_Sync="62080" CB_Offload="62081" CB_Tripped="62049" CB_Closed="62188" CMD_Auto="62486" CMD_Manual="62489" CMD_Start="62487" CMD_Stop="62490" CMD_Close="62488" CMD_Open="62491" CMD_Reset="62496" CB_Interlock="0" Pre_Alarm="62101" Shutdown="0" ActuatorFail="62258" Short_Circuit="0" Reverse_Power="62264" Path=".\Frames\Frames_PMS\PMS_GEN_CB.prax" GovernorFail="0" Running="61083" Engine_Remote="0" Engine_Local="0" CMD_OverrideWBShutdown="0" Cooldown_Time="61097" Engine_Ready="61112" ID="DG-1" Lubricate="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+				<FrameBinding TargetPropertyName="Running" ExportedPropertyName="Running"/>
+				<FrameBinding TargetPropertyName="Cooldown_Time" ExportedPropertyName="Cooldown_Time"/>
+				<FrameBinding TargetPropertyName="Lubricate" ExportedPropertyName="Lubricate"/>
+				<FrameBinding TargetPropertyName="Engine_Remote" ExportedPropertyName="Engine_Remote"/>
+				<FrameBinding TargetPropertyName="Engine_Local" ExportedPropertyName="Engine_Local"/>
+				<FrameBinding TargetPropertyName="Engine_Ready" ExportedPropertyName="Engine_Ready"/>
+				<FrameBinding TargetPropertyName="CMD_OverrideWBShutdown" ExportedPropertyName="CMD_OverrideWBShutdown"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="240" Height="390" X="1180" Y="670" RevertContainerRotation="True" RevertContainerScaling="True" Gen_KWp="62071" Gen_KVARp="62072" Engine_Ready="62112" Running="62083" Manual="62029" Auto="62023" Gen_Volts="62184" Gen_KW="62045" Gen_Hz="62185" Gen_Amps="62199" Gen_KVAR="62047" ID="DG2" Lubricate="62120" Engine_Remote="62114" Cooldown_Time="62097" Starting="62079" Synchronizing="62080" Offloading="62081" Stopping="62084" First_To_Start="62076" First_To_Stop="62088" CB_Closed="62188" Load_SP_KW="62479" Load_SP_KVAr="62478" I_L1="62142" I_L2="62143" I_L3="62144" KW_L1="62150" KW_L2="62151" KW_L3="62152" KVAR_L1="62153" KVAR_L2="62154" KVAR_L3="62155" Alarm_Group_INT="73" Alarm_Group_UINT="73" Path=".\Frames\Frames_PMS\PMS_DG_Main_Window_updated.prax" KeepHorizontal="True" CMD_Auto="62486" Short_Circuit="62267" Engine_Local="0" CMD_Reset="62496" CMD_Close="62488" Reverse_Power="62264" Synchonizing="62080" CMD_Manual="62489" CMD_Stop="62490" ActuatorFail="62258" CB_Tripped="62049" CMD_Open="62491" CMD_Start="62487" Shutdown="62249" Pre_Alarm="62101"/>
+		<Frame Width="240" Height="390" X="1505" Y="670" RevertContainerRotation="True" RevertContainerScaling="True" Gen_KWp="61071" Gen_KVARp="61072" Engine_Ready="61112" Running="61083" Manual="61029" Auto="61023" Gen_Volts="61184" Gen_KW="61045" Gen_Hz="61185" Gen_Amps="61199" Gen_KVAR="61047" ID="DG1" Lubricate="61120" Engine_Remote="61114" Cooldown_Time="61097" Starting="61079" Synchronizing="61080" Offloading="61081" Stopping="61084" First_To_Start="61076" First_To_Stop="61088" CB_Closed="61188" Load_SP_KW="61479" Load_SP_KVAr="61478" I_L1="61142" I_L2="61143" I_L3="61144" KW_L1="61150" KW_L2="61151" KW_L3="61152" KVAR_L1="61153" KVAR_L2="61154" KVAR_L3="61155" Alarm_Group_INT="71" Alarm_Group_UINT="71" Path=".\Frames\Frames_PMS\PMS_DG_Main_Window_updated.prax" KeepHorizontal="True" Pre_Alarm="61101" CMD_Close="61488" CMD_Reset="61496" ActuatorFail="61258" Engine_Local="0" CMD_Start="61487" CMD_Manual="61489" CB_Tripped="61049" Short_Circuit="61267" CMD_Stop="61490" Reverse_Power="61264" CMD_Auto="61486" Synchonizing="61080" Shutdown="61249" CMD_Open="61491"/>
+		<Frame Width="60" Height="60" X="1680" Y="605" CTRL_Blocked="False" CB_Sync="61080" CB_Offload="61081" CB_Tripped="61049" CB_Closed="61188" CMD_Auto="61486" CMD_Manual="61489" CMD_Start="61487" CMD_Stop="61490" CMD_Close="61488" CMD_Open="61491" CMD_Reset="61496" CB_Interlock="0" Pre_Alarm="61101" Shutdown="0" ActuatorFail="61258" Short_Circuit="0" Reverse_Power="61264" Path=".\Frames\Frames_PMS\PMS_GEN_CB.prax" Engine_Remote="0" ID="DG-1" Lubricate="0" Running="61083" GovernorFail="0" Engine_Ready="61112" CMD_OverrideWBShutdown="0" Cooldown_Time="61097" Engine_Local="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+				<FrameBinding TargetPropertyName="Running" ExportedPropertyName="Running"/>
+				<FrameBinding TargetPropertyName="Cooldown_Time" ExportedPropertyName="Cooldown_Time"/>
+				<FrameBinding TargetPropertyName="Lubricate" ExportedPropertyName="Lubricate"/>
+				<FrameBinding TargetPropertyName="Engine_Remote" ExportedPropertyName="Engine_Remote"/>
+				<FrameBinding TargetPropertyName="Engine_Local" ExportedPropertyName="Engine_Local"/>
+				<FrameBinding TargetPropertyName="Engine_Ready" ExportedPropertyName="Engine_Ready"/>
+				<FrameBinding TargetPropertyName="CMD_OverrideWBShutdown" ExportedPropertyName="CMD_OverrideWBShutdown"/>
+			</Bindings>
+		</Frame>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="1395" Y0="670" X1="1395" Y1="660"/>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="1395" Y0="610" X1="1395" Y1="595"/>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="1720" Y0="610" X1="1720" Y1="595"/>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="1720" Y0="670" X1="1720" Y1="660"/>
+	</Children>
+</RootElement>

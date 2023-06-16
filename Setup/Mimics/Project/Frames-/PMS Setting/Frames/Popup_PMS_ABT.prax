@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="75" Height="170">
+	<Children>
+		<Panel Width="75" Height="170">
+			<Children>
+				<Button Width="65" Height="24" X="5" Y="140" Text="Cancel" Font="Segoe UI;16.0;N;N;N">
+					<ClickActions>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="5" Y="5" Text="Auto" Font="Segoe UI;16.0;N;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="486">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="5" Y="30" Text="Manual" Font="Segoe UI;16.0;N;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="489">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="5" Y="85" Text="Close" Font="Segoe UI;16.0;N;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="488">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="5" Y="60" Text="Open" Font="Segoe UI;16.0;N;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="491">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="5" Y="115" Text="Reset" Font="Segoe UI;16.0;N;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="496">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Channel"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

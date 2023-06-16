@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="190" GridSpacing="5">
+	<Children>
+		<Rectangle Width="140" Height="180" X="5" Y="5" BorderWidth="0" FillColor="PageInfoLine" CornerRoundRadius="10"/>
+		<Rectangle Width="130" Height="35" X="10" Y="40" BorderWidth="0" CornerRoundRadius="10"/>
+		<Rectangle Width="130" Height="35" X="10" Y="80" BorderWidth="0" CornerRoundRadius="10"/>
+		<Rectangle Width="130" Height="35" X="10" Y="145" BorderWidth="0" CornerRoundRadius="10"/>
+		<Button Width="130" Height="35" X="10" Y="40" GridSpacing="5" RoundRadius="10" Text="ON" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N">
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CMD_ON1"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0" Value="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CMD_ON2"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="80" GridSpacing="5" RoundRadius="10" Text="OFF" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N">
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CMD_OFF1"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CMD_OFF2"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="145" GridSpacing="5" RoundRadius="10" Text="Cancel" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="130" Height="25" X="10" Y="10" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N" Text="ID">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

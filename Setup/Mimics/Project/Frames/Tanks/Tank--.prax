@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="230" Height="230" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="165" Height="220" X="5" Y="5" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="3"/>
+		<Panel Width="165" Height="220" ClipToBounds="True" BorderWidth="1.5" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="3">
+			<Children>
+				<Rectangle Width="20" Height="180" X="105" Y="20" BorderColor="BackgroundConning" BorderStyle="Sunken" FillColor="BackgroundConning"/>
+				<TextBox Width="105" Height="25" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" LeftRightPadding="5" Font="Praxis;16.0;N;N;N" Text="F.O SERV">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TankID"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="10" Height="15" X="85" Y="185" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="%"/>
+				<TextBox Width="20" Height="10" X="130" Y="15" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" LeftRightPadding="4" Font="Praxis;15.0;N;N;N" Text="100"/>
+				<Line Color="TextInfo" X0="132" Y0="20" X1="128" Y1="20"/>
+				<TextBox Width="20" Height="10" X="130" Y="60" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" LeftRightPadding="4" Font="Praxis;15.0;N;N;N" Text="75"/>
+				<Line Color="TextInfo" X0="132" Y0="65" X1="128" Y1="65"/>
+				<TextBox Width="20" Height="10" X="130" Y="105" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" LeftRightPadding="4" Font="Praxis;15.0;N;N;N" Text="50"/>
+				<Line Color="TextInfo" X0="132" Y0="110" X1="128" Y1="110"/>
+				<TextBox Width="20" Height="10" X="130" Y="145" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" LeftRightPadding="4" Font="Praxis;15.0;N;N;N" Text="25"/>
+				<Line Color="TextInfo" X0="132" Y0="150" X1="128" Y1="150"/>
+				<TextBox Width="20" Height="10" X="135" Y="195" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;15.0;N;N;N" Text="0"/>
+				<Line Color="TextInfo" X0="132" Y0="199" X1="128" Y1="199"/>
+				<TextBox Width="104" Height="25" Y="30" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" LeftRightPadding="5" Font="Praxis;16.0;N;N;N" Text="TANK">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TankID_"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="45" Height="15" X="35" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;24.0;N;N;N" Text="100.0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="NormalColour"/>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Vol_Text"/>
+					</Bindings>
+				</TextBox>
+				<FillBar FlashColor="Foreground" Width="21" Height="180" X="105" Y="20" FillDirection="BottomToTop" LimitType="VeryLowAndLow" FirstLimit="30" SecondLimit="20" LimitMarkerType="Triangle" LimitMarkerSize="5" NormalColor="Barfill01" BorderWidth="1" BorderColor="Transparent" CornerRoundRadius="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+						<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Vol"/>
+						<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="NormalColour"/>
+						<FrameBinding TargetPropertyName="LimitLowColor" ExportedPropertyName="HighColour"/>
+						<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+					</Bindings>
+				</FillBar>
+				<TextBox Width="104" Height="25" Y="55" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" LeftRightPadding="5" Font="Praxis;16.0;N;N;N" Text="TANK">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TankID__"/>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

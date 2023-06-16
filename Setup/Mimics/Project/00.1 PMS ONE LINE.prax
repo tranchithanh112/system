@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<SelectFirstFloatBinding TargetPropertyName="SelectedThemeTest" DefaultValue="0">
+			<Bindings>
+				<DimmingValueBinding TargetPropertyName="DefaultValue"/>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="5" CompareOperator="&lt;">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<VariableBinding TargetPropertyName="SelectedValue0">
+					<Variable>
+						<FloatVariable Name="THEME" IsLocal="False"/>
+					</Variable>
+				</VariableBinding>
+			</Bindings>
+		</SelectFirstFloatBinding>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1080" ShowBackground="False" Highlight_Button_NR="2" Page_Title="PMS SETTING" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame_1920x1080.prax" AutoShow_Page_Title="False"/>
+		<NavFrame Width="1645" Height="925" X="5" Y="80" OriginOffsetX="0" OriginOffsetY="0" NavFrameName="PMS SETTING" ClipToBounds="True">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Height" DefaultValue="1080" ActivateValue="925" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="X" ActivateValue="5" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="Y" ActivateValue="80" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1920" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<VariableBinding TargetPropertyName="NavFrameCurrentAddress">
+					<Variable>
+						<FloatVariable Name="Navframe_Index" IsLocal="False" IsRetain="True"/>
+					</Variable>
+				</VariableBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\00_1 PMS ONE LINE.prax"/>
+			</AddressList>
+		</NavFrame>
+	</Children>
+</RootElement>

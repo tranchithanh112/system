@@ -1,0 +1,112 @@
+--------------------------------------------------------
+         Pakiet CPDev wersja 1.0 - informacje     
+--------------------------------------------------------
+
+Dokument zawiera informacje dotycz¹ce bie¿¹cego
+wydania, które jeszcze nie znalaz³y siê w dokumentacji
+technicznej. Sk³ada siê na to lista zmian oraz opis 
+problemów jakie napotkano podczas testowania niniejszej 
+wersji. W przysz³oœci dokument bêdzie ulega³ modyfika-
+cjom. Wiêcej informacji mo¿na znaleŸæ w podkatalogu 
+'Doc' zainstalowanej aplikacji.
+
+--------------------------------------------------------
+
+CPDev - Informacje o bie¿¹cym wydaniu
+
+Data wydania: 2009.08-03
+Numer wersji: 1.0.2
+Build: 30
+--------------------------------------------------------
+
+Wymagane zainstalowane komponenty:
+
+1. .NET Framework 2.0
+2. VS 2005 C++ Redistributable SP1
+   msvcr80.dll (v.8.0.50727.4053 wydana przez Microsoft
+   2009.07-12 02:35:00)
+3. Adobe Reader 7 / 8 (do otwierania dokumentacji)
+4. Sterownik portu USB/COM do programowania SMC -
+   CDM_2.06.00_WHQL_Certified (wydane przez FTDI 
+   2009.10-22) wersja 2.06.00
+
+--------------------------------------------------------
+
+CPDev - Istniej¹ce problemy.
+
+001. CPDev / CPSim nie uruchamia siê gdy zosta³ zainsta-
+     lowany na dysku sieciowym. Jako docelowe miejsce
+     instalacji nale¿y wybraæ dysk fizyczny.
+
+     Problem spowodowany jest prób¹ odczytu wersji
+     plików binarnych przez Maszynê Wirtualn¹ .NET .
+     Numery wersji nie s¹ osi¹galne z plików po³o¿onych
+     na dyskach sieciowych.
+     
+002. Zamkniêcie aplikacji podczas wywœwietlanego rozwi-
+     niêtego menu 'Wstaw' z edytora pojedynczego koloro-
+     wanego mo¿e powodowaæ zawieszenia jej pracy.
+     
+     W trakcie testów aplikacji zg³aszany by³ wyj¹tek:
+     MDA LoaderLock, którego powodu wyst¹pienia nie mo-
+     ¿na by³o namierzyæ. Nie powinien ujawniæ siê on 
+     w wersji dystrybucyjnej.
+
+
+003. Nastêpuj¹ce problemy pojawiaj¹ siê w przypadku uru-
+     chamiania CPCon, gdy nie ma zarejestrowanych kon-
+     trolek ActiveX nale¿¹cych do VB60: COMDLG32.ocx, 
+     MSCOMCT2.ocx, MSCOMCTL.ocx, MSFLXGRD.ocx, 
+     msstdfmt.dll, MSVBVM60.DLL, TABCTL32.OCX, s¹ to: 
+     1. Component 'xxx' or one of its dependencies is 
+     not correctly registered: a file is missing or in-
+     valid.
+     2. Run-time error '429': ActiveX component can't 
+     create object.
+     
+     Spowodowane jest to przywróceniem stanu rejestru 
+     systemu operacyjnego sprzed instalacji pakietu 
+     CPDev. Aby to naprawiæ mo¿na: 
+     1. Zainstalowaæ ponownie CPDev do tego samego kata-
+     logu.
+     2. Rêcznie zarejestrowaæ w/w komponenty oraz nastê-
+     puj¹cy: STCPD_Edit.ocx a tak¿e uruchomiæ poni¿sze
+     polecenia:
+     a)  MBServer.exe /RegServer
+     b)  CmdNetUtils.exe regasm.exe H "C:\Program Files\&
+       CPDev\CPDev.SADlgForms.dll" /nologo
+
+     gdzie znak & oznacza kontynuowanie linii. Rêczna 
+     rejestracja komponentów ActiveX odbywa siê poleceniem
+     regsvr32 np:
+     c) regsvr32 COMDLG32.OCX
+
+004. W przypadku re-instalacji ze zmienion¹ wersj¹ jêzy-
+     kow¹ nale¿y zaznaczyæ opcjê 'Zresetuj konfiguracjê 
+     poprzedniej wersji'. W przeciwnym razie w konfigura-
+     cji pozostan¹ stare œcie¿ki. Problem ten zostanie
+     rozwi¹zany w przysz³ych wersjach.
+     
+005. CPDev nie dzia³a na systemie Windows Vista x64.
+     Vista x64 nie zezwala na za³adowanie 32-bitowego
+     pliku OCX do aplikacji .NET .
+
+006. CPDev niepoprawnie wspó³pracuje z Adobe Reader 9.x.
+     Objawia siê to wyskakuj¹cym oknem przy zamykaniu 
+     CPDeva z komunikatem 'Pamiêæ nie mo¿e byæ written'.
+     Przyczyn¹ jest niekompatybilnoœæ jednego z modu³ów
+     nale¿¹cych do Adobe Reader z wersjami 7.0 i 8.0.
+
+007. CPSim wymaga zainstalowaia dodatku vcredist_x86 
+     w identycznej wersji jak na komputerze na którym
+     zosta³ skompilowany. Dotyczy to zw³aszcza systemu
+     Windows XP, który sprawdza poprawnoœæ klucza publi-
+     cznego biblioteki vcrt80.dll. Brak tego dodatku, 
+     lub niezgodnoœæ klucza publicznego objawia siê ko-
+     munikatem 'Exception has been thrown by the target 
+     of an invocation'. Vcredist_x86 mo¿e byæ pobrany ze
+     stron Microsoft lub producenta CPDev.
+--------------------------------------------------------
+--------------------------------------------------------
+--------------------------------------------------------
+Koniec dokumentu

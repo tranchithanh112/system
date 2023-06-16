@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="810" Height="460" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button Width="810" Height="460" ClipToBounds="True" Text="" BorderColor="AlarmRed" FillColor="Transparent" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent"/>
+			</Bindings>
+			<Children>
+				<CameraFeed Width="800" Height="450" X="5" Y="5" CameraAddress="192.168.10.211:80" CameraPassword="praxis5255">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CameraAddress" ExportedPropertyName="Camera_IP"/>
+						<FrameBinding TargetPropertyName="MediaProfile" ExportedPropertyName="Stream_Number"/>
+						<FrameBinding TargetPropertyName="CameraUsername" ExportedPropertyName="CAM_username"/>
+						<FrameBinding TargetPropertyName="CameraPassword" ExportedPropertyName="CAM_password"/>
+					</Bindings>
+				</CameraFeed>
+				<TextBox Width="85" Height="25" X="10" Y="10" BorderWidth="0" FillColor="BackgroundShadow" HorzAlignment="Left" Font="Praxis;20.0;N;N;N" Text="CAM - 8">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="CameraName"/>
+						<FrameBinding TargetPropertyName="Width" ExportedPropertyName="TextWidth"/>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<SetVariableValueClickAction>
+					<Variable>
+						<FloatVariable Name="Navframe_Index" IsLocal="False" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<FloatVariableSetter Value="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="NavFrameNumber"/>
+							</Bindings>
+						</FloatVariableSetter>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+				<SetVariableValueClickAction>
+					<Variable>
+						<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<StringVariableSetter Value="CAMERA 1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Set_Header"/>
+							</Bindings>
+						</StringVariableSetter>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

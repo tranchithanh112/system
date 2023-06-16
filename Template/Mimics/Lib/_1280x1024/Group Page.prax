@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="1024" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+		<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1200" DefaultValue="1080">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+					<Bindings>
+						<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+		</SelectFirstCoordBinding>
+	</Bindings>
+	<Children>
+		<GroupList Width="1270" Height="910" X="5" Y="50" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="StatusInactive" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderWidth="0" BorderColor="Transparent" ShowReportType="False"/>
+		<Frame LockOverlayVisible="False" Width="1280" Height="1024" ShowBackground="False" Highlight_Button_NR="0" Page_Title="ALARM GROUP OVERVIEW" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame 1280x1024.prax"/>
+	</Children>
+</RootElement>

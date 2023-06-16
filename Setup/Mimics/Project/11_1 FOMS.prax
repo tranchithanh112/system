@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" GridSpacing="2" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Children>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Width="470" Height="25" X="243.5" Y="705" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;52.0;N;N;N" Text="BUNKERING"/>
+		<TextBox Width="470" Height="39" X="243.5" Y="765" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;90.0;N;N;N" Text="9999 L">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1845">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" L"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="200" Height="25" X="1114" Y="705" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;52.0;N;N;N" Text="NO.1 &amp; NO.4 G/E"/>
+		<TextBox Width="200" Height="39" X="1114" Y="765" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;90.0;N;N;N" Text="9999">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1846">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" L"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="200" Height="39" X="1616" Y="765" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;90.0;N;N;N" Text="9999">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1847">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" L"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="1914" Height="65" X="2" Y="895" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;90.0;N;N;N" Text="TOTAL FO CONSUM 9999999 L">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1848">
+					<ConvertParams>
+						<FloatToStringConvertParams Prefix="TOTAL FO USED " Suffix=" L"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Slider Width="485.257" Height="30" X="-185.065" Y="417.966" Rotation="270" Value="1" Step="1" ShowSteps="True" RoundCap="True" ThumbColor="TextActive" ActiveTrackColor="TextActive">
+			<DraggingActions>
+				<SetChannelValueSDA ChannelNumber="1042"/>
+			</DraggingActions>
+		</Slider>
+		<Button Width="50" Height="40" X="15" Y="85" ClipToBounds="True" Text="+" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<ZoomTrendingClickAction TrendZoomAction="Zoom Right In"/>
+			</ClickActions>
+		</Button>
+		<Button Width="50" Height="40" X="15" Y="130" ClipToBounds="True" Text="-" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<ZoomTrendingClickAction TrendZoomAction="Zoom Right Out"/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="20" X="10" Y="215" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Days Shown" Rotation="270"/>
+		<TextBox Width="20" Height="25" X="10" Y="185" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="12" Rotation="270">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1042">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Slider Width="485.257" Height="30" X="788" Y="414.966" Rotation="270" Value="1" Step="1" ShowSteps="True" RoundCap="True" ThumbColor="TextActive" ActiveTrackColor="TextActive">
+			<DraggingActions>
+				<SetChannelValueSDA ChannelNumber="1047"/>
+			</DraggingActions>
+		</Slider>
+		<Button Width="50" Height="40" X="988.06" Y="82" ClipToBounds="True" Text="+" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<ZoomTrendingClickAction TrendZoomAction="Zoom Right In"/>
+			</ClickActions>
+		</Button>
+		<Button Width="50" Height="40" X="988.06" Y="127" ClipToBounds="True" Text="-" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<ZoomTrendingClickAction TrendZoomAction="Zoom Right Out"/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="20" X="983.065" Y="212" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Days Shown" Rotation="270"/>
+		<TextBox Width="20" Height="25" X="983.065" Y="182" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="12" Rotation="270">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1047">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="892" Y="670" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="L/h">
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="101201"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1864" Y="670" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="L/h">
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100228"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="54" Height="20" X="1404" Y="110" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Green" Font="Praxis;14.0;N;N;N" Text="1500">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1349">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" L/h"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100229"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="54" Height="20" X="1404" Y="94" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="AlarmRed" Font="Praxis;14.0;N;N;N" Text="1500">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1249">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" L/h"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100229"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="54" Height="20" X="1404" Y="126" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Blue" Font="Praxis;14.0;N;N;N" Text="1500">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1449">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" L/h"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100229"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="200" Height="25" X="1616" Y="704" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;52.0;N;N;N" Text="NO.2 &amp; NO.3 G/E"/>
+		<Trending Width="807" Height="600" X="80" Y="88" BorderColor="ColorTrendBorderLine" SmoothScrolling="True">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="DurationStored" InRangeBegin="0" InRangeEnd="1" OutRangeBegin="0" OutRangeEnd="60">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="1041"/>
+					</Bindings>
+				</RangeFormulaBinding>
+				<ChannelValueBinding TargetPropertyName="DurationShown" ChannelNumber="1040"/>
+			</Bindings>
+			<Runs>
+				<TrendingRun Title="BUNKERING" LineColor="Green" LineWidth="1.5" FillColor="Background" BottomValue="0" TopValue="80000" ChannelNumber="1840" AutoScale="True">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="BottomValue" ChannelNumber="101201"/>
+						<ChannelValueBinding TargetPropertyName="TopValue" ChannelNumber="101202"/>
+					</Bindings>
+				</TrendingRun>
+			</Runs>
+		</Trending>
+		<TextBox Width="45" Height="20" X="892" Y="102" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="101202"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="314" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.6">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="350" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.533">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="386" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.466">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="422" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.4">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="458" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.333">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="494" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.266">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="530" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.2">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="568" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.133">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="602" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.066">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="892" Y="636" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="101201"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="276" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.666">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="242" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.733">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="206" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.8">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="170" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.866">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="894" Y="136" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.933">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101202"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1864" Y="102" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="101206"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="314" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.6">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="350" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.533">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="386" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.466">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="422" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.4">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="458" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.333">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="494" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.266">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="530" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.2">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="568" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.133">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="602" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.066">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1864" Y="636" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="101205"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="276" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.666">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="242" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.733">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="206" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.8">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="170" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.866">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="1866" Y="136" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="700">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.933">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="101206"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<Trending Width="807" Height="600" X="1052" Y="88" BorderColor="ColorTrendBorderLine" SmoothScrolling="True">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown" ChannelNumber="1045"/>
+				<RangeFormulaBinding TargetPropertyName="DurationStored" InRangeBegin="0" InRangeEnd="1" OutRangeBegin="0" OutRangeEnd="60">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="1046"/>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+			<Runs>
+				<TrendingRun Title="NO.1&amp;NO.4 DG" LineColor="Green" LineWidth="1.5" BottomValue="0" TopValue="80000" ChannelNumber="1841" AutoScale="True">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="TopValue" ChannelNumber="101206"/>
+						<ChannelValueBinding TargetPropertyName="BottomValue" ChannelNumber="101205"/>
+					</Bindings>
+				</TrendingRun>
+				<TrendingRun Title="NO.2&amp;NO.3 DG" LineColor="AlarmRed" LineWidth="1.5" ChannelNumber="1842">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="TopValue" ChannelNumber="101206"/>
+						<ChannelValueBinding TargetPropertyName="BottomValue" ChannelNumber="101205"/>
+					</Bindings>
+				</TrendingRun>
+			</Runs>
+		</Trending>
+		<TextBox Width="54" Height="20" X="1394" Y="118" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="AlarmRed" Font="Praxis;14.0;N;N;N" Text="1500">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1842">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" L/h"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100229"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="54" Height="20" X="1394" Y="98" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Green" Font="Praxis;14.0;N;N;N" Text="1500">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1841">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" L/h"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100229"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="54" Height="20" X="398" Y="98" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Green" Font="Praxis;14.0;N;N;N" Text="1500">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1840">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" L/h"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100229"/>
+			</TextEnteredActions>
+		</TextBox>
+	</Children>
+</RootElement>

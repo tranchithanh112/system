@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="45" Height="40">
+	<Children>
+		<Button Width="45" Height="40" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<Ellipse CenterX="23" CenterY="21" RadiusX="10" RadiusY="10">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="Orange" DefaultValue="StatusInactive">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Inhibit_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Ellipse>
+			</Children>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" SetValueType="Toggle Digital">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Inhibit_CH"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

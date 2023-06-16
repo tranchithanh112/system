@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="400" Height="80" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="400" Height="80" BorderColor="White" FillColor="GaugeBackground" CornerRoundRadius="10"/>
+		<FillBar Width="390" Height="20" X="5" Y="50" LimitType="None" LineWidth="1" BorderColor="White">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bus_Load"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="RangeEnd">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bus_Capacity"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Height="30" X="150" Y="45" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;N;N;N" Text="4000 kW">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bus_Load"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kW"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Height="25" X="5" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="White" Font="Praxis;18.0;N;N;N" Text="BUS">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bus_ID"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="165" Height="30" X="225" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;N;N;N" Text="Capacity 4000 kW">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bus_Capacity"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Prefix="Capacity " Suffix=" kW"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="30" X="255" Y="45" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;N;N;N" Text="100 %">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" InRangeBegin="0" OutRangeBegin="0">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bus_Load"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="InRangeEnd">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bus_Capacity"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" %"/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

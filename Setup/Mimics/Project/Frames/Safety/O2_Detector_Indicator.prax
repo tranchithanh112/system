@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="20" Height="20" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button Width="25" Height="25" X="-3" Y="-2" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction XOffset="354.5" YOffset="-1">
+					<Frame>
+						<FloatingFrame Width="680" Height="75" X="24" Y="-29" AL_ChannelNr="0" Path=".\Alarm_Indicator_Popup.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="AL_ChannelNr" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="30" Height="30" X="-5" Y="-5" BorderWidth="0" FillColor="Orange" CornerRoundRadius="5" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="O2">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextInfoHeader" SelectedValue1="TextInfoHeader" DefaultValue="Black">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Orange" DefaultValue="Green">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

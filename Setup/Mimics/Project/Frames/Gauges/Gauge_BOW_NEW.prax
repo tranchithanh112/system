@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="420" Height="135" GridSpacing="1" ClipToBounds="True" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="380" Height="30" X="20" Y="65" BorderColor="BackgroundConning" BorderStyle="Sunken" FillColor="BackgroundConning"/>
+		<TextBox Width="70" Height="25" X="175" Y="5" BorderWidth="0" BorderColor="ColorTrendBackGround" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextInfo" LeftRightPadding="5" Font="Praxis;18.0;N;N;N" Text="BOW THRUSTER FWD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="170" Y="100" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;20.0;N;N;N" Text="230 Rpm">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bow_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" Rpm"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Line Color="TextActive" X0="230" Y0="67" X1="230" Y1="72"/>
+		<Line Color="TextActive" X0="250" Y0="67" X1="250" Y1="72"/>
+		<Line Width="1.5" Color="TextActive" X0="270" Y0="67" X1="270" Y1="74"/>
+		<TextBox Width="40" Height="25" X="190" Y="40" BorderWidth="0" BorderColor="ColorTrendBackGround" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="5" Font="Praxis;17.0;N;N;N" Text="0"/>
+		<Line Width="1.5" Color="TextActive" X0="330" Y0="67" X1="330" Y1="74"/>
+		<Line Color="TextActive" X0="310" Y0="67" X1="310" Y1="72"/>
+		<Line Color="TextActive" X0="290" Y0="67" X1="290" Y1="72"/>
+		<TextBox Width="40" Height="25" X="250" Y="40" BorderWidth="0" BorderColor="ColorTrendBackGround" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="5" Font="Praxis;17.0;N;N;N" Text="200"/>
+		<TextBox Width="40" Height="25" X="310" Y="40" BorderWidth="0" BorderColor="ColorTrendBackGround" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="5" Font="Praxis;17.0;N;N;N" Text="400"/>
+		<Line Width="1.5" Color="TextActive" X0="390" Y0="67" X1="390" Y1="74"/>
+		<Line Color="TextActive" X0="370" Y0="67" X1="370" Y1="72"/>
+		<Line Color="TextActive" X0="350" Y0="67" X1="350" Y1="72"/>
+		<TextBox Width="40" Height="25" X="370" Y="40" BorderWidth="0" BorderColor="ColorTrendBackGround" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="5" Font="Praxis;17.0;N;N;N" Text="600"/>
+		<TextBox Width="40" Height="25" X="10" Y="40" BorderWidth="0" BorderColor="ColorTrendBackGround" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="5" Font="Praxis;17.0;N;N;N" Text="-600"/>
+		<TextBox Width="40" Height="25" X="70" Y="40" BorderWidth="0" BorderColor="ColorTrendBackGround" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="5" Font="Praxis;17.0;N;N;N" Text="-400"/>
+		<TextBox Width="40" Height="25" X="125" Y="40" BorderWidth="0" BorderColor="ColorTrendBackGround" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="5" Font="Praxis;17.0;N;N;N" Text="-200"/>
+		<Line Color="TextActive" X0="170" Y0="67" X1="170" Y1="72"/>
+		<Line Width="1.5" Color="TextActive" X0="150" Y0="67" X1="150" Y1="74"/>
+		<Line Width="1.5" Color="TextActive" X0="90" Y0="67" X1="90" Y1="74"/>
+		<Line Color="TextActive" X0="110" Y0="67" X1="110" Y1="72"/>
+		<Line Color="TextActive" X0="130" Y0="67" X1="130" Y1="72"/>
+		<Line Width="1.5" Color="TextActive" X0="30" Y0="67" X1="30" Y1="74"/>
+		<Line Color="TextActive" X0="50" Y0="67" X1="50" Y1="72"/>
+		<Line Color="TextActive" X0="70" Y0="67" X1="70" Y1="72"/>
+		<Line Color="TextActive" X0="190" Y0="67" X1="190" Y1="72"/>
+		<Rectangle Width="380" Height="30" X="20" Y="65" BorderColor="BackgroundConning" BorderStyle="Sunken" FillColor="Transparent"/>
+		<FillBar Width="380" Height="20" X="20" Y="75" RangeBegin="-600" RangeEnd="600" LimitType="None" LimitMarkerType="None" UseBeginValue="True" Value="230" NormalColor="Barfill01" BorderWidth="1" BorderColor="Transparent" CornerRoundRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+			</Bindings>
+		</FillBar>
+		<Line Width="1.5" Color="AlarmRed" X0="210" Y0="65" X1="210" Y1="95"/>
+	</Children>
+</RootElement>

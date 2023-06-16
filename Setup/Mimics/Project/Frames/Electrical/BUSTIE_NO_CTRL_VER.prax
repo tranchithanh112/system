@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="115" Height="80" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="OutlineOnly" FlashColor="NoAlarmGreen" Width="60" Height="60" X="5" Y="10" BorderWidth="2" BorderColor="White" FillPatternColor="PageInfoLine">
+			<Bindings>
+				<SelectFirstFlashStateBinding TargetPropertyName="FlashState">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Sync"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Offload"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstFlashStateBinding>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="White">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Tripped"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstColorBinding TargetPropertyName="FlashColor" SelectedValue0="NoAlarmGreen" SelectedValue1="White" DefaultValue="White">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Sync"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Offload"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="10" Height="50" X="40" Y="15" BorderWidth="0" FillColor="Green">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="8" Height="36" X="15" Y="22" BorderColor="White" FillColor="Transparent" FillPatternColor="White">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="8" Height="8" X="41" Y="57" BorderColor="White"/>
+		<Rectangle Width="8" Height="8" X="41" Y="15" BorderColor="White"/>
+		<Rectangle Width="8" Height="36" X="41" Y="22" BorderColor="White" FillColor="NoAlarmGreen">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+		<Line Width="2" Color="White" X0="45" Y0="15" X1="45" Y1="12"/>
+		<Line Width="2" Color="White" X0="45" Y0="68" X1="45" Y1="65"/>
+		<TextBox Visible="False" Width="80" Height="20" X="-6" Y="31" BorderColor="White" TextColor="White" Font="Praxis;14.0;N;N;N" Text="INTERLOCK">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Interlock"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="49" Height="15" X="65" Y="63" BorderWidth="0" BorderColor="White" TextColor="White" Font="Praxis;16.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

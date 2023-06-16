@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="1024" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<TextBox Width="175" Height="30" X="745" Y="75" BorderWidth="0" FillColor="AlarmRed" TextColor="AlwaysWhite" Font="Praxis;22.0;B;N;N" Text="99999 Alarm(s)">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<UInt32ToStringConvertParams Suffix=" Alarm(s)"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FillColor">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<AlarmList Width="1270" Height="910" X="5" Y="50" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderColor="Transparent" FileName=".\Frames\Menus\AlarmContextMenu.prax" ShowTag="False" ShowDate="True" ShowTime="True" ShowReportType="True" ShowValue="True" ShowUnits="True" ShowLimits="True" ShowDT="True">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<Frame LockOverlayVisible="False" Width="1280" Height="1024" ShowBackground="False" Highlight_Button_NR="23" Page_Title="ALARMS - CURRENT STATUS" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame 1280x1024.prax"/>
+	</Children>
+</RootElement>

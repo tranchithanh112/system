@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="60" Height="60" GridSpacing="5">
+	<Children>
+		<Polyline ClosedOutline="True" FillColor="ButtonFill">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Alarm_Channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<SelectFirstColorBinding TargetPropertyName="LineColor" ConditionValue0="True" SelectedValue0="Green" ConditionValue1="True" DefaultValue="Neutral">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Open_Channel"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Close_Channel"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="40;0"/>
+				<Point Coord="0;0"/>
+				<Point Coord="20;30"/>
+				<Point Coord="40;60"/>
+				<Point Coord="0;60"/>
+			</Points>
+		</Polyline>
+		<Ellipse CenterX="20" CenterY="30" RadiusX="10" RadiusY="10" ArcBegin="90" ArcEnd="450" FillColor="ButtonFill" LightingStyle="Radial">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Alarm_Channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" ConditionValue0="True" SelectedValue0="Green" ConditionValue1="True" DefaultValue="Neutral">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Open_Channel"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Close_Channel"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+		<Line X0="30" Y0="30" X1="50" Y1="30"/>
+		<Line X0="50" Y0="35" X1="45" Y1="25"/>
+		<Line X0="45" Y0="25" X1="40" Y1="35"/>
+		<Line X0="40" Y0="35" X1="35" Y1="25"/>
+		<Line X0="35" Y0="25" X1="30" Y1="35"/>
+		<Rectangle Width="10" Height="30" X="50" Y="15" FillColor="ButtonFill"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="270" Height="180" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="270" Height="180" BorderColor="InfoTextGrey" FillColor="Black" CornerRoundRadius="5"/>
+		<Rectangle Width="246.5" Height="145" X="10" Y="10" BorderWidth="3" BorderColor="InfoTextGrey" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="NoAlarmGreen" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="active_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="15" Height="15" X="80" Y="160" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="2"/>
+		<Rectangle Width="16" Height="16" X="175" Y="160" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="2"/>
+		<TextBox Width="120" Height="40" X="75" Y="46" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;36.0;B;N;N" Text="SERVER_1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="PC_Name"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="40" X="75" Y="85" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;20.0;N;N;N" Text="ACTIVE">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="active_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

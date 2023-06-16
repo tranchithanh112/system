@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="445" Height="45" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Slider Width="295" Height="25" X="25" Y="10" Value="100" Step="1" ThumbSize="25" ThumbColor="TextActive" ActiveTrackColor="TextActive">
+			<Bindings>
+				<ChannelRangeLowBinding TargetPropertyName="MinValue">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Test_CH"/>
+					</Bindings>
+				</ChannelRangeLowBinding>
+				<ChannelRangeHighBinding TargetPropertyName="MaxValue">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Test_CH"/>
+					</Bindings>
+				</ChannelRangeHighBinding>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Test_CH"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+			<DraggingActions>
+				<SetChannelValueSDA ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Test_CH"/>
+					</Bindings>
+				</SetChannelValueSDA>
+			</DraggingActions>
+		</Slider>
+		<TextBox Width="110" Height="45" X="335" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;18.0;B;N;N" Text="9999.99">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Test_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Test_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Library Name="PAL1131G.Objects.Praxis" Wrapper="PAL1131G.Objects.Praxis.Managed.dll" Identifier="0x0100" Version="1">
+  <Object Name="Slider" FunctionName="DrawSlider" Width="220" Height="50" Identifier="0x02" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="0" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="100" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="50" Description="Value between minimum and maximum" />
+        <Parameter Variable="alignment" Name="Alignment" Type="int" Default="0" Description="Left to right (0), right to left (1), bottom to top (2), top to bottom (3)" />
+        <Parameter Variable="indicatorsNumber" Name="Indicators Number" Type="int" Default="5" Description="" />
+        <Parameter Variable="image" Name="Image" Type="image" Default="" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Pie Graph" FunctionName="DrawPieGraph" Width="200" Height="100" Identifier="0x08" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="-100" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="100" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="0" Description="Value between minimum and maximum" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Variable="deadbandColor" Name="Deadband Color" Type="color" Default="215" Description="Deadband color" />
+        <Parameter Variable="deadbandRange" Name="Deadband Bar Range" Type="range" Default="-100;-95" Description="Deadband bar range" />
+        <Parameter Variable="negativeColor" Name="Negative Bar Color" Type="color" Default="186" Description="Negative bar color" />
+        <Parameter Variable="negativeRange" Name="Negative Bar Range" Type="range" Default="-95;0" Description="Negative bar range" />
+        <Parameter Variable="positiveColor" Name="Positive Bar Color" Type="color" Default="66" Description="Positive bar color" />
+        <Parameter Variable="positiveRange" Name="Positive Bar Range" Type="range" Default="0;100" Description="Positive bar range" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="Background color" />
+        <Parameter Variable="pieColor" Name="Pie Background Color" Type="color" Default="171" Description="Pie background color" />
+        <Parameter Variable="innerRadius" Name="Inner Radius" Type="int" Default="20" Description="Inner radius (in pixels)" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Value Scaled Pie Graph" FunctionName="DrawValueScaledPieGraph" Width="260" Height="150" Identifier="0x09" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="-100" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="100" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="50" Description="Value between minimum and maximum" />
+      </Group>
+      <Group Name="Scale">
+        <Parameter Variable="scaleRange" Name="Valuescale Range" Type="range" Default="-100;100" Description="" />
+        <Parameter Variable="indicatorsNumber" Name="Indicators Number" Type="int" Default="10" Description="" />
+                <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-10" Description="" />
+        <Parameter Variable="fontColor" Name="Font Color" Type="color" Default="215" Description="" />
+      </Group>
+      <Group Name="Footer">
+        <Parameter Variable="footerLeftText" Name="Footer Left Text" Type="text" Default="Left" Description="" />
+        <Parameter Variable="footerLeftColor" Name="Footer Left Font Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="footerLeftBackground" Name="Footer Left Background Color" Type="color" Default="186" Description="" />
+        <Parameter Variable="footerRightText" Name="Footer Right Text" Type="text" Default="Right" Description="" />
+        <Parameter Variable="footerRightColor" Name="Footer Right Font Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="footerRightBackground" Name="Footer Right Background Color" Type="color" Default="96" Description="" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Variable="deadbandColor" Name="Deadband Color" Type="color" Default="215" Description="Deadband color" />
+        <Parameter Variable="deadbandRange" Name="Deadband Bar Range" Type="range" Default="-100;-95" Description="Deadband bar range" />
+        <Parameter Variable="negativeColor" Name="Negative Bar Color" Type="color" Default="186" Description="Negative bar color" />
+        <Parameter Variable="negativeRange" Name="Negative Bar Range" Type="range" Default="-95;0" Description="Negative bar range" />
+        <Parameter Variable="positiveColor" Name="Positive Bar Color" Type="color" Default="66" Description="Positive bar color" />
+        <Parameter Variable="positiveRange" Name="Positive Bar Range" Type="range" Default="0;100" Description="Positive bar range" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="Background color" />
+        <Parameter Variable="pieColor" Name="Pie Background Color" Type="color" Default="171" Description="Pie background color" />
+        <Parameter Variable="innerRadius" Name="Inner Radius" Type="int" Default="20" Description="Inner radius (in pixels)" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Dial Graph" FunctionName="DrawDialGraph" Width="200" Height="200" Identifier="0x0A" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="image" Name="Image" Type="image" Default="" Description="Image" />
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="-25" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="25" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="0" Description="Value between minimum and maximum" />
+        <Parameter Variable="indicatorColor" Name="Indicator Color" Type="color" Default="215" Description="Indicator color" />
+        <Parameter Variable="indicatorCenterWidth" Name="Indicator Center Width" Type="int" Default="5" Description="" />
+        <Parameter Variable="indicatorEndWidth" Name="Indicator End Width" Type="int" Default="1" Description="" />
+        <Parameter Variable="indicatorSize" Name="Indicator Length" Type="int" Default="95" Description="Indicator Lenght in percentage" />
+        <Parameter Variable="degreeMin" Name="Min degree" Type="int" Default="135" Description="Min degree top is 0 (Left)" />
+        <Parameter Variable="degreeMax" Name="Max degree" Type="int" Default="135" Description="Max degree top is 0 (Right)" />
+        <Parameter Variable="coordinates" Name="Coordinates" Type="pointer" Hidden="true" />
+                <Parameter Variable="redrawDisplay" Name="Redraw display" Type="bool" Default="true" Hidden="true" />
+              </Group>
+              <Group Name="Set Point">
+                <Parameter Variable="sp_enable" Name="Enable Setpoint" Type="bool" Default="false" Description="Enables setpoint indicator" />
+                <Parameter Variable="sp_currentValue" Name="Setpoint Value" Type="float" Default="0" Description="" />
+                <Parameter Variable="sp_Color" Name="Setpoint Color" Type="color" Default="29" Description="Setpoint color" />
+                <Parameter Variable="sp_Size" Name="Setpoint Size" Type="int" Default="10" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Multiple Status" FunctionName="DrawMultipleStatus" Width="100" Height="100" Identifier="0x0B" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="currentState" Name="Current state" Type="int" Default="0" Description="Current state" />
+                <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="1" Description="" />
+                <Parameter Variable="flash" Name="Manual Flash" Type="bool" Default="False" Description="Invert Back/Foreground colors for current state." />
+              </Group>
+              <Group Name="States">
+                <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor" Name="Foreground Color" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade" Name="Shade" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text" Name="Text" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize" Name="Font Size" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor" Name="Text Color" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image" Name="Image 0" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText" Name="Variable Text" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor1" Name="Background Color 1" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor1" Name="Foreground Color 1" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade1" Name="Shade 1" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text1" Name="Text 1" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize1" Name="Font Size 1" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor1" Name="Text Color 1" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image1" Name="Image 1" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText1" Name="Variable Text 1" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor2" Name="Background Color 2" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor2" Name="Foreground Color 2" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade2" Name="Shade 2" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text2" Name="Text 2" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize2" Name="Font Size 2" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor2" Name="Text Color 2" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image2" Name="Image 2" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText2" Name="Variable Text 2" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor3" Name="Background Color 3" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor3" Name="Foreground Color 3" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade3" Name="Shade 3" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text3" Name="Text 3" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize3" Name="Font Size 3" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor3" Name="Text Color 3" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image3" Name="Image 3" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText3" Name="Variable Text 3" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor4" Name="Background Color 4" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor4" Name="Foreground Color 4" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade4" Name="Shade 4" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text4" Name="Text 4" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize4" Name="Font Size 4" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor4" Name="Text Color 4" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image4" Name="Image 4" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText4" Name="Variable Text 4" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor5" Name="Background Color 5" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor5" Name="Foreground Color 5" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade5" Name="Shade 5" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text5" Name="Text 5" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize5" Name="Font Size 5" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor5" Name="Text Color 5" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image5" Name="Image 5" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText5" Name="Variable Text 5" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor6" Name="Background Color 6" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor6" Name="Foreground Color 6" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade6" Name="Shade 6" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text6" Name="Text 6" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize6" Name="Font Size 6" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor6" Name="Text Color 6" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image6" Name="Image 6" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText6" Name="Variable Text 6" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor7" Name="Background Color 7" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor7" Name="Foreground Color 7" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade7" Name="Shade 7" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text7" Name="Text 7" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize7" Name="Font Size 7" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor7" Name="Text Color 7" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image7" Name="Image 7" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText7" Name="Variable Text 7" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor8" Name="Background Color 8" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor8" Name="Foreground Color 8" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade8" Name="Shade 8" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text8" Name="Text 8" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize8" Name="Font Size 8" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor8" Name="Text Color 8" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image8" Name="Image 8" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText8" Name="Variable Text 8" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor9" Name="Background Color 9" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor9" Name="Foreground Color 9" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade9" Name="Shade 9" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text9" Name="Text 9" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize9" Name="Font Size 9" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor9" Name="Text Color 9" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image9" Name="Image 9" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText9" Name="Variable Text 9" Type="text" Default="0" Description="Global Variable Name" />
+                <Parameter Variable="backgroundColor10" Name="Background Color 10" Type="color" Default="0" Description="" />
+                <Parameter Variable="foregroundColor10" Name="Foreground Color 10" Type="color" Default="215" Description="" />
+                <Parameter Variable="shade10" Name="Shade 10" Type="bool" Default="False" Description="" />
+                <Parameter Variable="text10" Name="Text 10" Type="text" Default="..." Description="Displayed text" />
+                <Parameter Variable="fontSize10" Name="Font Size 10" Type="font" Default="Arial-10" Description="Font size" />
+                <Parameter Variable="textColor10" Name="Text Color 10" Type="color" Default="215" Description="Color of text" />
+                <Parameter Variable="image10" Name="Image 10" Type="image" Default="" Description="" />
+                <Parameter Variable="variableText10" Name="Variable Text 10" Type="text" Default="0" Description="Global Variable Name" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Pie Tracer" FunctionName="DrawPieTracer" Width="100" Height="50" Identifier="0x0C" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="0" Description="Minimum range in units, default 0" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="100" Description="Maximum range in units, default 100" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="50" Description="Value between Minimum and Maximum, default 0" />
+        <Parameter Variable="minCorner" Name="Minimum Corner" Type="float" Default="-135" Description="Minimum angle" />
+        <Parameter Variable="maxCorner" Name="Maximum Corner" Type="float" Default="-45" Description="Maximum angle" />
+        <Parameter Variable="tracerColor" Name="Tracer Color" Type="color" Default="215" Description="Tracer Color" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="Background Color" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="List Box" FunctionName="DrawListBox" Width="300" Height="300" Identifier="0x0D" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="rows" Name="Rows" Description="List Box Rows">
+          <Type Name="PAL1131G.Objects.Praxis.Managed.CPListBoxRow" IsArray="True">
+            <Item Field="Description" Name="Description" Type="text" Description="Short description for value" />
+            <Item Field="Value" Name="Value" Type="text" Description="Actual value" />
+            <Item Field="Unit" Name="Unit" Type="text" Description="Unit" />
+            <Item Field="Status" Name="Status" Type="text" Description="Status" />
+            <Item Field="ColorType" Name="Color Type" Type="int" Default="0" Description="The color type: 0 (normal), 1 (status), 2 (alarm), 3 (flash), 4 (flash normal)" />
+            <Item Field="ReportType" Name="Report Type" Type="int" Default="0" Description="The report type: 0 (status), 1 (alarm), 2 (value)" />
+          </Type>
+        </Parameter>
+                <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-10" Description="" />
+        <Parameter Variable="linesOnScreenNumber" Name="Number of lines on screen" Type="int" Default="10" Description="Number of lines on screen (0-20)" />
+        <Parameter Variable="selectedRowIndex" Name="Index of selected row" Type="int" Default="0" Description="Index of selected row (-1 means no selection)" />
+        <Parameter Variable="startRowIndex" Name="Index of the first row on the screen" Type="int" Default="0" Description="Index of the first row on the screen" />
+        <Parameter Variable="type" Name="Listbox Type" Type="int" Default="0" Description="The object type: 0 (normal), 1 (Parameter), 2 (Channel view), 3 (Alarm view)" />
+        <Parameter Variable="subtype" Name="Color Type" Type="int" Default="0" Description="The object subtype" />
+        <Parameter Variable="ShowChannelNr" Name="Show Channel Number in First Column" Type="bool" Default="false" Description="First Column in List" Hidden="true"/>
+      </Group>
+      <Group Name="Columns">
+        <Parameter Variable="columnsNumber" Name="Number of columns" Type="int" Default="3" Description="Number of columns (1-4)" />
+        <Parameter Variable="columnFirstWidth" Name="Width of the first column" Type="int" Default="100" Description="Width of the first column" />
+        <Parameter Variable="columnSecondWidth" Name="Width of the second column" Type="int" Default="100" Description="Width of the second column" />
+        <Parameter Variable="columnThirdWidth" Name="Width of the third column" Type="int" Default="100" Description="Width of the third column" />
+        <Parameter Variable="columnFourthWidth" Name="Width of the fourth column" Type="int" Default="100" Description="Width of the fourth column" />
+      </Group>
+      <Group Name="Colors">
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="215" Description="Text color" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="171" Description="Background color" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="Border color" />
+        <Parameter Variable="highColor" Name="High Color" Type="color" Default="186" Description="High color" />
+        <Parameter Variable="alarmColor" Name="Alarm Color" Type="color" Default="210" Description="Alarm color" />
+        <Parameter Variable="selectedRowTextColor" Name="Selected Row Text Color" Type="color" Default="215" Description="Selected row text color" />
+        <Parameter Variable="selectedRowBackgroundColor" Name="Selected Row Background Color" Type="color" Default="164" Description="Selected row background color" />
+      </Group>
+      <Group Name="Header">
+        <Parameter Variable="headerVisibility" Name="Header Visibility" Type="bool" Default="True" Description="Header visibility" />
+        <Parameter Variable="headerText" Name="Header Text" Type="text" Default="Header" Description="Header text" />
+        <Parameter Variable="headerColor" Name="Header Color" Type="color" Default="215" Description="Header color" />
+        <Parameter Variable="headerBackgroundColor" Name="Header Background Color" Type="color" Default="0" Description="Header background color" />
+      </Group>
+      <Group Name="Scrollbar">
+        <Parameter Variable="scrollbarLineColor" Name="Scrollbar Line Color" Type="color" Default="0" Description="Scrollbar line color" />
+        <Parameter Variable="scrollbarBackColor" Name="Scrollbar Back Color" Type="color" Default="0" Description="Scrollbar back color" />
+        <Parameter Variable="scrollbarBarColor" Name="Scrollbar Bar Color" Type="color" Default="171" Description="Scrollbar bar color" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Alarm List" FunctionName="DrawAlarmList" Width="600" Height="264" Identifier="0x0E" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="rows" Name="Rows" Description="List Box Rows" Hidden="true">
+          <Type Name="PAL1131G.Objects.Praxis.Managed.CPListBoxRow" IsArray="True">
+            <Item Field="Description" Name="Description" Type="text" Description="Short description for value" />
+            <Item Field="Value" Name="Value" Type="text" Description="Actual value" />
+            <Item Field="Unit" Name="Unit" Type="text" Description="Unit" />
+            <Item Field="Status" Name="Status" Type="text" Description="Status" />
+            <Item Field="ColorType" Name="Color Type" Type="int" Default="0" Description="The color type: 0 (normal), 1 (status), 2 (alarm), 3 (flash), 4 (flash normal)" />
+            <Item Field="ReportType" Name="Report Type" Type="int" Default="0" Description="The report type: 0 (status), 1 (alarm), 2 (value)" />
+          </Type>
+        </Parameter>
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-12" Description="" />
+        <Parameter Variable="linesOnScreenNumber" Name="Number of lines on screen" Type="int" Default="12" Description="Number of lines on screen (0-20)" />
+        <Parameter Variable="selectedRowIndex" Name="Index of selected row" Type="int" Default="0" Description="Index of selected row (-1 means no selection)" Hidden="true"/>
+        <Parameter Variable="startRowIndex" Name="Index of the first row on the screen" Type="int" Default="0" Description="Index of the first row on the screen" Hidden="true"/>
+        <Parameter Variable="type" Name="Listbox Type" Type="int" Default="3" Description="The object type: 0 (normal), 1 (Parameter), 2 (Channel view), 3 (Alarm view), 4 (Ext. Alarm view), 5 (Alarm Summary)" Hidden="true" />
+        <Parameter Variable="subtype" Name="Color Type" Type="int" Default="0" Description="The object subtype" Hidden="true" />
+        <Parameter Variable="ExtAlarmList" Name="Show Ext. Alarms" Type="bool" Default="False" Description="Use External AlarmList (a.k.a. group(s)IOServer)" />
+        <Parameter Variable="ShowChannelNr" Name="Show Channel Number in First Column" Type="bool" Default="true" Description="First Column in List" />
+      </Group>
+      <Group Name="Columns">
+        <Parameter Variable="columnsNumber" Name="Number of columns" Type="int" Default="1" Description="Number of columns (1-4)" Hidden="true"/>
+        <Parameter Variable="columnFirstWidth" Name="Width of the first column" Type="int" Default="600" Description="Width of the first column" Hidden="true"/>
+        <Parameter Variable="columnSecondWidth" Name="Width of the second column" Type="int" Default="100" Description="Width of the second column" Hidden="true"/>
+        <Parameter Variable="columnThirdWidth" Name="Width of the third column" Type="int" Default="100" Description="Width of the third column" Hidden="true"/>
+        <Parameter Variable="columnFourthWidth" Name="Width of the fourth column" Type="int" Default="100" Description="Width of the fourth column" Hidden="true"/>
+      </Group>
+      <Group Name="Colors">
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="0" Description="Text color" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="172" Description="Background color" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="Border color" />
+        <Parameter Variable="highColor" Name="High Color" Type="color" Default="66" Description="High color" Hidden="true"/>
+        <Parameter Variable="alarmColor" Name="Alarm Color" Type="color" Default="180" Description="Alarm color" />
+        <Parameter Variable="selectedRowTextColor" Name="Selected Row Text Color" Type="color" Default="0" Description="Selected row text color" />
+        <Parameter Variable="selectedRowBackgroundColor" Name="Selected Row Background Color" Type="color" Default="215" Description="Selected row background color" />
+        <Parameter Variable="emergencyColor" Name="Emergency Color" Type="color" Default="185" Description="Emergency color" />
+        <Parameter Variable="warningColor" Name="Warning Color" Type="color" Default="198" Description="Warning color" />
+        <Parameter Variable="cautionColor" Name="Caution Color" Type="color" Default="210" Description="Caution color" />
+      </Group>
+      <Group Name="Header">
+        <Parameter Variable="headerVisibility" Name="Header Visibility" Type="bool" Default="True" Description="Header visibility" />
+        <Parameter Variable="headerText" Name="Header Text" Type="text" Default="ALARM PAGE" Description="Header text" />
+        <Parameter Variable="headerColor" Name="Header Color" Type="color" Default="215" Description="Header color" />
+        <Parameter Variable="headerBackgroundColor" Name="Header Background Color" Type="color" Default="129" Description="Header background color" />
+      </Group>
+      <Group Name="Scrollbar">
+        <Parameter Variable="scrollbarLineColor" Name="Scrollbar Line Color" Type="color" Default="0" Description="Scrollbar line color" />
+        <Parameter Variable="scrollbarBackColor" Name="Scrollbar Back Color" Type="color" Default="0" Description="Scrollbar back color" />
+        <Parameter Variable="scrollbarBarColor" Name="Scrollbar Bar Color" Type="color" Default="129" Description="Scrollbar bar color" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Alarm Summary" FunctionName="DrawAlarmList" Width="600" Height="550" Identifier="0x0E" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="rows" Name="Rows" Description="List Box Rows" Hidden="true">
+          <Type Name="PAL1131G.Objects.Praxis.Managed.CPListBoxRow" IsArray="True">
+            <Item Field="Description" Name="Description" Type="text" Description="Short description for value" />
+            <Item Field="Value" Name="Value" Type="text" Description="Actual value" />
+            <Item Field="Unit" Name="Unit" Type="text" Description="Unit" />
+            <Item Field="Status" Name="Status" Type="text" Description="Status" />
+            <Item Field="ColorType" Name="Color Type" Type="int" Default="0" Description="The color type: 0 (normal), 1 (status), 2 (alarm), 3 (flash), 4 (flash normal)" />
+            <Item Field="ReportType" Name="Report Type" Type="int" Default="0" Description="The report type: 0 (status), 1 (alarm), 2 (value)" />
+          </Type>
+        </Parameter>
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-10" Description="" />
+        <Parameter Variable="linesOnScreenNumber" Name="Number of lines on screen" Type="int" Default="25" Description="Number of lines on screen (0-25)" />
+        <Parameter Variable="selectedRowIndex" Name="Index of selected row" Type="int" Default="0" Description="Index of selected row (-1 means no selection)" Hidden="true"/>
+        <Parameter Variable="startRowIndex" Name="Index of the first row on the screen" Type="int" Default="0" Description="Index of the first row on the screen" Hidden="true"/>
+        <Parameter Variable="type" Name="Listbox Type" Type="int" Default="5" Description="The object type: 0 (normal), 1 (Parameter), 2 (Channel view), 3 (Alarm view), 4 (Ext. Alarm view), 5 (Alarm Summary)" Hidden="true" />
+        <Parameter Variable="subtype" Name="Color Type" Type="int" Default="0" Description="The object subtype" Hidden="true" />
+        <Parameter Variable="ExtAlarmList" Name="Show Ext. Alarms" Type="bool" Default="False" Description="Header visibility" />
+        <Parameter Variable="ShowChannelNr" Name="Show Channel Number in First Column" Type="bool" Default="true" Description="First Column in List" />
+      </Group>
+      <Group Name="Columns">
+        <Parameter Variable="columnsNumber" Name="Number of columns" Type="int" Default="1" Description="Number of columns (1-4)" Hidden="true"/>
+        <Parameter Variable="columnFirstWidth" Name="Width of the first column" Type="int" Default="600" Description="Width of the first column" Hidden="true"/>
+        <Parameter Variable="columnSecondWidth" Name="Width of the second column" Type="int" Default="100" Description="Width of the second column" Hidden="true"/>
+        <Parameter Variable="columnThirdWidth" Name="Width of the third column" Type="int" Default="100" Description="Width of the third column" Hidden="true"/>
+        <Parameter Variable="columnFourthWidth" Name="Width of the fourth column" Type="int" Default="100" Description="Width of the fourth column" Hidden="true"/>
+      </Group>
+      <Group Name="Colors">
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="47" Description="Text color" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="172" Description="Background color" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="Border color" />
+        <Parameter Variable="highColor" Name="High Color" Type="color" Default="66" Description="High color" Hidden="true"/>
+        <Parameter Variable="alarmColor" Name="Alarm Color" Type="color" Default="180" Description="Alarm color" Hidden="true"/>
+        <Parameter Variable="selectedRowTextColor" Name="Selected Row Text Color" Type="color" Default="0" Description="Selected row text color" Hidden="true"/>
+        <Parameter Variable="selectedRowBackgroundColor" Name="Selected Row Background Color" Type="color" Default="215" Description="Selected row background color" Hidden="true"/>
+        <Parameter Variable="emergencyColor" Name="Emergency Color" Type="color" Default="185" Description="Emergency color" Hidden="true"/>
+        <Parameter Variable="warningColor" Name="Warning Color" Type="color" Default="198" Description="Warning color" Hidden="true"/>
+        <Parameter Variable="cautionColor" Name="Caution Color" Type="color" Default="210" Description="Caution color" Hidden="true"/>
+      </Group>
+      <Group Name="Header">
+        <Parameter Variable="headerVisibility" Name="Header Visibility" Type="bool" Default="True" Description="Header visibility" />
+        <Parameter Variable="headerText" Name="Header Text" Type="text" Default="ALARM SUMMARY" Description="Header text" />
+        <Parameter Variable="headerColor" Name="Header Color" Type="color" Default="215" Description="Header color" />
+        <Parameter Variable="headerBackgroundColor" Name="Header Background Color" Type="color" Default="129" Description="Header background color" />
+      </Group>
+      <Group Name="Scrollbar">
+        <Parameter Variable="scrollbarLineColor" Name="Scrollbar Line Color" Type="color" Default="0" Description="Scrollbar line color" />
+        <Parameter Variable="scrollbarBackColor" Name="Scrollbar Back Color" Type="color" Default="0" Description="Scrollbar back color" />
+        <Parameter Variable="scrollbarBarColor" Name="Scrollbar Bar Color" Type="color" Default="129" Description="Scrollbar bar color" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Monitor List" FunctionName="DrawListBox" Width="600" Height="264" Identifier="0x0D" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="rows" Name="Rows" Description="List Box Rows" Hidden="true">
+          <Type Name="PAL1131G.Objects.Praxis.Managed.CPListBoxRow" IsArray="True">
+            <Item Field="Description" Name="Description" Type="text" Description="Short description for value" />
+            <Item Field="Value" Name="Value" Type="text" Description="Actual value" />
+            <Item Field="Unit" Name="Unit" Type="text" Description="Unit" />
+            <Item Field="Status" Name="Status" Type="text" Description="Status" />
+            <Item Field="ColorType" Name="Color Type" Type="int" Default="0" Description="The color type: 0 (normal), 1 (status), 2 (alarm), 3 (flash), 4 (flash normal)" />
+            <Item Field="ReportType" Name="Report Type" Type="int" Default="0" Description="The report type: 0 (status), 1 (alarm), 2 (value)" />
+          </Type>
+        </Parameter>
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-12" Description="" />
+        <Parameter Variable="linesOnScreenNumber" Name="Number of lines on screen" Type="int" Default="12" Description="Number of lines on screen (0-20)" />
+        <Parameter Variable="selectedRowIndex" Name="Index of selected row" Type="int" Default="0" Description="Index of selected row (-1 means no selection)" Hidden="true"/>
+        <Parameter Variable="startRowIndex" Name="Index of the first row on the screen" Type="int" Default="0" Description="Index of the first row on the screen" Hidden="true"/>
+        <Parameter Variable="type" Name="Listbox Type" Type="int" Default="2" Description="The object type: 0 (normal), 1 (Parameter), 2 (Channel view), 3 (Alarm view)" Hidden="true"/>
+        <Parameter Variable="subtype" Name="Color Type" Type="int" Default="0" Description="The object subtype" Hidden="true"/>
+        <Parameter Variable="ShowChannelNr" Name="Show Channel Number in First Column" Type="bool" Default="true" Description="First Column in List" />
+      </Group>
+      <Group Name="Columns">
+        <Parameter Variable="columnsNumber" Name="Number of columns" Type="int" Default="1" Description="Number of columns (1-4)" Hidden="true"/>
+        <Parameter Variable="columnFirstWidth" Name="Width of the first column" Type="int" Default="600" Description="Width of the first column" Hidden="true"/>
+        <Parameter Variable="columnSecondWidth" Name="Width of the second column" Type="int" Default="100" Description="Width of the second column" Hidden="true"/>
+        <Parameter Variable="columnThirdWidth" Name="Width of the third column" Type="int" Default="100" Description="Width of the third column" Hidden="true"/>
+        <Parameter Variable="columnFourthWidth" Name="Width of the fourth column" Type="int" Default="100" Description="Width of the fourth column" Hidden="true"/>
+      </Group>
+      <Group Name="Colors">
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="0" Description="Text color" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="172" Description="Background color" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="Border color" />
+        <Parameter Variable="highColor" Name="High Color" Type="color" Default="66" Description="High color" />
+        <Parameter Variable="alarmColor" Name="Alarm Color" Type="color" Default="180" Description="Alarm color" />
+        <Parameter Variable="selectedRowTextColor" Name="Selected Row Text Color" Type="color" Default="0" Description="Selected row text color" />
+        <Parameter Variable="selectedRowBackgroundColor" Name="Selected Row Background Color" Type="color" Default="215" Description="Selected row background color" />
+      </Group>
+      <Group Name="Header">
+        <Parameter Variable="headerVisibility" Name="Header Visibility" Type="bool" Default="True" Description="Header visibility" />
+        <Parameter Variable="headerText" Name="Header Text" Type="text" Default="MONITOR LIST" Description="Header text" />
+        <Parameter Variable="headerColor" Name="Header Color" Type="color" Default="215" Description="Header color" />
+        <Parameter Variable="headerBackgroundColor" Name="Header Background Color" Type="color" Default="129" Description="Header background color" />
+      </Group>
+      <Group Name="Scrollbar">
+        <Parameter Variable="scrollbarLineColor" Name="Scrollbar Line Color" Type="color" Default="0" Description="Scrollbar line color" />
+        <Parameter Variable="scrollbarBackColor" Name="Scrollbar Back Color" Type="color" Default="0" Description="Scrollbar back color" />
+        <Parameter Variable="scrollbarBarColor" Name="Scrollbar Bar Color" Type="color" Default="129" Description="Scrollbar bar color" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Parameter List" FunctionName="DrawListBox" Width="600" Height="300" Identifier="0x0D" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="rows" Name="Rows" Description="List Box Rows" Hidden="true">
+          <Type Name="PAL1131G.Objects.Praxis.Managed.CPListBoxRow" IsArray="True">
+            <Item Field="Description" Name="Description" Type="text" Description="Short description for value" />
+            <Item Field="Value" Name="Value" Type="text" Description="Actual value" />
+            <Item Field="Unit" Name="Unit" Type="text" Description="Unit" />
+            <Item Field="Status" Name="Status" Type="text" Description="Status" />
+            <Item Field="ColorType" Name="Color Type" Type="int" Default="0" Description="The color type: 0 (normal), 1 (status), 2 (alarm), 3 (flash), 4 (flash normal)" />
+            <Item Field="ReportType" Name="Report Type" Type="int" Default="0" Description="The report type: 0 (status), 1 (alarm), 2 (value)" />
+          </Type>
+        </Parameter>
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-12" Description="" />
+        <Parameter Variable="linesOnScreenNumber" Name="Number of lines on screen" Type="int" Default="15" Description="Number of lines on screen (0-20)" />
+        <Parameter Variable="selectedRowIndex" Name="Index of selected row" Type="int" Default="1" Description="Index of selected row (-1 means no selection)" Hidden="true"/>
+        <Parameter Variable="startRowIndex" Name="Index of the first row on the screen" Type="int" Default="1" Description="Index of the first row on the screen" Hidden="true"/>
+        <Parameter Variable="type" Name="Listbox Type" Type="int" Default="1" Description="The object type: 0 (normal), 1 (Parameter), 2 (Channel view), 3 (Alarm view)" Hidden="true"/>
+        <Parameter Variable="subtype" Name="Parameter Listbox Type" Type="int" Default="0" Description="Left (0), Centre (1), Right (2), DP (3)" Hidden="true"/>
+        <Parameter Variable="ShowChannelNr" Name="Show Channel Number in First Column" Type="bool" Default="false" Description="First Column in List" Hidden="true"/>
+      </Group>
+      <Group Name="Columns">
+        <Parameter Variable="columnsNumber" Name="Number of columns" Type="int" Default="2" Description="Number of columns (1-4)" Hidden="true"/>
+        <Parameter Variable="columnFirstWidth" Name="Width of the first column" Type="int" Default="50" Description="Width of the first column" Hidden="true"/>
+        <Parameter Variable="columnSecondWidth" Name="Width of the second column" Type="int" Default="550" Description="Width of the second column" Hidden="true"/>
+        <Parameter Variable="columnThirdWidth" Name="Width of the third column" Type="int" Default="100" Description="Width of the third column" Hidden="true"/>
+        <Parameter Variable="columnFourthWidth" Name="Width of the fourth column" Type="int" Default="100" Description="Width of the fourth column" Hidden="true"/>
+      </Group>
+      <Group Name="Colors">
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="0" Description="Text color" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="172" Description="Background color" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="Border color" />
+        <Parameter Variable="highColor" Name="High Color" Type="color" Default="66" Description="High color" />
+        <Parameter Variable="alarmColor" Name="Alarm Color" Type="color" Default="180" Description="Alarm color" />
+        <Parameter Variable="selectedRowTextColor" Name="Selected Row Text Color" Type="color" Default="0" Description="Selected row text color" />
+        <Parameter Variable="selectedRowBackgroundColor" Name="Selected Row Background Color" Type="color" Default="215" Description="Selected row background color" />
+      </Group>
+      <Group Name="Header">
+        <Parameter Variable="headerVisibility" Name="Header Visibility" Type="bool" Default="True" Description="Header visibility" />
+        <Parameter Variable="headerText" Name="Header Text" Type="text" Default="   Main Menu" Description="Header text" />
+        <Parameter Variable="headerColor" Name="Header Color" Type="color" Default="215" Description="Header color" />
+        <Parameter Variable="headerBackgroundColor" Name="Header Background Color" Type="color" Default="129" Description="Header background color" />
+      </Group>
+      <Group Name="Scrollbar">
+        <Parameter Variable="scrollbarLineColor" Name="Scrollbar Line Color" Type="color" Default="0" Description="Scrollbar line color" />
+        <Parameter Variable="scrollbarBackColor" Name="Scrollbar Back Color" Type="color" Default="0" Description="Scrollbar back color" />
+        <Parameter Variable="scrollbarBarColor" Name="Scrollbar Bar Color" Type="color" Default="129" Description="Scrollbar bar color" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Parameter Login" FunctionName="DrawListBox" Width="600" Height="100" Identifier="0x0D" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="rows" Name="Rows" Description="List Box Rows" Hidden="true">
+          <Type Name="PAL1131G.Objects.Praxis.Managed.CPListBoxRow" IsArray="True">
+            <Item Field="Description" Name="Description" Type="text" Description="Short description for value" />
+            <Item Field="Value" Name="Value" Type="text" Description="Actual value" />
+            <Item Field="Unit" Name="Unit" Type="text" Description="Unit" />
+            <Item Field="Status" Name="Status" Type="text" Description="Status" />
+            <Item Field="ColorType" Name="Color Type" Type="int" Default="0" Description="The color type: 0 (normal), 1 (status), 2 (alarm), 3 (flash), 4 (flash normal)" />
+            <Item Field="ReportType" Name="Report Type" Type="int" Default="0" Description="The report type: 0 (status), 1 (alarm), 2 (value)" />
+          </Type>
+        </Parameter>
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-12" Description="" />
+        <Parameter Variable="linesOnScreenNumber" Name="Number of lines on screen" Type="int" Default="5" Description="Number of lines on screen (0-20)" />
+        <Parameter Variable="selectedRowIndex" Name="Index of selected row" Type="int" Default="1" Description="Index of selected row (-1 means no selection)" Hidden="true"/>
+        <Parameter Variable="startRowIndex" Name="Index of the first row on the screen" Type="int" Default="1" Description="Index of the first row on the screen" Hidden="true"/>
+        <Parameter Variable="type" Name="Listbox Type" Type="int" Default="1" Description="The object type: 0 (normal), 1 (Parameter), 2 (Channel view), 3 (Alarm view)" Hidden="true"/>
+        <Parameter Variable="subtype" Name="Parameter Listbox Type" Type="int" Default="1" Description="Left (0), Centre (1), Right (2), DP (3)" Hidden="true"/>
+        <Parameter Variable="ShowChannelNr" Name="Show Channel Number in First Column" Type="bool" Default="false" Description="First Column in List" Hidden="true"/>
+      </Group>
+      <Group Name="Columns">
+        <Parameter Variable="columnsNumber" Name="Number of columns" Type="int" Default="1" Description="Number of columns (1-4)" Hidden="true"/>
+        <Parameter Variable="columnFirstWidth" Name="Width of the first column" Type="int" Default="600" Description="Width of the first column" Hidden="true"/>
+        <Parameter Variable="columnSecondWidth" Name="Width of the second column" Type="int" Default="100" Description="Width of the second column" Hidden="true"/>
+        <Parameter Variable="columnThirdWidth" Name="Width of the third column" Type="int" Default="100" Description="Width of the third column" Hidden="true"/>
+        <Parameter Variable="columnFourthWidth" Name="Width of the fourth column" Type="int" Default="100" Description="Width of the fourth column" Hidden="true"/>
+      </Group>
+      <Group Name="Colors">
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="0" Description="Text color" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="172" Description="Background color" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="Border color" />
+        <Parameter Variable="highColor" Name="High Color" Type="color" Default="66" Description="High color" />
+        <Parameter Variable="alarmColor" Name="Alarm Color" Type="color" Default="180" Description="Alarm color" />
+        <Parameter Variable="selectedRowTextColor" Name="Selected Row Text Color" Type="color" Default="0" Description="Selected row text color" />
+        <Parameter Variable="selectedRowBackgroundColor" Name="Selected Row Background Color" Type="color" Default="215" Description="Selected row background color" />
+      </Group>
+      <Group Name="Header">
+        <Parameter Variable="headerVisibility" Name="Header Visibility" Type="bool" Default="True" Description="Header visibility" />
+        <Parameter Variable="headerText" Name="Header Text" Type="text" Default="  LOGIN" Description="Header text" />
+        <Parameter Variable="headerColor" Name="Header Color" Type="color" Default="215" Description="Header color" />
+        <Parameter Variable="headerBackgroundColor" Name="Header Background Color" Type="color" Default="129" Description="Header background color" />
+      </Group>
+      <Group Name="Scrollbar">
+        <Parameter Variable="scrollbarLineColor" Name="Scrollbar Line Color" Type="color" Default="0" Description="Scrollbar line color" />
+        <Parameter Variable="scrollbarBackColor" Name="Scrollbar Back Color" Type="color" Default="0" Description="Scrollbar back color" />
+        <Parameter Variable="scrollbarBarColor" Name="Scrollbar Bar Color" Type="color" Default="129" Description="Scrollbar bar color" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Parameter Edit" FunctionName="DrawListBox" Width="600" Height="100" Identifier="0x0D" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="rows" Name="Rows" Description="List Box Rows" Hidden="true">
+          <Type Name="PAL1131G.Objects.Praxis.Managed.CPListBoxRow" IsArray="True">
+            <Item Field="Description" Name="Description" Type="text" Description="Short description for value" />
+            <Item Field="Value" Name="Value" Type="text" Description="Actual value" />
+            <Item Field="Unit" Name="Unit" Type="text" Description="Unit" />
+            <Item Field="Status" Name="Status" Type="text" Description="Status" />
+            <Item Field="ColorType" Name="Color Type" Type="int" Default="0" Description="The color type: 0 (normal), 1 (status), 2 (alarm), 3 (flash), 4 (flash normal)" />
+            <Item Field="ReportType" Name="Report Type" Type="int" Default="0" Description="The report type: 0 (status), 1 (alarm), 2 (value)" />
+          </Type>
+        </Parameter>
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-12" Description="" />
+        <Parameter Variable="linesOnScreenNumber" Name="Number of lines on screen" Type="int" Default="5" Description="Number of lines on screen (0-20)" />
+        <Parameter Variable="selectedRowIndex" Name="Index of selected row" Type="int" Default="1" Description="Index of selected row (-1 means no selection)" Hidden="true"/>
+        <Parameter Variable="startRowIndex" Name="Index of the first row on the screen" Type="int" Default="1" Description="Index of the first row on the screen" Hidden="true"/>
+        <Parameter Variable="type" Name="Listbox Type" Type="int" Default="1" Description="The object type: 0 (normal), 1 (Parameter), 2 (Channel view), 3 (Alarm view)" Hidden="true"/>
+        <Parameter Variable="subtype" Name="Parameter Listbox Type" Type="int" Default="2" Description="Left (0), Centre (1), Right (2), DP (3)" Hidden="true"/>
+        <Parameter Variable="ShowChannelNr" Name="Show Channel Number in First Column" Type="bool" Default="false" Description="First Column in List" Hidden="true"/>
+      </Group>
+      <Group Name="Columns">
+        <Parameter Variable="columnsNumber" Name="Number of columns" Type="int" Default="1" Description="Number of columns (1-4)" Hidden="true"/>
+        <Parameter Variable="columnFirstWidth" Name="Width of the first column" Type="int" Default="600" Description="Width of the first column" Hidden="true"/>
+        <Parameter Variable="columnSecondWidth" Name="Width of the second column" Type="int" Default="100" Description="Width of the second column" Hidden="true"/>
+        <Parameter Variable="columnThirdWidth" Name="Width of the third column" Type="int" Default="100" Description="Width of the third column" Hidden="true"/>
+        <Parameter Variable="columnFourthWidth" Name="Width of the fourth column" Type="int" Default="100" Description="Width of the fourth column" Hidden="true"/>
+      </Group>
+      <Group Name="Colors">
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="0" Description="Text color" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="172" Description="Background color" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="Border color" />
+        <Parameter Variable="highColor" Name="High Color" Type="color" Default="66" Description="High color" />
+        <Parameter Variable="alarmColor" Name="Alarm Color" Type="color" Default="180" Description="Alarm color" />
+        <Parameter Variable="selectedRowTextColor" Name="Selected Row Text Color" Type="color" Default="0" Description="Selected row text color" />
+        <Parameter Variable="selectedRowBackgroundColor" Name="Selected Row Background Color" Type="color" Default="215" Description="Selected row background color" />
+      </Group>
+      <Group Name="Header">
+        <Parameter Variable="headerVisibility" Name="Header Visibility" Type="bool" Default="True" Description="Header visibility" />
+        <Parameter Variable="headerText" Name="Header Text" Type="text" Default="  CHANGE" Description="Header text" />
+        <Parameter Variable="headerColor" Name="Header Color" Type="color" Default="215" Description="Header color" />
+        <Parameter Variable="headerBackgroundColor" Name="Header Background Color" Type="color" Default="129" Description="Header background color" />
+      </Group>
+      <Group Name="Scrollbar">
+        <Parameter Variable="scrollbarLineColor" Name="Scrollbar Line Color" Type="color" Default="0" Description="Scrollbar line color" />
+        <Parameter Variable="scrollbarBackColor" Name="Scrollbar Back Color" Type="color" Default="0" Description="Scrollbar back color" />
+        <Parameter Variable="scrollbarBarColor" Name="Scrollbar Bar Color" Type="color" Default="129" Description="Scrollbar bar color" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Button" FunctionName="DrawTouchButton" Width="72" Height="76" Identifier="0x11" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="1" Description="Border Width (DP Border)" />
+        <Parameter Variable="borderLength" Name="Border Length" Type="int" Default="20" Description="Border Length (DP Border)" />
+        <Parameter Variable="borderType" Name="Border Type" Type="int" Default="0" Description="Left (0), Centre (1), Right (2), DP (3), Bottom (4), Top (5)" />
+        <Parameter Variable="currentState" Name="Current State" Type="int" Default="0" Description="Current state" />
+      </Group>
+      <Group Name="States">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor" Name="Foreground Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade" Name="Shade" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text" Name="Text" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize" Name="Font Size" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image" Name="Image 0" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText" Name="Variable Text" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor1" Name="Background Color 1" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor1" Name="Foreground Color 1" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade1" Name="Shade 1" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text1" Name="Text 1" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize1" Name="Font Size 1" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor1" Name="Text Color 1" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image1" Name="Image 1" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText1" Name="Variable Text 1" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor2" Name="Background Color 2" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor2" Name="Foreground Color 2" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade2" Name="Shade 2" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text2" Name="Text 2" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize2" Name="Font Size 2" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor2" Name="Text Color 2" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image2" Name="Image 2" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText2" Name="Variable Text 2" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor3" Name="Background Color 3" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor3" Name="Foreground Color 3" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade3" Name="Shade 3" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text3" Name="Text 3" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize3" Name="Font Size 3" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor3" Name="Text Color 3" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image3" Name="Image 3" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText3" Name="Variable Text 3" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor4" Name="Background Color 4" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor4" Name="Foreground Color 4" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade4" Name="Shade 4" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text4" Name="Text 4" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize4" Name="Font Size 4" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor4" Name="Text Color 4" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image4" Name="Image 4" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText4" Name="Variable Text 4" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor5" Name="Background Color 5" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor5" Name="Foreground Color 5" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade5" Name="Shade 5" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text5" Name="Text 5" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize5" Name="Font Size 5" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor5" Name="Text Color 5" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image5" Name="Image 5" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText5" Name="Variable Text 5" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor6" Name="Background Color 6" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor6" Name="Foreground Color 6" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade6" Name="Shade 6" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text6" Name="Text 6" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize6" Name="Font Size 6" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor6" Name="Text Color 6" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image6" Name="Image 6" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText6" Name="Variable Text 6" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor7" Name="Background Color 7" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor7" Name="Foreground Color 7" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade7" Name="Shade 7" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text7" Name="Text 7" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize7" Name="Font Size 7" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor7" Name="Text Color 7" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image7" Name="Image 7" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText7" Name="Variable Text 7" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor8" Name="Background Color 8" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor8" Name="Foreground Color 8" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade8" Name="Shade 8" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text8" Name="Text 8" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize8" Name="Font Size 8" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor8" Name="Text Color 8" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image8" Name="Image 8" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText8" Name="Variable Text 8" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor9" Name="Background Color 9" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor9" Name="Foreground Color 9" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade9" Name="Shade 9" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text9" Name="Text 9" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize9" Name="Font Size 9" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor9" Name="Text Color 9" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image9" Name="Image 9" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText9" Name="Variable Text 9" Type="text" Default="0" Description="Global Variable Name" />
+        <Parameter Variable="backgroundColor10" Name="Background Color 10" Type="color" Default="0" Description="" />
+        <Parameter Variable="foregroundColor10" Name="Foreground Color 10" Type="color" Default="215" Description="" />
+        <Parameter Variable="shade10" Name="Shade 10" Type="bool" Default="False" Description="" />
+        <Parameter Variable="text10" Name="Text 10" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontSize10" Name="Font Size 10" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="textColor10" Name="Text Color 10" Type="color" Default="215" Description="Color of text" />
+        <Parameter Variable="image10" Name="Image 10" Type="image" Default="" Description="" />
+        <Parameter Variable="variableText10" Name="Variable Text 10" Type="text" Default="0" Description="Global Variable Name" />
+      </Group>
+      <Group Name="Basic">
+        <Parameter Variable="invert" Name="Invert when pressed" Type="bool" Default="True" Description="Should invert color when button pressed" />
+        <Parameter Variable="flash" Name="Manual Flash" Type="bool" Default="False" Description="Invert Back/Foreground colors for current state." />
+        <Parameter Variable="hardwareId" Name="Button ID" Type="int" Default="0" Description="None (0), HW (1), HW (2), HW (3), HW (4), HW (5), HW (6), HW (7), HW (8), HW (9), HW (10), HW (11), HW (12), TOUCH(13)" />
+        <Parameter Variable="variable" Name="Variable ID" Type="var" Default="." Description="Global Variable Name" />
+        <Parameter Variable="functionId" Name="Button Function" Type="int" Default="0" Description="Text Input ASCII Code 32-125" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Thruster" FunctionName="DrawThruster" Width="200" Height="200" Identifier="0x12" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="image" Name="Image" Type="image" Default="" Description="Image" />
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="-25" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="25" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="0" Description="Value between minimum and maximum" />
+        <Parameter Variable="indicatorColor" Name="Indicator Color" Type="color" Default="215" Description="Indicator color" />
+        <Parameter Variable="indicatorSize" Name="Indicator Length" Type="int" Default="95" Description="Indicator Lenght in percentage" />
+        <Parameter Variable="degreeMin" Name="Min degree" Type="int" Default="180" Description="Min degree top is 0 (Left)" />
+        <Parameter Variable="degreeMax" Name="Max degree" Type="int" Default="180" Description="Max degree top is 0 (Right)" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Azimuth" FunctionName="DrawAzimuth" Width="200" Height="200" Identifier="0x13" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="image" Name="Image" Type="image" Default="" Description="Image" />
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="-25" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="25" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="0" Description="Value between minimum and maximum" />
+        <Parameter Variable="indicatorColor" Name="Indicator Color" Type="color" Default="215" Description="Indicator color" />
+        <Parameter Variable="zeroBottom" Name="Zero at bottom" Type="int" Default="1" Description="Zero at bottom of scale" />
+        <Parameter Variable="degreeMin" Name="Min degree" Type="int" Default="180" Description="Min degree top is 0 (Left)" />
+        <Parameter Variable="degreeMax" Name="Max degree" Type="int" Default="180" Description="Max degree top is 0 (Right)" />
+        <Parameter Variable="resizeValue" Name="Resize value" Type="float" Default="0" Description="Min = -11, Max = 11" />
+        <Parameter Variable="pointerColor" Name="Pointer Color" Type="color" Default="0" Description="Pointer color" />
+        <Parameter Variable="coordinates" Name="Coordinates" Type="pointer" Hidden="true" />
+        <Parameter Variable="redrawDisplay" Name="Redraw display" Type="bool" Default="true" Hidden="true" />
+      </Group>
+      <Group Name="Set Point">
+        <Parameter Variable="sp_enable" Name="Enable Setpoint" Type="bool" Default="false" Description="Enables setpoint indicator" />
+        <Parameter Variable="sp_currentValue" Name="Setpoint Value" Type="float" Default="0" Description="" />
+        <Parameter Variable="sp_Color" Name="Setpoint Color" Type="color" Default="29" Description="Setpoint color" />
+        <Parameter Variable="sp_Size" Name="Setpoint Size" Type="int" Default="10" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Frame" FunctionName="DrawFrame" Width="200" Height="200" Identifier="0x14" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="image" Name="Image" Type="image" Default="" Description="Image" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="0" Description="Border Width" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="215" Description="Border color" />
+        <Parameter Variable="framePage" Name="Show Page in frame" Type="int" Default="0" Description="Set page number to show in frame" />
+        <Parameter Variable="popup" Name="Use as pop-up window" Type="bool" Default="false" Description="Always redraws frame" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="LeverLineUp" FunctionName="DrawLeverLineUp" Width="100" Height="100" Identifier="0x15" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="image" Name="Background Image" Type="image" Default="" Description="Image" />
+        <Parameter Variable="redrawDisplay" Name="Redraw display" Type="bool" Default="true" Hidden="true" />
+        <Parameter Variable="speedOption" Name="Speed Option" Type="int" Default="0" Description="Bi-directional (0), Uni-directional (1)" />
+        <Parameter Variable="steerOption" Name="Steer Option" Type="bool" Default="true" Description="Disabled (0), Enabled (1)" />
+      </Group>
+      <Group Name="Steering">
+        <Parameter Variable="borderWidth1" Name="Border Width 1" Type="int" Default="0" Description="Border width" />
+        <Parameter Variable="borderColor1" Name="Border Color 1" Type="color" Default="215" Description="Border color" />
+        <Parameter Variable="fillColor1" Name="Fill Color 1" Type="color" Default="0" Description="Fill color" />
+        <Parameter Variable="radius1" Name="Radius 1" Type="int" Default="5" Description="Radius" />
+        <Parameter Variable="angleSP1" Name="Angle Setpoint 1" Type="float" Default="0" Description="Angle Steer" />
+        <Parameter Variable="borderWidth2" Name="Border Width 2" Type="int" Default="0" Description="Border width" />
+        <Parameter Variable="borderColor2" Name="Border Color 2" Type="color" Default="215" Description="Border color" />
+        <Parameter Variable="fillColor2" Name="Fill Color 2 " Type="color" Default="0" Description="Fill color" />
+        <Parameter Variable="radius2" Name="Radius 2" Type="int" Default="5" Description="Radius" />
+        <Parameter Variable="angleSP2" Name="Angle Setpoint 2" Type="float" Default="0" Description="Angle Steer" />
+
+      </Group>
+      <Group Name="Speed">
+        <Parameter Variable="angleSpeed" Name="Angle Speed" Type="float" Default="0" Description="Angle Speed" />
+        <Parameter Variable="borderWidth3" Name="Border Width 3" Type="int" Default="0" Description="Border width" />
+        <Parameter Variable="borderColor3" Name="Border Color 3" Type="color" Default="215" Description="Border color" />
+        <Parameter Variable="fillColor3" Name="Fill Color 3" Type="color" Default="0" Description="Fill color" />
+        <Parameter Variable="radius3" Name="Radius 3" Type="int" Default="5" Description="Radius" />
+        <Parameter Variable="PosX3" Name="Position 3" Type="int" Default="0" Description="Position" />
+        <Parameter Variable="borderWidth4" Name="Border Width 4" Type="int" Default="0" Description="Border width" />
+        <Parameter Variable="borderColor4" Name="Border Color 4" Type="color" Default="215" Description="Border color" />
+        <Parameter Variable="fillColor4" Name="Fill Color 4" Type="color" Default="0" Description="Fill color" />
+        <Parameter Variable="radius4" Name="Radius 4" Type="int" Default="5" Description="Radius" />
+        <Parameter Variable="PosX4" Name="Position 4" Type="int" Default="0" Description="Position" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="SpeedLineUp" FunctionName="DrawSpeedLineUp" Width="20" Height="100" Identifier="0x17" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="image" Name="Background Image" Type="image" Default="" Description="Image" />
+        <Parameter Variable="redrawDisplay" Name="Redraw display" Type="bool" Default="true" Hidden="true" />
+        <Parameter Variable="speedOption" Name="Speed Option" Type="int" Default="0" Description="Bi-directional (0), Uni-directional (1)" />
+        <Parameter Variable="orientation" Name="Orientation" Type="int" Default="0" Description="UP (0), Down (1), Left (2), Right (3)" />
+      </Group>
+      <Group Name="Speed">
+        <Parameter Variable="SpeedBorderWidth" Name="Speed Border Width" Type="int" Default="5" Description="Indicator Border Width (when no fill color is used)" />
+        <Parameter Variable="SpeedBorder" Name="Speed Border Color " Type="color" Default="215" Description="Indicator Border color" />
+        <Parameter Variable="SpeedFill" Name="Speed Fill Color" Type="color" Default="0" Description="Indicator Fill color" />
+        <Parameter Variable="SpeedRad" Name="Speed Radius" Type="int" Default="5" Description="Indicator Radius" />
+        <Parameter Variable="Speed" Name="Speed" Type="int" Default="0" Description="Actual Speed Value" />
+        <Parameter Variable="SPBorderWidth" Name="Setpoint Border Width" Type="int" Default="5" Description="Indicator Border Width (when no fill color is used)" />
+        <Parameter Variable="SPBorder" Name="Setpoint Border Color" Type="color" Default="215" Description="Indicator Border color" />
+        <Parameter Variable="SPFill" Name="Setpoint Fill" Type="color" Default="0" Description="Indicator Fill color" />
+        <Parameter Variable="SPRad" Name="Setpoint Radius" Type="int" Default="5" Description="Indicator Radius" />
+        <Parameter Variable="SetPoint" Name="Setpoint" Type="int" Default="0" Description="Actual Setpoint Value" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="NMEALatLon" FunctionName="DrawNMEALatLon" Width="100" Height="100" Identifier="0x16" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="image" Name="Background Image" Type="image" Default="" Description="Image" />
+        <Parameter Variable="redrawDisplay" Name="Redraw display" Type="bool" Default="true" Hidden="true" />
+        <Parameter Variable="DPos" Name="Position" Type="lreal" Default="0" Description="Position" />
+        <Parameter Variable="LatLon" Name="LatLon" Type="int" Default="0" Description="Latitude (0), Longitude (1)" />
+        <Parameter Variable="Format" Name="DisplayFormat" Type="int" Default="0" Description="DDD° MM&#39; SS.S&quot; (0), DDD° MM.MMM&#39; (1), DDD.DDDDD° (2)" />
+        <Parameter Variable="dec" Name="Decimals" Type="int" Default="3" Description="Precision" />
+        <Parameter Variable="invalid" Name="Invalid" Type="bool" Default="false" Description="Set when value becomes invalid" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-10" Description="" />
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="invalidColor" Bindable="false" Name="Invalid Color" Type="color" Default="148" Description="Invalid Color" />
+        <Parameter Variable="invalidChar" Name="Invalid Char" Type="int" Default="0" Description="X (0), - (1)" />
+        <Parameter Variable="horizontalAlignment" Name="Horizontal Alignment" Type="int" Default="2" Description="Left (0), center (1), right (2)" />
+        <Parameter Variable="verticalAlignment" Name="Vertical Alignment" Type="int" Default="0" Description="Top (0), middle (1), bottom (2)" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="0" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+</Library>

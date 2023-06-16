@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="110" Height="130" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="110" Height="130" BorderWidth="1" BorderStyle="Flat" BorderColor="DarkShadow" FillColor="MenuBackground" CornerRoundRadius="5">
+			<Children>
+				<Button Height="30" X="5" Y="5" Text="White" FillColor="White" FillColorActionRunning="LightingIndigo" OutlineColor="Gray" TextColor="Background" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Color_Ch"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Height="30" X="5" Y="35" Text="Red" FillColor="Red" FillColorActionRunning="LightingIndigo" OutlineColor="Gray" TextColor="Background" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Color_Ch"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Height="30" X="5" Y="65" Text="Green" FillColor="Green" FillColorActionRunning="LightingIndigo" OutlineColor="Gray" TextColor="Background" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Color_Ch"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Height="30" X="5" Y="95" Text="Yellow" FillColor="Yellow" FillColorActionRunning="LightingIndigo" OutlineColor="Gray" TextColor="Background" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Color_Ch"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

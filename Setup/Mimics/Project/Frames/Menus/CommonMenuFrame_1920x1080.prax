@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1920" Height="1010" Y="70" BorderWidth="0" FillColor="BackgroundConning">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBackground"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="1920" Height="70" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Frame Width="244.828" Height="60" X="1610" Y="5" Path="..\Logos\TERASAKI Logo.prax"/>
+		<Rectangle Width="1920" Height="5" Y="65" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Rectangle Width="1920" Height="3" Y="66" BorderWidth="0" BorderColor="StatusInactive" FillColor="StatusInactive"/>
+		<Button Width="350" Height="55" X="1250" Y="5" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" FillColorActionRunning="Transparent" FillPatternColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<TextBox Width="31" Height="11" X="25" Y="35" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;12.0;N;N;N" Text="GMT">
+					<Bindings>
+						<MiscellaneousStringBinding TargetPropertyName="Text"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="130" Height="30" X="55" Y="20" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="00:00:00">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="135" Height="30" X="190" Y="20" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="2020-01-01">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams Format="d.mm.yyyy"/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<GeneralCAMClientCommandsClickAction CAMClientCommandType="Toggle Date Time"/>
+			</ClickActions>
+		</Button>
+		<Button LockOverlayVisible="False" LockOverlayColor="Transparent" Width="55" Height="55" X="1860" Y="5" Text="  " BorderColor="NoAlarmGreen" FillColor="Transparent" FillColorActionRunning="Transparent" Font="Segoe UI;10.0;N;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent"/>
+			</Bindings>
+			<ClickActions>
+				<SetVariableValueClickAction>
+					<Variable>
+						<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<BoolVariableSetter SetValueType="Toggle"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="545" Height="940" X="1375" Y="70" Highlight_Button_NR="0" Path=".\SideMenuVertical_16.9.prax" Bt04_SB09_Text="" Bt07_SB05_setPageTitle="" Bt10_SB07_setPageTitle="" Bt05_SB02_setPageTitle="L.T F.W COOLING SYSTEM" Bt10_SB09_setPageTitle="" Bt05_SB07_setPageTitle="" Bt03_SB02_setPageTitle="F.O PURIFYNG SYSTEM" Bt01_SB01_Text="" Bt10_opensMimic="99" Bt03_SB02_Text="F.O PURIFYNG" Bt01_SB07_Text="" Bt10_SB06_setPageTitle="" Bt09_SB08_setPageTitle="" Bt01_SB09_Text="" Bt10_SB02_setPageTitle="" Bt01_totalSubButtons="0" Bt02_totalSubButtons="0" Bt07_SB08_Text="" Bt10_SB09_Text="" Bt09_SB02_setPageTitle="16K STEAM SYSTEM" Bt01_Text="MAIN ENGINE" Bt10_SB05_setPageTitle="" Bt07_SB07_setPageTitle="" Bt04_SB06_Text="" Bt01_SB03_setPageTitle="" Bt08_hasSubMenu="True" Bt05_SB08_Text="" Bt09_SB01_Text="E/R EXH GAS" Bt02_setPageTitle="" Bt04_SB05_Text="" Bt01_SB06_Text="" Bt03_SB03_Text="M/E F.O SERVICE" Bt10_totalSubButtons="0" Bt03_SB08_setPageTitle="" Bt02_SB01_Text="" Bt04_SB10_setPageTitle="" Bt09_Text="EXH GAS &amp; STEAM" Bt02_Text="GENERATORS" Bt01_opensMimic="21" Bt01_SB04_setPageTitle="" Bt03_SB04_setPageTitle="D/G F.O SERVICE SYSTEM" Bt09_SB08_Text="" Bt10_SB08_setPageTitle="" Bt_01_isVisible="True" Bt03_SB10_setPageTitle="" Bt10_SB02_Text="" Bt01_SB08_Text="" Bt03_opensMimic="23" Bt02_SB02_setPageTitle="" Bt04_totalSubButtons="3" Bt10_SB07_Text="" Bt05_SB01_Text="S.W COOLING" Bt03_SB04_Text="D/G F.O SERVICE" Bt04_setPageTitle="LUB OIL SYSTEM" Bt10_SB05_Text="" Bt04_SB05_setPageTitle="" Bt10_SB08_Text="" Bt01_SB01_setPageTitle="" Bt01_SB02_Text="" Bt09_SB03_setPageTitle="7K STEAM SYSTEM" Bt02_SB10_Text="" Bt04_SB09_setPageTitle="" Bt05_opensMimic="25" Bt09_SB10_setPageTitle="" Bt09_SB02_Text="16K STEAM" Bt01_SB04_Text="" Bt01_setPageTitle="MAIN ENGINE" Bt01_SB05_setPageTitle="" Bt04_SB01_setPageTitle="L.O FILLING TRANSFER AND PURIFYING SYSTEM" Bt03_SB09_Text="" Bt04_SB03_setPageTitle="STERN TUBE L.O SYSTEM" Bt08_SB08_Text="" Bt02_hasSubMenu="False" Bt05_totalSubButtons="5" Bt04_SB02_Text="L.O SERVICE" Bt10_SB10_setPageTitle="" Bt03_SB05_Text="EMCY G/E FO" Bt05_SB010_Text="" Bt03_SB10_Text="" Bt06_SB03_Text="BILGE &amp; BALLAST 3" Bt04_SB07_Text="" Bt01_SB03_Text="" Bt02_SB05_setPageTitle="" Bt06_SB06_setPageTitle="" Bt_04_isVisible="True" Bt05_SB07_Text="" Bt01_SB08_setPageTitle="" Bt05_setPageTitle="COOLING WATER" Bt03_hasSubMenu="True" Bt06_SB08_Text="" Bt05_SB05_Text="SERVICE WATER" Bt02_SB03_Text="" Bt10_SB03_setPageTitle="" Bt01_hasSubMenu="False" Bt05_SB10_setPageTitle="" Bt05_SB01_setPageTitle="S.W COOLING SYSTEM" Bt01_SB09_setPageTitle="" Bt02_SB07_Text="" Bt08_SB04_Text="" Bt04_SB07_setPageTitle="" Bt05_SB08_setPageTitle="" Bt03_SB01_setPageTitle="F.O FILLING &amp; TRANSFER" Bt_06_isVisible="True" Bt02_SB10_setPageTitle="" Bt05_SB02_Text="L.T F.W COOL" Bt02_SB07_setPageTitle="" Bt01_SB02_setPageTitle="" Bt07_Text="BOILER SYSTEM" Bt06_SB04_setPageTitle="" Bt01_SB05_Text="" Bt07_SB03_setPageTitle="" Bt08_SB07_setPageTitle="" Bt_02_isVisible="True" Bt06_SB01_Text="BILGE &amp; BALLAST 1" Bt08_SB08_setPageTitle="" Bt06_SB02_Text="BILGE &amp; BALLAST 2" Bt02_SB05_Text="" Bt02_SB04_Text="" Bt02_opensMimic="22" Bt03_Text="FUEL OIL SYSTEM" Bt01_SB06_setPageTitle="" Bt02_SB01_setPageTitle="" Bt03_SB01_Text="F.O FILL&amp; TRANS" Bt06_SB05_setPageTitle="" Bt05_hasSubMenu="True" Bt08_SB09_setPageTitle="" Bt08_totalSubButtons="2" Bt02_SB06_Text="" Bt01_SB07_setPageTitle="" Bt_10_isVisible="False" Bt02_SB03_setPageTitle="" Bt08_setPageTitle="AIR SYSTEM" Bt02_SB06_setPageTitle="" Bt06_SB05_Text="" Bt01_SB10_Text="" Bt06_SB07_Text="" Bt07_setPageTitle="BOILER SYSTEM" Bt06_SB04_Text="" Bt06_SB10_Text="" Bt02_SB02_Text="" Bt06_setPageTitle="BILGE &amp; BALLAST" Bt02_SB04_setPageTitle="" Bt04_SB04_setPageTitle="" Bt06_SB09_setPageTitle="" Bt09_SB05_setPageTitle="INERT GAS SYSTEM" Bt01_SB10_setPageTitle="" Bt06_SB07_setPageTitle="" Bt03_setPageTitle="FUEL OIL SYSTEM" Bt_08_isVisible="True" Bt04_SB08_setPageTitle="" Bt02_SB08_Text="" Bt10_SB01_Text="" Bt03_SB03_setPageTitle="M/E F.O SERVICE" Bt02_SB09_setPageTitle="" Bt06_SB08_setPageTitle="" Bt02_SB08_setPageTitle="" Bt09_SB06_setPageTitle="NOX EMISSION CONTROL SYSTEM" Bt10_hasSubMenu="False" Bt05_SB03_setPageTitle="M/E H.T F.W COOLING SYSTEM" Bt07_SB02_setPageTitle="BOILER F.O SERVICE SYSTEM" Bt_03_isVisible="True" Bt07_SB10_setPageTitle="" Bt09_SB01_setPageTitle="E/R EXH GAS SYSTEM" Bt06_totalSubButtons="3" Bt08_Text="AIR SYSTEM" Bt07_totalSubButtons="2" Bt02_SB09_Text="" Bt05_SB06_Text="" Bt08_SB02_Text="E/R CTRL AIR" Bt04_SB03_Text="S/T L.O SYSYEM" Bt03_totalSubButtons="7" Bt06_hasSubMenu="True" Bt03_SB05_setPageTitle="EMCY G/E FO SYSTEM" Bt06_opensMimic="26" Bt05_SB06_setPageTitle="" Bt03_SB06_Text="INCINERATOR FO" Bt03_SB06_setPageTitle="INCINERATOR FO SYSTEM" Bt03_SB07_Text="FO DRAIN" Bt03_SB07_setPageTitle="FO DRAIN SYSTEM" Bt08_SB03_setPageTitle="" Bt03_SB08_Text="" Bt08_SB05_setPageTitle="" Bt05_Text="COOLING WATER" Bt03_SB09_setPageTitle="" Bt04_Text="LUB OIL SYSTEM" Bt04_opensMimic="24" Bt04_hasSubMenu="True" Bt04_SB01_Text="L.O FILL&amp; TRANS" Bt10_SB04_setPageTitle="" Bt04_SB02_setPageTitle="L.O SERVICE SYSTEM" Bt04_SB04_Text="" Bt04_SB06_setPageTitle="" Bt04_SB08_Text="" Bt05_SB04_Text="G/E H.T.F.W" Bt04_SB010_Text="" Bt08_SB04_setPageTitle="" Bt_05_isVisible="True" Bt05_SB03_Text="M/E H.T F.W" Bt05_SB04_setPageTitle="G/E H.T.F.W COOLING SYSTEM" Bt05_SB05_setPageTitle="SERVICE WATER" Bt09_SB03_Text="7K STEAM" Bt05_SB09_Text="" Bt10_SB04_Text="" Bt05_SB09_setPageTitle="" Bt06_Text="BILGE &amp; BALLAST" Bt06_SB01_setPageTitle="BILGE &amp; BALLAST 1 SYSTEM" Bt06_SB02_setPageTitle="BILGE &amp; BALLAST 2 SYSTEM" Bt08_SB10_Text="" Bt06_SB03_setPageTitle="BILGE &amp; BALLAST 3 SYSTEM" Bt06_SB06_Text="" Bt07_SB06_setPageTitle="" Bt06_SB09_Text="" Bt09_SB04_Text="CONDENSATE" Bt06_SB10_setPageTitle="" Bt_07_isVisible="True" Bt07_opensMimic="27" Bt07_hasSubMenu="True" Bt07_SB01_Text="BOILER WATER" Bt07_SB01_setPageTitle="BOILER FEED WATER SYSTEM" Bt07_SB02_Text="BOILER F.O SERV" Bt07_SB03_Text="" Bt09_SB06_Text="NOX EMISSION" Bt07_SB04_Text="" Bt09_SB04_setPageTitle="CONDENSATE SYSTEM" Bt07_SB04_setPageTitle="" Bt07_SB05_Text="" Bt07_SB06_Text="" Bt07_SB07_Text="" Bt07_SB08_setPageTitle="" Bt07_SB09_Text="" Bt07_SB09_setPageTitle="" Bt07_SB10_Text="" Bt08_opensMimic="28" Bt08_SB01_Text="E/R COMP AIR" Bt08_SB01_setPageTitle="E/R COMPRESSED AIR SYSTEM" Bt08_SB02_setPageTitle="E/R CONTROL AIR SYSTEM" Bt08_SB03_Text="" Bt08_SB05_Text="" Bt08_SB06_Text="" Bt08_SB06_setPageTitle="" Bt10_SB06_Text="" Bt08_SB07_Text="" Bt10_SB10_Text="" Bt08_SB09_Text="" Bt08_SB10_setPageTitle="" Bt_09_isVisible="True" Bt09_opensMimic="29" Bt09_hasSubMenu="True" Bt09_totalSubButtons="7" Bt09_setPageTitle="EXH GAS &amp; STEAM" Bt09_SB05_Text="INERT GAS" Bt09_SB07_Text="SOX EMISSION" Bt09_SB07_setPageTitle="SOX EMISSION CONTROL SYSTEM" Bt09_SB09_Text="" Bt09_SB09_setPageTitle="" Bt09_SB10_Text="" Bt10_Text="" Bt10_setPageTitle="" Bt10_SB03_Text="">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Visible" Activate="True" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="400" Height="45" X="710" Y="10" BorderColor="Transparent" FillColor="BackgroundMenu" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="PATROL TIMER STATUS">
+			<Bindings>
+				<PatrolTimerStatusBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<PatrolTimerStatusToTextConvertParams TextWhenOff="PATROL TIMER: OFF" TextWhenAlarmPD="PATROL TIMER: ALARM">
+							<Bindings>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenWarning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" mm:ss WARNING" ConversionFormat="mm:ss"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenRunning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" MIN. RUNNING" ConversionFormat="mm"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+							</Bindings>
+						</PatrolTimerStatusToTextConvertParams>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+				<PatrolTimerStatusBinding TargetPropertyName="TextColor">
+					<ConvertParams>
+						<PatrolTimerStatusToColorConvertParams ColorWhenRunning="Barfill01"/>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="515" Height="30" X="20" Y="20" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;28.0;N;N;N" Text="GENERAL INFO">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ELECTRIC" DefaultValue="PAGE TITLE">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Page_Title"/>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="MultiplePages"/>
+						<VariableBinding TargetPropertyName="SelectedValue0">
+							<ConvertParams>
+								<StringToTranslatableStringConvertParams/>
+							</ConvertParams>
+							<Variable>
+								<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<Button Width="410" Height="55" X="705" Y="5" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="5"/>
+			</ClickActions>
+		</Button>
+		<Frame Width="1920" Height="60" Y="1015" Path=".\BottomAlarmLine.prax" HornOutput_CH1="61040" HornOutput_CH3="61040" HornOutput_CH2="61040"/>
+		<Frame Width="45" Height="45" X="1865" Y="10" Path=".\Hamburger_button.prax"/>
+	</Children>
+</RootElement>

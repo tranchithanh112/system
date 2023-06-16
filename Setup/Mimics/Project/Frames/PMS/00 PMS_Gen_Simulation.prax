@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="320" Height="700" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="315" Height="585" X="10" Y="120" BorderColor="DarkShadow" FillColor="DarkShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="315" Height="585" X="5" Y="115" BorderColor="InactiveGrey" CornerRoundRadius="5"/>
+		<TextBox Width="75" Height="30" X="100" Y="555" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GEN_KW"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="175" Y="560" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="90" Height="30" X="15" Y="555" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="GEN KW"/>
+		<Frame Width="280" Height="280" X="20" Y="185" DialColor="ConningBackground" CentralDigitsColor="ActiveText" DialValue1_CH="0" DialValue_MAX="100" Smoothness="1000" Filling="True" Pointer="False" MultiplyingFactor="1" Decimals_Outside="0" Full="False" Load_SP_KW="0" MultiFactorVisible="False" x10="x10" Units="%" Description="GEN kW" Path=".\kW Gauges\Gauge_Kw_Percent.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="GEN_KW_PERC"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="150" Height="50" X="85" Y="115" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;32.0;N;N;N" Text="DG1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="75" Height="30" X="100" Y="465" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GEN_VOLT"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="175" Y="470" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="V"/>
+		<TextBox Width="30" Height="25" X="175" Y="590" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="kVar"/>
+		<TextBox Width="90" Height="30" X="15" Y="585" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="GEN kVar"/>
+		<TextBox Width="75" Height="30" X="100" Y="585" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GEN_KVAR"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox FlashFast="True" FlashArea="TextOnly" FlashColor="Background" Width="150" Height="30" X="85" Y="160" BorderWidth="0" FillColor="Transparent" TextColor="Orange" Font="Praxis;18.0;N;N;N" Text="STOPPED">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue6="Green" SelectedValue7="Yellow" DefaultValue="InfoTextGrey">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_ENERGIZED"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_RUNNING"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_START_FAIL"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="" SelectedValue1="" SelectedValue2="" SelectedValue3="" SelectedValue4="START FAIL" SelectedValue5="" SelectedValue6="ENERGIZED" SelectedValue7="RUNNING" DefaultValue="STOPPED">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_RUNNING"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_ENERGIZED"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_START_FAIL"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="15" Y="465" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="VOLTAGE"/>
+		<Line Width="4" Color="Orange" X0="160" Y0="115" X1="160" Y1="0"/>
+		<Panel Width="85" Height="120" X="235" Y="115" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="DarkShadow" CornerRoundRadius="5">
+			<Children>
+				<TextBox Width="85" Height="20" Y="80" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;18.0;N;N;N" Text="READY">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue7="Green" DefaultValue="Gray">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_READY"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="85" Height="20" Y="20" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;N;N;N" Text="PMS">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue7="ActiveText" DefaultValue="Gray">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_PMS"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+		<TextBox Width="30" Height="25" X="175" Y="500" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="Hz"/>
+		<TextBox Width="75" Height="30" X="100" Y="495" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GEN_FREQ"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="15" Y="495" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="FREQUENCY"/>
+		<TextBox Width="75" Height="30" X="100" Y="525" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GEN_AMP"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="175" Y="530" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="A"/>
+		<TextBox Width="90" Height="30" X="15" Y="525" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="CURRENT"/>
+		<Rectangle FlashFast="True" FlashArea="OutlineOnly" FlashColor="Green" Width="60" Height="60" X="120" Y="35" BorderWidth="2" BorderColor="ButtonOutline" FillPatternColor="PageInfoLine"/>
+		<Rectangle Width="8" Height="34" X="130" Y="48" BorderColor="InfoTextGrey" FillPatternColor="White">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GEN_CB"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="8" Height="34" X="156" Y="48" BorderColor="InfoTextGrey" FillColor="Green">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GEN_CB"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+		<Line Width="2" Color="Orange" X0="160" Y0="90" X1="160" Y1="93"/>
+		<Line Width="2" Color="Orange" X0="160" Y0="37" X1="160" Y1="40"/>
+		<Rectangle Width="8" Height="8" X="156" Y="82" BorderColor="InfoTextGrey"/>
+		<Rectangle Width="8" Height="8" X="156" Y="40" BorderColor="InfoTextGrey"/>
+		<TextBox Width="75" Height="30" X="205" Y="465" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="ActiveText" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="NOM_VOLT"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="280" Y="470" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="V"/>
+		<TextBox Width="75" Height="30" X="205" Y="495" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="ActiveText" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="NOM_FREQ"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="280" Y="500" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="Hz"/>
+		<TextBox Width="75" Height="30" X="205" Y="525" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="ActiveText" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="NOM_AMP"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="280" Y="530" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="A"/>
+		<TextBox Width="75" Height="30" X="205" Y="555" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="ActiveText" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="NOM_KW"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="280" Y="560" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="30" Height="25" X="280" Y="590" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="kVar"/>
+		<TextBox Width="75" Height="30" X="205" Y="585" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="ActiveText" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="NOM_KVAR"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="75" Height="30" X="205" Y="615" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="ActiveText" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COS_PHI"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="280" Y="620" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="  ϕ"/>
+		<TextBox Width="80" Height="25" X="125" Y="440" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;16.0;N;N;N" Text="ACTUAL"/>
+		<TextBox Width="80" Height="25" X="230" Y="440" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;16.0;N;N;N" Text="NOMINAL"/>
+		<TextBox Width="85" Height="20" X="235" Y="165" BorderWidth="0" FillColor="Transparent" TextColor="Yellow" Font="Praxis;18.0;N;N;N" Text="REM">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue7="Yellow" DefaultValue="Gray">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_REM"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="30" X="65" Y="120" BorderColor="Transparent" TextColor="Green" Font="Praxis;20.0;B;N;N" Text="-1">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GEN_SEQ"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="30" X="15" Y="120" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;20.0;N;N;N" Text="SEQ"/>
+		<TextBox Width="50" Height="30" X="230" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;20.0;N;N;N" Text="BLOCK"/>
+		<TextBox Width="30" Height="30" X="280" Y="660" BorderColor="Transparent" LinePosition="Centered" FillColor="Transparent" TextColor="Cyan" Font="Praxis;20.0;B;N;N" Text="-1">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="BLOCK"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="255" Y="35" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;20.0;N;N;N" Text="60">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="BUS_FREQ"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="30" X="195" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Orange" Font="Praxis;16.0;N;N;N" Text="BUS NO :"/>
+		<TextBox Width="45" Height="25" X="190" Y="35" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;20.0;N;N;N" Text="440">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="BUS_VOLT"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="235" Y="35" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="V"/>
+		<TextBox Width="30" Height="25" X="295" Y="35" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="Hz"/>
+		<TextBox Width="30" Height="30" X="270" Y="5" BorderColor="Transparent" FillColor="Transparent" TextColor="Green" Font="Praxis;20.0;B;N;N" Text="01">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SIM_BUS"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="35" Y="660" BorderWidth="0" FillColor="Transparent" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="NOT PRESENT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="NOT_PRESENT"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="175" Y="620" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="kVar"/>
+		<TextBox Width="75" Height="30" X="100" Y="615" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GEN_KVAR_PERC"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="15" Y="615" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text=" GEN % kVar"/>
+		<TextBox Width="80" Height="30" X="30" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;18.0;N;N;N" Text="AUTO BUS-TIE">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AUTO_BUSTIE"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

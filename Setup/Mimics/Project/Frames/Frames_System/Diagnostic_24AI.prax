@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="120" Height="134" GridSpacing="1">
+	<Children>
+		<Rectangle Width="120" Height="134" BorderColor="Black" FillColor="Black"/>
+		<Rectangle Width="85" Height="130" X="18" Y="2" BorderColor="PanelFaceBorder" FillColor="Gray">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="OldAlarm" DefaultValue="Gray">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EarthFail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="4" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="7" Height="9" X="112" Y="2" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="44" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="7" Height="9" X="112" Y="42" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="112" Y="32" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="112" Y="22" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="112" Y="12" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="14" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="24" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="34" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="54" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="7" Height="9" X="112" Y="52" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="75" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="7" Height="9" X="112" Y="73" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="85" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="7" Height="9" X="112" Y="83" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="105" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="7" Height="9" X="112" Y="103" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="95" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="7" Height="9" X="112" Y="93" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="112" Y="123" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="112" Y="113" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="115" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="106" Y="125" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="4" Height="4" X="-22" Y="132" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="7" Height="9" X="1" Y="3" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="43" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="33" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="23" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="13" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="53" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="74" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="84" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="104" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="94" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="124" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="7" Height="9" X="1" Y="114" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="5" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="45" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="15" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="25" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="35" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="55" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="76" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="86" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="106" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="96" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="116" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="10" Y="126" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<TextBox Width="47" Height="22" X="37" Y="26" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Arial;48.0;N;N;N" Text="AI">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Type"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="47" Height="22" X="36" Y="85" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Arial;48.0;N;N;N" Text="052">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Number"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

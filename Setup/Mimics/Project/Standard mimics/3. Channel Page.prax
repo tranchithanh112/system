@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1045" OnScreenNumpadFramePath="..\Frames\01. Standard\Popup_Numpad.prax" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<ChannelList Width="1920" Height="1045" HeaderFillColor="GaugeBackground" HeaderTextColor="InfoTextGrey" HeaderFont="Praxis;22.0;B;N;N" FillColor="ConningBackground" AlternateFillColor="MenuBackground" HighlightColor="MidnightBlue" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" OutlineColor="Transparent" ColumnSepLinesVisible="False" FileName="..\Frames\01. Standard\Frame_ALContextMenu.prax"/>
+		<ChannelListInputBox Width="150" Height="40" X="1475" Y="980" BorderColor="InfoTextGrey" TextColor="MidnightBlue" Font="Praxis;20.0;B;N;N">
+			<TextEnteredActions>
+				<AddChannelToChannelList ChannelNumber="0"/>
+			</TextEnteredActions>
+		</ChannelListInputBox>
+		<Rectangle Width="150" Height="40" X="1640" Y="980" BorderColor="Transparent" FillColor="ConningBackground"/>
+		<Button Width="150" Height="40" X="1640" Y="980" ClipToBounds="True" Text="Reset" FillColor="Transparent" OutlineColor="InfoTextGrey" TextColor="InfoTextGrey" Font="Praxis;20.0;B;N;N">
+			<ClickActions>
+				<ResetChannelList/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

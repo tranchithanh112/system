@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="40" Height="40" GridSpacing="2" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="40" Height="40" BorderColor="InfoTextGrey" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;32.0;N;N;N" Text="B">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="port_txt"/>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Port_not_comunication"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Board_not_present"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

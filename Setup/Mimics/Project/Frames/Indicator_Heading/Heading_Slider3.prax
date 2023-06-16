@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="280" Height="125" GridSpacing="5" ClipToBounds="True">
+	<Children>
+		<Rectangle Width="280" Height="50" Y="75" BorderColor="PageInfoLine" FillColor="PageInfoLine" CornerRoundRadius="10"/>
+		<Polyline Width="6" LineColor="PageInfoLine" ClosedOutline="True" FillColor="PageInfoLine">
+			<Points>
+				<Point Coord="75;40"/>
+				<Point Coord="95;5"/>
+				<Point Coord="185;5"/>
+				<Point Coord="205;40"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="270" Height="45" X="5" Y="40" FillColor="PageInfoLine" LightingStyle="Radial"/>
+		<FillBar Width="135" Height="8" X="140" Y="25" RangeEnd="55" LimitType="None" LimitMarkerType="None" Value="15" LineWidth="0" FillColor="White">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ROT"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="135" Height="8" X="5" Y="25" FillDirection="RightToLeft" RangeEnd="-55" LimitType="None" LimitMarkerType="None" Value="-15" LineWidth="0" FillColor="White">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ROT"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<Line X0="140" Y0="25" X1="140" Y1="33"/>
+		<Rectangle Width="270" Height="8" X="5" Y="25" FillColor="Transparent" CornerRoundRadius="5"/>
+		<TextBox Width="70" Height="25" X="105" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N" Text="55.5 °/m">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ROT"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix=" °/m"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="95" Y="90" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;26.0;B;N;N" Text="359.5°">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix="°"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="1400" Height="45" X="-110" Y="35" Path=".\Slider_Complete.prax">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="X" InRangeBegin="0" InRangeEnd="360" OutRangeBegin="-110" OutRangeEnd="-1010">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</Frame>
+		<Line Color="White" X0="5" Y0="80" X1="275" Y1="80"/>
+		<Rectangle Width="280" Height="55" Y="35" BorderWidth="6" BorderColor="PageInfoLine" FillColor="Transparent" CornerRoundRadius="10"/>
+		<Rectangle Width="270" Height="45" X="5" Y="40" FillColor="Transparent" CornerRoundRadius="5"/>
+		<Polyline ClosedOutline="True">
+			<Points>
+				<Point Coord="140;80"/>
+				<Point Coord="135;90"/>
+				<Point Coord="145;90"/>
+			</Points>
+		</Polyline>
+		<TextBox Width="90" Height="30" X="5" Y="90" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="Set 359.5°">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Setpoint"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Prefix="Set " Suffix="°"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

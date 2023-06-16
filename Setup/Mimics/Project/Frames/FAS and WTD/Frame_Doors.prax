@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="15" Height="40" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle LockOverlayVisible="False" LockOverlayColor="Cyan" Width="15" Height="40" BorderWidth="2" BorderColor="Cyan" FillColor="IndicatorBlueTrans">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="BorderColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Cyan"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="IndicatorBlueTrans" ColorWhenTrue="IndicatorRedTrans"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Ch"/>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</Rectangle>
+	</Children>
+</RootElement>

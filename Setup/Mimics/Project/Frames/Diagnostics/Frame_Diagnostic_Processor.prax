@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="140" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="35" Height="35" X="-34" Y="61" FillColor="Black" Font="Praxis;28.0;N;N;N" Text="B">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Orange">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_B_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_B_CH"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="140" BorderColor="Black" FillColor="Black"/>
+		<TextBox Width="35" Height="35" X="-34" Y="3" FillColor="Black" Font="Praxis;28.0;N;N;N" Text="A">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Orange">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_A_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_A_CH"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="118" Height="93" X="12" Y="3" BorderColor="PanelFaceBorder" FillColor="TextInfo">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Gray"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="9" Height="93" X="132" Y="3" BorderColor="Comment" FillColor="Comment"/>
+		<Rectangle Width="9" Height="93" Y="3" BorderColor="Comment" FillColor="Comment"/>
+		<TextBox Width="47" Height="22" X="48" Y="20" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;36.0;N;N;N" Text="XP"/>
+		<TextBox Width="47" Height="22" X="47" Y="55" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;36.0;N;N;N" Text="052">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Number"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="40" Height="40" GridSpacing="10" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="40" Height="20" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;15.0;N;N;N" Text="123456">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Tag_name"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100230" InvertCondition="True"/>
+			</Bindings>
+		</TextBox>
+		<Ellipse BorderWidth="2" LinePosition="Centered" BorderColor="InfoTextGrey" CenterX="20" CenterY="30" RadiusX="10" RadiusY="10" ArcBegin="90" ArcEnd="450">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Scrubber_filter"/>
+			</Bindings>
+		</Ellipse>
+		<Polyline Width="2" LineColor="InfoTextGrey" ClosedOutline="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Scrubber_filter"/>
+			</Bindings>
+			<Points>
+				<Point Coord="30;30"/>
+				<Point Coord="40;30"/>
+				<Point Coord="40;20"/>
+				<Point Coord="40;40"/>
+				<Point Coord="40;30"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="2" LineColor="InfoTextGrey" ClosedOutline="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Scrubber_filter"/>
+			</Bindings>
+			<Points>
+				<Point Coord="10;30"/>
+				<Point Coord="0;30"/>
+				<Point Coord="0;20"/>
+				<Point Coord="0;40"/>
+				<Point Coord="0;30"/>
+			</Points>
+		</Polyline>
+		<Rectangle Visible="False" Width="40" Height="40" BorderWidth="2" LinePosition="Centered" BorderColor="InfoTextGrey" FillPattern="AscendingDiagonalStripes" FillPatternColor="InfoTextGrey" CornerRoundRadius="10">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Normal_filter"/>
+			</Bindings>
+		</Rectangle>
+	</Children>
+</RootElement>

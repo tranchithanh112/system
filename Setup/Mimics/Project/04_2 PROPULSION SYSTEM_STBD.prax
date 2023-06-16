@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<Frame Height="25" X="280" Y="455" Channel_Num="2256" Left_Space="2" Unit="%" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="15" Y="455" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="E-STEERING TORQUE"/>
+		<Frame Height="25" X="280" Y="497.5" Channel_Num="2257" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="15" Y="497.5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="E-STEERING VFD TEMP"/>
+		<Frame Height="25" X="280" Y="535" Channel_Num="2258" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="15" Y="535" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="E-STEERING MOTOR 1 TEMP"/>
+		<Frame Height="25" X="280" Y="575" Channel_Num="2259" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="15" Y="575" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="E-STEERING MOTOR 2 TEMP"/>
+		<Frame Height="25" X="570" Y="455" Channel_Num="2260" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="850" Y="455" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="LUB OIL TEMP"/>
+		<Frame Height="25" X="570" Y="497.5" Channel_Num="2261" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="850" Y="497.5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="LO PUMP PRESS "/>
+		<Frame Height="25" X="570" Y="535" Channel_Num="2262" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="850" Y="535" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="LO PUMP PRESS AFT FILTER"/>
+		<Frame Height="25" X="570" Y="575" Channel_Num="2263" Left_Space="2" Unit="°C" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="85" Height="25" X="850" Y="575" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="LUB SPRAYING NOZZLES PRESS"/>
+		<Frame Width="250" Height="250" X="710" Y="110" DialColor="BackgroundConning" CentralDigitsColor="TextActive" Thr_Angle="2251" Smoothness="1000" Filling="True" Pointer="True" DialValue_MAX="1" Path=".\Frames\Gauges\Gauge_Thruster.prax" IndicatorLinesColor="TextActive"/>
+		<TextBox Width="90" Height="30" X="1065" Y="235" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;30.0;B;N;N" Text="STBD SIDE"/>
+		<TextBox Width="85" Height="20" X="432.5" Y="617.5" BorderColor="Transparent" FillColor="Transparent" TextColor="Orange" Font="Praxis;16.0;B;N;N" Text="ALARM"/>
+		<Frame Width="300" Height="25" X="15" Y="695" Alarm_Ch="2274" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="COMBINED STEERING  FAILURE" Alarm_Text="COMBINED STEERING  FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="15" Y="655" Alarm_Ch="2273" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="COMBINED PCU FAILURE" Alarm_Text="COMBINED PCU FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="325" Y="695" Alarm_Ch="2280" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="STEERING MOTOR 1 TEMP H-HIGH" Alarm_Text="STEERING MOTOR 1 TEMP H-HIGH" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="325" Y="655" Alarm_Ch="2279" Nomal_Color="StatusInactive" Active_Color="Orange" Normal_Text="STEERING MOTOR 1 TEMP HIGH" Alarm_Text="STEERING MOTOR 1 TEMP HIGH" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="15" Y="735" Alarm_Ch="2275" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="COMBINED THRUST FAILURE" Alarm_Text="COMBINED THRUST FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="15" Y="775" Alarm_Ch="2276" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="PCU MAIN POWER FAILURE" Alarm_Text="PCU MAIN POWER FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="15" Y="815" Alarm_Ch="2277" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="PCU BACKUP POWER FAILURE" Alarm_Text="PCU BACKUP POWER FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="15" Y="855" Alarm_Ch="2278" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="PCU POWER FAILURE" Alarm_Text="PCU POWER FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="325" Y="775" Alarm_Ch="2282" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="STEERING MOTOR 2 TEMP H-HIGH" Alarm_Text="STEERING MOTOR 2 TEMP H-HIGH" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="325" Y="735" Alarm_Ch="2281" Nomal_Color="StatusInactive" Active_Color="Orange" Normal_Text="STEERING MOTOR 2 TEMP HIGH" Alarm_Text="STEERING MOTOR 2 TEMP HIGH" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="325" Y="815" Alarm_Ch="2283" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="STEERING MOTOR OVERLOAD" Alarm_Text="STEERING MOTOR OVERLOAD" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="325" Y="855" Alarm_Ch="2284" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="STEER MOTOR-LOAD-SHARE-FAIL" Alarm_Text="STEER MOTOR-LOAD-SHARE-FAIL" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="325" Y="895" Alarm_Ch="2285" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="STEER FLOW FAILURE" Alarm_Text="STEER FLOW FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="325" Y="935" Alarm_Ch="2286" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="STEER FREEZE" Alarm_Text="STEER FREEZE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="635" Y="815" Alarm_Ch="2292" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO PUMP 1 START FAILURE" Alarm_Text="LO PUMP 1 START FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="635" Y="855" Alarm_Ch="2293" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO PUMP 1 PRESS FAILURE" Alarm_Text="LO PUMP 1 PRESS FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="635" Y="895" Alarm_Ch="2294" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO PUMP 1 OVER LOAD" Alarm_Text="LO PUMP 1 OVER LOAD" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="635" Y="935" Alarm_Ch="2295" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO PUMP 1 POWER FAILURE" Alarm_Text="LO PUMP 1 POWER FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="635" Y="975" Alarm_Ch="2296" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO PUMP 1 PHASE FAILURE" Alarm_Text="LO PUMP 1 PHASE FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="15" Y="895" Alarm_Ch="2297" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="SHAFT SEAL MONITOR LV LOW" Alarm_Text="SHAFT SEAL MONITOR LV LOW" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="15" Y="935" Alarm_Ch="2298" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="SHAFT SEAL MONITOR LV HIGH" Alarm_Text="SHAFT SEAL MONITOR LV HIGH" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="15" Y="975" Alarm_Ch="2299" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="SHAFT BRAKE FAILURE" Alarm_Text="SHAFT BRAKE FAILURE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="230" Y="415" Alarm_Ch="2269" Nomal_Color="StatusInactive" Active_Color="StatusActive" Normal_Text="LOCAL" Alarm_Text="LOCAL" Width_Text="150" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<TextBox Width="90" Height="30" X="430" Y="375" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;B;N;N" Text="CONTROL MODE"/>
+		<Frame Width="300" Height="25" X="400" Y="415" Alarm_Ch="2270" Nomal_Color="StatusInactive" Active_Color="Green" Normal_Text="FWD" Alarm_Text="FWD" Width_Text="150" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="400" Y="455" Alarm_Ch="2271" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="AFT" Alarm_Text="AFT" Width_Text="150" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="570" Y="415" Alarm_Ch="2272" Nomal_Color="StatusInactive" Active_Color="StatusActive" Normal_Text="BACK UP" Alarm_Text="BACK UP" Width_Text="150" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<TextBox Width="80" Height="25" X="735" Y="335" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="DEMAND"/>
+		<Frame Width="250" Height="250" X="-10" Y="110" DialColor="BackgroundConning" CentralDigitsColor="TextActive" DialValue1_CH="2254" DialValue_MAX="120" Smoothness="1000" Filling="True" Pointer="True" MultiplyingFactor="0" Decimals_Outside="0" TextDigitsColor="TextActive" Full="True" MultiFactorVisible="False" x10="x10" Units="RPM" Description="MOTOR 1" Path=".\Frames\Gauges\Gauge_RPM.prax"/>
+		<Frame Width="250" Height="250" X="230" Y="110" DialColor="BackgroundConning" CentralDigitsColor="TextActive" DialValue1_CH="2255" DialValue_MAX="120" Smoothness="1000" Filling="True" Pointer="True" MultiplyingFactor="0" Decimals_Outside="0" TextDigitsColor="TextActive" Full="True" MultiFactorVisible="False" x10="x10" Units="LOAD" Description="" Path=".\Frames\Gauges\Gauge_RPM.prax"/>
+		<Frame Width="250" Height="250" X="470" Y="110" DialColor="BackgroundConning" CentralDigitsColor="TextActive" DialValue1_CH="2253" DialValue_MAX="120" Smoothness="1000" Filling="True" Pointer="True" MultiplyingFactor="0" Decimals_Outside="0" TextDigitsColor="TextActive" Full="True" MultiFactorVisible="False" x10="x10" Units="RPM" Description="PROPEL" Path=".\Frames\Gauges\Gauge_RPM.prax"/>
+		<TextBox Width="80" Height="25" X="15" Y="335" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="DEMAND"/>
+		<Frame Height="25" X="850" Y="335" Channel_Num="2250" Left_Space="2" Unit="°" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<Frame Height="25" X="130" Y="335" Channel_Num="2252" Left_Space="2" Unit="%" Path=".\Frames\Parameter\Frame_Process_Value.prax" Text_Color="TextActive"/>
+		<TextBox Width="265" Height="30" X="370" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="AZIMUTH THRUSTER"/>
+		<Line Width="2" X0="1030" Y0="270" X1="1190" Y1="270"/>
+		<Frame Width="300" Height="25" X="635" Y="695" Alarm_Ch="2288" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO TEMP TEMP  H-HIGH" Alarm_Text="LO TEMP TEMP  H-HIGH" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="635" Y="655" Alarm_Ch="2287" Nomal_Color="StatusInactive" Active_Color="Orange" Normal_Text="LO TEMP TEMP HIGH" Alarm_Text="LO TEMP TEMP HIGH" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="325" Y="975" Alarm_Ch="2289" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO PRESSURE LOW" Alarm_Text="LO PRESSURE LOW" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="635" Y="735" Alarm_Ch="2290" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO FILLTER CLOGGED" Alarm_Text="LO FILLTER CLOGGED" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="635" Y="775" Alarm_Ch="2291" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="LO LEVEL LOW" Alarm_Text="LO LEVEL LOW" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<TextBox Width="300" Height="30" X="965" Y="370" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="STATIC CONVERTER"/>
+		<TextBox Width="300" Height="25" X="955" Y="497.5" BorderColor="Transparent" FillColor="Transparent" TextColor="Orange" Font="Praxis;16.0;B;N;N" Text="ALARM"/>
+		<TextBox Width="300" Height="25" X="955" Y="415" BorderColor="Transparent" FillColor="Transparent" TextColor="Green" Font="Praxis;16.0;B;N;N" Text="STATUS"/>
+		<Frame Width="300" Height="25" X="955" Y="535" Alarm_Ch="102022" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="OVER CURRENT" Alarm_Text="OVER CURRENT" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="575" Alarm_Ch="102023" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="OVER VOLTAGE" Alarm_Text="OVER VOLTAGE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="615" Alarm_Ch="102024" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="UNDER VOLTAGE" Alarm_Text="UNDER VOLTAGE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="655" Alarm_Ch="102025" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="SHORT CIRCUIT" Alarm_Text="SHORT CIRCUIT" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="695" Alarm_Ch="102026" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="EARTH FAULT" Alarm_Text="EARTH FAULT" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="735" Alarm_Ch="102027" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="UNIT OVER TEMP" Alarm_Text="UNIT OVER TEMP" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="775" Alarm_Ch="102028" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="FIELD BUS FAULT" Alarm_Text="FIELD BUS FAULT" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="815" Alarm_Ch="102029" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="SYSTEM BUS FAULT" Alarm_Text="SYSTEM BUS FAULT" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="855" Alarm_Ch="102030" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="SLOT COMMUNICATION FAULT" Alarm_Text="SLOT COMMUNICATION FAULT" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="895" Alarm_Ch="102031" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="OUTPUT PHASE" Alarm_Text="OUTPUT PHASE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="935" Alarm_Ch="102032" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="CHARGE FAULT" Alarm_Text="CHARGE FAULT" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="955" Y="975" Alarm_Ch="102033" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="MAIN SWITCH STATE FAULT" Alarm_Text="MAIN SWITCH STATE FAULT" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<TextBox Width="300" Height="25" X="955" Y="455" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" TextColor="StatusInactive" Font="Praxis;16.0;N;N;N" Text="STATIC CONVERTER">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Green" SelectedValue1="Green" SelectedValue2="Green" SelectedValue3="Green" SelectedValue4="Green" SelectedValue5="Green" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="102034"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="102035"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="102036"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="102037"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="102038"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5" ChannelNumber="102039"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="READY ON" SelectedValue1="READY RUN" SelectedValue2="RUNNING" SelectedValue3="RUN ENABLED" SelectedValue4="QUICK STOP" SelectedValue5="SWITCH ON INHIBIT" DefaultValue="STATIC CONVERTER STATE">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="102034"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="102035"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="102036"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="102037"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="102038"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5" ChannelNumber="102039"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="155" Height="30" X="1525" Y="80" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="PROPULSION MOTOR"/>
+		<Frame Width="45" Height="300" X="1305" Y="475" Value="2069" RangeLow="0" Color="Barfill01" RangeHigh="200" USE_BEGIN_VALUE="False" ID="U" SENSOR_FAIL_CH="2158" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" RangeHigh_="250" USE_BEGIN_CH="False" Back_Color="ColorTrendBackGround" RangeLow_="0" ID_1="PRE-FILTER" Bar_Color="Barfill01" ID_2="PRESS" Text_Color="TextInfo" Unit="KPa"/>
+		<Frame Width="45" Height="300" X="1360" Y="475" Value="2070" RangeLow="0" Color="Barfill01" RangeHigh="200" USE_BEGIN_VALUE="False" ID="V" SENSOR_FAIL_CH="2159" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" ID_1="PRE-FILTER" RangeHigh_="250" Unit="KPa" Back_Color="ColorTrendBackGround" ID_2="PRESS" RangeLow_="0" USE_BEGIN_CH="False" Text_Color="TextInfo" Bar_Color="Barfill01"/>
+		<Frame Width="45" Height="300" X="1415" Y="475" Value="2071" RangeLow="0" Color="Barfill01" RangeHigh="200" USE_BEGIN_VALUE="False" ID="W" SENSOR_FAIL_CH="2160" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" ID_2="PRESS" Back_Color="ColorTrendBackGround" Text_Color="TextInfo" Unit="KPa" USE_BEGIN_CH="False" Bar_Color="Barfill01" RangeLow_="0" ID_1="PRE-FILTER" RangeHigh_="250"/>
+		<TextBox Width="55" Height="20" X="1250" Y="500" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="200"/>
+		<TextBox Width="155" Height="20" X="1305" Y="450" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="WINDING TEMP"/>
+		<Frame Width="45" Height="300" X="1525" Y="475" Value="2072" RangeLow="0" Color="Barfill01" RangeHigh="100" USE_BEGIN_VALUE="False" ID="DE" SENSOR_FAIL_CH="2164" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" ID_1="PRE-FILTER" Text_Color="TextInfo" ID_2="PRESS" Unit="KPa" RangeLow_="0" RangeHigh_="250" Back_Color="ColorTrendBackGround" Bar_Color="Barfill01" USE_BEGIN_CH="False"/>
+		<Frame Width="45" Height="300" X="1635" Y="475" Value="2073" RangeLow="0" Color="Barfill01" RangeHigh="100" USE_BEGIN_VALUE="False" ID="NDE" SENSOR_FAIL_CH="2163" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" ID_2="PRESS" RangeLow_="0" USE_BEGIN_CH="False" ID_1="PRE-FILTER" RangeHigh_="250" Bar_Color="Barfill01" Text_Color="TextInfo" Back_Color="ColorTrendBackGround" Unit="KPa"/>
+		<TextBox Width="50" Height="20" X="1475" Y="500" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="100"/>
+		<TextBox Width="155" Height="20" X="1525" Y="450" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="BEARING TEMP"/>
+		<Frame Width="45" Height="300" X="1745" Y="475" Value="2074" RangeLow="0" Color="Barfill01" RangeHigh="100" USE_BEGIN_VALUE="False" ID="COLD" SENSOR_FAIL_CH="2161" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" RangeHigh_="250" ID_1="PRE-FILTER" USE_BEGIN_CH="False" RangeLow_="0" Unit="KPa" ID_2="PRESS" Back_Color="ColorTrendBackGround" Text_Color="TextInfo" Bar_Color="Barfill01"/>
+		<Frame Width="45" Height="300" X="1855" Y="475" Value="2075" RangeLow="0" Color="Barfill01" RangeHigh="100" USE_BEGIN_VALUE="False" ID="WARM" SENSOR_FAIL_CH="2162" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" Back_Color="ColorTrendBackGround" ID_2="PRESS" ID_1="PRE-FILTER" RangeLow_="0" Text_Color="TextInfo" RangeHigh_="250" Unit="KPa" Bar_Color="Barfill01" USE_BEGIN_CH="False"/>
+		<TextBox Width="50" Height="20" X="1695" Y="500" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="100"/>
+		<TextBox Width="155" Height="20" X="1745" Y="450" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="MOTOR AIR"/>
+		<Frame Width="45" Height="300" X="1745" Y="145" Value="2064" RangeLow="-100" Color="Barfill01" RangeHigh="800" USE_BEGIN_VALUE="True" ID="SPEED" SENSOR_FAIL_CH="0" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" Unit="KPa" RangeLow_="0" Text_Color="TextInfo" ID_2="PRESS" Back_Color="ColorTrendBackGround" ID_1="PRE-FILTER" USE_BEGIN_CH="False" RangeHigh_="250" Bar_Color="Barfill01"/>
+		<TextBox Width="155" Height="30" X="1525" Y="110" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="ACTUAL MOTOR"/>
+		<Frame Width="45" Height="300" X="1415" Y="145" Value="2065" RangeLow="-500" Color="Barfill01" RangeHigh="2500" USE_BEGIN_VALUE="True" ID="POWER" SENSOR_FAIL_CH="0" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" ID_2="PRESS" Bar_Color="Barfill01" ID_1="PRE-FILTER" Unit="KPa" RangeHigh_="250" Back_Color="ColorTrendBackGround" RangeLow_="0" USE_BEGIN_CH="False" Text_Color="TextInfo"/>
+		<Frame Width="45" Height="300" X="1305" Y="145" Value="2066" RangeLow="-30000" Color="Barfill01" RangeHigh="30000" USE_BEGIN_VALUE="True" ID="TORQUE" SENSOR_FAIL_CH="0" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" ID_1="PRE-FILTER" Unit="KPa" Bar_Color="Barfill01" Text_Color="TextInfo" ID_2="PRESS" RangeHigh_="250" Back_Color="ColorTrendBackGround" RangeLow_="0" USE_BEGIN_CH="False"/>
+		<Frame Width="45" Height="300" X="1635" Y="145" Value="2067" RangeLow="0" Color="Barfill01" RangeHigh="750" USE_BEGIN_VALUE="False" ID="VOLTAGE" SENSOR_FAIL_CH="0" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" Text_Color="TextInfo" ID_1="PRE-FILTER" USE_BEGIN_CH="False" Back_Color="ColorTrendBackGround" RangeLow_="0" ID_2="PRESS" RangeHigh_="250" Unit="KPa" Bar_Color="Barfill01"/>
+		<Frame Width="45" Height="300" X="1525" Y="145" Value="2068" RangeLow="0" Color="Barfill01" RangeHigh="2200" USE_BEGIN_VALUE="False" ID="CURRENT" SENSOR_FAIL_CH="0" Path=".\Frames\Frames_Propulsion\Frame_Bar_High.prax" RangeHigh_="250" ID_1="PRE-FILTER" RangeLow_="0" USE_BEGIN_CH="False" Unit="KPa" ID_2="PRESS" Text_Color="TextInfo" Back_Color="ColorTrendBackGround" Bar_Color="Barfill01"/>
+		<TextBox Width="50" Height="20" X="1695" Y="170" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="800"/>
+		<TextBox Width="50" Height="20" X="1365" Y="170" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="2500"/>
+		<TextBox Width="50" Height="20" X="1255" Y="170" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="30000"/>
+		<TextBox Width="50" Height="20" X="1585" Y="170" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="750"/>
+		<TextBox Width="50" Height="20" X="1475" Y="170" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="2200"/>
+		<TextBox Width="135" Height="20" X="1525" Y="857.5" BorderColor="Transparent" FillColor="Transparent" TextColor="Orange" Font="Praxis;16.0;B;N;N" Text="ALARM"/>
+		<Frame Width="300" Height="25" X="1275" Y="975" Alarm_Ch="2185" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="WCU PUMP 2 MANUAL PUMP FAIL" Alarm_Text="WCU PUMP 2 MANUAL PUMP FAIL" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="1275" Y="935" Alarm_Ch="2184" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="WCU PUMP 1 MANUAL PUMP FAIL" Alarm_Text="WCU PUMP 1 MANUAL PUMP FAIL" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<Frame Width="300" Height="25" X="1275" Y="895" Alarm_Ch="2157" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="MOTOR LEAKAGE" Alarm_Text="MOTOR LEAKAGE" Width_Text="300" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax"/>
+		<TextBox Width="190" Height="66.2791" X="1712.5" Y="75" BorderColor="Transparent" FillColor="Transparent" TextColor="Yellow" Font="Praxis;30.0;B;N;N" Text="PORT SIDE"/>
+		<TextBox Width="45" Height="25" X="1305" Y="570" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2166"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1305" Y="530" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALHH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2167"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1360" Y="570" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2169"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1360" Y="530" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALHH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2170"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1415" Y="570" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2172"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1415" Y="530" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALHH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2173"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1855" Y="530" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2175"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1635" Y="570" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2176"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1635" Y="530" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALHH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2177"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1525" Y="570" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2179"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="1525" Y="530" BorderColor="Background" FillColor="Red" TextColor="Yellow" Font="Praxis;16.0;N;N;N" Text="ALHH">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="2180"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="300" Height="25" X="1610" Y="895" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" TextColor="StatusInactive" Font="Praxis;16.0;N;N;N" Text="STATIC CONVERTER">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="MOTOR OVERSPEED" SelectedValue1="MOTOR IS STALLED" SelectedValue2="CONVERTER STARTUP TIMEOUT" SelectedValue3="MISS STARTUP CONDITION" SelectedValue4="" SelectedValue5="" DefaultValue="MOTOR-SHD">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2245"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2246"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2247"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2248"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue4="Green" SelectedValue5="Green" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2245"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2246"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2247"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2248"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="300" Height="25" X="1610" Y="935" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" TextColor="StatusInactive" Font="Praxis;16.0;N;N;N" Text="STATIC CONVERTER">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="WARNING ALARM" SelectedValue1="SHUT DOWN ALARM" SelectedValue2="REDUCTION COMMAND ALARM" SelectedValue3="AUTOMATIC REDUCTION ALARM" SelectedValue4="SUMMARY ALARM" SelectedValue5="" DefaultValue="COMMON-ALARM">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2050"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2051"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2052"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2053"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="2054"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue5="Green" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2050"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2051"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2052"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2053"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="2054"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="135" Height="20" X="1525" Y="785" BorderColor="Transparent" FillColor="Transparent" TextColor="Green" Font="Praxis;16.0;B;N;N" Text="STATUS"/>
+		<TextBox Width="300" Height="25" X="1610" Y="815" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" TextColor="StatusInactive" Font="Praxis;16.0;N;N;N" Text="STATIC CONVERTER">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="REMOTE CONTROL" SelectedValue1="LOCAL CONTROL" SelectedValue2="POWER MODE" SelectedValue3="FFU CONTROL" SelectedValue4="NFU CONTROL" DefaultValue="MODE">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2055"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2056"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2057"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2058"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="2059"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Green" SelectedValue1="Green" SelectedValue2="Green" SelectedValue3="Green" SelectedValue4="Green" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2055"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2056"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2057"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2058"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="2059"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="300" Height="25" X="1275" Y="815" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" TextColor="StatusInactive" Font="Praxis;16.0;N;N;N" Text="STATIC CONVERTER">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Green" SelectedValue1="Green" SelectedValue2="Green" SelectedValue3="Green" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2060"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2061"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2062"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2063"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="READY FOR OPERATION" SelectedValue1="SPEED SETPOINT ZERO" SelectedValue2="OPERATION" SelectedValue3="DRIVE LIMITED" DefaultValue="MODE">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2060"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2061"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2062"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2063"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="300" Height="25" X="1610" Y="975" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning" TextColor="StatusInactive" Font="Praxis;16.0;N;N;N" Text="STATIC CONVERTER">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue2="Orange" SelectedValue3="Orange" SelectedValue5="Green" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="1140"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="1141"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="1142"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="1143"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="INGETEAM CONVERTER LOCKOUT" SelectedValue1="INGETEAM CONVERTER SHUTDOWN" SelectedValue2="INGETEAM CONVERTER WARNING" SelectedValue3="INGETEAM CONVERTER SLOWDOWN" DefaultValue="INGERTEAM CONVERTER">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="2140"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="2141"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="2142"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3" ChannelNumber="2143"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="125" Height="25" X="412.5" Y="535" Channel_Num="2268" Channel_Initial="0" Text_Color="TextActive" Left_Space="2" Unit="H" Path=".\Frames\Parameter\Frame_Process_Value_L.prax"/>
+		<TextBox Width="85" Height="25" X="432.5" Y="497.5" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="RUNNING HOURS"/>
+		<Button Width="215" Height="75" X="1700" Y="70" ClipToBounds="True" Text="" TextColor="Yellow" Font="Palace Script MT;18.0;B;I;N">
+			<ClickActions>
+				<SetVariableValueClickAction>
+					<Variable>
+						<StringVariable Name="Top_Page_Title" DefaultValue="GENERAL INFO"/>
+					</Variable>
+					<VariableSetter>
+						<StringVariableSetter Value="PROPULSION PORT"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+				<NavigateToPreviousUserAction NavFrameName="PROPULSION"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

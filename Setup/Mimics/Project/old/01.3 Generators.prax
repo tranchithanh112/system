@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Ellipse CenterX="395" CenterY="175" RadiusX="-40" RadiusY="-40" ArcEnd="-360" ArcLength="-360">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="64110">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="BackgroundConning" ColorWhenTrue="NoAlarmGreen"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox Width="60" Height="60" X="365" Y="145" BorderWidth="0" FillColor="Transparent" Font="Praxis;28.0;N;N;N" Text="G4">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="64110">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="Black"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="420" Height="275" X="40" Y="735" DurationShown_min="10" DurationStored_min="60" Trend_Range_Low="20" Trend_Range_High="140" Trend_LineWith="1" Channel1="21507" Title1="Wind U" Channel2="21508" Title2="Wind V" Channel3="21509" Title3="Wind W" Channel4="21510" Title4="Bearing DE" Channel5="21511" Title5="Bearing NDE" Path=".\Frames\Frame_Trend\Frame_Trend_3WIND_2BEAR_300x400.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101021"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="420" Height="275" X="500" Y="735" DurationShown_min="10" DurationStored_min="60" Trend_Range_Low="20" Trend_Range_High="140" Trend_LineWith="1" Channel1="21501" Title1="Wind U" Channel2="21502" Title2="Wind V" Channel3="21503" Title3="Wind W" Channel4="21504" Title4="Bearing DE" Channel5="21505" Title5="Bearing NDE" Path=".\Frames\Frame_Trend\Frame_Trend_3WIND_2BEAR_300x400.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101021"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="420" Height="275" X="1420" Y="735" DurationShown_min="10" DurationStored_min="60" Trend_Range_Low="20" Trend_Range_High="140" Trend_LineWith="1" Channel1="11501" Title1="Wind U" Channel2="11502" Title2="Wind V" Channel3="11503" Title3="Wind W" Channel4="11504" Title4="Bearing DE" Channel5="11505" Title5="Bearing NDE" Path=".\Frames\Frame_Trend\Frame_Trend_3WIND_2BEAR_300x400.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101021"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="420" Height="275" X="960" Y="735" DurationShown_min="10" DurationStored_min="60" Trend_Range_Low="20" Trend_Range_High="140" Trend_LineWith="1" Channel1="11507" Title1="Wind U" Channel2="11508" Title2="Wind V" Channel3="11509" Title3="Wind W" Channel4="11510" Title4="Bearing DE" Channel5="11511" Title5="Bearing NDE" Path=".\Frames\Frame_Trend\Frame_Trend_3WIND_2BEAR_300x400.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101021"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="420" Height="260" X="40" Y="330" DurationShown_min="10" DurationStored_min="60" Trend_Range_High="2680" Trend_LineWith="1" Channel1="64045" Title1="kW" Colour1="TextActive" Trend_Range_Low="0" Channel2="64047" Title2="kVAr" Colour2="Yellow" Units="" Path=".\Frames\Frame_Trend\Frame_Trend_2x_300x400.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101021"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="420" Height="260" X="500" Y="330" DurationShown_min="10" DurationStored_min="60" Trend_Range_High="2680" Trend_LineWith="1" Channel1="63045" Title1="kW" Colour1="TextActive" Trend_Range_Low="0" Channel2="63047" Title2="kVAr" Colour2="Yellow" Units="" Path=".\Frames\Frame_Trend\Frame_Trend_2x_300x400.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101021"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="420" Height="260" X="960" Y="330" DurationShown_min="10" DurationStored_min="60" Trend_Range_High="2680" Trend_LineWith="1" Channel1="62045" Title1="kW" Colour1="TextActive" Trend_Range_Low="0" Channel2="62047" Title2="kVAr" Colour2="Yellow" Units="" Path=".\Frames\Frame_Trend\Frame_Trend_2x_300x400.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101021"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="420" Height="260" X="1420" Y="330" DurationShown_min="10" DurationStored_min="60" Trend_Range_High="2680" Trend_LineWith="1" Channel1="61045" Title1="kW" Colour1="TextActive" Trend_Range_Low="0" Channel2="61047" Title2="kVAr" Colour2="Yellow" Units="" Path=".\Frames\Frame_Trend\Frame_Trend_2x_300x400.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown_min" ChannelNumber="101021"/>
+			</Bindings>
+		</Frame>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Width="50" Height="25" X="1855" Y="705" BorderWidth="0" BorderColor="PageInfoLine" TextColor="Yellow" Font="Praxis;18.0;B;N;N" Text="300">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="101021">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="101021"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="95" Height="25" X="1765" Y="705" BorderWidth="0" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Scale [min]"/>
+		<Frame Width="300" Height="300" X="30" Y="60" DialColor="BackgroundConning" IndicatorColor="TextActive" DialValue1_CH="64045" DialValue_MAX="2680" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" LowLimitVisible="False" HighLimitVisible="False" MultiplyingFactor="1" Decimals_Outside="0" MultiFactorVisible="True" x10="" Units="KW" CentralDigitsColor="TextActive" Description="LOAD" Path=".\Frames\Gauges\Gauge_RPM.prax" Full="True"/>
+		<TextBox Width="170" Height="30" X="105" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Winding Temp"/>
+		<TextBox Width="95" Height="30" X="105" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="U"/>
+		<TextBox Width="95" Height="30" X="105" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="V"/>
+		<TextBox Width="50" Height="30" X="225" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="95" Height="30" X="105" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="W"/>
+		<TextBox Width="80" Height="30" X="145" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="xxx">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21509">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="145" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21508">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="145" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21507">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Line Color="TextInfoHeader" X0="105" Y0="625" X1="245" Y1="625"/>
+		<TextBox Width="50" Height="30" X="225" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="50" Height="30" X="225" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="170" Height="30" X="290" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Bearing Temp"/>
+		<TextBox Width="95" Height="30" X="290" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="NDE"/>
+		<TextBox Width="95" Height="30" X="290" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="DE"/>
+		<TextBox Width="80" Height="30" X="330" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21510">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="330" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21511">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="30" X="410" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="50" Height="30" X="410" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="170" Height="30" X="565" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Winding Temp"/>
+		<TextBox Width="95" Height="30" X="565" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="U"/>
+		<TextBox Width="95" Height="30" X="565" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="V"/>
+		<TextBox Width="50" Height="30" X="685" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="95" Height="30" X="565" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="W"/>
+		<TextBox Width="80" Height="30" X="605" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="xxx">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21503">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="605" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21502">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="605" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21501">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="30" X="685" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="50" Height="30" X="685" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="170" Height="30" X="750" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Bearing Temp"/>
+		<TextBox Width="95" Height="30" X="750" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="NDE"/>
+		<TextBox Width="95" Height="30" X="750" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="DE"/>
+		<TextBox Width="80" Height="30" X="790" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21504">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="790" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21505">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="30" X="870" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="50" Height="30" X="870" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="170" Height="30" X="1025" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Winding Temp"/>
+		<TextBox Width="95" Height="30" X="1025" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="U"/>
+		<TextBox Width="95" Height="30" X="1025" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="V"/>
+		<TextBox Width="50" Height="30" X="1145" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="95" Height="30" X="1025" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="W"/>
+		<TextBox Width="80" Height="30" X="1065" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="xxx">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11509">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="1065" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11508">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="1065" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11507">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="30" X="1145" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="50" Height="30" X="1145" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="170" Height="30" X="1210" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Bearing Temp"/>
+		<TextBox Width="95" Height="30" X="1210" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="NDE"/>
+		<TextBox Width="95" Height="30" X="1210" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="DE"/>
+		<TextBox Width="80" Height="30" X="1250" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11510">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="1250" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11511">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="30" X="1330" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="50" Height="30" X="1330" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="170" Height="30" X="1485" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Winding Temp"/>
+		<TextBox Width="95" Height="30" X="1485" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="U"/>
+		<TextBox Width="95" Height="30" X="1485" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="V"/>
+		<TextBox Width="50" Height="30" X="1605" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="95" Height="30" X="1485" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="W"/>
+		<TextBox Width="80" Height="30" X="1525" Y="690" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="xxx">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11503">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="1525" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11502">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="1525" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11501">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="30" X="1605" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="50" Height="30" X="1605" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="170" Height="30" X="1670" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Bearing Temp"/>
+		<TextBox Width="95" Height="30" X="1670" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="NDE"/>
+		<TextBox Width="95" Height="30" X="1670" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="DE"/>
+		<TextBox Width="80" Height="30" X="1710" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11504">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="1710" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="x.x">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11505">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="30" X="1790" Y="660" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="50" Height="30" X="1790" Y="630" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<Line Color="TextInfoHeader" X0="290" Y0="625" X1="430" Y1="625"/>
+		<Line Color="TextInfoHeader" X0="565" Y0="625" X1="705" Y1="625"/>
+		<Line Color="TextInfoHeader" X0="750" Y0="625" X1="890" Y1="625"/>
+		<Line Color="TextInfoHeader" X0="1025" Y0="625" X1="1165" Y1="625"/>
+		<Line Color="TextInfoHeader" X0="1210" Y0="625" X1="1350" Y1="625"/>
+		<Line Color="TextInfoHeader" X0="1485" Y0="625" X1="1625" Y1="625"/>
+		<Line Color="TextInfoHeader" X0="1670" Y0="625" X1="1810" Y1="625"/>
+		<TextBox Width="150" Height="30" X="320" Y="255" BorderWidth="0" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Waterleak Alarm">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="21207">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="30" X="320" Y="290" BorderWidth="0" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Diff Current High">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="64105">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="130" Height="30" X="330" Y="85" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Generator 4"/>
+		<Line Color="TextInfoHeader" X0="330" Y0="115" X1="460" Y1="115"/>
+		<Ellipse CenterX="855" CenterY="175" RadiusX="-40" RadiusY="-40" ArcEnd="-360" ArcLength="-360">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="63110">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="BackgroundConning" ColorWhenTrue="NoAlarmGreen"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox Width="60" Height="60" X="825" Y="145" BorderWidth="0" FillColor="Transparent" Font="Praxis;28.0;N;N;N" Text="G3">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="63110">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="Black"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="300" Height="300" X="490" Y="60" DialColor="BackgroundConning" IndicatorColor="TextActive" DialValue1_CH="63045" DialValue_MAX="2680" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" LowLimitVisible="False" HighLimitVisible="False" MultiplyingFactor="1" Decimals_Outside="0" MultiFactorVisible="True" x10="" Units="KW" CentralDigitsColor="TextActive" Description="LOAD" Path=".\Frames\Gauges\Gauge_RPM.prax" Full="True"/>
+		<TextBox Width="150" Height="30" X="780" Y="255" BorderWidth="0" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Waterleak Alarm">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="21203">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="30" X="780" Y="290" BorderWidth="0" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Diff Current High">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="63105">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="130" Height="30" X="790" Y="85" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Generator 3"/>
+		<Line Color="TextInfoHeader" X0="790" Y0="115" X1="920" Y1="115"/>
+		<Ellipse CenterX="1315" CenterY="175" RadiusX="-40" RadiusY="-40" ArcEnd="-360" ArcLength="-360">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="62110">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="BackgroundConning" ColorWhenTrue="NoAlarmGreen"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox Width="60" Height="60" X="1285" Y="145" BorderWidth="0" FillColor="Transparent" Font="Praxis;28.0;N;N;N" Text="G2">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="62110">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="Black"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="300" Height="300" X="950" Y="60" DialColor="BackgroundConning" IndicatorColor="TextActive" DialValue1_CH="62045" DialValue_MAX="2680" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" LowLimitVisible="False" HighLimitVisible="False" MultiplyingFactor="1" Decimals_Outside="0" MultiFactorVisible="True" x10="" Units="KW" CentralDigitsColor="TextActive" Description="LOAD" Path=".\Frames\Gauges\Gauge_RPM.prax" Full="True"/>
+		<TextBox Width="150" Height="30" X="1240" Y="255" BorderWidth="0" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Waterleak Alarm">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11207">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="30" X="1240" Y="290" BorderWidth="0" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Diff Current High">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="62105">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="130" Height="30" X="1250" Y="85" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Generator 2"/>
+		<Line Color="TextInfoHeader" X0="1250" Y0="115" X1="1380" Y1="115"/>
+		<Ellipse CenterX="1775" CenterY="175" RadiusX="-40" RadiusY="-40" ArcEnd="-360" ArcLength="-360">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61110">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="BackgroundConning" ColorWhenTrue="NoAlarmGreen"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox Width="60" Height="60" X="1745" Y="145" BorderWidth="0" FillColor="Transparent" Font="Praxis;28.0;N;N;N" Text="G1">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="61110">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="Black"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="300" Height="300" X="1410" Y="60" DialColor="BackgroundConning" IndicatorColor="TextActive" DialValue1_CH="61045" DialValue_MAX="2680" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" LowLimitVisible="False" HighLimitVisible="False" MultiplyingFactor="1" Decimals_Outside="0" MultiFactorVisible="True" x10="" Units="KW" CentralDigitsColor="TextActive" Description="LOAD" Path=".\Frames\Gauges\Gauge_RPM.prax" Full="True"/>
+		<TextBox Width="150" Height="30" X="1700" Y="255" BorderWidth="0" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Waterleak Alarm">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11203">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="30" X="1700" Y="290" BorderWidth="0" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Diff Current High">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="61105">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="130" Height="30" X="1710" Y="85" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Generator 1"/>
+		<Line Color="TextInfoHeader" X0="1710" Y0="115" X1="1840" Y1="115"/>
+		<TextBox Width="115" Height="30" X="1257.5" Y="220" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="zzzz">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="101092">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" Hours"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="1715" Y="220" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="zzzz">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="101091">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" Hours"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="335" Y="220" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="zzzz">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="101094">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" Hours"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="797.5" Y="220" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="zzzz">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="101093">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" Hours"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

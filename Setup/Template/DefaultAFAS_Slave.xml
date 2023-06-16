@@ -1,0 +1,1590 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="XP42">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2010" month="11" day="2" hour="17" minutes="30" seconds="32" milisec="115" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="00000245" />
+      <II value="00000038" />
+      <PAL1131G used="0" />
+      <LC year="2017" month="2" day="2" hour="10" minutes="28" seconds="21" milisec="544" />
+      <LCF>
+        <ABSOLUTE>D:\Software\System\PAL1131\VM\VM-Praxis-LCDAFAS.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis-LCDAFAS.xml</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\VM\VM-Praxis-LCDAFAS.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.0</CREATOR>
+      <LASTSAVEDWITH>1.1.3.10</LASTSAVEDWITH>
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="D:\Software\System\PAL1131\Libraries\IEC 61131-3.lcp">
+        <CREATED year="2016" month="10" day="14" hour="12" minutes="26" seconds="46" milisec="681" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\Libraries\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="ST" type="PRG" name="INIT_FAS" editor="PAL1131.ST"><![CDATA[PROGRAM INIT_FAS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+
+ VAR
+ FIRST_TIME: BOOL := true;
+ CT: TIME;
+ deltaCT: TIME;
+ powerupStartTick: TIME;
+ END_VAR
+
+  CT := CUR_TIME();
+  IF (FIRST_TIME = true) THEN // simulate good diagnostics for not used boards
+    FIRST_TIME := false;
+    powerupStartTick := CT;
+  END_IF
+  
+  deltaCT := CT - powerupStartTick;
+  IF deltaCT > T#3m THEN
+    powerupDelayElapsed := true;
+    powerupRemainTime := T#0s;
+  ELSE
+    powerupDelayElapsed := false;
+    powerupRemainTime := T#3m - deltaCT;
+  END_IF
+                
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="HANDLE_ACK" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_ACK
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ ACK_TOGGLE: SYSTEM_TOGGLE;
+ tempAckMaster : BOOL := false;
+ previousState: BOOL := false;
+ newAck: BOOL :=false;
+ board: INT;
+ sirenFail: ARRAY [0..7] OF BOOL;
+ loopLineFail: ARRAY [0..7] OF BOOL;
+ Mask: BYTE;
+ END_VAR
+ 
+ // detect new ACK pressed
+ IF (PB_ACK_SLAVEPANEL = true) AND (previousState = false) THEN
+   newAck := true;
+ ELSE
+   newAck := false;  
+ END_IF
+ previousState := PB_ACK_SLAVEPANEL;
+ 
+ (* 
+ // handle new ACK talking into consideration security level
+ IF (newAck = true)
+    AND (CURRENT_LOGIN_LEVEL = 2) THEN
+   //ACK_MASTER := true; // ack fire alarms
+   tempAckMaster := true;
+ ELSIF (newAck = true)
+       AND (ACK_FOR_FAULT > 0) THEN
+   //ACK_MASTER := true; // ack faults
+   tempAckMaster := true;
+ ELSIF (ACK_FOR_FAULT = 2) THEN
+   //ACK_MASTER := true; // automatic ack for faults
+   tempAckMaster := true;
+ ELSE
+   ACK_MASTER := false;
+   tempAckMaster := false;  
+ END_IF 
+ ACK_TOGGLE(start:=tempAckMaster,delay:=t#2s,io:=ACK_MASTER);
+ *)
+ 
+ // handle ACK for Fire Alarms
+ IF newAck = true AND (CURRENT_LOGIN_LEVEL = 2) THEN
+   FIRE_ALARM_ACK := true;
+   pendingGlobalFireRelay := false; // cancel the pending command of FireRelay (if any)
+ END_IF
+ IF ANY_NACK_FIREALARM = FALSE THEN
+   // all firealarms are ACK
+   // lets handle the firealarm led & relay
+   IF ANY_FIREALARM_ON = TRUE THEN
+     LAMP_FIREALARM := true;// fire alarm led is steady on
+     // fire alarm relay unchanged
+   ELSE  
+     LAMP_FIREALARM := false;// fire alarm led is off
+     LAMP_FIRE_OUTPUT := false;   
+   END_IF
+ END_IF
+
+ // handle ACK for Pre Alarms
+ (*
+ IF ANY_NACK_PREALARM = FALSE THEN
+   // all prealarms are ACK
+   // lets handle the firealarm led & relay
+   IF ANY_PREALARM_ON = TRUE THEN
+     LAMP_PREALARM := true;// fire alarm led is steady on
+     // fire alarm relay unchanged
+   ELSE  
+     LAMP_PREALARM := false;// fire alarm led is off
+   END_IF
+ END_IF
+ *)
+   IF ANY_PREALARM_ON = TRUE THEN
+     LAMP_PREALARM := true;// fire alarm led is steady on
+     // fire alarm relay unchanged
+   ELSE  
+     LAMP_PREALARM := false;// fire alarm led is off
+   END_IF
+    
+ // handle ACK for Faults  
+ IF (newAck = true AND (CURRENT_LOGIN_LEVEL = 2 OR ACK_FOR_FAULT > 0)) // new ACK pressed and security level matches
+     OR (ACK_FOR_FAULT = 2 AND ANY_FAULT_ON = true) THEN // or automatic ACK for faults and any fault on
+   FAULT_ACK := true;
+ END_IF
+ //!!IF ANY_NACK_FAULT = false THEN
+   // all faults are ACK
+   // lets handle fault led & relay
+   IF ANY_FAULT_ON = true THEN
+     LAMP_GENERAL_FAULT := true;// fault led is steady ON
+     LAMP_FAULT := true;// general fault is steady ON
+     // fault relay remains unchanged
+   ELSE
+     LAMP_GENERAL_FAULT := false;// fault led is OFF
+     LAMP_FAULT := false;// general fault is OFF
+     FAIL_OUTPUT := false;// fault relay is OFF
+   END_IF
+ //!!END_IF
+ 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="READ_BOARD_DIAG" editor="PAL1131.ST"><![CDATA[PROGRAM READ_BOARD_DIAG
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ EXTRACT_BIT: SYSTEM_EXTRACT_BIT;
+ EXTRACT_BYTE: SYSTEM_EXTRACT_BYTE;
+ END_VAR
+   
+  EXTRACT_BIT (Data:=DINT_TO_DWORD(INT_TO_DINT(ANY_DISABLE_ON_ANY_TEST_ON)),Pos:=0);
+  ANY_DISABLE_ON := EXTRACT_BIT.Bit;
+  EXTRACT_BIT (Data:=DINT_TO_DWORD(INT_TO_DINT(ANY_DISABLE_ON_ANY_TEST_ON)),Pos:=1);
+  ANY_TEST_ON := EXTRACT_BIT.Bit;
+  
+  EXTRACT_BYTE (Data:=LCD_AND_LAMP_BRIGHTNESS_SETTINGS,Pos:=0,Bits:=8);
+  minBrightnessLcd := DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out));
+  EXTRACT_BYTE (Data:=LCD_AND_LAMP_BRIGHTNESS_SETTINGS,Pos:=8,Bits:=8);
+  maxBrightnessLcd := DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out));
+  EXTRACT_BYTE (Data:=LCD_AND_LAMP_BRIGHTNESS_SETTINGS,Pos:=16,Bits:=8);
+  minBrightnessLamp := DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out));
+  EXTRACT_BYTE (Data:=LCD_AND_LAMP_BRIGHTNESS_SETTINGS,Pos:=24,Bits:=8);
+  maxBrightnessLamp := DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out));
+  minDimLcd := 100 - maxBrightnessLcd;
+  maxDimLcd := 100 - minBrightnessLcd;
+  minDimLamp := 100 - maxBrightnessLamp;
+  maxDimLamp := 100 - minBrightnessLamp;
+  EXTRACT_BYTE (Data:=BUZZER_FOR_SENSORS_SETTINGS,Pos:=0,Bits:=1);
+  ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_ALARM := INT_TO_BOOL(DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out)));
+  EXTRACT_BYTE (Data:=BUZZER_FOR_SENSORS_SETTINGS,Pos:=1,Bits:=1);
+  ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_FAULT := INT_TO_BOOL(DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out)));
+    
+  
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="HANDLE_STOPHORN" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_STOPHORN
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ previousState: BOOL := false;
+ newStopHorn: BOOL:=false;
+ END_VAR
+
+  // detect new StopHorn pressed
+  IF (PB_STOPHORN = true) AND (previousState = false) THEN
+    newStopHorn := true;
+  ELSE
+    newStopHorn := false;  
+  END_IF
+  previousState := PB_STOPHORN;
+  
+  IF newStopHorn = true THEN // if pressed stopHorn
+    // handle stopHorn for FireAlarms
+    IF (CURRENT_LOGIN_LEVEL = 2) // and we are in LEVEL2
+       OR (STOPHORN_FOR_FIREALARM = 1) THEN // or in LEVEL1 and STOPHORN_FIREALARM=LEVEL1+LEVEL2
+      BUZZER := false;
+      //HORN_OUTPUT := false;
+      pendingGlobalBuzzerOutput := false; // cancel the pending command of buzzer (if any)
+      pendingGlobalSirenOutput := false; // cancel the pending command of SirenOutput (if any)
+      FIRE_ALARM_BUZZER := false;
+      FIRE_ALARM_BUZZER_ACK := true;
+      SENSOR_ALARM_BUZZER := false;
+      SENSOR_ALARM_BUZZER_ACK := true;
+    END_IF
+    // handle stopHorn for Faults
+    IF (CURRENT_LOGIN_LEVEL = 2) // and we are in LEVEL2
+       OR ((STOPHORN_FOR_FAULT = 1) AND (FIRE_ALARM_BUZZER = false)) THEN // or in LEVEL1 and STOPHORN_FAULT=LEVEL1+LEVEL2 and no firealarm beeping
+      BUZZER := false;
+      //HORN_OUTPUT := false;
+      pendingGlobalBuzzerOutput := false; // cancel the pending command of buzzer (if any)
+      pendingGlobalSirenOutput := false; // cancel the pending command of SirenOutput (if any)
+      FAULT_BUZZER := false;
+      FAULT_BUZZER_ACK := true;
+      SENSOR_FAULT_BUZZER := false;
+      SENSOR_FAULT_BUZZER_ACK := true;
+    END_IF
+  ELSIF (STOPHORN_FOR_FAULT = 2) AND (FIRE_ALARM_BUZZER = false) AND (ANY_FAULT_ON = false) THEN // else if STOPHORN_FAULT=AUTOMATIC and no firealarm beeping and no fault active 
+    // automatic stopHorn for Faults    
+    BUZZER := false;
+    //HORN_OUTPUT := false;
+    pendingGlobalBuzzerOutput := false; // cancel the pending command of buzzer (if any)
+    pendingGlobalSirenOutput := false; // cancel the pending command of SirenOutput (if any)
+    FAULT_BUZZER := false;
+    FAULT_BUZZER_ACK := true;
+    SENSOR_FAULT_BUZZER := false;
+    SENSOR_FAULT_BUZZER_ACK := true;
+  END_IF       
+    
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="FBLK" name="SYSTEM_TOGGLE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_TOGGLE
+VAR_INPUT
+ start: BOOL;
+ delay: TIME;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+ io:BOOL; 
+END_VAR
+
+VAR
+ CT: TIME;
+ startedOnCT: TIME;
+ startedOffCT: TIME;
+ deltaCT: TIME;
+ startedOn: BOOL:=false;
+ startedOff: BOOL:=false;
+END_VAR
+
+  IF start=true THEN
+    CT:=CUR_TIME();
+    IF startedOn=true THEN
+      deltaCT:=CT-startedOnCT;
+      IF deltaCT >= delay THEN
+        // OFF half-cycle
+        startedOn:=false;
+        startedOff:=true;
+        startedOffCT:=CT;
+        io:=false;
+      END_IF
+    ELSIF startedOff=true THEN
+      deltaCT:=CT-startedOffCT;
+      IF deltaCT >= delay THEN
+        // ON half-cycle
+        startedOn:=true;
+        startedOff:=false;
+        startedOnCT:=CT;
+        io:=true;
+      END_IF
+    ELSE
+      // start a new cycle
+      startedOn:=true;
+      startedOnCT:=CUR_TIME();
+      io:=true;
+    END_IF
+  ELSE
+    startedOn:=false;
+    startedOff:=false;
+    io:=false;
+  END_IF
+
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="HANDLE_NEW_FIREALARM_AND_FAULT" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_NEW_FIREALARM_AND_FAULT
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ FIRE_LAMP_TOGGLE: SYSTEM_TOGGLE;
+ PRE_LAMP_TOGGLE: SYSTEM_TOGGLE;
+ FAULT_LAMP_TOGGLE: SYSTEM_TOGGLE;
+ BUZZER_TOGGLE: SYSTEM_TOGGLE;
+ //HORN_TOGGLE: SYSTEM_TOGGLE;
+ lastAnyNewSensorAlarmState : INT := 0;
+ lastAnyNewSensorFaultState : INT := 0;
+ lastAnyNewFireAlarmState : BOOL := false;
+ lastAnyNewPreAlarmState : BOOL := false;
+ lastAnyNewFaultState : BOOL := false;
+ preserveLcdDimming : INT := 0;
+ preserveButtonDimming : INT := 0;
+ restorePending : BOOL := false;
+ captureDimming : BOOL;
+ END_VAR
+
+ // handle new fire alarms
+ captureDimming := false;
+ IF ANY_NEW_FIREALARM = true AND lastAnyNewFireAlarmState = false THEN
+   // first coming to alarm state
+   captureDimming := true;
+   FIRE_ALARM_BUZZER_ACK := false;
+ END_IF
+ lastAnyNewFireAlarmState := ANY_NEW_FIREALARM;
+
+ IF ANY_NEW_SENSOR_IN_ALARM = 1 AND lastAnyNewSensorAlarmState = 0 THEN
+   // first coming to sensor alarm state
+   SENSOR_ALARM_BUZZER_ACK := false;
+ END_IF
+ lastAnyNewSensorAlarmState := ANY_NEW_SENSOR_IN_ALARM;
+
+ (*
+ IF ANY_NEW_PREALARM = true AND lastAnyNewPreAlarmState = false THEN
+   // first coming to prealarm state
+   captureDimming := true;
+ END_IF
+ lastAnyNewPreAlarmState := ANY_NEW_PREALARM;
+ *)
+ 
+ IF ANY_NEW_FAULT = true AND lastAnyNewFaultState = false THEN
+   // first coming to fault state
+   //captureDimming := true;
+   FAULT_BUZZER_ACK := false; 
+ END_IF
+ lastAnyNewFaultState := ANY_NEW_FAULT;
+ 
+ IF ANY_NEW_SENSOR_IN_FAULT = 1 AND lastAnyNewSensorFaultState = 0 THEN
+   // first coming to sensor fault
+   SENSOR_FAULT_BUZZER_ACK := false;
+ END_IF
+ lastAnyNewSensorFaultState := ANY_NEW_SENSOR_IN_FAULT;
+ 
+ IF captureDimming = true THEN
+   preserveLcdDimming := DIM_LCD;
+   preserveButtonDimming := DIM_BL;
+   restorePending := true;
+ END_IF
+    
+ IF ANY_NEW_FIREALARM = true THEN
+   // new fire alarm
+   DIM_LCD := minDimLcd;//0; // no dimming
+   DIM_BL := minDimLamp;//0;
+   FIRE_ALARM_BUZZER := true;
+   (* - they will be started later (default 120s) if the ACK or STOP HORN for fireAlarm is not pressed during that time
+   FIREALARM_RELAY1 := true;// fire alarm relay is off
+   FIREALARM_RELAY2 := true;// ??? fire alarm relay is off
+   FIREALARM_RELAY3 := true;// fire alarm relay is off
+   FIREALARM_RELAY4 := true;//
+   LAMP_FIRE_OUTPUT := true;   
+   *)
+   IF pendingGlobalFireRelay = false THEN
+     globalFireRelayStartTick := CUR_TIME();
+     pendingGlobalFireRelay := true; // set the pending command of FireRelay
+   END_IF   
+ END_IF
+ IF ANY_NEW_MCP = true OR ANY_NEW_ALARM_IN_MACHINERY_AREA = 1 THEN // if any MCP was pressed,the fire relay should be switched on immediately (newMCP overrules newFirealarm)
+   LAMP_FIRE_OUTPUT := true;   
+   pendingGlobalFireRelay := false; // clear the pending command of FireRelay
+ END_IF
+ 
+ IF ANY_NEW_SENSOR_IN_ALARM = 1 THEN
+   // new sensor in alarm
+   SENSOR_ALARM_BUZZER := true;
+   //ACK_ANY_NEW_SENSOR_IN_ALARM := 1;
+ ELSE
+   //ACK_ANY_NEW_SENSOR_IN_ALARM := 0;
+ END_IF
+ IF ANY_NACK_FIREALARM = true THEN
+   // nack fire alarm
+   FIRE_LAMP_TOGGLE(start:=ANY_NACK_FIREALARM,io:=LAMP_FIREALARM,delay:=t#500ms);
+   LAMP_FIREALARM := FIRE_LAMP_TOGGLE.io;
+ END_IF
+ IF FIRE_ALARM_BUZZER = true THEN
+   BUZZER_TOGGLE(start:=FIRE_ALARM_BUZZER AND NOT FIRE_ALARM_BUZZER_ACK,io:=BUZZER,delay:=t#500ms);
+   BUZZER := BUZZER_TOGGLE.io;
+   //HORN_TOGGLE(start:=FIRE_ALARM_BUZZER AND NOT FIRE_ALARM_BUZZER_ACK,io:=HORN_OUTPUT,delay:=t#500ms);
+   //HORN_OUTPUT := HORN_TOGGLE.io;
+   pendingGlobalBuzzerOutput := false;
+   IF FIRE_ALARM_BUZZER_ACK = false THEN
+     IF ANY_NEW_MCP = true OR ANY_NEW_ALARM_IN_MACHINERY_AREA = 1 THEN
+       pendingGlobalSirenOutput := false;
+     ELSE // if ANY_NEW_FIREALARM except ANY_NEW_MCP
+       IF pendingGlobalSirenOutput = false THEN
+         globalSirenOutputStartTick := CUR_TIME();
+         pendingGlobalSirenOutput := true; // set the pending command of SirenOutput
+         extraSirenDelayTime := T#0s; // no extra powerup delay because is a firealarm
+       END_IF        
+     END_IF             
+   END_IF
+ ELSIF ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_ALARM AND SENSOR_ALARM_BUZZER = true THEN  
+   BUZZER_TOGGLE(start:=SENSOR_ALARM_BUZZER AND NOT SENSOR_ALARM_BUZZER_ACK,io:=BUZZER,delay:=t#1000ms);
+   BUZZER := BUZZER_TOGGLE.io;
+   pendingGlobalBuzzerOutput := false;
+ END_IF 
+
+ (*
+ IF ANY_NEW_PREALARM = true THEN
+   // new pre alarm
+   DIM_LCD := 0; // no dimming
+   DIM_BL := 0;
+ END_IF
+ IF ANY_NACK_PREALARM = true THEN
+   // nack pre alarm
+   PRE_LAMP_TOGGLE(start:=ANY_NACK_PREALARM,io:=LAMP_PREALARM,delay:=t#250ms);
+   LAMP_PREALARM := PRE_LAMP_TOGGLE.io;
+ END_IF
+ *)
+ 
+ // handle new faults
+ IF ANY_NEW_FAULT = true THEN
+   // new fault
+   //DIM_LCD := 0; // no dimming
+   //DIM_BL := 0;
+   FAIL_OUTPUT := true;
+   (*FAULT_LAMP_TOGGLE(start:=ANY_NACK_FAULT,io:=LAMP_7,delay:=t#250ms);
+   LAMP_7 := FAULT_LAMP_TOGGLE.io;*) // blinking FAULT_LED for new faults
+   //!!LAMP_GENERAL_FAULT := true; // FAULT_LED steady ON for new Faults
+   //!!LAMP_FAULT := true; // panel fault led
+   IF FAULT_BUZZER_ACK = false 
+      AND NOT (FIRE_ALARM_BUZZER AND NOT FIRE_ALARM_BUZZER_ACK)
+      AND NOT (SENSOR_ALARM_BUZZER AND NOT SENSOR_ALARM_BUZZER_ACK) THEN // if the fire alarm dosn't control the buzzer, the fault will control it
+     (* - they will be started later,after powerupDelay elapsed
+     BUZZER := true;
+     //HORN_OUTPUT := true;
+     *)
+     FAULT_BUZZER := true;
+     pendingGlobalBuzzerOutput := true;
+     IF SIGNALING_FAULT = 1 THEN // if signalingFaults=BUZZER+SIREN
+       IF pendingGlobalSirenOutput = false THEN
+         globalSirenOutputStartTick := CUR_TIME();
+         pendingGlobalSirenOutput := true; // set the pending command of SirenOutput
+         extraSirenDelayTime := powerupRemainTime; // extra powerup delay if necessary
+       END_IF        
+     END_IF               
+   END_IF
+ END_IF
+ IF ANY_NEW_SENSOR_IN_FAULT = 1 THEN
+   // new sensor in sensfail
+   SENSOR_FAULT_BUZZER := true;
+   IF ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_FAULT
+      AND NOT FAULT_BUZZER 
+      AND NOT (FIRE_ALARM_BUZZER AND NOT FIRE_ALARM_BUZZER_ACK)
+      AND NOT (SENSOR_ALARM_BUZZER AND NOT SENSOR_ALARM_BUZZER_ACK) THEN // if the fire alarm dosn't control the buzzer, the fault will control it
+     (* - they will be started later,after powerupDelay elapsed
+     BUZZER := true; // only internal buzzer is switched on in case of new sensor in fault
+     *)
+     pendingGlobalBuzzerOutput := true;
+   END_IF
+ END_IF  
+ 
+ IF ANY_NACK_FIREALARM = false AND restorePending = true THEN
+   //IF DIM_LCD = 0 THEN // restore dimming only if it was not dimmed after the new fire alarm changed the backlight to "no dimming" 
+   IF DIM_LCD = minDimLcd THEN // restore dimming only if it was not dimmed after the new fire alarm changed the backlight to "no dimming" 
+     DIM_LCD := preserveLcdDimming;
+   END_IF
+   //IF DIM_BL = 0 THEN // restore dimming only if it was not dimmed after the new fire alarm changed the backlight to "no dimming"
+   IF DIM_BL = minDimLamp THEN // restore dimming only if it was not dimmed after the new fire alarm changed the backlight to "no dimming"
+     DIM_BL := preserveButtonDimming;
+   END_IF
+   restorePending := false;
+ END_IF
+  
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="HANDLE_PB" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_PB
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ END_VAR
+ 
+  // handle lamptest  
+  IF PB_ACK = true AND PB_STOPHORN = true THEN
+    LAMPTEST_MASTER := true;
+  ELSE
+    LAMPTEST_MASTER := false;
+  END_IF
+
+  (*
+  IF PB11 = true THEN
+    DO1_1 := true;
+    DO1_2 := true;
+    DO2_1 := true;
+    DO2_2 := true;
+    DO3_1 := true;
+    DO3_2 := true;
+    DO4_1 := true;
+    DO4_2 := true;
+  ELSE
+    DO1_1 := false;
+    DO1_2 := false;
+    DO2_1 := false;
+    DO2_2 := false;
+    DO3_1 := false;
+    DO3_2 := false;
+    DO4_1 := false;
+    DO4_2 := false;
+  END_IF
+  *)
+  
+  // adjust dimming
+  (*IF PB_LEFT = true THEN
+    // more dimming
+    IF DIM_LCD <> 0 THEN
+      DIM_LCD := DIM_LCD - 5;
+    END_IF
+    IF DIM_BL <> 0 THEN
+      DIM_BL := DIM_BL - 5;
+    END_IF
+  ELSIF PB_RIGHT = true THEN
+    // less dimming
+    IF DIM_LCD < 100 THEN
+      DIM_LCD := DIM_LCD + 5;
+    END_IF
+    IF DIM_BL < 100 THEN
+      DIM_BL := DIM_BL + 5;
+    END_IF
+  END_IF*)
+    
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="HANDLE_LEDS" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_LEDS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ END_VAR
+
+ 
+    // handle LAMP_TEST
+    LAMP_TEST := ANY_TEST_ON;
+  
+
+  IF CURRENT_LOGIN_LEVEL = 2 THEN
+    LAMP_ACCESS_LEVEL2 := true;
+  ELSE
+    LAMP_ACCESS_LEVEL2 := false;
+  END_IF
+  
+  // handle main&backup supply fail leds
+  LAMP_MAIN_SUPPLY_FAULT   := (MAIN_SUPPLY_FAILURE_MASK   > BYTE#0); 
+  LAMP_BACKUP_SUPPLY_FAULT := (BACKUP_SUPPLY_FAILURE_MASK > BYTE#0);
+  
+  // handle siren fault
+  LAMP_SIREN_FAULT   :=  (SIREN_OUTPUT_FAILURE_MASK > BYTE#0)
+                      OR (SIREN_LINE_FAILURE_MASK   > BYTE#0); 
+  LAMP_LOOP_FAULT    :=  (LOOP_SHORT_FAILURE_MASK   > BYTE#0)
+                      OR (LOOP_SHORT_FAILURE_MASK   > BYTE#0);
+  LAMP_EARTH_FAULT   :=  (LOOP_EARTH_FAILURE_MASK   > BYTE#0)
+                      OR (SIREN_EARTH_FAILURE_MASK  > BYTE#0); 
+  
+  // handle general disable
+  LAMP_GENERAL_DISABLE := ANY_DISABLE_ON;
+    
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="FBLK" name="SYSTEM_EXTRACT_BIT" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_EXTRACT_BIT
+VAR_INPUT
+Data: DWORD;
+Pos: INT; 
+END_VAR
+VAR_OUTPUT
+Bit: BOOL;
+END_VAR
+
+VAR
+Local: DWORD;
+END_VAR
+
+  Local := SHR(Data,Pos);
+  Local := Local MOD DWORD#2;
+  IF Local = DWORD#0 THEN
+    Bit := false;
+  ELSE
+    Bit := true;
+  END_IF
+  
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="HANDLE_RESOUND" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_RESOUND
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ previousStateStopHorn: BOOL := false;
+ newResound: BOOL:=false;
+ CT: TIME;
+ resoundPressedTimeout: TIME:=t#0s;
+ resoundLastCT: TIME:=t#0s;
+ resoundTestOn: BOOL:=false;
+ PB_RESOUND: BOOL;
+ BUZZER_TOGGLE: SYSTEM_TOGGLE;
+ //HORN_TOGGLE: SYSTEM_TOGGLE;
+ END_VAR
+ 
+ PB_RESOUND := PB12;
+ 
+  IF resoundTestOn=false
+     AND PB_RESOUND=true
+     AND CURRENT_LOGIN_LEVEL=2
+     AND ANY_FIREALARM_ON THEN // if RESOUND button is pressed for more than 2s in LEVEL2 and we still have one firealarm ON,then resound
+     CT:=CUR_TIME();
+     resoundPressedTimeout:=resoundPressedTimeout+CT-resoundLastCT;
+     resoundLastCT:=CT;
+     IF resoundPressedTimeout>=t#2s THEN
+       resoundTestOn:=true;
+     END_IF
+  ELSE
+    resoundPressedTimeout:=t#0s;
+    resoundLastCT:=CUR_TIME();
+    IF resoundTestOn=true
+       AND previousStateStopHorn <> PB_STOPHORN 
+       AND PB_STOPHORN=true
+       AND CURRENT_LOGIN_LEVEL=2 THEN
+         resoundTestOn:=false; // stop the test next time when stopHorn is pressed
+    END_IF    
+  END_IF
+
+  // detect new StopHorn pressed
+  previousStateStopHorn := PB_STOPHORN;
+  
+  IF resoundTestOn=true THEN
+    // handle ResoundTest
+    BUZZER_TOGGLE(start:=resoundTestOn,io:=BUZZER,delay:=t#500ms);
+    BUZZER := BUZZER_TOGGLE.io;
+    //HORN_TOGGLE(start:=resoundTestOn,io:=HORN_OUTPUT,delay:=t#500ms);
+    //HORN_OUTPUT := HORN_TOGGLE.io;
+    pendingGlobalBuzzerOutput := false;
+    pendingGlobalSirenOutput := false;
+    FIRE_ALARM_BUZZER := true;
+    FIRE_ALARM_BUZZER_ACK := false;
+  END_IF
+    
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="FBLK" name="DETECT_NEW_ALARM" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK DETECT_NEW_ALARM
+VAR_INPUT
+ previousState: DWORD;
+ currentState: DWORD; 
+END_VAR
+VAR_OUTPUT
+ newAlarm: BOOL;
+END_VAR
+VAR
+ i : INT;
+ alarm: BOOL;
+ mask : DWORD;
+ changes : DWORD;
+END_VAR
+
+  alarm := false;
+  (*mask := DWORD#1;
+  FOR i := 1 TO 32 DO
+    IF ((previousState AND mask) = DWORD#0) AND ((currentState AND mask) <> DWORD#0) THEN
+      alarm := true; // new alarm detected
+      EXIT;
+    ELSE
+      mask := SHL (mask,1);
+    END_IF
+  END_FOR*)
+  changes := previousState XOR currentState;
+  IF ((changes AND currentState) <> DWORD#0) THEN
+    alarm := true;
+  END_IF
+  newAlarm := alarm;
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="FBLK" name="SYSTEM_COPY_BIT" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_COPY_BIT
+VAR_INPUT 
+Bit: BOOL;
+Pos: INT; 
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+DataIo: DWORD; 
+END_VAR
+VAR
+Mask: DWORD;
+END_VAR
+
+  Mask := DWORD#1;
+  Mask := SHL (Mask,Pos);
+  IF Bit=true THEN
+    DataIo := DataIo OR Mask;
+  ELSE
+    DataIo := DataIo AND (NOT Mask);
+  END_IF
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="DETECT_NEW_ALARM_AND_FAULTS" editor="PAL1131.ST"><![CDATA[PROGRAM DETECT_NEW_ALARM_AND_FAULTS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ EXTRACT_BIT: SYSTEM_EXTRACT_BIT;
+ COPY_BIT: SYSTEM_COPY_BIT;
+ COPY_BYTE: SYSTEM_COPY_BYTE;
+ NEW_ZONE_ALARM: DETECT_NEW_ALARM;
+ index: INT;
+ TEMP_INT: INT;
+ TEMP_DINT: DINT;
+ TEMP_DWORD: DWORD;
+ PREVIOUS_ZONE_MCPx: ARRAY[0..7] OF DWORD;
+ CURRENT_ZONE_MCPx:  ARRAY[0..7] OF DWORD;
+ newMCPx: BOOL;
+ PREVIOUS_ZONE_ALARMx: ARRAY[0..7] OF DWORD;
+ CURRENT_ZONE_ALARMx:  ARRAY[0..7] OF DWORD;
+ newAlarmx: BOOL;
+ PREVIOUS_ZONE_FAULTx: ARRAY[0..7] OF DWORD;
+ CURRENT_ZONE_FAULTx:  ARRAY[0..7] OF DWORD;
+ newFaultx: BOOL;
+ MAIN_SUPPLY_FAIL: BOOL;
+ BACKUP_SUPPLY_FAIL: BOOL;
+ SIREN_OUTPUT_FAIL: BOOL;
+ SIREN_LINE_FAIL: BOOL;
+ LOOP_SHORT_FAIL: BOOL;
+ LOOP_EARTH_FAIL: BOOL; 
+ SIREN_EARTH_FAIL: BOOL;
+ CAN_FAIL: BOOL;
+ ETHERNET_FAIL: BOOL;
+ CURRENT_ZONE_FAULT: DWORD;
+ CURRENT_ZONE_PREALARM: DWORD;
+ CURRENT_ZONE_ALARM: DWORD; 
+ PREVIOUS_SYSTEM_FAULT: DWORD :=DWORD#0;
+ PREVIOUS_SYSTEM_FAULT2: DWORD :=DWORD#0;
+ CURRENT_SYSTEM_FAULT: DWORD;
+ CURRENT_SYSTEM_FAULT2: DWORD;
+ newSystemFault: BOOL;
+ firstTime: BOOL := TRUE;
+ alreadyWaited: BOOL := FALSE;
+ CT: TIME;
+ lastCT: TIME;
+ deltaCT: TIME;
+ END_VAR
+
+  CT := CUR_TIME();
+  IF firstTime = TRUE THEN
+    lastCT := CT;
+    FOR index := 0 TO 7 DO
+      PREVIOUS_ZONE_ALARMx[index] := DWORD#0;
+      PREVIOUS_ZONE_FAULTx[index] := DWORD#0;  
+    END_FOR
+    firstTime := FALSE;
+  END_IF
+  deltaCT := CT - lastCT;
+  IF (deltaCT <= t#1s) AND (alreadyWaited = FALSE) THEN
+    RETURN;
+  END_IF
+  alreadyWaited := TRUE;
+  (* - compiler uses a lot of RAM memory to implement this 
+  CURRENT_ZONE_PREALARMx :=   DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM1))
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM2))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM3))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM4))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM5))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM6))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM7))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM8));
+  *)
+  (*
+  // - optimized version
+  CURRENT_ZONE_PREALARMx := DWORD#0;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM1);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM2);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM3);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM4);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM5);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM6);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM7);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM8);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  //
+  *)
+  (*                              
+  CURRENT_ZONE_MCPx[0] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP1));
+  CURRENT_ZONE_MCPx[1] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP2));
+  CURRENT_ZONE_MCPx[2] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP3));
+  CURRENT_ZONE_MCPx[3] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP4));
+  CURRENT_ZONE_MCPx[4] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP5));
+  CURRENT_ZONE_MCPx[5] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP6));
+  CURRENT_ZONE_MCPx[6] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP7));
+  CURRENT_ZONE_MCPx[7] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP8));
+  
+  CURRENT_ZONE_ALARMx[0] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM1));
+  CURRENT_ZONE_ALARMx[1] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM2));
+  CURRENT_ZONE_ALARMx[2] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM3));
+  CURRENT_ZONE_ALARMx[3] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM4));
+  CURRENT_ZONE_ALARMx[4] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM5));
+  CURRENT_ZONE_ALARMx[5] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM6));
+  CURRENT_ZONE_ALARMx[6] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM7));
+  CURRENT_ZONE_ALARMx[7] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM8));
+  
+  CURRENT_ZONE_FAULTx[0] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT1));
+  CURRENT_ZONE_FAULTx[1] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT2));
+  CURRENT_ZONE_FAULTx[2] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT3));
+  CURRENT_ZONE_FAULTx[3] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT4));
+  CURRENT_ZONE_FAULTx[4] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT5));
+  CURRENT_ZONE_FAULTx[5] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT6));
+  CURRENT_ZONE_FAULTx[6] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT7));
+  CURRENT_ZONE_FAULTx[7] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT8));
+  *)
+  (*
+  // - optimized version
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP1);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[0] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP2);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[1] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP3);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[2] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP4);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[3] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP5);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[4] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP6);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[5] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP7);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[6] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP8);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[7] := TEMP_DWORD;   
+  
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM1);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[0] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM2);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[1] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM3);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[2] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM4);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[3] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM5);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[4] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM6);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[5] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM7);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[6] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM8);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[7] := TEMP_DWORD;
+
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT1);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[0] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT2);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[1] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT3);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[2] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT4);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[3] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT5);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[4] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT6);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[5] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT7);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[6] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT8);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[7] := TEMP_DWORD; 
+  *)
+  // Array usage
+  CURRENT_ZONE_PREALARMx := DWORD#0;
+  FOR index := 0 TO 7 DO
+    (*CURRENT_ZONE_PREALARMx :=  CURRENT_ZONE_PREALARMx
+                            OR WORD_TO_DWORD(ZONE_PREALARMS[index]);*)
+    CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR ZONE_PREALARMS[index];
+    //CURRENT_ZONE_ALARMx[index]    := WORD_TO_DWORD(ZONE_ALARMS[index]); 
+    TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARMS[index]);
+    TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+    CURRENT_ZONE_ALARMx[index]    := TEMP_DWORD AND DWORD#16#0000FFFF; 
+    CURRENT_ZONE_MCPx[index]    := WORD_TO_DWORD(ZONE_MCPS[index]); 
+    //CURRENT_ZONE_FAULTx[index]    := WORD_TO_DWORD(ZONE_FAULTS[index]);
+    TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULTS[index]);
+    TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+    CURRENT_ZONE_FAULTx[index]    := TEMP_DWORD AND DWORD#16#0000FFFF;
+  END_FOR; 
+
+  CURRENT_ZONE_FAULT := DWORD#0;
+  CURRENT_ZONE_ALARM := DWORD#0;
+  FOR index := 0 TO 7 DO
+    CURRENT_ZONE_FAULT := CURRENT_ZONE_FAULT OR CURRENT_ZONE_FAULTx[index];
+    CURRENT_ZONE_ALARM := CURRENT_ZONE_ALARM OR CURRENT_ZONE_ALARMx[index];
+  END_FOR
+  
+  CURRENT_ZONE_PREALARM := CURRENT_ZONE_PREALARMx AND DWORD#16#0000FFFF; // only first 16 bits contain zone_prealarm bits                          
+  
+  MAIN_SUPPLY_FAIL   := (MAIN_SUPPLY_FAILURE_MASK   > BYTE#0); 
+  BACKUP_SUPPLY_FAIL := (BACKUP_SUPPLY_FAILURE_MASK > BYTE#0);
+  SIREN_OUTPUT_FAIL  := (SIREN_OUTPUT_FAILURE_MASK  > BYTE#0);
+  SIREN_LINE_FAIL    := (SIREN_LINE_FAILURE_MASK    > BYTE#0);
+  LOOP_SHORT_FAIL    := (LOOP_SHORT_FAILURE_MASK    > BYTE#0); 
+  LOOP_EARTH_FAIL    := (LOOP_EARTH_FAILURE_MASK    > BYTE#0);
+  SIREN_EARTH_FAIL   := (SIREN_EARTH_FAILURE_MASK   > BYTE#0);
+  ETHERNET_FAIL := ETHERNET_FAIL1 OR ETHERNET_FAIL2;                    
+
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=MAIN_SUPPLY_FAILURE_MASK,Pos:=0,Bits:=8);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=BACKUP_SUPPLY_FAILURE_MASK,Pos:=8,Bits:=8);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=SIREN_OUTPUT_FAILURE_MASK,Pos:=16,Bits:=4);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=SIREN_LINE_FAILURE_MASK,Pos:=20,Bits:=4);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=LOOP_SHORT_FAILURE_MASK,Pos:=24,Bits:=8);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT2,Val:=LOOP_EARTH_FAILURE_MASK,Pos:=0,Bits:=8);
+  CURRENT_SYSTEM_FAULT2:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT2,Val:=SIREN_EARTH_FAILURE_MASK,Pos:=8,Bits:=4);
+  CURRENT_SYSTEM_FAULT2:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT2,Val:=CAN_FAILURE_MASK,Pos:=12,Bits:=8);
+  CURRENT_SYSTEM_FAULT2:=COPY_BYTE.DataIo;
+  COPY_BIT (DataIo:=CURRENT_SYSTEM_FAULT2,Bit:=ETHERNET_FAIL1,Pos:=20);
+  CURRENT_SYSTEM_FAULT2:=COPY_BIT.DataIo;
+  COPY_BIT (DataIo:=CURRENT_SYSTEM_FAULT2,Bit:=ETHERNET_FAIL2,Pos:=21);
+  CURRENT_SYSTEM_FAULT2:=COPY_BIT.DataIo;
+  COPY_BIT (DataIo:=CURRENT_SYSTEM_FAULT2,Bit:=MASTER_SLAVE_ALARM,Pos:=22);
+  CURRENT_SYSTEM_FAULT2:=COPY_BIT.DataIo;
+    
+  // update FIREALARM,PREALARM and FAULT info
+  IF ((CURRENT_ZONE_FAULT OR CURRENT_SYSTEM_FAULT OR CURRENT_SYSTEM_FAULT2) <> DWORD#0) THEN
+    ANY_FAULT_ON := TRUE;
+  ELSE
+    ANY_FAULT_ON := FALSE;
+  END_IF
+  
+  IF (CURRENT_ZONE_PREALARM <> DWORD#0) THEN
+      ANY_PREALARM_ON := TRUE;
+  ELSE
+      ANY_PREALARM_ON := FALSE;
+  END_IF
+  
+  IF (CURRENT_ZONE_ALARM <> DWORD#0) THEN
+      ANY_FIREALARM_ON := TRUE;
+  ELSE
+      ANY_FIREALARM_ON := FALSE;
+  END_IF
+
+  NEW_ZONE_ALARM (previousState:=PREVIOUS_SYSTEM_FAULT,currentState:= CURRENT_SYSTEM_FAULT);
+  newSystemFault := NEW_ZONE_ALARM.newAlarm;
+  PREVIOUS_SYSTEM_FAULT := CURRENT_SYSTEM_FAULT;
+  NEW_ZONE_ALARM (previousState:=PREVIOUS_SYSTEM_FAULT2,currentState:= CURRENT_SYSTEM_FAULT2);
+  newSystemFault := newSystemFault OR NEW_ZONE_ALARM.newAlarm;
+  PREVIOUS_SYSTEM_FAULT2 := CURRENT_SYSTEM_FAULT2;
+
+  ANY_NEW_FAULT := newSystemFault;
+  ANY_NEW_FIREALARM := false;
+  ANY_NEW_MCP := false;
+  FOR index := 0 TO 7 DO
+    NEW_ZONE_ALARM (previousState:=PREVIOUS_ZONE_FAULTx[index],currentState:= CURRENT_ZONE_FAULTx[index]);
+    newFaultx := NEW_ZONE_ALARM.newAlarm;
+    ANY_NEW_FAULT := ANY_NEW_FAULT OR newFaultx;
+    PREVIOUS_ZONE_FAULTx[index] := CURRENT_ZONE_FAULTx[index];
+    
+    NEW_ZONE_ALARM (previousState:=PREVIOUS_ZONE_ALARMx[index],currentState:= CURRENT_ZONE_ALARMx[index]);
+    newAlarmx := NEW_ZONE_ALARM.newAlarm;
+    ANY_NEW_FIREALARM := ANY_NEW_FIREALARM OR newAlarmx;
+    PREVIOUS_ZONE_ALARMx[index] := CURRENT_ZONE_ALARMx[index];
+    
+    NEW_ZONE_ALARM (previousState:=PREVIOUS_ZONE_MCPx[index],currentState:= CURRENT_ZONE_MCPx[index]);
+    newMCPx := NEW_ZONE_ALARM.newAlarm;
+    ANY_NEW_MCP := ANY_NEW_MCP OR newMCPx;
+    PREVIOUS_ZONE_MCPx[index] := CURRENT_ZONE_MCPx[index];    
+  END_FOR
+    
+  IF ANY_NACK_FAULT = FALSE THEN
+    ANY_NACK_FAULT := ANY_NEW_FAULT;
+  END_IF
+      
+  IF ANY_NACK_FIREALARM = FALSE THEN
+    ANY_NACK_FIREALARM := ANY_NEW_FIREALARM;
+  END_IF
+
+  IF FIRE_ALARM_ACK = TRUE THEN  
+    ANY_NACK_FIREALARM := FALSE;
+    FIRE_ALARM_ACK := FALSE;
+  END_IF
+  IF FAULT_ACK = TRUE THEN
+    ANY_NACK_FAULT := FALSE;
+    FAULT_ACK := FALSE;
+  END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="CHECK_PENDING_FIRE_RELAY" editor="PAL1131.ST"><![CDATA[PROGRAM CHECK_PENDING_FIRE_RELAY
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ CT: TIME;
+ deltaCT: TIME;
+ delayInMSec: DINT;
+ END_VAR
+
+  CT := CUR_TIME();
+  IF pendingGlobalFireRelay = true THEN
+   deltaCT := CT - globalFireRelayStartTick;
+   delayInMSec := FIREALARM_DELAY * DINT#1000; // convert din sec->millisec and then convert to time 
+   IF deltaCT >= DINT_TO_TIME(delayInMSec) THEN // if period expired and fireAlarm was not ACK by pressing ACK or STOPHORN
+     // switch on fireRelays
+     LAMP_FIRE_OUTPUT := true;   
+     pendingGlobalFireRelay := false;
+   END_IF
+ END_IF 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="FBLK" name="SYSTEM_COPY_BYTE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_COPY_BYTE
+VAR_INPUT 
+Val: BYTE;
+Pos: INT;
+Bits: INT; 
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+DataIo: DWORD; 
+END_VAR
+VAR
+temp_int: INT;
+temp_dint: DINT;
+temp_dword: DWORD;
+mask1 : DWORD;
+mask2 : DWORD;
+END_VAR
+
+  mask1 := DWORD#16#FFFFFFFF;
+  mask2 := DWORD#16#FFFFFFFF;    
+  mask1 := SHL (mask1,Bits);
+  mask1 := NOT mask1;   
+  mask2 := SHL (mask2,Bits);
+  mask2 := ROL (mask2,Pos);
+  temp_int := BYTE_TO_INT (Val);
+  temp_dint := INT_TO_DINT (temp_int);  
+  temp_dword := DINT_TO_DWORD(temp_dint);
+  temp_dword := temp_dword AND mask1;
+  temp_dword := SHL (temp_dword,Pos);  
+  DataIo := (DataIo AND mask2) OR temp_dword;
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="CHECK_PENDING_SIREN_OUTPUT" editor="PAL1131.ST"><![CDATA[PROGRAM CHECK_PENDING_SIREN_OUTPUT
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ CT: TIME;
+ deltaCT: TIME;
+ delayTime: TIME;
+ delayInMSec: DINT;
+ END_VAR
+
+  CT := CUR_TIME();
+  IF pendingGlobalSirenOutput = true THEN
+   deltaCT := CT - globalSirenOutputStartTick;
+   delayInMSec := SIREN_DELAY * DINT#1000; // convert din sec->millisec and then convert to time 
+   delayTime := DINT_TO_TIME(delayInMSec) + extraSirenDelayTime; 
+   IF deltaCT >= delayTime THEN // if period expired
+     // switch on SirenOutput
+     pendingGlobalSirenOutput := false;
+   END_IF
+ END_IF 
+  
+  IF pendingGlobalBuzzerOutput = true THEN
+     IF powerupDelayElapsed = true THEN
+        BUZZER := true;
+        //HORN_OUTPUT := true;
+        pendingGlobalBuzzerOutput := false;
+     END_IF
+  END_IF 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="FBLK" name="SYSTEM_EXTRACT_BYTE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_EXTRACT_BYTE
+VAR_INPUT
+Data: FINT;
+Pos: INT;
+Bits: INT; 
+END_VAR
+VAR_OUTPUT
+Out: DWORD;
+END_VAR
+VAR
+temp_dint: DINT;
+temp_dword: DWORD;
+mask1 : DWORD;
+END_VAR
+
+  mask1 := DWORD#16#FFFFFFFF;
+  mask1 := SHL (mask1,Bits);
+  mask1 := NOT mask1;   
+  temp_dint := CAST_FINT_TO_DINT (Data);
+  temp_dword := DINT_TO_DWORD (temp_dint);
+  temp_dword := SHR(temp_dword,Pos);
+  temp_dword := temp_dword AND mask1;
+  Out := temp_dword;
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" type="PRG" name="LIFECHECK" editor="PAL1131.ST"><![CDATA[PROGRAM LIFECHECK
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ CT: TIME;
+ deltaCT: TIME;
+ lastSendCT: TIME;
+ lastRcvCT: TIME;
+ oldLifecheckToRcv: INT;
+ END_VAR
+
+  CT := CUR_TIME();
+  deltaCT := CT - lastSendCT;
+  IF deltaCT > T#1s THEN
+    lastSendCT := CT;
+    lifecheckToSend := lifecheckToSend + 1; // roll-over at (65535+1)->65536->0
+  END_IF
+  
+  IF oldLifecheckToRcv <> lifecheckToRcv THEN
+    lastRcvCT := CT;
+    MASTER_SLAVE_ALARM := false; // alarm off
+  ELSE
+    deltaCT := CT - lastRcvCT;  
+    IF deltaCT > T#5s THEN
+    MASTER_SLAVE_ALARM := true; // alarm on
+    END_IF
+  END_IF
+  oldLifecheckToRcv := lifecheckToRcv;
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="BLOCK_HANDLE_LAMP_TEST" flags="00004000"><![CDATA[VAR_GLOBAL 
+ BLOCK_HANDLE_LAMP_TEST  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_BUZZER" flags="00004000"><![CDATA[VAR_GLOBAL 
+ FIRE_ALARM_BUZZER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_BUZZER_ACK" flags="00004000"><![CDATA[VAR_GLOBAL 
+ FIRE_ALARM_BUZZER_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAULT_BUZZER_ACK" flags="00004000"><![CDATA[VAR_GLOBAL 
+ FAULT_BUZZER_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ACK_MASTER" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ACK_MASTER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_FIREALARM_ON" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_FIREALARM_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_PREALARM_ON" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_PREALARM_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_FAULT_ON" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_FAULT_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NACK_FIREALARM" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_NACK_FIREALARM  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NACK_PREALARM" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_NACK_PREALARM  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NACK_FAULT" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_NACK_FAULT  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_ACK" flags="00004000"><![CDATA[VAR_GLOBAL 
+ FIRE_ALARM_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAULT_ACK" flags="00004000"><![CDATA[VAR_GLOBAL 
+ FAULT_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_FIREALARM" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_NEW_FIREALARM  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_FAULT" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_NEW_FAULT  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_PREALARM" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_NEW_PREALARM  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAULT_BUZZER" flags="00004000"><![CDATA[VAR_GLOBAL 
+ FAULT_BUZZER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_DISABLE_ON" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_DISABLE_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_TEST_ON" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_TEST_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BOARD_NUMBER" flags="00004000"><![CDATA[VAR_GLOBAL 
+ BOARD_NUMBER (*$COMMENT max boards connected to AFAS*) : INT := 4;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CURRENT_ZONE_PREALARMX" flags="00004000"><![CDATA[VAR_GLOBAL 
+ CURRENT_ZONE_PREALARMX  : DWORD;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SENSOR_ALARM_BUZZER" flags="00004000"><![CDATA[VAR_GLOBAL 
+ SENSOR_ALARM_BUZZER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SENSOR_ALARM_BUZZER_ACK" flags="00004000"><![CDATA[VAR_GLOBAL 
+ SENSOR_ALARM_BUZZER_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PENDINGGLOBALFIRERELAY" flags="00004000"><![CDATA[VAR_GLOBAL 
+ PENDINGGLOBALFIRERELAY (*$COMMENT one per system*) : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GLOBALFIRERELAYSTARTTICK" flags="00004000"><![CDATA[VAR_GLOBAL 
+ GLOBALFIRERELAYSTARTTICK (*$COMMENT one per system*) : TIME;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_MCP" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ANY_NEW_MCP  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GLOBALSIRENOUTPUTSTARTTICK" flags="00004000"><![CDATA[VAR_GLOBAL 
+ GLOBALSIRENOUTPUTSTARTTICK (*$COMMENT one per system*) : TIME;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PENDINGGLOBALSIRENOUTPUT" flags="00004000"><![CDATA[VAR_GLOBAL 
+ PENDINGGLOBALSIRENOUTPUT (*$COMMENT one per system*) : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MINDIMLCD" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MINDIMLCD  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAXDIMLCD" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MAXDIMLCD  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MINDIMLAMP" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MINDIMLAMP  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAXDIMLAMP" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MAXDIMLAMP  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MINBRIGHTNESSLCD" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MINBRIGHTNESSLCD  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAXBRIGHTNESSLCD" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MAXBRIGHTNESSLCD  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MINBRIGHTNESSLAMP" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MINBRIGHTNESSLAMP  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAXBRIGHTNESSLAMP" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MAXBRIGHTNESSLAMP  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_ALARM" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_ALARM (*$COMMENT in the future this can be configurable option*) : BOOL := TRUE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_FAULT" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_FAULT (*$COMMENT in the future this can be configurable option*) : BOOL := TRUE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SENSOR_FAULT_BUZZER" flags="00004000"><![CDATA[VAR_GLOBAL 
+ SENSOR_FAULT_BUZZER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SENSOR_FAULT_BUZZER_ACK" flags="00004000"><![CDATA[VAR_GLOBAL 
+ SENSOR_FAULT_BUZZER_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="powerupDelayElapsed" flags="00004000"><![CDATA[VAR_GLOBAL 
+ powerupDelayElapsed (*$COMMENT one per system*) : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="powerupRemainTime" flags="00004000"><![CDATA[VAR_GLOBAL 
+ powerupRemainTime (*$COMMENT one per system*) : TIME;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="extraSirenDelayTime" flags="00004000"><![CDATA[VAR_GLOBAL 
+ extraSirenDelayTime (*$COMMENT one per system*) : TIME;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PENDINGGLOBALBUZZEROUTPUT" flags="00004000"><![CDATA[VAR_GLOBAL 
+ PENDINGGLOBALBUZZEROUTPUT (*$COMMENT one per system*) : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO1_1" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO1_1 (*$COMMENT 42043 DIGITAL OUTPUT RELAY 1.1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO1_2" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO1_2 (*$COMMENT 42044 DIGITAL OUTPUT RELAY 1.2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO2_1" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO2_1 (*$COMMENT 42045 DIGITAL OUTPUT RELAY 2.1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO2_2" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO2_2 (*$COMMENT 42046 DIGITAL OUTPUT RELAY 2.2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO3_1" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO3_1 (*$COMMENT 42047 DIGITAL OUTPUT RELAY 3.1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO3_2" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO3_2 (*$COMMENT 42048 DIGITAL OUTPUT RELAY 3.2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO4_1" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO4_1 (*$COMMENT 42049 DIGITAL OUTPUT RELAY 4.1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO4_2" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO4_2 (*$COMMENT 42050 DIGITAL OUTPUT RELAY 4.2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT1" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT1 (*$COMMENT 42051 SIREN OUTPUT 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT2" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT2 (*$COMMENT 42052 SIREN OUTPUT 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT3" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT3 (*$COMMENT 42053 SIREN OUTPUT 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT4" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT4 (*$COMMENT 42054 SIREN OUTPUT 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_RELAY1" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_RELAY1 (*$COMMENT 42055 FIRE ALARM RELAY OUTPUT 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_RELAY2" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_RELAY2 (*$COMMENT 42056 FIRE ALARM RELAY OUTPUT 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_RELAY3" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_RELAY3 (*$COMMENT 42057 FIRE ALARM RELAY OUTPUT 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_RELAY4" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_RELAY4 (*$COMMENT 42058 FIRE ALARM RELAY OUTPUT 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="START_AUTO_DISCOVERY" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ START_AUTO_DISCOVERY (*$COMMENT 42059 Start Auto Discovery*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DONE_AUTO_DISCOVERY" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DONE_AUTO_DISCOVERY (*$COMMENT 42060 Stop Auto Discovery*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SELECT_LOOP_AUTO_DISCOVERY" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SELECT_LOOP_AUTO_DISCOVERY (*$COMMENT 42061 Select Loop Nr Auto Discovery*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ERROR_CODE_AUTO_DISCOVERY" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ERROR_CODE_AUTO_DISCOVERY (*$COMMENT 42062 Error code Auto Discovery*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_ACK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_ACK (*$COMMENT 42001 PUSHBUTTON - ACKN*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_LEFT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_LEFT (*$COMMENT 42002 PUSHBUTTON - LEFT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_RIGHT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_RIGHT (*$COMMENT 42003 PUSHBUTTON - RIGHT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_STOPHORN" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_STOPHORN (*$COMMENT 42004 PUSHBUTTON - STOP HORN*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_UP" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_UP (*$COMMENT 42005 PUSHBUTTON - UP*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_DOWN" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_DOWN (*$COMMENT 42006 PUSHBUTTON - DOWN*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_FIREALARM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_FIREALARM (*$COMMENT 42007 PUSHBUTTON - (01)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_PREALARM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_PREALARM (*$COMMENT 42008 PUSHBUTTON - (02)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_FIRE_OUTPUT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_FIRE_OUTPUT (*$COMMENT 42009 PUSHBUTTON - (03)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_ACCESS_LEVEL2" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_ACCESS_LEVEL2 (*$COMMENT 42010 PUSHBUTTON - (04) ACCESS LEVEL 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_GENERAL_DISABLE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_GENERAL_DISABLE (*$COMMENT 42011 PUSHBUTTON - (05)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_TEST" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_TEST (*$COMMENT 42012 PUSHBUTTON - (06)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB7" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB7 (*$COMMENT 42013 PUSHBUTTON - (07)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB8" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB8 (*$COMMENT 42014 PUSHBUTTON - (08)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB9" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB9 (*$COMMENT 42015 PUSHBUTTON - (09)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB10" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB10 (*$COMMENT 42016 PUSHBUTTON - (10)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB11" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB11 (*$COMMENT 42017 PUSHBUTTON - (11)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB12" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB12 (*$COMMENT 42018 PUSHBUTTON - (12) RESOUND*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MASTER_SLAVE_ALARM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MASTER_SLAVE_ALARM (*$COMMENT 42019 MASTER PANEL NOT PRESENT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUZZER" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUZZER (*$COMMENT 42020 BUZZER*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_SYSTEM_ON" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_SYSTEM_ON (*$COMMENT 42021 LAMP - SYSTEM ON*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_FAULT (*$COMMENT 42022 LAMP - FAULT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_FIREALARM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_FIREALARM (*$COMMENT 42023 LAMP - (01) FIRE ALARM*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_PREALARM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_PREALARM (*$COMMENT 42024 LAMP - (02) PRE ALARM*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_FIRE_OUTPUT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_FIRE_OUTPUT (*$COMMENT 42025 LAMP - (03) FIRE OUTPUT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_ACCESS_LEVEL2" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_ACCESS_LEVEL2 (*$COMMENT 42026 LAMP - (04) LEVEL 2 ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_GENERAL_DISABLE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_GENERAL_DISABLE (*$COMMENT 42027 LAMP - (05) GENERAL DISABLE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_TEST" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_TEST (*$COMMENT 42028 LAMP - (06) TEST*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_GENERAL_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_GENERAL_FAULT (*$COMMENT 42029 LAMP - (07) GENERAL FAULT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_MAIN_SUPPLY_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_MAIN_SUPPLY_FAULT (*$COMMENT 42030 LAMP - (08) MAIN SUPPLY FAULT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_BACKUP_SUPPLY_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_BACKUP_SUPPLY_FAULT (*$COMMENT 42031 LAMP - (09) BACKUP SUPPLY FAULT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_SIREN_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_SIREN_FAULT (*$COMMENT 42032 LAMP - (10) SIRENE FAULT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_LOOP_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_LOOP_FAULT (*$COMMENT 42033 LAMP - (11) LOOP FAULT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_EARTH_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_EARTH_FAULT (*$COMMENT 42034 LAMP - (12) EARTH FAULT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMPTEST_MASTER" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMPTEST_MASTER (*$COMMENT 42035 LAMP TEST*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIM_LCD" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIM_LCD (*$COMMENT 42036 DIMMING - LCD BACK LIGHT*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIM_BL" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIM_BL (*$COMMENT 42037 DIMMING - BUTTON BACK LIGHT*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIM_LAMP" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIM_LAMP (*$COMMENT 42038 DIMMING - LAMPS*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAIL_OUTPUT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FAIL_OUTPUT (*$COMMENT 42039 FAIL OUTPUT LCD PANEL*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_DISABLE_ON_ANY_TEST_ON" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ANY_DISABLE_ON_ANY_TEST_ON (*$COMMENT 42040 ANY DISABLE ON ANY TEST ON*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAIN_SUPPLY_FAILURE_MASK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MAIN_SUPPLY_FAILURE_MASK (*$COMMENT 42041 MAIN SUPPLY FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BACKUP_SUPPLY_FAILURE_MASK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BACKUP_SUPPLY_FAILURE_MASK (*$COMMENT 42042 BACKUP SUPPLY FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CURRENT_LOGIN_LEVEL" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CURRENT_LOGIN_LEVEL (*$COMMENT 42063 Current Login Level*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="STOPHORN_FOR_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ STOPHORN_FOR_FAULT (*$COMMENT 42064 Stop Horn for Faults*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ACK_FOR_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ACK_FOR_FAULT (*$COMMENT 42065 Ack for Faults*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="STOPHORN_FOR_FIREALARM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ STOPHORN_FOR_FIREALARM (*$COMMENT 42066 Stop Horn for Fire Alarms*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIGNALING_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIGNALING_FAULT (*$COMMENT 42067 Signaling Faults*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LOOP_EARTH_FAILURE_MASK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LOOP_EARTH_FAILURE_MASK (*$COMMENT 42068 LOOP EARTH FAIL 1..8*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LOOP_SHORT_FAILURE_MASK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LOOP_SHORT_FAILURE_MASK (*$COMMENT 42069 LOOP SHORT FAIL 1..8*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_EARTH_FAILURE_MASK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_EARTH_FAILURE_MASK (*$COMMENT 42070 SIREN EARTH FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_LINE_FAILURE_MASK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_LINE_FAILURE_MASK (*$COMMENT 42071 SIREN LINE FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT_FAILURE_MASK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT_FAILURE_MASK (*$COMMENT 42072 SIREN OUTPUT FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CAN_FAILURE_MASK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CAN_FAILURE_MASK (*$COMMENT 42073 CANBUS FAILURE 1..8*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETHERNET_FAIL1" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETHERNET_FAIL1 (*$COMMENT 42106 Ethernet Port A No Communication*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETHERNET_FAIL2" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETHERNET_FAIL2 (*$COMMENT 42107 Ethernet Port B No Communication*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_SENSOR_IN_ALARM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ANY_NEW_SENSOR_IN_ALARM (*$COMMENT 42109 ANY NEW SENSOR IN ALARM*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_DELAY" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_DELAY (*$COMMENT 42111 SIREN OUTPUT DELAY*) : DINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_DELAY" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_DELAY (*$COMMENT 42112 FIRE ALARM DELAY*) : DINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_ALARM_IN_MACHINERY_AREA" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ANY_NEW_ALARM_IN_MACHINERY_AREA (*$COMMENT 42113 ANY NEW ALARM IN MACHINERY AREA*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LCD_AND_LAMP_BRIGHTNESS_SETTINGS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LCD_AND_LAMP_BRIGHTNESS_SETTINGS (*$COMMENT 42114 LCD AND LAMP BRIGHTNESS SETTINGS*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_SENSOR_IN_FAULT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ANY_NEW_SENSOR_IN_FAULT (*$COMMENT 42115 ANY NEW SENSOR IN FAULT*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUZZER_FOR_SENSORS_SETTINGS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUZZER_FOR_SENSORS_SETTINGS (*$COMMENT 42116 BUZZER FOR SENSORS SETTINGS*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LIFECHECKTOSEND" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LIFECHECKTOSEND (*$COMMENT 42117 LIFECHECK TO SEND*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LIFECHECKTORCV" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LIFECHECKTORCV (*$COMMENT 42118 LIFECHECK TO RECEIVE*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_ACK_SLAVEPANEL" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_ACK_SLAVEPANEL (*$COMMENT 42119 PB_ACK_SLAVEPANEL*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZONE_PREALARMS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ZONE_PREALARMS (*$COMMENT 42074 LOOP 1 Zone PreAlarm 1-16  (16 bits)*) : ARRAY[0..7] OF DWORD;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZONE_ALARMS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ZONE_ALARMS (*$COMMENT 42082 LOOP 1 Zone Alarm 1-16  (16 bits)*) : ARRAY[0..7] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZONE_MCPS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ZONE_MCPS (*$COMMENT 42090 LOOP 1 Zone MCP 1-16  (16 bits)*) : ARRAY[0..7] OF WORD;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZONE_FAULTS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ZONE_FAULTS (*$COMMENT 42098 LOOP 1 Zone Fault 1-16  (16 bits)*) : ARRAY[0..7] OF FINT;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK" loop_kind="0" interval="100"><![CDATA[INIT_FAS
+READ_BOARD_DIAG
+DETECT_NEW_ALARM_AND_FAULTS
+HANDLE_NEW_FIREALARM_AND_FAULT
+HANDLE_ACK
+HANDLE_RESOUND
+HANDLE_STOPHORN
+HANDLE_PB
+HANDLE_LEDS
+CHECK_PENDING_FIRE_RELAY
+CHECK_PENDING_SIREN_OUTPUT
+LIFECHECK
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

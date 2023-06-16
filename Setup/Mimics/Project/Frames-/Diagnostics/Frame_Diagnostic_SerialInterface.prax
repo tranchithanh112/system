@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="140" Height="50" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="140" Height="50" BorderColor="Black" FillColor="Black"/>
+		<Rectangle Width="128" Height="48" X="11" Y="1" BorderColor="PanelFaceBorder" FillColor="InfoTextGrey">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Gray"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="9" Height="48" Y="1" BorderColor="Comment" FillColor="Comment"/>
+		<TextBox Width="80" Height="29" X="31" Y="10" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;36.0;N;N;N" Text="XL011">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Number"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

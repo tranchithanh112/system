@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1020">
+	<Children>
+		<Panel Width="1020" GridSpacing="5" BorderColor="PanelFaceBorder" CornerRoundRadius="3">
+			<Children>
+				<Panel Width="120" Height="30" X="895" Y="55" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Background" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="110" Height="20" X="5" Y="5" BorderColor="Transparent" FillColor="Transparent" Font="Arial-24.0-N-N-N" Text="2/23/2015">
+							<Bindings>
+								<DateTimeBinding TargetPropertyName="Text">
+									<ConvertParams>
+										<DateTimeToStringConvertParams Format="m/dd/yyyy"/>
+									</ConvertParams>
+								</DateTimeBinding>
+							</Bindings>
+						</TextBox>
+					</Children>
+				</Panel>
+				<Panel Width="120" Height="30" X="895" Y="15" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Background" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="110" Height="20" X="5" Y="5" BorderColor="Transparent" FillColor="Transparent" Font="Arial-24.0-N-N-N" Text="07:15:00">
+							<Bindings>
+								<DateTimeBinding TargetPropertyName="Text">
+									<ConvertParams>
+										<DateTimeToStringConvertParams/>
+									</ConvertParams>
+								</DateTimeBinding>
+							</Bindings>
+						</TextBox>
+					</Children>
+				</Panel>
+				<Bitmap Width="352" Height="80" X="344" Y="10" FilePath="..\Logo\Logo352x80.gif"/>
+				<Bitmap Width="32" Height="32" X="849" Y="14" FilePath="..\Icons\clock.png"/>
+				<Bitmap Width="32" Height="32" X="849" Y="54" FilePath="..\Icons\calendar.png"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

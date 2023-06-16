@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="245" Height="90" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="240" Height="85" X="5" Y="5" BorderColor="DarkShadow" FillColor="DarkShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="240" Height="85" BorderColor="InactiveGrey" CornerRoundRadius="5"/>
+		<Rectangle Width="40" Height="40" X="60" Y="35" BorderWidth="0" CornerRoundRadius="5"/>
+		<Button Width="40" Height="40" X="60" Y="35" Text="X" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61089">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" XOffset="-6" YOffset="-158.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="155" Height="230" X="-3.5" Y="-218.5" ID="Gen 1" Sequence_CMD="61527" Path=".\PopUp_Sequnce.prax" SEQ_Channel="61527"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="40" Height="20" X="60" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;18.0;N;N;N" Text="1"/>
+		<TextBox Width="40" Height="20" X="120" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;18.0;N;N;N" Text="2"/>
+		<TextBox Width="40" Height="20" X="175" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;18.0;N;N;N" Text="3"/>
+		<TextBox Width="40" Height="20" X="10" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;18.0;N;N;N" Text="GEN"/>
+		<TextBox Width="40" Height="40" X="10" Y="35" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="5" TextColor="InfoTextWhite" Font="Praxis;18.0;N;N;N" Text="SEQ"/>
+		<Rectangle Width="40" Height="40" X="120" Y="35" BorderWidth="0" CornerRoundRadius="5"/>
+		<Rectangle Width="40" Height="40" X="175" Y="35" BorderWidth="0" CornerRoundRadius="5"/>
+		<Line Color="InfoTextGrey" X0="10" Y0="25" X1="230" Y1="25"/>
+		<Button Width="40" Height="40" X="120" Y="35" Text="X" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62089">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" XOffset="-1" YOffset="-157.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="155" Height="230" X="61.5" Y="-217.5" ID="Gen 2" Sequence_CMD="62527" Path=".\PopUp_Sequnce.prax" SEQ_Channel="61527"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<Button Width="40" Height="40" X="175" Y="35" Text="X" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="63089">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" XOffset="-1" YOffset="-157.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="155" Height="230" X="116.5" Y="-217.5" ID="Gen 3" Sequence_CMD="63527" Path=".\PopUp_Sequnce.prax" SEQ_Channel="61527"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

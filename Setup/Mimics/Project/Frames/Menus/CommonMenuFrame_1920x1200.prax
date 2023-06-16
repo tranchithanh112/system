@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1200" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1920" Height="70" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Frame Width="154" Height="37.7408" X="1695" Y="15" Path="..\Logos\Frame_PRAXIS_LOGO.prax"/>
+		<Rectangle Width="1920" Height="5" Y="65" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Rectangle Width="1920" Height="3" Y="66" BorderWidth="0" BorderColor="StatusInactive" FillColor="StatusInactive"/>
+		<Button Width="350" Height="55" X="1250" Y="5" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" FillPatternColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<TextBox Width="31" Height="11" X="25" Y="35" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;12.0;N;N;N" Text="GMT">
+					<Bindings>
+						<MiscellaneousStringBinding TargetPropertyName="Text"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="130" Height="30" X="55" Y="20" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="00:00:00">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="135" Height="30" X="190" Y="20" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="2020-01-01">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams Format="d.mm.yyyy"/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<GeneralCAMClientCommandsClickAction CAMClientCommandType="Toggle Date Time"/>
+			</ClickActions>
+		</Button>
+		<Button LockOverlayVisible="False" LockOverlayColor="Transparent" Width="55" Height="55" X="1860" Y="5" Text="  " FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="NoAlarmGreen" Font="Segoe UI;10.0;N;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="OutlineColor" DefaultValue="Transparent"/>
+			</Bindings>
+			<ClickActions>
+				<SetVariableValueClickAction>
+					<Variable>
+						<BoolVariable Name="Show_Side_Menu" IsLocal="False"/>
+					</Variable>
+					<VariableSetter>
+						<BoolVariableSetter SetValueType="Toggle"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="545" Height="1060" X="1375" Y="70" Highlight_Button_NR="0" Path=".\SideMenuVertical_16.10.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+				<ValueTransitionBinding TargetPropertyName="Visible" Activate="True" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</Frame>
+		<TextBox Width="400" Height="45" X="710" Y="10" BorderColor="Transparent" FillColor="BackgroundMenu" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="PATROL TIMER STATUS">
+			<Bindings>
+				<PatrolTimerStatusBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<PatrolTimerStatusToTextConvertParams TextWhenOff="PATROL TIMER: OFF" TextWhenAlarmPD="PATROL TIMER: ALARM">
+							<Bindings>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenWarning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" mm:ss WARNING" ConversionFormat="mm:ss"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenRunning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" MIN. RUNNING" ConversionFormat="mm"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+							</Bindings>
+						</PatrolTimerStatusToTextConvertParams>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+				<PatrolTimerStatusBinding TargetPropertyName="TextColor">
+					<ConvertParams>
+						<PatrolTimerStatusToColorConvertParams ColorWhenRunning="Barfill01"/>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="515" Height="30" X="20" Y="20" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;28.0;N;N;N" Text="GENERAL INFO">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ELECTRIC" DefaultValue="PAGE TITLE">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Page_Title"/>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="MultiplePages"/>
+						<VariableBinding TargetPropertyName="SelectedValue0">
+							<ConvertParams>
+								<StringToTranslatableStringConvertParams/>
+							</ConvertParams>
+							<Variable>
+								<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<Button Width="410" Height="55" X="705" Y="5" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="9"/>
+			</ClickActions>
+		</Button>
+		<Frame Width="1920" Height="60" Y="1135" HornOutput_CH1="61040" HornOutput_CH2="0" HornOutput_CH3="0" Path=".\BottomAlarmLine.prax"/>
+		<Frame Width="45" Height="45" X="1865" Y="10" Path=".\Hamburger_button.prax"/>
+	</Children>
+</RootElement>

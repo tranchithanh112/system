@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle FlashArea="OutlineOnly" FlashColor="NoAlarmGreen" Width="50" Height="50" BorderWidth="2" BorderColor="Gray">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" SelectedValue5="ActiveText" SelectedValue6="Green" DefaultValue="InfoTextGrey">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Trip"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Out"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Out"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="5" Height="32" X="12" Y="9" FillColor="Transparent">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="5" Height="5" X="32.5" Y="4"/>
+		<Rectangle Width="5" Height="5" X="32.5" Y="41"/>
+		<Rectangle Width="5" Height="32" X="32.5" Y="9" FillColor="Green">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="5" Height="32" X="32.5" Y="9" BorderColor="Orange" FillColor="Orange">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="No_Feedback"/>
+			</Bindings>
+		</Rectangle>
+		<Button Width="57" Height="56" X="-3" Y="-3" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="Visible">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="SecondValue"/>
+						<ChannelValueBinding TargetPropertyName="FirstValue">
+							<Bindings>
+								<SelectFirstChannelNumberBinding TargetPropertyName="ChannelNumber" SelectedValue7="100001">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="5255">
+											<Bindings>
+												<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100002"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstChannelNumberBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" XOffset="-84.5" YOffset="0.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="130" Height="185" X="-124" Y="-67" Text_Bottom="BREAKER" Close_Ch="0" Open_Ch="0" Path=".\Frame_Popup_CB_Control.prax" Reset_Ch="0" Text_Top="BREAKER">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Close_Ch" ExportedPropertyName="Close_M_Ch"/>
+								<FrameBinding TargetPropertyName="Open_Ch" ExportedPropertyName="Open_M_Ch"/>
+								<FrameBinding TargetPropertyName="Reset_Ch" ExportedPropertyName="Reset_M_Ch"/>
+								<FrameBinding TargetPropertyName="Text_Top" ExportedPropertyName="Top_Name"/>
+								<FrameBinding TargetPropertyName="Text_Bottom" ExportedPropertyName="Bottom_Text"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

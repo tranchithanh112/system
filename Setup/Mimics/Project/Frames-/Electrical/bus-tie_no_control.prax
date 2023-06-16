@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="150" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Line Width="2" Color="PageInfoLineShaded" X0="75" Y0="30" X1="75" Y1="115">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="cb_closed_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Line Width="2" Color="PageInfoLineShaded" X0="35" Y0="35" X1="75" Y1="115">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="cb_closed_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Ellipse BorderWidth="0" BorderColor="KeyboardInputBackground" FillColor="KeyboardInputBackground" CenterX="75" CenterY="115" RadiusX="6" RadiusY="6"/>
+		<Line Width="2" Color="PageInfoLineShaded" X0="75" Y0="30" X1="75" Y1="35">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="cb_closed_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<TextBox Width="150" Height="35" Y="60" BorderColor="PageInfoLineShaded" CornerRoundRadius="10" TextColor="White" Font="Praxis;26.0;N;N;N" Text="Interlock">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="interlock_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

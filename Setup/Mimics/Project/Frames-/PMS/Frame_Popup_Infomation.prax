@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="250" Height="225" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="250" Height="225" BorderWidth="2" BorderColor="DarkShadow" FillColor="MenuBackground" CornerRoundRadius="5"/>
+		<TextBox Width="250" Height="30" Y="5" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;16.0;N;N;N" Text="BREAKER">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Top"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="250" Height="30" Y="25" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;16.0;N;N;N" Text="BREAKER">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Bottom"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="75" Height="30" X="130" Y="60" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+											<Bindings>
+												<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+											</Bindings>
+										</ChannelOffsetBinding>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="205" Y="65" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="A"/>
+		<TextBox Width="90" Height="30" X="40" Y="60" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="CURRENT"/>
+		<TextBox Width="30" Height="25" X="205" Y="95" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="90" Height="30" X="40" Y="90" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="TOTAL POWER"/>
+		<TextBox Width="90" Height="30" X="40" Y="120" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="TOTAL ENERGY"/>
+		<TextBox Width="90" Height="30" X="40" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="RUNNING HOURS"/>
+		<TextBox Width="30" Height="25" X="205" Y="125" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="kWh"/>
+		<TextBox Width="30" Height="25" X="205" Y="155" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="h"/>
+		<TextBox Width="75" Height="30" X="130" Y="90" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+											</Bindings>
+										</ChannelOffsetBinding>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="75" Height="30" X="130" Y="120" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+											<Bindings>
+												<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+											</Bindings>
+										</ChannelOffsetBinding>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="75" Height="30" X="130" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+											<Bindings>
+												<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+											</Bindings>
+										</ChannelOffsetBinding>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

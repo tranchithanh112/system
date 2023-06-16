@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="300" Height="67" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle FlashSteadyOn="True" Width="300" Height="67" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="Visible" ButtonType="FollowDhvRules"/>
+				<EASButtonStatusBinding TargetPropertyName="FillColor" ButtonType="SetAlongside">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="ConningBackground"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+		</Rectangle>
+		<Button Width="300" Height="67" Text="Along Side" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;28.0;N;N;N">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="TextColor" ButtonType="SetAlongside">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="InfoTextGrey" ColorWhenTrue="ActiveText"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+				<EASButtonStatusBinding TargetPropertyName="Visible" ButtonType="FollowDhvRules"/>
+			</Bindings>
+			<ClickActions>
+				<EASCommandClickAction EASCommands="Set AlongSide"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

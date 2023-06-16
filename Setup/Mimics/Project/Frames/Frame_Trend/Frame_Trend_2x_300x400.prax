@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="420" Height="260" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="370" Height="240" X="50" Y="15" BorderWidth="0" BorderColor="BackgroundShadow" FillColor="BackgroundShadow"/>
+		<Trending Width="370" Height="240" X="45" Y="10" DurationShown="10" DurationStored="60" BorderColor="StatusInactive" FillColor="ColorTrendBackGround" ShowLegend="False" LegendFontSize="14" ScrollBarSize="0">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="DurationShown" Value="10" InRangeBegin="1" InRangeEnd="60" OutRangeBegin="60" OutRangeEnd="3600">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="DurationShown_min"/>
+					</Bindings>
+				</RangeFormulaBinding>
+				<RangeFormulaBinding TargetPropertyName="DurationStored" Value="60" InRangeBegin="1" InRangeEnd="60" OutRangeBegin="60" OutRangeEnd="3600">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="DurationStored_min"/>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+			<Runs>
+				<TrendingRun Title="1" LineColor="TextActive" LineWidth="1" FillPatternColor="ColorTrendLine01" BottomValue="0" TopValue="2680">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TopValue" ExportedPropertyName="Trend_Range_High"/>
+						<FrameBinding TargetPropertyName="LineWidth" ExportedPropertyName="Trend_LineWith"/>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel1"/>
+						<FrameBinding TargetPropertyName="Title" ExportedPropertyName="Title1"/>
+						<FrameBinding TargetPropertyName="LineColor" ExportedPropertyName="Colour1"/>
+						<FrameBinding TargetPropertyName="BottomValue" ExportedPropertyName="Trend_Range_Low"/>
+					</Bindings>
+				</TrendingRun>
+				<TrendingRun Title="2" LineColor="Yellow" LineWidth="1" FillPatternColor="ColorTrendLine02" BottomValue="0" TopValue="2680">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BottomValue" ExportedPropertyName="Trend_Range_Low"/>
+						<FrameBinding TargetPropertyName="TopValue" ExportedPropertyName="Trend_Range_High"/>
+						<FrameBinding TargetPropertyName="LineWidth" ExportedPropertyName="Trend_LineWith"/>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel2"/>
+						<FrameBinding TargetPropertyName="Title" ExportedPropertyName="Title2"/>
+						<FrameBinding TargetPropertyName="LineColor" ExportedPropertyName="Colour2"/>
+					</Bindings>
+				</TrendingRun>
+			</Runs>
+		</Trending>
+		<TextBox Width="40" Height="20" X="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" LeftRightPadding="5" Font="Praxis;14.0;N;N;N" Text="4000">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Trend_Range_High">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</FrameBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="5" Y="240" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" LeftRightPadding="5" Font="Praxis;14.0;N;N;N" Text="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Trend_Range_Low">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</FrameBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="5" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Segoe UI;14.0;N;N;N" Text="kW">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Units"/>
+			</Bindings>
+		</TextBox>
+		<Panel Width="175" Height="46.2009" X="55" Y="20" BorderWidth="1" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="GridFill" CornerRoundRadius="4">
+			<Children>
+				<TextBox Height="15" X="75" Y="6.0724" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI;14.0;B;N;N">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Colour1"/>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title1"/>
+					</Bindings>
+				</TextBox>
+				<Line X0="6.40328" Y0="31.9736" X1="36.4033" Y1="31.9737">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Color" ExportedPropertyName="Colour2"/>
+					</Bindings>
+				</Line>
+				<Line X0="6.40328" Y0="14" X1="36.4033" Y1="14">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Color" ExportedPropertyName="Colour1"/>
+					</Bindings>
+				</Line>
+				<TextBox Height="15" X="75" Y="24" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI;14.0;B;N;N">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Colour2"/>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title2"/>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

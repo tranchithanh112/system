@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="22" Height="22" GridSpacing="1" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="22" Height="22" BorderWidth="0" BorderColor="TextInfo" FillColor="Yellow" CornerRoundRadius="3">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue6="Green" DefaultValue="Yellow">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="On_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Off_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="20" Height="22" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;14.0;B;N;N" Text="1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Damper_Number"/>
+				<FrameBinding TargetPropertyName="Width" ExportedPropertyName="Right_Space"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

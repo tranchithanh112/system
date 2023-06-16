@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="1024" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<NavFrame Width="1280" Height="910" Y="50" OriginOffsetX="0" OriginOffsetY="0" ClipToBounds="True">
+			<Bindings>
+				<VariableBinding TargetPropertyName="NavFrameCurrentAddress">
+					<Variable>
+						<FloatVariable Name="Navframe_Index" IsLocal="False" IsRetain="True"/>
+					</Variable>
+				</VariableBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\__00_1 EMPTY CHILD FRAME 1280x1024.prax"/>
+				<Address Value=".\__00_2 EMPTY CHILD FRAME - SCREEN TEST 1280x1024.prax"/>
+			</AddressList>
+		</NavFrame>
+		<Frame LockOverlayVisible="False" Width="1280" Height="1024" ShowBackground="False" Highlight_Button_NR="1" Page_Title="PAGE TITLE HERE" MultiplePages="False" Path=".\Lib\Frames\Menus\CommonMenuFrame 1280x1024.prax"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="150" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="80" Height="120" X="36" Y="15" BorderColor="Barfill02" FillColor="BackgroundConning"/>
+		<Panel Width="81" Height="131" X="43" Y="10" GridSpacing="1" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Close"/>
+			</Bindings>
+			<Children>
+				<Rectangle Width="62" X="2" Y="16" BorderColor="Barfill02" LinePosition="Centered" FillColor="Green"/>
+				<Line Width="4" Color="Barfill02" X0="56" Y0="56" X1="56" Y1="75"/>
+			</Children>
+		</Panel>
+		<Panel Width="81" Height="131" X="43" Y="10" GridSpacing="1" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Open"/>
+			</Bindings>
+			<Children>
+				<Line Width="4" Color="Barfill02" X0="48" Y0="55" X1="48" Y1="76"/>
+				<Rectangle LockOverlayVisible="False" LockOverlayColor="Yellow" Width="62" X="2" Y="16" BorderColor="Barfill02" LinePosition="Centered"/>
+				<Polyline LineColor="Barfill02" ClosedOutline="True" FillColor="AlarmRed">
+					<Points>
+						<Point Coord="2;16"/>
+						<Point Coord="58;2"/>
+						<Point Coord="58;127"/>
+						<Point Coord="2;116"/>
+					</Points>
+				</Polyline>
+				<Line Width="4" Color="Barfill02" X0="48" Y0="55" X1="48" Y1="76"/>
+			</Children>
+		</Panel>
+		<Panel Width="81" Height="131" X="43" Y="10" GridSpacing="1" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Lock"/>
+			</Bindings>
+			<Children>
+				<Rectangle LockOverlayVisible="False" LockOverlayColor="Yellow" Width="62" X="2" Y="16" BorderColor="Barfill02" LinePosition="Centered"/>
+				<Line Width="4" Color="Barfill02" X0="56" Y0="56" X1="56" Y1="75"/>
+				<TextBox Width="34" Height="14" X="19" Y="37" BorderWidth="0" FillColor="Transparent" TextColor="Yellow" Font="Praxis;12.0;N;N;N" Text="LOCKED"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

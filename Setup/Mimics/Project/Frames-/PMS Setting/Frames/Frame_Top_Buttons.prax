@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1680" Height="60" ColorTableFile="..\Color_Table.colortable">
+	<Children>
+		<Panel Width="1680" Height="60" GridSpacing="5" BorderColor="PanelFaceBorder" CornerRoundRadius="3">
+			<Children>
+				<Button Width="140" Height="50" X="180" Y="5" GridSpacing="5" Text="Electric Power" Font="System UI-20.0-N-N-N">
+					<ClickActions>
+						<OpenFrameUserAction>
+							<Frame>
+								<FloatingFrame Path="D:\Software\System\Setup\Mimics\Pop-ups\Frame_select_mimic_Electric.prax"/>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Button Width="140" Height="50" X="10" Y="5" GridSpacing="5" Text="Propulsion" Font="System UI-20.0-N-N-N">
+					<ClickActions>
+						<OpenFrameUserAction MovableByUser="False">
+							<Frame>
+								<FloatingFrame Path="D:\Software\System\Setup\Mimics\Pop-ups\Frame_select_mimic_prop.prax"/>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<TextBox Width="340" Height="50" X="670" Y="5" LightingStyle="Horizontal" CornerRoundRadius="6" Font="Tahoma-32.0-N-N-N" Text=""/>
+				<Button Width="140" Height="50" X="1390" Y="5" GridSpacing="5" Text="Diagnostic" Font="System UI-20.0-N-N-N">
+					<ClickActions>
+						<OpenFrameUserAction>
+							<Frame>
+								<FloatingFrame Width="150" Height="255" X="1385" Path="D:\Software\System\Setup\Mimics\Pop-ups\Frame_select_mimic_Diagnostic.prax"/>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Frame Width="50" Height="50" X="1610" Y="5" Path=".\Frame_Button_question.prax" CenterY="30" CenterX="1635"/>
+				<Button Name="Previous" Width="45" Height="40" X="670" Y="10" GridSpacing="5" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI-18.0-B-N-N">
+					<Children>
+						<Line Width="3" X0="15" Y0="20" X1="30" Y1="5"/>
+						<Line Width="3" X0="15" Y0="20" X1="30" Y1="35"/>
+					</Children>
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="MimicNamePD" ExportedPropertyName="Previous"/>
+							</Bindings>
+						</OpenMimicByNumberClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="45" Height="40" X="965" Y="10" GridSpacing="5" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI-18.0-B-N-N">
+					<Children>
+						<Line Width="3" X0="30" Y0="20" X1="15" Y1="5"/>
+						<Line Width="3" X0="30" Y0="20" X1="15" Y1="35"/>
+					</Children>
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="MimicNamePD" ExportedPropertyName="Next"/>
+							</Bindings>
+						</OpenMimicByNumberClickAction>
+					</ClickActions>
+				</Button>
+				<TextBox Width="340" Height="50" X="670" Y="5" FillColor="Transparent" LightingStyle="Vertical" CornerRoundRadius="6" Font="Tahoma-32.0-N-N-N" Text="Conning">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Mimic_Title"/>
+					</Bindings>
+				</TextBox>
+				<Button Width="140" Height="50" X="345" Y="5" GridSpacing="5" Text="Machinery" Font="System UI-20.0-N-N-N">
+					<ClickActions>
+						<OpenFrameUserAction>
+							<Frame>
+								<FloatingFrame Path="D:\Software\System\Setup\Mimics\Pop-ups\Frame_select_mimic_Machinery.prax"/>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Button Width="140" Height="50" X="505" Y="5" GridSpacing="5" Text="Safety" Font="System UI-20.0-N-N-N">
+					<ClickActions>
+						<OpenFrameUserAction>
+							<Frame>
+								<FloatingFrame Width="150" Height="525" X="500" Path="D:\Software\System\Setup\Mimics\Pop-ups\Frame_select_mimic_Safety.prax"/>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

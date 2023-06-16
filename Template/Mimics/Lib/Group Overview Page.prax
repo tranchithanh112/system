@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+		<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1200" DefaultValue="1080">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+					<Bindings>
+						<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+		</SelectFirstCoordBinding>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1200" ShowBackground="False" Highlight_Button_NR="22" Page_Title="ALARM GROUP OVERVIEW" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame V2.prax"/>
+		<Rectangle Width="510" Height="40" X="5" Y="50" BorderWidth="0" FillColor="BackgroundListLine01"/>
+		<GroupOverviewList Width="510" Height="928" X="5" Y="82" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent">
+			<Bindings>
+				<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1048" DefaultValue="928">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+							<Bindings>
+								<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstCoordBinding>
+			</Bindings>
+		</GroupOverviewList>
+		<GroupList Width="1176" Height="960" X="514" Y="50" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent" ColumnSepLinesVisible="False" FileName=".\Frames\Menus\AlarmContextMenu.prax" ShowReportType="False">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1400" ActivateValue="1176" TransitionTime="100">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<SelectFirstBoolBinding TargetPropertyName="ShowReportType" SelectedValue0="False">
+					<Bindings>
+						<VariableBinding TargetPropertyName="ConditionValue0">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+				<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1080" DefaultValue="960">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+							<Bindings>
+								<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstCoordBinding>
+			</Bindings>
+		</GroupList>
+	</Children>
+</RootElement>

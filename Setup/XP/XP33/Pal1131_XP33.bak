@@ -1,0 +1,1877 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="XP33">
+    <METRIC>
+      <COMPANY><![CDATA[Praxis Automation]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <SUBJECT><![CDATA[Navigation Light CTRL System]]></SUBJECT>
+      <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+      <CREATED year="2010" month="11" day="2" hour="17" minutes="30" seconds="32" milisec="115" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="000000EC" />
+      <II value="0000007A" />
+      <PAL1131G used="1" />
+      <LC year="2023" month="1" day="19" hour="11" minutes="53" seconds="49" milisec="441" />
+      <LCF>
+        <ABSOLUTE>D:\Software\System\PAL1131\VM\VM-Praxis-TFT57.xml</ABSOLUTE>
+        <APPVARS>VM\VM-Praxis-TFT57.xml</APPVARS>
+        <ENVVARS>VM\VM-Praxis-TFT57.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.0</CREATOR>
+      <LASTSAVEDWITH>1.3.0.0
+</LASTSAVEDWITH>
+      <HCPFlags enabled="0" />
+      <OverrideDefaultPaths enabled="0" />
+      <COMPILER>
+        <DEFINE><![CDATA[]]></DEFINE>
+        <UNDEF><![CDATA[]]></UNDEF>
+      </COMPILER>
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="IEC 61131-3.lcp">
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="27" milisec="810" />
+        <APPVARS>Libraries\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>Libraries\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+      <PKG name="Praxis_FUNC" version="131072" filename="Praxis_FUNC.lcp">
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="28" milisec="87" />
+        <APPVARS>Libraries\Praxis_FUNC.lcp</APPVARS>
+        <ENVVARS>Libraries\Praxis_FUNC.lcp</ENVVARS>
+        <IMP name="FINT_TO_TIME" type="FUN" />
+        <IMP name="TIME_TO_FINT" type="FUN" />
+        <IMP name="FINT_TO_INT" type="FUN" />
+        <IMP name="INT_TO_FINT" type="FUN" />
+        <IMP name="DIV0" type="FUN" />
+        <IMP name="ABS_FINT" type="FUN" />
+        <IMP name="SQRT_FINT" type="FUN" />
+        <IMP name="HZ_TO_RPM" type="FUN" />
+        <IMP name="MAX_FINT" type="FUN" />
+        <IMP name="MIN_FINT" type="FUN" />
+        <IMP name="ANGLE180" type="FUN" />
+        <IMP name="ANGLE360" type="FUN" />
+        <IMP name="ATAN2" type="FUN" />
+        <IMP name="DEG_TO_RAD" type="FUN" />
+        <IMP name="RAD_TO_DEG" type="FUN" />
+        <IMP name="SET_BIT" type="FUN" />
+        <IMP name="GET_BIT" type="FUN" />
+        <IMP name="RESET_BIT" type="FUN" />
+      </PKG>
+      <PKG name="PRAXIS_HW" version="131072" filename="Praxis_HW.lcp">
+        <CREATED year="2022" month="3" day="9" hour="14" minutes="3" seconds="3" milisec="472" />
+        <APPVARS>Libraries\Praxis_HW.lcp</APPVARS>
+        <ENVVARS>Libraries\Praxis_HW.lcp</ENVVARS>
+        <IMP name="HW_LOAD" type="FBLK" />
+        <IMP name="HW_XP" type="FBLK" />
+        <IMP name="HW_TIMING" type="FBLK" />
+        <IMP name="HW_VERSIONS" type="FBLK" />
+        <IMP name="HW_SCROLL_UP" type="FBLK" />
+        <IMP name="HW_SCROLL_DOWN" type="FBLK" />
+        <IMP name="HW_ACCEPT" type="FBLK" />
+        <IMP name="HW_BUTTON_ID" type="FBLK" />
+        <IMP name="HW_TOUCH_GET_THR" type="FBLK" />
+        <IMP name="HW_TOUCH_SET_THR" type="FBLK" />
+        <IMP name="HW_SET_ALT_LANG" type="FBLK" />
+        <IMP name="HW_GET_ALT_LANG" type="FBLK" />
+        <IMP name="HW_GET_ALARM_PULSE_ON_NEXT" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_ALM" type="FBLK" />
+        <IMP name="HW_SET_TFT_PAGE" type="FBLK" />
+        <IMP name="HW_GET_TFT_PAGE" type="FBLK" />
+        <IMP name="HW_SET_TFT_FLASH" type="FBLK" />
+        <IMP name="HW_DETACH_ELVR" type="FBLK" />
+        <IMP name="HW_GETSTATUS_ELVR" type="FBLK" />
+        <IMP name="HW_GETSTATUS_IOW24" type="FBLK" />
+        <IMP name="HW_SPEED_ELVR" type="FBLK" />
+        <IMP name="HW_STEER_ELVR" type="FBLK" />
+        <IMP name="HW_STEERBLK_ELVR" type="FBLK" />
+        <IMP name="HW_MENU_PUBLIC_KEY" type="FBLK" />
+        <IMP name="HW_MENU_FIRST_PAGE" type="FBLK" />
+        <IMP name="HW_MENU_AFTER_LOGIN_PULSE" type="FBLK" />
+        <IMP name="HW_MENU_PW_CHANGE" type="FBLK" />
+        <IMP name="HW_GET_TFT_FLASH" type="FBLK" />
+        <IMP name="HW_SET_RD_ACTIVE" type="FBLK" />
+        <IMP name="HW_SET_WOODS_JIS" type="FBLK" />
+        <IMP name="RETAIN_TO_FACTORY" type="FBLK" />
+        <IMP name="FACTORY_TO_RETAIN" type="FBLK" />
+        <IMP name="HW_GET_ALARM_PULSE_ON_NEXT_V02" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_V02" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_ALM_V02" type="FBLK" />
+        <IMP name="HW_SET_TFT_ALM_SUM_DAY_WEEK_MON" type="FBLK" />
+        <IMP name="SET_ORIENTATION" type="FBLK" />
+        <IMP name="HW_SET_RD_COMPORT" type="FBLK" />
+        <IMP name="LONG_FOLLOWUP" type="FBLK" />
+        <IMP name="HW_MENU_TOUCH_FUNCTION" type="FBLK" />
+        <IMP name="HW_MENU_TOUCH_BUTTON_PRESS" type="FBLK" />
+        <IMP name="HW_GET_EAS_RESET_SIGNAL" type="FBLK" />
+        <IMP name="HW_SET_TFT_GROUP_NR_PAGE" type="FBLK" />
+        <IMP name="HW_ORD_PRN_SET_ON_OFF" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PERIODIC_PRINT" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PERIODIC_HOURS" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PRINT_STATUS" type="FBLK" />
+        <IMP name="HW_SHOW_MENU_SET_DATE" type="FBLK" />
+        <IMP name="HW_SHOW_MENU_SET_TIME" type="FBLK" />
+        <IMP name="HW_FORCE_REDRAW_DISPLAY" type="FBLK" />
+        <IMP name="HW_ORD_PRN_GET_STATUS_INFO" type="FBLK" />
+        <IMP name="HW_TFT_EAS_SEND_STOP_HORN" type="FBLK" />
+        <IMP name="HW_TFT_EAS_SEND_ACK" type="FBLK" />
+        <IMP name="HW_NWSW_ROOTSTATE" type="FBLK" />
+        <IMP name="HW_READ_INPUT_TEXT" type="FBLK" />
+        <IMP name="HW_RESET_INPUT_TEXT" type="FBLK" />
+        <IMP name="HW_LOAD_INPUT_TEXT" type="FBLK" />
+        <IMP name="HW_CHANGE_PARAMETER" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="ST" disabled="0" type="PRG" name="INTERNAL_GLOBALS" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM INTERNAL_GLOBALS
+VAR_EXTERNAL 
+    (*$AUTO*) 
+END_VAR
+ 
+VAR_GLOBAL
+  T_B_M5 : BOOL;
+  T_B_M6 : BOOL;
+  LAMP_STATUS                    : ARRAY[1..24] OF BOOL;
+  MAX_LAMP                       : INT := 24;
+  
+  // Page Numbers
+  DISPLAY_NUMBER                 : INT := 1;
+  MODE_PAGE_NR                   : INT := 0;
+  MAST_PAGE_NR                   : INT := 1;
+  LIFETIME_PAGE_NR               : INT := 2;
+  ALARM_PAGE_NR                  : INT := 3;
+  LOGIN_PAGE_NR                  : INT := 4;      // THIS ONE NEEDED??
+  PG_NR_MENU                     : INT := 4;      // 2019-05-01 RH
+  POPUP_ALARM_NR                 : INT := 3;
+  POPUP_BUZZER_NR                : INT := 4;
+  SHOW_ALARM_LINE                : INT := 1;
+  SWAP_MODE                      : INT := 0;
+  SWAP_IO_BOARD_FAIL             : INT := 0;
+  SWAP_LAMP_TEST                 : INT := 0;
+  PAGE_CHANGE_PW                 : BOOL := FALSE;  // PASSWORD CHANGE PAGE ACTIVE
+  SUB_PAGE                       : INT;
+
+  FRAME_ALARM_LINE               : INT :=1;
+  
+  // Touch Buttons 
+  TOUCH_ALARM_PAGE               : BOOL := FALSE;   // ?? NEEDED?
+  TOUCH_STOP_BUZZER              : BOOL := FALSE;   // ?? NEEDED?
+  TOUCH_ACK                      : BOOL := FALSE;   // ?? NEEDED?
+  TOUCH_BUTTON_1                 : BOOL := FALSE;
+  TOUCH_BUTTON_2                 : BOOL := FALSE;
+  TOUCH_BUTTON_3                 : BOOL := FALSE;
+  TOUCH_BUTTON_4                 : BOOL := FALSE;
+  TOUCH_BUTTON_5                 : BOOL := FALSE;
+  TOUCH_BUTTON_6                 : BOOL := FALSE;
+  
+  GROUP_1                        : BOOL := FALSE;
+  GROUP_2                        : BOOL := FALSE;
+  GROUP_3                        : BOOL := FALSE;
+  GROUP_4                        : BOOL := FALSE;
+  GROUP_5                        : BOOL := FALSE;
+  GROUP_6                        : BOOL := FALSE;
+  GROUP_7                        : BOOL := FALSE;
+  GROUP_8                        : BOOL := FALSE;
+    
+  //FLASHER
+  FLASH                          : BOOL;
+  FLASH_SLOW                     : BOOL;
+  FLASH_RET                      : BOOL;
+
+  LOOP_MSEC                      : FINT ;          
+  POWER_UP                       : BOOL ;             (* INIT PULSE AT POWER-UP *)
+  POWER_ON                       : BOOL ;
+  RESET                          : BOOL ;
+   
+  UNACC_ALARM                    : BOOL ;
+  ANY_ALARM                      : BOOL ; 
+  BUZZ                           : BOOL;
+   
+  POPUP_ALARM                    : INT := 0;
+  POPUP_BUZZER                   : INT := 0;
+  TOUCH_ALARM_PAGE_STATE         : INT  := 1;
+  TOUCH_ALARM_PAGE_STATE_BOOL    : BOOL := TRUE;
+  TOUCH_PANEL_RESET_STATE        : INT := 0;
+     
+  TOUCH_STOP_BUZZER_STATE        : INT  := 1;
+  TOUCH_STOP_BUZZER_STATE_BOOL   : BOOL := TRUE;
+  
+  PAGE_IN_MENU                   : BOOL ;         // 2019-05-01 RH
+  
+  TOP_BAR_STATE                  : INT := 1; 
+  HOURS_MOD2                     : INT ;
+  // COLOURS
+  GREEN                          : INT := 30;
+  RED                            : INT := 180;
+  WHITE                          : INT := 215;                              
+  YELLOW                         : INT := 210;
+  BLACK                          : INT := 0 ;
+END_VAR
+
+VAR
+
+END_VAR
+
+  PROJECT_SW_VER    := FINT#4.010;
+  MASTER_SW_VER     := FINT#0.000;
+  PROJECT_NR        := FINT#0.000;
+ 
+ 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="SYSTEM" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM SYSTEM
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+  START_UP              : R_TRIG ;
+  TON_ON                : TON ;
+
+
+// DIMMING  //
+  DIM_DN                : R_TRIG ;
+  DIM_UP                : R_TRIG ;
+  DIM_DN_CONTINUOUS     : TON;
+  DIM_UP_CONTINUOUS     : TON;
+  DIMMING_STEP          : FINT := 10;
+  DIM_MIN_VALUE         : FINT := 0;
+  DIM_MAX_VALUE         : FINT := 99;
+  DIMMING               : FINT;
+
+  ON_ALARM_PAGE         : BOOL;
+  WAIT_ACK              : TP ;  
+  ACK_EDGE              : R_TRIG ;
+   //ALARM BUTTON INDICATION
+  GET_TFT_UNACCEPT     : HW_GET_UNACCEPT; 
+  GET_TFT_ALARM_PULSE  : HW_GET_ALARM_PULSE_ON_NEXT;
+  GET_TFT_FLASH        : HW_GET_TFT_FLASH;
+  IRETURN              : INT ;
+  SET_TFT_FLASH        : HW_SET_TFT_FLASH;
+  LMP                  : INT ;
+  END_VAR
+
+  IO_MODULE_2_NOT_IN_USE := TRUE ;
+  FOR LMP := 13 TO 24 DO
+    IF NOT NOT_PRESENT_MAIN[LMP] THEN
+      IO_MODULE_2_NOT_IN_USE := FALSE ;
+    END_IF
+  END_FOR
+  IF IO_MODULE_2_NOT_IN_USE THEN
+    MAX_LAMP := 12 ;
+    HOURS_MOD2 := 0 ;
+  ELSE
+    MAX_LAMP := 24 ;
+    HOURS_MOD2 := 3 ;         // SHOW FRAME HOURS MODULE 2
+  END_IF  
+
+  // Power Up 
+  START_UP(CLK:= TRUE);
+  POWER_UP := START_UP.Q ;            // PULSE AT START FOR INITIALISING
+  TON_ON(IN:= TRUE, PT := T#5s ) ;
+  POWER_ON := TON_ON.Q ;              // ACTIVE AFTER 5 sec
+
+
+
+////////////////////////////////
+//     ACK ALARMS   ////////////
+////////////////////////////////
+
+  IF (DISPLAY_NUMBER = ALARM_PAGE_NR) THEN
+    WAIT_ACK( IN := NOT ON_ALARM_PAGE, PT := T#500);
+    IF NOT WAIT_ACK.Q THEN
+      ACK_EDGE( CLK := TOUCH_BUTTON_5 OR BUTTON_5);
+      ALARM_ACCEPT := ACK_EDGE.Q ;
+    END_IF  
+    ON_ALARM_PAGE := TRUE ;
+  ELSE
+    ON_ALARM_PAGE := FALSE ;  
+  END_IF
+
+////////////////////////////////
+//  DISPLAY ALM PAGE BUTTON  ///
+////////////////////////////////
+
+//UNACC_ALARM
+GET_TFT_UNACCEPT(IRET=>IRETURN);
+IF IRETURN = 1 THEN 
+  UNACC_ALARM := TRUE; 
+ELSE 
+  UNACC_ALARM := FALSE; 
+END_IF
+
+//ANY_ALARM
+GET_TFT_ALARM_PULSE(IRET=>IRETURN);
+IF IRETURN = 1 THEN 
+  ANY_ALARM := TRUE; 
+ELSE 
+  ANY_ALARM := FALSE; 
+END_IF
+
+ GET_TFT_FLASH();                    // GET TFT REFRESH RATE
+ IF GET_TFT_FLASH.IRET = 0 THEN
+   FLASH := FALSE;
+ ELSE
+   FLASH := TRUE;
+ END_IF
+SET_TFT_FLASH(IINPUT:=BOOL_TO_INT(FLASH));        // SET ALARM PAGE_FLASH RATE TFT
+
+IF DISPLAY_NUMBER = ALARM_PAGE_NR THEN
+  POPUP_ALARM := 2 ;
+  IF UNACC_ALARM AND FLASH THEN
+    POPUP_ALARM := 3 ;
+  END_IF
+ELSE
+  IF ANY_ALARM THEN
+    POPUP_ALARM := 1 - BOOL_TO_INT(UNACC_ALARM AND FLASH);
+    SHOW_ALARM_LINE := 2; 
+  ELSE
+    POPUP_ALARM := 0 ; 
+    SHOW_ALARM_LINE := 1; 
+  END_IF
+END_IF
+
+
+
+////////////////////////////////
+//     DIMMING   ///////////////
+////////////////////////////////
+
+  IF POWER_UP THEN DIMMING := FINT#50; (*OLD_OTHER_DIM_VAL := DIMMING_FROM_OTHER;*) END_IF
+
+  IF OR(DISPLAY_NUMBER = MODE_PAGE_NR,
+        DISPLAY_NUMBER = MAST_PAGE_NR) THEN
+
+    // TRIGGER BUTTONS
+    DIM_DN(CLK := TOUCH_BUTTON_3 OR BUTTON_3) ;
+    DIM_DN_CONTINUOUS(IN:=TOUCH_BUTTON_3 OR BUTTON_3,PT:=T#500);
+    IF DIM_DN.Q OR DIM_DN_CONTINUOUS.Q THEN
+    	IF DIMMING > 95 THEN
+			DIMMING_STEP := 1;	
+		ELSIF DIMMING > 90 THEN
+			DIMMING_STEP := 5;
+		ELSE
+			DIMMING_STEP := 10;
+		END_IF
+		
+    	DIMMING := DIMMING - DIMMING_STEP ;
+    END_IF
+    
+    DIM_UP(CLK := TOUCH_BUTTON_2 OR BUTTON_2) ;
+    DIM_UP_CONTINUOUS(IN:=TOUCH_BUTTON_2 OR BUTTON_2,PT:=T#500);
+    IF DIM_UP.Q OR DIM_UP_CONTINUOUS.Q THEN
+		IF DIMMING >= 95 THEN
+    		DIMMING_STEP := 1;
+		ELSIF DIMMING >= 90 THEN 
+    		DIMMING_STEP := 5;
+    	ELSE 
+    		DIMMING_STEP := 10;
+    	END_IF
+    	
+        DIMMING := DIMMING + DIMMING_STEP ; 
+    END_IF
+    
+    /// LIMIT DIMMING MIN / MAX
+    IF DIMMING < DIM_MIN_VALUE THEN
+      DIMMING := DIM_MIN_VALUE ;
+    END_IF
+    
+    IF DIMMING > DIM_MAX_VALUE THEN
+      DIMMING := DIM_MAX_VALUE ;
+    END_IF
+
+  
+  END_IF
+  EXT_DIM := 100 - DIMMING;
+  TFT_DIM := DIMMING;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PAGE_NAVIGATION" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM PAGE_NAVIGATION
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ CMD_TH_BUTTON_1        : R_TRIG;
+ CMD_TH_BUTTON_2        : R_TRIG;
+ CMD_TH_BUTTON_3        : R_TRIG;
+ CMD_TH_BUTTON_4        : R_TRIG;
+ CMD_TH_BUTTON_5        : R_TRIG;
+ CMD_TH_BUTTON_6        : R_TRIG;
+ RETURN_TO_MAIN         : TON ;
+ 
+ PAGE_NR               : INT ;
+ GET_TFT_PAGE          : HW_GET_TFT_PAGE;
+ SET_TFT_PAGE          : HW_SET_TFT_PAGE; 
+ 
+ END_VAR
+
+ // 2019-05-01 RH
+ GET_TFT_PAGE();                       
+ DISPLAY_NUMBER := GET_TFT_PAGE.IRET;  
+ PAGE_NR := DISPLAY_NUMBER ;           
+ 
+ CMD_TH_BUTTON_1(CLK:=TOUCH_BUTTON_1);
+ CMD_TH_BUTTON_2(CLK:=TOUCH_BUTTON_2);
+ CMD_TH_BUTTON_3(CLK:=TOUCH_BUTTON_3);
+ CMD_TH_BUTTON_4(CLK:=TOUCH_BUTTON_4);
+ CMD_TH_BUTTON_5(CLK:=TOUCH_BUTTON_5);
+ CMD_TH_BUTTON_6(CLK:=TOUCH_BUTTON_6);
+ 
+ RETURN_TO_MAIN (IN := (DISPLAY_NUMBER > 1) AND (DISPLAY_NUMBER < 5), PT := T#1m );     // not mast or mode and not logged in at settings
+ IF CMD_TH_BUTTON_1.Q OR RETURN_TO_MAIN.Q THEN
+   IF DISPLAY_NUMBER = MODE_PAGE_NR THEN
+     DISPLAY_NUMBER := MAST_PAGE_NR ;
+   ELSE
+     DISPLAY_NUMBER := MODE_PAGE_NR ;
+   END_IF
+ END_IF
+ 
+ IF (DISPLAY_NUMBER < 3) AND CMD_TH_BUTTON_5.Q THEN
+   DISPLAY_NUMBER := ALARM_PAGE_NR ;
+ ELSIF (DISPLAY_NUMBER = ALARM_PAGE_NR) AND CMD_TH_BUTTON_2.Q THEN
+   DISPLAY_NUMBER := LIFETIME_PAGE_NR ;
+ END_IF
+
+ IF CMD_TH_BUTTON_6.Q THEN
+   DISPLAY_NUMBER := LOGIN_PAGE_NR ;
+ END_IF
+
+ // 2019-05-01 RH
+ IF PAGE_NR <> DISPLAY_NUMBER AND NOT PAGE_IN_MENU THEN                                  // UPDATE PAGE
+   PAGE_NR := DISPLAY_NUMBER ;
+   SET_TFT_PAGE(IINPUT:=DISPLAY_NUMBER );
+ END_IF 
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="CONTROL" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM CONTROL
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+VAR_GLOBAL
+  
+  TOUCH_BUTTON_01        : BOOL;
+  TOUCH_BUTTON_02        : BOOL;
+  TOUCH_BUTTON_03        : BOOL;
+  TOUCH_BUTTON_04        : BOOL;
+  TOUCH_BUTTON_05        : BOOL;
+  TOUCH_BUTTON_06        : BOOL;
+  TOUCH_BUTTON_07        : BOOL;
+  TOUCH_BUTTON_08        : BOOL;
+  TOUCH_BUTTON_09        : BOOL;
+  TOUCH_BUTTON_10        : BOOL;
+  TOUCH_BUTTON_11        : BOOL;
+  TOUCH_BUTTON_12        : BOOL;
+  TOUCH_BUTTON_13        : BOOL;
+  TOUCH_BUTTON_14        : BOOL;
+  TOUCH_BUTTON_15        : BOOL;
+  TOUCH_BUTTON_16        : BOOL;
+  TOUCH_BUTTON_17        : BOOL;
+  TOUCH_BUTTON_18        : BOOL;
+  TOUCH_BUTTON_19        : BOOL;
+  TOUCH_BUTTON_20        : BOOL;
+  TOUCH_BUTTON_21        : BOOL;
+  TOUCH_BUTTON_22        : BOOL;
+  TOUCH_BUTTON_23        : BOOL;
+  TOUCH_BUTTON_24        : BOOL;
+
+  TOUCH_GROUP_1          : BOOL;
+  TOUCH_GROUP_2          : BOOL;
+  TOUCH_GROUP_3          : BOOL;
+  TOUCH_GROUP_4          : BOOL;
+  TOUCH_GROUP_5          : BOOL;
+  TOUCH_GROUP_6          : BOOL;
+  TOUCH_GROUP_7          : BOOL;
+  TOUCH_GROUP_8          : BOOL;
+  
+  TOUCH_LAMP_TEST        : BOOL;
+  LAMP_TEST              : INT;
+ END_VAR
+ VAR
+  CMD_BUTTON_01          : R_TRIG;
+  CMD_BUTTON_02          : R_TRIG;
+  CMD_BUTTON_03          : R_TRIG;
+  CMD_BUTTON_04          : R_TRIG;
+  CMD_BUTTON_05          : R_TRIG;
+  CMD_BUTTON_06          : R_TRIG;
+  CMD_BUTTON_07          : R_TRIG;
+  CMD_BUTTON_08          : R_TRIG;
+  CMD_BUTTON_09          : R_TRIG;
+  CMD_BUTTON_10          : R_TRIG;
+  CMD_BUTTON_11          : R_TRIG;
+  CMD_BUTTON_12          : R_TRIG;
+  CMD_BUTTON_13          : R_TRIG;
+  CMD_BUTTON_14          : R_TRIG;
+  CMD_BUTTON_15          : R_TRIG;
+  CMD_BUTTON_16          : R_TRIG;
+  CMD_BUTTON_17          : R_TRIG;
+  CMD_BUTTON_18          : R_TRIG;
+  CMD_BUTTON_19          : R_TRIG;
+  CMD_BUTTON_20          : R_TRIG;
+  CMD_BUTTON_21          : R_TRIG;
+  CMD_BUTTON_22          : R_TRIG;
+  CMD_BUTTON_23          : R_TRIG;
+  CMD_BUTTON_24          : R_TRIG;
+
+  CMD_GROUP_1            : R_TRIG;
+  CMD_GROUP_2            : R_TRIG;
+  CMD_GROUP_3            : R_TRIG;
+  CMD_GROUP_4            : R_TRIG;
+  CMD_GROUP_5            : R_TRIG;
+  CMD_GROUP_6            : R_TRIG;
+  CMD_GROUP_7            : R_TRIG;
+  CMD_GROUP_8            : R_TRIG;
+
+  LMP                    : INT;
+  GROUP_SET_MM           : BOOL;
+  LAMP_BUTTON_CLICKED    : BOOL;
+  GROUP_DECODE           : ARRAY [0..15] OF BOOL;
+  
+ END_VAR
+
+ IF TOUCH_LAMP_TEST THEN    // CLICK LAMP TEST
+   LAMP_TEST := 1 ;
+ END_IF
+ IF (DISPLAY_NUMBER = MODE_PAGE_NR) OR (DISPLAY_NUMBER = MAST_PAGE_NR) AND (LAMP_TEST=0) THEN 
+   CMD_BUTTON_01(CLK:=TOUCH_BUTTON_01);
+   CMD_BUTTON_02(CLK:=TOUCH_BUTTON_02);
+   CMD_BUTTON_03(CLK:=TOUCH_BUTTON_03);
+   CMD_BUTTON_04(CLK:=TOUCH_BUTTON_04);
+   CMD_BUTTON_05(CLK:=TOUCH_BUTTON_05);
+   CMD_BUTTON_06(CLK:=TOUCH_BUTTON_06);
+   CMD_BUTTON_07(CLK:=TOUCH_BUTTON_07);
+   CMD_BUTTON_08(CLK:=TOUCH_BUTTON_08);
+   CMD_BUTTON_09(CLK:=TOUCH_BUTTON_09);
+   CMD_BUTTON_10(CLK:=TOUCH_BUTTON_10);
+   CMD_BUTTON_11(CLK:=TOUCH_BUTTON_11);
+   CMD_BUTTON_12(CLK:=TOUCH_BUTTON_12);
+   CMD_BUTTON_13(CLK:=TOUCH_BUTTON_13);
+   CMD_BUTTON_14(CLK:=TOUCH_BUTTON_14);
+   CMD_BUTTON_15(CLK:=TOUCH_BUTTON_15);
+   CMD_BUTTON_16(CLK:=TOUCH_BUTTON_16);
+   CMD_BUTTON_17(CLK:=TOUCH_BUTTON_17);
+   CMD_BUTTON_18(CLK:=TOUCH_BUTTON_18);
+   CMD_BUTTON_19(CLK:=TOUCH_BUTTON_19);
+   CMD_BUTTON_20(CLK:=TOUCH_BUTTON_20);
+   CMD_BUTTON_21(CLK:=TOUCH_BUTTON_21);
+   CMD_BUTTON_22(CLK:=TOUCH_BUTTON_22);
+   CMD_BUTTON_23(CLK:=TOUCH_BUTTON_23);
+   CMD_BUTTON_24(CLK:=TOUCH_BUTTON_24);
+
+   LAMP_BUTTON_CLICKED := OR(CMD_BUTTON_01.Q,CMD_BUTTON_02.Q,CMD_BUTTON_03.Q,CMD_BUTTON_04.Q,CMD_BUTTON_05.Q,CMD_BUTTON_06.Q,
+                             CMD_BUTTON_07.Q,CMD_BUTTON_08.Q,CMD_BUTTON_09.Q,CMD_BUTTON_10.Q,CMD_BUTTON_11.Q,CMD_BUTTON_12.Q);
+   LAMP_BUTTON_CLICKED := OR(LAMP_BUTTON_CLICKED,
+                             CMD_BUTTON_13.Q,CMD_BUTTON_14.Q,CMD_BUTTON_15.Q,CMD_BUTTON_16.Q,CMD_BUTTON_17.Q,CMD_BUTTON_18.Q,
+                             CMD_BUTTON_19.Q,CMD_BUTTON_20.Q,CMD_BUTTON_21.Q,CMD_BUTTON_22.Q,CMD_BUTTON_23.Q,CMD_BUTTON_24.Q);
+
+   IF LAMP_BUTTON_CLICKED THEN
+      // IF CLICKED ON LAMP BUTTON THEN RESET GOUP TO NONE
+      GROUP_1   := FALSE;  // ADJUST GROUP BUTTON APPERRANCE 
+      GROUP_2   := FALSE; 
+      GROUP_3   := FALSE; 
+      GROUP_4   := FALSE; 
+      GROUP_5   := FALSE; 
+      GROUP_6   := FALSE; 
+      GROUP_7   := FALSE; 
+      GROUP_8   := FALSE; 
+      SWAP_MODE := 0;
+ 
+      //  HANDLE CLICK ON TFT LAMP BUTTON
+      IF CMD_BUTTON_01.Q THEN        // BUTTON 1 IS CLICKED
+        IF BUTTON_TO_LAMP[1] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[1]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[1]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_02.Q THEN        // BUTTON 2 IS CLICKED
+        IF BUTTON_TO_LAMP[2] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[2]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[2]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_03.Q THEN        // BUTTON 3 IS CLICKED
+        IF BUTTON_TO_LAMP[3] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[3]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[3]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_04.Q THEN        // BUTTON 4 IS CLICKED
+        IF BUTTON_TO_LAMP[4] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[4]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[4]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_05.Q THEN        // BUTTON 5 IS CLICKED
+        IF BUTTON_TO_LAMP[5] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[5]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[5]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_06.Q THEN        // BUTTON 6 IS CLICKED
+         IF BUTTON_TO_LAMP[6] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[6]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[6]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_07.Q THEN        // BUTTON 7 IS CLICKED
+        IF BUTTON_TO_LAMP[7] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[7]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[7]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_08.Q THEN        // BUTTON 8 IS CLICKED
+        IF BUTTON_TO_LAMP[8] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[8]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[8]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_09.Q THEN        // BUTTON 9 IS CLICKED
+        IF BUTTON_TO_LAMP[9] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[9]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[9]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_10.Q THEN        // BUTTON 10 IS CLICKED
+        IF BUTTON_TO_LAMP[10] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[10]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[10]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_11.Q THEN        // BUTTON 11 IS CLICKED
+        IF BUTTON_TO_LAMP[11] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[11]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[11]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_12.Q THEN        // BUTTON 12 IS CLICKED
+        IF BUTTON_TO_LAMP[12] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[12]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[12]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_13.Q THEN        // BUTTON 13 IS CLICKED
+        IF BUTTON_TO_LAMP[13] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[13]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[13]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_14.Q THEN        // BUTTON 14 IS CLICKED
+        IF BUTTON_TO_LAMP[14] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[14]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[14]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_15.Q THEN        // BUTTON 15 IS CLICKED
+        IF BUTTON_TO_LAMP[15] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[15]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[15]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_16.Q THEN        // BUTTON 16 IS CLICKED
+        IF BUTTON_TO_LAMP[16] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[16]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[16]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_17.Q THEN        // BUTTON 17 IS CLICKED
+        IF BUTTON_TO_LAMP[17] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[17]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[17]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_18.Q THEN        // BUTTON 18 IS CLICKED
+        IF BUTTON_TO_LAMP[18] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[18]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[18]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_19.Q THEN        // BUTTON 19 IS CLICKED
+        IF BUTTON_TO_LAMP[19] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[19]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[19]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_20.Q THEN        // BUTTON 20 IS CLICKED
+        IF BUTTON_TO_LAMP[20] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[20]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[20]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_21.Q THEN        // BUTTON 21 IS CLICKED
+        IF BUTTON_TO_LAMP[21] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[21]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[21]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_22.Q THEN        // BUTTON 22 IS CLICKED
+        IF BUTTON_TO_LAMP[22] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[22]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[22]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_23.Q THEN        // BUTTON 23 IS CLICKED
+        IF BUTTON_TO_LAMP[23] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[23]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[23]];
+        END_IF
+      END_IF
+      IF CMD_BUTTON_24.Q THEN        // BUTTON 24 IS CLICKED
+        IF BUTTON_TO_LAMP[24] > 0 THEN
+          LAMP_STATUS[BUTTON_TO_LAMP[24]] := NOT LAMP_STATUS[BUTTON_TO_LAMP[24]];
+        END_IF
+      END_IF
+    END_IF   //LAMP_BUTTON_CLICKED
+    
+    //HANDLE CLICK FROM MIMIC (NOT STAND ALONE SITUATION)
+    FOR LMP := 1 TO MAX_LAMP DO
+      IF MM_BUT_LMP[LMP] THEN
+        LAMP_STATUS[LMP] := NOT LAMP_STATUS[LMP];
+      END_IF
+    END_FOR
+
+    // HANDLE CLCIK ON MODE BUTTONS, TFT OR MIMIC
+    CMD_GROUP_1(CLK:=TOUCH_GROUP_1);
+    CMD_GROUP_2(CLK:=TOUCH_GROUP_2);
+    CMD_GROUP_3(CLK:=TOUCH_GROUP_3);
+    CMD_GROUP_4(CLK:=TOUCH_GROUP_4);
+    CMD_GROUP_5(CLK:=TOUCH_GROUP_5);
+    CMD_GROUP_6(CLK:=TOUCH_GROUP_6);
+    CMD_GROUP_7(CLK:=TOUCH_GROUP_7);
+    CMD_GROUP_8(CLK:=TOUCH_GROUP_8);
+
+    // IF PRESSED ON MODE BUTTON
+    GROUP_SET_MM := OR(MM_BUT_GROUP1,MM_BUT_GROUP2,MM_BUT_GROUP3,MM_BUT_GROUP4,
+                       MM_BUT_GROUP5,MM_BUT_GROUP6,MM_BUT_GROUP7,MM_BUT_GROUP8);
+    IF OR(CMD_GROUP_1.Q, CMD_GROUP_2.Q, CMD_GROUP_3.Q, CMD_GROUP_4.Q, 
+          CMD_GROUP_5.Q, CMD_GROUP_6.Q, CMD_GROUP_7.Q, CMD_GROUP_8.Q,
+          GROUP_SET_MM) THEN
+      IF CMD_GROUP_1.Q OR MM_BUT_GROUP1 THEN 
+        GROUP_1 := GROUP_1 XOR TRUE;  // ADJUST GROUP BUTTON APPERRANCE 
+        GROUP_2   := FALSE; 
+        GROUP_3   := FALSE; 
+        GROUP_4   := FALSE; 
+        GROUP_5   := FALSE; 
+        GROUP_6   := FALSE; 
+        GROUP_7   := FALSE; 
+        GROUP_8   := FALSE; 
+        SWAP_MODE := BOOL_TO_INT(GROUP_1) * 1 ;
+      ELSIF CMD_GROUP_2.Q OR MM_BUT_GROUP2 THEN 
+        GROUP_1   := FALSE;  
+        GROUP_2 := GROUP_2 XOR TRUE;  // ADJUST GROUP BUTTON APPERRANCE 
+        GROUP_3   := FALSE; 
+        GROUP_4   := FALSE; 
+        GROUP_5   := FALSE; 
+        GROUP_6   := FALSE; 
+        GROUP_7   := FALSE; 
+        GROUP_8   := FALSE; 
+        SWAP_MODE := BOOL_TO_INT(GROUP_2) * 2 ;
+      ELSIF CMD_GROUP_3.Q OR MM_BUT_GROUP3 THEN 
+        GROUP_1   := FALSE;  
+        GROUP_2   := FALSE; 
+        GROUP_3 := GROUP_3 XOR TRUE;  // ADJUST GROUP BUTTON APPERRANCE 
+        GROUP_4   := FALSE; 
+        GROUP_5   := FALSE; 
+        GROUP_6   := FALSE; 
+        GROUP_7   := FALSE; 
+        GROUP_8   := FALSE; 
+        SWAP_MODE := BOOL_TO_INT(GROUP_3) * 3 ;
+      ELSIF CMD_GROUP_4.Q OR MM_BUT_GROUP4 THEN 
+        GROUP_1   := FALSE;  
+        GROUP_2   := FALSE; 
+        GROUP_3   := FALSE; 
+        GROUP_4 := GROUP_4 XOR TRUE;  // ADJUST GROUP BUTTON APPERRANCE 
+        GROUP_5   := FALSE; 
+        GROUP_6   := FALSE; 
+        GROUP_7   := FALSE; 
+        GROUP_8   := FALSE; 
+        SWAP_MODE := BOOL_TO_INT(GROUP_4) * 4 ;
+      ELSIF CMD_GROUP_5.Q OR MM_BUT_GROUP5 THEN 
+        GROUP_1   := FALSE;  
+        GROUP_2   := FALSE; 
+        GROUP_3   := FALSE; 
+        GROUP_4   := FALSE; 
+        GROUP_5 := GROUP_5 XOR TRUE;  // ADJUST GROUP BUTTON APPERRANCE 
+        GROUP_6   := FALSE; 
+        GROUP_7   := FALSE; 
+        GROUP_8   := FALSE; 
+        SWAP_MODE := BOOL_TO_INT(GROUP_5) * 5 ;
+      ELSIF CMD_GROUP_6.Q OR MM_BUT_GROUP6 THEN 
+        GROUP_1   := FALSE;  
+        GROUP_2   := FALSE; 
+        GROUP_3   := FALSE; 
+        GROUP_4   := FALSE; 
+        GROUP_5   := FALSE; 
+        GROUP_6 := GROUP_6 XOR TRUE;  // ADJUST GROUP BUTTON APPERRANCE 
+        GROUP_7   := FALSE; 
+        GROUP_8   := FALSE; 
+        SWAP_MODE := BOOL_TO_INT(GROUP_6) * 6 ;
+      ELSIF CMD_GROUP_7.Q OR MM_BUT_GROUP7 THEN 
+        GROUP_1   := FALSE;  
+        GROUP_2   := FALSE; 
+        GROUP_3   := FALSE; 
+        GROUP_4   := FALSE; 
+        GROUP_5   := FALSE; 
+        GROUP_6   := FALSE; 
+        GROUP_7 := GROUP_7 XOR TRUE;  // ADJUST GROUP BUTTON APPERRANCE 
+        GROUP_8   := FALSE; 
+        SWAP_MODE := BOOL_TO_INT(GROUP_7) * 7 ;
+      ELSIF CMD_GROUP_8.Q OR MM_BUT_GROUP8 THEN 
+        GROUP_1   := FALSE;  
+        GROUP_2   := FALSE; 
+        GROUP_3   := FALSE; 
+        GROUP_4   := FALSE; 
+        GROUP_5   := FALSE; 
+        GROUP_6   := FALSE; 
+        GROUP_7   := FALSE; 
+        GROUP_8 := GROUP_8 XOR TRUE;  // ADJUST GROUP BUTTON APPERRANCE 
+        SWAP_MODE := BOOL_TO_INT(GROUP_8) * 8 ;
+      END_IF
+    
+      // HANDLE SELECTED MODE     
+      CASE SWAP_MODE OF 
+      0:  // GROUP SWITCHED OFF
+          FOR LMP := 1 TO MAX_LAMP DO 
+            LAMP_STATUS[LMP] := FALSE; 
+          END_FOR 
+
+      1: // GROUP 1
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_1_CODE_FOR_MODULE_1));
+          FOR LMP := 1 TO 12 DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-1] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_1_CODE_FOR_MODULE_2));
+          FOR LMP := 13 TO MAX_LAMP DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-13] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+
+      2: // GROUP 2
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_2_CODE_FOR_MODULE_1));
+          FOR LMP := 1 TO 12 DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-1] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_2_CODE_FOR_MODULE_2));
+          FOR LMP := 13 TO MAX_LAMP DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-13] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+
+      3: // GROUP 3
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_3_CODE_FOR_MODULE_1));
+          FOR LMP := 1 TO 12 DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-1] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_3_CODE_FOR_MODULE_2));
+          FOR LMP := 13 TO MAX_LAMP DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-13] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+
+      4: // GROUP 4
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_4_CODE_FOR_MODULE_1));
+          FOR LMP := 1 TO 12 DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-1] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_4_CODE_FOR_MODULE_2));
+          FOR LMP := 13 TO MAX_LAMP DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-13] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+
+      5: // GROUP 5
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_5_CODE_FOR_MODULE_1));
+          FOR LMP := 1 TO 12 DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-1] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_5_CODE_FOR_MODULE_2));
+          FOR LMP := 13 TO MAX_LAMP DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-13] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+
+      6: // GROUP 6
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_6_CODE_FOR_MODULE_1));
+          FOR LMP := 1 TO 12 DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-1] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_6_CODE_FOR_MODULE_2));
+          FOR LMP := 13 TO MAX_LAMP DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-13] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+
+      7: // GROUP 7
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_7_CODE_FOR_MODULE_1));
+          FOR LMP := 1 TO 12 DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-1] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_7_CODE_FOR_MODULE_2));
+          FOR LMP := 13 TO MAX_LAMP DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-13] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+
+      8: // GROUP 8
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_8_CODE_FOR_MODULE_1));
+          FOR LMP := 1 TO 12 DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-1] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+          GROUP_DECODE := DECODE_INT(FINT_TO_INT(GROUP_8_CODE_FOR_MODULE_2));
+          FOR LMP := 13 TO MAX_LAMP DO 
+            LAMP_STATUS[LMP] := GROUP_DECODE[LMP-13] AND NOT NOT_PRESENT_MAIN[LMP]; 
+          END_FOR
+
+      END_CASE
+    
+   END_IF // SELECT MODE PRESSED 
+   // TO DO: CLICKED ON LAMP TEST
+   
+   
+ END_IF  // DISPLAY_NUMBER
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="OUTPUTS" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM OUTPUTS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ LMP       : INT;
+ OLD_LAMP  : ARRAY[1..24] OF BOOL;
+ USE_SPARE : ARRAY[1..24] OF BOOL;
+
+ TIMER_10S : TON ;
+ STEP      : INT := 1;
+ END_VAR
+
+ TIMER_10S ( IN := LAMP_TEST=1 AND NOT TIMER_10S.Q , PT := T#10s );
+ IF LAMP_TEST=1 THEN
+   IF TIMER_10S.Q THEN STEP := STEP + 1 + BOOL_TO_INT(IO_MODULE_2_NOT_IN_USE) ; END_IF
+   FOR LMP := 1 TO MAX_LAMP DO
+     MAIN_LAMP_OUT[LMP] := (STEP<3) AND (LMP < (STEP * 13)) AND (LMP > ((STEP-1) * 12)) ;
+     SPARE_LAMP_OUT[LMP]:= (STEP>2) AND (LMP < ((STEP-2) * 13)) AND (LMP > ((STEP-3) * 12)) ; 
+   END_FOR
+   IF STEP > 4 THEN 
+     LAMP_TEST := 0 ; 
+     STEP := 1 ;
+   END_IF
+
+ ELSE
+   FOR LMP := 1 TO MAX_LAMP DO
+     USE_SPARE[LMP]:= ((MAIN_LAMP_FAIL[LMP] AND LAMP_STATUS[LMP]=OLD_LAMP[LMP]) (*OR MAIN_TIME_ALARM[LMP]*)) AND  // LAMP FAILURE  // LIFE TIME FOR LEDs
+                       NOT NOT_PRESENT_BACKUP[LMP];                                                         // BACKUP LAMP IN SYSTEM
+   END_FOR
+   FOR LMP := 1 TO MAX_LAMP DO
+     IF USE_SPARE[LMP] THEN
+       SPARE_LAMP_OUT[LMP]:= LAMP_STATUS[LMP] AND NOT (SPARE_LAMP_FAIL[LMP] AND NOT MAIN_LAMP_OUT[LMP]);
+       MAIN_LAMP_OUT[LMP] := FALSE ;
+     ELSIF NOT NOT_PRESENT_MAIN[LMP] THEN
+       MAIN_LAMP_OUT[LMP] := LAMP_STATUS[LMP] AND NOT (MAIN_LAMP_FAIL[LMP] AND LAMP_STATUS[LMP]=OLD_LAMP[LMP]);
+       SPARE_LAMP_OUT[LMP]:= FALSE;
+     END_IF
+
+
+   // CREATE HISTORY
+   OLD_LAMP[LMP] := LAMP_STATUS[LMP];
+   END_FOR
+ END_IF
+
+ // HANDLE LAMP TEST
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="DISPLAY" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM DISPLAY
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+
+ VAR_GLOBAL
+  LMP_BUT_STATE_01   : INT;
+  LMP_BUT_STATE_02   : INT;
+  LMP_BUT_STATE_03   : INT;
+  LMP_BUT_STATE_04   : INT;
+  LMP_BUT_STATE_05   : INT;
+  LMP_BUT_STATE_06   : INT;
+  LMP_BUT_STATE_07   : INT;
+  LMP_BUT_STATE_08   : INT;
+  LMP_BUT_STATE_09   : INT;
+  LMP_BUT_STATE_10   : INT;
+  LMP_BUT_STATE_11   : INT;
+  LMP_BUT_STATE_12   : INT;
+  LMP_BUT_STATE_13   : INT;
+  LMP_BUT_STATE_14   : INT;
+  LMP_BUT_STATE_15   : INT;
+  LMP_BUT_STATE_16   : INT;
+  LMP_BUT_STATE_17   : INT;
+  LMP_BUT_STATE_18   : INT;
+  LMP_BUT_STATE_19   : INT;
+  LMP_BUT_STATE_20   : INT;
+  LMP_BUT_STATE_21   : INT;
+  LMP_BUT_STATE_22   : INT;
+  LMP_BUT_STATE_23   : INT;
+  LMP_BUT_STATE_24   : INT;
+  
+  COLOR_MAST_SEC_02  : INT;
+  COLOR_MAST_SEC_05  : INT;
+  COLOR_MAST_SEC_06  : INT;
+  COLOR_MAST_SEC_07  : INT;
+  COLOR_MAST_SEC_08  : INT;
+  COLOR_MAST_SEC_11  : INT;
+  COLOR_MAST_SEC_12  : INT;
+  COLOR_MAST_SEC_13  : INT;
+  COLOR_MAST_SEC_14  : INT;
+  COLOR_MAST_SEC_17  : INT;
+  COLOR_MAST_SEC_AUX : INT;
+
+  GROUP1_SWAP        : INT;
+  GROUP2_SWAP        : INT;
+  GROUP3_SWAP        : INT;
+  GROUP4_SWAP        : INT;
+  GROUP5_SWAP        : INT;
+  GROUP6_SWAP        : INT;
+  GROUP7_SWAP        : INT;
+  GROUP8_SWAP        : INT;
+  
+ END_VAR
+ VAR
+  LAMP_BUT_ST        : ARRAY [1..24] OF INT;
+  BUT                : INT;
+  
+ END_VAR
+
+ IF DISPLAY_NUMBER = MODE_PAGE_NR OR DISPLAY_NUMBER = MAST_PAGE_NR THEN 
+   FOR BUT := 1 TO 24 DO
+     IF BUTTON_TO_LAMP[BUT] < 1 OR BUTTON_TO_LAMP[BUT] > 24 THEN
+       LAMP_BUT_ST[BUT] := 10 ;        // BUTTON NOT IN USE, BUTTON TO BLACK
+     ELSE
+       IF MAIN_LAMP_OUT[BUTTON_TO_LAMP[BUT]] THEN       // MAIN LAMP CONNECTED TO THIS BUTTON IS ON
+         LAMP_BUT_ST[BUT] := LAMP_COLOR[BUTTON_TO_LAMP[BUT]] ; 
+
+       ELSIF SPARE_LAMP_OUT[BUTTON_TO_LAMP[BUT]] THEN   // IF SPARE LAMP ON THEN MAIN MUST BE IN FAILURE
+         LAMP_BUT_ST[BUT] := LAMP_COLOR[BUTTON_TO_LAMP[BUT]] + 4 ; 
+
+       ELSIF OR((MAIN_LAMP_FAIL[BUTTON_TO_LAMP[BUT]]  AND LAMP_STATUS[BUTTON_TO_LAMP[BUT]] AND NOT_PRESENT_BACKUP[BUTTON_TO_LAMP[BUT]]),       // NO SPARE AND MAIN FAIL
+                (SPARE_LAMP_FAIL[BUTTON_TO_LAMP[BUT]] AND LAMP_STATUS[BUTTON_TO_LAMP[BUT]] AND NOT NOT_PRESENT_BACKUP[BUTTON_TO_LAMP[BUT]])    // SPARE AND SPARE FAIL
+               )                         THEN     
+         LAMP_BUT_ST[BUT] := 9 ;                         // FAIL FAIL
+       ELSE
+         LAMP_BUT_ST[BUT] := 0 ;
+       END_IF
+     END_IF
+                
+   END_FOR
+   LMP_BUT_STATE_01   := LAMP_BUT_ST[1];
+   LMP_BUT_STATE_02   := LAMP_BUT_ST[2];
+   LMP_BUT_STATE_03   := LAMP_BUT_ST[3];
+   LMP_BUT_STATE_04   := LAMP_BUT_ST[4];
+   LMP_BUT_STATE_05   := LAMP_BUT_ST[5];
+   LMP_BUT_STATE_06   := LAMP_BUT_ST[6];
+   LMP_BUT_STATE_07   := LAMP_BUT_ST[7];
+   LMP_BUT_STATE_08   := LAMP_BUT_ST[8];
+   LMP_BUT_STATE_09   := LAMP_BUT_ST[9];
+   LMP_BUT_STATE_10   := LAMP_BUT_ST[10];
+   LMP_BUT_STATE_11   := LAMP_BUT_ST[11];
+   LMP_BUT_STATE_12   := LAMP_BUT_ST[12];
+   LMP_BUT_STATE_13   := LAMP_BUT_ST[13];
+   LMP_BUT_STATE_14   := LAMP_BUT_ST[14];
+   LMP_BUT_STATE_15   := LAMP_BUT_ST[15];
+   LMP_BUT_STATE_16   := LAMP_BUT_ST[16];
+   LMP_BUT_STATE_17   := LAMP_BUT_ST[17];
+   LMP_BUT_STATE_18   := LAMP_BUT_ST[18];
+   LMP_BUT_STATE_19   := LAMP_BUT_ST[19];
+   LMP_BUT_STATE_20   := LAMP_BUT_ST[20];
+   LMP_BUT_STATE_21   := LAMP_BUT_ST[21];
+   LMP_BUT_STATE_22   := LAMP_BUT_ST[22];
+   LMP_BUT_STATE_23   := LAMP_BUT_ST[23];
+   LMP_BUT_STATE_24   := LAMP_BUT_ST[24];
+ 
+
+  IF LAMP_BUT_ST[2] = 10 THEN 
+    COLOR_MAST_SEC_02  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_02  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[5] = 10 THEN 
+    COLOR_MAST_SEC_05  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_05  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[6] = 10 THEN 
+    COLOR_MAST_SEC_06  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_06  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[7] = 10 THEN 
+    COLOR_MAST_SEC_07  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_07  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[8] = 10 THEN 
+    COLOR_MAST_SEC_08  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_08  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[11] = 10 THEN 
+    COLOR_MAST_SEC_11  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_11  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[12] = 10 THEN 
+    COLOR_MAST_SEC_12  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_12  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[13] = 10 THEN 
+    COLOR_MAST_SEC_13  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_13  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[14] = 10 THEN 
+    COLOR_MAST_SEC_14  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_14  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[17] = 10 THEN 
+    COLOR_MAST_SEC_17  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_17  := WHITE;
+  END_IF
+  IF LAMP_BUT_ST[20] = 10 THEN 
+    COLOR_MAST_SEC_AUX  := BLACK;
+  ELSE
+    COLOR_MAST_SEC_AUX  := WHITE;
+  END_IF
+
+  GROUP1_SWAP := 0 ;
+  GROUP2_SWAP := 0 ;
+  GROUP3_SWAP := 0 ;
+  GROUP4_SWAP := 0 ;
+  GROUP5_SWAP := 0 ;
+  GROUP6_SWAP := 0 ;
+  GROUP7_SWAP := 0 ;
+  GROUP8_SWAP := 0 ;
+
+  CASE SWAP_MODE OF 
+  1:  GROUP1_SWAP := 2 ;      
+
+  2:  GROUP2_SWAP := 2 ;      
+      
+  3:  GROUP3_SWAP := 2 ;      
+      
+  4:  GROUP4_SWAP := 2 ;      
+      
+  5:  GROUP5_SWAP := 2 ;      
+      
+  6:  GROUP6_SWAP := 2 ;      
+      
+  7:  GROUP7_SWAP := 2 ;      
+      
+  8:  GROUP8_SWAP := 2 ;      
+ END_CASE
+
+ END_IF
+ 
+ GPOUP_1_ACTIVE := GROUP1_SWAP = 2; 
+ GPOUP_2_ACTIVE := GROUP2_SWAP = 2;
+ GPOUP_3_ACTIVE := GROUP3_SWAP = 2;
+ GPOUP_4_ACTIVE := GROUP4_SWAP = 2;
+ GPOUP_5_ACTIVE := GROUP5_SWAP = 2;
+ GPOUP_6_ACTIVE := GROUP6_SWAP = 2;
+ GPOUP_7_ACTIVE := GROUP7_SWAP = 2;   
+ GPOUP_8_ACTIVE := GROUP8_SWAP = 2; 
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="LIFE_TIMER" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM LIFE_TIMER
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ VAR_GLOBAL
+ HOUR_M1_L01    : FINT;
+ HOUR_M1_L02    : FINT;
+ HOUR_M1_L03    : FINT;
+ HOUR_M1_L04    : FINT;
+ HOUR_M1_L05    : FINT;
+ HOUR_M1_L06    : FINT;
+ HOUR_M1_L07    : FINT;
+ HOUR_M1_L08    : FINT;
+ HOUR_M1_L09    : FINT;
+ HOUR_M1_L10    : FINT;
+ HOUR_M1_L11    : FINT;
+ HOUR_M1_L12    : FINT;
+ HOUR_M1_L13    : FINT;
+ HOUR_M1_L14    : FINT;
+ HOUR_M1_L15    : FINT;
+ HOUR_M1_L16    : FINT;
+ HOUR_M1_L17    : FINT;
+ HOUR_M1_L18    : FINT;
+ HOUR_M1_L19    : FINT;
+ HOUR_M1_L20    : FINT;
+ HOUR_M1_L21    : FINT;
+ HOUR_M1_L22    : FINT;
+ HOUR_M1_L23    : FINT;
+ HOUR_M1_L24    : FINT;
+ REM_HOUR_M1_L01    : FINT;
+ REM_HOUR_M1_L02    : FINT;
+ REM_HOUR_M1_L03    : FINT;
+ REM_HOUR_M1_L04    : FINT;
+ REM_HOUR_M1_L05    : FINT;
+ REM_HOUR_M1_L06    : FINT;
+ REM_HOUR_M1_L07    : FINT;
+ REM_HOUR_M1_L08    : FINT;
+ REM_HOUR_M1_L09    : FINT;
+ REM_HOUR_M1_L10    : FINT;
+ REM_HOUR_M1_L11    : FINT;
+ REM_HOUR_M1_L12    : FINT;
+ REM_HOUR_M1_L13    : FINT;
+ REM_HOUR_M1_L14    : FINT;
+ REM_HOUR_M1_L15    : FINT;
+ REM_HOUR_M1_L16    : FINT;
+ REM_HOUR_M1_L17    : FINT;
+ REM_HOUR_M1_L18    : FINT;
+ REM_HOUR_M1_L19    : FINT;
+ REM_HOUR_M1_L20    : FINT;
+ REM_HOUR_M1_L21    : FINT;
+ REM_HOUR_M1_L22    : FINT;
+ REM_HOUR_M1_L23    : FINT;
+ REM_HOUR_M1_L24    : FINT;
+
+ END_VAR
+ VAR
+ L01_15MIN     : TON;
+ L02_15MIN     : TON;
+ L03_15MIN     : TON;
+ L04_15MIN     : TON;
+ L05_15MIN     : TON;
+ L06_15MIN     : TON;
+ L07_15MIN     : TON;
+ L08_15MIN     : TON;
+ L09_15MIN     : TON;
+ L10_15MIN     : TON;
+ L11_15MIN     : TON;
+ L12_15MIN     : TON;
+
+
+
+ LMP           : INT;
+ END_VAR
+
+ L01_15MIN(IN := MAIN_LAMP_OUT[1] AND NOT L01_15MIN.Q , PT := T#15m) ; 
+ IF L01_15MIN.Q THEN  
+   MAIN_TIME[1] := MAIN_TIME[1] + FINT#0.25 ;
+ END_IF
+ L02_15MIN(IN := MAIN_LAMP_OUT[2] AND NOT L02_15MIN.Q , PT := T#15m) ; 
+ IF L02_15MIN.Q THEN  
+   MAIN_TIME[2] := MAIN_TIME[2] + FINT#0.25 ;
+ END_IF
+ L03_15MIN(IN := MAIN_LAMP_OUT[3] AND NOT L03_15MIN.Q , PT := T#15m) ; 
+ IF L03_15MIN.Q THEN  
+   MAIN_TIME[3] := MAIN_TIME[3] + FINT#0.25 ;
+ END_IF
+ L04_15MIN(IN := MAIN_LAMP_OUT[4] AND NOT L04_15MIN.Q , PT := T#15m) ; 
+ IF L04_15MIN.Q THEN  
+   MAIN_TIME[4] := MAIN_TIME[4] + FINT#0.25 ;
+ END_IF
+ L05_15MIN(IN := MAIN_LAMP_OUT[5] AND NOT L05_15MIN.Q , PT := T#15m) ; 
+ IF L05_15MIN.Q THEN  
+   MAIN_TIME[5] := MAIN_TIME[5] + FINT#0.25 ;
+ END_IF
+ L06_15MIN(IN := MAIN_LAMP_OUT[6] AND NOT L06_15MIN.Q , PT := T#15m) ; 
+ IF L06_15MIN.Q THEN  
+   MAIN_TIME[6] := MAIN_TIME[6] + FINT#0.25 ;
+ END_IF
+ L07_15MIN(IN := MAIN_LAMP_OUT[7] AND NOT L07_15MIN.Q , PT := T#15m) ; 
+ IF L07_15MIN.Q THEN  
+   MAIN_TIME[7] := MAIN_TIME[7] + FINT#0.25 ;
+ END_IF
+ L08_15MIN(IN := MAIN_LAMP_OUT[8] AND NOT L08_15MIN.Q , PT := T#15m) ; 
+ IF L08_15MIN.Q THEN  
+   MAIN_TIME[8] := MAIN_TIME[8] + FINT#0.25 ;
+ END_IF
+ L09_15MIN(IN := MAIN_LAMP_OUT[9] AND NOT L09_15MIN.Q , PT := T#15m) ; 
+ IF L09_15MIN.Q THEN  
+   MAIN_TIME[9] := MAIN_TIME[9] + FINT#0.25 ;
+ END_IF
+ L10_15MIN(IN := MAIN_LAMP_OUT[10] AND NOT L10_15MIN.Q , PT := T#15m) ; 
+ IF L10_15MIN.Q THEN  
+   MAIN_TIME[10] := MAIN_TIME[10] + FINT#0.25 ;
+ END_IF
+ L11_15MIN(IN := MAIN_LAMP_OUT[11] AND NOT L11_15MIN.Q , PT := T#15m) ; 
+ IF L11_15MIN.Q THEN  
+   MAIN_TIME[11] := MAIN_TIME[11] + FINT#0.25 ;
+ END_IF
+ L12_15MIN(IN := MAIN_LAMP_OUT[12] AND NOT L12_15MIN.Q , PT := T#15m) ; 
+ IF L12_15MIN.Q THEN  
+   MAIN_TIME[12] := MAIN_TIME[12] + FINT#0.25 ;
+ END_IF
+
+ FOR LMP := 1 TO MAX_LAMP DO
+   REMAINING_HOURS[LMP] := MAIN_TIME_LIMIT[LMP] - MAIN_TIME[LMP] ;
+   MAIN_TIME_ALARM[LMP] := REMAINING_HOURS[LMP] < FINT#0 ;
+ END_FOR
+ HOUR_M1_L01    := MAIN_TIME[1] ;
+ HOUR_M1_L02    := MAIN_TIME[2] ;
+ HOUR_M1_L03    := MAIN_TIME[3] ;
+ HOUR_M1_L04    := MAIN_TIME[4] ;
+ HOUR_M1_L05    := MAIN_TIME[5] ;
+ HOUR_M1_L06    := MAIN_TIME[6] ;
+ HOUR_M1_L07    := MAIN_TIME[7] ;
+ HOUR_M1_L08    := MAIN_TIME[8] ;
+ HOUR_M1_L09    := MAIN_TIME[9] ;
+ HOUR_M1_L10    := MAIN_TIME[10] ;
+ HOUR_M1_L11    := MAIN_TIME[11] ;
+ HOUR_M1_L12    := MAIN_TIME[12] ;
+ HOUR_M1_L13    := MAIN_TIME[13] ;
+ HOUR_M1_L14    := MAIN_TIME[14] ;
+ HOUR_M1_L15    := MAIN_TIME[15] ;
+ HOUR_M1_L16    := MAIN_TIME[16] ;
+ HOUR_M1_L17    := MAIN_TIME[17] ;
+ HOUR_M1_L18    := MAIN_TIME[18] ;
+ HOUR_M1_L19    := MAIN_TIME[19] ;
+ HOUR_M1_L20    := MAIN_TIME[20] ;
+ HOUR_M1_L21    := MAIN_TIME[21] ;
+ HOUR_M1_L22    := MAIN_TIME[22] ;
+ HOUR_M1_L23    := MAIN_TIME[23] ;
+ HOUR_M1_L24    := MAIN_TIME[24] ;
+ REM_HOUR_M1_L01    :=REMAINING_HOURS[1] ;
+ REM_HOUR_M1_L02    :=REMAINING_HOURS[2] ;
+ REM_HOUR_M1_L03    :=REMAINING_HOURS[3] ;
+ REM_HOUR_M1_L04    :=REMAINING_HOURS[4] ;
+ REM_HOUR_M1_L05    :=REMAINING_HOURS[5] ;
+ REM_HOUR_M1_L06    :=REMAINING_HOURS[6] ;
+ REM_HOUR_M1_L07    :=REMAINING_HOURS[7] ;
+ REM_HOUR_M1_L08    :=REMAINING_HOURS[8] ;
+ REM_HOUR_M1_L09    :=REMAINING_HOURS[9] ;
+ REM_HOUR_M1_L10    :=REMAINING_HOURS[10] ;
+ REM_HOUR_M1_L11    :=REMAINING_HOURS[11] ;
+ REM_HOUR_M1_L12    :=REMAINING_HOURS[12] ;
+ REM_HOUR_M1_L13    :=REMAINING_HOURS[13] ;
+ REM_HOUR_M1_L14    :=REMAINING_HOURS[14] ;
+ REM_HOUR_M1_L15    :=REMAINING_HOURS[15] ;
+ REM_HOUR_M1_L16    :=REMAINING_HOURS[16] ;
+ REM_HOUR_M1_L17    :=REMAINING_HOURS[17] ;
+ REM_HOUR_M1_L18    :=REMAINING_HOURS[18] ;
+ REM_HOUR_M1_L19    :=REMAINING_HOURS[19] ;
+ REM_HOUR_M1_L20    :=REMAINING_HOURS[20] ;
+ REM_HOUR_M1_L21    :=REMAINING_HOURS[21] ;
+ REM_HOUR_M1_L22    :=REMAINING_HOURS[22] ;
+ REM_HOUR_M1_L23    :=REMAINING_HOURS[23] ;
+ REM_HOUR_M1_L24    :=REMAINING_HOURS[24] ;
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="AUDIBLE" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM AUDIBLE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ STOP_HORN          : R_TRIG;
+ NEW_ALARM          : R_TRIG;
+ ALARM_HORN         : RS;
+ GET_TFT_ALARM_PULSE: HW_GET_ALARM_PULSE_ON_NEXT;
+ IRETURN            : INT;
+ ALARM_PULSE        : BOOL;
+
+ END_VAR
+// PARAMETER TO KILL THE NOISE DURING TEST 
+  
+ STOP_HORN(CLK := TOUCH_BUTTON_4 OR BUTTON_4 OR SERVER_STOP_HORN);
+
+//TFT ALARM 
+ GET_TFT_ALARM_PULSE(IRET=>IRETURN);
+ IF IRETURN = 1 THEN 
+   ALARM_PULSE := TRUE; 
+ ELSE 
+   ALARM_PULSE := FALSE; 
+ END_IF
+   
+ NEW_ALARM(CLK:=ALARM_PULSE); 
+ ALARM_HORN(S:=NEW_ALARM.Q, R1:=STOP_HORN.Q);
+
+ BUZZER := ALARM_HORN.Q1 AND NOT SILENT ; 
+ POPUP_BUZZER := BOOL_TO_INT(ALARM_HORN.Q1);
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PG_MENU" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM PG_MENU
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+ 
+  // TOUCH BUTTONS - NUM KEYBOARD
+  TB_0                 : BOOL ;
+  TB_1                 : BOOL ;
+  TB_2                 : BOOL ;
+  TB_3                 : BOOL ;
+  TB_4                 : BOOL ;
+  TB_5                 : BOOL ;
+  TB_6                 : BOOL ;
+  TB_7                 : BOOL ;
+  TB_8                 : BOOL ;
+  TB_9                 : BOOL ;
+  TB_DOT               : BOOL ;
+  TB_DEL               : BOOL ;
+  TB_MIN               : BOOL ;
+
+  
+  // HW PUSH BUTTONS
+  PB1                   : BOOL := FALSE ;
+  PB2                   : BOOL := FALSE ;
+  PB3                   : BOOL := FALSE ;
+  PB4                   : BOOL := FALSE ;
+  PB5                   : BOOL := FALSE ;
+  PB6                   : BOOL := FALSE ;
+ 
+ END_VAR
+ VAR
+
+   // HW PUSH BUTTONS
+  _PB1                  : R_TRIG ;
+  _PB2                  : R_TRIG ;  
+  _PB3                  : R_TRIG ;  
+  _PB4                  : R_TRIG ;  
+  _PB5                  : R_TRIG ;
+  _PB6                  : R_TRIG ;
+
+  PB_PWCHANGE           : BOOL := FALSE;
+  PBMENU_UP             : BOOL := FALSE;
+  PBMENU_DOWN           : BOOL := FALSE;
+  PBMENU_EXIT           : BOOL := FALSE;
+  PBMENU_ACCEPT         : BOOL := FALSE; 
+
+  TBMODE                : INT ;
+              
+  BUT_ID                : HW_BUTTON_ID;
+  SET_TB_PRESS          : HW_MENU_TOUCH_BUTTON_PRESS; 
+  TBTRIGGER             : R_TRIG ;
+
+  SET_MENU_FIRST        : HW_MENU_FIRST_PAGE;
+  SET_PUBLIC_KEY        : HW_MENU_PUBLIC_KEY;
+  SET_MENU_PW_CHANGE    : HW_MENU_PW_CHANGE;
+  SET_MENU_TOUCH        : HW_MENU_TOUCH_FUNCTION;
+
+ END_VAR
+ 
+ 
+// INIT
+
+IF POWER_UP THEN
+
+  SET_MENU_FIRST(IINPUT:=PG_NR_MENU); 
+  SET_PUBLIC_KEY(IINPUT:=0);       
+  SET_MENU_PW_CHANGE(IINPUT:=1);
+  SET_MENU_TOUCH(USE_TB_LOGIN :=TRUE, USE_TB_CHANGE_PWD:=TRUE, USE_TB_EDIT:=TRUE); 
+  MENU_LEVEL0 := TRUE; //DEFAULT
+END_IF
+
+TBMODE := -1;  
+
+
+// MENU PAGES ___________________________________________________________________
+
+PAGE_IN_MENU := DISPLAY_NUMBER >= PG_NR_MENU AND DISPLAY_NUMBER <= PG_NR_MENU+3 ;
+
+IF PAGE_IN_MENU THEN               
+   
+    
+  // BUTTON EDGES 
+  _PB1(CLK:= PB1 );
+//  _PB2(CLK:= PB2 , Q=> PB_PWCHANGE );
+  _PB2(CLK:= PB2 );
+  _PB3(CLK:= PB3 , Q=> PBMENU_DOWN );   
+  _PB4(CLK:= PB4 , Q=> PBMENU_UP );
+  _PB5(CLK:= PB5 , Q=> PBMENU_ACCEPT );
+  _PB5(CLK:= PB6 , Q=> PBMENU_EXIT ); 
+  
+  // MENU NAVIGATION
+  IF    PB_PWCHANGE    THEN BUT_ID(IINPUT:=2);
+  ELSIF PBMENU_DOWN    THEN BUT_ID(IINPUT:=3);
+  ELSIF PBMENU_UP      THEN BUT_ID(IINPUT:=4);
+  ELSIF PBMENU_ACCEPT  THEN BUT_ID(IINPUT:=5);    
+  ELSIF PBMENU_EXIT    THEN BUT_ID(IINPUT:=6);
+  END_IF
+  
+  // NUMERIC KEYPAD
+  IF    TB_0 THEN   TBMODE := 0;
+  ELSIF TB_1 THEN   TBMODE := 1;
+  ELSIF TB_2 THEN   TBMODE := 2;
+  ELSIF TB_3 THEN   TBMODE := 3;
+  ELSIF TB_4 THEN   TBMODE := 4;
+  ELSIF TB_5 THEN   TBMODE := 5;
+  ELSIF TB_6 THEN   TBMODE := 6;
+  ELSIF TB_7 THEN   TBMODE := 7;
+  ELSIF TB_8 THEN   TBMODE := 8;
+  ELSIF TB_9 THEN   TBMODE := 9;
+  ELSIF TB_DOT THEN TBMODE := 11;
+  ELSIF TB_DEL THEN TBMODE := 12;
+  ELSIF TB_MIN THEN TBMODE := 10;
+  END_IF   
+  
+  TBTRIGGER(CLK:= (TBMODE > -1));
+  IF TBTRIGGER.Q THEN
+    SET_TB_PRESS(IINPUT:=TBMODE);   
+  END_IF   
+
+
+END_IF   // PAGE
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FUN" name="DECODE_INT" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION DECODE_INT : ARRAY [0..15] OF BOOL (*RET_TYPE*)
+ VAR_INPUT
+   IN : INT;
+ END_VAR
+VAR 
+   V  : INT;
+   B  : BOOL;
+END_VAR
+
+  V  := IN;
+//  B15 := INT_TO_BOOL(V/32768);
+//  V   := V - (BOOL_TO_INT(B15)*32768);
+  DECODE_INT[15] := FALSE;
+
+  B := INT_TO_BOOL(V/16384);
+  DECODE_INT[14] := B;
+
+  V   := V - (BOOL_TO_INT(B)*16384);
+  B  := INT_TO_BOOL(V/8192);
+  DECODE_INT[13] := B;
+
+  V   := V - (BOOL_TO_INT(B)*8192);
+  B := INT_TO_BOOL(V/4096);
+  DECODE_INT[12] := B;
+
+  V   := V - (BOOL_TO_INT(B)*4096);
+  B := INT_TO_BOOL(V/2048);
+  DECODE_INT[11] := B;
+
+  V   := V - (BOOL_TO_INT(B)*2048);
+  B := INT_TO_BOOL(V/1024);
+  DECODE_INT[10] := B;
+
+  V   := V - (BOOL_TO_INT(B)*1024);
+  B  := INT_TO_BOOL(V/512);
+  DECODE_INT[9] := B;
+
+  V   := V - (BOOL_TO_INT(B)*512);
+  B  := INT_TO_BOOL(V/256);
+  DECODE_INT[8] := B;
+
+  V   := V - (BOOL_TO_INT(B)*256);
+  B  := INT_TO_BOOL(V/128);
+  DECODE_INT[7] := B;
+
+  V   := V - (BOOL_TO_INT(B)*128);
+  B  := INT_TO_BOOL(V/64);
+  DECODE_INT[6] := B;
+
+  V   := V - (BOOL_TO_INT(B)*64);
+  B  := INT_TO_BOOL(V/32);
+  DECODE_INT[5] := B;
+
+  V   := V - (BOOL_TO_INT(B)*32);
+  B  := INT_TO_BOOL(V/16);
+  DECODE_INT[4] := B;
+
+  V   := V - (BOOL_TO_INT(B)*16);
+  B  := INT_TO_BOOL(V/8);
+  DECODE_INT[3] := B;
+
+  V   := V - (BOOL_TO_INT(B)*8);
+  B  := INT_TO_BOOL(V/4);
+  DECODE_INT[2] := B;
+
+  V   := V - (BOOL_TO_INT(B)*4);
+  B  := INT_TO_BOOL(V/2);
+  DECODE_INT[1] := B;
+
+  V   := V - (BOOL_TO_INT(B)*2);
+  B  := INT_TO_BOOL(V);
+  DECODE_INT[0] := B;
+END_FUNCTION]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="MM_BUT_LMP1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP1 (*$COMMENT 33801 MIMIC TOGGLE LAMP 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP2 (*$COMMENT 33802 MIMIC TOGGLE LAMP 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP3" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP3 (*$COMMENT 33803 MIMIC TOGGLE LAMP 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP4" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP4 (*$COMMENT 33804 MIMIC TOGGLE LAMP 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP5" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP5 (*$COMMENT 33805 MIMIC TOGGLE LAMP 5*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP6" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP6 (*$COMMENT 33806 MIMIC TOGGLE LAMP 6*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP7" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP7 (*$COMMENT 33807 MIMIC TOGGLE LAMP 7*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP8" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP8 (*$COMMENT 33808 MIMIC TOGGLE LAMP 8*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP9" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP9 (*$COMMENT 33809 MIMIC TOGGLE LAMP 9*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP10" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP10 (*$COMMENT 33810 MIMIC TOGGLE LAMP 10*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP11" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP11 (*$COMMENT 33811 MIMIC TOGGLE LAMP 11*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP12" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP12 (*$COMMENT 33812 MIMIC TOGGLE LAMP 12*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP13" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP13 (*$COMMENT 33813 MIMIC TOGGLE LAMP 13*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP14" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP14 (*$COMMENT 33814 MIMIC TOGGLE LAMP 14*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP15" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP15 (*$COMMENT 33815 MIMIC TOGGLE LAMP 15*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP16" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP16 (*$COMMENT 33816 MIMIC TOGGLE LAMP 16*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP17" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP17 (*$COMMENT 33817 MIMIC TOGGLE LAMP 17*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP18" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP18 (*$COMMENT 33818 MIMIC TOGGLE LAMP 18*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP19" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP19 (*$COMMENT 33819 MIMIC TOGGLE LAMP 19*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP20" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP20 (*$COMMENT 33820 MIMIC TOGGLE LAMP 20*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP21" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP21 (*$COMMENT 33821 MIMIC TOGGLE LAMP 21*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP22" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP22 (*$COMMENT 33822 MIMIC TOGGLE LAMP 22*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP23" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP23 (*$COMMENT 33823 MIMIC TOGGLE LAMP 23*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP24" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP24 (*$COMMENT 33824 MIMIC TOGGLE LAMP 24*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NEXT_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NEXT_ALARM (*$COMMENT 33000 NEXT ALARM ALL*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_1 (*$COMMENT 33001 BUTTON 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_2 (*$COMMENT 33002 BUTTON 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_3" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_3 (*$COMMENT 33003 BUTTON 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_4" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_4 (*$COMMENT 33004 BUTTON 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_5" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_5 (*$COMMENT 33005 BUTTON 5*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_6" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_6 (*$COMMENT 33006 BUTTON 6*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUZZER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUZZER (*$COMMENT 33013 BUZZER*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="EXT_DIM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ EXT_DIM (*$COMMENT 33017 OUTPUT - PWM*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TFT_DIM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ TFT_DIM (*$COMMENT 33018 OUTPUT - DIMMING TFT BACKLIGHT*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SILENT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SILENT (*$COMMENT 33022 NLS - KEEP SILENT (ENGINEERING MODE)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ALARM_ACCEPT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ALARM_ACCEPT (*$COMMENT 33030 ALARM_ACCEPT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PROJECT_SW_VER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PROJECT_SW_VER (*$COMMENT 33050 PROJECT SOFTWARE VERSION (R/O)*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MASTER_SW_VER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MASTER_SW_VER (*$COMMENT 33051 MASTER SOFTWARE VERSION (R/O)*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PROJECT_NR" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PROJECT_NR (*$COMMENT 33052 PROJECT NUMBER*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IO_BOARD_FAIL" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IO_BOARD_FAIL (*$COMMENT 33060 IO MODULE NOT PRESENT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIMMING_FROM_WORKSTATION" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIMMING_FROM_WORKSTATION (*$COMMENT 33077 DIMMING FROM WORKSTATION*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIMMING_FROM_OTHER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIMMING_FROM_OTHER (*$COMMENT 33078 DIMMING FROM OTHER*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIMMING_TO_OTHER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIMMING_TO_OTHER (*$COMMENT 33079 DIMMING TO OTHER*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SERVER_STOP_HORN" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SERVER_STOP_HORN (*$COMMENT 33083 SERVER STOP HORN*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL0" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL0 (*$COMMENT 33094 MENU LEVEL 0*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL1 (*$COMMENT 33095 MENU LEVEL 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL2 (*$COMMENT 33096 MENU LEVEL 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FREE_SAILING_LAMPS" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FREE_SAILING_LAMPS (*$COMMENT 33125 FREE SAILING LAMPS*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_1_CODE_FOR_MODULE_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_1_CODE_FOR_MODULE_1 (*$COMMENT 33191 GROUP 1 CODE FOR MODULE 1 *) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_2_CODE_FOR_MODULE_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_2_CODE_FOR_MODULE_1 (*$COMMENT 33192 GROUP 2 CODE FOR MODULE 1 *) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_3_CODE_FOR_MODULE_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_3_CODE_FOR_MODULE_1 (*$COMMENT 33193 GROUP 3 CODE FOR MODULE 1 *) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_4_CODE_FOR_MODULE_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_4_CODE_FOR_MODULE_1 (*$COMMENT 33194 GROUP 4 CODE FOR MODULE 1 *) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_5_CODE_FOR_MODULE_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_5_CODE_FOR_MODULE_1 (*$COMMENT 33195 GROUP 5 CODE FOR MODULE 1 *) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_6_CODE_FOR_MODULE_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_6_CODE_FOR_MODULE_1 (*$COMMENT 33196 GROUP 6 CODE FOR MODULE 1 *) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_7_CODE_FOR_MODULE_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_7_CODE_FOR_MODULE_1 (*$COMMENT 33197 GROUP 7 CODE FOR MODULE 1 *) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_8_CODE_FOR_MODULE_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_8_CODE_FOR_MODULE_1 (*$COMMENT 33198 GROUP 8 CODE FOR MODULE 1 *) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IO_MODULE_2_NOT_IN_USE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IO_MODULE_2_NOT_IN_USE (*$COMMENT 33282 IO-MODULE 2 NOT IN USE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_1_CODE_FOR_MODULE_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_1_CODE_FOR_MODULE_2 (*$COMMENT 33291 GROUP 1 CODE FOR MODULE 2*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_2_CODE_FOR_MODULE_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_2_CODE_FOR_MODULE_2 (*$COMMENT 33292 GROUP 2 CODE FOR MODULE 2*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_3_CODE_FOR_MODULE_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_3_CODE_FOR_MODULE_2 (*$COMMENT 33293 GROUP 3 CODE FOR MODULE 2*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_4_CODE_FOR_MODULE_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_4_CODE_FOR_MODULE_2 (*$COMMENT 33294 GROUP 4 CODE FOR MODULE 2*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_5_CODE_FOR_MODULE_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_5_CODE_FOR_MODULE_2 (*$COMMENT 33295 GROUP 5 CODE FOR MODULE 2*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_6_CODE_FOR_MODULE_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_6_CODE_FOR_MODULE_2 (*$COMMENT 33296 GROUP 6 CODE FOR MODULE 2*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_7_CODE_FOR_MODULE_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_7_CODE_FOR_MODULE_2 (*$COMMENT 33297 GROUP 7 CODE FOR MODULE 2*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GROUP_8_CODE_FOR_MODULE_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GROUP_8_CODE_FOR_MODULE_2 (*$COMMENT 33298 GROUP 8 CODE FOR MODULE 2*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_GROUP1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_GROUP1 (*$COMMENT 33831 MIMIC TOGGLE GROUP 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_GROUP2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_GROUP2 (*$COMMENT 33832 MIMIC TOGGLE GROUP 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_GROUP3" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_GROUP3 (*$COMMENT 33833 MIMIC TOGGLE GROUP 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_GROUP4" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_GROUP4 (*$COMMENT 33834 MIMIC TOGGLE GROUP 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_GROUP5" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_GROUP5 (*$COMMENT 33835 MIMIC TOGGLE GROUP 5*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_GROUP6" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_GROUP6 (*$COMMENT 33836 MIMIC TOGGLE GROUP 6*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_GROUP7" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_GROUP7 (*$COMMENT 33837 MIMIC TOGGLE GROUP 7*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_GROUP8" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_GROUP8 (*$COMMENT 33838 MIMIC TOGGLE GROUP 8*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GPOUP_1_ACTIVE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GPOUP_1_ACTIVE (*$COMMENT 33841 GPOUP 1 ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GPOUP_2_ACTIVE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GPOUP_2_ACTIVE (*$COMMENT 33842 GPOUP 2 ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GPOUP_3_ACTIVE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GPOUP_3_ACTIVE (*$COMMENT 33843 GPOUP 3 ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GPOUP_4_ACTIVE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GPOUP_4_ACTIVE (*$COMMENT 33844 GPOUP 4 ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GPOUP_5_ACTIVE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GPOUP_5_ACTIVE (*$COMMENT 33845 GPOUP 5 ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GPOUP_6_ACTIVE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GPOUP_6_ACTIVE (*$COMMENT 33846 GPOUP 6 ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GPOUP_7_ACTIVE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GPOUP_7_ACTIVE (*$COMMENT 33847 GPOUP 7 ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GPOUP_8_ACTIVE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GPOUP_8_ACTIVE (*$COMMENT 33848 GPOUP 8 ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAIN_LAMP_OUT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MAIN_LAMP_OUT (*$COMMENT 33101 NLC-MOD1-MAIN-LAMP 1*) : ARRAY[1..24] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SPARE_LAMP_OUT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SPARE_LAMP_OUT (*$COMMENT 33113 NLC-MOD1-BACKUP-LAMP 1*) : ARRAY[1..24] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAIN_LAMP_FAIL" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MAIN_LAMP_FAIL (*$COMMENT 33128 ANCHOR LIGHT PS-MAIN LAMP  FAIL*) : ARRAY[1..24] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SPARE_LAMP_FAIL" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SPARE_LAMP_FAIL (*$COMMENT 33140 ANCHOR LIGHT PS BACKUP LAMP  FAIL*) : ARRAY[1..24] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NOT_PRESENT_MAIN" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NOT_PRESENT_MAIN (*$COMMENT 33158 MOD1 MAIN LAMP 1 INHIBIT*) : ARRAY[1..24] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NOT_PRESENT_BACKUP" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NOT_PRESENT_BACKUP (*$COMMENT 33170 MOD1 BACKUP LAMP 1 INHIBIT*) : ARRAY[1..24] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_TO_LAMP" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_TO_LAMP (*$COMMENT 33301 CONNECTION BUTTON 1 TO LAMP*) : ARRAY[1..24] OF INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LAMP_COLOR" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LAMP_COLOR (*$COMMENT 33331 LAMP 1 COLOR*) : ARRAY[1..24] OF INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAIN_TIME" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MAIN_TIME (*$COMMENT 33501 RUNNING HOURS MOD1 LAMP 1 MAIN*) : ARRAY[1..24] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SPARE_TIME" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SPARE_TIME (*$COMMENT 33513 RUNNING HOURS MOD1 LAMP 1 BACKUP*) : ARRAY[1..24] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAIN_TIME_LIMIT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MAIN_TIME_LIMIT (*$COMMENT 33525 MAX HOURS MOD1 LAMP 1 MAIN*) : ARRAY[1..24] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SPARE_TIME_LIMIT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SPARE_TIME_LIMIT (*$COMMENT 33537 MAX HOURS MOD1 LAMP 1 BACKUP*) : ARRAY[1..24] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="REMAINING_HOURS" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ REMAINING_HOURS (*$COMMENT 33549 REMAINING HOURS MOD1 LAMP 1 MAIN*) : ARRAY[1..24] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAIN_TIME_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MAIN_TIME_ALARM (*$COMMENT 33573 LIFE TIME ALARM MOD1 LAMP 1 MAIN*) : ARRAY[1..24] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SPARE_TIME_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SPARE_TIME_ALARM (*$COMMENT 33585 LIFE TIME ALARM MOD1 LAMP 1 BACKUP*) : ARRAY[1..24] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MM_BUT_LMP" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MM_BUT_LMP (*$COMMENT 33801 MIMIC TOGGLE LAMP 1*) : ARRAY[1..24] OF BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK" loop_kind="0" interval="100"><![CDATA[INTERNAL_GLOBALS
+SYSTEM
+PAGE_NAVIGATION
+CONTROL
+OUTPUTS
+DISPLAY
+LIFE_TIMER
+AUDIBLE
+PG_MENU
+]]></ITEM>
+    </TASK>
+    <USER_TYPES><![CDATA[]]></USER_TYPES>
+    <BUILD_FLAGS>
+      <SCANNER_FLAGS>688</SCANNER_FLAGS>
+      <COMPILER_FLAGS>13617</COMPILER_FLAGS>
+      <CODE_GENERATOR_FLAG>1</CODE_GENERATOR_FLAG>
+      <DEBUG_CONTENTS_FLAG>dcInhibitNone</DEBUG_CONTENTS_FLAG>
+      <CODE_OPTIMIZATION_LEVEL>5</CODE_OPTIMIZATION_LEVEL>
+    </BUILD_FLAGS>
+  </PROJECT>
+</PAL1131>

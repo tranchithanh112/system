@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="150" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<TabPanel Width="150" Height="150" ClipToBounds="True" HeaderVisible="False" SelectedPageIndex="1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="SelectedPageIndex" ExportedPropertyName="index"/>
+			</Bindings>
+			<Children>
+				<TabPage PageName="Page1" Color="Transparent">
+					<Children>
+						<TextBox Width="50" Height="95" X="20" Y="30" BorderColor="Transparent" TextColor="ColorTrendLine06" Font="Praxis;60.0;N;N;N" Text="F"/>
+						<TextBox Width="50" Height="95" X="80" Y="30" BorderColor="Transparent" TextColor="ColorTrendLine06" Font="Praxis;60.0;N;N;N" Text="F"/>
+					</Children>
+				</TabPage>
+				<TabPage PageName="Page2" Color="Transparent">
+					<Children>
+						<TextBox Width="50" Height="50" X="20" Y="30" BorderColor="Transparent" TextColor="ColorTrendLine06" Font="Praxis;60.0;N;N;N" Text="Y"/>
+						<TextBox Width="50" Height="50" X="80" Y="80" BorderColor="Transparent" TextColor="ColorTrendLine06" Font="Praxis;60.0;N;N;N" Text="∆"/>
+					</Children>
+				</TabPage>
+			</Children>
+		</TabPanel>
+		<TextBox Width="210" Height="75" X="-30" Y="40" BorderColor="PageInfoLineShaded" FillColor="KeyboardInputBackground" CornerRoundRadius="5" TextColor="White" Font="Praxis;42.0;N;N;N" Text="Power Limit">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="power_limit_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

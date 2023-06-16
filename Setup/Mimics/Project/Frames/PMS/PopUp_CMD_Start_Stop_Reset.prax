@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="220" GridSpacing="5">
+	<Children>
+		<Rectangle Width="140" Height="210" X="5" Y="5" BorderWidth="0" FillColor="PageInfoLine" CornerRoundRadius="10"/>
+		<Rectangle Width="130" Height="35" X="10" Y="40" BorderWidth="0" CornerRoundRadius="10"/>
+		<TextBox Width="130" Height="25" X="10" Y="10" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N" Text="Thruster1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="130" Height="35" X="10" Y="80" BorderWidth="0" CornerRoundRadius="10"/>
+		<Rectangle Width="130" Height="35" X="10" Y="120" BorderWidth="0" CornerRoundRadius="10"/>
+		<Rectangle Width="130" Height="35" X="10" Y="175" BorderWidth="0" CornerRoundRadius="10"/>
+		<Button Width="130" Height="35" X="10" Y="40" GridSpacing="5" RoundRadius="10" Text="Start" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="BUTTON01_Text"/>
+			</Bindings>
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CMD_Start"/>
+					</Bindings>
+				</PulseChannelClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="80" GridSpacing="5" RoundRadius="10" Text="Stop" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="BUTTON02_Text"/>
+			</Bindings>
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CMD_Stop"/>
+					</Bindings>
+				</PulseChannelClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="120" GridSpacing="5" RoundRadius="10" Text="Reset" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="BUTTON03_Text"/>
+			</Bindings>
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CMD_Reset"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="175" GridSpacing="5" RoundRadius="10" Text="Cancel" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="BUTTON04_Text"/>
+			</Bindings>
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

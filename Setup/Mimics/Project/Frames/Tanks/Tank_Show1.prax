@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="230" Height="230" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="165" Height="217" X="5" Y="3" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="3"/>
+		<Panel Width="165" Height="215" GridSpacing="1" ClipToBounds="True" BorderWidth="1.5" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="3">
+			<Children>
+				<Rectangle Width="21" Height="182" X="105" Y="17" BorderColor="BackgroundConning" BorderStyle="Sunken" FillColor="BackgroundConning"/>
+				<TextBox Width="104" Height="25" X="1" Y="7" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" LeftRightPadding="5" Font="Praxis;16.0;N;N;N" Text="Cargo Name">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TankID"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="10" Height="15" X="81" Y="179" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="%"/>
+				<TextBox Width="20" Height="10" X="131" Y="13" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" LeftRightPadding="2" Font="Praxis;15.0;N;N;N" Text="100"/>
+				<Line Color="TextInfo" X0="132" Y0="18" X1="128" Y1="18"/>
+				<TextBox Width="20" Height="10" X="131" Y="58" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" LeftRightPadding="2" Font="Praxis;15.0;N;N;N" Text="75"/>
+				<Line Color="TextInfo" X0="132" Y0="63" X1="128" Y1="63"/>
+				<TextBox Width="20" Height="10" X="131" Y="103" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" LeftRightPadding="2" Font="Praxis;15.0;N;N;N" Text="50"/>
+				<Line Color="TextInfo" X0="132" Y0="108" X1="128" Y1="108"/>
+				<TextBox Width="20" Height="10" X="131" Y="148" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" LeftRightPadding="2" Font="Praxis;15.0;N;N;N" Text="25"/>
+				<Line Color="TextInfo" X0="132" Y0="153" X1="128" Y1="153"/>
+				<TextBox Width="20" Height="10" X="131" Y="193" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;15.0;N;N;N" Text="0"/>
+				<Line Color="TextInfo" X0="132" Y0="196" X1="128" Y1="196"/>
+				<TextBox Width="30" Height="15" X="63" Y="149" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Ltrs"/>
+				<TextBox Width="50" Height="15" X="11" Y="149" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;20.0;N;N;N" Text="1200"/>
+				<TextBox Width="104" Height="25" X="1" Y="32" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" LeftRightPadding="5" Font="Praxis;16.0;N;N;N" Text="Cargo Name">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TankID_"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="45" Height="15" X="34" Y="179" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;22.0;N;N;N" Text="100.0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Percent_Show_Text"/>
+						<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="NormalColour"/>
+					</Bindings>
+				</TextBox>
+				<FillBar FlashColor="Foreground" Width="21" Height="182" X="105" Y="17" FillDirection="BottomToTop" LimitType="None" FirstLimit="90" SecondLimit="95" LimitMarkerType="None" LimitMarkerSize="7" NormalColor="Barfill01" BorderWidth="1" BorderColor="Transparent" CornerRoundRadius="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="LimitLowColor" ExportedPropertyName="HighColour"/>
+						<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="NormalColour"/>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Percent_Show"/>
+					</Bindings>
+				</FillBar>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

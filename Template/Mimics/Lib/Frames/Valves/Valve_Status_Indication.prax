@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Panel Width="50" Height="50" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Rotation" ExportedPropertyName="FrameRotation"/>
+			</Bindings>
+			<Children>
+				<Polyline ClosedOutline="True" FillColor="Gray">
+					<Bindings>
+						<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="FillColorUp"/>
+					</Bindings>
+					<Points>
+						<Point Coord="25;25"/>
+						<Point Coord="35;45"/>
+						<Point Coord="15;45"/>
+					</Points>
+				</Polyline>
+				<Polyline ClosedOutline="True" FillColor="Gray">
+					<Bindings>
+						<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="FillColorUp"/>
+					</Bindings>
+					<Points>
+						<Point Coord="25;25"/>
+						<Point Coord="15;5"/>
+						<Point Coord="35;5"/>
+					</Points>
+				</Polyline>
+				<Ellipse BorderWidth="0" FillColor="Foreground" CenterX="25" CenterY="25" RadiusX="3" RadiusY="3" ArcBegin="270" ArcEnd="630"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

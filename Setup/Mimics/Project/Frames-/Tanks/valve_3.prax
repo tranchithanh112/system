@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="290" Height="290" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<TabPanel Width="290" Height="290" ClipToBounds="True" HeaderVisible="False" SelectedPageIndex="1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="SelectedPageIndex" ExportedPropertyName="vertical"/>
+			</Bindings>
+			<Children>
+				<TabPage PageName="Page1" Color="Transparent">
+					<Children>
+						<Panel Width="290" Height="290" ClipToBounds="True" BorderColor="Transparent" FillColor="Transparent">
+							<Children>
+								<Polyline Width="2" LineColor="White" ClosedOutline="True" FillColor="Background">
+									<Bindings>
+										<SelectFirstColorBinding TargetPropertyName="LineColor" SelectedValue0="InfoTextGrey" SelectedValue1="Comment" DefaultValue="White">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="closed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="opened_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fail_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstColorBinding>
+									</Bindings>
+									<Points>
+										<Point Coord="90;170"/>
+										<Point Coord="90;120"/>
+										<Point Coord="200;170"/>
+										<Point Coord="200;120"/>
+										<Point Coord="90;170"/>
+									</Points>
+								</Polyline>
+								<TextBox Height="45" X="95" Y="60" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;42.0;N;N;N" Text="V17">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Text" ExportedPropertyName="valve_name_upper_txt"/>
+									</Bindings>
+								</TextBox>
+								<TextBox Height="45" X="95" Y="180" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;42.0;N;N;N" Text="V17">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Text" ExportedPropertyName="valve_name_lower_txt"/>
+									</Bindings>
+								</TextBox>
+								<Polyline Width="2" LineColor="White" FillColor="Transparent">
+									<Points>
+										<Point Coord="100;95"/>
+										<Point Coord="145;145"/>
+										<Point Coord="190;95"/>
+									</Points>
+								</Polyline>
+								<Ellipse BorderWidth="3" BorderColor="InfoTextGrey" FillColor="InfoTextGrey" CenterX="145" CenterY="145" RadiusX="8" RadiusY="8"/>
+							</Children>
+						</Panel>
+					</Children>
+				</TabPage>
+				<TabPage PageName="Page2" Color="Transparent">
+					<Children>
+						<Panel Width="290" Height="290" ClipToBounds="True" BorderColor="Transparent" FillColor="Transparent">
+							<Children>
+								<Polyline Width="2" LineColor="White" ClosedOutline="True" FillColor="Background">
+									<Bindings>
+										<SelectFirstColorBinding TargetPropertyName="LineColor" SelectedValue0="InfoTextGrey" SelectedValue1="Comment" DefaultValue="White">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="closed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="opened_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fail_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstColorBinding>
+									</Bindings>
+									<Points>
+										<Point Coord="110;90"/>
+										<Point Coord="160;90"/>
+										<Point Coord="110;200"/>
+										<Point Coord="160;200"/>
+										<Point Coord="110;90"/>
+									</Points>
+								</Polyline>
+								<TextBox Height="50" X="180" Y="120" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="PageInfoLineShaded" Font="Praxis;42.0;N;N;N" Text="V17">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Text" ExportedPropertyName="valve_name_right_txt"/>
+									</Bindings>
+								</TextBox>
+								<TextBox Height="50" X="10" Y="120" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="PageInfoLineShaded" Font="Praxis;42.0;N;N;N" Text="V17">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Text" ExportedPropertyName="valve_name_left_txt"/>
+									</Bindings>
+								</TextBox>
+								<Polyline Width="2" LineColor="White" FillColor="Transparent">
+									<Points>
+										<Point Coord="185;100"/>
+										<Point Coord="135;145"/>
+										<Point Coord="185;190"/>
+									</Points>
+								</Polyline>
+								<Ellipse BorderWidth="3" BorderColor="InfoTextGrey" FillColor="InfoTextGrey" CenterX="135" CenterY="145" RadiusX="8" RadiusY="8"/>
+							</Children>
+						</Panel>
+					</Children>
+				</TabPage>
+			</Children>
+		</TabPanel>
+	</Children>
+</RootElement>

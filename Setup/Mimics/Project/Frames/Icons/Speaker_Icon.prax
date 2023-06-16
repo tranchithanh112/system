@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Bezier Width="4" FillColor="Transparent">
+			<Points>
+				<Point Coord="31;30"/>
+				<Point Coord="11;30"/>
+				<Point Coord="11;30"/>
+				<Point Coord="11;50"/>
+				<Point Coord="11;70"/>
+				<Point Coord="31;70"/>
+			</Points>
+		</Bezier>
+		<Polyline Width="4" LineStyle="Sunken" ClosedOutline="True" FillColor="Transparent">
+			<Points>
+				<Point Coord="31;70"/>
+				<Point Coord="56;90"/>
+				<Point Coord="56;10"/>
+				<Point Coord="31;30"/>
+			</Points>
+		</Polyline>
+		<Panel Visible="False" Width="35" Height="40" X="60" Y="30" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Visible" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+			<Children>
+				<Rectangle FlashState="Flashing" Flash="True" FlashColor="Transparent" Width="6" Height="30" X="14" Y="5" BorderColor="BackgroundShadow" FillColor="Foreground" CornerRoundRadius="2"/>
+				<Rectangle FlashState="Flashing" Flash="True" FlashColor="Transparent" Width="6" Height="20" X="3" Y="10" BorderColor="BackgroundShadow" FillColor="Foreground" CornerRoundRadius="2"/>
+				<Rectangle FlashState="Flashing" Flash="True" FlashColor="Transparent" Width="6" Height="40" X="25" BorderColor="BackgroundShadow" FillColor="Foreground" CornerRoundRadius="2"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

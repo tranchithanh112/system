@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Height="95" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Polyline Width="15" LineColor="InfoTextGrey" FillColor="InfoTextGrey" FillPatternColor="InfoTextGrey">
+			<Points>
+				<Point Coord="90;50"/>
+				<Point Coord="20;50">
+					<Bindings>
+						<ValueTransitionBinding TargetPropertyName="X" DefaultValue="10" ActivateValue="20" TransitionTime="250">
+							<Bindings>
+								<VariableBinding TargetPropertyName="Activate">
+									<Variable>
+										<BoolVariable Name="Show_Side_Menu"/>
+									</Variable>
+								</VariableBinding>
+							</Bindings>
+						</ValueTransitionBinding>
+					</Bindings>
+				</Point>
+			</Points>
+		</Polyline>
+		<Polyline Width="15" LineColor="InfoTextGrey" FillColor="InfoTextGrey" FillPatternColor="InfoTextGrey">
+			<Points>
+				<Point Coord="90;80"/>
+				<Point Coord="30;80">
+					<Bindings>
+						<ValueTransitionBinding TargetPropertyName="X" DefaultValue="10" ActivateValue="30" TransitionTime="250">
+							<Bindings>
+								<VariableBinding TargetPropertyName="Activate">
+									<Variable>
+										<BoolVariable Name="Show_Side_Menu" IsLocal="False"/>
+									</Variable>
+								</VariableBinding>
+							</Bindings>
+						</ValueTransitionBinding>
+					</Bindings>
+				</Point>
+			</Points>
+		</Polyline>
+		<Polyline Width="15" LineColor="InfoTextGrey" FillColor="InfoTextGrey" FillPatternColor="InfoTextGrey">
+			<Points>
+				<Point Coord="90;20"/>
+				<Point Coord="10;20"/>
+			</Points>
+		</Polyline>
+	</Children>
+</RootElement>

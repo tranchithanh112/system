@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="20" Height="20" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button Width="25" Height="25" X="-2" Y="-3" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" FillColorActionRunning="Transparent" Font="Praxis;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="5" XOffset="354.5" YOffset="-1">
+					<Frame>
+						<FloatingFrame Width="540" Height="75" X="95" Y="-29" AL_ChannelNr="0" Path=".\Alarm_Indicator_Popup.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="AL_ChannelNr" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="25" Height="25" X="-2" Y="-3" BorderWidth="0" FillColor="Orange" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Orange" SelectedValue2="MissingColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</ChannelSensFailBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Ellipse FillColor="Transparent" CenterX="10" CenterY="10" RadiusX="5" RadiusY="5"/>
+		<TextBox Width="60" Height="30" X="-20" Y="25" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="TAG2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowTag"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG_2"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="-65" Y="-5" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Right" TextColor="AlarmRed" Font="Praxis;18.0;N;N;N" Text="MCP Active">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowTag"/>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="Sensor Fail" SelectedValue1="MCP Active" DefaultValue="">
+					<Bindings>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="-20" Y="-35" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="TAG4">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowTag"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG_4"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="25" Y="-5" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="TAG1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowTag"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG_1"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

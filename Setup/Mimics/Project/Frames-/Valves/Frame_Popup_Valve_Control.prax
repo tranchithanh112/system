@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="120" Height="185" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="120" Height="185" BorderWidth="2" BorderColor="DarkShadow" FillColor="MenuBackground" CornerRoundRadius="5"/>
+		<Button Width="90" Height="25" X="15" Y="35" ClipToBounds="True" Text="OPEN" FillColorActionRunning="IndicatorBlueTrans" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Open_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</PulseChannelClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="90" Height="25" X="15" Y="70" ClipToBounds="True" Text="CLOSE" FillColorActionRunning="IndicatorBlueTrans" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Ch"/>
+					</Bindings>
+				</PulseChannelClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="90" Height="25" X="15" Y="105" ClipToBounds="True" Text="RESET" FillColorActionRunning="IndicatorBlueTrans" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Reset_Ch"/>
+					</Bindings>
+				</PulseChannelClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="90" Height="25" X="15" Y="140" ClipToBounds="True" Text="CANCEL" FillColorActionRunning="IndicatorBlueTrans" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="50" Height="15" X="35" Y="10" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;16.0;N;N;N" Text="00000">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG2"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

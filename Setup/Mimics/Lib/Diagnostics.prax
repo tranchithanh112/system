@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1024" Height="768" GridSpacing="5" TranslationTableFile="..\TranslationTableTemplate.xlsx">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Frame Width="1020" Y="667.667" Path=".\Frames\Frame_Bottom.prax"/>
+		<Frame Width="1020" Height="90" Y="575" Path=".\Frames\Frame_Alarm_bottom.prax"/>
+		<Frame Width="1020" Height="60" Path=".\Frames\Frame_Menu.prax"/>
+		<Frame Width="124" Height="130" X="276" Y="90" FAIL="True" Name="EAS-1" Path=".\Frames\Frame_Diagnostic_EAS.prax">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="FAIL" ChannelNumber="108019"/>
+			</Bindings>
+		</Frame>
+	</Children>
+</RootElement>

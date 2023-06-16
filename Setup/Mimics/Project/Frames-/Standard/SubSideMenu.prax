@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="260" Height="710" GridSpacing="10" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="260" Height="710" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="DarkShadow" FillColor="MenuBackground" CornerRoundRadius="10">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Height" A="70" B="5">
+					<Bindings>
+						<FrameBinding TargetPropertyName="X" ExportedPropertyName="Total_SBs"/>
+					</Bindings>
+				</UnitConversionBinding>
+			</Bindings>
+			<Children>
+				<Frame Width="250" Height="65" X="5" Y="5" SubButtonText="SUB BUTTON 01" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="0" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB1"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB1"/>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="0" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub1"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_1"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_1"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="250" Height="65" X="5" Y="75" SubButtonText="SUB BUTTON 02" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="1" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB2"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB2"/>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub2"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_2"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_2"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="250" Height="65" X="5" Y="145" SubButtonText="SUB BUTTON 03" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="2" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB3"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB3"/>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="2" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub3"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_3"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_3"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="250" Height="65" X="5" Y="215" SubButtonText="SUB BUTTON 04" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="3" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB4"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB4"/>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="3" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub4"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_4"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_4"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="250" Height="65" X="5" Y="285" SubButtonText="SUB BUTTON 05" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="4" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB5"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB5"/>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="4" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub5"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_5"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_5"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="250" Height="65" X="5" Y="355" SubButtonText="SUB BUTTON 06" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="5" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB6"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB6"/>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="5" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub6"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_6"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_6"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="250" Height="65" X="5" Y="425" SubButtonText="SUB BUTTON 07" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="6" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB7"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB7"/>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="6" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub7"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_7"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_7"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="250" Height="65" X="5" Y="495" SubButtonText="SUB BUTTON 08" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="7" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB8"/>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="7" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB8"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub8"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_8"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_8"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="250" Height="65" X="5" Y="565" SubButtonText="SUB BUTTON 09" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="8" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="8" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB9"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB9"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub9"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_9"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_9"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="250" Height="65" X="5" Y="635" SubButtonText="SUB BUTTON 10" OpenMimicNumber="0" SetPageTitle="(Value)" Open_NAVFRAME_Index="9" Highlight_Sub_Button_NR="0" Sub_Button_NR="1" Path=".\SideSubButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SubButtonText" ExportedPropertyName="Text_SB10"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="SetPageTitle_SB10"/>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="9" CompareOperator=">" CompareTolerance="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber_Sub10"/>
+						<FrameBinding TargetPropertyName="Sub_Button_NR" ExportedPropertyName="Sub_Button_NR_10"/>
+						<FrameBinding TargetPropertyName="Highlight_Sub_Button_NR" ExportedPropertyName="Hightlight_Sub_Button_NR_10"/>
+					</Bindings>
+				</Frame>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

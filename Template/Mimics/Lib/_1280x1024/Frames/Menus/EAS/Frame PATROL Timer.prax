@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="400" Height="40">
+	<Children>
+		<TextBox Width="400" Height="40" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<PatrolTimerStatusBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<PatrolTimerStatusToTextConvertParams TextWhenOff="PATROL Timer: Off" TextWhenAlarmPD="PATROL Timer: Alarm">
+							<Bindings>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenRunning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL Timer: " Suffix=" min. Running" ConversionFormat="mm"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenWarning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL Timer: " Suffix=" mm:ss Warning" ConversionFormat="mm:ss"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+							</Bindings>
+						</PatrolTimerStatusToTextConvertParams>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+				<PatrolTimerStatusBinding TargetPropertyName="TextColor">
+					<ConvertParams>
+						<PatrolTimerStatusToColorConvertParams/>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

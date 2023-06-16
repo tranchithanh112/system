@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="250" Height="65" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="215" Height="65" X="20" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Praxis;22.0;N;N;N" Text="SUB BUTTON 00">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="SubButtonText"/>
+			</Bindings>
+		</TextBox>
+		<Button Width="243" Height="53" X="5" Y="5" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="OutlineColor" DefaultValue="Transparent"/>
+			</Bindings>
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="MimicNamePD" ExportedPropertyName="OpenMimicNumber"/>
+					</Bindings>
+				</OpenMimicByNumberClickAction>
+				<SetRetainValueClickAction RetainValueType="String" RetainKey="VAR_PAGETITLE">
+					<RetainValue>
+						<StringRetainValue>
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="SetPageTitle"/>
+							</Bindings>
+						</StringRetainValue>
+					</RetainValue>
+				</SetRetainValueClickAction>
+				<SetRetainValueClickAction RetainKey="VAR_NAVFRAME_INDEX">
+					<RetainValue>
+						<FloatRetainValue>
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Open_NAVFRAME_Index"/>
+							</Bindings>
+						</FloatRetainValue>
+					</RetainValue>
+				</SetRetainValueClickAction>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_ShowSideMenu">
+					<RetainValue>
+						<BoolRetainValue/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_LockShowMenuButton">
+					<RetainValue>
+						<BoolRetainValue/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+			</ClickActions>
+		</Button>
+		<Rectangle Width="240" Height="45" X="5" Y="10" BorderColor="InfoTextWhite" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Sub_Button_NR"/>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Sub_Button_NR"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Rectangle>
+	</Children>
+</RootElement>

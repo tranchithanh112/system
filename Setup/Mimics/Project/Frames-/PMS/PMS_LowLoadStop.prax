@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="245" Height="90" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="240" Height="85" X="5" Y="5" BorderColor="DarkShadow" FillColor="DarkShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="240" Height="85" BorderColor="InactiveGrey" CornerRoundRadius="5"/>
+		<TextBox Width="230" Height="25" X="5" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;18.0;N;N;N" Text="LowLoadStop"/>
+		<Line Color="InfoTextGrey" X0="5" Y0="25" X1="235" Y1="25"/>
+		<Button Width="60" Height="40" X="90" Y="35" Text="OFF" FillColor="Transparent" TextColor="InfoTextGrey" Font="Segoe UI;18.0;N;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="65668">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="Comment"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Text" ChannelNumber="61483">
+					<ConvertParams>
+						<BoolToStringConvertParams TextWhenFalse="OFF" TextWhenTrue="ON"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" YOffset="118">
+					<Frame>
+						<FloatingFrame Width="150" Height="190" X="45" Y="78" CMD_ON1="61521" CMD_ON_value="1" CMD_ON2="0" CMD_OFF1="61521" CMD_OFF_value="1" CMD_OFF2="0" ID="LowLoadStop" Path=".\PopUp_CMD_On_Off_Redundand[SV].prax"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

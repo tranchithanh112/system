@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PAL1131 version="1.0">
+  <VMSPEC>
+    <USER>
+      <title>Asserts, debugging and simulation-oriented functions</title>
+      <version>2.6.3</version>
+      <extraver/>
+      <builddate>2012.01-19 10:56</builddate>
+      <exportdate>#now</exportdate>
+    </USER>
+     <SYSTEM>
+      <sysproc name="SCNTF" vmcode="1D80">
+        <args>
+          <arg no="0" name="error_code" type=":imm.INT">
+            <comment>Error code returned to the user</comment>
+          </arg>
+        </args>
+        <comment>Assertion failed</comment>
+      </sysproc>
+      <sysproc name="SCRST" vmcode="1D81">
+        <comment>Restart current cycle</comment>
+      </sysproc>
+      <sysproc name="SCHLT" vmcode="1D82">
+        <comment>Stop program execution, set outputs</comment>
+      </sysproc>
+     </SYSTEM>
+  </VMSPEC>
+</PAL1131>

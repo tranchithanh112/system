@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="220" Height="1040" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="205" Height="1025" X="15" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="DarkShadow" FillColor="DarkShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="210" Height="1030" X="5" Y="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="InactiveGrey" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="200" Height="40" X="5" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Saira;36.0;N;N;N" Text="TK 99">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Tank_Number"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="25" X="170" Y="625" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Saira;24.0;N;N;N" Text="%"/>
+				<TextBox Width="20" Height="20" X="150" Y="585" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Saira;20.0;N;N;N" Text="0"/>
+				<Line Width="2" Color="InactiveGrey" X0="150" Y0="595" X1="140" Y1="595"/>
+				<TextBox Width="30" Height="20" X="150" Y="385" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Saira;20.0;N;N;N" Text="50"/>
+				<TextBox Width="40" Height="20" X="150" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Saira;20.0;N;N;N" Text="100"/>
+				<TextBox Width="160" Height="40" X="15" Y="610" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;48.0;N;N;N" Text="100.0">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="ActiveText">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_level_Percent"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_level_Percent"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_level_Percent"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<Line Width="2" Color="InactiveGrey" X0="150" Y0="395" X1="140" Y1="395"/>
+				<Line Width="2" Color="InactiveGrey" X0="150" Y0="195" X1="140" Y1="195"/>
+				<TextBox Width="210" Height="20" Y="735" BorderWidth="0" FillColor="Transparent" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="Capacity"/>
+				<TextBox Width="160" Height="40" X="15" Y="660" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;48.0;N;N;N" Text="999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_level__m3"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_level__m3"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="105" Height="40" X="45" Y="705" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Saira;26.0;N;N;N" Text="9999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_capacity_m3"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="25" X="170" Y="675" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Saira;24.0;N;N;N" Text="m³"/>
+				<TextBox Width="105" Height="40" X="45" Y="760" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Saira;26.0;N;N;N" Text="9999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_weight_ton"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="210" Height="20" Y="790" BorderWidth="0" FillColor="Transparent" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="Weight"/>
+				<TextBox Width="30" Height="20" X="145" Y="715" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="m³"/>
+				<TextBox Width="30" Height="20" X="145" Y="770" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="ton"/>
+				<TextBox Width="95" Height="40" X="7" Y="920" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Saira;26.0;N;N;N" Text="9999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="High_Alarm_Percent"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+					<TextEnteredActions>
+						<SetChannelValueTEA ChannelNumber="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="High_Alarm_Percent"/>
+							</Bindings>
+						</SetChannelValueTEA>
+					</TextEnteredActions>
+				</TextBox>
+				<TextBox Width="200" Height="20" X="5" Y="880" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorOrange" Font="Saira;18.0;N;N;N" Text="Alarms"/>
+				<TextBox Height="20" X="5" Y="900" BorderWidth="0" FillColor="Transparent" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="High"/>
+				<TextBox Height="20" X="105" Y="900" BorderWidth="0" FillColor="Transparent" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="Delay"/>
+				<TextBox Width="95" Height="40" X="108" Y="920" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Saira;26.0;N;N;N" Text="9999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="High_Alarm_Delay_sec"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+					<TextEnteredActions>
+						<SetChannelValueTEA ChannelNumber="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="High_Alarm_Delay_sec"/>
+							</Bindings>
+						</SetChannelValueTEA>
+					</TextEnteredActions>
+				</TextBox>
+				<TextBox Width="95" Height="40" X="7" Y="980" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Saira;26.0;N;N;N" Text="9999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Low_Alarm_Percent"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+					<TextEnteredActions>
+						<SetChannelValueTEA ChannelNumber="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Low_Alarm_Percent"/>
+							</Bindings>
+						</SetChannelValueTEA>
+					</TextEnteredActions>
+				</TextBox>
+				<TextBox Height="20" X="5" Y="960" BorderWidth="0" FillColor="Transparent" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="Low"/>
+				<TextBox Height="20" X="105" Y="960" BorderWidth="0" FillColor="Transparent" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="Delay"/>
+				<TextBox Width="95" Height="40" X="108" Y="980" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Saira;26.0;N;N;N" Text="9999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Low_Alarm_Delay_sec"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+					<TextEnteredActions>
+						<SetChannelValueTEA ChannelNumber="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Low_Alarm_Delay_sec"/>
+							</Bindings>
+						</SetChannelValueTEA>
+					</TextEnteredActions>
+				</TextBox>
+				<TextBox Width="200" Height="30" X="5" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Saira;28.0;N;N;N" Text="F.O.">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Description_Line1"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="200" Height="30" X="5" Y="80" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Saira;28.0;N;N;N" Text="Anti-heel">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Description_Line2"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="200" Height="30" X="5" Y="115" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Saira;28.0;N;N;N" Text="Tech space">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Location_Line1"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="200" Height="30" X="5" Y="145" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Saira;28.0;N;N;N" Text="STB">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Location_Line2"/>
+					</Bindings>
+				</TextBox>
+				<Rectangle Width="200" Height="140" X="5" Y="880" BorderColor="IndicatorOrange" FillColor="Transparent" CornerRoundRadius="5"/>
+				<TextBox Width="40" Height="20" X="150" Y="285" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Saira;20.0;N;N;N" Text="75"/>
+				<Line Width="2" Color="InactiveGrey" X0="150" Y0="295" X1="140" Y1="295"/>
+				<TextBox Width="30" Height="20" X="150" Y="485" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Saira;20.0;N;N;N" Text="25"/>
+				<Line Width="2" Color="InactiveGrey" X0="150" Y0="495" X1="140" Y1="495"/>
+				<Frame Width="80" Height="400" X="55" Y="195" _Channel="0" Path="..\FillBars\Bar_vertical_0_to_100_percent.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="_Channel" ExportedPropertyName="Tank_level_Percent"/>
+					</Bindings>
+				</Frame>
+				<Line Color="IndicatorOrange" X0="5" Y0="960" X1="205" Y1="960"/>
+				<Line Color="IndicatorOrange" X0="5" Y0="900" X1="205" Y1="900"/>
+				<Panel Width="210" Height="65" Y="810" ClipToBounds="True" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="TemperatureVisible"/>
+					</Bindings>
+					<Children>
+						<TextBox Width="30" Height="20" X="145" Y="20" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="°C"/>
+						<TextBox Width="105" Height="40" X="45" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Saira;26.0;N;N;N" Text="999.9">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_temperature_decC"/>
+									</Bindings>
+									<ConvertParams>
+										<FloatToStringConvertParams DecimalPlaces="1"/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="210" Height="20" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="BarfillGrey" Font="Saira;18.0;N;N;N" Text="Temperature"/>
+					</Children>
+				</Panel>
+				<Frame Width="35" Height="400" X="10" Y="195" _Channel="0" Bar_Range_End="0" Bar_Range_Begin="0" Path="..\FillBars\Bar_vertical_Tanks_m3.prax">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Bar_Range_End">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_capacity_m3"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</Frame>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

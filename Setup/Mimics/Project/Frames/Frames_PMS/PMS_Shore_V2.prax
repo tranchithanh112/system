@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="815" Height="705" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="800" Height="690" X="15" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="805" Height="685" X="5" Y="10" ClipToBounds="True" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="800" Height="60" X="5" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;56.0;N;N;N" Text="SHORE 1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="_TITLE"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="105" Height="25" X="350" Y="170" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="kW"/>
+				<TextBox Width="105" Height="40" X="350" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;48.0;N;N;N" Text="299.9">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="TextInfoHeader">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shore_kW_CH_MOD1"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shore_kW_CH_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shore_kW_CH_MOD1"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="25" X="280" Y="165" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="Hz"/>
+				<TextBox Width="155" Height="39" X="125" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="50">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shore_Freq_Hz_CH_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="75" Height="20" X="365" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="Barfill02" Font="Praxis;18.0;N;N;N" Text="SHORE"/>
+				<TextBox Width="75" Height="20" X="515" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="Barfill02" Font="Praxis;18.0;N;N;N" Text="OUTPUT"/>
+				<TextBox Width="105" Height="25" X="505" Y="170" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="kW"/>
+				<TextBox Width="105" Height="40" X="505" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;48.0;N;N;N" Text="299.9">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="TextInfoHeader">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Output_kW_CH_MOD1"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Output_kW_CH_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Output_kW_CH_MOD1"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="85" Height="25" X="50" Y="120" BorderWidth="0" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;20.0;N;N;N" Text="NOT AVAILABLE">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Green" DefaultValue="StatusInactive">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Available_CH_MOD1"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="AVAILABLE" DefaultValue="NOT AVAILABLE">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Available_CH_MOD1"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="155" Height="39" X="595" Y="105" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="400">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Voltage_V_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Voltage_V_MOD1"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="25" X="750" Y="120" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="V"/>
+				<TextBox Width="30" Height="25" X="750" Y="165" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="Hz"/>
+				<TextBox Width="155" Height="39" X="595" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="50">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Freq_Hz_CH_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Freq_Hz_CH_MOD1"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="105" Height="20" X="40" Y="95" BorderWidth="0" FillColor="Transparent" TextColor="Barfill02" Font="Praxis;18.0;N;N;N" Text="STATUS"/>
+				<TextBox Width="85" Height="25" X="50" Y="145" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;20.0;N;N;N" Text="ON LINE">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Green" DefaultValue="StatusInactive">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ONLINE_CH_MOD1"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ON LINE" DefaultValue="OFF LINE">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ONLINE_CH_MOD1"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="85" Height="25" X="50" Y="170" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;20.0;N;N;N" Text="READY">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Green" DefaultValue="StatusInactive">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="READY_CH_MOD1"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="READY" DefaultValue="NOT READY">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="READY_CH_MOD1"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="155" Height="39" X="125" Y="105" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="400">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shore_Voltage_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="25" Height="25" X="280" Y="120" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="V"/>
+				<TextBox Width="30" Height="25" X="280" Y="210" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="A"/>
+				<TextBox Width="155" Height="39" X="125" Y="195" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="200">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shore_Current_A_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="85" Height="25" X="50" Y="195" BorderWidth="0" FillColor="Transparent" TextColor="AlarmRed" Font="Praxis;20.0;N;N;N" Text="OVERLOAD">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="StatusInactive">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OVERLOAD_CH_MOD1"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="85" Height="25" X="50" Y="220" BorderWidth="0" FillColor="Transparent" TextColor="AlarmRed" Font="Praxis;20.0;N;N;N" Text="ERROR">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="StatusInactive">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ERROR_CH_MOD1"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="155" Height="39" X="595" Y="195" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="200">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Current_A_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Current_A_MOD1"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="25" X="750" Y="210" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="A"/>
+				<TextBox Width="105" Height="25" X="350" Y="380" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="kW"/>
+				<TextBox Width="30" Height="25" X="280" Y="375" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="Hz"/>
+				<TextBox Width="75" Height="20" X="365" Y="285" BorderWidth="0" FillColor="Transparent" TextColor="Barfill02" Font="Praxis;18.0;N;N;N" Text="SHORE"/>
+				<TextBox Width="75" Height="20" X="515" Y="285" BorderWidth="0" FillColor="Transparent" TextColor="Barfill02" Font="Praxis;18.0;N;N;N" Text="OUTPUT"/>
+				<TextBox Width="105" Height="25" X="505" Y="380" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="kW"/>
+				<TextBox Width="105" Height="40" X="505" Y="340" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;48.0;N;N;N" Text="299.9">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="TextInfoHeader">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Output_kW_CH_MOD2"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Output_kW_CH_MOD2"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Output_kW_CH_MOD2"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="155" Height="39" X="595" Y="315" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="400">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Voltage_V_MOD2"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Voltage_V_MOD2"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="25" X="750" Y="335" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="V"/>
+				<TextBox Width="30" Height="25" X="750" Y="380" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="Hz"/>
+				<TextBox Width="155" Height="39" X="595" Y="360" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="50">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Freq_Hz_CH_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Freq_Hz_CH_MOD1"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="105" Height="20" X="40" Y="305" BorderWidth="0" FillColor="Transparent" TextColor="Barfill02" Font="Praxis;18.0;N;N;N" Text="STATUS"/>
+				<TextBox Width="155" Height="39" X="125" Y="315" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="400">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shore_Voltage_MOD2"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="25" Height="25" X="280" Y="330" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="V"/>
+				<TextBox Width="30" Height="25" X="280" Y="420" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="A"/>
+				<TextBox Width="155" Height="39" X="595" Y="405" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="200">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Current_A_MOD2"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Current_A_MOD2"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="25" X="750" Y="425" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="A"/>
+				<TextBox Width="105" Height="25" X="345" Y="595" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="kW"/>
+				<TextBox Width="30" Height="25" X="275" Y="590" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="Hz"/>
+				<TextBox Width="75" Height="20" X="360" Y="500" BorderWidth="0" FillColor="Transparent" TextColor="Barfill02" Font="Praxis;18.0;N;N;N" Text="SHORE"/>
+				<TextBox Width="75" Height="20" X="510" Y="500" BorderWidth="0" FillColor="Transparent" TextColor="Barfill02" Font="Praxis;18.0;N;N;N" Text="OUTPUT"/>
+				<TextBox Width="105" Height="25" X="500" Y="595" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="kW"/>
+				<TextBox Width="105" Height="40" X="500" Y="555" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;48.0;N;N;N" Text="299.9">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="TextInfoHeader">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Output_kW_CH_MOD3"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Output_kW_CH_MOD3"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Output_kW_CH_MOD3"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="155" Height="39" X="590" Y="530" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="400">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Voltage_V_MOD3"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Voltage_V_MOD3"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="25" X="745" Y="545" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="V"/>
+				<TextBox Width="30" Height="25" X="745" Y="590" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="Hz"/>
+				<TextBox Width="155" Height="39" X="590" Y="575" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="50">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Freq_Hz_CH_MOD1"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Out_Freq_Hz_CH_MOD1"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="105" Height="20" X="35" Y="520" Bor

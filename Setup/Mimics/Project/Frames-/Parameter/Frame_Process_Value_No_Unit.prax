@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement FlashArea="TextOnly" Width="60" Height="30" GridSpacing="10" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="60" Height="30" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<FilteredValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</FilteredValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

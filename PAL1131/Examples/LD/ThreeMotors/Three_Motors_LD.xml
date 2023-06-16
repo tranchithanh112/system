@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="Three_Motors_LD">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2015" month="11" day="1" hour="9" minutes="39" seconds="13" milisec="406" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="00000005" />
+      <II value="00000038" />
+      <CPVis used="0" />
+      <LC year="2015" month="11" day="1" hour="9" minutes="54" seconds="5" milisec="203" />
+      <LCF>
+        <ABSOLUTE>F:\Projekty\CPDev\CPDev_FBD\CPDev_root\src\CPDev\CPDev\bin\Debug\..\..\..\..\..\src\VM\vmspec\VM-Praxis.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis.xml</APPVARS>
+        <ENVVARS>F:\Projekty\CPDev\CPDev_FBD\CPDev_root\src\CPDev\CPDev\bin\Debug\..\..\..\..\..\src\VM\vmspec\VM-Praxis.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.1.1.19</CREATOR>
+      <LASTSAVEDWITH>1.1.1.27</LASTSAVEDWITH>
+      <HCPFlags enabled="0" />
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="F:\Projekty\CPDev\CPDev_FBD\CPDev_root\src\CPDev\CPDev\bin\Debug\..\..\..\..\..\ibuild\lib\IEC 61131-3.lcp">
+        <CREATED year="2015" month="10" day="29" hour="14" minutes="48" seconds="48" milisec="5" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>F:\Projekty\CPDev\CPDev_FBD\CPDev_root\src\CPDev\CPDev\bin\Debug\..\..\..\..\..\ibuild\lib\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="LD" type="PRG" name="Three_Motors_LD" editor="LDEditor-MarcinJamro"><![CDATA[PROGRAM Three_Motors_LD
+
+VAR_EXTERNAL
+   START: BOOL;
+   MOTOR1: BOOL;
+   MOTOR2: BOOL;
+   STOP: BOOL;
+   MOTOR3: BOOL;
+END_VAR
+
+VAR
+   out_contact_START_100_160: BOOL;
+   out_contact_MOTOR1_100_210: BOOL;
+   out_contact_MOTOR1_100_270: BOOL;
+   out_contact_MOTOR2_100_390: BOOL;
+   out_contact_STOP_210_160: BOOL;
+   out_contact_STOP_160_270: BOOL;
+   out_contact_STOP_160_390: BOOL;
+   out_coil_MOTOR1_330_160: BOOL;
+   out_coil_MOTOR2_330_270: BOOL;
+   out_coil_MOTOR3_330_390: BOOL;
+   out_bp_120_150: BOOL;
+   ton1_1_1: TON;
+   out_ton1_1_1_Q: BOOL;
+   ton1_1: TON;
+   out_ton1_1_Q: BOOL;
+END_VAR
+
+out_contact_START_100_160 := START;
+out_contact_MOTOR1_100_210 := MOTOR1;
+out_bp_120_150 := out_contact_START_100_160 OR out_contact_MOTOR1_100_210;
+out_contact_STOP_210_160 := out_bp_120_150 AND NOT STOP;
+out_coil_MOTOR1_330_160 := out_contact_STOP_210_160;
+MOTOR1 := out_contact_STOP_210_160;
+
+out_contact_MOTOR1_100_270 := MOTOR1;
+out_contact_STOP_160_270 := out_contact_MOTOR1_100_270 AND NOT STOP;
+ton1_1(IN:=out_contact_STOP_160_270,PT:=T#2s,Q=>out_ton1_1_Q);
+out_coil_MOTOR2_330_270 := out_ton1_1_Q;
+MOTOR2 := out_ton1_1_Q;
+
+out_contact_MOTOR2_100_390 := MOTOR2;
+out_contact_STOP_160_390 := out_contact_MOTOR2_100_390 AND NOT STOP;
+ton1_1_1(IN:=out_contact_STOP_160_390,PT:=T#3s,Q=>out_ton1_1_1_Q);
+out_coil_MOTOR3_330_390 := out_ton1_1_1_Q;
+MOTOR3 := out_ton1_1_1_Q;
+
+END_PROGRAM
+]]><EDITOR><![CDATA[<?xml version="1.0" encoding="utf-16"?><project><fileHeader companyName="" creationDateTime="2015-11-28T14:47:42" productName="Three_Motors_LD" productVersion="" contentType="Program" /><contentHeader name="prj"><coordinateInfo><fbd><scaling x="10" y="10" /></fbd><ld><scaling x="10" y="10" /></ld><sfc><scaling x="10" y="10" /></sfc></coordinateInfo></contentHeader><types><dataTypes /><pous><pou name="FBD Diagram" pouType="functionBlock"><interface><localVars><variable name="START"><type><BOOL /></type></variable><variable name="MOTOR1"><type><BOOL /></type></variable><variable name="MOTOR1"><type><BOOL /></type></variable><variable name="MOTOR2"><type><BOOL /></type></variable><variable name="STOP"><type><BOOL /></type></variable><variable name="STOP"><type><BOOL /></type></variable><variable name="STOP"><type><BOOL /></type></variable><variable name="variable1" constant="True"><type><TIME /></type></variable><variable name="variable2" constant="True"><type><TIME /></type></variable><variable name="MOTOR1"><type><BOOL /></type></variable><variable name="MOTOR2"><type><BOOL /></type></variable><variable name="MOTOR3"><type><BOOL /></type></variable></localVars></interface><body><LD><leftPowerRail localId="0" /><rightPowerRail localId="1"><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="34"><position x="360" y="160" /><position x="330" y="160" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="35"><position x="360" y="270" /><position x="330" y="270" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="36"><position x="360" y="390" /><position x="330" y="390" /></connection></connectionPointIn></rightPowerRail><contact height="40" localId="18" width="20" type="NormallyOpenContact"><position x="70" y="130" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="160" /><position x="10" y="160" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>START</expression></contact><contact height="40" localId="20" width="20" type="NormallyOpenContact"><position x="70" y="180" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="210" /><position x="10" y="210" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>MOTOR1</expression></contact><contact height="40" localId="21" width="20" type="NormallyOpenContact"><position x="70" y="240" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="270" /><position x="10" y="270" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>MOTOR1</expression></contact><contact height="40" localId="23" width="20" type="NormallyOpenContact"><position x="70" y="360" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="390" /><position x="10" y="390" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>MOTOR2</expression></contact><contact height="40" localId="40" width="20" type="NormallyClosedContact"><position x="180" y="130" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="18"><position x="170" y="160" /><position x="140" y="160" branchPoint="Output" branchPointLocation="120;150" branchPointDirection="Right" /><position x="120" y="160" branchPoint="Input" branchPointLocation="120;150" branchPointDirection="Left" /><position x="100" y="160" /></connection><connection formalParameter="" refLocalId="20"><position x="170" y="160" /><position x="140" y="160" branchPoint="Output" branchPointLocation="120;150" branchPointDirection="Right" /><position x="130" y="170" branchPoint="Input" branchPointLocation="120;150" branchPointDirection="Down" /><position x="130" y="210" /><position x="100" y="210" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>STOP</expression></contact><contact height="40" localId="41" width="20" type="NormallyClosedContact"><position x="130" y="240" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="21"><position x="120" y="270" /><position x="100" y="270" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>STOP</expression></contact><contact height="40" localId="42" width="20" type="NormallyClosedContact"><position x="130" y="360" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="23"><position x="120" y="390" /><position x="100" y="390" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>STOP</expression></contact><inVariable height="20" localId="25" width="40" constant="True"><position x="110" y="290" /><connectionPointOut><relPosition x="50" y="10" /></connectionPointOut><expression>variable1</expression><value>T#2s</value></inVariable><inVariable height="20" localId="26" width="40" constant="True"><position x="110" y="410" /><connectionPointOut><relPosition x="50" y="10" /></connectionPointOut><expression>variable2</expression><value>T#3s</value></inVariable><block height="100" instanceName="ton1_1_1" localId="28" typeName="TON" width="60"><position x="190" y="340" /><inputVariables><variable formalParameter="IN"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="42"><position x="180" y="390" /><position x="160" y="390" /></connection></connectionPointIn></variable><variable formalParameter="PT"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="26"><position x="180" y="410" /><position x="170" y="410" /><position x="170" y="420" /><position x="160" y="420" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q"><connectionPointOut><relPosition x="70" y="50" /></connectionPointOut></variable><variable formalParameter="ET"><connectionPointOut><relPosition x="70" y="70" /></connectionPointOut></variable></outputVariables></block><block height="100" instanceName="ton1_1" localId="27" typeName="TON" width="60"><position x="190" y="220" /><inputVariables><variable formalParameter="IN"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="41"><position x="180" y="270" /><position x="160" y="270" /></connection></connectionPointIn></variable><variable formalParameter="PT"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="25"><position x="180" y="290" /><position x="170" y="290" /><position x="170" y="300" /><position x="160" y="300" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q"><connectionPointOut><relPosition x="70" y="50" /></connectionPointOut></variable><variable formalParameter="ET"><connectionPointOut><relPosition x="70" y="70" /></connectionPointOut></variable></outputVariables></block><coil height="40" localId="34" width="20" type="Coil"><position x="300" y="130" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="40"><position x="290" y="160" /><position x="210" y="160" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>MOTOR1</expression></coil><coil height="40" localId="35" width="20" type="Coil"><position x="300" y="240" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="Q" refLocalId="27"><position x="290" y="270" /><position x="260" y="270" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>MOTOR2</expression></coil><coil height="40" localId="36" width="20" type="Coil"><position x="300" y="360" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="Q" refLocalId="28"><position x="290" y="390" /><position x="260" y="390" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>MOTOR3</expression></coil></LD></body></pou></pous></types><instances><configurations /></instances><globalVariables><globalVariable name="START" type="BOOL" /><globalVariable name="STOP" type="BOOL" /><globalVariable name="MOTOR1" type="BOOL" /><globalVariable name="MOTOR2" type="BOOL" /><globalVariable name="MOTOR3" type="BOOL" /></globalVariables><comments><comment localId="32" width="200" height="20"><position x="80" y="80" /><expression>TURNING ONE AFTER ANOTHER</expression></comment></comments><breakpoints /><conditions /><safestatevalues /></project>]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="START" flags="00004000"><![CDATA[VAR_GLOBAL 
+ START  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="STOP" flags="00004000"><![CDATA[VAR_GLOBAL 
+ STOP  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MOTOR1" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MOTOR1  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MOTOR2" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MOTOR2  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MOTOR3" flags="00004000"><![CDATA[VAR_GLOBAL 
+ MOTOR3  : BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK_LD" loop_kind="0" interval="100"><![CDATA[Three_Motors_LD
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

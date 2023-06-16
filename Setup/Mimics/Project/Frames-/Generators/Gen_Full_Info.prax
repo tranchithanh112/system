@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="340" Height="860" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="330" Height="860" X="10" Y="5" BorderColor="DarkShadow" FillColor="DarkShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="330" Height="860" X="5" BorderColor="InactiveGrey" CornerRoundRadius="5"/>
+		<TextBox Width="75" Height="30" X="175" Y="350" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CPU_TEMP_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CPU_TEMP_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CPU_TEMP_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="355" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="°C"/>
+		<TextBox Width="90" Height="30" X="80" Y="350" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="CPU TEMPERATURE"/>
+		<TextBox Width="90" Height="30" X="80" Y="470" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="ENG OIL PRESSURE"/>
+		<TextBox Width="90" Height="30" X="80" Y="380" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="L.O TEMPERATURE"/>
+		<TextBox Width="75" Height="30" X="175" Y="500" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FUEL_RATE_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FUEL_RATE_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FUEL_RATE_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="505" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="L/H"/>
+		<TextBox Width="90" Height="30" X="80" Y="500" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="FUEL RATE"/>
+		<TextBox Width="30" Height="25" X="250" Y="685" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="°C"/>
+		<TextBox Width="90" Height="30" X="80" Y="680" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="LO TEMP L1"/>
+		<Frame Width="280" Height="280" X="30" Y="35" DialColor="ConningBackground" CentralDigitsColor="ActiveText" DialValue1_CH="0" DialValue_MAX="100" Smoothness="1000" Filling="True" Pointer="False" MultiplyingFactor="1" Decimals_Outside="0" Full="False" Description="LOAD" Path="..\Gauges\Gauge_Percent.prax" MultiFactorVisible="False" x10="x10" Units="%">
+			<Bindings>
+				<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="LOAD_CH"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="75" Height="30" X="175" Y="470" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENG_OIL_PRESS_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENG_OIL_PRESS_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENG_OIL_PRESS_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="475" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="BAR"/>
+		<TextBox Width="75" Height="30" X="175" Y="380" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LO_TEMP_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LO_TEMP_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LO_TEMP_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="385" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="°C"/>
+		<TextBox Width="90" Height="30" X="80" Y="530" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="ENGINE HOURS"/>
+		<TextBox Width="75" Height="30" X="175" Y="530" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENGINE_HOUR_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENGINE_HOUR_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="535" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="HOUR"/>
+		<TextBox Width="75" Height="30" X="175" Y="680" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LO_TEMP_L1_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LO_TEMP_L1_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LO_TEMP_L1_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="50" X="95" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;32.0;N;N;N" Text="DG1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="_TITLE"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="190" Y="810" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;N;N;N" Text="NORMAL">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ALARM" SelectedValue1="---" DefaultValue="NORMAL">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COMMON_ALARM_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COMMON_ALARM_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="80" Y="810" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="COMMON ALARM"/>
+		<TextBox Width="30" Height="25" X="200" Y="290" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="RPM"/>
+		<TextBox Width="75" Height="30" X="125" Y="285" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="200">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="RPM_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="RPM_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="RPM_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="80" Y="410" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="COOLANT LEVEL"/>
+		<TextBox Width="75" Height="30" X="175" Y="410" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_LEVEL_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_LEVEL_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_LEVEL_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="415" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="M"/>
+		<TextBox Width="90" Height="30" X="80" Y="560" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="FUEL USED"/>
+		<TextBox Width="75" Height="30" X="175" Y="560" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FUEL_USED_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FUEL_USED_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FUEL_USED_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="565" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="L"/>
+		<TextBox Width="90" Height="30" X="80" Y="440" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="COOLANT TEMP"/>
+		<TextBox Width="75" Height="30" X="175" Y="440" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_TEMP_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_TEMP_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_TEMP_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="445" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="°C"/>
+		<TextBox Width="90" Height="30" X="80" Y="590" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="OIL PRESSURE"/>
+		<TextBox Width="75" Height="30" X="175" Y="590" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OIL_PRESS_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OIL_PRESS_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OIL_PRESS_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="BAR"/>
+		<TextBox Width="75" Height="30" X="175" Y="650" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="RUN_HOUR_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="RUN_HOUR_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="655" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="HOUR"/>
+		<TextBox Width="90" Height="30" X="80" Y="650" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="RUN HOURS"/>
+		<TextBox Width="90" Height="30" X="80" Y="620" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="COOL TEMP"/>
+		<TextBox Width="75" Height="30" X="175" Y="620" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOL_TEMP_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOL_TEMP_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOL_TEMP_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="625" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="°C"/>
+		<TextBox Width="90" Height="30" X="80" Y="710" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="COOLANT TEMP L1"/>
+		<TextBox Width="75" Height="30" X="175" Y="710" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_TEMP_L1_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_TEMP_L1_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_TEMP_L1_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="715" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="°C"/>
+		<TextBox Width="90" Height="30" X="80" Y="740" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="ENG OIL PRESSURE L1"/>
+		<TextBox Width="75" Height="30" X="175" Y="740" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENG_OIL_PRESS_L1_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENG_OIL_PRESS_L1_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENG_OIL_PRESS_L1_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="745" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="BAR"/>
+		<TextBox Width="90" Height="30" X="80" Y="770" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="COOLANT LEVEL L1"/>
+		<TextBox Width="75" Height="30" X="175" Y="770" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_LEVEL_L1_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_LEVEL_L1_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COOLANT_LEVEL_L1_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="250" Y="775" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="M"/>
+		<TextBox Width="75" Height="30" X="125" Y="315" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;26.0;N;N;N" Text="200">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OVERSPEED_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OVERSPEED_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="InfoTextWhite">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OVERSPEED_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="200" Y="320" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="% OVERSPEED"/>
+	</Children>
+</RootElement>

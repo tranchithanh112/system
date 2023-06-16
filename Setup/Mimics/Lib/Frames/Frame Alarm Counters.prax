@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="500" Height="230" GridSpacing="10">
+	<Children>
+		<TextBox Width="110" Height="30" Y="40" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N" Text="Total"/>
+		<TextBox Width="110" Height="30" Y="80" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N" Text="Emergencys"/>
+		<TextBox Width="110" Height="30" Y="120" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N" Text="Alarms"/>
+		<TextBox Width="110" Height="30" Y="160" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N" Text="Warnings"/>
+		<TextBox Width="110" Height="30" Y="200" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N" Text="Cautions"/>
+		<TextBox Width="120" Height="30" X="120" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N" Text="Total"/>
+		<TextBox Width="120" Height="30" X="250" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N" Text="AckNowledged"/>
+		<TextBox Width="120" Height="30" X="380" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N" Text="UnackNowledged"/>
+		<TextBox Width="120" Height="30" X="120" Y="40" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="120" Y="80" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Emergency">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="120" Y="120" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Alarm">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="120" Y="200" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Caution">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="250" Y="40" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmAcknowledgedFilter="AcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="250" Y="80" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Emergency" AlarmAcknowledgedFilter="AcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="250" Y="120" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Alarm" AlarmAcknowledgedFilter="AcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="250" Y="200" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Caution" AlarmAcknowledgedFilter="AcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="380" Y="40" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="380" Y="80" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Emergency" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="380" Y="120" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Alarm" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="380" Y="200" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Caution" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="120" Y="160" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Warning">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="250" Y="160" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Warning" AlarmAcknowledgedFilter="AcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="30" X="380" Y="160" CornerRoundRadius="5" Font="Segoe UI-14.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Warning" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

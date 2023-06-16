@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="72" Height="72" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Bezier Width="1.5" LineColor="TextInfoHeader" ClosedOutline="True" FillColor="Transparent">
+			<Points>
+				<Point Coord="19;74"/>
+				<Point Coord="37;81"/>
+				<Point Coord="53;74"/>
+				<Point Coord="53;74"/>
+				<Point Coord="64;86"/>
+				<Point Coord="64;86"/>
+				<Point Coord="9;86"/>
+			</Points>
+		</Bezier>
+		<Ellipse BorderWidth="1.5" BorderColor="TextInfoHeader" LinePosition="Centered" CenterX="36" CenterY="36" RadiusX="34" RadiusY="34" ArcBegin="-125" ArcEnd="235">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue7="Green" DefaultValue="Transparent">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="RUNNING_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FAILURE_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+		<Frame Width="68" Height="68" X="2" Y="2" Path=".\FAN_BLADE.prax"/>
+	</Children>
+</RootElement>

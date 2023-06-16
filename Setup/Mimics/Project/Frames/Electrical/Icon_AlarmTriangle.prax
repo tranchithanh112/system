@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="80" Height="80" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle FlashFast="True" Width="80" Height="80" BorderColor="White" CornerRoundRadius="10">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Flash" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<Bindings>
+						<FrameBinding TargetPropertyName="AlarmGroup" ExportedPropertyName="Alarm_Group_INT"/>
+					</Bindings>
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</Rectangle>
+		<Button Width="70" Height="70" X="5" Y="5" Text="" FillColor="Transparent" OutlineColor="White" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<Polyline Width="2" LineColor="White" ClosedOutline="True" FillColor="AlarmRed">
+					<Bindings>
+						<AlarmCountBinding TargetPropertyName="FillColor" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+							<Bindings>
+								<FrameBinding TargetPropertyName="AlarmGroup" ExportedPropertyName="Alarm_Group_INT"/>
+							</Bindings>
+							<ConvertParams>
+								<UInt32ToColorConvertParams ColorWhenZero="PageInfoLine"/>
+							</ConvertParams>
+						</AlarmCountBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="5;60"/>
+						<Point Coord="35;10"/>
+						<Point Coord="65;60"/>
+					</Points>
+				</Polyline>
+				<Polyline Width="2" LineColor="White" ClosedOutline="True" FillColor="Background">
+					<Points>
+						<Point Coord="15;55"/>
+						<Point Coord="35;20"/>
+						<Point Coord="55;55"/>
+					</Points>
+				</Polyline>
+				<Ellipse BorderWidth="0" FillColor="White" CenterX="35" CenterY="50" RadiusX="3" RadiusY="3">
+					<Bindings>
+						<AlarmCountBinding TargetPropertyName="FillColor">
+							<ConvertParams>
+								<UInt32ToColorConvertParams ColorWhenZero="Gray" ColorWhenNonZero="Foreground"/>
+							</ConvertParams>
+						</AlarmCountBinding>
+					</Bindings>
+				</Ellipse>
+				<Bezier Width="0" LineColor="White" FillColor="White">
+					<Bindings>
+						<AlarmCountBinding TargetPropertyName="FillColor">
+							<ConvertParams>
+								<UInt32ToColorConvertParams ColorWhenZero="Gray" ColorWhenNonZero="Foreground"/>
+							</ConvertParams>
+						</AlarmCountBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="34;46"/>
+						<Point Coord="32;34"/>
+						<Point Coord="31;30"/>
+						<Point Coord="35;30"/>
+						<Point Coord="38;34"/>
+						<Point Coord="36;46"/>
+					</Points>
+				</Bezier>
+			</Children>
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="30" XOffset="1" YOffset="-135" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="400" Height="200" X="-159" Y="-195" Alarm_Group_UINT="0" ID="DG" Path=".\PopUp_AlarmList.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Alarm_Group_UINT" ExportedPropertyName="Alarm_Group_UINT"/>
+								<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

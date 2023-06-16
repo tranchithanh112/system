@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1200" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1200" Highlight_Button_NR="1" Page_Title="GENERAL INFO" AutoShow_Page_Title="False" Path=".\Frames\Menus\CommonMenuFrame_1920x1200.prax"/>
+		<NavFrame Width="1645" Height="925" Y="80" OriginOffsetX="0" OriginOffsetY="0" ClipToBounds="True">
+			<Bindings>
+				<VariableBinding TargetPropertyName="NavFrameCurrentAddress">
+					<Variable>
+						<FloatVariable Name="Navframe_Index" IsLocal="False" IsRetain="True"/>
+					</Variable>
+				</VariableBinding>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1920" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="Height" DefaultValue="1080" ActivateValue="925" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\_00_1 EMPTY CHILD FRAME for 1920x1200.prax"/>
+			</AddressList>
+		</NavFrame>
+	</Children>
+</RootElement>

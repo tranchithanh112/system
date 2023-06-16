@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="500" Height="300" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Rectangle Width="22" Height="175" X="370" Y="75" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="420" Y="75" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="70" Y="75" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<FillBar Width="22" Height="175" X="70" Y="75" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" LimitLowColor="IndicatorOrange" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<Polyline LineColor="Gray" FillColor="Transparent">
+			<Points>
+				<Point Coord="50;85"/>
+				<Point Coord="50;250"/>
+				<Point Coord="355;250"/>
+			</Points>
+		</Polyline>
+		<Line Color="Gray" X0="505" Y0="250" X1="355" Y1="250" P0CapStyle="Arrow" P0CapSize="6"/>
+		<Line Color="Gray" X0="50" Y0="75" X1="50" Y1="85" P0CapStyle="Arrow" P0CapSize="6"/>
+		<TextBox Width="27.5" Height="20" X="505" Y="240" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;17.0;N;N;N" Text="CYL"/>
+		<TextBox Width="20" Height="20" X="495" Y="50" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Unit"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="20" X="70" Y="255" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="01"/>
+		<TextBox Width="22" Height="20" X="120" Y="255" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="02"/>
+		<TextBox Width="22" Height="20" X="170" Y="255" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="03"/>
+		<TextBox Width="22" Height="20" X="220" Y="255" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="04"/>
+		<TextBox Width="22" Height="20" X="270" Y="255" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="05"/>
+		<TextBox Width="22" Height="20" X="320" Y="255" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="06"/>
+		<Line Color="Gray" X0="45" Y0="215" X1="50" Y1="215"/>
+		<Line Color="Gray" X0="45" Y0="180" X1="50" Y1="180"/>
+		<Line Color="Gray" X0="45" Y0="145" X1="50" Y1="145"/>
+		<Line Color="Gray" X0="45" Y0="110" X1="50" Y1="110"/>
+		<TextBox Width="60" Height="20" X="220" Y="20" BorderColor="Transparent" FillColor="Transparent" TextColor="Orange" Font="Praxis;18.0;N;N;N" Text="M/E CYL VALVE 1 EXH.GAS TEMP ">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Name_Ch"/>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Title_Color"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="240" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="0">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="22" Height="175" X="120" Y="75" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="170" Y="75" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="220" Y="75" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="270" Y="75" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="320" Y="75" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<TextBox Width="22" Height="20" X="70" Y="50" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="Value_Ch_Dec"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="20" X="120" Y="50" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="117">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="Value_Ch_Dec"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="20" X="220" Y="50" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="135">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="Value_Ch_Dec"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="20" X="170" Y="50" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="126">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="Value_Ch_Dec"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="20" X="320" Y="50" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="153">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="Value_Ch_Dec"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="20" X="270" Y="50" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="144">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="Value_Ch_Dec"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="205" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="100">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.2">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="170" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="200">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.4">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="135" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="300">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.6">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="100" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="400">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.8">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="65" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="500">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="22" Height="175" X="120" Y="75" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" LimitLowColor="IndicatorOrange" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="117">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="22" Height="175" X="170" Y="75" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" LimitLowColor="IndicatorOrange" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="126">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="22" Height="175" X="220" Y="75" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" LimitLowColor="IndicatorOrange" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="135">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="22" Height="175" X="270" Y="75" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" LimitLowColor="IndicatorOrange" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="144">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="22" Height="175" X="320" Y="75" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" LimitLowColor="IndicatorOrange" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="153">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="22" Height="175" X="370" Y="75" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" LimitLowColor="IndicatorOrange" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="162">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="22" Height="20" X="370" Y="50" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="162">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="Value_Ch_Dec"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="22" Height="175" X="420" Y="75" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" LimitLowColor="IndicatorOrange" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="171">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="22" Height="20" X="420" Y="50" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="171">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="Value_Ch_Dec"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="20" X="370" Y="255" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="07"/>
+		<TextBox Width="22" Height="20" X="420" Y="255" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="08"/>
+		<Panel Width="25" Height="175" X="68.5" Y="75" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Gray" FillColor="Background" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Base_Ch"/>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+			<Children>
+				<Line Color="Red" X0="0" Y0="0" X1="25" Y1="175"/>
+				<Line Color="Red" X0="0" Y0="175" X1="25" Y1="0"/>
+				<TextBox Width="25" Height="20" Y="75" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF"/>
+			</Children>
+		</Panel>
+		<TextBox Width="35" Height="20" X="63.5" Y="95" BorderColor="Transparent" FillColor="Red" TextColor="OldAlarm" Font="Praxis;18.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LR_ALM_CH"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Panel Width="25" Height="175" X="118.5" Y="75" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Gray" FillColor="Background" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="117">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+			<Children>
+				<Line Color="Red" X0="0" Y0="0" X1="25" Y1="175"/>
+				<Line Color="Red" X0="0" Y0="175" X1="25" Y1="0"/>
+				<TextBox Width="25" Height="20" Y="75" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF"/>
+			</Children>
+		</Panel>
+		<Panel Width="25" Height="175" X="168.5" Y="75" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Gray" FillColor="Background" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="126">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+			<Children>
+				<Line Color="Red" X0="0" Y0="0" X1="25" Y1="175"/>
+				<Line Color="Red" X0="0" Y0="175" X1="25" Y1="0"/>
+				<TextBox Width="25" Height="20" Y="75" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF"/>
+			</Children>
+		</Panel>
+		<Panel Width="25" Height="175" X="218.5" Y="75" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Gray" FillColor="Background" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="135">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+			<Children>
+				<Line Color="Red" X0="0" Y0="0" X1="25" Y1="175"/>
+				<Line Color="Red" X0="0" Y0="175" X1="25" Y1="0"/>
+				<TextBox Width="25" Height="20" Y="75" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF"/>
+			</Children>
+		</Panel>
+		<Panel Width="25" Height="175" X="268.5" Y="75" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Gray" FillColor="Background" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="144">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+			<Children>
+				<Line Color="Red" X0="0" Y0="0" X1="25" Y1="175"/>
+				<Line Color="Red" X0="0" Y0="175" X1="25" Y1="0"/>
+				<TextBox Width="25" Height="20" Y="75" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF"/>
+			</Children>
+		</Panel>
+		<Panel Width="25" Height="175" X="318.5" Y="75" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Gray" FillColor="Background" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="153">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+			<Children>
+				<Line Color="Red" X0="0" Y0="0" X1="25" Y1="175"/>
+				<Line Color="Red" X0="0" Y0="175" X1="25" Y1="0"/>
+				<TextBox Width="25" Height="20" Y="75" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF"/>
+			</Children>
+		</Panel>
+		<Panel Width="25" Height="175" X="368.5" Y="75" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Gray" FillColor="Background" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="162">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+			<Children>
+				<Line Color="Red" X0="0" Y0="0" X1="25" Y1="175"/>
+				<Line Color="Red" X0="0" Y0="175" X1="25" Y1="0"/>
+				<TextBox Width="25" Height="20" Y="75" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF"/>
+			</Children>
+		</Panel>
+		<Panel Width="25" Height="175" X="418.5" Y="75" ClipToBounds="True" BorderWidth="1" BorderStyle="Flat" BorderColor="Gray" FillColor="Background" CornerRoundRadius="2">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="171">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Base_Ch"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+			<Children>
+				<Line Color="Red" X0="0" Y0="0" X1="25" Y1="175"/>
+				<Line Color="Red" X0="0" Y0="175" X1="25" Y1="0"/>
+				<TextBox Width="25" Height="20" Y="75" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF"/>
+			</Children>
+		</Panel>
+		<TextBox Width="35" Height="20" X="113.5" Y="95" BorderColor="Transparent" FillColor="Red" TextColor="OldAlarm" Font="Praxis;18.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="117">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="LR_ALM_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="35" Height="20" X="163.5" Y="95" BorderColor="Transparent" FillColor="Red" TextColor="OldAlarm" Font="Praxis;18.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="126">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="LR_ALM_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="35" Height="20" X="213.5" Y="95" BorderColor="Transparent" FillColor="Red" TextColor="OldAlarm" Font="Praxis;18.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="135">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="LR_ALM_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="35" Height="20" X="263.5" Y="95" BorderColor="Transparent" FillColor="Red" TextColor="OldAlarm" Font="Praxis;18.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="144">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="LR_ALM_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="35" Height="20" X="313.5" Y="95" BorderColor="Transparent" FillColor="Red" TextColor="OldAlarm" Font="Praxis;18.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="153">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="LR_ALM_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="35" Height="20" X="363.5" Y="95" BorderColor="Transparent" FillColor="Red" TextColor="OldAlarm" Font="Praxis;18.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="162">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="LR_ALM_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="35" Height="20" X="413.5" Y="95" BorderColor="Transparent" FillColor="Red" TextColor="OldAlarm" Font="Praxis;18.0;N;N;N" Text="LR">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="171">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="LR_ALM_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="58.5" Y="120" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF GT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SF_GT_CH"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="108.5" Y="120" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF GT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="117">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="SF_GT_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="158.5" Y="120" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF GT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="126">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="SF_GT_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="208.5" Y="120" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF GT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="135">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="SF_GT_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="258.5" Y="120" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF GT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="144">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="SF_GT_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="308.5" Y="120" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF GT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="153">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="SF_GT_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="358.5" Y="120" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF GT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="162">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="SF_GT_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="25" X="408.5" Y="120" BorderColor="Transparent" TextColor="Red" Font="Praxis;18.0;N;N;N" Text="SF GT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="171">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="SF_GT_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="22" Height="175" X="465" Y="75" FillDirection="BottomToTop" RangeEnd="600" LimitType="None" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" LimitLowColor="IndicatorOrange" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVG_CH"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="22" Height="20" X="465" Y="255" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="AVG"/>
+		<TextBox Width="22" Height="20" X="465" Y="50" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVG_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="Value_Ch_Dec"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

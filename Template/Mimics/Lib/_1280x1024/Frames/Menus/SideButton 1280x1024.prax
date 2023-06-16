@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="270" Height="85" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="215" Height="65" X="40" Y="10" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="MAIN BUTTON XX">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ButtonText"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextInfoHeader" DefaultValue="TextInfo">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Button_NR"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Button LockOverlayVisible="False" Width="241" Height="55" X="14" Y="15" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent"/>
+				<ValueCompareBinding TargetPropertyName="Visible" SecondValue="0" CompareTolerance="0.1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="MimicNamePD" ExportedPropertyName="OpenMimicNumber"/>
+					</Bindings>
+				</OpenMimicByNumberClickAction>
+				<SetVariableValueClickAction>
+					<Variable>
+						<StringVariable Name="Top_Page_Title" IsLocal="False"/>
+					</Variable>
+					<VariableSetter>
+						<StringVariableSetter>
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="SetPageTitle"/>
+							</Bindings>
+						</StringVariableSetter>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+				<SetVariableValueClickAction>
+					<Variable>
+						<BoolVariable Name="Show_Side_Menu" IsLocal="True" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<BoolVariableSetter/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+		<Rectangle Width="205" Height="45" X="20" Y="20" BorderColor="TextInfoHeader" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Button_NR"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Rectangle>
+		<Button LockOverlayVisible="False" Width="240" Height="55" X="16" Y="15" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent"/>
+				<ValueCompareBinding TargetPropertyName="Visible" SecondValue="0" CompareTolerance="0.1" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="3000" XOffset="-252" YOffset="1" OpenAnimationDuration="0" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="260" Height="655" X="-246" Y="-284" OriginOffsetX="0" OriginOffsetY="0" Total_SBs="0" Text_SB1="SUB BUTTON 00" OpenMimicNumber="0" SetPageTitle_SB1="" Text_SB2="SUB BUTTON 01" SetPageTitle_SB2="" Text_SB3="SUB BUTTON 02" SetPageTitle_SB3="" Text_SB4="SUB BUTTON 04" SetPageTitle_SB4="" Text_SB5="SUB BUTTON 05" SetPageTitle_SB5="" Text_SB6="SUB BUTTON 06" SetPageTitle_SB6="" Text_SB7="SUB BUTTON 07" SetPageTitle_SB7="" Text_SB8="SUB BUTTON 08" SetPageTitle_SB8="" Text_SB9="SUB BUTTON 09" SetPageTitle_SB9="" Text_SB10="SUB BUTTON 10" SetPageTitle_SB10="" Path=".\SubSideMenu 1280x1024.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="OpenMimicNumber"/>
+								<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Text_SB1"/>
+								<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Text_SB2"/>
+								<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Text_SB3"/>
+								<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Text_SB4"/>
+								<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Text_SB5"/>
+								<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Text_SB6"/>
+								<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Text_SB7"/>
+								<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Text_SB8"/>
+								<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Text_SB9"/>
+								<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Text_SB10"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="SetPageTitle_SB1"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="SetPageTitle_SB2"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="SetPageTitle_SB3"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="SetPageTitle_SB4"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="SetPageTitle_SB5"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="SetPageTitle_SB6"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="SetPageTitle_SB7"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="SetPageTitle_SB8"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="SetPageTitle_SB9"/>
+								<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="SetPageTitle_SB10"/>
+								<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Total_SBs"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="25" Height="45" X="20" Y="20" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="&lt;">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="Visible" SecondValue="0" CompareTolerance="0.1" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Total_SBs"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

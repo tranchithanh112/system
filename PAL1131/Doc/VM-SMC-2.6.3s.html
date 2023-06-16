@@ -1,0 +1,133 @@
+﻿<!DOCTYPE HTML PUBLIC " -//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<STYLE TYPE="text/css">
+ <!-- 
+
+BODY { background: #FFFFFF; text: #000000; font-family: 'Courier New'; font-size: small;}
+TH { background: #FFFFFF; text: #000000; font-family: 'Verdana'; font-size: 12px;} 
+TABLE { border-width:1px; border-style:None; border-collapse:collapse; border-top: 1px; border-top-style: solid; border-bottom: 1px; border-bottom-style: solid; border-left: 1px; border-left-style: solid; border-right: 1px; border-right-style: solid;}
+.nor {	background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; font-size: x-small;}
+.ident { background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; }
+.keyw { background-color: #FFFFFF; color: Blue; font-family: 'Courier New'; font: bold;}
+.oper { background-color: #FFFFFF; color: #000000; font-family: 'Verdana'; font-size: x-small;}
+.argum { background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; font-size: x-small;}
+.argt { background-color: Yellow; color: DarkBlue; font-family: 'Courier New'; font-size: x-small;}
+.errpos { background-color: Black; color: Red; font-family: 'Courier New'; font-size: x-small;}
+.good { background-color: Blue; color: #C0C0C0; font-family: 'Courier New'; font-size: x-small;}
+.comment {	background-color: #FFFFFF; color: black; font-family: 'Times New Roman';  font-size: x-small; }
+.typconst { background-color: #C0C0C0; color: DarkGreen; font-family: 'Courier New'; font-size: x-small;} 
+.nums { background-color: #FFFFFF; color: #00AFAF; font-family: 'Courier New'; font-size: x-small;}
+.strs { background-color: #FFFF00; color: DarkGreen; font-family: 'Courier New'; font-size: x-small;}
+.typef { background-color: #FFFFFF; color: Blue; font-family: 'Courier New'; }
+.argcommentname { background-color: #C0C0C0; color: Blue; font-family: 'Courier New'; font-size: x-small; padding-left: 5px; padding-right: 5px;}
+.argcommentdesc { background-color: #FFFFFF; color: DarkBlue; font-family: 'Times New Roman'; font-size: x-small;}
+--> 
+ </STYLE> 
+ </head><body bgcolor="#FFFFFF">
+<h3 align="center">Specyfikacja maszyny wirtualnej dla sterownika SMC</h3><div align="right" class="ident">Wersja: <span class="keyw">2.6.3</span> z dnia <span class="keyw">2010.08-08 11:13</span></div>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Rozszerzenia typów</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Typ</th><th>Implementacja</th><th>Szczegóły</th><th>Komentarz</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Usunięte elementarne typy</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Nr</th><th>Typ</th><th>Komentarz</th></tr>
+<tr><td>1</td><td><span class="keyw">LREAL</span></td><td><span class="comment">&nbsp;</span></td></tr>
+<tr><td>2</td><td><span class="keyw">STRING</span></td><td><span class="comment">&nbsp;</span></td></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Zależne pliki</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Typ</th><th>Kolejność</th><th>Nazwa</th></tr>
+<tr><td>PRE</td><td><span class="keyw">0</span></td><td><span class="comment">VMCore.xml</span></td></tr>
+<tr><td>POST</td><td><span class="keyw">0</span></td><td><span class="comment">le-IF.xml</span></td></tr>
+<tr><td>POST</td><td><span class="keyw">1</span></td><td><span class="comment">flash.xml</span></td></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Zaimplementowane funkcje</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Kod</th><th>Nazwa:Typ</th><th>Argumenty</th><th>Opis</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Specyficzne funkcje <i>in-line</i></div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Nazwa:Typ</th><th>Argumenty</th><th>Opis</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Specyficzne bloki funkcjonalne</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Nazwa</th><th>Parametry WE</th><th>Parametry WY</th><th>Opis</th></tr>
+<tr><td>COM_SM4</td><td><span class="argum">EN:<span class="typef">BOOL</span><br>
+NO:<span class="typef">BYTE</span><br>
+TOUT:<span class="typef">TIME</span><br>
+OUT1:<span class="typef">BOOL</span><br>
+OUT2:<span class="typef">BOOL</span><br>
+OUT3:<span class="typef">BOOL</span><br>
+OUT4:<span class="typef">BOOL</span><br>
+OUT5:<span class="typef">BOOL</span><br>
+OUT6:<span class="typef">BOOL</span><br>
+OUT7:<span class="typef">BOOL</span><br>
+OUT8:<span class="typef">BOOL</span><br>
+</span></td><td><span class="argum">C:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Blok komunikacyjny dla SM4</span></td></tr><tr><td>COM_SM1</td><td><span class="argum">EN:<span class="typef">BOOL</span><br>
+NO:<span class="typef">BYTE</span><br>
+TOUT:<span class="typef">TIME</span><br>
+</span></td><td><span class="argum">C:<span class="typef">BOOL</span><br>
+IN1:<span class="typef">REAL</span><br>
+IN2:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Blok komunikacyjny dla SM1</span></td></tr><tr><td>COM_SM2</td><td><span class="argum">EN:<span class="typef">BOOL</span><br>
+NO:<span class="typef">BYTE</span><br>
+TOUT:<span class="typef">TIME</span><br>
+</span></td><td><span class="argum">C:<span class="typef">BOOL</span><br>
+IN1:<span class="typef">REAL</span><br>
+IN2:<span class="typef">REAL</span><br>
+IN3:<span class="typef">REAL</span><br>
+IN4:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Blok komunikacyjny dla SM2</span></td></tr><tr><td>COM_SM3_SIMPLE</td><td><span class="argum">EN:<span class="typef">BOOL</span><br>
+NO:<span class="typef">BYTE</span><br>
+TOUT:<span class="typef">TIME</span><br>
+</span></td><td><span class="argum">C:<span class="typef">BOOL</span><br>
+IN1:<span class="typef">BOOL</span><br>
+IN2:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Blok komunikacyjny dla SM3 (dawniej COM_SM3)</span></td></tr><tr><td>COM_SM3</td><td><span class="argum">EN:<span class="typef">BOOL</span><br>
+NO:<span class="typef">BYTE</span><br>
+TOUT:<span class="typef">TIME</span><br>
+R1:<span class="typef">BOOL</span><br>
+R2:<span class="typef">BOOL</span><br>
+</span></td><td><span class="argum">C:<span class="typef">BOOL</span><br>
+IN1:<span class="typef">BOOL</span><br>
+IN2:<span class="typef">BOOL</span><br>
+IN1_REAL:<span class="typef">REAL</span><br>
+IN2_REAL:<span class="typef">REAL</span><br>
+WG1:<span class="typef">REAL</span><br>
+WP1:<span class="typef">REAL</span><br>
+WG2:<span class="typef">REAL</span><br>
+WP2:<span class="typef">REAL</span><br>
+LG1:<span class="typef">REAL</span><br>
+LP1:<span class="typef">REAL</span><br>
+LG2:<span class="typef">REAL</span><br>
+LP2:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Blok komunikacyjny dla nowego SM3 z obsługą wejść licznikowych</span></td></tr><tr><td>COM_SM5</td><td><span class="argum">EN:<span class="typef">BOOL</span><br>
+NO:<span class="typef">BYTE</span><br>
+TOUT:<span class="typef">TIME</span><br>
+</span></td><td><span class="argum">C:<span class="typef">BOOL</span><br>
+IN1:<span class="typef">BOOL</span><br>
+IN2:<span class="typef">BOOL</span><br>
+IN3:<span class="typef">BOOL</span><br>
+IN4:<span class="typef">BOOL</span><br>
+IN5:<span class="typef">BOOL</span><br>
+IN6:<span class="typef">BOOL</span><br>
+IN7:<span class="typef">BOOL</span><br>
+IN8:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Blok komunikacyjny dla SM5</span></td></tr><tr><td>APON</td><td><span class="argum">R:<span class="typef">BOOL</span><br>
+</span></td><td><span class="argum">Q:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">R</span><span class="argcommentdesc">&nbsp;- Wejście kasujące alarm</span></div>Alarm restartu sterownika</span></td></tr><tr><td>ASTR</td><td><span class="argum">R:<span class="typef">BOOL</span><br>
+</span></td><td><span class="argum">Q:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">R</span><span class="argcommentdesc">&nbsp;- Wejście kasujące alarm</span></div>Alarm załadowania nowej konfiguracji lub utraty zmiennych RETAIN</span></td></tr><tr><td>COM_TIMEOUT</td><td><span class="argum">IN:<span class="typef">WORD</span><br>
+</span></td><td><span class="argum">OUT:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">IN</span><span class="argcommentdesc">&nbsp;- Command</span></div>Timeout counter block for SMC</span></td></tr><tr><td>ACOM</td><td><span class="argum">R:<span class="typef">BOOL</span><br>
+</span></td><td><span class="argum">Q:<span class="typef">BOOL</span><br>
+COUNT:<span class="typef">WORD</span><br>
+NO:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">R</span><span class="argcommentdesc">&nbsp;- Wejście kasujące alarm</span></div>Alarm komunikacji</span></td></tr></table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="right" class="ident">Data eksportu: <span class="keyw">2010.11-18 17:04:41</span></div>
+</body>
+</html>

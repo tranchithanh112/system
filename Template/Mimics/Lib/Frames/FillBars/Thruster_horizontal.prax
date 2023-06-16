@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="500" Height="15" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Panel Width="500" Height="15" ClipToBounds="True" BorderWidth="1" BorderStyle="Sunken" BorderColor="Background" FillColor="BackgroundGauge">
+			<Children>
+				<Slider UserActionsLocked="True" Width="500" Height="35" Y="-10" MinValue="-60" MaxValue="60" ShowThumbLabel="False" LineWidth="15" ThumbSize="35" ThumbTextSize="0" ThumbColor="Transparent" ActiveTrackColor="IndicationLine" InactiveTrackColor="BackgroundConning">
+					<Bindings>
+						<FilteredValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+						<ChannelRangeLowBinding TargetPropertyName="MinValue">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+							</Bindings>
+						</ChannelRangeLowBinding>
+						<ChannelRangeHighBinding TargetPropertyName="MaxValue">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+							</Bindings>
+						</ChannelRangeHighBinding>
+					</Bindings>
+				</Slider>
+				<Line Color="TextInfo" X0="250" Y0="0" X1="250" Y1="15"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

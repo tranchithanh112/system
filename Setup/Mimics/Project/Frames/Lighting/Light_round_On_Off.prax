@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Ellipse BorderWidth="0" FillColor="LightingOff" CenterX="50" CenterY="50" RadiusX="50" RadiusY="50">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="LightingAmber" DefaultValue="LightingOff">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="Light_color"/>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<SelectFirstChannelNumberBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Light_CH"/>
+										<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="Demo_CH"/>
+										<ChannelValueBinding TargetPropertyName="ConditionValue0">
+											<Bindings>
+												<NameLookupBinding TargetPropertyName="ChannelNumber" Name="LIGHT_SIM_ACTIVE"/>
+											</Bindings>
+										</ChannelValueBinding>
+									</Bindings>
+								</SelectFirstChannelNumberBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+	</Children>
+</RootElement>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="40">
+	<Children>
+		<Button Width="120" Height="40" Text="Ack" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<AcknowledgeAlarmListAlarmsClickAction AcknowledgeTarget="All AlarmLists"/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="40" X="120" Text="Stop Horn" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<RequestStopHornClickAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="40" X="360" Text="Group" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<SelectPageClickAction Page="GroupOverviewPage"/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="40" X="480" Text="Graph" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<SelectPageClickAction Page="MimicOverviewPage"/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="40" X="600" Text="Channel" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<SelectPageClickAction Page="ChannelPage"/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="40" X="720" Text="Diagnostic" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<SelectPageClickAction Page="DiagnosticPage"/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="40" X="840" Text="Skip" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<SelectPageClickAction Page="SkipPage"/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="40" X="960" Text="Inhibit" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<SelectPageClickAction Page="InhibitPage"/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="40" X="1080" Text="Active Inhib." Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<SelectPageClickAction Page="ActiveInhibitPage"/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="40" X="1200" Text="Unavailable" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<SelectPageClickAction Page="UnavailablePage"/>
+			</ClickActions>
+		</Button>
+		<Button Visible="False" Width="120" Height="40" X="1320" Text="Last Alarms" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="4294967281"/>
+			</ClickActions>
+		</Button>
+		<Button Visible="False" Width="120" Height="40" X="1440" Text="Last SensFails" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="4294967280"/>
+			</ClickActions>
+		</Button>
+		<Button Visible="False" Width="120" Height="40" X="1560" Text="No Alarms" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="4294967279"/>
+			</ClickActions>
+		</Button>
+		<Button Visible="False" Width="120" Height="40" X="1680" Text="No SensFails" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="4294967278"/>
+			</ClickActions>
+		</Button>
+		<Button FlashArea="FillAndOutLine" Width="120" Height="40" X="240" Text="Alarm" Font="Segoe UI-18.0-B-N-N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="FlashFast" AlarmPriorityFilter="Emergency" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<SelectFirstBoolBinding TargetPropertyName="FlashSteadyOn" SelectedValue0="False">
+					<Bindings>
+						<AlarmCountBinding TargetPropertyName="ConditionValue1" AlarmAcknowledgedFilter="AcknowledgedAlarms">
+							<ConvertParams>
+								<UInt32ToBoolConvertParams/>
+							</ConvertParams>
+						</AlarmCountBinding>
+						<AlarmCountBinding TargetPropertyName="ConditionValue0" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+							<ConvertParams>
+								<UInt32ToBoolConvertParams/>
+							</ConvertParams>
+						</AlarmCountBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+				<AlarmCountBinding TargetPropertyName="Flash">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+			<ClickActions>
+				<ShowAlarmPageClickAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

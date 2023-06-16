@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="500" Height="105" ClipToBounds="True" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle FlashArea="OutlineOnly" Width="500" Height="55" Y="50" LinePosition="Centered" BorderColor="BackgroundConning" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Flash" ChannelNumber="101720"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="FlashSteadyOn" ChannelNumber="101720" InvertCondition="True"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle FlashArea="OutlineOnly" Width="500" Height="55" BorderWidth="2" BorderColor="BackgroundGauge" FillColor="BackgroundGauge" CornerRoundRadius="5"/>
+		<Rectangle Width="500" Height="55" BorderWidth="0" FillColor="BackgroundConning" FillPatternColor="Transparent" LightingStyle="Radial"/>
+		<Line Color="TextInfo" X0="0" Y0="45" X1="500" Y1="45"/>
+		<Frame Width="4600" Height="45" X="-2045" Path=".\Slider_Complete_V2.prax">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="X" InRangeBegin="-360" InRangeEnd="360" OutRangeBegin="-250" OutRangeEnd="-3850">
+					<Bindings>
+						<FilteredValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</Frame>
+		<TextBox Width="80" Height="20" X="210" Y="80" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;12.0;N;N;N" Text="HEADING"/>
+		<TextBox Width="80" Height="20" X="355" Y="80" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;12.0;N;N;N" Text="SETPOINT"/>
+		<Rectangle FlashArea="OutlineOnly" Width="140" Height="50" X="180" Y="55" LinePosition="Centered" BorderColor="BackgroundConning" FillColor="Transparent">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Flash" ChannelNumber="101720"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="FlashSteadyOn" ChannelNumber="101720" InvertCondition="True"/>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="20" Height="30" X="280" Y="55" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="°"/>
+		<TextBox Width="20" Height="30" X="420" Y="55" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="°"/>
+		<TextBox Width="60" Height="30" X="365" Y="55" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="359.9">
+			<Bindings>
+				<FilteredValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="HSP_Request"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</FilteredValueBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="65" Height="25.6061" X="55" Y="65" ColorOff="StatusInactive" ColorOn="TextActive" ON_STATUS="False" TextButtonOff="AUTO" TextButtonOn="AUTO" ClickAction="Set Value" ClickAction_SetValue="0" ClickAction_CH="0" Path="..\Buttons\Button_SetChannel_ANALOG.prax"/>
+		<Line Width="2" Color="IndicationLine" X0="250" Y0="55" X1="250" Y1="0"/>
+		<Rectangle FlashArea="OutlineOnly" Width="500" Height="55" BorderWidth="2" LinePosition="Centered" BorderColor="BackgroundConning" FillColor="Transparent">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Flash" ChannelNumber="101720"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="FlashSteadyOn" ChannelNumber="101720" InvertCondition="True"/>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="60" Height="30" X="220" Y="55" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;26.0;B;N;N" Text="359.0">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="Text" SecondValue="0" CompareOperator=">" CompareTolerance="0.001" InvertCondition="True">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="FirstValue">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+					<ConvertParams>
+						<BoolToStringConvertParams>
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="TextWhenFalse">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+									</Bindings>
+									<ConvertParams>
+										<FloatToStringConvertParams DecimalPlaces="1"/>
+									</ConvertParams>
+								</ChannelValueBinding>
+								<RangeFormulaBinding TargetPropertyName="TextWhenTrue" InRangeBegin="-1" InRangeEnd="-360" OutRangeBegin="359" OutRangeEnd="0">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Value">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+											</Bindings>
+										</ChannelValueBinding>
+									</Bindings>
+									<ConvertParams>
+										<FloatToStringConvertParams DecimalPlaces="1"/>
+									</ConvertParams>
+								</RangeFormulaBinding>
+							</Bindings>
+						</BoolToStringConvertParams>
+					</ConvertParams>
+				</ValueCompareBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

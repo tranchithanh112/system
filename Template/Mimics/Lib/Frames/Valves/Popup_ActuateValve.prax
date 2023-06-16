@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="85" GridSpacing="5" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button Width="75" Height="40" X="5" Y="5" Text="Actuate" FillColor="Transparent" Font="Segoe UI;14.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Actuate"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Green" ColorWhenTrue="Transparent"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" SetValueType="Toggle Digital">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Actuate"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="75" Height="40" X="5" Y="55" Text="Exit" FillColor="Transparent" Font="Segoe UI;14.0;B;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

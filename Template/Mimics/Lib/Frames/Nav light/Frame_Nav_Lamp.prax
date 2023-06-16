@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement GridSpacing="1" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Polyline Width="0" ClosedOutline="True" FillColor="Background">
+			<Points>
+				<Point Coord="21;94"/>
+				<Point Coord="30;97"/>
+				<Point Coord="46;100"/>
+				<Point Coord="63;99"/>
+				<Point Coord="77;96"/>
+				<Point Coord="82;94"/>
+				<Point Coord="83;92"/>
+				<Point Coord="83;74"/>
+				<Point Coord="81;70"/>
+				<Point Coord="83;55"/>
+				<Point Coord="83;37"/>
+				<Point Coord="82;22"/>
+				<Point Coord="81;16"/>
+				<Point Coord="82;14"/>
+				<Point Coord="82;7"/>
+				<Point Coord="20;7"/>
+				<Point Coord="20;14"/>
+				<Point Coord="23;17"/>
+				<Point Coord="23;71"/>
+				<Point Coord="21;74"/>
+			</Points>
+		</Polyline>
+		<Button X="1" Y="1" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="KeyboardInputBackground" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Control"/>
+			</Bindings>
+			<Children>
+				<Polyline FlashColor="BackgroundConning" Width="0" ClosedOutline="True" FillColor="Black">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" DefaultValue="BackgroundConning">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<FrameBinding TargetPropertyName="SelectedValue6" ExportedPropertyName="Light_Color"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="On_Ch"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+							</Bindings>
+						</ChannelAlarmNotAckBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="35;80"/>
+						<Point Coord="47;81"/>
+						<Point Coord="57;81"/>
+						<Point Coord="66;80"/>
+						<Point Coord="73;79"/>
+						<Point Coord="77;78"/>
+						<Point Coord="77;17"/>
+						<Point Coord="67;20"/>
+						<Point Coord="50;21"/>
+						<Point Coord="47;21"/>
+						<Point Coord="35;20"/>
+					</Points>
+				</Polyline>
+			</Children>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="120" XOffset="-120" YOffset="3.5">
+					<Frame>
+						<FloatingFrame Width="130" Height="165" X="-134" Y="-28" Title_2="Light" Ch_MIMIC="0" Title_1="Light" Path=".\Frame_Nav_Lamp_Pop_Up.prax" Control="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Title_2" ExportedPropertyName="Title_2"/>
+								<FrameBinding TargetPropertyName="Title_1" ExportedPropertyName="Title_1"/>
+								<FrameBinding TargetPropertyName="Ch_MIMIC" ExportedPropertyName="Ch_MIMIC"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<Ellipse BorderWidth="1.5" BorderColor="TextInfo" LinePosition="Centered" CenterX="51" CenterY="7" RadiusX="31" RadiusY="6"/>
+		<Ellipse BorderWidth="1.5" BorderColor="TextInfo" LinePosition="Centered" FillColor="Transparent" CenterX="51" CenterY="14" RadiusX="31" RadiusY="7" ArcEnd="180" ArcLength="180"/>
+		<Line Width="1.5" Color="TextInfo" X0="20" Y0="7" X1="20" Y1="14"/>
+		<Line Width="1.5" Color="TextInfo" X0="82" Y0="7" X1="82" Y1="14"/>
+		<Line Width="1.5" Color="TextInfo" X0="23" Y0="17" X1="23" Y1="76"/>
+		<Line Width="1.5" Color="TextInfo" X0="30" Y0="19" X1="30" Y1="79"/>
+		<Line Width="1.5" Color="TextInfo" X0="36" Y0="20" X1="36" Y1="80"/>
+		<Bezier Width="1.5" LineColor="TextInfo" FillColor="Transparent">
+			<Points>
+				<Point Coord="35;20"/>
+				<Point Coord="29;49"/>
+				<Point Coord="35;80"/>
+			</Points>
+		</Bezier>
+		<Ellipse BorderWidth="1.5" BorderColor="TextInfo" LinePosition="Centered" FillColor="Transparent" CenterX="52" CenterY="74" RadiusX="31" RadiusY="7" ArcBegin="-20" ArcEnd="200" ArcLength="220"/>
+		<Line Width="1.5" Color="TextInfo" X0="78" Y0="17" X1="78" Y1="78"/>
+		<Bezier Width="1.5" LineColor="TextInfo" FillColor="Transparent">
+			<Points>
+				<Point Coord="79;77"/>
+				<Point Coord="87;52"/>
+				<Point Coord="81;16"/>
+			</Points>
+		</Bezier>
+		<Line Width="1.5" Color="TextInfo" X0="83" Y0="74" X1="83" Y1="92"/>
+		<Line Width="1.5" Color="TextInfo" X0="21" Y0="74" X1="21" Y1="95.2"/>
+		<Bezier Width="1.5" LineColor="TextInfo" FillColor="Transparent">
+			<Points>
+				<Point Coord="20.5;94.5"/>
+				<Point Coord="51;105"/>
+				<Point Coord="80;95"/>
+			</Points>
+		</Bezier>
+		<Bezier Width="1.5" LineColor="TextInfo" FillColor="Transparent">
+			<Points>
+				<Point Coord="80;95"/>
+				<Point Coord="83;94"/>
+				<Point Coord="83;92"/>
+			</Points>
+		</Bezier>
+		<Bezier Width="1.5" LineColor="AlwaysWhite" FillColor="Transparent">
+			<Points>
+				<Point Coord="36;57"/>
+				<Point Coord="60;62"/>
+				<Point Coord="78;55"/>
+			</Points>
+		</Bezier>
+		<Bezier Width="1.5" LineColor="AlwaysWhite" FillColor="Transparent">
+			<Points>
+				<Point Coord="36;42"/>
+				<Point Coord="60;47"/>
+				<Point Coord="78;40"/>
+			</Points>
+		</Bezier>
+	</Children>
+</RootElement>

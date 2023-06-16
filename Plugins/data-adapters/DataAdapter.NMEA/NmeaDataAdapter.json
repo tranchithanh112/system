@@ -1,0 +1,118 @@
+﻿{
+  "$type": "DataAdapter.NMEA.Config.NmeaAdapterConfig, DataAdapter.NMEA",
+  "Bindings": {
+    "$type": "System.Collections.ObjectModel.ObservableCollection`1[[DataAdapter.NMEA.Config.NmeaVariableBinding, DataAdapter.NMEA]], System",
+    "$values": [
+      {
+        "$type": "DataAdapter.NMEA.Config.NmeaVariableBinding, DataAdapter.NMEA",
+        "DeviceName": "PROPS",
+        "TalkerId": "PP",
+        "SentenceId": "RPM",
+        "Direction": 1,
+        "Index": 1,
+        "Project": "COUNTER",
+        "MemoryOffset": 0,
+        "Conditions": null
+      }
+    ]
+  },
+  "Devices": {
+    "$type": "System.Collections.ObjectModel.ObservableCollection`1[[MegaGuard.DotNet.NMEA.Config.NmeaDeviceConfiguration, MegaGuard.DotNet.NMEA]], System",
+    "$values": [
+      {
+        "$type": "MegaGuard.DotNet.NMEA.Config.NmeaDeviceConfiguration, MegaGuard.DotNet.NMEA",
+        "Name": "PROPS",
+        "TransportLayerConfig": {
+          "$type": "MegaGuard.DotNet.Common.Config.SerialConfiguration, DataAdapter.Common",
+          "ComPort": "COM7",
+          "BaudRate": 115200
+        },
+        "Sentences": {
+          "$type": "System.Collections.Generic.List`1[[MegaGuard.DotNet.NMEA.Config.NmeaSentence, MegaGuard.DotNet.NMEA]], mscorlib",
+          "$values": [
+            {
+              "$type": "MegaGuard.DotNet.NMEA.Config.NmeaSentence, MegaGuard.DotNet.NMEA",
+              "Name": "Revolutions",
+              "TalkerId": "PP",
+              "SentenceId": "RPM",
+              "Format": null,
+              "Variables": {
+                "$type": "System.Collections.Generic.List`1[[MegaGuard.DotNet.NMEA.Config.NmeaVariable, MegaGuard.DotNet.NMEA]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "MegaGuard.DotNet.NMEA.Config.NmeaVariable, MegaGuard.DotNet.NMEA",
+                    "Value": null,
+                    "Name": "Source, S = shaft, E = engine",
+                    "Index": 0,
+                    "Type": 8,
+                    "Formatter": "a",
+                    "SelectorValues": null
+                  },
+                  {
+                    "$type": "MegaGuard.DotNet.NMEA.Config.NmeaVariable, MegaGuard.DotNet.NMEA",
+                    "Value": null,
+                    "Name": "Engine number",
+                    "Index": 1,
+                    "Type": 0,
+                    "Formatter": "x",
+                    "SelectorValues": null
+                  },
+                  {
+                    "$type": "MegaGuard.DotNet.NMEA.Config.NmeaVariable, MegaGuard.DotNet.NMEA",
+                    "Value": null,
+                    "Name": "RPM",
+                    "Index": 2,
+                    "Type": 1,
+                    "Formatter": "x.x",
+                    "SelectorValues": null
+                  },
+                  {
+                    "$type": "MegaGuard.DotNet.NMEA.Config.NmeaVariable, MegaGuard.DotNet.NMEA",
+                    "Value": null,
+                    "Name": "Propeller pitch",
+                    "Index": 3,
+                    "Type": 1,
+                    "Formatter": "x.x",
+                    "SelectorValues": null
+                  },
+                  {
+                    "$type": "MegaGuard.DotNet.NMEA.Config.NmeaVariable, MegaGuard.DotNet.NMEA",
+                    "Value": null,
+                    "Name": "Is valid",
+                    "Index": 4,
+                    "Type": 3,
+                    "Formatter": "A",
+                    "SelectorValues": null
+                  }
+                ]
+              },
+              "Selectors": {
+                "$type": "System.Collections.Generic.List`1[[MegaGuard.DotNet.NMEA.Config.NmeaVariable, MegaGuard.DotNet.NMEA]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "MegaGuard.DotNet.NMEA.Config.NmeaVariable, MegaGuard.DotNet.NMEA",
+                    "Value": null,
+                    "Name": "Source, S = shaft, E = engine",
+                    "Index": 0,
+                    "Type": 8,
+                    "Formatter": "a",
+                    "SelectorValues": null
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "Type": 0
+      }
+    ]
+  },
+  "DefaultFormats": {
+    "$type": "System.Collections.Generic.List`1[[MegaGuard.DotNet.NMEA.Config.NmeaSentence, MegaGuard.DotNet.NMEA]], mscorlib",
+    "$values": []
+  },
+  "TalkerIdCollection": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": []
+  }
+}

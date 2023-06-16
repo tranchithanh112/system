@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Panel Width="50" Height="50" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Rotation" ExportedPropertyName="Rotation_"/>
+			</Bindings>
+			<Children>
+				<Polyline ClosedOutline="True" FillColor="Foreground">
+					<Points>
+						<Point Coord="25;45"/>
+						<Point Coord="35;30"/>
+						<Point Coord="15;30"/>
+					</Points>
+				</Polyline>
+				<Line FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="FillAndOutLine" FlashColor="StatusInactive" Width="2" X0="15" Y0="15" X1="20" Y1="25" P0CapSize="5" P1CapSize="5">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Flash">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Nozzle_Active_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FrameBinding TargetPropertyName="Color" ExportedPropertyName="MistColorOff"/>
+						<FrameBinding TargetPropertyName="FlashColor" ExportedPropertyName="MistColorOn"/>
+					</Bindings>
+				</Line>
+				<Line FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="FillAndOutLine" FlashColor="StatusInactive" Width="2" X0="35" Y0="15" X1="30" Y1="25" P0CapSize="5" P1CapSize="5">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Flash">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Nozzle_Active_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FrameBinding TargetPropertyName="Color" ExportedPropertyName="MistColorOff"/>
+						<FrameBinding TargetPropertyName="FlashColor" ExportedPropertyName="MistColorOn"/>
+					</Bindings>
+				</Line>
+				<Line FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="FillAndOutLine" FlashColor="StatusInactive" Width="2" X0="25" Y0="12" X1="25" Y1="24" P0CapSize="5" P1CapSize="5">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Flash">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Nozzle_Active_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FrameBinding TargetPropertyName="Color" ExportedPropertyName="MistColorOff"/>
+						<FrameBinding TargetPropertyName="FlashColor" ExportedPropertyName="MistColorOn"/>
+					</Bindings>
+				</Line>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

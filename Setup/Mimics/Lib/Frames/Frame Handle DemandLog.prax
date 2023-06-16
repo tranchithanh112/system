@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="270" Height="80" GridSpacing="10">
+	<Children>
+		<Panel Width="270" Height="80" GridSpacing="10">
+			<Children>
+				<Panel Width="250" Height="60" X="10" Y="10" BorderStyle="Sunken"/>
+			</Children>
+		</Panel>
+		<Button Width="120" Height="30" X="140" Y="40" Text="Cancel" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="Visible"/>
+			</Bindings>
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="250" Height="20" X="10" Y="10" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="5" Font="Segoe UI;14.0;B;N;N" Text="Start Demand Log?"/>
+		<Button Width="120" Height="30" X="10" Y="40" Text="OK" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<PrintCAMClientPagesClickAction PrintPageType="Demand Log"/>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

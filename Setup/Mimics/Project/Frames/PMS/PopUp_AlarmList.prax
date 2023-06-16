@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="400" Height="200" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="400" Height="200" BorderWidth="2" BorderColor="BackgroundShadow" FillColor="BackgroundMenu" CornerRoundRadius="5"/>
+		<AlarmList Width="380" Height="145" X="10" Y="45" HeaderVisible="False" HeaderFont="Segoe UI;16.0;B;N;N" FillColor="BackgroundConning" AlternateFillColor="MenuBackground" TextColor="InfoTextWhite" Font="Segoe UI;16.0;N;N;N" VertScrollBarSize="0" BorderWidth="0" ColumnSepLinesVisible="False" ShowTag="False">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ShowChannelsOfGroup" ExportedPropertyName="Alarm_Group_UINT"/>
+			</Bindings>
+		</AlarmList>
+		<TextBox Width="90" Height="30" X="10" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI;18.0;N;N;N" Text="DG">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+			</Bindings>
+		</TextBox>
+		<Button Width="30" Height="30" X="360" Y="10" Text="" FillColor="Red" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<Line Width="2" Color="White" X0="25" Y0="5" X1="5" Y1="25"/>
+				<Line Width="2" Color="White" X0="5" Y0="5" X1="25" Y1="25"/>
+			</Children>
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

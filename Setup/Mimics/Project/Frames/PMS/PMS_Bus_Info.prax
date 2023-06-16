@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="415" Height="95" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="410" Height="90" X="5" Y="5" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="410" Height="90" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<Rectangle Width="390" Height="20" X="10" Y="50" BorderColor="Transparent" FillColor="BackgroundConning" CornerRoundRadius="3"/>
+		<FillBar Width="390" Height="20" X="10" Y="50" LimitType="None" NormalColor="TextActive" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="3">
+			<Bindings>
+				<SelectFirstFloatBinding TargetPropertyName="RangeEnd" DefaultValue="0">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="62109"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6" ChannelNumber="61109"/>
+						<ChannelValueBinding TargetPropertyName="SelectedValue6" ChannelNumber="61329"/>
+						<ChannelValueBinding TargetPropertyName="SelectedValue7" ChannelNumber="62329"/>
+						<UnitConversionBinding TargetPropertyName="SelectedValue5">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="X" ChannelNumber="61329"/>
+								<ChannelValueBinding TargetPropertyName="B" ChannelNumber="62329"/>
+							</Bindings>
+						</UnitConversionBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<SelectFirstChannelNumberBinding TargetPropertyName="ChannelNumber" SelectedValue7="62109">
+									<Bindings>
+										<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="61109"/>
+									</Bindings>
+								</SelectFirstChannelNumberBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="SelectedValue4" ChannelNumber="63329"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="63109"/>
+					</Bindings>
+				</SelectFirstFloatBinding>
+				<SelectFirstFloatBinding TargetPropertyName="Value" DefaultValue="0">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="SelectedValue7" ChannelNumber="62093"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="62109"/>
+						<ChannelValueBinding TargetPropertyName="SelectedValue6" ChannelNumber="61093"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6" ChannelNumber="61109"/>
+						<ChannelValueBinding TargetPropertyName="SelectedValue5" ChannelNumber="63093"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5" ChannelNumber="63109"/>
+					</Bindings>
+				</SelectFirstFloatBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Height="30" X="110" Y="45" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Yellow" Font="Praxis;18.0;N;N;N" Text="400">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" DefaultValue="0">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="62109"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6" ChannelNumber="61109"/>
+						<ChannelValueBinding TargetPropertyName="SelectedValue7" ChannelNumber="62093">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="SelectedValue6" ChannelNumber="61093">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="SelectedValue5" ChannelNumber="63093">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5" ChannelNumber="63109"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Height="35" X="10" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="BUS">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bus_ID"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="30" X="260" Y="45" BorderWidth="0" FillColor="Transparent" TextColor="Yellow" Font="Praxis;18.0;N;N;N" Text="100 %">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" InRangeBegin="0" OutRangeBegin="0">
+					<Bindings>
+						<SelectFirstFloatBinding TargetPropertyName="Value" DefaultValue="0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="SelectedValue7" ChannelNumber="62093"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="62109"/>
+								<ChannelValueBinding TargetPropertyName="SelectedValue6" ChannelNumber="61093"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6" ChannelNumber="61109"/>
+								<ChannelValueBinding TargetPropertyName="SelectedValue5" ChannelNumber="63093"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5" ChannelNumber="63109"/>
+							</Bindings>
+						</SelectFirstFloatBinding>
+						<SelectFirstFloatBinding TargetPropertyName="InRangeEnd" DefaultValue="0">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="62109"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6" ChannelNumber="61109"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+									<Bindings>
+										<SelectFirstChannelNumberBinding TargetPropertyName="ChannelNumber" SelectedValue7="61109">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="62109"/>
+											</Bindings>
+										</SelectFirstChannelNumberBinding>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelValueBinding TargetPropertyName="SelectedValue7" ChannelNumber="62329"/>
+								<UnitConversionBinding TargetPropertyName="SelectedValue5">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="X" ChannelNumber="61329"/>
+										<ChannelValueBinding TargetPropertyName="B" ChannelNumber="61329"/>
+									</Bindings>
+								</UnitConversionBinding>
+								<ChannelValueBinding TargetPropertyName="SelectedValue6" ChannelNumber="62329"/>
+								<ChannelValueBinding TargetPropertyName="SelectedValue4" ChannelNumber="63329"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="63109"/>
+							</Bindings>
+						</SelectFirstFloatBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" %"/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Height="30" X="180" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="CAPACITY">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bus_ID"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="30" X="285" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Orange" Font="Praxis;18.0;N;N;N" Text="400">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" DefaultValue="0">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="62109"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6" ChannelNumber="61109"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<SelectFirstChannelNumberBinding TargetPropertyName="ChannelNumber" SelectedValue7="62109">
+									<Bindings>
+										<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="61109"/>
+									</Bindings>
+								</SelectFirstChannelNumberBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="SelectedValue7" ChannelNumber="62329">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<UnitConversionBinding TargetPropertyName="SelectedValue5">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="X" ChannelNumber="61329"/>
+								<ChannelValueBinding TargetPropertyName="B" ChannelNumber="62329"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</UnitConversionBinding>
+						<ChannelValueBinding TargetPropertyName="SelectedValue6" ChannelNumber="61329">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="SelectedValue4" ChannelNumber="63329">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4" ChannelNumber="63109"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="210" Y="50" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Praxis;18.0;N;N;N" Text="kW"/>
+		<TextBox Width="40" Height="20" X="330" Y="15" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="kW"/>
+	</Children>
+</RootElement>

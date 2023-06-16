@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="155" Height="710" PermissionLevelRequested="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Line Color="IndicationLineTransparent" X0="155" Y0="80" X1="0" Y1="80"/>
+		<Line Color="IndicationLineTransparent" X0="155" Y0="180" X1="0" Y1="180"/>
+		<Line Color="IndicationLineTransparent" X0="155" Y0="280" X1="0" Y1="280"/>
+		<Line Color="IndicationLineTransparent" X0="155" Y0="380" X1="0" Y1="380"/>
+		<Rectangle Width="25" Height="400" X="95" Y="80" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning"/>
+		<Rectangle Width="25" Height="400" X="35" Y="80" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning"/>
+		<Line Color="TextInfo" X0="20" Y0="225" X1="20" Y1="195" P1CapStyle="Arrow" P1CapSize="7"/>
+		<TextBox Width="30" Height="20" Y="230" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Segoe UI;14.0;N;N;N" Text="Lvl"/>
+		<Line Color="TextInfo" X0="135" Y0="225" X1="135" Y1="195" P0CapSize="7" P1CapStyle="Arrow" P1CapSize="7"/>
+		<TextBox Width="30" Height="20" X="125" Y="230" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Segoe UI;14.0;N;N;N" Text="Vol"/>
+		<FillBar Width="25" Height="400" X="95" Y="80" FillDirection="BottomToTop" FirstLimit="0" SecondLimit="0" LimitMarkerType="Triangle" LimitMarkerSize="5" Value="10" NormalColor="Orange" LimitLowColor="OldAlarm" BorderWidth="1" BorderColor="Transparent" FillPatternColor="AlarmRed" CornerRoundRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="PERCENT_CH"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LAH_SET"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LAL_SET"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="ColourVolumeBar"/>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="25" Height="400" X="35" Y="80" FillDirection="BottomToTop" LimitType="None" FirstLimit="0" SecondLimit="0" LimitMarkerType="Triangle" LimitMarkerSize="6" Value="10" NormalColor="Orange" LimitLowColor="OldAlarm" BorderWidth="1" BorderColor="Transparent" CornerRoundRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="ColourLevelBar"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="LEVEL_MAX_CH"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LEVEL_CH"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<Line Color="IndicationLineTransparent" X0="155" Y0="480" X1="0" Y1="480"/>
+		<TextBox Width="45" Height="20" X="15" Y="55" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="1.432">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="LEVEL_MAX"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="45" Height="20" X="95" Y="55" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="174.8">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Capacity"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="30" Y="490" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;20.0;N;N;N" Text="95">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="PERCENT_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="95" Y="490" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="%"/>
+		<TextBox Width="60" Height="30" X="95" Y="580" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Sound."/>
+		<TextBox Width="60" Height="30" X="95" Y="610" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Ton"/>
+		<TextBox Width="60" Height="30" X="95" Y="520" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="m³"/>
+		<TextBox Width="60" Height="30" X="95" Y="650" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="%"/>
+		<TextBox Width="60" Height="30" X="95" Y="680" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="%"/>
+		<CheckBox Width="25" Height="25" X="100" Y="20" BorderWidth="1" BorderColor="BackgroundConning" FillColor="BackgroundConning" TextColor="TextInfo">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Checked">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="INHIBIT_CH"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueCheckBoxAction ChannelNumber="0">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="INHIBIT_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</SetChannelValueCheckBoxAction>
+			</ClickActions>
+		</CheckBox>
+		<TextBox Width="60" Height="25" X="30" Y="20" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="INHIBIT"/>
+		<TextBox Width="60" Height="30" X="30" Y="520" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;20.0;N;N;N" Text="95">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VOLUME_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="30" Y="580" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;20.0;N;N;N" Text="1.011">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LEVEL_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="30" Y="610" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;20.0;N;N;N" Text="1.011">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="WEIGHT_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="30" Y="650" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Right" TextColor="Yellow" Font="Praxis;20.0;N;N;N" Text="95">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LAH_SET"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LAH_SET"/>
+					</Bindings>
+				</SetChannelValueTEA>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="30" Y="680" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Right" TextColor="Yellow" Font="Praxis;20.0;N;N;N" Text="10">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LAL_SET"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LAL_SET"/>
+					</Bindings>
+				</SetChannelValueTEA>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="30" Y="550" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;20.0;N;N;N" Text="1.011">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SENSOR_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="95" Y="550" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Sensor."/>
+	</Children>
+</RootElement>

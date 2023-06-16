@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="15" Height="30" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="15" Height="15" Y="15" BorderWidth="0" FillColor="PageInfoLine">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="NoAlarmGreen" DefaultValue="PageInfoLine">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Port_Diagnostic_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="13" Height="10" X="1" Y="19" BorderWidth="0" FillColor="Black"/>
+		<TextBox Width="15" Height="15" BorderWidth="0" Font="Praxis;12.0;N;N;N" Text="01">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Port"/>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Show_Port_Number"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

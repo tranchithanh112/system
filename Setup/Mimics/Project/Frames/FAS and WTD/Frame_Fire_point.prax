@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="25" Height="25" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="22" Height="9" Y="22" BorderWidth="0" TextColor="White" Font="Praxis;10.0;N;N;N" Text="3-6">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bottom_text"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="8" Y="-8" BorderWidth="0" TextColor="White" Font="Praxis;10.0;N;N;N" Text="430">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Top_text"/>
+			</Bindings>
+		</TextBox>
+		<TextBox FlashFast="True" Width="22" Height="22" BorderWidth="1.5" BorderColor="Green" TextColor="White" Font="Praxis;10.0;N;N;N" Text="M-5">
+			<Bindings>
+				<FrameBinding TargetPropertyName="CornerRoundRadius" ExportedPropertyName="Corner_rounding"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_Ch"/>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Middle_text"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="BorderColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Green"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

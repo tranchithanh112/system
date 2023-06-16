@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="63" Height="63" GridSpacing="1">
+	<Children>
+		<Rectangle Width="33" Height="21" X="15" FillColor="white">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="PaperOut_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="white"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="35" Height="4" X="14" Y="18" BorderColor="Black" FillColor="Grey"/>
+		<Polyline LineColor="Black" FillColor="Grey" ClosedOutline="True">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OffLine_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Grey"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1;48"/>
+				<Point Coord="1;33"/>
+				<Point Coord="5;21"/>
+				<Point Coord="15;21"/>
+				<Point Coord="11;33"/>
+				<Point Coord="11;48"/>
+			</Points>
+		</Polyline>
+		<Polyline LineColor="Black" FillColor="Grey" ClosedOutline="True">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OffLine_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Grey"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="62;48"/>
+				<Point Coord="62;33"/>
+				<Point Coord="58;21"/>
+				<Point Coord="48;21"/>
+				<Point Coord="52;33"/>
+				<Point Coord="52;48"/>
+			</Points>
+		</Polyline>
+		<Line X0="1" Y0="33" X1="62" Y1="33" Color="Black"/>
+		<Rectangle Width="63" Height="11" Y="47" BorderColor="Black"/>
+		<Polyline FillColor="white" ClosedOutline="True">
+			<Points>
+				<Point Coord="11;48"/>
+				<Point Coord="52;48"/>
+				<Point Coord="57;62"/>
+				<Point Coord="7;62"/>
+			</Points>
+		</Polyline>
+	</Children>
+</RootElement>

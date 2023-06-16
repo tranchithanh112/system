@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="80" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button FlashFast="True" FlashArea="OutlineOnly" FlashColor="Comment" Width="80" Text="" FillColor="Transparent" OutlineColor="White" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="UserActionsLocked" ExportedPropertyName="CTRL_Blocked"/>
+				<SelectFirstBoolBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+				<SelectFirstColorBinding TargetPropertyName="OutlineColor" SelectedValue0="Transparent" SelectedValue2="White" SelectedValue3="White" DefaultValue="PageInfoLine">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="CTRL_Blocked"/>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="-1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="5">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="6">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Children>
+				<Ellipse BorderColor="White" FillColor="Transparent" LightingStyle="Radial" CenterX="40" CenterY="65" RadiusX="-25" RadiusY="-25">
+					<Bindings>
+						<ChannelAlarmBinding TargetPropertyName="FillColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Running"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="Background" ColorWhenTrue="NoAlarmGreen"/>
+							</ConvertParams>
+						</ChannelAlarmBinding>
+					</Bindings>
+				</Ellipse>
+				<TextBox Width="40" Height="40" X="20" Y="45" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Praxis;24.0;B;N;N" Text="M">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Type"/>
+					</Bindings>
+				</TextBox>
+				<Line Width="2" Color="White" X0="40" Y0="90" X1="40" Y1="100"/>
+				<TextBox Width="70" Height="30" X="5" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;B;N;N" Text="Motor1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Visible="False" Width="80" Height="20" Y="55" BorderColor="PageInfoLine" FillColor="AlarmRed" Font="Praxis;14.0;N;N;N" Text="EMCY STOP">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Emcy_Stop"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shutdown"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="EMCY STOP" SelectedValue1="SHUTDOWN">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Emcy_Stop"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shutdown"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="30" YOffset="-160" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="140" Height="210" X="-30" Y="-215" ID="Motor1" BUTTON01_Text="Start" CTRL_Channel="0" CTRL_Value="0" BUTTON02_Text="Stop" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\PopUp_CMD_Start_Stop_Reset[SV].prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+								<FrameBinding TargetPropertyName="CTRL_Value" ExportedPropertyName="CTRL_Value"/>
+								<FrameBinding TargetPropertyName="CTRL_Channel" ExportedPropertyName="CTRL_Channel"/>
+								<FrameBinding TargetPropertyName="BUTTON01_Text" ExportedPropertyName="BUTTON01_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON02_Text" ExportedPropertyName="BUTTON02_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON03_Text" ExportedPropertyName="BUTTON03_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON04_Text" ExportedPropertyName="BUTTON04_Text"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

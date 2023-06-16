@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="Time_measurement">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2015" month="10" day="31" hour="13" minutes="45" seconds="6" milisec="218" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="0000002C" />
+      <II value="00000038" />
+      <CPVis used="0" />
+      <LC year="2015" month="11" day="2" hour="9" minutes="47" seconds="30" milisec="921" />
+      <LCF>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\VM\VM-Praxis32.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis32.xml</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\VM\VM-Praxis32.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.1.1.19</CREATOR>
+      <LASTSAVEDWITH>1.1.1.19</LASTSAVEDWITH>
+      <DCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.dcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.dcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.dcp</ENVVARS>
+      </DCP>
+      <XCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.xcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.xcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.xcp</ENVVARS>
+      </XCP>
+      <HCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.hcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.hcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.hcp</ENVVARS>
+      </HCP>
+      <CST>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.cst</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.cst</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Time_Measurement_LD\Time_Measurement_LD.cst</ENVVARS>
+      </CST>
+      <HCPFlags enabled="0" />
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="C:\Program Files\CPDevFBD\Biblioteki\IEC 61131-3.lcp">
+        <CREATED year="2015" month="10" day="14" hour="13" minutes="0" seconds="9" milisec="969" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Biblioteki\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="LD" type="PRG" name="Time_measurement" editor="LDEditor-MarcinJamro"><![CDATA[PROGRAM Time_measurement
+
+VAR_EXTERNAL
+   S3: BOOL;
+   S2: BOOL;
+   S1: BOOL;
+   IN: BOOL;
+   TON2Q: BOOL;
+   T12: BOOL;
+   T23: BOOL;
+   T32: BOOL;
+   T31: BOOL;
+   OUT: BOOL;
+   TON2PT: TIME;
+   TON1ET: TIME;
+END_VAR
+
+VAR
+   out_contact_S3_100_470: BOOL;
+   out_contact_S2_100_350: BOOL;
+   out_contact_S1_100_630: BOOL;
+   out_contact_IN_180_630: BOOL;
+   out_contact_S2_100_680: BOOL;
+   out_contact_IN_180_680: BOOL;
+   out_contact_S3_100_730: BOOL;
+   out_contact_IN_160_730: BOOL;
+   out_contact_TON2Q_220_730: BOOL;
+   out_contact_S3_100_780: BOOL;
+   out_contact_TON2Q_160_780: BOOL;
+   out_contact_S3_100_880: BOOL;
+   out_contact_S2_100_990: BOOL;
+   out_contact_T12_100_1030: BOOL;
+   out_contact_S1_90_1070: BOOL;
+   out_contact_T12_180_1070: BOOL;
+   out_contact_S3_100_1140: BOOL;
+   out_contact_T23_100_1180: BOOL;
+   out_contact_S2_90_1220: BOOL;
+   out_contact_S2_100_1290: BOOL;
+   out_contact_T32_100_1330: BOOL;
+   out_contact_S3_90_1370: BOOL;
+   out_contact_S1_100_1440: BOOL;
+   out_contact_T31_100_1480: BOOL;
+   out_contact_S3_90_1520: BOOL;
+   out_contact_T23_180_1220: BOOL;
+   out_contact_T32_180_1370: BOOL;
+   out_contact_T31_180_1520: BOOL;
+   out_contact_T23_100_190: BOOL;
+   out_coil_TON2Q_330_470: BOOL;
+   out_coil_T12_330_630: BOOL;
+   out_coil_T23_330_680: BOOL;
+   out_coil_T32_330_730: BOOL;
+   out_coil_T31_330_780: BOOL;
+   out_coil_OUT_330_880: BOOL;
+   out_coil_S2_330_990: BOOL;
+   out_coil_S1_330_1070: BOOL;
+   out_coil_S3_330_1140: BOOL;
+   out_coil_S2_330_1220: BOOL;
+   out_coil_S2_330_1290: BOOL;
+   out_coil_S3_330_1370: BOOL;
+   out_coil_S1_330_1440: BOOL;
+   out_coil_S3_330_1520: BOOL;
+   out_bp_140_980: BOOL;
+   out_bp_140_1130: BOOL;
+   out_bp_140_1280: BOOL;
+   out_bp_140_1430: BOOL;
+   out_sel1_1: TIME;
+   ton1: TON;
+   out_ton1_Q: BOOL;
+   out_ton1_ET: TIME;
+   ton2: TON;
+   out_ton2_Q: BOOL;
+END_VAR
+
+out_contact_T23_100_190 := T23;
+out_sel1_1 := SEL(out_contact_T23_100_190, TON2PT, TON1ET);
+TON2PT := out_sel1_1;
+
+out_contact_S2_100_350 := S2;
+ton1(IN:=out_contact_S2_100_350,PT:=T#3600s,Q=>out_ton1_Q,ET=>out_ton1_ET);
+TON1ET := out_ton1_ET;
+
+out_contact_S2_100_350 := S2;
+
+out_contact_S3_100_470 := S3;
+ton2(IN:=out_contact_S3_100_470,PT:=TON2PT,Q=>out_ton2_Q);
+out_coil_TON2Q_330_470 := out_ton2_Q;
+TON2Q := out_ton2_Q;
+
+out_contact_S1_100_630 := S1;
+out_contact_IN_180_630 := out_contact_S1_100_630 AND IN;
+out_coil_T12_330_630 := out_contact_IN_180_630;
+T12 := out_contact_IN_180_630;
+
+out_contact_S2_100_680 := S2;
+out_contact_IN_180_680 := out_contact_S2_100_680 AND NOT IN;
+out_coil_T23_330_680 := out_contact_IN_180_680;
+T23 := out_contact_IN_180_680;
+
+out_contact_S3_100_730 := S3;
+out_contact_IN_160_730 := out_contact_S3_100_730 AND IN;
+out_contact_TON2Q_220_730 := out_contact_IN_160_730 AND NOT TON2Q;
+out_coil_T32_330_730 := out_contact_TON2Q_220_730;
+T32 := out_contact_TON2Q_220_730;
+
+out_contact_S3_100_780 := S3;
+out_contact_TON2Q_160_780 := out_contact_S3_100_780 AND TON2Q;
+out_coil_T31_330_780 := out_contact_TON2Q_160_780;
+T31 := out_contact_TON2Q_160_780;
+
+out_contact_S3_100_880 := S3;
+out_coil_OUT_330_880 := out_contact_S3_100_880;
+OUT := out_contact_S3_100_880;
+
+out_contact_S2_100_990 := S2;
+out_contact_T12_100_1030 := T12;
+out_bp_140_980 := out_contact_S2_100_990 OR out_contact_T12_100_1030;
+out_coil_S2_330_990 := out_bp_140_980;
+S2 := out_bp_140_980;
+
+out_contact_S1_90_1070 := S1;
+out_contact_T12_180_1070 := out_contact_S1_90_1070 AND NOT T12;
+out_coil_S1_330_1070 := out_contact_T12_180_1070;
+S1 := out_contact_T12_180_1070;
+
+out_contact_S3_100_1140 := S3;
+out_contact_T23_100_1180 := T23;
+out_bp_140_1130 := out_contact_S3_100_1140 OR out_contact_T23_100_1180;
+out_coil_S3_330_1140 := out_bp_140_1130;
+S3 := out_bp_140_1130;
+
+out_contact_S2_90_1220 := S2;
+out_contact_T23_180_1220 := out_contact_S2_90_1220 AND NOT T23;
+out_coil_S2_330_1220 := out_contact_T23_180_1220;
+S2 := out_contact_T23_180_1220;
+
+out_contact_S2_100_1290 := S2;
+out_contact_T32_100_1330 := T32;
+out_bp_140_1280 := out_contact_S2_100_1290 OR out_contact_T32_100_1330;
+out_coil_S2_330_1290 := out_bp_140_1280;
+S2 := out_bp_140_1280;
+
+out_contact_S3_90_1370 := S3;
+out_contact_T32_180_1370 := out_contact_S3_90_1370 AND NOT T32;
+out_coil_S3_330_1370 := out_contact_T32_180_1370;
+S3 := out_contact_T32_180_1370;
+
+out_contact_S1_100_1440 := S1;
+out_contact_T31_100_1480 := T31;
+out_bp_140_1430 := out_contact_S1_100_1440 OR out_contact_T31_100_1480;
+out_coil_S1_330_1440 := out_bp_140_1430;
+S1 := out_bp_140_1430;
+
+out_contact_S3_90_1520 := S3;
+out_contact_T31_180_1520 := out_contact_S3_90_1520 AND NOT T31;
+out_coil_S3_330_1520 := out_contact_T31_180_1520;
+S3 := out_contact_T31_180_1520;
+
+END_PROGRAM
+]]><EDITOR><![CDATA[<?xml version="1.0" encoding="utf-16"?><project><fileHeader companyName="" creationDateTime="2015-11-02T09:52:31" productName="Time_measurement" productVersion="" contentType="Program" /><contentHeader name="prj"><coordinateInfo><fbd><scaling x="10" y="10" /></fbd><ld><scaling x="10" y="10" /></ld><sfc><scaling x="10" y="10" /></sfc></coordinateInfo></contentHeader><types><dataTypes /><pous><pou name="FBD Diagram" pouType="functionBlock"><interface><localVars><variable name="S3"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="S1"><type><BOOL /></type></variable><variable name="IN"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="IN"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="IN"><type><BOOL /></type></variable><variable name="TON2Q"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="TON2Q"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="T12"><type><BOOL /></type></variable><variable name="S1"><type><BOOL /></type></variable><variable name="T12"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="T23"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="T32"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="S1"><type><BOOL /></type></variable><variable name="T31"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="T23"><type><BOOL /></type></variable><variable name="T32"><type><BOOL /></type></variable><variable name="T31"><type><BOOL /></type></variable><variable name="T23"><type><BOOL /></type></variable><variable name="variable3" constant="True"><type><TIME /></type></variable><variable name="variable4" constant="True"><type><TIME /></type></variable><variable name="variable5" constant="True"><type><TIME /></type></variable><variable name="variable6" constant="True"><type><TIME /></type></variable><variable name="TON2Q"><type><BOOL /></type></variable><variable name="T12"><type><BOOL /></type></variable><variable name="T23"><type><BOOL /></type></variable><variable name="T32"><type><BOOL /></type></variable><variable name="T31"><type><BOOL /></type></variable><variable name="OUT"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="S1"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="S1"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="TON1ET"><type><TIME /></type></variable><variable name="TON2PT"><type><TIME /></type></variable></localVars></interface><body><LD><leftPowerRail localId="0" /><rightPowerRail localId="1"><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="95"><position x="360" y="1290" /><position x="330" y="1290" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="99"><position x="360" y="1370" /><position x="330" y="1370" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="58"><position x="360" y="990" /><position x="330" y="990" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="64"><position x="360" y="1070" /><position x="330" y="1070" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="81"><position x="360" y="1140" /><position x="330" y="1140" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="85"><position x="360" y="1220" /><position x="330" y="1220" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="109"><position x="360" y="1440" /><position x="330" y="1440" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="113"><position x="360" y="1520" /><position x="330" y="1520" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="46"><position x="360" y="880" /><position x="330" y="880" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="32"><position x="360" y="630" /><position x="330" y="630" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="36"><position x="360" y="680" /><position x="330" y="680" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="40"><position x="360" y="730" /><position x="330" y="730" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="43"><position x="360" y="780" /><position x="330" y="780" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="Q" refLocalId="4"><position x="360" y="350" /><position x="230" y="350" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="12"><position x="360" y="470" /><position x="330" y="470" /></connection></connectionPointIn></rightPowerRail><contact height="40" localId="11" width="20" type="NormallyOpenContact"><position x="70" y="440" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="470" /><position x="10" y="470" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="18" width="20" type="NormallyOpenContact"><position x="70" y="320" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="350" /><position x="10" y="350" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></contact><contact height="40" localId="30" width="20" type="NormallyOpenContact"><position x="70" y="600" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="630" /><position x="10" y="630" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1</expression></contact><contact height="40" localId="31" width="20" type="NormallyOpenContact"><position x="150" y="600" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="30"><position x="140" y="630" /><position x="100" y="630" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>IN</expression></contact><contact height="40" localId="33" width="20" type="NormallyOpenContact"><position x="70" y="650" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="680" /><position x="10" y="680" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></contact><contact height="40" localId="34" width="20" type="NormallyClosedContact"><position x="150" y="650" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="33"><position x="140" y="680" /><position x="100" y="680" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>IN</expression></contact><contact height="40" localId="37" width="20" type="NormallyOpenContact"><position x="70" y="700" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="730" /><position x="10" y="730" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="38" width="20" type="NormallyOpenContact"><position x="130" y="700" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="37"><position x="120" y="730" /><position x="100" y="730" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>IN</expression></contact><contact height="40" localId="39" width="20" type="NormallyClosedContact"><position x="190" y="700" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="38"><position x="180" y="730" /><position x="160" y="730" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>TON2Q</expression></contact><contact height="40" localId="41" width="20" type="NormallyOpenContact"><position x="70" y="750" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="780" /><position x="10" y="780" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="42" width="20" type="NormallyOpenContact"><position x="130" y="750" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="41"><position x="120" y="780" /><position x="100" y="780" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>TON2Q</expression></contact><contact height="40" localId="45" width="20" type="NormallyOpenContact"><position x="70" y="850" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="880" /><position x="10" y="880" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="54" width="20" type="NormallyOpenContact"><position x="70" y="960" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="990" /><position x="10" y="990" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></contact><contact height="40" localId="55" width="20" type="NormallyOpenContact"><position x="70" y="1000" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="1030" /><position x="10" y="1030" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T12</expression></contact><contact height="40" localId="62" width="20" type="NormallyOpenContact"><position x="60" y="1040" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="1070" /><position x="10" y="1070" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1</expression></contact><contact height="40" localId="63" width="20" type="NormallyClosedContact"><position x="150" y="1040" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="62"><position x="140" y="1070" /><position x="90" y="1070" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T12</expression></contact><contact height="40" localId="79" width="20" type="NormallyOpenContact"><position x="70" y="1110" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="1140" /><position x="10" y="1140" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="80" width="20" type="NormallyOpenContact"><position x="70" y="1150" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="1180" /><position x="10" y="1180" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T23</expression></contact><contact height="40" localId="83" width="20" type="NormallyOpenContact"><position x="60" y="1190" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="1220" /><position x="10" y="1220" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></contact><contact height="40" localId="93" width="20" type="NormallyOpenContact"><position x="70" y="1260" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="1290" /><position x="10" y="1290" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></contact><contact height="40" localId="94" width="20" type="NormallyOpenContact"><position x="70" y="1300" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="1330" /><position x="10" y="1330" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T32</expression></contact><contact height="40" localId="97" width="20" type="NormallyOpenContact"><position x="60" y="1340" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="1370" /><position x="10" y="1370" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="107" width="20" type="NormallyOpenContact"><position x="70" y="1410" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="1440" /><position x="10" y="1440" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1</expression></contact><contact height="40" localId="108" width="20" type="NormallyOpenContact"><position x="70" y="1450" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="1480" /><position x="10" y="1480" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T31</expression></contact><contact height="40" localId="111" width="20" type="NormallyOpenContact"><position x="60" y="1490" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="1520" /><position x="10" y="1520" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="114" width="20" type="NormallyClosedContact"><position x="150" y="1190" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="83"><position x="140" y="1220" /><position x="90" y="1220" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T23</expression></contact><contact height="40" localId="115" width="20" type="NormallyClosedContact"><position x="150" y="1340" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="97"><position x="140" y="1370" /><position x="90" y="1370" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T32</expression></contact><contact height="40" localId="116" width="20" type="NormallyClosedContact"><position x="150" y="1490" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="111"><position x="140" y="1520" /><position x="90" y="1520" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T31</expression></contact><contact height="40" localId="169" width="20" type="NormallyOpenContact"><position x="70" y="160" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="60" y="190" /><position x="10" y="190" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T23</expression></contact><inVariable height="20" localId="19" width="60" constant="True"><position x="60" y="360" /><connectionPointOut><relPosition x="70" y="10" /></connectionPointOut><expression>variable3</expression><value>T#3600s</value></inVariable><inVariable height="20" localId="27" width="60" constant="True"><position x="60" y="480" /><connectionPointOut><relPosition x="70" y="10" /></connectionPointOut><expression>variable4</expression><value>TON2PT</value></inVariable><inVariable height="20" localId="170" width="60" constant="True"><position x="50" y="200" /><connectionPointOut><relPosition x="70" y="10" /></connectionPointOut><expression>variable5</expression><value>TON2PT</value></inVariable><inVariable height="20" localId="171" width="60" constant="True"><position x="50" y="220" /><connectionPointOut><relPosition x="70" y="10" /></connectionPointOut><expression>variable6</expression><value>TON1ET</value></inVariable><block height="100" instanceName="ton1" localId="4" typeName="TON" width="60"><position x="160" y="300" /><inputVariables><variable formalParameter="IN"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="18"><position x="150" y="350" /><position x="100" y="350" /></connection></connectionPointIn></variable><variable formalParameter="PT"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="19"><position x="150" y="370" /><position x="130" y="370" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q"><connectionPointOut><relPosition x="70" y="50" /></connectionPointOut></variable><variable formalParameter="ET"><connectionPointOut><relPosition x="70" y="70" /></connectionPointOut></variable></outputVariables></block><block height="100" instanceName="ton2" localId="10" typeName="TON" width="60"><position x="160" y="420" /><inputVariables><variable formalParameter="IN"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="11"><position x="150" y="470" /><position x="100" y="470" /></connection></connectionPointIn></variable><variable formalParameter="PT"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="27"><position x="150" y="490" /><position x="130" y="490" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q"><connectionPointOut><relPosition x="70" y="50" /></connectionPointOut></variable><variable formalParameter="ET"><connectionPointOut><relPosition x="70" y="70" /></connectionPointOut></variable></outputVariables></block><block height="60" instanceName="sel1_1" localId="172" typeName="0C0B" width="40"><position x="160" y="180" /><inputVariables><variable formalParameter="selector"><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="" refLocalId="169"><position x="150" y="190" /><position x="100" y="190" /></connection></connectionPointIn></variable><variable formalParameter="case_false"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="170"><position x="150" y="210" /><position x="120" y="210" /></connection></connectionPointIn></variable><variable formalParameter="case_true"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="171"><position x="150" y="230" /><position x="120" y="230" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Return"><connectionPointOut><relPosition x="50" y="10" /></connectionPointOut></variable></outputVariables></block><coil height="40" localId="12" width="20" type="Coil"><position x="300" y="440" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="Q" refLocalId="10"><position x="290" y="470" /><position x="230" y="470" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>TON2Q</expression></coil><coil height="40" localId="32" width="20" type="Coil"><position x="300" y="600" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="31"><position x="290" y="630" /><position x="180" y="630" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T12</expression></coil><coil height="40" localId="36" width="20" type="Coil"><position x="300" y="650" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="34"><position x="290" y="680" /><position x="180" y="680" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T23</expression></coil><coil height="40" localId="40" width="20" type="Coil"><position x="300" y="700" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="39"><position x="290" y="730" /><position x="220" y="730" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T32</expression></coil><coil height="40" localId="43" width="20" type="Coil"><position x="300" y="750" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="42"><position x="290" y="780" /><position x="160" y="780" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>T31</expression></coil><coil height="40" localId="46" width="20" type="Coil"><position x="300" y="850" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="45"><position x="290" y="880" /><position x="100" y="880" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>OUT</expression></coil><coil height="40" localId="58" width="20" type="Coil"><position x="300" y="960" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="54"><position x="290" y="990" /><position x="160" y="990" branchPoint="Output" branchPointLocation="140;980" branchPointDirection="Right" /><position x="140" y="990" branchPoint="Input" branchPointLocation="140;980" branchPointDirection="Left" /><position x="100" y="990" /></connection><connection formalParameter="" refLocalId="55"><position x="290" y="990" /><position x="160" y="990" branchPoint="Output" branchPointLocation="140;980" branchPointDirection="Right" /><position x="150" y="1000" branchPoint="Input" branchPointLocation="140;980" branchPointDirection="Down" /><position x="150" y="1030" /><position x="100" y="1030" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></coil><coil height="40" localId="64" width="20" type="Coil"><position x="300" y="1040" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="63"><position x="290" y="1070" /><position x="180" y="1070" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1</expression></coil><coil height="40" localId="81" width="20" type="Coil"><position x="300" y="1110" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="79"><position x="290" y="1140" /><position x="160" y="1140" branchPoint="Output" branchPointLocation="140;1130" branchPointDirection="Right" /><position x="140" y="1140" branchPoint="Input" branchPointLocation="140;1130" branchPointDirection="Left" /><position x="100" y="1140" /></connection><connection formalParameter="" refLocalId="80"><position x="290" y="1140" /><position x="160" y="1140" branchPoint="Output" branchPointLocation="140;1130" branchPointDirection="Right" /><position x="150" y="1150" branchPoint="Input" branchPointLocation="140;1130" branchPointDirection="Down" /><position x="150" y="1180" /><position x="100" y="1180" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></coil><coil height="40" localId="85" width="20" type="Coil"><position x="300" y="1190" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="114"><position x="290" y="1220" /><position x="180" y="1220" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></coil><coil height="40" localId="95" width="20" type="Coil"><position x="300" y="1260" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="93"><position x="290" y="1290" /><position x="160" y="1290" branchPoint="Output" branchPointLocation="140;1280" branchPointDirection="Right" /><position x="140" y="1290" branchPoint="Input" branchPointLocation="140;1280" branchPointDirection="Left" /><position x="100" y="1290" /></connection><connection formalParameter="" refLocalId="94"><position x="290" y="1290" /><position x="160" y="1290" branchPoint="Output" branchPointLocation="140;1280" branchPointDirection="Right" /><position x="150" y="1300" branchPoint="Input" branchPointLocation="140;1280" branchPointDirection="Down" /><position x="150" y="1330" /><position x="100" y="1330" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></coil><coil height="40" localId="99" width="20" type="Coil"><position x="300" y="1340" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="115"><position x="290" y="1370" /><position x="180" y="1370" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></coil><coil height="40" localId="109" width="20" type="Coil"><position x="300" y="1410" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="107"><position x="290" y="1440" /><position x="160" y="1440" branchPoint="Output" branchPointLocation="140;1430" branchPointDirection="Right" /><position x="140" y="1440" branchPoint="Input" branchPointLocation="140;1430" branchPointDirection="Left" /><position x="100" y="1440" /></connection><connection formalParameter="" refLocalId="108"><position x="290" y="1440" /><position x="160" y="1440" branchPoint="Output" branchPointLocation="140;1430" branchPointDirection="Right" /><position x="150" y="1450" branchPoint="Input" branchPointLocation="140;1430" branchPointDirection="Down" /><position x="150" y="1480" /><position x="100" y="1480" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1</expression></coil><coil height="40" localId="113" width="20" type="Coil"><position x="300" y="1490" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="116"><position x="290" y="1520" /><position x="180" y="1520" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></coil><outVariable height="20" localId="13" width="60"><position x="260" y="360" /><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="ET" refLocalId="4"><position x="250" y="370" /><position x="230" y="370" /></connection></connectionPointIn><expression>TON1ET</expression></outVariable><outVariable height="20" localId="173" width="60"><position x="250" y="180" /><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="Return" refLocalId="172"><position x="240" y="190" /><position x="210" y="190" /></connection></connectionPointIn><expression>TON2PT</expression></outVariable></LD></body></pou></pous></types><instances><configurations /></instances><globalVariables><globalVariable name="IN" type="BOOL" /><globalVariable name="OUT" type="BOOL" /><globalVariable name="S2" type="BOOL" /><globalVariable name="S3" type="BOOL" /><globalVariable name="TON1ET" type="TIME" /><globalVariable name="TON2Q" type="BOOL" /><globalVariable name="S1" type="BOOL" /><globalVariable name="TON2PT" type="TIME" /><globalVariable name="T12" type="BOOL" /><globalVariable name="T23" type="BOOL" /><globalVariable name="T32" type="BOOL" /><globalVariable name="T31" type="BOOL" /></globalVariables><comments><comment localId="174" width="170" height="20"><position x="120" y="930" /><expression>States activated / deactivated</expression></comment><comment localId="175" width="50" height="20"><position x="150" y="830" /><expression>Output</expression></comment><comment localId="176" width="70" height="20"><position x="150" y="570" /><expression>Transitions</expression></comment><comment localId="177" width="50" height="20"><position x="160" y="270" /><expression>Timers</expression></comment><comment localId="178" width="160" height="20"><position x="100" y="130" /><expression>Time captured and latched</expression></comment><comment localId="179" width="140" height="20"><position x="110" y="80" /><expression>TIME MEASUREMENT</expression></comment></comments><breakpoints /><conditions /><safestatevalues /></project>]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="IN" flags="00004000"><![CDATA[VAR_GLOBAL 
+ IN  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="OUT" flags="00004000"><![CDATA[VAR_GLOBAL 
+ OUT  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="S2" flags="00004000"><![CDATA[VAR_GLOBAL 
+ S2  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="S3" flags="00004000"><![CDATA[VAR_GLOBAL 
+ S3  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TON1ET" flags="00004000"><![CDATA[VAR_GLOBAL 
+ TON1ET  : TIME;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TON2Q" flags="00004000"><![CDATA[VAR_GLOBAL 
+ TON2Q  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="S1" flags="00004000"><![CDATA[VAR_GLOBAL 
+ S1  : BOOL := TRUE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TON2PT" flags="00004000"><![CDATA[VAR_GLOBAL 
+ TON2PT  : TIME := T#0s;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="T12" flags="00004000"><![CDATA[VAR_GLOBAL 
+ T12  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="T23" flags="00004000"><![CDATA[VAR_GLOBAL 
+ T23  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="T32" flags="00004000"><![CDATA[VAR_GLOBAL 
+ T32  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="T31" flags="00004000"><![CDATA[VAR_GLOBAL 
+ T31  : BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK" loop_kind="0" interval="50"><![CDATA[Time_measurement
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

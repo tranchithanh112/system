@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="430" Height="260" GridSpacing="10" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="10" Height="50" X="132" Y="164" BorderWidth="2" BorderColor="InfoTextGrey" CornerRoundRadius="2"/>
+		<Rectangle Width="10" Height="61" X="14" Y="150" BorderWidth="2" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="2"/>
+		<Polyline Width="2" LineColor="InfoTextGrey" ClosedOutline="True" FillColor="Transparent">
+			<Points>
+				<Point Coord="14;158"/>
+				<Point Coord="14;203"/>
+				<Point Coord="1;197"/>
+				<Point Coord="1;165"/>
+			</Points>
+		</Polyline>
+		<Rectangle Height="11" X="30" Y="120" BorderWidth="2" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="2"/>
+		<Rectangle Width="10" Height="71" X="141" Y="153" BorderWidth="2" BorderColor="InfoTextGrey" CornerRoundRadius="2"/>
+		<Polyline Width="2" LineColor="InfoTextGrey" ClosedOutline="True" FillColor="GaugeBackground">
+			<Points>
+				<Point Coord="361;94"/>
+				<Point Coord="184;94"/>
+				<Point Coord="191;87"/>
+				<Point Coord="354;87"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="111" Height="105" X="23" Y="130" BorderWidth="2" BorderColor="InfoTextGrey" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Green" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Failure_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Running_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Common_Alarm_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="221" Height="142" X="149" Y="93" BorderWidth="2" BorderColor="InfoTextGrey" FillColor="Transparent"/>
+		<TextBox Width="80" Height="70" X="40" Y="150" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;36.0;B;N;N" Text="DG">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="NAME"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="368" Height="28" X="13" Y="233" BorderWidth="2" BorderColor="InfoTextGrey" FillColor="Transparent"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Height="120" GridSpacing="5" ColorTableFile="..\ColorfileTable.colortable">
+	<Children>
+		<Panel Height="120" GridSpacing="2">
+			<Children>
+				<Button Width="80" Height="20" X="10" Y="8" Text="Start" Font="Segoe UI-14.0-B-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Mimic_Start"/>
+							</Bindings>
+						</PulseChannelClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="80" Height="20" X="10" Y="32" Text="Stop" Font="Segoe UI-14.0-B-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Mimic_Stop"/>
+							</Bindings>
+						</PulseChannelClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="80" Height="20" X="10" Y="94" Text="Cancel" Font="Segoe UI-14.0-B-N-N">
+					<ClickActions>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="80" Height="20" X="10" Y="56" Text="Reset" Font="Segoe UI-14.0-B-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Mimic_Reset"/>
+							</Bindings>
+						</PulseChannelClickAction>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1680" Height="60" ColorTableFile="..\Color_Table.colortable">
+	<Children>
+		<Panel Width="1680" Height="60" GridSpacing="5" BorderColor="PanelFaceBorder" CornerRoundRadius="3">
+			<Children>
+				<TextBox Width="145" Height="40" X="1515" Y="10" CornerRoundRadius="2" HorzAlignment="Right" LeftRightPadding="15" Font="Segoe UI;18.0;N;N;N" Text="Date">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams Format="d.mm.yyyy"/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="145" Height="40" X="1360" Y="10" CornerRoundRadius="2" HorzAlignment="Right" LeftRightPadding="15" Font="Segoe UI;18.0;N;N;N" Text="Time">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+				<Bitmap Width="35.0248" Height="35.0771" X="1370" Y="12.79" FilePath="..\Icons\clock-icon.png"/>
+				<Bitmap Width="38.2408" Height="36.4731" X="1521.86" Y="12.4399" FilePath="..\Icons\calendar-icon.png"/>
+				<Button Width="160" Height="40" X="10" Y="10" Text="PMS SIMULATOR" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="6"/>
+					</ClickActions>
+				</Button>
+				<Button Width="90" Height="40" X="310" Y="10" Text="MENU 1" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="1"/>
+					</ClickActions>
+				</Button>
+				<Button Width="110" Height="40" X="190" Y="10" Text="ONE LINE" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="20"/>
+					</ClickActions>
+				</Button>
+				<Button Width="90" Height="40" X="410" Y="10" Text="MENU 2" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="2"/>
+					</ClickActions>
+				</Button>
+				<Button Width="90" Height="40" X="610" Y="10" Text="MENU 4" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="4"/>
+					</ClickActions>
+				</Button>
+				<Button Width="90" Height="40" X="510" Y="10" Text="MENU 3" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="3"/>
+					</ClickActions>
+				</Button>
+				<Button Width="90" Height="40" X="810" Y="10" Text="MENU 6" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="16"/>
+					</ClickActions>
+				</Button>
+				<Button Width="90" Height="40" X="710" Y="10" Text="MENU 5" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="5"/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

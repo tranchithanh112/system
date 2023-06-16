@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1200" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<SelectFirstFloatBinding TargetPropertyName="SelectedThemeTest" DefaultValue="0">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="101">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="102">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="111">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="112">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue0">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue1">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER2"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue2">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue3">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT2"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</SelectFirstFloatBinding>
+	</Bindings>
+	<Children>
+		<Frame Width="1920" Height="1200" Highlight_Button_NR="24" Page_Title="CHANNELS" MultiplePages="False" Path="..\Frames\Menus\CommonMenuFrame_1920x1200.prax" AutoShow_Page_Title="False" ShowBackground="True"/>
+		<Panel Width="1635" Height="1025" X="10" Y="80" ClipToBounds="True" BorderStyle="Flat" BorderColor="BackgroundListLine01" FillColor="BackgroundListLine01">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1640" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+			<Children>
+				<ChannelListInputBox Width="150" Height="45" X="1320" Y="970" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N">
+					<TextEnteredActions>
+						<AddChannelToChannelList ChannelNumber="0"/>
+					</TextEnteredActions>
+				</ChannelListInputBox>
+				<Button Width="155" Height="45" X="1475" Y="970" ClipToBounds="True" Text="Clear" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N">
+					<ClickActions>
+						<ResetChannelList/>
+					</ClickActions>
+				</Button>
+				<ChannelList Width="1630" Height="960" X="5" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;22.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" BorderColor="Transparent" ColumnSepLinesVisible="False" FileName="..\Frames\Menus\Frame_ALContextMenu.prax">
+					<Bindings>
+						<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+						<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1900" ActivateValue="1630" TransitionTime="250">
+							<Bindings>
+								<VariableBinding TargetPropertyName="Activate">
+									<Variable>
+										<BoolVariable Name="Show_Side_Menu" IsLocal="False"/>
+									</Variable>
+								</VariableBinding>
+							</Bindings>
+						</ValueTransitionBinding>
+					</Bindings>
+				</ChannelList>
+				<Frame Width="50" Height="47.4999" X="1265" Y="970" Path="..\Frames\Buttons\Button_Open_Numpad.prax"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

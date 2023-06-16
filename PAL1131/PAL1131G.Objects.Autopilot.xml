@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Library Name="PAL1131G.Objects.Autopilot" Wrapper="PAL1131G.Objects.Autopilot.Managed.dll" Identifier="0x0300" Version="0">
+  <Object Name="RoundedButton" FunctionName="DrawRoundedButton" Width="220" Height="60" Identifier="0x01" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="text" Name="Text" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="16x32" Description="" />
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="location" Name="Location" Type="int" Default="0" Description="Left (0), right (1)" />
+      </Group>
+      <Group Name="Box">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="boxColor" Name="Box Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="2" Description="" />
+        <Parameter Variable="cornerRadius" Name="Corner radius" Type="int" Default="10" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Fixed Length Value" FunctionName="DrawFixedLengthValue" Width="100" Height="30" Identifier="0x02" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="0" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="100" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="50" Description="Value between minimum and maximum" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Variable="chars" Name="Chars" Type="int" Default="1" Description="Number of chars" />
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="215" Description="Text color" />
+        <Parameter Variable="fontIndex" Name="Font Size" Type="font" Default="16x32" Description="Font size" />
+        <Parameter Variable="horizontalAlignment" Name="Horizontal Alignment" Type="int" Default="0" Description="Left (0), center (1), right (2)" />
+        <Parameter Variable="verticalAlignment" Name="Vertical Alignment" Type="int" Default="0" Description="Top (0), middle (1), bottom (2)" />
+      </Group>
+      <Group Name="Box">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="0" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Center BarGraph" FunctionName="DrawCenterBarGraph" Width="100" Height="30" Identifier="0x03" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="0" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="100" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="50" Description="Value between minimum and maximum" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Variable="alignment" Name="Alignment" Type="int" Default="0" Description="Vertical (0 or 1), horizontal (2 or 3)" />
+        <Parameter Variable="indicatorsNumber" Name="Indicators Number" Type="int" Default="5" Description="" />
+        <Parameter Variable="deadbandColor" Name="Deadband Color" Type="color" Default="215" Description="Deadband color" />
+        <Parameter Variable="deadbandRange" Name="Deadband Bar Range" Type="range" Default="0;5" Description="Deadband bar range" />
+        <Parameter Variable="negativeColor" Name="Negative Bar Color" Type="color" Default="180" Description="Negative bar color" />
+        <Parameter Variable="negativeRange" Name="Negative Bar Range" Type="range" Default="5;50" Description="Negative bar range" />
+        <Parameter Variable="positiveColor" Name="Positive Bar Color" Type="color" Default="102" Description="Positive bar color" />
+        <Parameter Variable="positiveRange" Name="Positive Bar Range" Type="range" Default="50;100" Description="Positive bar range" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="centerLineColor" Name="Center Line Color" Type="color" Default="0" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Center BarGraph Dot" FunctionName="DrawCenterBarGraphDot" Width="100" Height="30" Identifier="0x04" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="0" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="100" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="50" Description="Value between minimum and maximum" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Variable="alignment" Name="Alignment" Type="int" Default="0" Description="Vertical (0 or 1), horizontal (2 or 3)" />
+        <Parameter Variable="indicatorsNumber" Name="Indicators Number" Type="int" Default="5" Description="" />
+        <Parameter Variable="deadbandColor" Name="Deadband Color" Type="color" Default="215" Description="Deadband color" />
+        <Parameter Variable="deadbandRange" Name="Deadband Bar Range" Type="range" Default="0;5" Description="Deadband bar range" />
+        <Parameter Variable="negativeColor" Name="Negative Bar Color" Type="color" Default="180" Description="Negative bar color" />
+        <Parameter Variable="negativeRange" Name="Negative Bar Range" Type="range" Default="5;50" Description="Negative bar range" />
+        <Parameter Variable="positiveColor" Name="Positive Bar Color" Type="color" Default="102" Description="Positive bar color" />
+        <Parameter Variable="positiveRange" Name="Positive Bar Range" Type="range" Default="50;100" Description="Positive bar range" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="centerLineColor" Name="Center Line Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="dotSize" Name="Dot size" Type="int" Default="5" Description="Dot size" />
+      </Group>
+    </Parameters>
+  </Object>
+</Library>

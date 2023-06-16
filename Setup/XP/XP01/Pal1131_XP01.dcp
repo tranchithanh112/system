@@ -1,0 +1,997 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <TARGET RawCompilerVersion="00041200" StringCompilerVersion="0.4.18.0" CF="00003531" SF="000002b0" OP="00000005" LF="00000001" DC="00000020">
+    <GLOBAL>
+      <VAR LName="SHOWN_SEC_BUNKERING" PName="XP01.SHOWN_SEC_BUNKERING" Addr="0000" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="SHOWN_DAYS_BUNKERING" PName="XP01.SHOWN_DAYS_BUNKERING" Addr="0004" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="SHOWN_SEC_DG_FO" PName="XP01.SHOWN_SEC_DG_FO" Addr="0008" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="SHOWN_DAY_DG_FO" PName="XP01.SHOWN_DAY_DG_FO" Addr="000c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="GREY_WATER_TANK_INHIBIT" PName="XP01.GREY_WATER_TANK_INHIBIT" Addr="0010" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="BLACK_WATER_TANK_INHIBIT" PName="XP01.BLACK_WATER_TANK_INHIBIT" Addr="0011" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="PORTABLE_WATER_TANK_P_INHIBIT" PName="XP01.PORTABLE_WATER_TANK_P_INHIBIT" Addr="0012" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="PORTABLE_WATER_TANK_S_INHIBIT" PName="XP01.PORTABLE_WATER_TANK_S_INHIBIT" Addr="0013" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="FO_AFT_DB_TANK_C_INHIBIT" PName="XP01.FO_AFT_DB_TANK_C_INHIBIT" Addr="0014" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="FO_DB_TANK_P_INHIBIT" PName="XP01.FO_DB_TANK_P_INHIBIT" Addr="0015" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="FO_DB_TANK_S_INHIBIT" PName="XP01.FO_DB_TANK_S_INHIBIT" Addr="0016" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="FO_WING_TANK_P_INHIBIT" PName="XP01.FO_WING_TANK_P_INHIBIT" Addr="0017" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="FO_WING_TANK_S_INHIBIT" PName="XP01.FO_WING_TANK_S_INHIBIT" Addr="0018" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="FO_DAY_TANK_P_INHIBIT" PName="XP01.FO_DAY_TANK_P_INHIBIT" Addr="0019" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="FO_DAY_TANK_S_INHIBIT" PName="XP01.FO_DAY_TANK_S_INHIBIT" Addr="001a" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="FO_OVER_FLOW_TANK_INHIBIT" PName="XP01.FO_OVER_FLOW_TANK_INHIBIT" Addr="001b" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+      <VAR LName="GREY_WATER_TANK_LEVEL" PName="XP01.GREY_WATER_TANK_LEVEL" Addr="001c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BLACK_WATER_TANK_LEVEL" PName="XP01.BLACK_WATER_TANK_LEVEL" Addr="0020" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_P_LEVEL" PName="XP01.PORTABLE_WATER_TANK_P_LEVEL" Addr="0024" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_S_LEVEL" PName="XP01.PORTABLE_WATER_TANK_S_LEVEL" Addr="0028" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_AFT_DB_TANK_C_LEVEL" PName="XP01.FO_AFT_DB_TANK_C_LEVEL" Addr="002c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_P_LEVEL" PName="XP01.FO_DB_TANK_P_LEVEL" Addr="0030" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_S_LEVEL" PName="XP01.FO_DB_TANK_S_LEVEL" Addr="0034" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_P_LEVEL" PName="XP01.FO_WING_TANK_P_LEVEL" Addr="0038" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_S_LEVEL" PName="XP01.FO_WING_TANK_S_LEVEL" Addr="003c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="GREY_WATER_TANK_SOUNDING" PName="XP01.GREY_WATER_TANK_SOUNDING" Addr="0040" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BLACK_WATER_TANK_SOUNDING" PName="XP01.BLACK_WATER_TANK_SOUNDING" Addr="0044" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_P_SOUNDING" PName="XP01.PORTABLE_WATER_TANK_P_SOUNDING" Addr="0048" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_S_SOUNDING" PName="XP01.PORTABLE_WATER_TANK_S_SOUNDING" Addr="004c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_AFT_DB_TANK_C_SOUNDING" PName="XP01.FO_AFT_DB_TANK_C_SOUNDING" Addr="0050" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_P_SOUNDING" PName="XP01.FO_DB_TANK_P_SOUNDING" Addr="0054" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_S_SOUNDING" PName="XP01.FO_DB_TANK_S_SOUNDING" Addr="0058" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_P_SOUNDING" PName="XP01.FO_WING_TANK_P_SOUNDING" Addr="005c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_S_SOUNDING" PName="XP01.FO_WING_TANK_S_SOUNDING" Addr="0060" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_P_SOUNDING" PName="XP01.FO_DAY_TANK_P_SOUNDING" Addr="0064" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_S_SOUNDING" PName="XP01.FO_DAY_TANK_S_SOUNDING" Addr="0068" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_OVER_FLOW_TANK_SOUNDING" PName="XP01.FO_OVER_FLOW_TANK_SOUNDING" Addr="006c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="GREY_WATER_TANK_VOLUME" PName="XP01.GREY_WATER_TANK_VOLUME" Addr="0070" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BLACK_WATER_TANK_VOLUME" PName="XP01.BLACK_WATER_TANK_VOLUME" Addr="0074" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_P_VOLUME" PName="XP01.PORTABLE_WATER_TANK_P_VOLUME" Addr="0078" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_S_VOLUME" PName="XP01.PORTABLE_WATER_TANK_S_VOLUME" Addr="007c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_AFT_DB_TANK_C_VOLUME" PName="XP01.FO_AFT_DB_TANK_C_VOLUME" Addr="0080" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_P_VOLUME" PName="XP01.FO_DB_TANK_P_VOLUME" Addr="0084" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_S_VOLUME" PName="XP01.FO_DB_TANK_S_VOLUME" Addr="0088" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_P_VOLUME" PName="XP01.FO_WING_TANK_P_VOLUME" Addr="008c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_S_VOLUME" PName="XP01.FO_WING_TANK_S_VOLUME" Addr="0090" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_P_VOLUME" PName="XP01.FO_DAY_TANK_P_VOLUME" Addr="0094" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_S_VOLUME" PName="XP01.FO_DAY_TANK_S_VOLUME" Addr="0098" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_OVER_FLOW_TANK_VOLUME" PName="XP01.FO_OVER_FLOW_TANK_VOLUME" Addr="009c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="GREY_WATER_TANK_PERCENT" PName="XP01.GREY_WATER_TANK_PERCENT" Addr="00a0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BLACK_WATER_TANK_PERCENT" PName="XP01.BLACK_WATER_TANK_PERCENT" Addr="00a4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_P_PERCENT" PName="XP01.PORTABLE_WATER_TANK_P_PERCENT" Addr="00a8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_S_PERCENT" PName="XP01.PORTABLE_WATER_TANK_S_PERCENT" Addr="00ac" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_AFT_DB_TANK_C_PERCENT" PName="XP01.FO_AFT_DB_TANK_C_PERCENT" Addr="00b0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_P_PERCENT" PName="XP01.FO_DB_TANK_P_PERCENT" Addr="00b4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_S_PERCENT" PName="XP01.FO_DB_TANK_S_PERCENT" Addr="00b8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_P_PERCENT" PName="XP01.FO_WING_TANK_P_PERCENT" Addr="00bc" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_S_PERCENT" PName="XP01.FO_WING_TANK_S_PERCENT" Addr="00c0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_P_PERCENT" PName="XP01.FO_DAY_TANK_P_PERCENT" Addr="00c4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_S_PERCENT" PName="XP01.FO_DAY_TANK_S_PERCENT" Addr="00c8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_OVER_FLOW_TANK_PERCENT" PName="XP01.FO_OVER_FLOW_TANK_PERCENT" Addr="00cc" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_P_LEVEL" PName="XP01.FO_DAY_TANK_P_LEVEL" Addr="00d0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_S_LEVEL" PName="XP01.FO_DAY_TANK_S_LEVEL" Addr="00d4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BUNKERING_FO_INLET_FLOW_SENSOR" PName="XP01.BUNKERING_FO_INLET_FLOW_SENSOR" Addr="00d8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BUNKERING_FO_OUTLET_FLOW_SENSOR" PName="XP01.BUNKERING_FO_OUTLET_FLOW_SENSOR" Addr="00dc" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="NO1NO4_GENERATOR_FO_INLET_FLOW_SENSOR" PName="XP01.NO1NO4_GENERATOR_FO_INLET_FLOW_SENSOR" Addr="00e0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="NO2NO3_GENERATOR_FO_INLET_FLOW_SENSOR" PName="XP01.NO2NO3_GENERATOR_FO_INLET_FLOW_SENSOR" Addr="00e4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="NO1NO4_GENERATOR_FO_RETURN_FLOW_SENSOR" PName="XP01.NO1NO4_GENERATOR_FO_RETURN_FLOW_SENSOR" Addr="00e8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="NO2NO3_GENERATOR_FO_RETURN_FLOW_SENSOR" PName="XP01.NO2NO3_GENERATOR_FO_RETURN_FLOW_SENSOR" Addr="00ec" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_OVER_FLOW_TANK_LEVEL" PName="XP01.FO_OVER_FLOW_TANK_LEVEL" Addr="00f0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="GREY_WATER_TANK_WEIGHT" PName="XP01.GREY_WATER_TANK_WEIGHT" Addr="00f4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BLACK_WATER_TANK_WEIGHT" PName="XP01.BLACK_WATER_TANK_WEIGHT" Addr="00f8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_P_WEIGHT" PName="XP01.PORTABLE_WATER_TANK_P_WEIGHT" Addr="00fc" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_S_WEIGHT" PName="XP01.PORTABLE_WATER_TANK_S_WEIGHT" Addr="0100" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_AFT_DB_TANK_C_WEIGHT" PName="XP01.FO_AFT_DB_TANK_C_WEIGHT" Addr="0104" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_P_WEIGHT" PName="XP01.FO_DB_TANK_P_WEIGHT" Addr="0108" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_S_WEIGHT" PName="XP01.FO_DB_TANK_S_WEIGHT" Addr="010c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_P_WEIGHT" PName="XP01.FO_WING_TANK_P_WEIGHT" Addr="0110" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_S_WEIGHT" PName="XP01.FO_WING_TANK_S_WEIGHT" Addr="0114" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_P_WEIGHT" PName="XP01.FO_DAY_TANK_P_WEIGHT" Addr="0118" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_S_WEIGHT" PName="XP01.FO_DAY_TANK_S_WEIGHT" Addr="011c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_OVER_FLOW_TANK_WEIGHT" PName="XP01.FO_OVER_FLOW_TANK_WEIGHT" Addr="0120" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="GREY_WATER_TANK_LAL" PName="XP01.GREY_WATER_TANK_LAL" Addr="0124" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BLACK_WATER_TANK_LAL" PName="XP01.BLACK_WATER_TANK_LAL" Addr="0128" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_P_LAL" PName="XP01.PORTABLE_WATER_TANK_P_LAL" Addr="012c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_S_LAL" PName="XP01.PORTABLE_WATER_TANK_S_LAL" Addr="0130" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_AFT_DB_TANK_C_LAL" PName="XP01.FO_AFT_DB_TANK_C_LAL" Addr="0134" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_P_LAL" PName="XP01.FO_DB_TANK_P_LAL" Addr="0138" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_S_LAL" PName="XP01.FO_DB_TANK_S_LAL" Addr="013c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_P_LAL" PName="XP01.FO_WING_TANK_P_LAL" Addr="0140" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_S_LAL" PName="XP01.FO_WING_TANK_S_LAL" Addr="0144" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_P_LAL" PName="XP01.FO_DAY_TANK_P_LAL" Addr="0148" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_S_LAL" PName="XP01.FO_DAY_TANK_S_LAL" Addr="014c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_OVER_FLOW_TANK_LAL" PName="XP01.FO_OVER_FLOW_TANK_LAL" Addr="0150" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="GREY_WATER_TANK_LAH" PName="XP01.GREY_WATER_TANK_LAH" Addr="0154" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BLACK_WATER_TANK_LAH" PName="XP01.BLACK_WATER_TANK_LAH" Addr="0158" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_P_LAH" PName="XP01.PORTABLE_WATER_TANK_P_LAH" Addr="015c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="PORTABLE_WATER_TANK_S_LAH" PName="XP01.PORTABLE_WATER_TANK_S_LAH" Addr="0160" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_AFT_DB_TANK_C_LAH" PName="XP01.FO_AFT_DB_TANK_C_LAH" Addr="0164" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_P_LAH" PName="XP01.FO_DB_TANK_P_LAH" Addr="0168" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DB_TANK_S_LAH" PName="XP01.FO_DB_TANK_S_LAH" Addr="016c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_P_LAH" PName="XP01.FO_WING_TANK_P_LAH" Addr="0170" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_WING_TANK_S_LAH" PName="XP01.FO_WING_TANK_S_LAH" Addr="0174" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_P_LAH" PName="XP01.FO_DAY_TANK_P_LAH" Addr="0178" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_DAY_TANK_S_LAH" PName="XP01.FO_DAY_TANK_S_LAH" Addr="017c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_OVER_FLOW_TANK_LAH" PName="XP01.FO_OVER_FLOW_TANK_LAH" Addr="0180" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BUNKERRING_FO_USED" PName="XP01.BUNKERRING_FO_USED" Addr="0184" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="NO_1NO_4_FO_USED" PName="XP01.NO_1NO_4_FO_USED" Addr="0188" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="NO_2NO_3_FO_USED" PName="XP01.NO_2NO_3_FO_USED" Addr="018c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="BUNKERRING_FO_CONSUME" PName="XP01.BUNKERRING_FO_CONSUME" Addr="0190" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="NO_1NO_4_FO_CONSUME" PName="XP01.NO_1NO_4_FO_CONSUME" Addr="0194" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="NO_2NO_3_FO_CONSUME" PName="XP01.NO_2NO_3_FO_CONSUME" Addr="0198" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FO_CONSUMPTION_TOTAL" PName="XP01.FO_CONSUMPTION_TOTAL" Addr="019c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" VarFlags="00804000" TypeCRC="F0017F3D" />
+      <VAR LName="FUEL_CONSUMPTION_RESET" PName="XP01.FUEL_CONSUMPTION_RESET" Addr="01a0" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" VarFlags="00804000" TypeCRC="D275EFCD" />
+    </GLOBAL>
+    <VMACH>
+      <FILE_LOC>VM\VM-Praxis-XP.xml</FILE_LOC>
+    </VMACH>
+    <TASKS>
+      <TASK LName="TASK" PName="XP01.TASK" LoopType="0" Cycle="200" CycleUnit="ms" BodyCodeAddres="000c" TaskFlags="00000000" />
+    </TASKS>
+    <MEMORY_MAP Type="code">
+      <file LoadAddr="0" Size="1788">Pal1131_XP01.xcp</file>
+      <file_FullName>D:\SOFTWARE\SYSTEM\SETUP\XP\XP01\Pal1131_XP01.xcp</file_FullName>
+    </MEMORY_MAP>
+    <MEMORY_MAP Type="data">
+      <file LoadAddr="0" Size="1108">#dummy</file>
+    </MEMORY_MAP>
+    <MNEMONIC_MAP Type="code">
+:0000|                                   | :?XP01.TASK?TSKSTR                                                              
+:0000| 1C16 0000 C001                    | $VMSYS.CALB #0000, :?XP01.TANKS?INIT                                            
+:0006| 1C16 0000 A705                    | $VMSYS.CALB #0000, :?XP01.FUEL_CONSUM?INIT                                      
+:000c|                                   | :?XP01.TASK?TSKLOOP                                                             
+:000c| 1C16 0000 1102                    | $VMSYS.CALB #0000, :?XP01.TANKS?CODE                                            
+:0012| 1C16 0000 CB05                    | $VMSYS.CALB #0000, :?XP01.FUEL_CONSUM?CODE                                      
+:0018| 1C1D 0C00                         | $VMSYS.TRML :?XP01.TASK?TSKLOOP                                                 
+:001c|                                   | :?XP01.TANKS_CAL?INIT                                                           
+:001c| 1C15 1400 04 00000000             | $VMSYS.MCD SOUNDING, #04, #00000000                                             
+:0025| 1C15 1800 04 00000000             | $VMSYS.MCD PERCENT, #04, #00000000                                              
+:002e| 1C15 1C00 04 00000000             | $VMSYS.MCD WEIGHT, #04, #00000000                                               
+:0037| 1C15 2000 02 6400                 | $VMSYS.MCD ?L?CST0004, #02, #6400                                               
+:003e| 1C13                              | $VMSYS.RETURN                                                                   
+:0040|                                   | :?XP01.TANKS_CAL?CODE                                                           
+:0040| 1D10 1400 0000 1000               | $DEFAULT.ADD SOUNDING, SENSOR, OFFSET                                           
+:0048| 1D13 2400 0C00 0800               | $DEFAULT.DIV ?F?$DEFAULT_DIV0005, VOLUME, CAPACITY                              
+:0050| 190C 2C00 2000                    | $DEFAULT.INT_TO_DINT ?CCT??DEFAULT?DINT?0, ?L?CST0004                           
+:0056| 1D1D 2800 2C00                    | $DEFAULT.DINT_TO_FINT ?CCT??DEFAULT?FINT?0, ?CCT??DEFAULT?DINT?0                
+:005c| 1D12 1800 2400 2800               | $DEFAULT.MUL PERCENT, ?F?$DEFAULT_DIV0005, ?CCT??DEFAULT?FINT?0                 
+:0064| 1D12 1C00 0C00 0400               | $DEFAULT.MUL WEIGHT, VOLUME, DENSITY                                            
+:006c| 1C13                              | $VMSYS.RETURN                                                                   
+:006e|                                   | :?XP01.PULSE_GEN?INIT                                                           
+:006e| 1C16 2800 E600                    | $VMSYS.CALB TIMER_OFF, :?IEC_61131.TOF?INIT                                     
+:0074| 1C16 1000 4D01                    | $VMSYS.CALB TIMER_ON, :?IEC_61131.TON?INIT                                      
+:007a| 1C15 0100 01 00                   | $VMSYS.MCD Q, #01, #00                                                          
+:0080| 1C13                              | $VMSYS.RETURN                                                                   
+:0082|                                   | :?XP01.PULSE_GEN?CODE                                                           
+:0082| 1C02 2900 9800                    | $VMSYS.JZ TIMER_OFF.Q, :?XP01.PULSE_GEN?AND000B                                 
+:0088| 1C02 0000 9800                    | $VMSYS.JZ ENABLE, :?XP01.PULSE_GEN?AND000B                                      
+:008e| 1C15 0300 01 01                   | $VMSYS.MCD ?LR?ANDB000D, #01, #01                                               
+:0094| 1C00 9E00                         | $VMSYS.JMP :?XP01.PULSE_GEN?EAND000E                                            
+:0098|                                   | :?XP01.PULSE_GEN?AND000B                                                        
+:0098| 1C15 0300 01 00                   | $VMSYS.MCD ?LR?ANDB000D, #01, #00                                               
+:009e|                                   | :?XP01.PULSE_GEN?EAND000E                                                       
+:009e| 0510 1000 0300                    | $DEFAULT.NOT TIMER_ON.IN, ?LR?ANDB000D                                          
+:00a4| 1C1F 1400 0400 0400               | $VMSYS.MEMCP TIMER_ON.PT, FREQ, #0400                                           
+:00ac| 1C16 1000 6701                    | $VMSYS.CALB TIMER_ON, :?IEC_61131.TON?CODE                                      
+:00b2| 1C1F 2800 1100 0100               | $VMSYS.MEMCP TIMER_OFF.IN, TIMER_ON.Q, #0100                                    
+:00ba| 1C1F 2C00 0800 0400               | $VMSYS.MEMCP TIMER_OFF.PT, WIDTH, #0400                                         
+:00c2| 1C16 2800 0001                    | $VMSYS.CALB TIMER_OFF, :?IEC_61131.TOF?CODE                                     
+:00c8| 1C02 2900 DE00                    | $VMSYS.JZ TIMER_OFF.Q, :?XP01.PULSE_GEN?AND0011                                 
+:00ce| 1C02 0000 DE00                    | $VMSYS.JZ ENABLE, :?XP01.PULSE_GEN?AND0011                                      
+:00d4| 1C15 0100 01 01                   | $VMSYS.MCD Q, #01, #01                                                          
+:00da| 1C00 E400                         | $VMSYS.JMP :?XP01.PULSE_GEN?EAND0014                                            
+:00de|                                   | :?XP01.PULSE_GEN?AND0011                                                        
+:00de| 1C15 0100 01 00                   | $VMSYS.MCD Q, #01, #00                                                          
+:00e4|                                   | :?XP01.PULSE_GEN?EAND0014                                                       
+:00e4| 1C13                              | $VMSYS.RETURN                                                                   
+:00e6|                                   | :?IEC_61131.TOF?INIT                                                            
+:00e6| 1C15 0C00 04 00000000             | $VMSYS.MCD stime, #04, #00000000                                                
+:00ef| 1C15 0100 01 00                   | $VMSYS.MCD Q, #01, #00                                                          
+:00f5| 1C15 0800 04 00000000             | $VMSYS.MCD ET, #04, #00000000                                                   
+:00fe| 1C13                              | $VMSYS.RETURN                                                                   
+:0100|                                   | :?IEC_61131.TOF?CODE                                                            
+:0100| 1C02 0000 1D01                    | $VMSYS.JZ IN, :?IEC_61131.TOFIF?B0074                                           
+:0106| 1C15 0100 01 01                   | $VMSYS.MCD Q, #01, #01                                                          
+:010c| 1C15 0800 04 00000000             | $VMSYS.MCD ET, #04, #00000000                                                   
+:0115| 1C17 0C00                         | $DEFAULT.CUR_TIME stime                                                         
+:0119| 1C00 4B01                         | $VMSYS.JMP :?IEC_61131.TOFIF?E0079                                              
+:011d|                                   | :?IEC_61131.TOFIF?B0074                                                         
+:011d| 1C02 0100 4B01                    | $VMSYS.JZ Q, :?IEC_61131.TOFIF?B007B                                            
+:0123| 1C17 1000                         | $DEFAULT.CUR_TIME ?F?CUR_TIME007D                                               
+:0127| 020B 0800 1000 0C00               | $DEFAULT.SUB ET, ?F?CUR_TIME007D, stime                                         
+:012f| 110B 0200 0800 0400               | $DEFAULT.GE ?IF?CTL, ET, PT                                                     
+:0137| 1C02 0200 4B01                    | $VMSYS.JZ ?IF?CTL, :?IEC_61131.TOFIF?B007F                                      
+:013d| 1C15 0100 01 00                   | $VMSYS.MCD Q, #01, #00                                                          
+:0143| 1C1F 0800 0400 0400               | $VMSYS.MEMCP ET, PT, #0400                                                      
+:014b|                                   | :?IEC_61131.TOFIF?B007F                                                         
+:014b|                                   | :?IEC_61131.TOFIF?B007B                                                         
+:014b|                                   | :?IEC_61131.TOFIF?E0079                                                         
+:014b| 1C13                              | $VMSYS.RETURN                                                                   
+:014d|                                   | :?IEC_61131.TON?INIT                                                            
+:014d| 1C15 0C00 04 00000000             | $VMSYS.MCD stime, #04, #00000000                                                
+:0156| 1C15 0100 01 00                   | $VMSYS.MCD Q, #01, #00                                                          
+:015c| 1C15 0800 04 00000000             | $VMSYS.MCD ET, #04, #00000000                                                   
+:0165| 1C13                              | $VMSYS.RETURN                                                                   
+:0167|                                   | :?IEC_61131.TON?CODE                                                            
+:0167| 0510 0200 0000                    | $DEFAULT.NOT ?IF?CTL, IN                                                        
+:016d| 1C02 0200 8A01                    | $VMSYS.JZ ?IF?CTL, :?IEC_61131.TONIF?B0083                                      
+:0173| 1C15 0100 01 00                   | $VMSYS.MCD Q, #01, #00                                                          
+:0179| 1C15 0800 04 00000000             | $VMSYS.MCD ET, #04, #00000000                                                   
+:0182| 1C17 0C00                         | $DEFAULT.CUR_TIME stime                                                         
+:0186| 1C00 BE01                         | $VMSYS.JMP :?IEC_61131.TONIF?E0089                                              
+:018a|                                   | :?IEC_61131.TONIF?B0083                                                         
+:018a| 0510 0200 0100                    | $DEFAULT.NOT ?IF?CTL, Q                                                         
+:0190| 1C02 0200 BE01                    | $VMSYS.JZ ?IF?CTL, :?IEC_61131.TONIF?B008A                                      
+:0196| 1C17 1000                         | $DEFAULT.CUR_TIME ?F?CUR_TIME008D                                               
+:019a| 020B 0800 1000 0C00               | $DEFAULT.SUB ET, ?F?CUR_TIME008D, stime                                         
+:01a2| 110B 0200 0800 0400               | $DEFAULT.GE ?IF?CTL, ET, PT                                                     
+:01aa| 1C02 0200 BE01                    | $VMSYS.JZ ?IF?CTL, :?IEC_61131.TONIF?B008F                                      
+:01b0| 1C15 0100 01 01                   | $VMSYS.MCD Q, #01, #01                                                          
+:01b6| 1C1F 0800 0400 0400               | $VMSYS.MEMCP ET, PT, #0400                                                      
+:01be|                                   | :?IEC_61131.TONIF?B008F                                                         
+:01be|                                   | :?IEC_61131.TONIF?B008A                                                         
+:01be|                                   | :?IEC_61131.TONIF?E0089                                                         
+:01be| 1C13                              | $VMSYS.RETURN                                                                   
+:01c0|                                   | :?XP01.TANKS?INIT                                                               
+:01c0| 1C16 B803 1C00                    | $VMSYS.CALB FO_OVERFLOW_TANK, :?XP01.TANKS_CAL?INIT                             
+:01c6| 1C16 8803 1C00                    | $VMSYS.CALB FO_DAY_TANK_S, :?XP01.TANKS_CAL?INIT                                
+:01cc| 1C16 5803 1C00                    | $VMSYS.CALB FO_DAY_TANK_P, :?XP01.TANKS_CAL?INIT                                
+:01d2| 1C16 2803 1C00                    | $VMSYS.CALB FO_WING_TANK_S, :?XP01.TANKS_CAL?INIT                               
+:01d8| 1C16 F802 1C00                    | $VMSYS.CALB FO_WING_TANK_P, :?XP01.TANKS_CAL?INIT                               
+:01de| 1C16 C802 1C00                    | $VMSYS.CALB FO_DB_TANK_S, :?XP01.TANKS_CAL?INIT                                 
+:01e4| 1C16 9802 1C00                    | $VMSYS.CALB FO_DB_TANK_P, :?XP01.TANKS_CAL?INIT                                 
+:01ea| 1C16 6802 1C00                    | $VMSYS.CALB FO_AFT_DB_TANK_C, :?XP01.TANKS_CAL?INIT                             
+:01f0| 1C16 3802 1C00                    | $VMSYS.CALB PORTABLE_WATER_TANK_S, :?XP01.TANKS_CAL?INIT                        
+:01f6| 1C16 0802 1C00                    | $VMSYS.CALB PORTABLE_WATER_TANK_P, :?XP01.TANKS_CAL?INIT                        
+:01fc| 1C16 D801 1C00                    | $VMSYS.CALB BLACK_WATER_TANK, :?XP01.TANKS_CAL?INIT                             
+:0202| 1C16 A801 1C00                    | $VMSYS.CALB GREY_WATER_TANK, :?XP01.TANKS_CAL?INIT                              
+:0208| 1C15 A201 02 100E                 | $VMSYS.MCD ?L?CST0016, #02, #100E                                               
+:020f| 1C13                              | $VMSYS.RETURN                                                                   
+:0211|                                   | :?XP01.TANKS?CODE                                                               
+:0211| 190C E803 A201                    | $DEFAULT.INT_TO_DINT ?CCT??DEFAULT?DINT?0, ?L?CST0016                           
+:0217| 1D1D A401 E803                    | $DEFAULT.DINT_TO_FINT ?CCT??DEFAULT?FINT?0, ?CCT??DEFAULT?DINT?0                
+:021d| 1D12 0000 0400 A401               | $DEFAULT.MUL SHOWN_SEC_BUNKERING, SHOWN_DAYS_BUNKERING, ?CCT??DEFAULT?FINT?0    
+:0225| 190C E803 A201                    | $DEFAULT.INT_TO_DINT ?CCT??DEFAULT?DINT?0, ?L?CST0016                           
+:022b| 1D1D A401 E803                    | $DEFAULT.DINT_TO_FINT ?CCT??DEFAULT?FINT?0, ?CCT??DEFAULT?DINT?0                
+:0231| 1D12 0800 0C00 A401               | $DEFAULT.MUL SHOWN_SEC_DG_FO, SHOWN_DAY_DG_FO, ?CCT??DEFAULT?FINT?0             
+:0239| 1C1F A801 1C00 0400               | $VMSYS.MEMCP GREY_WATER_TANK.SENSOR, GREY_WATER_TANK_LEVEL, #0400               
+:0241| 1C15 AC01 04 E8030000             | $VMSYS.MCD GREY_WATER_TANK.DENSITY, #04, #E8030000                              
+:024a| 1C15 B001 04 0C170000             | $VMSYS.MCD GREY_WATER_TANK.CAPACITY, #04, #0C170000                             
+:0253| 1C15 B801 04 00000000             | $VMSYS.MCD GREY_WATER_TANK.OFFSET, #04, #00000000                               
+:025c| 1C1F B401 7000 0400               | $VMSYS.MEMCP GREY_WATER_TANK.VOLUME, GREY_WATER_TANK_VOLUME, #0400              
+:0264| 1C16 A801 4000                    | $VMSYS.CALB GREY_WATER_TANK, :?XP01.TANKS_CAL?CODE                              
+:026a| 1C1F 4000 BC01 0400               | $VMSYS.MEMCP GREY_WATER_TANK_SOUNDING, GREY_WATER_TANK.SOUNDING, #0400          
+:0272| 1C1F A000 C001 0400               | $VMSYS.MEMCP GREY_WATER_TANK_PERCENT, GREY_WATER_TANK.PERCENT, #0400            
+:027a| 1C1F F400 C401 0400               | $VMSYS.MEMCP GREY_WATER_TANK_WEIGHT, GREY_WATER_TANK.WEIGHT, #0400              
+:0282| 1C1F D801 2000 0400               | $VMSYS.MEMCP BLACK_WATER_TANK.SENSOR, BLACK_WATER_TANK_LEVEL, #0400             
+:028a| 1C15 DC01 04 E8030000             | $VMSYS.MCD BLACK_WATER_TANK.DENSITY, #04, #E8030000                             
+:0293| 1C15 E001 04 0C170000             | $VMSYS.MCD BLACK_WATER_TANK.CAPACITY, #04, #0C170000                            
+:029c| 1C15 E801 04 00000000             | $VMSYS.MCD BLACK_WATER_TANK.OFFSET, #04, #00000000                              
+:02a5| 1C1F E401 7400 0400               | $VMSYS.MEMCP BLACK_WATER_TANK.VOLUME, BLACK_WATER_TANK_VOLUME, #0400            
+:02ad| 1C16 D801 4000                    | $VMSYS.CALB BLACK_WATER_TANK, :?XP01.TANKS_CAL?CODE                             
+:02b3| 1C1F 4400 EC01 0400               | $VMSYS.MEMCP BLACK_WATER_TANK_SOUNDING, BLACK_WATER_TANK.SOUNDING, #0400        
+:02bb| 1C1F A400 F001 0400               | $VMSYS.MEMCP BLACK_WATER_TANK_PERCENT, BLACK_WATER_TANK.PERCENT, #0400          
+:02c3| 1C1F F800 F401 0400               | $VMSYS.MEMCP BLACK_WATER_TANK_WEIGHT, BLACK_WATER_TANK.WEIGHT, #0400            
+:02cb| 1C1F 0802 2400 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_P.SENSOR, PORTABLE_WATER_TANK_P_LEVEL, #0400   
+:02d3| 1C15 0C02 04 E8030000             | $VMSYS.MCD PORTABLE_WATER_TANK_P.DENSITY, #04, #E8030000                        
+:02dc| 1C15 1002 04 D6800000             | $VMSYS.MCD PORTABLE_WATER_TANK_P.CAPACITY, #04, #D6800000                       
+:02e5| 1C15 1802 04 A0F70300             | $VMSYS.MCD PORTABLE_WATER_TANK_P.OFFSET, #04, #A0F70300                         
+:02ee| 1C1F 1402 7800 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_P.VOLUME, PORTABLE_WATER_TANK_P_VOLUME, #0400  
+:02f6| 1C16 0802 4000                    | $VMSYS.CALB PORTABLE_WATER_TANK_P, :?XP01.TANKS_CAL?CODE                        
+:02fc| 1C1F 4800 1C02 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_P_SOUNDING, PORTABLE_WATER_TANK_P.SOUNDING, #0…
+:02fc|                                   | 400                                                                             
+:0304| 1C1F A800 2002 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_P_PERCENT, PORTABLE_WATER_TANK_P.PERCENT, #0400
+:030c| 1C1F FC00 2402 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_P_WEIGHT, PORTABLE_WATER_TANK_P.WEIGHT, #0400  
+:0314| 1C1F 3802 2800 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_S.SENSOR, PORTABLE_WATER_TANK_S_LEVEL, #0400   
+:031c| 1C15 3C02 04 E8030000             | $VMSYS.MCD PORTABLE_WATER_TANK_S.DENSITY, #04, #E8030000                        
+:0325| 1C15 4002 04 D6800000             | $VMSYS.MCD PORTABLE_WATER_TANK_S.CAPACITY, #04, #D6800000                       
+:032e| 1C15 4802 04 A0F70300             | $VMSYS.MCD PORTABLE_WATER_TANK_S.OFFSET, #04, #A0F70300                         
+:0337| 1C1F 4402 7C00 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_S.VOLUME, PORTABLE_WATER_TANK_S_VOLUME, #0400  
+:033f| 1C16 3802 4000                    | $VMSYS.CALB PORTABLE_WATER_TANK_S, :?XP01.TANKS_CAL?CODE                        
+:0345| 1C1F 4C00 4C02 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_S_SOUNDING, PORTABLE_WATER_TANK_S.SOUNDING, #0…
+:0345|                                   | 400                                                                             
+:034d| 1C1F AC00 5002 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_S_PERCENT, PORTABLE_WATER_TANK_S.PERCENT, #0400
+:0355| 1C1F 0001 5402 0400               | $VMSYS.MEMCP PORTABLE_WATER_TANK_S_WEIGHT, PORTABLE_WATER_TANK_S.WEIGHT, #0400  
+:035d| 1C1F 6802 2C00 0400               | $VMSYS.MEMCP FO_AFT_DB_TANK_C.SENSOR, FO_AFT_DB_TANK_C_LEVEL, #0400             
+:0365| 1C15 6C02 04 66030000             | $VMSYS.MCD FO_AFT_DB_TANK_C.DENSITY, #04, #66030000                             
+:036e| 1C15 7002 04 E7BF0000             | $VMSYS.MCD FO_AFT_DB_TANK_C.CAPACITY, #04, #E7BF0000                            
+:0377| 1C15 7802 04 605B0300             | $VMSYS.MCD FO_AFT_DB_TANK_C.OFFSET, #04, #605B0300                              
+:0380| 1C1F 7402 8000 0400               | $VMSYS.MEMCP FO_AFT_DB_TANK_C.VOLUME, FO_AFT_DB_TANK_C_VOLUME, #0400            
+:0388| 1C16 6802 4000                    | $VMSYS.CALB FO_AFT_DB_TANK_C, :?XP01.TANKS_CAL?CODE                             
+:038e| 1C1F 5000 7C02 0400               | $VMSYS.MEMCP FO_AFT_DB_TANK_C_SOUNDING, FO_AFT_DB_TANK_C.SOUNDING, #0400        
+:0396| 1C1F B000 8002 0400               | $VMSYS.MEMCP FO_AFT_DB_TANK_C_PERCENT, FO_AFT_DB_TANK_C.PERCENT, #0400          
+:039e| 1C1F 0401 8402 0400               | $VMSYS.MEMCP FO_AFT_DB_TANK_C_WEIGHT, FO_AFT_DB_TANK_C.WEIGHT, #0400            
+:03a6| 1C1F 9802 3000 0400               | $VMSYS.MEMCP FO_DB_TANK_P.SENSOR, FO_DB_TANK_P_LEVEL, #0400                     
+:03ae| 1C15 9C02 04 66030000             | $VMSYS.MCD FO_DB_TANK_P.DENSITY, #04, #66030000                                 
+:03b7| 1C15 A002 04 28CF0000             | $VMSYS.MCD FO_DB_TANK_P.CAPACITY, #04, #28CF0000                                
+:03c0| 1C15 A802 04 B08F0600             | $VMSYS.MCD FO_DB_TANK_P.OFFSET, #04, #B08F0600                                  
+:03c9| 1C1F A402 8400 0400               | $VMSYS.MEMCP FO_DB_TANK_P.VOLUME, FO_DB_TANK_P_VOLUME, #0400                    
+:03d1| 1C16 9802 4000                    | $VMSYS.CALB FO_DB_TANK_P, :?XP01.TANKS_CAL?CODE                                 
+:03d7| 1C1F 5400 AC02 0400               | $VMSYS.MEMCP FO_DB_TANK_P_SOUNDING, FO_DB_TANK_P.SOUNDING, #0400                
+:03df| 1C1F B400 B002 0400               | $VMSYS.MEMCP FO_DB_TANK_P_PERCENT, FO_DB_TANK_P.PERCENT, #0400                  
+:03e7| 1C1F 0801 B402 0400               | $VMSYS.MEMCP FO_DB_TANK_P_WEIGHT, FO_DB_TANK_P.WEIGHT, #0400                    
+:03ef| 1C1F C802 3400 0400               | $VMSYS.MEMCP FO_DB_TANK_S.SENSOR, FO_DB_TANK_S_LEVEL, #0400                     
+:03f7| 1C15 CC02 04 66030000             | $VMSYS.MCD FO_DB_TANK_S.DENSITY, #04, #66030000                                 
+:0400| 1C15 D002 04 28CF0000             | $VMSYS.MCD FO_DB_TANK_S.CAPACITY, #04, #28CF0000                                
+:0409| 1C15 D802 04 B08F0600             | $VMSYS.MCD FO_DB_TANK_S.OFFSET, #04, #B08F0600                                  
+:0412| 1C1F D402 8800 0400               | $VMSYS.MEMCP FO_DB_TANK_S.VOLUME, FO_DB_TANK_S_VOLUME, #0400                    
+:041a| 1C16 C802 4000                    | $VMSYS.CALB FO_DB_TANK_S, :?XP01.TANKS_CAL?CODE                                 
+:0420| 1C1F 5800 DC02 0400               | $VMSYS.MEMCP FO_DB_TANK_S_SOUNDING, FO_DB_TANK_S.SOUNDING, #0400                
+:0428| 1C1F B800 E002 0400               | $VMSYS.MEMCP FO_DB_TANK_S_PERCENT, FO_DB_TANK_S.PERCENT, #0400                  
+:0430| 1C1F 0C01 E402 0400               | $VMSYS.MEMCP FO_DB_TANK_S_WEIGHT, FO_DB_TANK_S.WEIGHT, #0400                    
+:0438| 1C1F F802 3800 0400               | $VMSYS.MEMCP FO_WING_TANK_P.SENSOR, FO_WING_TANK_P_LEVEL, #0400                 
+:0440| 1C15 FC02 04 66030000             | $VMSYS.MCD FO_WING_TANK_P.DENSITY, #04, #66030000                               
+:0449| 1C15 0003 04 807C0000             | $VMSYS.MCD FO_WING_TANK_P.CAPACITY, #04, #807C0000                              
+:0452| 1C15 0803 04 601F0D00             | $VMSYS.MCD FO_WING_TANK_P.OFFSET, #04, #601F0D00                                
+:045b| 1C1F 0403 8C00 0400               | $VMSYS.MEMCP FO_WING_TANK_P.VOLUME, FO_WING_TANK_P_VOLUME, #0400                
+:0463| 1C16 F802 4000                    | $VMSYS.CALB FO_WING_TANK_P, :?XP01.TANKS_CAL?CODE                               
+:0469| 1C1F 5C00 0C03 0400               | $VMSYS.MEMCP FO_WING_TANK_P_SOUNDING, FO_WING_TANK_P.SOUNDING, #0400            
+:0471| 1C1F BC00 1003 0400               | $VMSYS.MEMCP FO_WING_TANK_P_PERCENT, FO_WING_TANK_P.PERCENT, #0400              
+:0479| 1C1F 1001 1403 0400               | $VMSYS.MEMCP FO_WING_TANK_P_WEIGHT, FO_WING_TANK_P.WEIGHT, #0400                
+:0481| 1C1F 2803 3C00 0400               | $VMSYS.MEMCP FO_WING_TANK_S.SENSOR, FO_WING_TANK_S_LEVEL, #0400                 
+:0489| 1C15 2C03 04 66030000             | $VMSYS.MCD FO_WING_TANK_S.DENSITY, #04, #66030000                               
+:0492| 1C15 3003 04 807C0000             | $VMSYS.MCD FO_WING_TANK_S.CAPACITY, #04, #807C0000                              
+:049b| 1C15 3803 04 601F0D00             | $VMSYS.MCD FO_WING_TANK_S.OFFSET, #04, #601F0D00                                
+:04a4| 1C1F 3403 9000 0400               | $VMSYS.MEMCP FO_WING_TANK_S.VOLUME, FO_WING_TANK_S_VOLUME, #0400                
+:04ac| 1C16 2803 4000                    | $VMSYS.CALB FO_WING_TANK_S, :?XP01.TANKS_CAL?CODE                               
+:04b2| 1C1F 6000 3C03 0400               | $VMSYS.MEMCP FO_WING_TANK_S_SOUNDING, FO_WING_TANK_S.SOUNDING, #0400            
+:04ba| 1C1F C000 4003 0400               | $VMSYS.MEMCP FO_WING_TANK_S_PERCENT, FO_WING_TANK_S.PERCENT, #0400              
+:04c2| 1C1F 1401 4403 0400               | $VMSYS.MEMCP FO_WING_TANK_S_WEIGHT, FO_WING_TANK_S.WEIGHT, #0400                
+:04ca| 1C1F 5803 D000 0400               | $VMSYS.MEMCP FO_DAY_TANK_P.SENSOR, FO_DAY_TANK_P_LEVEL, #0400                   
+:04d2| 1C15 5C03 04 66030000             | $VMSYS.MCD FO_DAY_TANK_P.DENSITY, #04, #66030000                                
+:04db| 1C15 6003 04 12570000             | $VMSYS.MCD FO_DAY_TANK_P.CAPACITY, #04, #12570000                               
+:04e4| 1C15 6803 04 00710200             | $VMSYS.MCD FO_DAY_TANK_P.OFFSET, #04, #00710200                                 
+:04ed| 1C1F 6403 9400 0400               | $VMSYS.MEMCP FO_DAY_TANK_P.VOLUME, FO_DAY_TANK_P_VOLUME, #0400                  
+:04f5| 1C16 5803 4000                    | $VMSYS.CALB FO_DAY_TANK_P, :?XP01.TANKS_CAL?CODE                                
+:04fb| 1C1F 6400 6C03 0400               | $VMSYS.MEMCP FO_DAY_TANK_P_SOUNDING, FO_DAY_TANK_P.SOUNDING, #0400              
+:0503| 1C1F C400 7003 0400               | $VMSYS.MEMCP FO_DAY_TANK_P_PERCENT, FO_DAY_TANK_P.PERCENT, #0400                
+:050b| 1C1F 1801 7403 0400               | $VMSYS.MEMCP FO_DAY_TANK_P_WEIGHT, FO_DAY_TANK_P.WEIGHT, #0400                  
+:0513| 1C1F 8803 D400 0400               | $VMSYS.MEMCP FO_DAY_TANK_S.SENSOR, FO_DAY_TANK_S_LEVEL, #0400                   
+:051b| 1C15 8C03 04 66030000             | $VMSYS.MCD FO_DAY_TANK_S.DENSITY, #04, #66030000                                
+:0524| 1C15 9003 04 12570000             | $VMSYS.MCD FO_DAY_TANK_S.CAPACITY, #04, #12570000                               
+:052d| 1C15 9803 04 00710200             | $VMSYS.MCD FO_DAY_TANK_S.OFFSET, #04, #00710200                                 
+:0536| 1C1F 9403 9800 0400               | $VMSYS.MEMCP FO_DAY_TANK_S.VOLUME, FO_DAY_TANK_S_VOLUME, #0400                  
+:053e| 1C16 8803 4000                    | $VMSYS.CALB FO_DAY_TANK_S, :?XP01.TANKS_CAL?CODE                                
+:0544| 1C1F 6800 9C03 0400               | $VMSYS.MEMCP FO_DAY_TANK_S_SOUNDING, FO_DAY_TANK_S.SOUNDING, #0400              
+:054c| 1C1F C800 A003 0400               | $VMSYS.MEMCP FO_DAY_TANK_S_PERCENT, FO_DAY_TANK_S.PERCENT, #0400                
+:0554| 1C1F 1C01 A403 0400               | $VMSYS.MEMCP FO_DAY_TANK_S_WEIGHT, FO_DAY_TANK_S.WEIGHT, #0400                  
+:055c| 1C1F B803 F000 0400               | $VMSYS.MEMCP FO_OVERFLOW_TANK.SENSOR, FO_OVER_FLOW_TANK_LEVEL, #0400            
+:0564| 1C15 BC03 04 66030000             | $VMSYS.MCD FO_OVERFLOW_TANK.DENSITY, #04, #66030000                             
+:056d| 1C15 C003 04 12570000             | $VMSYS.MCD FO_OVERFLOW_TANK.CAPACITY, #04, #12570000                            
+:0576| 1C15 C803 04 00710200             | $VMSYS.MCD FO_OVERFLOW_TANK.OFFSET, #04, #00710200                              
+:057f| 1C1F C403 9C00 0400               | $VMSYS.MEMCP FO_OVERFLOW_TANK.VOLUME, FO_OVER_FLOW_TANK_VOLUME, #0400           
+:0587| 1C16 B803 4000                    | $VMSYS.CALB FO_OVERFLOW_TANK, :?XP01.TANKS_CAL?CODE                             
+:058d| 1C1F 6C00 CC03 0400               | $VMSYS.MEMCP FO_OVER_FLOW_TANK_SOUNDING, FO_OVERFLOW_TANK.SOUNDING, #0400       
+:0595| 1C1F CC00 D003 0400               | $VMSYS.MEMCP FO_OVER_FLOW_TANK_PERCENT, FO_OVERFLOW_TANK.PERCENT, #0400         
+:059d| 1C1F 2001 D403 0400               | $VMSYS.MEMCP FO_OVER_FLOW_TANK_WEIGHT, FO_OVERFLOW_TANK.WEIGHT, #0400           
+:05a5| 1C13                              | $VMSYS.RETURN                                                                   
+:05a7|                                   | :?XP01.FUEL_CONSUM?INIT                                                         
+:05a7| 1C16 F003 6E00                    | $VMSYS.CALB CLK_1_SEC, :?XP01.PULSE_GEN?INIT                                    
+:05ad| 1C15 A101 01 00                   | $VMSYS.MCD PULSE_1_SEC, #01, #00                                                
+:05b3| 1C15 EC03 04 00000000             | $VMSYS.MCD PULSE_TO_FINT, #04, #00000000                                        
+:05bc| 1C15 2D04 01 01                   | $VMSYS.MCD ?L?CST0026, #01, #01                                                 
+:05c2| 1C15 2E04 02 100E                 | $VMSYS.MCD ?L?CST0030, #02, #100E                                               
+:05c9| 1C13                              | $VMSYS.RETURN                                                                   
+:05cb|                                   | :?XP01.FUEL_CONSUM?CODE                                                         
+:05cb| 1D11 8401 D800 DC00               | $DEFAULT.SUB BUNKERRING_FO_USED, BUNKERING_FO_INLET_FLOW_SENSOR, BUNKERING_FO_O…
+:05cb|                                   | UTLET_FLOW_SENSOR                                                               
+:05d3| 1D11 8801 E000 E800               | $DEFAULT.SUB NO_1NO_4_FO_USED, NO1NO4_GENERATOR_FO_INLET_FLOW_SENSOR, NO1NO4_GE…
+:05d3|                                   | NERATOR_FO_RETURN_FLOW_SENSOR                                                   
+:05db| 1D11 8C01 E400 EC00               | $DEFAULT.SUB NO_2NO_3_FO_USED, NO2NO3_GENERATOR_FO_INLET_FLOW_SENSOR, NO2NO3_GE…
+:05db|                                   | NERATOR_FO_RETURN_FLOW_SENSOR                                                   
+:05e3| 1C15 F003 01 01                   | $VMSYS.MCD CLK_1_SEC.ENABLE, #01, #01                                           
+:05e9| 1C15 F403 04 E8030000             | $VMSYS.MCD CLK_1_SEC.FREQ, #04, #E8030000                                       
+:05f2| 1C15 F803 04 64000000             | $VMSYS.MCD CLK_1_SEC.WIDTH, #04, #64000000                                      
+:05fb| 1C16 F003 8200                    | $VMSYS.CALB CLK_1_SEC, :?XP01.PULSE_GEN?CODE                                    
+:0601| 1C1F A101 F103 0100               | $VMSYS.MEMCP PULSE_1_SEC, CLK_1_SEC.Q, #0100                                    
+:0609| 1200 2C04 A101 2D04               | $DEFAULT.EQ ?IF?CTL, PULSE_1_SEC, ?L?CST0026                                    
+:0611| 1C02 2C04 2406                    | $VMSYS.JZ ?IF?CTL, :?XP01.FUEL_CONSUMIF?B0025                                   
+:0617| 1C15 EC03 04 E8030000             | $VMSYS.MCD PULSE_TO_FINT, #04, #E8030000                                        
+:0620| 1C00 2D06                         | $VMSYS.JMP :?XP01.FUEL_CONSUMIF?E0029                                           
+:0624|                                   | :?XP01.FUEL_CONSUMIF?B0025                                                      
+:0624| 1C15 EC03 04 00000000             | $VMSYS.MCD PULSE_TO_FINT, #04, #00000000                                        
+:062d|                                   | :?XP01.FUEL_CONSUMIF?E0029                                                      
+:062d| 1200 2C04 A001 2D04               | $DEFAULT.EQ ?IF?CTL, FUEL_CONSUMPTION_RESET, ?L?CST0026                         
+:0635| 1C02 2C04 4806                    | $VMSYS.JZ ?IF?CTL, :?XP01.FUEL_CONSUMIF?B002B                                   
+:063b| 1C15 9001 04 00000000             | $VMSYS.MCD BUNKERRING_FO_CONSUME, #04, #00000000                                
+:0644| 1C00 6C06                         | $VMSYS.JMP :?XP01.FUEL_CONSUMIF?E002E                                           
+:0648|                                   | :?XP01.FUEL_CONSUMIF?B002B                                                      
+:0648| 190C 3404 2E04                    | $DEFAULT.INT_TO_DINT ?CCT??DEFAULT?DINT?0, ?L?CST0030                           
+:064e| 1D1D 3004 3404                    | $DEFAULT.DINT_TO_FINT ?CCT??DEFAULT?FINT?0, ?CCT??DEFAULT?DINT?0                
+:0654| 1D13 3804 8401 3004               | $DEFAULT.DIV ?F?$DEFAULT_DIV0033, BUNKERRING_FO_USED, ?CCT??DEFAULT?FINT?0      
+:065c| 1D12 3C04 3804 EC03               | $DEFAULT.MUL ?F?$DEFAULT_MUL0034, ?F?$DEFAULT_DIV0033, PULSE_TO_FINT            
+:0664| 1D10 9001 9001 3C04               | $DEFAULT.ADD BUNKERRING_FO_CONSUME, BUNKERRING_FO_CONSUME, ?F?$DEFAULT_MUL0034  
+:066c|                                   | :?XP01.FUEL_CONSUMIF?E002E                                                      
+:066c| 1200 2C04 A001 2D04               | $DEFAULT.EQ ?IF?CTL, FUEL_CONSUMPTION_RESET, ?L?CST0026                         
+:0674| 1C02 2C04 8706                    | $VMSYS.JZ ?IF?CTL, :?XP01.FUEL_CONSUMIF?B0036                                   
+:067a| 1C15 9401 04 00000000             | $VMSYS.MCD NO_1NO_4_FO_CONSUME, #04, #00000000                                  
+:0683| 1C00 AB06                         | $VMSYS.JMP :?XP01.FUEL_CONSUMIF?E0039                                           
+:0687|                                   | :?XP01.FUEL_CONSUMIF?B0036                                                      
+:0687| 190C 3404 2E04                    | $DEFAULT.INT_TO_DINT ?CCT??DEFAULT?DINT?0, ?L?CST0030                           
+:068d| 1D1D 3004 3404                    | $DEFAULT.DINT_TO_FINT ?CCT??DEFAULT?FINT?0, ?CCT??DEFAULT?DINT?0                
+:0693| 1D13 4004 8801 3004               | $DEFAULT.DIV ?F?$DEFAULT_DIV003D, NO_1NO_4_FO_USED, ?CCT??DEFAULT?FINT?0        
+:069b| 1D12 4404 4004 EC03               | $DEFAULT.MUL ?F?$DEFAULT_MUL003E, ?F?$DEFAULT_DIV003D, PULSE_TO_FINT            
+:06a3| 1D10 9401 9401 4404               | $DEFAULT.ADD NO_1NO_4_FO_CONSUME, NO_1NO_4_FO_CONSUME, ?F?$DEFAULT_MUL003E      
+:06ab|                                   | :?XP01.FUEL_CONSUMIF?E0039                                                      
+:06ab| 1200 2C04 A001 2D04               | $DEFAULT.EQ ?IF?CTL, FUEL_CONSUMPTION_RESET, ?L?CST0026                         
+:06b3| 1C02 2C04 C606                    | $VMSYS.JZ ?IF?CTL, :?XP01.FUEL_CONSUMIF?B0040                                   
+:06b9| 1C15 9801 04 00000000             | $VMSYS.MCD NO_2NO_3_FO_CONSUME, #04, #00000000                                  
+:06c2| 1C00 EA06                         | $VMSYS.JMP :?XP01.FUEL_CONSUMIF?E0043                                           
+:06c6|                                   | :?XP01.FUEL_CONSUMIF?B0040                                                      
+:06c6| 190C 3404 2E04                    | $DEFAULT.INT_TO_DINT ?CCT??DEFAULT?DINT?0, ?L?CST0030                           
+:06cc| 1D1D 3004 3404                    | $DEFAULT.DINT_TO_FINT ?CCT??DEFAULT?FINT?0, ?CCT??DEFAULT?DINT?0                
+:06d2| 1D13 4804 8C01 3004               | $DEFAULT.DIV ?F?$DEFAULT_DIV0047, NO_2NO_3_FO_USED, ?CCT??DEFAULT?FINT?0        
+:06da| 1D12 4C04 4804 EC03               | $DEFAULT.MUL ?F?$DEFAULT_MUL0048, ?F?$DEFAULT_DIV0047, PULSE_TO_FINT            
+:06e2| 1D10 9801 9801 4C04               | $DEFAULT.ADD NO_2NO_3_FO_CONSUME, NO_2NO_3_FO_CONSUME, ?F?$DEFAULT_MUL0048      
+:06ea|                                   | :?XP01.FUEL_CONSUMIF?E0043                                                      
+:06ea| 1D10 5004 9001 9401               | $DEFAULT.ADD ?F?$DEFAULT_ADD004B, BUNKERRING_FO_CONSUME, NO_1NO_4_FO_CONSUME    
+:06f2| 1D10 9C01 5004 9801               | $DEFAULT.ADD FO_CONSUMPTION_TOTAL, ?F?$DEFAULT_ADD004B, NO_2NO_3_FO_CONSUME     
+:06fa| 1C13                              | $VMSYS.RETURN                                                                   
+:06fc 
+</MNEMONIC_MAP>
+    <DATA_MAP>
+      <OBJ ObjType="VAR" LName="SHOWN_SEC_BUNKERING" PName="XP01.SHOWN_SEC_BUNKERING" Addr="0000" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01040 DURATION SHOW BUNKERING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="SHOWN_DAYS_BUNKERING" PName="XP01.SHOWN_DAYS_BUNKERING" Addr="0004" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01042 SLIDE DAYS BUNKERING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="SHOWN_SEC_DG_FO" PName="XP01.SHOWN_SEC_DG_FO" Addr="0008" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01045 DURATION SHOW DG FO]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="SHOWN_DAY_DG_FO" PName="XP01.SHOWN_DAY_DG_FO" Addr="000c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01047 SLIDE DAYS DG FO]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="GREY_WATER_TANK_INHIBIT" PName="XP01.GREY_WATER_TANK_INHIBIT" Addr="0010" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01580 GREY WATER TANK INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BLACK_WATER_TANK_INHIBIT" PName="XP01.BLACK_WATER_TANK_INHIBIT" Addr="0011" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01581 BLACK WATER TANK INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_P_INHIBIT" PName="XP01.PORTABLE_WATER_TANK_P_INHIBIT" Addr="0012" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01582 PORTABLE WATER TANK (P) INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_S_INHIBIT" PName="XP01.PORTABLE_WATER_TANK_S_INHIBIT" Addr="0013" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01583 PORTABLE WATER TANK (S) INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_AFT_DB_TANK_C_INHIBIT" PName="XP01.FO_AFT_DB_TANK_C_INHIBIT" Addr="0014" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01584 FO AFT DB TANK (C) INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_P_INHIBIT" PName="XP01.FO_DB_TANK_P_INHIBIT" Addr="0015" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01585 FO DB TANK (P) INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_S_INHIBIT" PName="XP01.FO_DB_TANK_S_INHIBIT" Addr="0016" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01586 FO DB TANK (S) INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_P_INHIBIT" PName="XP01.FO_WING_TANK_P_INHIBIT" Addr="0017" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01587 FO WING TANK (P) INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_S_INHIBIT" PName="XP01.FO_WING_TANK_S_INHIBIT" Addr="0018" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01588 FO WING TANK (S) INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_P_INHIBIT" PName="XP01.FO_DAY_TANK_P_INHIBIT" Addr="0019" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01589 FO DAY TANK (P) INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_S_INHIBIT" PName="XP01.FO_DAY_TANK_S_INHIBIT" Addr="001a" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01590 FO DAY TANK (S) INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_OVER_FLOW_TANK_INHIBIT" PName="XP01.FO_OVER_FLOW_TANK_INHIBIT" Addr="001b" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01591 FO OVER FLOW TANK INHIBIT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="GREY_WATER_TANK_LEVEL" PName="XP01.GREY_WATER_TANK_LEVEL" Addr="001c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01615 GREY WATER TANK LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BLACK_WATER_TANK_LEVEL" PName="XP01.BLACK_WATER_TANK_LEVEL" Addr="0020" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01616 BLACK WATER TANK LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_P_LEVEL" PName="XP01.PORTABLE_WATER_TANK_P_LEVEL" Addr="0024" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01617 PORTABLE WATER TANK (P) LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_S_LEVEL" PName="XP01.PORTABLE_WATER_TANK_S_LEVEL" Addr="0028" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01618 PORTABLE WATER TANK (S) LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_AFT_DB_TANK_C_LEVEL" PName="XP01.FO_AFT_DB_TANK_C_LEVEL" Addr="002c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01619 FO AFT DB TANK (C) LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_P_LEVEL" PName="XP01.FO_DB_TANK_P_LEVEL" Addr="0030" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01620 FO DB TANK (P) LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_S_LEVEL" PName="XP01.FO_DB_TANK_S_LEVEL" Addr="0034" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01621 FO DB TANK (S) LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_P_LEVEL" PName="XP01.FO_WING_TANK_P_LEVEL" Addr="0038" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01622 FO WING TANK (P) LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_S_LEVEL" PName="XP01.FO_WING_TANK_S_LEVEL" Addr="003c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01623 FO WING TANK (S) LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="GREY_WATER_TANK_SOUNDING" PName="XP01.GREY_WATER_TANK_SOUNDING" Addr="0040" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01640 GREY WATER TANK SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BLACK_WATER_TANK_SOUNDING" PName="XP01.BLACK_WATER_TANK_SOUNDING" Addr="0044" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01641 BLACK WATER TANK SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_P_SOUNDING" PName="XP01.PORTABLE_WATER_TANK_P_SOUNDING" Addr="0048" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01642 PORTABLE WATER TANK (P) SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_S_SOUNDING" PName="XP01.PORTABLE_WATER_TANK_S_SOUNDING" Addr="004c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01643 PORTABLE WATER TANK (S) SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_AFT_DB_TANK_C_SOUNDING" PName="XP01.FO_AFT_DB_TANK_C_SOUNDING" Addr="0050" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01644 FO AFT DB TANK (C) SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_P_SOUNDING" PName="XP01.FO_DB_TANK_P_SOUNDING" Addr="0054" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01645 FO DB TANK (P) SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_S_SOUNDING" PName="XP01.FO_DB_TANK_S_SOUNDING" Addr="0058" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01646 FO DB TANK (S) SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_P_SOUNDING" PName="XP01.FO_WING_TANK_P_SOUNDING" Addr="005c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01647 FO WING TANK (P) SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_S_SOUNDING" PName="XP01.FO_WING_TANK_S_SOUNDING" Addr="0060" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01648 FO WING TANK (S) SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_P_SOUNDING" PName="XP01.FO_DAY_TANK_P_SOUNDING" Addr="0064" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01649 FO DAY TANK (P) SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_S_SOUNDING" PName="XP01.FO_DAY_TANK_S_SOUNDING" Addr="0068" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01650 FO DAY TANK (S) SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_OVER_FLOW_TANK_SOUNDING" PName="XP01.FO_OVER_FLOW_TANK_SOUNDING" Addr="006c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01651 FO OVER FLOW TANK SOUNDING]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="GREY_WATER_TANK_VOLUME" PName="XP01.GREY_WATER_TANK_VOLUME" Addr="0070" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01660 GREY WATER TANK VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BLACK_WATER_TANK_VOLUME" PName="XP01.BLACK_WATER_TANK_VOLUME" Addr="0074" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01661 BLACK WATER TANK VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_P_VOLUME" PName="XP01.PORTABLE_WATER_TANK_P_VOLUME" Addr="0078" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01662 PORTABLE WATER TANK (P) VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_S_VOLUME" PName="XP01.PORTABLE_WATER_TANK_S_VOLUME" Addr="007c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01663 PORTABLE WATER TANK (S) VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_AFT_DB_TANK_C_VOLUME" PName="XP01.FO_AFT_DB_TANK_C_VOLUME" Addr="0080" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01664 FO AFT DB TANK (C) VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_P_VOLUME" PName="XP01.FO_DB_TANK_P_VOLUME" Addr="0084" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01665 FO DB TANK (P) VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_S_VOLUME" PName="XP01.FO_DB_TANK_S_VOLUME" Addr="0088" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01666 FO DB TANK (S) VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_P_VOLUME" PName="XP01.FO_WING_TANK_P_VOLUME" Addr="008c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01667 FO WING TANK (P) VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_S_VOLUME" PName="XP01.FO_WING_TANK_S_VOLUME" Addr="0090" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01668 FO WING TANK (S) VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_P_VOLUME" PName="XP01.FO_DAY_TANK_P_VOLUME" Addr="0094" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01669 FO DAY TANK (P) VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_S_VOLUME" PName="XP01.FO_DAY_TANK_S_VOLUME" Addr="0098" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01670 FO DAY TANK (S) VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_OVER_FLOW_TANK_VOLUME" PName="XP01.FO_OVER_FLOW_TANK_VOLUME" Addr="009c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01671 FO OVER FLOW TANK VOLUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="GREY_WATER_TANK_PERCENT" PName="XP01.GREY_WATER_TANK_PERCENT" Addr="00a0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01680 GREY WATER TANK PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BLACK_WATER_TANK_PERCENT" PName="XP01.BLACK_WATER_TANK_PERCENT" Addr="00a4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01681 BLACK WATER TANK PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_P_PERCENT" PName="XP01.PORTABLE_WATER_TANK_P_PERCENT" Addr="00a8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01682 PORTABLE WATER TANK (P) PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_S_PERCENT" PName="XP01.PORTABLE_WATER_TANK_S_PERCENT" Addr="00ac" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01683 PORTABLE WATER TANK (S) PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_AFT_DB_TANK_C_PERCENT" PName="XP01.FO_AFT_DB_TANK_C_PERCENT" Addr="00b0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01684 FO AFT DB TANK (C) PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_P_PERCENT" PName="XP01.FO_DB_TANK_P_PERCENT" Addr="00b4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01685 FO DB TANK (P) PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_S_PERCENT" PName="XP01.FO_DB_TANK_S_PERCENT" Addr="00b8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01686 FO DB TANK (S) PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_P_PERCENT" PName="XP01.FO_WING_TANK_P_PERCENT" Addr="00bc" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01687 FO WING TANK (P) PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_S_PERCENT" PName="XP01.FO_WING_TANK_S_PERCENT" Addr="00c0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01688 FO WING TANK (S) PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_P_PERCENT" PName="XP01.FO_DAY_TANK_P_PERCENT" Addr="00c4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01689 FO DAY TANK (P) PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_S_PERCENT" PName="XP01.FO_DAY_TANK_S_PERCENT" Addr="00c8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01690 FO DAY TANK (S) PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_OVER_FLOW_TANK_PERCENT" PName="XP01.FO_OVER_FLOW_TANK_PERCENT" Addr="00cc" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01691 FO OVER FLOW TANK PERCENT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_P_LEVEL" PName="XP01.FO_DAY_TANK_P_LEVEL" Addr="00d0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01701 FO DAY TANK (P) LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_S_LEVEL" PName="XP01.FO_DAY_TANK_S_LEVEL" Addr="00d4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01702 FO DAY TANK (S) LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BUNKERING_FO_INLET_FLOW_SENSOR" PName="XP01.BUNKERING_FO_INLET_FLOW_SENSOR" Addr="00d8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01704 BUNKERING FO INLET FLOW SENSOR]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BUNKERING_FO_OUTLET_FLOW_SENSOR" PName="XP01.BUNKERING_FO_OUTLET_FLOW_SENSOR" Addr="00dc" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01705 BUNKERING FO OUTLET FLOW SENSOR]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="NO1NO4_GENERATOR_FO_INLET_FLOW_SENSOR" PName="XP01.NO1NO4_GENERATOR_FO_INLET_FLOW_SENSOR" Addr="00e0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01706 NO1&NO4 GENERATOR FO INLET FLOW SENSOR]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="NO2NO3_GENERATOR_FO_INLET_FLOW_SENSOR" PName="XP01.NO2NO3_GENERATOR_FO_INLET_FLOW_SENSOR" Addr="00e4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01707 NO2&NO3 GENERATOR FO INLET FLOW SENSOR]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="NO1NO4_GENERATOR_FO_RETURN_FLOW_SENSOR" PName="XP01.NO1NO4_GENERATOR_FO_RETURN_FLOW_SENSOR" Addr="00e8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01708 NO1&NO4 GENERATOR FO RETURN FLOW SENSOR]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="NO2NO3_GENERATOR_FO_RETURN_FLOW_SENSOR" PName="XP01.NO2NO3_GENERATOR_FO_RETURN_FLOW_SENSOR" Addr="00ec" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01709 NO2&NO3 GENERATOR FO RETURN FLOW SENSOR]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_OVER_FLOW_TANK_LEVEL" PName="XP01.FO_OVER_FLOW_TANK_LEVEL" Addr="00f0" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01710 FO OVER FLOW TANK LEVEL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="GREY_WATER_TANK_WEIGHT" PName="XP01.GREY_WATER_TANK_WEIGHT" Addr="00f4" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01740 GREY WATER TANK WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BLACK_WATER_TANK_WEIGHT" PName="XP01.BLACK_WATER_TANK_WEIGHT" Addr="00f8" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01741 BLACK WATER TANK WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_P_WEIGHT" PName="XP01.PORTABLE_WATER_TANK_P_WEIGHT" Addr="00fc" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01742 PORTABLE WATER TANK (P) WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_S_WEIGHT" PName="XP01.PORTABLE_WATER_TANK_S_WEIGHT" Addr="0100" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01743 PORTABLE WATER TANK (S) WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_AFT_DB_TANK_C_WEIGHT" PName="XP01.FO_AFT_DB_TANK_C_WEIGHT" Addr="0104" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01744 FO AFT DB TANK (C) WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_P_WEIGHT" PName="XP01.FO_DB_TANK_P_WEIGHT" Addr="0108" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01745 FO DB TANK (P) WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_S_WEIGHT" PName="XP01.FO_DB_TANK_S_WEIGHT" Addr="010c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01746 FO DB TANK (S) WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_P_WEIGHT" PName="XP01.FO_WING_TANK_P_WEIGHT" Addr="0110" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01747 FO WING TANK (P) WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_S_WEIGHT" PName="XP01.FO_WING_TANK_S_WEIGHT" Addr="0114" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01748 FO WING TANK (S) WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_P_WEIGHT" PName="XP01.FO_DAY_TANK_P_WEIGHT" Addr="0118" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01749 FO DAY TANK (P) WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_S_WEIGHT" PName="XP01.FO_DAY_TANK_S_WEIGHT" Addr="011c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01750 FO DAY TANK (S) WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_OVER_FLOW_TANK_WEIGHT" PName="XP01.FO_OVER_FLOW_TANK_WEIGHT" Addr="0120" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01751 FO OVER FLOW TANK WEIGHT]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="GREY_WATER_TANK_LAL" PName="XP01.GREY_WATER_TANK_LAL" Addr="0124" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01760 GREY WATER TANK LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BLACK_WATER_TANK_LAL" PName="XP01.BLACK_WATER_TANK_LAL" Addr="0128" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01761 BLACK WATER TANK LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_P_LAL" PName="XP01.PORTABLE_WATER_TANK_P_LAL" Addr="012c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01762 PORTABLE WATER TANK (P) LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_S_LAL" PName="XP01.PORTABLE_WATER_TANK_S_LAL" Addr="0130" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01763 PORTABLE WATER TANK (S) LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_AFT_DB_TANK_C_LAL" PName="XP01.FO_AFT_DB_TANK_C_LAL" Addr="0134" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01764 FO AFT DB TANK (C) LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_P_LAL" PName="XP01.FO_DB_TANK_P_LAL" Addr="0138" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01765 FO DB TANK (P) LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_S_LAL" PName="XP01.FO_DB_TANK_S_LAL" Addr="013c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01766 FO DB TANK (S) LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_P_LAL" PName="XP01.FO_WING_TANK_P_LAL" Addr="0140" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01767 FO WING TANK (P) LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_S_LAL" PName="XP01.FO_WING_TANK_S_LAL" Addr="0144" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01768 FO WING TANK (S) LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_P_LAL" PName="XP01.FO_DAY_TANK_P_LAL" Addr="0148" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01769 FO DAY TANK (P) LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_S_LAL" PName="XP01.FO_DAY_TANK_S_LAL" Addr="014c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01770 FO DAY TANK (S) LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_OVER_FLOW_TANK_LAL" PName="XP01.FO_OVER_FLOW_TANK_LAL" Addr="0150" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01771 FO OVER FLOW TANK LAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="GREY_WATER_TANK_LAH" PName="XP01.GREY_WATER_TANK_LAH" Addr="0154" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01780 GREY WATER TANK LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BLACK_WATER_TANK_LAH" PName="XP01.BLACK_WATER_TANK_LAH" Addr="0158" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01781 BLACK WATER TANK LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_P_LAH" PName="XP01.PORTABLE_WATER_TANK_P_LAH" Addr="015c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01782 PORTABLE WATER TANK (P) LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_S_LAH" PName="XP01.PORTABLE_WATER_TANK_S_LAH" Addr="0160" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01783 PORTABLE WATER TANK (S) LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_AFT_DB_TANK_C_LAH" PName="XP01.FO_AFT_DB_TANK_C_LAH" Addr="0164" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01784 FO AFT DB TANK (C) LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_P_LAH" PName="XP01.FO_DB_TANK_P_LAH" Addr="0168" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01785 FO DB TANK (P) LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DB_TANK_S_LAH" PName="XP01.FO_DB_TANK_S_LAH" Addr="016c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01786 FO DB TANK (S) LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_P_LAH" PName="XP01.FO_WING_TANK_P_LAH" Addr="0170" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01787 FO WING TANK (P) LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_WING_TANK_S_LAH" PName="XP01.FO_WING_TANK_S_LAH" Addr="0174" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01788 FO WING TANK (S) LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_P_LAH" PName="XP01.FO_DAY_TANK_P_LAH" Addr="0178" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01789 FO DAY TANK (P) LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_DAY_TANK_S_LAH" PName="XP01.FO_DAY_TANK_S_LAH" Addr="017c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01790 FO DAY TANK (S) LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_OVER_FLOW_TANK_LAH" PName="XP01.FO_OVER_FLOW_TANK_LAH" Addr="0180" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01791 FO OVER FLOW TANK LAH]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BUNKERRING_FO_USED" PName="XP01.BUNKERRING_FO_USED" Addr="0184" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01840 BUNKERRING FO USED]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="NO_1NO_4_FO_USED" PName="XP01.NO_1NO_4_FO_USED" Addr="0188" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01841 NO.1&NO.4 FO USED]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="NO_2NO_3_FO_USED" PName="XP01.NO_2NO_3_FO_USED" Addr="018c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01842 NO.2&NO.3 FO USED]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="BUNKERRING_FO_CONSUME" PName="XP01.BUNKERRING_FO_CONSUME" Addr="0190" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01845 BUNKERRING FO CONSUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="NO_1NO_4_FO_CONSUME" PName="XP01.NO_1NO_4_FO_CONSUME" Addr="0194" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01846 NO.1&NO.4 FO CONSUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="NO_2NO_3_FO_CONSUME" PName="XP01.NO_2NO_3_FO_CONSUME" Addr="0198" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01847 NO.2&NO.3 FO CONSUME]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FO_CONSUMPTION_TOTAL" PName="XP01.FO_CONSUMPTION_TOTAL" Addr="019c" AdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00804000" TypeCRC="F0017F3D">
+        <COMMENT><![CDATA[01848 FO CONSUMPTION TOTAL]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="VAR" LName="FUEL_CONSUMPTION_RESET" PName="XP01.FUEL_CONSUMPTION_RESET" Addr="01a0" AdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00804000" TypeCRC="D275EFCD">
+        <COMMENT><![CDATA[01850 FUEL CONSUMPTION RESET]]></COMMENT>
+      </OBJ>
+      <OBJ ObjType="TASK" LName="TASK" PName="XP01.TASK" Addr="0000" AdrType="gdlabel" Size="1525">
+        <OBJ ObjType="VAR" LName="TANKS_01" PName="XP01.TASK.TANKS_01" Addr="0000" AdrType="rdlabel" CAddr="0000" CAdrType="gdlabel" Size="1003" Type="TANKS" PType="XP01.TANKS" TypeStatus="program" VFlags="00000000" TypeCRC="86E090E1">
+          <OBJ ObjType="VAR" LName="GREY_WATER_TANK" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK" Addr="01a8" AdrType="rdlabel" CAddr="01a8" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="01a8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="01ac" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="01b0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="01b4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="01b8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="01bc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="01c0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="01c4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="01c8" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="01cc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="01d0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.GREY_WATER_TANK.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="01d4" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="BLACK_WATER_TANK" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK" Addr="01d8" AdrType="rdlabel" CAddr="01d8" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="01d8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="01dc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="01e0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="01e4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="01e8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="01ec" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="01f0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="01f4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="01f8" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="01fc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="0200" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.BLACK_WATER_TANK.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="0204" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_P" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P" Addr="0208" AdrType="rdlabel" CAddr="0208" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="0208" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="020c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="0210" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="0214" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="0218" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="021c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="0220" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="0224" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="0228" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="022c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="0230" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_P.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="0234" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="PORTABLE_WATER_TANK_S" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S" Addr="0238" AdrType="rdlabel" CAddr="0238" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="0238" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="023c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="0240" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="0244" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="0248" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="024c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="0250" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="0254" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="0258" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="025c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="0260" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.PORTABLE_WATER_TANK_S.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="0264" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="FO_AFT_DB_TANK_C" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C" Addr="0268" AdrType="rdlabel" CAddr="0268" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="0268" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="026c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="0270" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="0274" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="0278" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="027c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="0280" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="0284" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="0288" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="028c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="0290" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.FO_AFT_DB_TANK_C.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="0294" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="FO_DB_TANK_P" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P" Addr="0298" AdrType="rdlabel" CAddr="0298" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="0298" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="029c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="02a0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="02a4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="02a8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="02ac" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="02b0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="02b4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="02b8" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="02bc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="02c0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.FO_DB_TANK_P.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="02c4" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="FO_DB_TANK_S" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S" Addr="02c8" AdrType="rdlabel" CAddr="02c8" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="02c8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="02cc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="02d0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="02d4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="02d8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="02dc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="02e0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="02e4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="02e8" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="02ec" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="02f0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.FO_DB_TANK_S.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="02f4" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="FO_WING_TANK_P" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P" Addr="02f8" AdrType="rdlabel" CAddr="02f8" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="02f8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="02fc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="0300" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="0304" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="0308" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="030c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="0310" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="0314" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="0318" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="031c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="0320" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.FO_WING_TANK_P.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="0324" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="FO_WING_TANK_S" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S" Addr="0328" AdrType="rdlabel" CAddr="0328" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="0328" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="032c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="0330" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="0334" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="0338" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="033c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="0340" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="0344" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="0348" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="034c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="0350" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.FO_WING_TANK_S.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="0354" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="FO_DAY_TANK_P" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P" Addr="0358" AdrType="rdlabel" CAddr="0358" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="0358" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="035c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="0360" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="0364" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="0368" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="036c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="0370" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="0374" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="0378" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="037c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="0380" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_P.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="0384" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="FO_DAY_TANK_S" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S" Addr="0388" AdrType="rdlabel" CAddr="0388" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="0388" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="038c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="0390" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="0394" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="0398" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="039c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="03a0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="03a4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="03a8" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="03ac" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="03b0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.FO_DAY_TANK_S.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="03b4" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="FO_OVERFLOW_TANK" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK" Addr="03b8" AdrType="rdlabel" CAddr="03b8" CAdrType="gdlabel" Size="48" Type="TANKS_CAL" PType="XP01.TANKS_CAL" TypeStatus="function block" VFlags="00000000" TypeCRC="77952079">
+            <OBJ ObjType="VAR" LName="SENSOR" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.SENSOR" Addr="0000" AdrType="rdlabel" CAddr="03b8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="DENSITY" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.DENSITY" Addr="0004" AdrType="rdlabel" CAddr="03bc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="CAPACITY" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.CAPACITY" Addr="0008" AdrType="rdlabel" CAddr="03c0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="VOLUME" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.VOLUME" Addr="000c" AdrType="rdlabel" CAddr="03c4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="OFFSET" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.OFFSET" Addr="0010" AdrType="rdlabel" CAddr="03c8" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000010" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="SOUNDING" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.SOUNDING" Addr="0014" AdrType="rdlabel" CAddr="03cc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="PERCENT" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.PERCENT" Addr="0018" AdrType="rdlabel" CAddr="03d0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="WEIGHT" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.WEIGHT" Addr="001c" AdrType="rdlabel" CAddr="03d4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000020" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?L?CST0004" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.?L?CST0004" Addr="0020" AdrType="rdlabel" CAddr="03d8" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="100" />
+            <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0005" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.?F?$DEFAULT_DIV0005" Addr="0024" AdrType="rdlabel" CAddr="03dc" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.?CCT??DEFAULT?FINT?0" Addr="0028" AdrType="rdlabel" CAddr="03e0" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+            <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.FO_OVERFLOW_TANK.?CCT??DEFAULT?DINT?0" Addr="002c" AdrType="rdlabel" CAddr="03e4" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="?L?CST0016" PName="XP01.TASK.TANKS_01.?L?CST0016" Addr="01a2" AdrType="rdlabel" CAddr="01a2" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="3600" />
+          <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.TANKS_01.?CCT??DEFAULT?FINT?0" Addr="01a4" AdrType="rdlabel" CAddr="01a4" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+          <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.TANKS_01.?CCT??DEFAULT?DINT?0" Addr="03e8" AdrType="rdlabel" CAddr="03e8" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+        </OBJ>
+        <OBJ ObjType="VAR" LName="FUEL_CONSUM_02" PName="XP01.TASK.FUEL_CONSUM_02" Addr="0000" AdrType="rdlabel" CAddr="0000" CAdrType="gdlabel" Size="522" Type="FUEL_CONSUM" PType="XP01.FUEL_CONSUM" TypeStatus="program" VFlags="00000000" TypeCRC="DF2940CD">
+          <OBJ ObjType="VAR" LName="CLK_1_SEC" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC" Addr="03f0" AdrType="rdlabel" CAddr="03f0" CAdrType="gdlabel" Size="60" Type="PULSE_GEN" PType="XP01.PULSE_GEN" TypeStatus="function block" VFlags="00000000" TypeCRC="18529845">
+            <OBJ ObjType="VAR" LName="ENABLE" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.ENABLE" Addr="0000" AdrType="rdlabel" CAddr="03f0" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000010" TypeCRC="D275EFCD" />
+            <OBJ ObjType="VAR" LName="FREQ" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.FREQ" Addr="0004" AdrType="rdlabel" CAddr="03f4" CAdrType="gdlabel" Size="4" Type="TIME" PType="$DEFAULT.TIME" TypeStatus="build-in type" VFlags="00000010" TypeCRC="C0025210" />
+            <OBJ ObjType="VAR" LName="WIDTH" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.WIDTH" Addr="0008" AdrType="rdlabel" CAddr="03f8" CAdrType="gdlabel" Size="4" Type="TIME" PType="$DEFAULT.TIME" TypeStatus="build-in type" VFlags="00000010" TypeCRC="C0025210" />
+            <OBJ ObjType="VAR" LName="Q" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.Q" Addr="0001" AdrType="rdlabel" CAddr="03f1" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000020" TypeCRC="D275EFCD" />
+            <OBJ ObjType="VAR" LName="TIMER_ON" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_ON" Addr="0010" AdrType="rdlabel" CAddr="0400" CAdrType="gdlabel" Size="20" Type="TON" PType="IEC_61131.TON" TypeStatus="function block" VFlags="00000000" TypeCRC="905E8CE5">
+              <OBJ ObjType="VAR" LName="IN" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_ON.IN" Addr="0000" AdrType="rdlabel" CAddr="0400" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000010" TypeCRC="D275EFCD" />
+              <OBJ ObjType="VAR" LName="PT" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_ON.PT" Addr="0004" AdrType="rdlabel" CAddr="0404" CAdrType="gdlabel" Size="4" Type="TIME" PType="$DEFAULT.TIME" TypeStatus="build-in type" VFlags="00000010" TypeCRC="C0025210" />
+              <OBJ ObjType="VAR" LName="Q" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_ON.Q" Addr="0001" AdrType="rdlabel" CAddr="0401" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000020" TypeCRC="D275EFCD" />
+              <OBJ ObjType="VAR" LName="ET" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_ON.ET" Addr="0008" AdrType="rdlabel" CAddr="0408" CAdrType="gdlabel" Size="4" Type="TIME" PType="$DEFAULT.TIME" TypeStatus="build-in type" VFlags="00000020" TypeCRC="C0025210" />
+              <OBJ ObjType="VAR" LName="?IF?CTL" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_ON.?IF?CTL" Addr="0002" AdrType="rdlabel" CAddr="0402" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000000" TypeCRC="D275EFCD" />
+              <OBJ ObjType="VAR" LName="?F?CUR_TIME008D" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_ON.?F?CUR_TIME008D" Addr="0010" AdrType="rdlabel" CAddr="0410" CAdrType="gdlabel" Size="4" Type="TIME" PType="$DEFAULT.TIME" TypeStatus="build-in type" VFlags="00200000" TypeCRC="C0025210" />
+            </OBJ>
+            <OBJ ObjType="VAR" LName="TIMER_OFF" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_OFF" Addr="0028" AdrType="rdlabel" CAddr="0418" CAdrType="gdlabel" Size="20" Type="TOF" PType="IEC_61131.TOF" TypeStatus="function block" VFlags="00000000" TypeCRC="395F96BD">
+              <OBJ ObjType="VAR" LName="IN" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_OFF.IN" Addr="0000" AdrType="rdlabel" CAddr="0418" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000010" TypeCRC="D275EFCD" />
+              <OBJ ObjType="VAR" LName="PT" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_OFF.PT" Addr="0004" AdrType="rdlabel" CAddr="041c" CAdrType="gdlabel" Size="4" Type="TIME" PType="$DEFAULT.TIME" TypeStatus="build-in type" VFlags="00000010" TypeCRC="C0025210" />
+              <OBJ ObjType="VAR" LName="Q" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_OFF.Q" Addr="0001" AdrType="rdlabel" CAddr="0419" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000020" TypeCRC="D275EFCD" />
+              <OBJ ObjType="VAR" LName="ET" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_OFF.ET" Addr="0008" AdrType="rdlabel" CAddr="0420" CAdrType="gdlabel" Size="4" Type="TIME" PType="$DEFAULT.TIME" TypeStatus="build-in type" VFlags="00000020" TypeCRC="C0025210" />
+              <OBJ ObjType="VAR" LName="?F?CUR_TIME007D" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_OFF.?F?CUR_TIME007D" Addr="0010" AdrType="rdlabel" CAddr="0428" CAdrType="gdlabel" Size="4" Type="TIME" PType="$DEFAULT.TIME" TypeStatus="build-in type" VFlags="00200000" TypeCRC="C0025210" />
+              <OBJ ObjType="VAR" LName="?IF?CTL" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.TIMER_OFF.?IF?CTL" Addr="0002" AdrType="rdlabel" CAddr="041a" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000000" TypeCRC="D275EFCD" />
+            </OBJ>
+            <OBJ ObjType="VAR" LName="?LR?ANDA000C" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.?LR?ANDA000C" Addr="0002" AdrType="rdlabel" CAddr="03f2" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00200000" TypeCRC="D275EFCD" />
+            <OBJ ObjType="VAR" LName="?LR?ANDB000D" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.?LR?ANDB000D" Addr="0003" AdrType="rdlabel" CAddr="03f3" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00200000" TypeCRC="D275EFCD" />
+            <OBJ ObjType="VAR" LName="?LR?ANDA0012" PName="XP01.TASK.FUEL_CONSUM_02.CLK_1_SEC.?LR?ANDA0012" Addr="000c" AdrType="rdlabel" CAddr="03fc" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00200000" TypeCRC="D275EFCD" />
+          </OBJ>
+          <OBJ ObjType="VAR" LName="PULSE_1_SEC" PName="XP01.TASK.FUEL_CONSUM_02.PULSE_1_SEC" Addr="01a1" AdrType="rdlabel" CAddr="01a1" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000000" TypeCRC="D275EFCD" />
+          <OBJ ObjType="VAR" LName="PULSE_TO_FINT" PName="XP01.TASK.FUEL_CONSUM_02.PULSE_TO_FINT" Addr="03ec" AdrType="rdlabel" CAddr="03ec" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+          <OBJ ObjType="VAR" LName="?IF?CTL" PName="XP01.TASK.FUEL_CONSUM_02.?IF?CTL" Addr="042c" AdrType="rdlabel" CAddr="042c" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00000000" TypeCRC="D275EFCD" />
+          <OBJ ObjType="VAR" LName="?L?CST0026" PName="XP01.TASK.FUEL_CONSUM_02.?L?CST0026" Addr="042d" AdrType="rdlabel" CAddr="042d" CAdrType="gdlabel" Size="1" Type="BOOL" PType="$DEFAULT.BOOL" TypeStatus="build-in type" VFlags="00100000" TypeCRC="D275EFCD" ConstValue="TRUE" />
+          <OBJ ObjType="VAR" LName="?L?CST0030" PName="XP01.TASK.FUEL_CONSUM_02.?L?CST0030" Addr="042e" AdrType="rdlabel" CAddr="042e" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" TypeCRC="DC550720" ConstValue="3600" />
+          <OBJ ObjType="VAR" LName="?CCT??DEFAULT?FINT?0" PName="XP01.TASK.FUEL_CONSUM_02.?CCT??DEFAULT?FINT?0" Addr="0430" AdrType="rdlabel" CAddr="0430" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="F0017F3D" />
+          <OBJ ObjType="VAR" LName="?CCT??DEFAULT?DINT?0" PName="XP01.TASK.FUEL_CONSUM_02.?CCT??DEFAULT?DINT?0" Addr="0434" AdrType="rdlabel" CAddr="0434" CAdrType="gdlabel" Size="4" Type="DINT" PType="$DEFAULT.DINT" TypeStatus="build-in type" VFlags="00000000" TypeCRC="C0148646" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0033" PName="XP01.TASK.FUEL_CONSUM_02.?F?$DEFAULT_DIV0033" Addr="0438" AdrType="rdlabel" CAddr="0438" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_MUL0034" PName="XP01.TASK.FUEL_CONSUM_02.?F?$DEFAULT_MUL0034" Addr="043c" AdrType="rdlabel" CAddr="043c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV003D" PName="XP01.TASK.FUEL_CONSUM_02.?F?$DEFAULT_DIV003D" Addr="0440" AdrType="rdlabel" CAddr="0440" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_MUL003E" PName="XP01.TASK.FUEL_CONSUM_02.?F?$DEFAULT_MUL003E" Addr="0444" AdrType="rdlabel" CAddr="0444" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0047" PName="XP01.TASK.FUEL_CONSUM_02.?F?$DEFAULT_DIV0047" Addr="0448" AdrType="rdlabel" CAddr="0448" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_MUL0048" PName="XP01.TASK.FUEL_CONSUM_02.?F?$DEFAULT_MUL0048" Addr="044c" AdrType="rdlabel" CAddr="044c" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_ADD004B" PName="XP01.TASK.FUEL_CONSUM_02.?F?$DEFAULT_ADD004B" Addr="0450" AdrType="rdlabel" CAddr="0450" CAdrType="gdlabel" Size="4" Type="FINT" PType="$DEFAULT.FINT" TypeStatus="build-in type" VFlags="00200000" TypeCRC="F0017F3D" />
+        </OBJ>
+      </OBJ>
+    </DATA_MAP>
+    <INFO>
+      <DT_EXPORT year="2023" month="2" day="24" hour="13" minutes="15" seconds="18" milisec="745" />
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2010" month="11" day="2" hour="17" minutes="30" seconds="32" milisec="115" />
+      <PHYSVER value="11" />
+      <LAST_COMPILED year="2023" month="2" day="24" hour="13" minutes="15" seconds="18" milisec="549" />
+    </INFO>
+  </TARGET>
+</PAL1131>

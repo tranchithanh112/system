@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="94" Height="40">
+	<Children>
+		<Button Width="94" Height="40" Text="Call" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="Visible" ButtonType="IsCabinnrValid">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+				</EASButtonStatusBinding>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="ActiveEASButton" DefaultValue="ButtonFill">
+					<Bindings>
+						<EASButtonStatusBinding TargetPropertyName="ConditionValue0" ButtonType="IsCabinnrFailure">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+							</Bindings>
+						</EASButtonStatusBinding>
+						<EASButtonStatusBinding TargetPropertyName="ConditionValue1" ButtonType="Call">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+							</Bindings>
+						</EASButtonStatusBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<ClickActions>
+				<EASCallCabinPanelCA>
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+				</EASCallCabinPanelCA>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

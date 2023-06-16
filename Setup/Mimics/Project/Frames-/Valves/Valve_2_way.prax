@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="40" Height="40" GridSpacing="2" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Polyline Visible="False" Width="1.5" LineColor="InfoTextGrey" ClosedOutline="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Swing_visible"/>
+			</Bindings>
+			<Points>
+				<Point Coord="12;20"/>
+				<Point Coord="28;40"/>
+			</Points>
+		</Polyline>
+		<TextBox Width="40" Height="20" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="123456">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Tag_name"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="100230" InvertCondition="True"/>
+			</Bindings>
+		</TextBox>
+		<Polyline Width="1.5" LineColor="InfoTextGrey" ClosedOutline="True" FillColor="GaugeBackground">
+			<Points>
+				<Point Coord="0;20"/>
+				<Point Coord="0;40"/>
+				<Point Coord="40;20"/>
+				<Point Coord="40;40"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="0" LineColor="InfoTextGrey" ClosedOutline="True" FillColor="InfoTextGrey">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Right_visible"/>
+			</Bindings>
+			<Points>
+				<Point Coord="40;20"/>
+				<Point Coord="40;40"/>
+				<Point Coord="20;30"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="1.5" LineColor="InfoTextGrey" ClosedOutline="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="T_visible"/>
+			</Bindings>
+			<Points>
+				<Point Coord="20;30"/>
+				<Point Coord="20;15"/>
+				<Point Coord="14;15"/>
+				<Point Coord="26;15"/>
+				<Point Coord="20;15"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="0" LineColor="InfoTextGrey" ClosedOutline="True" FillColor="InfoTextGrey">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Left_visible"/>
+			</Bindings>
+			<Points>
+				<Point Coord="0;20"/>
+				<Point Coord="0;40"/>
+				<Point Coord="20;30"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="1.5" LineColor="InfoTextGrey" ClosedOutline="True" FillColor="GaugeBackground">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="O_visible"/>
+			</Bindings>
+			<Points>
+				<Point Coord="20;30"/>
+				<Point Coord="20;17"/>
+				<Point Coord="13;17"/>
+				<Point Coord="13;9"/>
+				<Point Coord="27;9"/>
+				<Point Coord="27;17"/>
+				<Point Coord="20;17"/>
+			</Points>
+		</Polyline>
+		<Polyline Visible="False" Width="1.5" LineColor="InfoTextGrey" ClosedOutline="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Sping_visible"/>
+			</Bindings>
+			<Points>
+				<Point Coord="20;30"/>
+				<Point Coord="20;26"/>
+				<Point Coord="14;23"/>
+				<Point Coord="26;23"/>
+				<Point Coord="20;20"/>
+				<Point Coord="20;15"/>
+				<Point Coord="14;15"/>
+				<Point Coord="26;15"/>
+				<Point Coord="20;15"/>
+				<Point Coord="20;20"/>
+				<Point Coord="26;23"/>
+				<Point Coord="14;23"/>
+				<Point Coord="20;26"/>
+			</Points>
+		</Polyline>
+		<Ellipse BorderWidth="1.5" BorderColor="InfoTextGrey" FillColor="GaugeBackground" CenterX="20" CenterY="30" RadiusX="6" RadiusY="6" ArcBegin="270" ArcEnd="630">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Ball_visible"/>
+			</Bindings>
+		</Ellipse>
+		<Ellipse Visible="False" BorderWidth="1.5" BorderColor="InfoTextGrey" CenterX="12" CenterY="20" RadiusX="4" RadiusY="4">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Swing_visible"/>
+			</Bindings>
+		</Ellipse>
+	</Children>
+</RootElement>

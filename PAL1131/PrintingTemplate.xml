@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PrintingTemplate>
+  <!-- "Borders" node contains "Border" elements. -->
+  <Borders>
+    <!-- "Border" node specifies visibility and margins for the border (for the particular page orientation).
+    Programs created in different graphic languages can be printed on pages with landscape or portrait orientation. -->
+    <Border Orientation="Landscape" Visible="True" Left="10" Top="10" Right="100" Bottom="100" />
+    <Border Orientation="Portrait" Visible="True" Left="10" Top="10" Right="100" Bottom="100" />
+  </Borders>
+  
+  <!-- "Table" node contains "Row" elements. It represents the whole table with diagram information. -->
+  <Table>
+    <!-- "Option" node specifies visibility on pages for the table. 
+          Values are:  "All", "First", "Last", "None"               -->
+    <Option Visible="Last" />
+
+    <!-- "Row" node represents the single row in the table. It contains two child nodes:
+    1) "Label" - representing the first cell in the row,
+    2) "Content" - representing the second cell in the row.-->
+    <Row>
+      <!-- There are a few possibilities of defining table content:
+      1) from resources ("Resource" node),
+      2) variables ("Variable" node) - the following variable names are available:
+         - PROGRAM - name of the program,
+         - PROJECT - name of the project,
+         - VERSION - version of the program,
+         - COMPANY - name of the company,
+         - CURRENT_TIME - current date and time (optionally with "Format" attribute),
+      3) defined directly in the XML file ("Translations" node). -->
+      <Label>
+        <Resource Name="Program" />
+      </Label>
+      <Content>
+        <Variable Name="PROGRAM" />
+      </Content>
+    </Row>
+    <Row>
+      <Label>
+        <Translations>
+          <Translation LanguageCode="pl-PL">Oprogramowanie:</Translation>
+          <Translation LanguageCode="en-US">Software:</Translation>
+        </Translations>
+      </Label>
+      <Content>
+        <Translations>
+          <Translation LanguageCode="pl-PL">Środowisko programistyczne CPDev</Translation>
+          <Translation LanguageCode="en-US">CPDev development environment</Translation>
+        </Translations>
+      </Content>
+    </Row>
+    <Row>
+      <Label>
+        <Resource Name="PrintoutDate" />
+      </Label>
+      <Content>
+        <Variable Name="CURRENT_TIME" />
+      </Content>
+    </Row>
+  </Table>
+</PrintingTemplate>

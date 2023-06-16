@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="140" Height="140" GridSpacing="5" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="130" Height="130" X="5" Y="5" BorderColor="PageInfoLine" CornerRoundRadius="10"/>
+		<Polyline FlashArea="OutlineOnly" Width="12" LineColor="PageInfoLine" ClosedOutline="True" FillColor="Background">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Flash" ExportedPropertyName="Alarm"/>
+				<SelectFirstBoolBinding TargetPropertyName="FlashSteadyOn" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="Alarm_Flash"/>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="15;120"/>
+				<Point Coord="70;20"/>
+				<Point Coord="125;120"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="4" ClosedOutline="True" FillColor="Background">
+			<Points>
+				<Point Coord="25;115"/>
+				<Point Coord="70;35"/>
+				<Point Coord="115;115"/>
+			</Points>
+		</Polyline>
+		<Bezier Width="0" FillColor="Foreground">
+			<Points>
+				<Point Coord="70;100"/>
+				<Point Coord="60;70"/>
+				<Point Coord="60;55"/>
+				<Point Coord="70;55"/>
+				<Point Coord="80;70"/>
+				<Point Coord="70;100"/>
+			</Points>
+		</Bezier>
+		<Ellipse BorderWidth="0" FillColor="Foreground" CenterX="70" CenterY="105" RadiusX="5" RadiusY="5"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="280" Height="150" ClipToBounds="True" PraxGraphVersion="1.0">
+	<Children>
+		<Ellipse FlashArea="OutlineOnly" BorderWidth="2" BorderColor="PageInfoLine" FillColor="PageInfoLine" CenterX="140" CenterY="75" RadiusX="85" RadiusY="85"/>
+		<Rectangle Width="270" Height="45" X="5" Y="40" FillColor="PageInfoLine" LightingStyle="Radial"/>
+		<FillBar Width="135" Height="8" X="140" Y="25" RangeEnd="55" LimitType="None" LimitMarkerType="None" Value="15" BorderWidth="0" FillColor="White">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ROT"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="135" Height="8" X="5" Y="25" FillDirection="RightToLeft" RangeEnd="-55" LimitType="None" LimitMarkerType="None" Value="-15" BorderWidth="0" FillColor="White">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ROT"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<Line X0="140" Y0="25" X1="140" Y1="33"/>
+		<Rectangle Width="270" Height="8" X="5" Y="25" FillColor="Transparent" CornerRoundRadius="5"/>
+		<TextBox Width="70" Height="25" X="105" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N" Text="-155.5 °/m">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ROT"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix=" °/m"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="100" Y="90" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;26.0;B;N;N" Text="359.5°">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix="°"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="1400" Height="45" X="-110" Y="35" Path=".\Slider_Complete.prax">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="X" InRangeBegin="0" InRangeEnd="360" OutRangeBegin="-110" OutRangeEnd="-1010">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</Frame>
+		<Line Color="White" X0="5" Y0="80" X1="275" Y1="80"/>
+		<Rectangle FlashArea="OutlineOnly" Width="280" Height="55" Y="35" BorderWidth="6" BorderColor="PageInfoLine" FillColor="Transparent" CornerRoundRadius="10"/>
+		<Rectangle Width="270" Height="45" X="5" Y="40" FillColor="Transparent" CornerRoundRadius="5"/>
+		<TextBox Width="50" Height="25" X="130" Y="120" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="359.5°">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Setpoint"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix="°"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="25" X="100" Y="120" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N" Text="Set"/>
+		<Frame Visible="False" Width="80" Height="25" X="100" Y="120" HSP_Request="0" Path=".\HSP_Request\01_HSP_Request.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="HSP_Request" ExportedPropertyName="HSP_Request"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="HSP_Request_Active"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="45" Height="45" X="230" Y="40" Alarm_Flash="False" Alarm="False" Path="..\Icons\Icon_Alarm_Triangle.prax">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Alarm_Flash" ChannelNumber="101720"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Alarm" ChannelNumber="101720"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="101720"/>
+			</Bindings>
+		</Frame>
+		<Rectangle FlashArea="OutlineOnly" Width="280" Height="55" Y="35" BorderWidth="2" BorderColor="PageInfoLine" FillColor="Transparent" CornerRoundRadius="10">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Flash" ChannelNumber="101720"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="FlashSteadyOn" ChannelNumber="101720" InvertCondition="True"/>
+			</Bindings>
+		</Rectangle>
+		<Polyline ClosedOutline="True">
+			<Points>
+				<Point Coord="140;80"/>
+				<Point Coord="135;90"/>
+				<Point Coord="145;90"/>
+			</Points>
+		</Polyline>
+		<Frame Width="70" Height="30" X="185" Y="90" Path=".\HSP_Request\02_HSP_Error_SB.prax">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="Visible" SecondValue="-1" CompareOperator="&lt;" CompareTolerance="0">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="102003"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="70" Height="30" X="25" Y="90" Path=".\HSP_Request\03_HSP_Error_PS.prax">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="Visible" CompareOperator=">" CompareTolerance="0">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="102003"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="45" Height="45" X="5" Y="40" Alarm_Flash="False" Alarm="False" Path="..\Icons\Icon_Alarm_Triangle.prax">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Alarm_Flash" ChannelNumber="101720"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Alarm" ChannelNumber="101720"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="101720"/>
+			</Bindings>
+		</Frame>
+	</Children>
+</RootElement>

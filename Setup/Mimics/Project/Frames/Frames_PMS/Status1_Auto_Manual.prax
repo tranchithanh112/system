@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="90" Height="40" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox FlashFast="True" FlashColor="NoAlarmGreen" Width="80" Height="30" X="5" Y="5" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="Manual">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SWBD" SelectedValue1="Manual" SelectedValue2="Auto" DefaultValue="Off">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Manual"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Auto"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue5="Yellow" SelectedValue6="NoAlarmGreen" DefaultValue="TextInfoHeader">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Manual"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Auto"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

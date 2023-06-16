@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1200" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<SelectFirstFloatBinding TargetPropertyName="SelectedThemeTest" DefaultValue="0">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="101">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="102">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="111">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="112">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue0">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue1">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER2"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue2">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue3">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT2"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</SelectFirstFloatBinding>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1200" Highlight_Button_NR="22" Page_Title="GROUP OVERVIEW PAGE" MultiplePages="False" Path="..\Frames\Menus\CommonMenuFrame_1920x1200.prax" RELATED_NAVFRAME="NAVFRAME" ShowBackground="True" AutoShow_Page_Title="False" HIGLIGHT_BUTTON_NR="0" PAGE_TITLE="GENERAL INFORMATION PAGE"/>
+		<GroupOverviewList Width="510" Height="1035" X="5" Y="75" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent"/>
+		<GroupList Width="1125" Height="1035" X="520" Y="75" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent" ColumnSepLinesVisible="False" FileName="..\Frames\Menus\Frame_ALContextMenu.prax" ShowReportType="False">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="ShowReportType" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<VariableBinding TargetPropertyName="ConditionValue0">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1395" ActivateValue="1125" TransitionTime="100">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</GroupList>
+	</Children>
+</RootElement>

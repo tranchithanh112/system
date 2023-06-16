@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="150" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="150" Height="150" BorderColor="White" FillColor="GaugeBackground" CornerRoundRadius="5"/>
+		<Polyline LineColor="InfoTextWhite" FillColor="Background">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="3201">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="InactivePanelFace"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="75;105"/>
+				<Point Coord="140;105"/>
+				<Point Coord="140;100"/>
+				<Point Coord="135;100"/>
+				<Point Coord="135;70"/>
+				<Point Coord="130;65"/>
+				<Point Coord="110;65"/>
+				<Point Coord="105;70"/>
+				<Point Coord="105;100"/>
+				<Point Coord="95;100"/>
+				<Point Coord="95;75"/>
+				<Point Coord="90;75"/>
+			</Points>
+		</Polyline>
+		<Polyline LineColor="InfoTextWhite" ClosedOutline="True" FillColor="Background">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="3201">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="InactivePanelFace"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="40;26"/>
+				<Point Coord="60;26"/>
+				<Point Coord="65;31"/>
+				<Point Coord="65;46"/>
+				<Point Coord="85;61"/>
+				<Point Coord="90;61"/>
+				<Point Coord="90;86"/>
+				<Point Coord="75;96"/>
+				<Point Coord="75;111"/>
+				<Point Coord="85;111"/>
+				<Point Coord="95;121"/>
+				<Point Coord="5;121"/>
+				<Point Coord="14;111"/>
+				<Point Coord="20;111"/>
+				<Point Coord="25;111"/>
+				<Point Coord="25;96"/>
+				<Point Coord="10;86"/>
+				<Point Coord="10;61"/>
+				<Point Coord="15;61"/>
+				<Point Coord="35;46"/>
+				<Point Coord="35;31"/>
+			</Points>
+		</Polyline>
+		<Ellipse BorderColor="InfoTextWhite" LinePosition="Centered" CenterX="50" CenterY="76" RadiusX="10" RadiusY="10"/>
+		<Polyline LineColor="InfoTextWhite" FillColor="Background">
+			<Points>
+				<Point Coord="47;84"/>
+				<Point Coord="47;123"/>
+				<Point Coord="53;123"/>
+				<Point Coord="53;84"/>
+			</Points>
+		</Polyline>
+		<Bezier LineColor="InfoTextWhite" FillColor="Transparent">
+			<Points>
+				<Point Coord="47;84"/>
+				<Point Coord="47;81"/>
+				<Point Coord="53;81"/>
+				<Point Coord="53;84"/>
+			</Points>
+		</Bezier>
+		<Rectangle Width="18" Height="4" X="41" Y="123" BorderColor="InfoTextWhite" LinePosition="Centered"/>
+		<Rectangle Width="12" Height="2" X="44" Y="93" BorderColor="InfoTextWhite"/>
+		<Rectangle Width="12" Height="2" X="44" Y="96" BorderColor="InfoTextWhite"/>
+		<Rectangle Width="12" Height="2" X="44" Y="99" BorderColor="InfoTextWhite"/>
+		<Rectangle Width="6" Height="4" X="42" Y="106" BorderColor="InfoTextWhite" LinePosition="Centered"/>
+		<Line Color="InfoTextWhite" X0="105" Y0="70" X1="135" Y1="70"/>
+		<Ellipse BorderColor="InfoTextWhite" LinePosition="Centered" CenterX="55" CenterY="81" RadiusX="1" RadiusY="1"/>
+		<Ellipse BorderColor="InfoTextWhite" LinePosition="Centered" CenterX="57" CenterY="76" RadiusX="1" RadiusY="1"/>
+		<Ellipse BorderColor="InfoTextWhite" LinePosition="Centered" CenterX="55" CenterY="71" RadiusX="1" RadiusY="1"/>
+		<Ellipse BorderColor="InfoTextWhite" LinePosition="Centered" CenterX="50" CenterY="69" RadiusX="1" RadiusY="1"/>
+		<Ellipse BorderColor="InfoTextWhite" LinePosition="Centered" CenterX="45" CenterY="71" RadiusX="1" RadiusY="1"/>
+		<Ellipse BorderColor="InfoTextWhite" LinePosition="Centered" CenterX="43" CenterY="76" RadiusX="1" RadiusY="1"/>
+		<Ellipse BorderColor="InfoTextWhite" LinePosition="Centered" CenterX="45" CenterY="81" RadiusX="1" RadiusY="1"/>
+	</Children>
+</RootElement>

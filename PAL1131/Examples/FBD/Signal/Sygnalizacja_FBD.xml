@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="Sygnalizacja_FBD">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2015" month="10" day="9" hour="7" minutes="32" seconds="52" milisec="531" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="00000003" />
+      <II value="00000038" />
+      <CPVis used="0" />
+      <LC year="2015" month="10" day="9" hour="8" minutes="3" seconds="38" milisec="296" />
+      <LCF>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\VM\VM-Praxis32.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis32.xml</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\VM\VM-Praxis32.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.1.1.15</CREATOR>
+      <LASTSAVEDWITH>1.1.1.15</LASTSAVEDWITH>
+      <DCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.dcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.dcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.dcp</ENVVARS>
+      </DCP>
+      <XCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.xcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.xcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.xcp</ENVVARS>
+      </XCP>
+      <HCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.hcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.hcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.hcp</ENVVARS>
+      </HCP>
+      <CST>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.cst</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.cst</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\FBD - programy\Sygnalizacja_FBD\Sygnalizacja_FBD.cst</ENVVARS>
+      </CST>
+      <HCPFlags enabled="0" />
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="C:\Program Files\CPDevFBD\Biblioteki\IEC 61131-3.lcp">
+        <CREATED year="2015" month="6" day="15" hour="18" minutes="53" seconds="17" milisec="622" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Biblioteki\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="FBD" type="PRG" name="Sygnalizacja_FBD" editor="FBDEditor-MarcinJamro"><![CDATA[PROGRAM Sygnalizacja_FBD
+
+VAR_EXTERNAL
+   OKNO1: BOOL;
+   OKNO2: BOOL;
+   DRZWI: BOOL;
+   RUCH: BOOL;
+   ZALWYL: BOOL;
+   ZEZW: BOOL;
+   WYLDZWIEK: BOOL;
+   ALSWIATLO: BOOL;
+   ALDZWIEK: BOOL;
+   SYGNZALWYL: BOOL;
+END_VAR
+
+VAR
+   out_or1: BOOL;
+   out_and1: BOOL;
+   out_and2: BOOL;
+   rs1: RS;
+   out_rs1_Q1: BOOL;
+   rs2: RS;
+   out_rs2_Q1: BOOL;
+END_VAR
+
+out_or1 := OR(OKNO1, OKNO2, DRZWI, RUCH);
+rs1(S:=out_or1,R1:=NOT out_and1,Q1=>out_rs1_Q1);
+ALSWIATLO := out_rs1_Q1;
+out_and1 := AND(ZALWYL, ZEZW);
+SYGNZALWYL := out_and1;
+rs2(S:=WYLDZWIEK,R1:=NOT out_rs1_Q1,Q1=>out_rs2_Q1);
+out_and2 := AND(out_rs1_Q1, NOT out_rs2_Q1);
+ALDZWIEK := out_and2;
+
+END_PROGRAM
+]]><EDITOR><![CDATA[<?xml version="1.0" encoding="utf-16"?><project><fileHeader companyName="" creationDateTime="2015-10-09T08:11:00" productName="Sygnalizacja_FBD" productVersion="" contentType="Program" /><contentHeader name="prj"><coordinateInfo><fbd><scaling x="10" y="10" /></fbd><ld><scaling x="10" y="10" /></ld><sfc><scaling x="10" y="10" /></sfc></coordinateInfo></contentHeader><types><dataTypes /><pous><pou name="FBD Diagram" pouType="functionBlock"><interface><localVars><variable name="OKNO1"><type><BOOL /></type></variable><variable name="OKNO2"><type><BOOL /></type></variable><variable name="DRZWI"><type><BOOL /></type></variable><variable name="RUCH"><type><BOOL /></type></variable><variable name="ZALWYL"><type><BOOL /></type></variable><variable name="ZEZW"><type><BOOL /></type></variable><variable name="WYLDZWIEK"><type><BOOL /></type></variable><variable name="ALSWIATLO"><type><BOOL /></type></variable><variable name="ALDZWIEK"><type><BOOL /></type></variable><variable name="SYGNZALWYL"><type><BOOL /></type></variable></localVars></interface><body><FBD><inVariable height="20" localId="2" width="50"><position x="30" y="70" /><connectionPointOut><relPosition x="60" y="10" /></connectionPointOut><expression>OKNO1</expression></inVariable><inVariable height="20" localId="3" width="50"><position x="30" y="90" /><connectionPointOut><relPosition x="60" y="10" /></connectionPointOut><expression>OKNO2</expression></inVariable><inVariable height="20" localId="4" width="50"><position x="30" y="110" /><connectionPointOut><relPosition x="60" y="10" /></connectionPointOut><expression>DRZWI</expression></inVariable><inVariable height="20" localId="6" width="50"><position x="30" y="130" /><connectionPointOut><relPosition x="60" y="10" /></connectionPointOut><expression>RUCH</expression></inVariable><inVariable height="20" localId="8" width="60"><position x="30" y="200" /><connectionPointOut><relPosition x="70" y="10" /></connectionPointOut><expression>ZALWYL</expression></inVariable><inVariable height="20" localId="9" width="50"><position x="30" y="220" /><connectionPointOut><relPosition x="60" y="10" /></connectionPointOut><expression>ZEZW</expression></inVariable><inVariable height="20" localId="18" width="80"><position x="40" y="300" /><connectionPointOut><relPosition x="90" y="10" /></connectionPointOut><expression>WYLDZWIEK</expression></inVariable><block height="80" instanceName="or1" localId="1" typeName="09*0" width="30"><position x="130" y="70" /><inputVariables><variable formalParameter="arg0* (1)"><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="" refLocalId="2"><position x="120" y="80" /><position x="90" y="80" /></connection></connectionPointIn></variable><variable formalParameter="arg0* (2)"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="3"><position x="120" y="100" /><position x="90" y="100" /></connection></connectionPointIn></variable><variable formalParameter="arg0* (3)"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="4"><position x="120" y="120" /><position x="90" y="120" /></connection></connectionPointIn></variable><variable formalParameter="arg0* (4)"><connectionPointIn><relPosition x="-10" y="70" /><connection formalParameter="" refLocalId="6"><position x="120" y="140" /><position x="90" y="140" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Return"><connectionPointOut><relPosition x="40" y="10" /></connectionPointOut></variable></outputVariables></block><block height="100" instanceName="rs1" localId="5" typeName="RS" width="70"><position x="240" y="30" /><inputVariables><variable formalParameter="S"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="Return" refLocalId="1"><position x="230" y="80" /><position x="170" y="80" /></connection></connectionPointIn></variable><variable formalParameter="R1" negated="true"><connectionPointIn><relPosition x="-10" y="70" /><connection formalParameter="Return" refLocalId="7"><position x="230" y="100" /><position x="220" y="100" /><position x="220" y="210" /><position x="210" y="210" branchPoint="Output" branchPointLocation="190;200" branchPointDirection="Right" /><position x="190" y="210" branchPoint="Input" branchPointLocation="190;200" branchPointDirection="Left" /><position x="180" y="210" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q1"><connectionPointOut><relPosition x="80" y="50" /></connectionPointOut></variable></outputVariables></block><block height="40" instanceName="and1" localId="7" typeName="08*0" width="40"><position x="130" y="200" /><inputVariables><variable formalParameter="arg0* (1)"><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="" refLocalId="8"><position x="120" y="210" /><position x="100" y="210" /></connection></connectionPointIn></variable><variable formalParameter="arg0* (2)"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="9"><position x="120" y="230" /><position x="90" y="230" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Return"><connectionPointOut><relPosition x="50" y="10" /></connectionPointOut></variable></outputVariables></block><block height="100" instanceName="rs2" localId="10" typeName="RS" width="70"><position x="360" y="260" /><inputVariables><variable formalParameter="S"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="18"><position x="350" y="310" /><position x="130" y="310" /></connection></connectionPointIn></variable><variable formalParameter="R1" negated="true"><connectionPointIn><relPosition x="-10" y="70" /><connection formalParameter="Q1" refLocalId="5"><position x="350" y="330" /><position x="20" y="330" /><position x="20" y="180" /><position x="330" y="180" /><position x="330" y="120" /><position x="350" y="120" branchPoint="Output" branchPointLocation="350;110" branchPointDirection="Left" /><position x="360" y="110" branchPoint="Input" branchPointLocation="350;110" branchPointDirection="Up" /><position x="360" y="90" branchPoint="Output" branchPointLocation="350;70" branchPointDirection="Down" /><position x="350" y="80" branchPoint="Input" branchPointLocation="350;70" branchPointDirection="Left" /><position x="320" y="80" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q1"><connectionPointOut><relPosition x="80" y="50" /></connectionPointOut></variable></outputVariables></block><block height="40" instanceName="and2" localId="11" typeName="08*0" width="40"><position x="390" y="150" /><inputVariables><variable formalParameter="arg0* (1)"><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="Q1" refLocalId="5"><position x="380" y="160" /><position x="360" y="160" /><position x="360" y="130" branchPoint="Output" branchPointLocation="350;110" branchPointDirection="Down" /><position x="360" y="110" branchPoint="Input" branchPointLocation="350;110" branchPointDirection="Up" /><position x="360" y="90" branchPoint="Output" branchPointLocation="350;70" branchPointDirection="Down" /><position x="350" y="80" branchPoint="Input" branchPointLocation="350;70" branchPointDirection="Left" /><position x="320" y="80" /></connection></connectionPointIn></variable><variable formalParameter="arg0* (2)" negated="true"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="Q1" refLocalId="10"><position x="380" y="180" /><position x="370" y="180" /><position x="370" y="210" /><position x="620" y="210" /><position x="620" y="310" /><position x="440" y="310" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Return"><connectionPointOut><relPosition x="50" y="10" /></connectionPointOut></variable></outputVariables></block><outVariable height="20" localId="12" width="80"><position x="520" y="70" /><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="Q1" refLocalId="5"><position x="510" y="80" /><position x="370" y="80" branchPoint="Output" branchPointLocation="350;70" branchPointDirection="Right" /><position x="350" y="80" branchPoint="Input" branchPointLocation="350;70" branchPointDirection="Left" /><position x="320" y="80" /></connection></connectionPointIn><expression>ALSWIATLO</expression></outVariable><outVariable height="20" localId="13" width="70"><position x="520" y="150" /><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="Return" refLocalId="11"><position x="510" y="160" /><position x="440" y="160" /></connection></connectionPointIn><expression>ALDZWIEK</expression></outVariable><outVariable height="20" localId="14" width="90"><position x="520" y="220" /><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="Return" refLocalId="7"><position x="510" y="230" /><position x="200" y="230" /><position x="200" y="220" branchPoint="Output" branchPointLocation="190;200" branchPointDirection="Down" /><position x="190" y="210" branchPoint="Input" branchPointLocation="190;200" branchPointDirection="Left" /><position x="180" y="210" /></connection></connectionPointIn><expression>SYGNZALWYL</expression></outVariable></FBD></body></pou></pous></types><instances><configurations /></instances><globalVariables><globalVariable name="OKNO1" type="BOOL" /><globalVariable name="OKNO2" type="BOOL" /><globalVariable name="DRZWI" type="BOOL" /><globalVariable name="RUCH" type="BOOL" /><globalVariable name="ZALWYL" type="BOOL" /><globalVariable name="ZEZW" type="BOOL" /><globalVariable name="WYLDZWIEK" type="BOOL" /><globalVariable name="ALSWIATLO" type="BOOL" /><globalVariable name="ALDZWIEK" type="BOOL" /><globalVariable name="SYGNZALWYL" type="BOOL" /></globalVariables><comments /><breakpoints /><conditions /><safestatevalues /></project>]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="Okno1" flags="00004000"><![CDATA[VAR_GLOBAL 
+ Okno1  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="Okno2" flags="00004000"><![CDATA[VAR_GLOBAL 
+ Okno2  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="Drzwi" flags="00004000"><![CDATA[VAR_GLOBAL 
+ Drzwi  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="Ruch" flags="00004000"><![CDATA[VAR_GLOBAL 
+ Ruch  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZalWyl" flags="00004000"><![CDATA[VAR_GLOBAL 
+ ZalWyl  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="Zezw" flags="00004000"><![CDATA[VAR_GLOBAL 
+ Zezw  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="WylDzwiek" flags="00004000"><![CDATA[VAR_GLOBAL 
+ WylDzwiek  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="AlSwiatlo" flags="00004000"><![CDATA[VAR_GLOBAL 
+ AlSwiatlo  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="AlDzwiek" flags="00004000"><![CDATA[VAR_GLOBAL 
+ AlDzwiek  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SygnZalWyl" flags="00004000"><![CDATA[VAR_GLOBAL 
+ SygnZalWyl  : BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK_FBD" loop_kind="0" interval="200"><![CDATA[Sygnalizacja_FBD
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

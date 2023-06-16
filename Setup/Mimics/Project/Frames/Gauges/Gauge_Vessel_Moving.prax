@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="600" Height="300" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="600" Height="300" BorderWidth="0" BorderColor="StatusInactive" FillColor="TextActive"/>
+		<TextBox Width="40" Height="25" X="280" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="Black" Font="Praxis;16.0;N;N;N" Text="N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="280" Y="270" BorderWidth="0" FillColor="Transparent" TextColor="Black" Font="Praxis;16.0;N;N;N" Text="S">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Line Width="0.5" Color="BackgroundShadow" LineStyle="Dashed" X0="300" Y0="0" X1="300" Y1="300"/>
+		<Line Width="0.5" Color="BackgroundShadow" LineStyle="Dashed" X0="600" Y0="150" X1="0" Y1="150"/>
+		<TextBox Width="40" Height="20" X="560" Y="140" BorderWidth="0" FillColor="Transparent" TextColor="Black" Font="Praxis;16.0;N;N;N" Text="E">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="140" BorderWidth="0" FillColor="Transparent" TextColor="Black" Font="Praxis;16.0;N;N;N" Text="W">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="120" Height="120" Y="180" Path=".\Frame_Vessel_Heading.prax">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Y" DefaultValue="200" ActivateValue="5">
+					<Bindings>
+						<FastTickBinding TargetPropertyName="Activate" Divisor="0.5"/>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="X" DefaultValue="25" ActivateValue="495">
+					<Bindings>
+						<FastTickBinding TargetPropertyName="Activate" Divisor="0.5"/>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</Frame>
+		<Ellipse BorderColor="TextInfo" CenterX="545" CenterY="65" RadiusX="4" RadiusY="4"/>
+		<Line X0="545" Y0="65" X1="545" Y1="40"/>
+		<Polyline Width="0" FillColor="AlarmRed">
+			<Points>
+				<Point Coord="545;40"/>
+				<Point Coord="535;50"/>
+				<Point Coord="545;50"/>
+			</Points>
+		</Polyline>
+	</Children>
+</RootElement>

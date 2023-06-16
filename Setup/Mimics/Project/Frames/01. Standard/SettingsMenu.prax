@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="260" Height="290" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="260" Height="290" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="DarkShadow" FillColor="MenuBackground" CornerRoundRadius="10">
+			<Children>
+				<Button Width="240" Height="45" X="10" Y="15" ClipToBounds="True" Text="      LIST" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<SelectPageClickAction Page="ChannelPage"/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="70" ClipToBounds="True" Text="      SKIP" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<SelectPageClickAction Page="SkipPage"/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="125" ClipToBounds="True" Text="      INHIBIT" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<SelectPageClickAction Page="InhibitPage"/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="180" ClipToBounds="True" Text="      ACTIVE INHIBIT" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<SelectPageClickAction Page="ActiveInhibitPage"/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="235" ClipToBounds="True" Text="      UNAVAILABLE" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<SelectPageClickAction Page="UnavailablePage"/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="725" Height="725" ClipToBounds="True" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="115" Y="115" DialColor="ConningBackground" IndicatorLinesColor="ActiveText" FullDial="False" Path=".\Frame_GAUGE_points.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="IndicatorLinesColor" ExportedPropertyName="CentralDigitsColor"/>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="40" Height="25" X="65" Y="352" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="300">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="1" InRangeBegin="0" InRangeEnd="6">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_Lo_txt"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_Hi_txt"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="140" Y="160" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="600">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="2" InRangeBegin="0" InRangeEnd="6">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_Lo_txt"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_Hi_txt"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="345" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="900">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="3" InRangeBegin="0" InRangeEnd="6">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_Lo_txt"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_Hi_txt"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="545" Y="160" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="1200">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="4" InRangeBegin="0" InRangeEnd="6">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_Lo_txt"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_Hi_txt"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="625" Y="352" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="1500">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="5" InRangeBegin="0" InRangeEnd="6">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_Lo_txt"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_Hi_txt"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="150" Y="550" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<RangeFormulaBinding TargetPropertyName="Text" InRangeBegin="0" InRangeEnd="6">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_Lo_txt"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_Hi_txt"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="550" Y="550" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="ActiveText" Font="Praxis;36.0;N;N;N" Text="1800">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="6" InRangeBegin="0" InRangeEnd="6">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_Lo_txt"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_Hi_txt"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<Ellipse BorderWidth="5" BorderColor="DarkShadow" LinePosition="Centered" FillColor="ActiveText" CenterX="365" CenterY="365" RadiusX="225" RadiusY="225" ArcBegin="135" ArcEnd="325" ArcLength="190">
+			<Bindings>
+				<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="CentralDigitsColor"/>
+				<FilteredValueBinding TargetPropertyName="ArcLength">
+					<Bindings>
+						<RangeFormulaBinding TargetPropertyName="Value" OutRangeBegin="0" OutRangeEnd="270">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="InRangeBegin" ExportedPropertyName="Range_Lo_txt"/>
+								<FrameBinding TargetPropertyName="InRangeEnd" ExportedPropertyName="Range_Hi_txt"/>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</Ellipse>
+		<Ellipse BorderWidth="3" BorderColor="Background" BorderStyle="Raised" LinePosition="Outside" CenterX="365" CenterY="365" RadiusX="180" RadiusY="180" ArcBegin="540" ArcEnd="900"/>
+		<TextBox Width="500" Height="39" X="115" Y="365" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;90.0;N;N;N" Text="1903">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<FilteredValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</FilteredValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="500" Height="25" X="115" Y="490" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;48.0;N;N;N" Text="RPM">
+			<Bindings>
+				<ChannelUnitsBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+					</Bindings>
+				</ChannelUnitsBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="320" Height="25" X="205" Y="285" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;52.0;N;N;N" Text="ME PS" Multiline="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Engine"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

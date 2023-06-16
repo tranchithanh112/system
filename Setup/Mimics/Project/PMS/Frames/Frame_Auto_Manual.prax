@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="215" Height="290" ColorTableFile="..\..\ColorfileTable.colortable">
+	<Children>
+		<Panel Width="215" Height="291" Y="-1" GridSpacing="2" BorderColor="PanelFaceBorder" FillColor="InactivePanelFace">
+			<Children>
+				<Button Width="150" Height="50" X="30" Y="52" Text="Auto" FillColor="InactivePanelFace" Font="Segoe UI;26.0;B;N;N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Mimic_Auto"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="214" Height="40" Y="4" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;26.0;B;N;U" Text="Auto/Semi Auto"/>
+				<Button Width="150" Height="50" X="30" Y="230" Text="Cancel" FillColor="InactivePanelFace" Font="Segoe UI;26.0;B;N;N">
+					<ClickActions>
+						<PulseChannelClickAction/>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="150" Height="50" X="30" Y="110" Text="Semi Auto" FillColor="InactivePanelFace" Font="Segoe UI;26.0;B;N;N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Mimic_Manual"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

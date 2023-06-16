@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="945" OnScreenNumpadFramePath=".\Frames_Pickactions\Frame_Numpad.prax" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<LogChart Width="1910" Height="630" X="5" Y="5" UseStartEnd="True" ShowMemoryTrending="False" StartTime="28800" StartDate="1034407" EndTime="28900" EndDate="1034407" TrendBackGroundColor="MetallicSilver" ShowDate="True" SmoothScrolling="True" TopOverrideValue="----" BottomOverrideValue="----" PlayModeRunsName="LogChart_1618385215" DurationShown="3000">
+			<Bindings>
+				<RetainValueBinding TargetPropertyName="StartDate" RetainKey="StartDate" RetainValueType="Float"/>
+				<RetainValueBinding TargetPropertyName="StartTime" RetainKey="StartTime" RetainValueType="Float"/>
+				<RetainValueBinding TargetPropertyName="EndDate" RetainKey="EndDate" RetainValueType="Float"/>
+				<RetainValueBinding TargetPropertyName="EndTime" RetainKey="EndTime" RetainValueType="Float"/>
+			</Bindings>
+		</LogChart>
+		<GroupList Width="1255" Height="300" X="660" Y="640" HeaderFillColor="BackgroundGauge" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;22.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" FileName=".\Frame_GOV_TR_ContextMenu.prax" ShowReportType="False" ShowDT="False" ShowStatus="False" ShowGroupDescription="False"/>
+		<GroupOverviewList Width="650" Height="300" X="5" Y="640" HeaderFillColor="BackgroundGauge" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;22.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" GroupRange=""/>
+		<Panel Width="265" Height="160" X="1640" Y="15" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" FillColor="BackgroundGauge" CornerRoundRadius="5">
+			<Children>
+				<TextBox Width="120" Height="40" X="10" Y="10" BorderWidth="0" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="22-05-2020">
+					<TextEnteredActions>
+						<SetDateTimeToRetainValueTEA RetainKey="StartDate"/>
+					</TextEnteredActions>
+				</TextBox>
+				<TextBox Width="120" Height="40" X="10" Y="55" BorderWidth="0" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="25-05-2020">
+					<TextEnteredActions>
+						<SetDateTimeToRetainValueTEA RetainKey="EndDate"/>
+					</TextEnteredActions>
+				</TextBox>
+				<Button Width="50" Height="50" X="15" Y="100" ClipToBounds="True" Text="-" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;22.0;N;N;N">
+					<MouseButtonDownActions>
+						<ZoomTrendingClickAction TrendZoomAction="Zoom Middle Out"/>
+					</MouseButtonDownActions>
+				</Button>
+				<Button Width="50" Height="50" X="75" Y="100" ClipToBounds="True" Text="+" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;22.0;N;N;N">
+					<MouseButtonDownActions>
+						<ZoomTrendingClickAction TrendZoomAction="Zoom Middle In"/>
+					</MouseButtonDownActions>
+				</Button>
+				<Button Width="120" Height="50" X="135" Y="100" ClipToBounds="True" Text="CSV EXPORT" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N">
+					<ClickActions>
+						<ExportTrendingClickAction CopyToRemovableDrive="True"/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="120" Height="40" X="135" Y="55" BorderWidth="0" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="10:01:00">
+					<TextEnteredActions>
+						<SetDateTimeToRetainValueTEA DateTimeFormat="hh:mm:ss" RetainKey="EndTime"/>
+					</TextEnteredActions>
+				</TextBox>
+				<TextBox Width="120" Height="40" X="135" Y="10" BorderWidth="0" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="14:40:00">
+					<TextEnteredActions>
+						<SetDateTimeToRetainValueTEA DateTimeFormat="hh:mm:ss" RetainKey="StartTime"/>
+					</TextEnteredActions>
+				</TextBox>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

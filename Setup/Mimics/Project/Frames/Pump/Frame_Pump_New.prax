@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="160" Height="160" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Ellipse BorderWidth="0" BorderColor="TextInfo" LinePosition="Centered" CenterX="80" CenterY="80" RadiusX="30" RadiusY="30" ArcBegin="-180" ArcEnd="-540" ArcLength="-360">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue4="NoAlarmGreen" SelectedValue5="NoAlarmGreen" SelectedValue6="Background" SelectedValue7="NoAlarmGreen" DefaultValue="Transparent">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue5" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue6" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+		<Bezier Width="1.5" LineColor="WhiteBlack" ClosedOutline="True" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue4="NoAlarmGreen" SelectedValue5="NoAlarmGreen" SelectedValue6="Background" SelectedValue7="NoAlarmGreen" DefaultValue="Transparent">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue6" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue5" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="92;113"/>
+				<Point Coord="79;117"/>
+				<Point Coord="68;113"/>
+				<Point Coord="68;113"/>
+				<Point Coord="60.7;120"/>
+				<Point Coord="60.7;120"/>
+				<Point Coord="65;120"/>
+				<Point Coord="66;120"/>
+				<Point Coord="83;120"/>
+				<Point Coord="88;120"/>
+				<Point Coord="99;120"/>
+				<Point Coord="99;120"/>
+				<Point Coord="92;113"/>
+			</Points>
+		</Bezier>
+		<Polyline Width="1.5" LineColor="WhiteBlack" FillColor="Background">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue4="NoAlarmGreen" SelectedValue5="NoAlarmGreen" SelectedValue6="Background" SelectedValue7="NoAlarmGreen" DefaultValue="Transparent">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue6" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue5" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="97;55"/>
+				<Point Coord="97;44"/>
+				<Point Coord="91;44"/>
+				<Point Coord="90;43"/>
+				<Point Coord="90;38"/>
+				<Point Coord="117;38"/>
+				<Point Coord="117;43"/>
+				<Point Coord="116;44"/>
+				<Point Coord="110;44"/>
+				<Point Coord="110;80.3"/>
+			</Points>
+		</Polyline>
+		<Button LockOverlayVisible="False" LockOverlayColor="Transparent" Width="80" Height="128" X="40" Y="10" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="IndicationLineTransparent" BorderColor="Transparent" Font="Praxis;14.0;N;N;N">
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" XOffset="-105" YOffset="-2.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="130" Height="195" X="-90" Y="-26" BUTTON01_Text="START" CTRL_Channel="0" ID="Pump" BUTTON02_Text="STOP" BUTTON03_Text="RESET" Path=".\Frame_Popup_Pump_Control.prax" Reset_M_Ch="0" Text_Bottom="Pump" Text_Top="Pump" Star_M_Ch="0" Start_Ch="0" Stop_M_Ch="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Start_Ch" ExportedPropertyName="Start_Ch"/>
+								<FrameBinding TargetPropertyName="Text_Top" ExportedPropertyName="Text_Top"/>
+								<FrameBinding TargetPropertyName="Text_Bottom" ExportedPropertyName="Text_Bottom"/>
+								<FrameBinding TargetPropertyName="Star_M_Ch" ExportedPropertyName="Start_M_Ch"/>
+								<FrameBinding TargetPropertyName="Stop_M_Ch" ExportedPropertyName="Stop_M_Ch"/>
+								<FrameBinding TargetPropertyName="Reset_M_Ch" ExportedPropertyName="Reset_M_Ch"/>
+								<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+								<FrameBinding TargetPropertyName="CTRL_Channel" ExportedPropertyName="CTRL"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="125" Height="25" Y="18" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;14.0;N;N;N" Text="Pump">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ID_"/>
+			</Bindings>
+		</TextBox>
+		<Polyline LineColor="Barfill02" ClosedOutline="True" FillColor="Barfill02">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue6="Green" SelectedValue7="White" DefaultValue="Yellow">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue6" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="115;75"/>
+				<Point Coord="115;83"/>
+				<Point Coord="121;79"/>
+			</Points>
+		</Polyline>
+		<Frame Width="70" Height="70" X="45" Y="45" Path=".\PUMP_BLADE.prax"/>
+		<Ellipse BorderWidth="1.5" BorderColor="WhiteBlack" LinePosition="Centered" FillColor="Transparent" CenterX="80" CenterY="80" RadiusX="30" RadiusY="30" ArcBegin="-55" ArcEnd="-360" ArcLength="-305"/>
+		<Polyline Width="1.5" LineColor="WhiteBlack" ClosedOutline="True" FillColor="Background">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue4="NoAlarmGreen" SelectedValue5="NoAlarmGreen" SelectedValue6="Background" SelectedValue7="NoAlarmGreen" DefaultValue="Transparent">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue6" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue5" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="97;15"/>
+				<Point Coord="97;29"/>
+				<Point Coord="91;29"/>
+				<Point Coord="90;30"/>
+				<Point Coord="90;35"/>
+				<Point Coord="117;35"/>
+				<Point Coord="117;30"/>
+				<Point Coord="116;29"/>
+				<Point Coord="110;29"/>
+				<Point Coord="110;15"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="1.5" LineColor="WhiteBlack" ClosedOutline="True" FillColor="Background">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue4="NoAlarmGreen" SelectedValue5="NoAlarmGreen" SelectedValue6="Background" SelectedValue7="NoAlarmGreen" DefaultValue="Transparent">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue6" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue5" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="73;124"/>
+				<Point Coord="69;124"/>
+				<Point Coord="54;124"/>
+				<Point Coord="54;130"/>
+				<Point Coord="56;131"/>
+				<Point Coord="103;131"/>
+				<Point Coord="105;130"/>
+				<Point Coord="105;124"/>
+				<Point Coord="84;124"/>
+				<Point Coord="80;124"/>
+			</Points>
+		</Polyline>
+	</Children>
+</RootElement>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" GridSpacing="2" PraxGraphVersion="1.0" ColorTableFile="..\..\..\..\..\..\SystemNP21-035~036\Setup\Mimics\Project\Standard.colortable">
+	<Children>
+		<Button Width="40" Height="40" Y="4" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Controllable"/>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="15" XOffset="2" YOffset="125.5">
+					<Frame>
+						<FloatingFrame Width="130" Height="195" X="-43" Y="52" Star_M_Ch="0" Stop_M_Ch="0" Reset_M_Ch="0" Text_Top="Pump" Text_Bottom="Pump" Path=".\Frame_Popup_Pump_Control.prax" Stop_Ch="0" Frame_Text="(Text)" Start_Ch="0" Output_start="0" Output_stop="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Frame_Text" ExportedPropertyName="Frame_Text"/>
+								<FrameBinding TargetPropertyName="Output_start" ExportedPropertyName="Output_start"/>
+								<FrameBinding TargetPropertyName="Start_Ch" ExportedPropertyName="Output_start"/>
+								<FrameBinding TargetPropertyName="Output_stop" ExportedPropertyName="Output_stop"/>
+								<FrameBinding TargetPropertyName="Stop_Ch" ExportedPropertyName="Output_stop"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<Ellipse BorderWidth="2" BorderColor="InfoTextGrey" CenterX="20" CenterY="24" RadiusX="20" RadiusY="20">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<Polyline Width="2" LineColor="InfoTextGrey" ClosedOutline="True" FillColor="Black">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Running_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Black" ColorWhenTrue="Green"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="20;6"/>
+				<Point Coord="4;34"/>
+				<Point Coord="36;34"/>
+			</Points>
+		</Polyline>
+		<TextBox Width="15" Height="15" X="36" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;14.0;N;N;N" Text="R" KeepHorizontal="True">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Remote_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="15" Height="15" X="-4" Y="-4" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Segoe UI;10.0;N;N;N" Text="▼" KeepHorizontal="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Controllable"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="16" Height="16" X="12" Y="16" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;14.0;B;N;N" Text="1" KeepHorizontal="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Pump_text"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="15" Height="15" X="36" Y="36" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="S" KeepHorizontal="True">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Standby_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

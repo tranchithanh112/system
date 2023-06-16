@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="40" Height="40" GridSpacing="2" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Ellipse BorderColor="TextInfo" CenterX="20" CenterY="20" RadiusX="20" RadiusY="20">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Green" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Running_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+		<Panel Width="40" Height="40" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Rotation" ExportedPropertyName="RotationPump"/>
+			</Bindings>
+			<Children>
+				<Polyline LineColor="TextInfo" ClosedOutline="True" FillColor="Gray">
+					<Bindings>
+						<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="Color"/>
+					</Bindings>
+					<Points>
+						<Point Coord="12;4"/>
+						<Point Coord="12;36"/>
+						<Point Coord="38;20"/>
+					</Points>
+				</Polyline>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" GridSpacing="5" ColorTableFile="..\Color_Table.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Panel Width="1920" Height="510" X="-3730" Y="60" GridSpacing="5">
+			<Children>
+				<Panel Width="340" Height="405" X="415" Y="105" GridSpacing="2">
+					<Children>
+						<Rectangle Width="4" Height="4" X="170" Y="356" FillColor="Transparent"/>
+						<Rectangle Width="4" Height="4" X="170" Y="386" FillColor="Transparent"/>
+						<Rectangle FlashArea="OutlineOnly" Width="40" Height="40" X="152" Y="352" FillColor="Transparent">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="FlashColor" ChannelNumber="61049">
+									<ConvertParams>
+										<BoolToColorConvertParams ColorWhenFalse="InactivePanelFace"/>
+									</ConvertParams>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="Flash" ChannelNumber="61049"/>
+							</Bindings>
+						</Rectangle>
+						<Rectangle Width="4" Height="26" X="170" Y="360" FillColor="Green">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Visible" ChannelNumber="61188"/>
+							</Bindings>
+						</Rectangle>
+						<Rectangle Width="4" Height="26" X="158" Y="360" FillColor="Transparent"/>
+						<Rectangle Width="8" Height="30" X="156" Y="358" BorderColor="PanelFace" FillColor="PanelFace">
+							<Bindings>
+								<ChannelAlarmBinding TargetPropertyName="Visible" ChannelNumber="61188"/>
+							</Bindings>
+						</Rectangle>
+						<Panel Height="30" X="122" Y="92" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="45" Height="20" X="15" Y="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61045">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="35" Height="30" X="65" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="KW"/>
+							</Children>
+						</Panel>
+						<Button Width="40" Height="40" X="152" Y="352" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+							<Children>
+								<Line Width="2" X0="20" Y0="40" X1="20" Y1="192">
+									<Bindings>
+										<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue1="Green">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="61286"/>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="61286" InvertCondition="True"/>
+											</Bindings>
+										</SelectFirstColorBinding>
+									</Bindings>
+								</Line>
+							</Children>
+							<ClickActions>
+								<OpenFrameUserAction XOffset="134.5" YOffset="4">
+									<Frame>
+										<FloatingFrame Width="215" Height="290" X="614" Y="396" Text_Button1="Connect" Channel_Button1="61488" Title="DG1 ACB" Text_Button2="Disconnect" Channel_Button2="61491" PULSE_LENGHT="5000" Path="..\Lib\Frames\Frames_Pickactions\Frame_Two_Options_Cancel.prax" Mimic_Auto="61488" Mimic_Open="61491" Mimic_Close="61488" Mimic_Manual="61491" START_CH="0" CLOSE_CHANNEL="0" Mimic_Connect="61488" OPEN_CHANNEL="0" STOP_CHANNEL="0" Mimic_Disconnect="61491"/>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+						<FillBar Width="40" Height="300" X="58" Y="90" FillDirection="BottomToTop" RangeEnd="120" LimitType="OnlyHigh" SecondLimit="100" Value="150" NormalColor="Green" LimitLowColor="Green" Clamping="False">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="61071"/>
+							</Bindings>
+						</FillBar>
+						<TextBox Width="20" Height="10" X="9" Y="186" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="80%"/>
+						<Line Width="0.5" X0="54" Y0="141.5" X1="100" Y1="141.5"/>
+						<TextBox Width="25" Height="10" X="4" Y="135" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="100%"/>
+						<TextBox Width="25" Height="10" X="8" Y="235" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="60%"/>
+						<TextBox Width="25" Height="10" X="8" Y="283" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="40%"/>
+						<Line Width="0.5" X0="51" Y0="389" X1="96" Y1="389"/>
+						<TextBox Width="15" Height="10" X="14" Y="384" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="0%"/>
+						<Line Width="0.5" X0="51" Y0="191" X1="97" Y1="191"/>
+						<Line Width="0.5" X0="51" Y0="240" X1="97" Y1="240"/>
+						<Line Width="0.5" X0="50" Y0="289" X1="96" Y1="289"/>
+						<Line Width="0.5" X0="51" Y0="339" X1="97" Y1="339"/>
+						<TextBox Width="25" Height="10" X="8" Y="333" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="20%"/>
+						<Line Width="0.5" X0="48" Y0="92" X1="96" Y1="92"/>
+						<TextBox Width="25" Height="10" X="4" Y="86" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="120%"/>
+						<TextBox Width="40" Height="20" X="30" Y="58" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="KW"/>
+						<FillBar Width="40" Height="300" X="246" Y="90" FillDirection="BottomToTop" RangeEnd="120" LimitType="None" SecondLimit="100" Value="120" NormalColor="Blue" LimitLowColor="Blue" Clamping="False">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="61075"/>
+								<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_Perc"/>
+									</Bindings>
+								</ChannelSecondLimitBinding>
+							</Bindings>
+						</FillBar>
+						<TextBox Width="20" Height="10" X="298" Y="186" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="80%"/>
+						<Line Width="0.5" X0="246" Y0="141" X1="292" Y1="141"/>
+						<TextBox Width="25" Height="10" X="298" Y="135" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="100%"/>
+						<TextBox Width="25" Height="10" X="298" Y="235" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="60%"/>
+						<TextBox Width="25" Height="10" X="298" Y="283" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="40%"/>
+						<Line Width="0.5" X0="246" Y0="389" X1="291" Y1="389"/>
+						<TextBox Width="19" Height="10" X="298" Y="383" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="0%"/>
+						<Line Width="0.5" X0="246" Y0="191" X1="292" Y1="191"/>
+						<Line Width="0.5" X0="246" Y0="240" X1="292" Y1="240"/>
+						<Line Width="0.5" X0="245" Y0="289" X1="291" Y1="289"/>
+						<Line Width="0.5" X0="246" Y0="339" X1="292" Y1="339"/>
+						<TextBox Width="25" Height="10" X="298" Y="333" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="20%"/>
+						<Line Width="0.5" X0="248" Y0="92" X1="296" Y1="92"/>
+						<TextBox Width="25" Height="10" X="298" Y="86" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="120%"/>
+						<TextBox Width="40" Height="20" X="272" Y="60" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="AMP"/>
+						<TextBox Width="38" Height="20" X="150" Y="12" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;36.0;B;N;U" Text="DG PORT"/>
+						<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+							<Points>
+								<Point Coord="180;356"/>
+								<Point Coord="184;362"/>
+								<Point Coord="188;356"/>
+							</Points>
+						</Polyline>
+						<Panel Width="140" Height="30" X="102" Y="198" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="115" Height="20" Y="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="80000">
+									<Bindings>
+										<ChannelSpecialValueBinding TargetPropertyName="Text" ChannelNumber="109101"/>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="15" Height="30" X="120" BorderColor="Transparent" FillColor="Transparent" Font="Arial;22.0;N;N;N" Text="h"/>
+							</Children>
+						</Panel>
+						<Frame Width="156" Height="30" X="90" Y="46" Tab_value="0" Path="..\Project\Frame_PMS_Statuses.prax" Cooling_down_Ch="61082" Offloading_Ch="61081" Stopping="61084" Starting_Ch="61079" Synchronizing_Ch="61080">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Tab_value" ChannelNumber="61098"/>
+							</Bindings>
+						</Frame>
+						<Button Width="92" Height="92" X="126" Y="230" GridSpacing="2" RoundRadius="50" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+							<Children>
+								<Ellipse FillColor="Green" CenterX="46" CenterY="46" RadiusX="45" RadiusY="45">
+									<Bindings>
+										<ChannelAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61083">
+											<ConvertParams>
+												<BoolToColorConvertParams ColorWhenFalse="PanelFace" ColorWhenTrue="Green"/>
+											</ConvertParams>
+										</ChannelAlarmBinding>
+									</Bindings>
+								</Ellipse>
+								<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+									<Points>
+										<Point Coord="68;26"/>
+										<Point Coord="72;32"/>
+										<Point Coord="76;26"/>
+									</Points>
+								</Polyline>
+							</Children>
+							<ClickActions>
+								<OpenFrameUserAction XOffset="158.5" YOffset="-1">
+									<Frame>
+										<FloatingFrame Width="215" Height="290" X="638" Y="295" Text_Button1="Start" Channel_Button1="61487" Title="DG PS" Text_Button2="Stop" Channel_Button2="61490" PULSE_LENGHT="5000" Path="..\Lib\Frames\Frames_Pickactions\Frame_Two_Options_Cancel.prax" RUN_CHANNEL="61487" Mimic_Manual="61490" Mimic_Start="61487" START_CH="0" Mimic_Auto="61487" Mimic_Stop="61490" STOP_CHANNEL="61490" Mimic_Reset="0">
+											<Bindings>
+												<SelectFirstBoolBinding TargetPropertyName="UserActionsLocked">
+													<Bindings>
+														<ValueCompareBinding TargetPropertyName="ConditionValue0">
+															<Bindings>
+																<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+															</Bindings>
+														</ValueCompareBinding>
+														<ChannelValueBinding TargetPropertyName="SelectedValue0" ChannelNumber="100213"/>
+														<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+															<Bindings>
+																<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100215"/>
+															</Bindings>
+														</ValueCompareBinding>
+														<ChannelValueBinding TargetPropertyName="SelectedValue1" ChannelNumber="100214"/>
+													</Bindings>
+												</SelectFirstBoolBinding>
+											</Bindings>
+										</FloatingFrame>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+						<TextBox Width="45" Height="35" X="148" Y="246" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;26.0;B;N;N" Text="DG"/>
+						<TextBox Width="45" Height="35" X="148" Y="272" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;26.0;B;N;N" Text="PS"/>
+						<Polyline FlashState="Flashing" Flash="True" Width="2" FillColor="Transparent">
+							<Bindings>
+								<ChannelAlarmBinding TargetPropertyName="LineColor" ChannelNumber="61083">
+									<ConvertParams>
+										<BoolToColorConvertParams ColorWhenFalse="AlarmRed" ColorWhenTrue="Green"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+							</Bindings>
+							<Points>
+								<Point Coord="172;320"/>
+								<Point Coord="172;356"/>
+								<Point Coord="172;356"/>
+								<Point Coord="172;356"/>
+								<Point Coord="172;356"/>
+							</Points>
+						</Polyline>
+					</Children>
+				</Panel>
+				<Panel Width="160" Height="405" X="755" Y="105" GridSpacing="2">
+					<Children>
+						<Panel Height="50" X="30" Y="182" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61184">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="65" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="Volt"/>
+							</Children>
+						</Panel>
+						<TextBox Height="50" X="30" Y="12" FillColor="Green" CornerRoundRadius="5" Font="Segoe UI;22.0;B;N;N" Text="" FillStyle="HorizontalLighting">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61023">
+									<ConvertParams>
+										<BoolToColorConvertParams ColorWhenFalse="OldAlarm" ColorWhenTrue="Green"/>
+									</ConvertParams>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="Text" ChannelNumber="61023">
+									<ConvertParams>
+										<BoolToStringConvertParams TextWhenFalse="MANU" TextWhenTrue="AUTO"/>
+									</ConvertParams>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Height="50" X="30" Y="68" FillColor="Green" CornerRoundRadius="5" Font="Segoe UI;22.0;B;N;N" Text="Running" FillStyle="HorizontalLighting">
+							<Bindings>
+								<ChannelAlarmBinding TargetPropertyName="Text" ChannelNumber="61083">
+									<ConvertParams>
+										<BoolToStringConvertParams TextWhenFalse="Running" TextWhenTrue="Running"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+								<ChannelAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61083">
+									<ConvertParams>
+										<BoolToColorConvertParams ColorWhenFalse="Gray" ColorWhenTrue="Green"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+							</Bindings>
+						</TextBox>
+						<Button Height="50" X="30" Y="12" GridSpacing="2" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+							<Children>
+								<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+									<Points>
+										<Point Coord="86;6"/>
+										<Point Coord="90;12"/>
+										<Point Coord="94;6"/>
+									</Points>
+								</Polyline>
+							</Children>
+							<ClickActions>
+								<OpenFrameUserAction XOffset="161.5" YOffset="6">
+									<Frame>
+										<FloatingFrame Width="215" Height="290" X="889" Y="63" Mimic_Auto="61486" Mimic_Manual="61489" Path="..\Lib\Frames\Frames_Pickactions\Frame_Auto_Manual.prax" Title="529-E001" STOP_CHANNEL="0" START_CH="0"/>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+						<TextBox Width="102" Height="50" X="28" Y="124" FillColor="AlarmRed" CornerRoundRadius="5" Font="Segoe UI;20.0;N;N;N" Text="Alarm" FillStyle="HorizontalLighting">
+							<Bindings>
+								<ChannelAlarmBinding TargetPropertyName="Text" ChannelNumber="61034">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Auto"/>
+									</Bindings>
+									<ConvertParams>
+										<BoolToStringConvertParams TextWhenFalse="Alarm" TextWhenTrue="Alarm"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+								<ChannelAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61034">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Auto"/>
+									</Bindings>
+									<ConvertParams>
+										<BoolToColorConvertParams ColorWhenFalse="Gray"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+							</Bindings>
+						</TextBox>
+						<Button Height="50" X="30" Y="124" GridSpacing="2" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+							<Children>
+								<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+									<Points>
+										<Point Coord="86;6"/>
+										<Point Coord="90;12"/>
+										<Point Coord="94;6"/>
+									</Points>
+								</Polyline>
+							</Children>
+							<ClickActions>
+								<OpenFrameUserAction XOffset="165.5" YOffset="3">
+									<Frame>
+										<FloatingFrame Width="215" Height="300" X="893" Y="167" Mimic_Reset="61494" Path="..\Lib\Frames\Frames_Pickactions\Frame_PMS_Alarms_Reset.prax" Shown_Pick_Action="0" Mimic_Start="0" STOP_CHANNEL="0" Title="529-E001" Mimic_Manual="61489" START_CH="0" Mimic_Auto="61486" Mimic_Stop="0" Mimic_RESET="0"/>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+						<Panel Height="50" X="30" Y="236" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61199">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="A"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="30" Y="344" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="15" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="1.00">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61198">
+											<ConvertParams>
+												<FloatToStringConvertParams DecimalPlaces="2"/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="P.F."/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="30" Y="290" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="65" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="55.12">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61185">
+											<ConvertParams>
+												<FloatToStringConvertParams DecimalPlaces="2"/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="Hz"/>
+							</Children>
+						</Panel>
+					</Children>
+				</Panel>
+				<Panel Width="155" Height="205" X="260" Y="105" GridSpacing="1">
+					<Children>
+						<Panel Height="50" X="27" Y="37" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61142">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L1"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="27" Y="91" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61143">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L2"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="27" Y="145" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61144">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L3"/>
+							</Children>
+						</Panel>
+						<TextBox Width="151" Height="20" X="2" Y="9" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="Current"/>
+					</Children>
+				</Panel>
+				<Panel Width="155" Height="205" X="985" Y="105" GridSpacing="1">
+					<Children>
+						<Panel Height="50" X="27" Y="37" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62142">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L1"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="27" Y="91" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62143">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L2"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="27" Y="145" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62144">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L3"/>
+							</Children>
+						</Panel>
+						<TextBox Width="151" Height="20" X="2" Y="9" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="Current"/>
+					</Children>
+				</Panel>
+				<Panel Width="155" Height="200" X="985" Y="310" GridSpacing="1">
+					<Children>
+						<TextBox Width="151" Height="20" X="1" Y="5" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="Voltage"/>
+						<Panel Height="50" X="26" Y="33" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="45" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62139">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="50" Height="25" X="50" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L1-L2"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="26" Y="87" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="45" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62140">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="50" Height="25" X="50" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L2-L3"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="26" Y="141" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="45" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62141">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="50" Height="25" X="50" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L3-L1"/>
+							</Children>
+						</Panel>
+					</Children>
+				</Panel>
+				<Panel Width="340" Height="405" X="1140" Y="105" GridSpacing="2">
+					<Children>
+						<Rectangle Width="4" Height="4" X="170" Y="356" FillColor="Transparent"/>
+						<Rectangle Width="4" Height="4" X="170" Y="386" FillColor="Transparent"/>
+						<Rectangle FlashArea="OutlineOnly" Width="40" Height="40" X="152" Y="352" FillColor="Transparent">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="Flash" ChannelNumber="62049"/>
+							</Bindings>
+						</Rectangle>
+						<Rectangle Width="4" Height="26" X="170" Y="360" FillColor="Green">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Visible" ChannelNumber="62188"/>
+							</Bindings>
+						</Rectangle>
+						<Polyline FlashState="Flashing" Flash="True" Width="2" FillColor="Transparent">
+							<Bindings>
+								<ChannelAlarmBinding TargetPropertyName="LineColor" ChannelNumber="62083">
+									<ConvertParams>
+										<BoolToColorConvertParams ColorWhenFalse="AlarmRed" ColorWhenTrue="Green"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+							</Bindings>
+							<Points>
+								<Point Coord="172;320"/>
+								<Point Coord="172;356"/>
+								<Point Coord="172;356"/>
+								<Point Coord="172;356"/>
+								<Point Coord="172;356"/>
+							</Points>
+						</Polyline>
+						<Rectangle Width="4" Height="26" X="158" Y="360" FillColor="Transparent"/>
+						<Rectangle Width="8" Height="30" X="156" Y="358" BorderColor="PanelFace" FillColor="PanelFace">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Visible" ChannelNumber="62188"/>
+							</Bindings>
+						</Rectangle>
+						<Panel Height="30" X="122" Y="92" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="45" Height="20" X="15" Y="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62045">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="35" Height="30" X="65" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="KW"/>
+							</Children>
+						</Panel>
+						<Button Width="40" Height="40" X="152" Y="352" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+							<ClickActions>
+								<OpenFrameUserAction XOffset="130.5">
+									<Frame>
+										<FloatingFrame Width="215" Height="290" X="1335" Y="392" Text_Button1="Connect" Channel_Button1="62488" Title="DG2 ACB" Text_Button2="Disconnect" Channel_Button2="62491" PULSE_LENGHT="5000" Path="..\Lib\Frames\Frames_Pickactions\Frame_Two_Options_Cancel.prax" Mimic_Close="62488" Mimic_Auto="62488" CLOSE_CHANNEL="0" OPEN_CHANNEL="0" Mimic_Disconnect="62491" START_CH="0" Mimic_Manual="62491" Mimic_Connect="62488" Mimic_Open="62491" STOP_CHANNEL="0"/>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+						<Line Width="2" X0="172" Y0="390" X1="172" Y1="544">
+							<Bindings>
+								<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue1="Green">
+									<Bindings>
+										<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="62286"/>
+										<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="62286" InvertCondition="True"/>
+									</Bindings>
+								</SelectFirstColorBinding>
+							</Bindings>
+						</Line>
+						<FillBar Width="40" Height="300" X="58" Y="90" FillDirection="BottomToTop" RangeEnd="120" LimitType="OnlyHigh" SecondLimit="100" Value="120" NormalColor="Green" LimitLowColor="Green" Clamping="False">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="62071"/>
+							</Bindings>
+						</FillBar>
+						<Line Width="0.5" X0="51" Y0="141" X1="97" Y1="141"/>
+						<Line Width="0.5" X0="51" Y0="389" X1="96" Y1="389"/>
+						<Line Width="0.5" X0="51" Y0="191" X1="97" Y1="191"/>
+						<Line Width="0.5" X0="51" Y0="240" X1="97" Y1="240"/>
+						<Line Width="0.5" X0="50" Y0="289" X1="96" Y1="289"/>
+						<Line Width="0.5" X0="51" Y0="339" X1="97" Y1="339"/>
+						<Line Width="0.5" X0="48" Y0="92" X1="96" Y1="92"/>
+						<TextBox Width="40" Height="20" X="26" Y="58" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="KW"/>
+						<FillBar Width="40" Height="300" X="244" Y="90" FillDirection="BottomToTop" RangeEnd="120" LimitType="None" SecondLimit="100" Value="120" NormalColor="Blue" LimitLowColor="Blue" Clamping="False">
+							<Bindings>
+								<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_Perc"/>
+									</Bindings>
+								</ChannelSecondLimitBinding>
+								<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="62075"/>
+							</Bindings>
+						</FillBar>
+						<Line Width="0.5" X0="244" Y0="141" X1="290" Y1="141"/>
+						<Line Width="0.5" X0="244" Y0="389" X1="289" Y1="389"/>
+						<Line Width="0.5" X0="244" Y0="191" X1="290" Y1="191"/>
+						<Line Width="0.5" X0="244" Y0="240" X1="290" Y1="240"/>
+						<Line Width="0.5" X0="243" Y0="289" X1="289" Y1="289"/>
+						<Line Width="0.5" X0="244" Y0="339" X1="290" Y1="339"/>
+						<Line Width="0.5" X0="246" Y0="92" X1="294" Y1="92"/>
+						<TextBox Width="40" Height="20" X="274" Y="60" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="AMP"/>
+						<Button Width="92" Height="92" X="126" Y="230" GridSpacing="2" RoundRadius="50" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+							<Children>
+								<Ellipse FillColor="Green" CenterX="46" CenterY="46" RadiusX="45" RadiusY="45">
+									<Bindings>
+										<ChannelAlarmBinding TargetPropertyName="FillColor" ChannelNumber="62083">
+											<ConvertParams>
+												<BoolToColorConvertParams ColorWhenFalse="PanelFace" ColorWhenTrue="Green"/>
+											</ConvertParams>
+										</ChannelAlarmBinding>
+									</Bindings>
+								</Ellipse>
+								<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+									<Points>
+										<Point Coord="68;26"/>
+										<Point Coord="72;32"/>
+										<Point Coord="76;26"/>
+									</Points>
+								</Polyline>
+							</Children>
+							<ClickActions>
+								<OpenFrameUserAction XOffset="154.5">
+									<Frame>
+										<FloatingFrame Width="215" Height="290" X="1359" Y="296" Text_Button1="Start" Channel_Button1="62487" Title="DG SB" Text_Button2="Stop" Channel_Button2="62490" PULSE_LENGHT="5000" Path="..\Lib\Frames\Frames_Pickactions\Frame_Two_Options_Cancel.prax" Mimic_Manual="62490" RUN_CHANNEL="61487" Mimic_Auto="62487" Mimic_Reset="0" START_CH="0" Mimic_Start="62487" Mimic_Stop="62490" STOP_CHANNEL="61490"/>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+						<TextBox Width="45" Height="35" X="148" Y="272" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;26.0;B;N;N" Text="SB"/>
+						<TextBox Width="45" Height="35" X="148" Y="246" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;26.0;B;N;N" Text="DG"/>
+						<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+							<Points>
+								<Point Coord="180;356"/>
+								<Point Coord="184;362"/>
+								<Point Coord="188;356"/>
+							</Points>
+						</Polyline>
+						<Panel Width="138" Height="30" X="102" Y="198" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="115" Height="20" Y="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="80000">
+									<Bindings>
+										<ChannelSpecialValueBinding TargetPropertyName="Text" ChannelNumber="109102"/>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="15" Height="30" X="120" BorderColor="Transparent" FillColor="Transparent" Font="Arial;22.0;N;N;N" Text="h"/>
+							</Children>
+						</Panel>
+						<TextBox Width="38" Height="20" X="150" Y="12" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;36.0;B;N;U" Text="DG STBD"/>
+						<TextBox Width="20" Height="10" X="298" Y="186" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="80%"/>
+						<TextBox Width="25" Height="10" X="298" Y="135" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="100%"/>
+						<TextBox Width="25" Height="10" X="298" Y="235" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="60%"/>
+						<TextBox Width="25" Height="10" X="298" Y="283" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="40%"/>
+						<TextBox Width="19" Height="10" X="298" Y="383" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="0%"/>
+						<TextBox Width="25" Height="10" X="298" Y="333" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="20%"/>
+						<TextBox Width="25" Height="10" X="298" Y="86" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="120%"/>
+						<TextBox Width="20" Height="10" X="10" Y="188" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="80%"/>
+						<TextBox Width="25" Height="10" X="5" Y="137" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="100%"/>
+						<TextBox Width="25" Height="10" X="10" Y="237" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="60%"/>
+						<TextBox Width="25" Height="10" X="10" Y="285" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="40%"/>
+						<TextBox Width="15" Height="10" X="16" Y="386" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="0%"/>
+						<TextBox Width="25" Height="10" X="10" Y="335" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="20%"/>
+						<TextBox Width="25" Height="10" X="5" Y="88" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="120%"/>
+						<Frame Width="156" Height="30" X="90" Y="46" Tab_value="0" Path="..\Project\Frame_PMS_Statuses.prax" Offloading_Ch="62081" Stopping="62084" Synchronizing_Ch="62080" Cooling_down_Ch="62082" Starting_Ch="62079">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Tab_value" ChannelNumber="62098"/>
+							</Bindings>
+						</Frame>
+					</Children>
+				</Panel>
+				<Panel Width="160" Height="405" X="1480" Y="105" GridSpacing="2">
+					<Children>
+						<Panel Height="50" X="30" Y="182" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62184">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="65" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="Volt"/>
+							</Children>
+						</Panel>
+						<TextBox Height="50" X="30" Y="68" FillColor="Green" CornerRoundRadius="5" Font="Segoe UI;22.0;B;N;N" Text="Running" FillStyle="HorizontalLighting">
+							<Bindings>
+								<ChannelAlarmBinding TargetPropertyName="Text" ChannelNumber="61083">
+									<ConvertParams>
+										<BoolToStringConvertParams TextWhenFalse="Running" TextWhenTrue="Running"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+								<ChannelAlarmBinding TargetPropertyName="FillColor" ChannelNumber="62083">
+									<ConvertParams>
+										<BoolToColorConvertParams ColorWhenFalse="Gray" ColorWhenTrue="Green"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Height="50" X="30" Y="124" FillColor="AlarmRed" CornerRoundRadius="5" Font="Segoe UI;20.0;N;N;N" Text="Alarm" FillStyle="HorizontalLighting">
+							<Bindings>
+								<ChannelAlarmBinding TargetPropertyName="FillColor" ChannelNumber="62034">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Auto"/>
+									</Bindings>
+									<ConvertParams>
+										<BoolToColorConvertParams ColorWhenFalse="Gray"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+								<ChannelAlarmBinding TargetPropertyName="Text" ChannelNumber="62034">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Auto"/>
+									</Bindings>
+									<ConvertParams>
+										<BoolToStringConvertParams TextWhenFalse="Alarm" TextWhenTrue="Alarm"/>
+									</ConvertParams>
+								</ChannelAlarmBinding>
+							</Bindings>
+						</TextBox>
+						<Button Height="50" X="30" Y="124" GridSpacing="2" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+							<Children>
+								<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+									<Points>
+										<Point Coord="86;6"/>
+										<Point Coord="90;12"/>
+										<Point Coord="94;6"/>
+									</Points>
+								</Polyline>
+							</Children>
+							<ClickActions>
+								<OpenFrameUserAction XOffset="166.5" YOffset="-1">
+									<Frame>
+										<FloatingFrame Width="215" Height="300" X="1619" Y="163" Mimic_Reset="62494" Path="..\Lib\Frames\Frames_Pickactions\Frame_PMS_Alarms_Reset.prax" Title="529-E001" STOP_CHANNEL="0" Mimic_Auto="61486" Mimic_Manual="61489" START_CH="0" Mimic_RESET="0"/>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+						<Panel Height="50" X="30" Y="236" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62199">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="A"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="30" Y="344" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="55" Height="20" X="15" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="1.00">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62198">
+											<ConvertParams>
+												<FloatToStringConvertParams DecimalPlaces="2"/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="P.F."/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="30" Y="290" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="65" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="55.12">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62185">
+											<ConvertParams>
+												<FloatToStringConvertParams DecimalPlaces="2"/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="Hz"/>
+							</Children>
+						</Panel>
+						<TextBox Height="50" X="30" Y="12" FillColor="Green" CornerRoundRadius="5" Font="Segoe UI;22.0;B;N;N" Text="" FillStyle="HorizontalLighting">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="62023">
+									<ConvertParams>
+										<BoolToColorConvertParams ColorWhenFalse="OldAlarm" ColorWhenTrue="Green"/>
+									</ConvertParams>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="Text" ChannelNumber="62023">
+									<ConvertParams>
+										<BoolToStringConvertParams TextWhenFalse="MANU" TextWhenTrue="AUTO"/>
+									</ConvertParams>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</TextBox>
+						<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+							<Points>
+								<Point Coord="116;18"/>
+								<Point Coord="120;24"/>
+								<Point Coord="124;18"/>
+							</Points>
+						</Polyline>
+						<Button Height="50" X="30" Y="12" GridSpacing="2" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+							<ClickActions>
+								<OpenFrameUserAction XOffset="167.5" YOffset="4">
+									<Frame>
+										<FloatingFrame Width="215" Height="290" X="1620" Y="61" Mimic_Auto="62486" Mimic_Manual="62489" Path="..\Lib\Frames\Frames_Pickactions\Frame_Auto_Manual.prax" STOP_CHANNEL="0" START_CH="0" Title="529-E001"/>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+					</Children>
+				</Panel>
+				<Panel Width="155" Height="200" X="260" Y="310" GridSpacing="1">
+					<Children>
+						<TextBox Width="151" Height="20" X="1" Y="5" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="Voltage"/>
+						<Panel Height="50" X="26" Y="33" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="45" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61139">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="50" Height="25" X="50" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L1-L2"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="26" Y="87" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="45" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61140">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="50" Height="25" X="50" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L2-L3"/>
+							</Children>
+						</Panel>
+						<Panel Height="50" X="26" Y="141" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="InactivePanelFace" CornerRoundRadius="5">
+							<Children>
+								<TextBox Width="45" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61141">
+											<ConvertParams>
+												<FloatToStringConvertParams/>
+											</ConvertParams>
+										</ChannelValueBinding>
+									</Bindings>
+								</TextBox>
+								<TextBox Width="50" Height="25" X="50" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L3-L1"/>
+							</Children>
+						</Panel>
+					</Children>
+				</Panel>
+			</Children>
+		</Panel>
+		<Panel Width="1920" Height="390" X="-3730" Y="570" GridSpacing="3">
+			<Children>
+				<Line Width="2" X0="888" Y0="195" X1="888" Y1="209">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue1="Green">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="61286"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="61286" InvertCondition="True"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Line>
+				<TextBox Width="45" Height="20" X="483" Y="102" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;26.0;B;N;N" Text="800">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61186">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="20" X="538" Y="102" BorderColor="Transparent" FillColor="Transparent" Font="Arial;26.0;N;N;N" Text="V"/>
+				<TextBox Width="99" Height="20" X="348" Y="102" BorderColor="Transparent" FillColor="Transparent" Font="Arial;26.0;N;N;N" Text="BUS &quot;A&quot;"/>
+				<TextBox Width="99" Height="20" X="348" Y="152" BorderColor="Transparent" FillColor="Transparent" Font="Arial;26.0;N;N;N" Text="BUS &quot;A&quot;"/>
+				<TextBox Width="45" Height="20" X="483" Y="152" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;26.0;B;N;N" Text="55.55">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61187">
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="2"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="20" X="538" Y="152" BorderColor="Transparent" FillColor="Transparent" Font="Arial;26.0;N;N;N" Text="Hz"/>
+				<TextBox Visible="False" FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="TextOnly" Width="231" Height="20" X="462" Y="204" BorderColor="Transparent" FillColor="Transparent" Font="Arial;26.0;N;N;N" Text="BUS A BLACKOUT">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61286"/>
+					</Bindings>
+				</TextBox>
+				<Line Width="2" X0="774" Y0="209" X1="888" Y1="209">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue1="Green">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="61286"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="61286" InvertCondition="True"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Line>
+				<Line Width="2" X0="888" Y0="141" X1="888" Y1="162">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue1="Green">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="62286"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="62286" InvertCondition="True"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Line>
+				<Line Width="2" X0="774" Y0="139" X1="774" Y1="209">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue1="Green">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="61286"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="61286" InvertCondition="True"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Line>
+				<Line Width="5" X0="323" Y0="140" X1="793" Y1="140">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue1="Green">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="61286"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="61286" InvertCondition="True"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Line>
+				<Line Width="5" X0="870" Y0="140" X1="1538" Y1="140">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue1="Green">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="62286"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="62286" InvertCondition="True"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Line>
+				<TextBox Width="102" Height="20" X="1320" Y="155" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;26.0;N;N;N" Text="BUS &quot;B&quot;"/>
+				<TextBox Width="102" Height="20" X="1320" Y="105" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;26.0;N;N;N" Text="BUS &quot;B&quot;"/>
+				<TextBox Width="45" Height="20" X="1450" Y="105" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;26.0;B;N;N" Text="800">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62186">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="45" Height="20" X="1450" Y="155" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;26.0;B;N;N" Text="55.55">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62187">
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="2"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="20" X="1505" Y="155" BorderColor="Transparent" FillColor="Transparent" Font="Arial;26.0;N;N;N" Text="Hz"/>
+				<TextBox Width="30" Height="20" X="1505" Y="105" BorderColor="Transparent" FillColor="Transparent" Font="Arial;26.0;N;N;N" Text="V"/>
+				<TextBox Visible="False" FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="TextOnly" Width="240" Height="20" X="1026" Y="204" BorderColor="Transparent" FillColor="Transparent" Font="Arial;26.0;N;N;N" Text="BUS B BLACKOUT">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="62286"/>
+					</Bindings>
+				</TextBox>
+				<Rectangle Width="6" Height="3" X="885" Y="162" FillColor="Transparent"/>
+				<Rectangle Width="6" Height="3" X="885" Y="192" FillColor="Transparent"/>
+				<Rectangle Width="6" Height="27" X="885" Y="165" FillColor="PanelFace"/>
+				<Rectangle Width="6" Height="27" X="873" Y="165" FillColor="Transparent"/>
+				<Rectangle Width="12" Height="33" X="870" Y="162" BorderColor="PanelFace" FillColor="PanelFace"/>
+				<Button Width="336" Height="40" X="69" Y="279" Text="PMS SETTINGS" FillColor="SelectedTextBackground" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="3"/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+		<Frame Width="1920" Height="110" Mimic_Title="PMS" Path="..\Frames\Frame_Top_Buttons - ROUND.prax"/>
+		<Frame Width="1920" Height="160" Y="920" Path="..\Frames\Frame_Bottom_New_Longer_Alarm.prax"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="800" FillColor="Gray"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="720" FillColor="Gray"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="340" FillColor="Gray"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="180" FillColor="Yellow"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="200" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" X="125" Y="180" FillColor="Transparent" HorzAlignment="Left" TextColor="Black" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="8."/>
+		<TextBox Width="50" Height="20" X="125" Y="200" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="8.0"/>
+		<TextBox Width="50" Height="20" X="125" Y="160" BorderColor="PanelFace" FillColor="Foreground" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="NO."/>
+		<TextBox Width="340" Height="20" X="175" Y="160" BorderColor="PanelFace" FillColor="Foreground" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="DESCRIPTION"/>
+		<TextBox Width="340" Height="20" X="175" Y="220" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="HEAVY CONSUMER CONNECTED TO BUS"/>
+		<TextBox Width="70" Height="20" X="515" Y="220" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="#"/>
+		<TextBox Width="340" Height="20" X="175" Y="200" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="COMMON"/>
+		<TextBox Width="340" Height="20" X="175" Y="180" FillColor="Transparent" HorzAlignment="Left" TextColor="Black" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="H E A V Y  C O N S U M E R S"/>
+		<TextBox Width="340" Height="20" X="175" Y="240" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="HEAVY CONSUMER ACCEPT DELAY"/>
+		<TextBox Width="70" Height="20" X="515" Y="240" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="SEC"/>
+		<TextBox Width="70" Height="20" X="515" Y="260" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<TextBox Width="50" Height="20" X="125" Y="220" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" X="125" Y="240" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" X="125" Y="260" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<TextBox Width="70" Height="20" X="515" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="EU"/>
+		<TextBox Width="80" Height="20" X="585" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP61"/>
+		<TextBox Width="80" Height="20" X="665" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP62"/>
+		<TextBox Width="80" Height="20" X="745" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP63"/>
+		<TextBox Width="80" Height="20" X="825" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP64"/>
+		<TextBox Width="80" Height="20" X="905" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP65"/>
+		<TextBox Width="80" Height="20" X="985" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP66"/>
+		<TextBox Width="80" Height="20" X="1065" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP67"/>
+		<TextBox Width="80" Height="20" X="1145" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP68"/>
+		<TextBox Width="80" Height="20" X="1225" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP69"/>
+		<TextBox Width="80" Height="20" X="1305" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP70"/>
+		<TextBox Width="80" Height="20" X="1385" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP71"/>
+		<TextBox Width="80" Height="20" X="1465" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP72"/>
+		<TextBox Width="80" Height="20" X="1545" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP73"/>
+		<TextBox Width="80" Height="20" X="1625" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP74"/>
+		<TextBox Width="80" Height="20" X="1705" Y="160" BorderColor="PanelFace" FillColor="Foreground" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP75"/>
+		<TextBox Width="340" Height="20" X="175" Y="260" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="See I/O Configuration in menu 3.1 and 3.2"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="280" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" X="125" Y="280" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="8.1"/>
+		<TextBox Width="340" Height="20" X="175" Y="300" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="REQUIRED LOAD"/>
+		<TextBox Width="70" Height="20" X="515" Y="300" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="340" Height="20" X="175" Y="280" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="HEAVY CONSUMER BLOCK - 1"/>
+		<TextBox Width="340" Height="20" X="175" Y="320" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="REQUIRED GENERATORS"/>
+		<TextBox Width="70" Height="20" X="515" Y="320" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="#"/>
+		<TextBox Width="50" Height="20" X="125" Y="300" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" X="125" Y="320" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" X="125" Y="340" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="8.2"/>
+		<TextBox Width="340" Height="20" X="175" Y="360" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="REQUIRED LOAD"/>
+		<TextBox Width="70" Height="20" X="515" Y="360" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="340" Height="20" X="175" Y="340" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="HEAVY CONSUMER BLOCK - 2"/>
+		<TextBox Width="340" Height="20" X="175" Y="380" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="REQUIRED GENERATORS"/>
+		<TextBox Width="70" Height="20" X="515" Y="380" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="#"/>
+		<TextBox Width="50" Height="20" X="125" Y="360" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" X="125" Y="380" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="460" FillColor="Gray"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="400" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" X="125" Y="400" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="8.3"/>
+		<TextBox Width="340" Height="20" X="175" Y="420" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="REQUIRED LOAD"/>
+		<TextBox Width="70" Height="20" X="515" Y="420" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="340" Height="20" X="175" Y="400" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="HEAVY CONSUMER BLOCK - 3"/>
+		<TextBox Width="340" Height="20" X="175" Y="440" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="REQUIRED GENERATORS"/>
+		<TextBox Width="70" Height="20" X="515" Y="440" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="#"/>
+		<TextBox Width="50" Height="20" X="125" Y="420" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" X="125" Y="440" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" X="125" Y="460" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="8.4"/>
+		<TextBox Width="340" Height="20" X="175" Y="480" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="REQUIRED LOAD"/>
+		<TextBox Width="70" Height="20" X="515" Y="480" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="340" Height="20" X="175" Y="460" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="HEAVY CONSUMER BLOCK - 4"/>
+		<TextBox Width="340" Height="20" X="175" Y="500" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="REQUIRED GENERATORS"/>
+		<TextBox Width="70" Height="20" X="515" Y="500" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="#"/>
+		<TextBox Width="50" Height="20" X="125" Y="480" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" X="125" Y="500" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="520" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" X="125" Y="520" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="8.5"/>
+		<TextBox Width="340" Height="20" X="175" Y="540" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="RUNNING FEEDBACK DELAY (Input code 46~49)"/>
+		<TextBox Width="70" Height="20" X="515" Y="540" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="340" Height="20" X="175" Y="520" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="HEAVY CONSUMER REQUEST IS PULSE TYPE"/>
+		<TextBox Width="50" Height="20" X="125" Y="540" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="70" Height="20" X="515" Y="560" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<TextBox Width="50" Height="20" X="125" Y="560" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<TextBox Width="340" Height="20" X="175" Y="560" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="See I/O Configuration in menu 3.1 and 3.2"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="600" FillColor="Yellow"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="620" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" X="125" Y="600" FillColor="Transparent" HorzAlignment="Left" TextColor="Black" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="9."/>
+		<TextBox Width="50" Height="20" X="125" Y="620" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="9.0"/>
+		<TextBox Width="340" Height="20" X="175" Y="640" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="NON-PREFERENTIAL GROUPS CONNECTED TO BUS"/>
+		<TextBox Width="70" Height="20" X="515" Y="640" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="#"/>
+		<TextBox Width="340" Height="20" X="175" Y="620" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="COMMON"/>
+		<TextBox Width="340" Height="20" X="175" Y="600" FillColor="Transparent" HorzAlignment="Left" TextColor="Black" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="N O N  P R E F E R E N T I A L  T R I P"/>
+		<TextBox Width="70" Height="20" X="515" Y="660" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<TextBox Width="50" Height="20" X="125" Y="640" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" X="125" Y="660" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<TextBox Width="340" Height="20" X="175" Y="660" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="See I/O Configuration in menu 3.2"/>
+		<TextBox Width="50" Height="20" X="125" Y="700" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1~2"/>
+		<TextBox Width="210" Height="20" X="175" Y="700" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="LOAD TO TRIP"/>
+		<TextBox Width="70" Height="20" X="515" Y="700" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="% ~ SEC"/>
+		<TextBox Width="130" Height="20" X="385" Y="700" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=": H-LEVEL ~ DELAY"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="680" FillColor="Gray"/>
+		<TextBox Width="340" Height="20" X="175" Y="680" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="NON-PREFERENTIAL GROUP - 1"/>
+		<TextBox Width="50" Height="20" X="125" Y="680" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="9.1"/>
+		<TextBox Width="50" Height="20" X="125" Y="740" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1~2"/>
+		<TextBox Width="210" Height="20" X="175" Y="740" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="LOAD TO TRIP"/>
+		<TextBox Width="70" Height="20" X="515" Y="740" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="% ~ SEC"/>
+		<TextBox Width="130" Height="20" X="385" Y="740" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=": H-LEVEL ~ DELAY"/>
+		<TextBox Width="340" Height="20" X="175" Y="720" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="NON-PREFERENTIAL GROUP - 2"/>
+		<TextBox Width="50" Height="20" X="125" Y="720" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="9.2"/>
+		<TextBox Width="50" Height="20" X="125" Y="780" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1~2"/>
+		<TextBox Width="210" Height="20" X="175" Y="780" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="LOAD TO TRIP"/>
+		<TextBox Width="70" Height="20" X="515" Y="780" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="% ~ SEC"/>
+		<TextBox Width="130" Height="20" X="385" Y="780" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=": H-LEVEL ~ DELAY"/>
+		<Rectangle Width="1660" Height="20" X="125" Y="760" FillColor="Gray"/>
+		<TextBox Width="340" Height="20" X="175" Y="760" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="NON-PREFERENTIAL GROUP - 3"/>
+		<TextBox Width="50" Height="20" X="125" Y="760" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="9.3"/>
+		<TextBox Width="50" Height="20" X="125" Y="820" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1~2"/>
+		<TextBox Width="210" Height="20" X="175" Y="820" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="LOAD TO TRIP"/>
+		<TextBox Width="70" Height="20" X="515" Y="820" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="% ~ SEC"/>
+		<TextBox Width="130" Height="20" X="385" Y="820" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=": H-LEVEL ~ DELAY"/>
+		<TextBox Width="340" Height="20" X="175" Y="800" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="NON-PREFERENTIAL GROUP - 4"/>
+		<TextBox Width="50" Height="20" X="125" Y="800" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="9.4"/>
+		<Frame Width="80" Height="20" X="585" Y="220" VAL="61436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="585" Y="240" VAL="61437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<TextBox Width="80" Height="20" X="585" Y="260" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="585" Y="300" VAL="61438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="585" Y="320" VAL="61439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="585" Y="360" VAL="61440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="585" Y="380" VAL="61441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="585" Y="420" VAL="61442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="585" Y="440" VAL="61443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="585" Y="480" VAL="61444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="585" Y="500" VAL="61445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="585" Y="540" VAL="61435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<TextBox Width="80" Height="20" X="585" Y="560" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="585" Y="640" VAL="61447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<TextBox Width="80" Height="20" X="585" Y="660" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="585" Y="700" VAL1="61448" DEC1="1" VAL2="61449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="61309" DEC="0"/>
+		<Frame Width="80" Height="20" X="585" Y="740" VAL1="61451" DEC1="1" VAL2="61452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="61309"/>
+		<Frame Width="80" Height="20" X="585" Y="780" VAL1="61454" DEC1="1" VAL2="61455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="61309"/>
+		<Frame Width="80" Height="20" X="585" Y="820" VAL1="61457" DEC1="1" VAL2="61458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="61309" DEC="0"/>
+		<Frame Width="80" Height="20" X="665" Y="220" VAL="62436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="62336" VAL2="62337"/>
+		<Frame Width="80" Height="20" X="665" Y="240" VAL="62437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="62337" VAL1="62336"/>
+		<TextBox Width="80" Height="20" X="665" Y="260" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="665" Y="300" VAL="62438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="62336" VAL2="62337"/>
+		<Frame Width="80" Height="20" X="665" Y="320" VAL="62439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="62337" DEC2="1" VAL1="62336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="665" Y="360" VAL="62440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="62337" VAL1="62336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="665" Y="380" VAL="62441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="62337" VAL1="62336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="665" Y="420" VAL="62442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="62336" DEC2="1" VAL2="62337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="665" Y="440" VAL="62443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="62337" DEC1="1" DEC2="1" VAL1="62336"/>
+		<Frame Width="80" Height="20" X="665" Y="480" VAL="62444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="62336" DEC2="1" VAL2="62337"/>
+		<Frame Width="80" Height="20" X="665" Y="500" VAL="62445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="62337" VAL1="62336"/>
+		<Frame Width="80" Height="20" X="665" Y="540" VAL="62435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="62337" DEC1="1" VAL1="62336" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="665" Y="560" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="665" Y="640" VAL="62447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="62337" DEC2="1" VAL1="62336"/>
+		<TextBox Width="80" Height="20" X="665" Y="660" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="665" Y="700" VAL1="62448" DEC1="1" VAL2="62449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="62309"/>
+		<Frame Width="80" Height="20" X="665" Y="740" VAL1="62451" DEC1="1" VAL2="62452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="62309"/>
+		<Frame Width="80" Height="20" X="665" Y="780" VAL1="62454" DEC1="1" VAL2="62455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="62309" DEC="0"/>
+		<Frame Width="80" Height="20" X="665" Y="820" VAL1="62457" DEC1="1" VAL2="62458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="62309"/>
+		<Frame Width="80" Height="20" X="745" Y="220" VAL="63436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="63336" DEC1="1" VAL2="63337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="745" Y="240" VAL="63437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="63336" DEC2="1" VAL2="63337" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="745" Y="260" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="745" Y="300" VAL="63438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="63336" DEC2="1" VAL2="63337"/>
+		<Frame Width="80" Height="20" X="745" Y="320" VAL="63439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL1="63336" VAL2="63337"/>
+		<Frame Width="80" Height="20" X="745" Y="360" VAL="63440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="63337" VAL1="63336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="745" Y="380" VAL="63441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="63337" VAL1="63336"/>
+		<Frame Width="80" Height="20" X="745" Y="420" VAL="63442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="63337" VAL1="63336"/>
+		<Frame Width="80" Height="20" X="745" Y="440" VAL="63443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="63336" DEC2="1" VAL2="63337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="745" Y="480" VAL="63444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="63337" VAL1="63336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="745" Y="500" VAL="63445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="63336" DEC1="1" VAL2="63337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="745" Y="540" VAL="63435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="63337" DEC2="1" VAL1="63336"/>
+		<TextBox Width="80" Height="20" X="745" Y="560" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="745" Y="640" VAL="63447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="63336" DEC1="1" VAL2="63337"/>
+		<TextBox Width="80" Height="20" X="745" Y="660" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="745" Y="700" VAL1="63448" DEC1="1" VAL2="63449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="63309" DEC="0"/>
+		<Frame Width="80" Height="20" X="745" Y="740" VAL1="63451" DEC1="1" VAL2="63452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="63309" DEC="0"/>
+		<Frame Width="80" Height="20" X="745" Y="780" VAL1="63454" DEC1="1" VAL2="63455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="63309"/>
+		<Frame Width="80" Height="20" X="745" Y="820" VAL1="63457" DEC1="1" VAL2="63458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="63309"/>
+		<Frame Width="80" Height="20" X="825" Y="220" VAL="64436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="64336" VAL2="64337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="825" Y="240" VAL="64437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="64337" VAL1="64336"/>
+		<TextBox Width="80" Height="20" X="825" Y="260" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="825" Y="300" VAL="64438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="64336" DEC1="1" VAL2="64337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="825" Y="320" VAL="64439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="64337" VAL1="64336"/>
+		<Frame Width="80" Height="20" X="825" Y="360" VAL="64440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="64336" VAL2="64337"/>
+		<Frame Width="80" Height="20" X="825" Y="380" VAL="64441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="64336" VAL2="64337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="825" Y="420" VAL="64442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="64336" DEC1="1" VAL2="64337"/>
+		<Frame Width="80" Height="20" X="825" Y="440" VAL="64443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="64337" VAL1="64336"/>
+		<Frame Width="80" Height="20" X="825" Y="480" VAL="64444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="64336" DEC1="1" VAL2="64337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="825" Y="500" VAL="64445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="64337" VAL1="64336"/>
+		<Frame Width="80" Height="20" X="825" Y="540" VAL="64435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="64336" DEC2="1" VAL2="64337"/>
+		<TextBox Width="80" Height="20" X="825" Y="560" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="825" Y="640" VAL="64447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="64337" DEC2="1" VAL1="64336"/>
+		<TextBox Width="80" Height="20" X="825" Y="660" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="825" Y="700" VAL1="64448" DEC1="1" VAL2="64449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="64309"/>
+		<Frame Width="80" Height="20" X="825" Y="740" VAL1="64451" DEC1="1" VAL2="64452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="64309"/>
+		<Frame Width="80" Height="20" X="825" Y="780" VAL1="64454" DEC1="1" VAL2="64455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="64309" DEC="0"/>
+		<Frame Width="80" Height="20" X="825" Y="820" VAL1="64457" DEC1="1" VAL2="64458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="64309"/>
+		<Frame Width="80" Height="20" X="905" Y="220" VAL="65436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="65336" VAL2="65337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="905" Y="240" VAL="65437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="65337" DEC1="1" VAL1="65336"/>
+		<TextBox Width="80" Height="20" X="905" Y="260" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="905" Y="300" VAL="65438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="65337" VAL1="65336"/>
+		<Frame Width="80" Height="20" X="905" Y="320" VAL="65439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="65336" VAL2="65337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="905" Y="360" VAL="65440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="65337" VAL1="65336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="905" Y="380" VAL="65441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="65337" DEC1="1" VAL1="65336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="905" Y="420" VAL="65442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="65336" DEC1="1" VAL2="65337"/>
+		<Frame Width="80" Height="20" X="905" Y="440" VAL="65443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="65336" VAL2="65337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="905" Y="480" VAL="65444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="65337" VAL1="65336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="905" Y="500" VAL="65445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="65336" VAL2="65337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="905" Y="540" VAL="65435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="65336" DEC1="1" DEC2="1" VAL2="65337"/>
+		<TextBox Width="80" Height="20" X="905" Y="560" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="905" Y="640" VAL="65447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="65336" DEC1="1" VAL2="65337" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="905" Y="660" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="905" Y="700" VAL1="65448" DEC1="1" VAL2="65449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="65309" DEC="0"/>
+		<Frame Width="80" Height="20" X="905" Y="740" VAL1="65451" DEC1="1" VAL2="65452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="65309" DEC="0"/>
+		<Frame Width="80" Height="20" X="905" Y="820" VAL1="65454" DEC1="1" VAL2="65455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="65309"/>
+		<Frame Width="80" Height="20" X="905" Y="820" VAL1="65457" DEC1="1" VAL2="65458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="65309" DEC="0"/>
+		<Frame Width="80" Height="20" X="985" Y="220" VAL="66436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="66337" VAL1="66336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="985" Y="240" VAL="66437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="66337" DEC1="1" DEC2="1" VAL1="66336"/>
+		<TextBox Width="80" Height="20" X="985" Y="260" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="985" Y="300" VAL="66438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="66337" DEC1="1" VAL1="66336"/>
+		<Frame Width="80" Height="20" X="985" Y="320" VAL="66439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="66336" VAL2="66337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="985" Y="360" VAL="66440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="66337" VAL1="66336"/>
+		<Frame Width="80" Height="20" X="985" Y="380" VAL="66441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="66336" DEC1="1" DEC2="1" VAL2="66337"/>
+		<Frame Width="80" Height="20" X="985" Y="420" VAL="66442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="66337" DEC2="1" VAL1="66336"/>
+		<Frame Width="80" Height="20" X="985" Y="440" VAL="66443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="66336" VAL2="66337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="985" Y="480" VAL="66444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="66337" VAL1="66336"/>
+		<Frame Width="80" Height="20" X="985" Y="500" VAL="66445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="66336" DEC2="1" DEC1="1" VAL2="66337"/>
+		<Frame Width="80" Height="20" X="985" Y="540" VAL="66435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="66337" VAL1="66336" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="985" Y="560" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="985" Y="640" VAL="66447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="66337" VAL1="66336" DEC2="1" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="985" Y="660" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="985" Y="700" VAL1="66448" DEC1="1" VAL2="66449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="66309" DEC="0"/>
+		<Frame Width="80" Height="20" X="985" Y="740" VAL1="66451" DEC1="1" VAL2="66452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="66309"/>
+		<Frame Width="80" Height="20" X="985" Y="820" VAL1="66454" DEC1="1" VAL2="66455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="66309" DEC="0"/>
+		<Frame Width="80" Height="20" X="985" Y="820" VAL1="66457" DEC1="1" VAL2="66458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="66309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1065" Y="220" VAL="67436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="67337" VAL1="67336"/>
+		<Frame Width="80" Height="20" X="1065" Y="240" VAL="67437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="67336" VAL2="67337"/>
+		<TextBox Width="80" Height="20" X="1065" Y="260" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1065" Y="300" VAL="67438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="67337" VAL1="67336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1065" Y="320" VAL="67439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="67337" DEC1="1" VAL1="67336"/>
+		<Frame Width="80" Height="20" X="1065" Y="360" VAL="67440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="67336" DEC1="1" VAL2="67337"/>
+		<Frame Width="80" Height="20" X="1065" Y="380" VAL="67441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="67336" VAL2="67337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1065" Y="420" VAL="67442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="67336" DEC2="1" VAL2="67337"/>
+		<Frame Width="80" Height="20" X="1065" Y="440" VAL="67443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="67336" DEC2="1" VAL2="67337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1065" Y="480" VAL="67444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="67337" VAL1="67336"/>
+		<Frame Width="80" Height="20" X="1065" Y="500" VAL="67445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL1="67336" VAL2="67337"/>
+		<Frame Width="80" Height="20" X="1065" Y="540" VAL="67435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="67336" DEC1="1" DEC2="1" VAL2="67337"/>
+		<TextBox Width="80" Height="20" X="1065" Y="560" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1065" Y="640" VAL="67447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="67337" VAL1="67336" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="1065" Y="660" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1065" Y="700" VAL1="67448" DEC1="1" VAL2="67449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="67309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1065" Y="740" VAL1="67451" DEC1="1" VAL2="67452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="67309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1065" Y="820" VAL1="67454" DEC1="1" VAL2="67455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="67309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1065" Y="820" VAL1="67457" DEC1="1" VAL2="67458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="67309"/>
+		<Frame Width="80" Height="20" X="1145" Y="220" VAL="68436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="68337" VAL1="68336"/>
+		<Frame Width="80" Height="20" X="1145" Y="240" VAL="68437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="68336" VAL2="68337" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="1145" Y="260" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1145" Y="300" VAL="68438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="68336" DEC1="1" VAL2="68337"/>
+		<Frame Width="80" Height="20" X="1145" Y="320" VAL="68439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="68336" VAL2="68337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1145" Y="360" VAL="68440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="68336" VAL2="68337"/>
+		<Frame Width="80" Height="20" X="1145" Y="380" VAL="68441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="68337" VAL1="68336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1145" Y="420" VAL="68442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="68336" DEC1="1" DEC2="1" VAL2="68337"/>
+		<Frame Width="80" Height="20" X="1145" Y="440" VAL="68443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="68337" DEC1="1" DEC2="1" VAL1="68336"/>
+		<Frame Width="80" Height="20" X="1145" Y="480" VAL="68444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="68337" DEC1="1" VAL1="68336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1145" Y="500" VAL="68445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="68337" DEC1="1" VAL1="68336"/>
+		<Frame Width="80" Height="20" X="1145" Y="540" VAL="68435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="68337" VAL1="68336" DEC1="1" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="1145" Y="560" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1145" Y="640" VAL="68447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="68337" VAL1="68336"/>
+		<TextBox Width="80" Height="20" X="1145" Y="660" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1145" Y="700" VAL1="68448" DEC1="1" VAL2="68449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="68309"/>
+		<Frame Width="80" Height="20" X="1145" Y="740" VAL1="68451" DEC1="1" VAL2="68452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="68309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1145" Y="820" VAL1="68454" DEC1="1" VAL2="68455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="68309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1145" Y="820" VAL1="68457" DEC1="1" VAL2="68458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="68309" DEC="0"/>
+		<Frame Width="80" Height="20" X="905" Y="780" VAL1="61554" DEC1="1" VAL2="61555" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="61309"/>
+		<Frame Width="80" Height="20" X="985" Y="780" VAL1="66454" DEC1="1" VAL2="66455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="62309"/>
+		<Frame Width="80" Height="20" X="1065" Y="780" VAL1="67454" DEC1="1" VAL2="67455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="63309"/>
+		<Frame Width="80" Height="20" X="1145" Y="780" VAL1="68454" DEC1="1" VAL2="68455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="64309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1225" Y="220" VAL="69436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="69336" DEC2="1" VAL2="69337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1225" Y="240" VAL="69437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="69337" VAL1="69336" DEC2="1" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="1225" Y="260" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1225" Y="300" VAL="69438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="69337" DEC1="1" DEC2="1" VAL1="69336"/>
+		<Frame Width="80" Height="20" X="1225" Y="320" VAL="69439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="69337" VAL1="69336"/>
+		<Frame Width="80" Height="20" X="1225" Y="360" VAL="69440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="69336" DEC1="1" VAL2="69337"/>
+		<Frame Width="80" Height="20" X="1225" Y="380" VAL="69441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="69337" DEC2="1" VAL1="69336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1225" Y="420" VAL="69442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="69336" DEC1="1" VAL2="69337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1225" Y="440" VAL="69443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="69336" DEC2="1" VAL2="69337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1225" Y="480" VAL="69444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="69336" DEC2="1" DEC1="1" VAL2="69337"/>
+		<Frame Width="80" Height="20" X="1225" Y="500" VAL="69445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="69337" DEC1="1" VAL1="69336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1225" Y="540" VAL="69435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="69337" VAL1="69336" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="1225" Y="560" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1225" Y="640" VAL="69447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="69337" DEC2="1" VAL1="69336" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="1225" Y="660" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1225" Y="700" VAL1="69448" DEC1="1" VAL2="69449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="69309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1225" Y="740" VAL1="69451" DEC1="1" VAL2="69452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="69309"/>
+		<Frame Width="80" Height="20" X="1225" Y="780" VAL1="69454" DEC1="1" VAL2="69455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="69309"/>
+		<Frame Width="80" Height="20" X="1225" Y="820" VAL1="69457" DEC1="1" VAL2="69458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="69309"/>
+		<Frame Width="80" Height="20" X="1305" Y="220" VAL="70436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="70336" VAL2="70337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1305" Y="240" VAL="70437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="70337" DEC2="1" DEC1="1" VAL1="70336"/>
+		<TextBox Width="80" Height="20" X="1305" Y="260" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1305" Y="300" VAL="70438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="70336" VAL2="70337"/>
+		<Frame Width="80" Height="20" X="1305" Y="320" VAL="70439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="70337" DEC1="1" DEC2="1" VAL1="70336"/>
+		<Frame Width="80" Height="20" X="1305" Y="360" VAL="70440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="70337" DEC1="1" VAL1="70336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1305" Y="380" VAL="70441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="70336" VAL2="70337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1305" Y="420" VAL="70442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="70337" DEC2="1" VAL1="70336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1305" Y="440" VAL="70443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="70336" VAL2="70337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1305" Y="480" VAL="70444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="70336" VAL2="70337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1305" Y="500" VAL="70445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="70336" DEC2="1" VAL2="70337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1305" Y="540" VAL="70435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="70337" DEC2="1" VAL1="70336" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="1305" Y="560" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1305" Y="640" VAL="70447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="70336" VAL2="70337" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="1305" Y="660" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1305" Y="700" VAL1="70448" DEC1="1" VAL2="70449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="70309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1305" Y="740" VAL1="70451" DEC1="1" VAL2="70452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="70309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1305" Y="780" VAL1="70454" DEC1="1" VAL2="70455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="70309"/>
+		<Frame Width="80" Height="20" X="1305" Y="820" VAL1="70457" DEC1="1" VAL2="70458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="70309"/>
+		<Frame Width="80" Height="20" X="1385" Y="220" VAL="71436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="71336" DEC1="1" VAL2="71337"/>
+		<Frame Width="80" Height="20" X="1385" Y="240" VAL="71437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="71336" VAL2="71337" DEC2="1" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="1385" Y="260" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1385" Y="300" VAL="71438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="71337" VAL1="71336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1385" Y="320" VAL="71439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="71336" VAL2="71337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1385" Y="360" VAL="71440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="71336" DEC2="1" VAL2="71337"/>
+		<Frame Width="80" Height="20" X="1385" Y="380" VAL="71441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="71337" DEC1="1" VAL1="71336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1385" Y="420" VAL="71442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="71337" DEC1="1" DEC2="1" VAL1="71336"/>
+		<Frame Width="80" Height="20" X="1385" Y="440" VAL="71443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="71337" VAL1="71336"/>
+		<Frame Width="80" Height="20" X="1385" Y="480" VAL="71444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="71337" DEC1="1" VAL1="71336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1385" Y="500" VAL="71445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="71337" DEC1="1" DEC2="1" VAL1="71336"/>
+		<Frame Width="80" Height="20" X="1385" Y="540" VAL="71435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="71337" VAL1="71336" DEC1="1" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="1385" Y="560" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1385" Y="640" VAL="71447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="71337" VAL1="71336" DEC2="1" DEC1="1"/>
+		<TextBox Width="80" Height="20" X="1385" Y="660" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1385" Y="700" VAL1="71448" DEC1="1" VAL2="71449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="71309"/>
+		<Frame Width="80" Height="20" X="1385" Y="740" VAL1="71451" DEC1="1" VAL2="71452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="71309"/>
+		<Frame Width="80" Height="20" X="1385" Y="780" VAL1="71454" DEC1="1" VAL2="71455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="71309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1385" Y="820" VAL1="71457" DEC1="1" VAL2="71458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="71309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1465" Y="220" VAL="72436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="72336" VAL2="72337"/>
+		<Frame Width="80" Height="20" X="1465" Y="240" VAL="72437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="72336" VAL2="72337" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="1465" Y="260" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1465" Y="300" VAL="72438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="72336" VAL2="72337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1465" Y="320" VAL="72439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="72336" DEC1="1" DEC2="1" VAL2="72337"/>
+		<Frame Width="80" Height="20" X="1465" Y="360" VAL="72440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="72337" DEC1="1" DEC2="1" VAL1="72336"/>
+		<Frame Width="80" Height="20" X="1465" Y="380" VAL="72441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="72337" VAL1="72336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1465" Y="420" VAL="72442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="72337" DEC1="1" VAL1="72336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1465" Y="440" VAL="72443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="72336" VAL2="72337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1465" Y="480" VAL="72444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="72337" VAL1="72336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1465" Y="500" VAL="72445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="72336" VAL2="72337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1465" Y="540" VAL="72435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="72337" VAL1="72336"/>
+		<TextBox Width="80" Height="20" X="1465" Y="560" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1465" Y="640" VAL="72447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="72336" DEC1="1" VAL2="72337" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="1465" Y="660" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1465" Y="700" VAL1="72448" DEC1="1" VAL2="72449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="72309"/>
+		<Frame Width="80" Height="20" X="1465" Y="740" VAL1="72451" DEC1="1" VAL2="72452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="72309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1465" Y="780" VAL1="72454" DEC1="1" VAL2="72455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="72309"/>
+		<Frame Width="80" Height="20" X="1465" Y="820" VAL1="72457" DEC1="1" VAL2="72458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="72309"/>
+		<Frame Width="80" Height="20" X="1545" Y="220" VAL="73436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="73336" VAL2="73337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1545" Y="240" VAL="73437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="73336" DEC2="1" VAL2="73337"/>
+		<TextBox Width="80" Height="20" X="1545" Y="260" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1545" Y="300" VAL="73438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="73337" VAL1="73336"/>
+		<Frame Width="80" Height="20" X="1545" Y="320" VAL="73439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="73336" VAL2="73337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1545" Y="360" VAL="73440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="73336" VAL2="73337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1545" Y="380" VAL="73441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="73336" VAL2="73337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1545" Y="420" VAL="73442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="73337" DEC2="1" VAL1="73336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1545" Y="440" VAL="73443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="73337" DEC2="1" VAL1="73336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1545" Y="480" VAL="73444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="73337" DEC1="1" VAL1="73336"/>
+		<Frame Width="80" Height="20" X="1545" Y="500" VAL="73445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="73336" DEC1="1" VAL2="73337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1545" Y="540" VAL="73435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="73337" DEC1="1" DEC2="1" VAL1="73336"/>
+		<TextBox Width="80" Height="20" X="1545" Y="560" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1545" Y="640" VAL="73447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="73336" DEC1="1" DEC2="1" VAL2="73337"/>
+		<TextBox Width="80" Height="20" X="1545" Y="660" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1545" Y="700" VAL1="73448" DEC1="1" VAL2="73449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="73309"/>
+		<Frame Width="80" Height="20" X="1545" Y="740" VAL1="73451" DEC1="1" VAL2="73452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="73309"/>
+		<Frame Width="80" Height="20" X="1545" Y="820" VAL1="73454" DEC1="1" VAL2="73455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="73309"/>
+		<Frame Width="80" Height="20" X="1545" Y="820" VAL1="73457" DEC1="1" VAL2="73458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="73309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1625" Y="220" VAL="74436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="74336" DEC1="1" VAL2="74337"/>
+		<Frame Width="80" Height="20" X="1625" Y="240" VAL="74437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="74336" DEC1="1" VAL2="74337" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="1625" Y="260" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1625" Y="300" VAL="74438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="74336" VAL2="74337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1625" Y="320" VAL="74439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="74336" DEC1="1" VAL2="74337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1625" Y="360" VAL="74440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="74336" VAL2="74337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1625" Y="380" VAL="74441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="74336" VAL2="74337"/>
+		<Frame Width="80" Height="20" X="1625" Y="420" VAL="74442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="74337" VAL1="74336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1625" Y="440" VAL="74443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="74337" DEC2="1" VAL1="74336"/>
+		<Frame Width="80" Height="20" X="1625" Y="480" VAL="74444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="74337" VAL1="74336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1625" Y="500" VAL="74445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="74337" DEC1="1" DEC2="1" VAL1="74336"/>
+		<Frame Width="80" Height="20" X="1625" Y="540" VAL="74435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="74337" VAL1="74336"/>
+		<TextBox Width="80" Height="20" X="1625" Y="560" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1625" Y="640" VAL="74447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="74337" VAL1="74336" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="1625" Y="660" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1625" Y="700" VAL1="74448" DEC1="1" VAL2="74449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="74309"/>
+		<Frame Width="80" Height="20" X="1625" Y="740" VAL1="74451" DEC1="1" VAL2="74452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="74309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1625" Y="820" VAL1="74454" DEC1="1" VAL2="74455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" DEC="0" VAL="74309"/>
+		<Frame Width="80" Height="20" X="1625" Y="820" VAL1="74457" DEC1="1" VAL2="74458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="74309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1705" Y="220" VAL="75436" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="75337" VAL1="75336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1705" Y="240" VAL="75437" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="75337" VAL1="75336"/>
+		<TextBox Width="80" Height="20" X="1705" Y="260" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1705" Y="300" VAL="75438" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="75337" VAL1="75336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1705" Y="320" VAL="75439" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="75336" DEC1="1" VAL2="75337"/>
+		<Frame Width="80" Height="20" X="1705" Y="360" VAL="75440" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="75336" VAL2="75337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1705" Y="380" VAL="75441" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="75336" DEC2="1" DEC1="1" VAL2="75337"/>
+		<Frame Width="80" Height="20" X="1705" Y="420" VAL="75442" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="75336" DEC1="1" VAL2="75337"/>
+		<Frame Width="80" Height="20" X="1705" Y="440" VAL="75443" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="75336" DEC1="1" DEC2="1" VAL2="75337"/>
+		<Frame Width="80" Height="20" X="1705" Y="480" VAL="75444" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="75336" VAL2="75337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1705" Y="500" VAL="75445" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="75337" VAL1="75336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1705" Y="540" VAL="75435" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="75337" VAL1="75336" DEC1="1" DEC2="1"/>
+		<TextBox Width="80" Height="20" X="1705" Y="560" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1705" Y="640" VAL="75447" DEC="0" Path="..\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="75337" DEC2="1" VAL1="75336"/>
+		<TextBox Width="80" Height="20" X="1705" Y="660" FillColor="Gray" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=" "/>
+		<Frame Width="80" Height="20" X="1705" Y="700" VAL1="75448" DEC1="1" VAL2="75449" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="75309"/>
+		<Frame Width="80" Height="20" X="1705" Y="740" VAL1="75451" DEC1="1" VAL2="75452" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="75309"/>
+		<Frame Width="80" Height="20" X="1705" Y="820" VAL1="75454" DEC1="1" VAL2="75455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="75309"/>
+		<Frame Width="80" Height="20" X="1705" Y="820" VAL1="75457" DEC1="1" VAL2="75458" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="75309"/>
+		<Frame Width="80" Height="20" X="1545" Y="780" VAL1="69554" DEC1="1" VAL2="69555" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" DEC="0" VAL="69309"/>
+		<Frame Width="80" Height="20" X="1625" Y="780" VAL1="74454" DEC1="1" VAL2="74455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2.prax" VAL="70309" DEC="0"/>
+		<Frame Width="80" Height="20" X="1705" Y="780" VAL1="75454" DEC1="1" VAL2="75455" DEC2="0" Path="..\Frames\PMS SIM PARAMETER2 - GREY.prax" VAL="71309" DEC="0"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="490" Height="150" ClipToBounds="True" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="350" Height="20" X="70" Y="35" BorderColor="BackgroundConning" BorderStyle="Sunken" FillColor="BackgroundConning"/>
+		<FillBar Width="175" Height="20" X="245" Y="35" RangeEnd="55" LimitType="None" LimitMarkerType="None" Value="15" NormalColor="Barfill01" BorderWidth="1" BorderColor="Transparent" CornerRoundRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ROT"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="175" Height="20" X="70" Y="35" FillDirection="RightToLeft" RangeEnd="-55" LimitType="None" LimitMarkerType="None" Value="-15" NormalColor="Barfill01" BorderWidth="1" BorderColor="Transparent" CornerRoundRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ROT"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<Line Color="Cyan" X0="245" Y0="35" X1="245" Y1="55"/>
+		<TextBox Width="60" Height="20" X="215" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="-30.5">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ROT"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix=" °/m"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="205" Y="110" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;24.0;N;N;N" Text="359.5">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix=" °"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="1400" Height="45" X="-905" Y="55" Path=".\Slider_Complete.prax" Big_Text="TextInfoHeader" Small_Text="TextInfo">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="X" InRangeBegin="0" InRangeEnd="360" OutRangeBegin="-5" OutRangeEnd="-905">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</Frame>
+		<Line Width="2" Color="AlarmRed" X0="245" Y0="90" X1="245" Y1="105"/>
+	</Children>
+</RootElement>

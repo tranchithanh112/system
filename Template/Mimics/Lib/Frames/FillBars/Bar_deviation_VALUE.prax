@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="210" GridSpacing="1" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<FillBar Width="42" Height="150" X="4" Y="20" FillDirection="BottomToTop" RangeBegin="-50" RangeEnd="50" LimitType="None" FirstLimit="0" SecondLimit="0" UseBeginValue="True" Value="10">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="BeginValue">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="LIMITS"/>
+				<UnitConversionBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FrameBinding TargetPropertyName="B" ExportedPropertyName="DEV_LIMIT"/>
+					</Bindings>
+				</UnitConversionBinding>
+				<UnitConversionBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<UnitConversionBinding TargetPropertyName="B" X="25" A="-1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="DEV_LIMIT"/>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+				</UnitConversionBinding>
+				<UnitConversionBinding TargetPropertyName="RangeEnd" B="50">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FrameBinding TargetPropertyName="B" ExportedPropertyName="DEVIATION"/>
+					</Bindings>
+				</UnitConversionBinding>
+				<UnitConversionBinding TargetPropertyName="RangeBegin">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<UnitConversionBinding TargetPropertyName="B" X="50" A="-1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="DEVIATION"/>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+				</UnitConversionBinding>
+				<FrameBinding TargetPropertyName="LimitMarkerSize" ExportedPropertyName="MARKER_SIZE"/>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="BAR_COLOR"/>
+				<FrameBinding TargetPropertyName="Value" ExportedPropertyName="BAR_VALUE"/>
+			</Bindings>
+		</FillBar>
+	</Children>
+</RootElement>

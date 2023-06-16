@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button Width="1920" Height="1080" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent"/>
+			</Bindings>
+			<Children>
+				<CameraFeed Width="1920" Height="1080" CameraAddress="192.168.10.211:80" StreamingMode="TunnelingOverHTTP">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CameraAddress" ExportedPropertyName="Camera_IP"/>
+					</Bindings>
+				</CameraFeed>
+			</Children>
+			<ClickActions>
+				<SetRetainValueClickAction RetainValueType="String" RetainKey="VAR_PAGETITLE">
+					<RetainValue>
+						<StringRetainValue Value="CCTV - OVERVIEW"/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+				<SetRetainValueClickAction RetainKey="VAR_NAVFRAME_INDEX">
+					<RetainValue>
+						<FloatRetainValue/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="1315" Height="650" X="25" Y="60" ClipToBounds="True" Text="" BorderColor="AlarmRed" FillColor="Transparent" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent"/>
+			</Bindings>
+			<ClickActions>
+				<SetVariableValueClickAction>
+					<Variable>
+						<FloatVariable Name="Navframe_Index" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<FloatVariableSetter>
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="NavframeValue"/>
+							</Bindings>
+						</FloatVariableSetter>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+				<SetVariableValueClickAction>
+					<Variable>
+						<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<StringVariableSetter Value="CCTV OVERVIEW">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="NavframeName"/>
+							</Bindings>
+						</StringVariableSetter>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

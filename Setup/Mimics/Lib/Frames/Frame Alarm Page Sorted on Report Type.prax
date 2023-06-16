@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="980">
+	<Children>
+		<AlarmList Width="1920" Height="900" Y="20" HeaderFillColor="PageInfoLine" FillColor="PageInfoLine" AlternateFillColor="PageInfoLineShaded" HighlightColor="White" ColumnSepLinesVisible="False" FileName=".\Frame_ALContextMenu.prax" ShowChannel="True" ShowDate="True" ShowTime="True" ShowReportType="True" ShowValue="True" ShowUnits="True" ShowLimits="True" ShowDT="True">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<Rectangle Width="1920" Height="20" FillColor="PageInfoLine"/>
+		<TextBox Width="360" Height="20" X="140" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI-18.0-B-N-N" Text="Alarm Page (Sorted on Report Type)"/>
+		<Frame Width="1920" Height="60" Y="920" Path=".\Frame Bottom Alarm Lines.prax"/>
+		<TextBox Width="50" Height="25" X="1020" Y="20" FillColor="AlarmRed" LightingStyle="Radial" CornerRoundRadius="50" TextColor="White" Font="Segoe UI-18.0-B-N-N" Text="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="FillColor">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="175" Height="25" X="1070" Y="20" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI-18.0-B-N-N" Text="Alarm(s)"/>
+	</Children>
+</RootElement>

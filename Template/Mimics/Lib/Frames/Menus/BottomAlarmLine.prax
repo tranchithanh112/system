@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="60" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1910" Height="60" X="5" BorderWidth="0" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<AlarmList Width="1630" Height="40" X="15" Y="10" HeaderVisible="False" HeaderFillColor="WhiteBlack" HeaderTextColor="Background" HeaderFont="Praxis;20.0;B;N;N" FillColor="BackgroundConning" AlternateFillColor="MidnightBlue" HighlightColor="Background" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" VertScrollBarSize="0" BorderColor="Background" ColumnSepLinesVisible="False" ShowDate="True" ShowTime="True" ShowValue="True" ShowUnits="True" ShowLimits="True" ShowDT="True" ShowAlarmType="Unacknowledged">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<Button Width="130" Height="60" X="1655" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;18.0;B;N;N">
+			<Children>
+				<Rectangle Width="120" Height="50" X="5" Y="5" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="5"/>
+				<Frame Width="50" Height="40" X="50" Y="10" HornOutput_CH1="0" HornOutput_CH2="0" HornOutput_CH3="0" Path="..\Icons\Speaker_Icon.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="HornOutput_CH1" ExportedPropertyName="HornOutput_CH1"/>
+						<FrameBinding TargetPropertyName="HornOutput_CH2" ExportedPropertyName="HornOutput_CH2"/>
+						<FrameBinding TargetPropertyName="HornOutput_CH3" ExportedPropertyName="HornOutput_CH3"/>
+					</Bindings>
+				</Frame>
+			</Children>
+			<ClickActions>
+				<RequestStopHornClickAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="60" X="1785" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;18.0;B;N;N">
+			<Children>
+				<Rectangle Width="120" Height="50" X="5" Y="5" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="5"/>
+				<Frame Width="40" Height="40" X="45" Y="10" Path="..\Icons\Check_Sign_Icon.prax"/>
+			</Children>
+			<ClickActions>
+				<AcknowledgeAlarmListAlarmsClickAction AcknowledgeTarget="All AlarmLists"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Library Identifier="0x0200" Name="PAL1131G.Objects.Trends" Wrapper="PAL1131G.Objects.Trends.Managed.dll" Version="0">
+  <Object FunctionName="DrawSimpleTrend" Height="200" Identifier="0x01" IsUpdatable="true" Name="Simple Trend" Width="320">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Bindable="false" Default="Trend" Description="" Hidden="false" Name="Header Text" Type="text" Variable="headerText"/>
+        <Parameter Bindable="true" Default="0" Description="Trend Value 1 between minimum and maximum" Hidden="false" Name="Trend value 1" Type="float" Variable="trendValue1"/>
+        <Parameter Bindable="true" Default="50" Description="Trend Value 2 between minimum and maximum" Hidden="false" Name="Trend value 2" Type="float" Variable="trendValue2"/>
+        <Parameter Bindable="true" Default="100" Description="Trend Value 3 between minimum and maximum" Hidden="false" Name="Trend value 3" Type="float" Variable="trendValue3"/>
+        <Parameter Bindable="true" Default="150" Description="Trend Value 4 between minimum and maximum" Hidden="false" Name="Trend value 4" Type="float" Variable="trendValue4"/>
+        <Parameter Bindable="true" Default="0" Description="Current system time" Hidden="false" Name="Current time" Type="int" Variable="currentTime"/>
+        <Parameter Bindable="false" Default="20" Description="Time intervals of data store in ms" Hidden="false" Name="Time interval" Type="int" Variable="timeInterval"/>
+        <Parameter Bindable="false" Default="100" Description="Maximum count of values collected for each channel" Hidden="false" Name="Sample count" Type="int" Variable="sampleCount"/>
+        <Parameter Bindable="false" Default="0;200" Description="X axis range" Hidden="false" Name="Range X" Type="range" Variable="rangeX"/>
+        <Parameter Bindable="false" Default="-50;200" Description="Y axis range" Hidden="false" Name="Range Y" Type="range" Variable="rangeY"/>
+      </Group>
+      <Group Name="Design">
+        <Parameter Bindable="false" Default="0" Description="Axis color" Hidden="false" Name="Axis color" Type="color" Variable="axisColor"/>
+        <Parameter Bindable="false" Default="10" Description="Axis X divisions" Hidden="false" Name="Axis X divisions" Type="int" Variable="divisionsAxisX"/>
+        <Parameter Bindable="false" Default="5" Description="Axis Y divisions" Hidden="false" Name="Axis Y divisions" Type="int" Variable="divisionsAxisY"/>
+        <Parameter Bindable="false" Default="66" Description="Trend Line 1 Color" Hidden="false" Name="Trend Line 1 Color" Type="color" Variable="trend1Color"/>
+        <Parameter Bindable="false" Default="186" Description="Trend Line 2 Color" Hidden="false" Name="Trend Line 2 Color" Type="color" Variable="trend2Color"/>
+        <Parameter Bindable="false" Default="4" Description="Trend Line 3 Color" Hidden="false" Name="Trend Line 3 Color" Type="color" Variable="trend3Color"/>
+        <Parameter Bindable="false" Default="0" Description="Trend Line 4 Color" Hidden="false" Name="Trend Line 4 Color" Type="color" Variable="trend4Color"/>
+        <Parameter Bindable="false" Default="129" Description="Grid Color" Hidden="false" Name="Grid Color" Type="color" Variable="gridColor"/>
+        <Parameter Bindable="false" Default="215" Description="Background Color" Hidden="false" Name="Background Color" Type="color" Variable="backgroundColor"/>
+        <Parameter Bindable="false" Default="C-16" Description="Select font" Hidden="false" Name="Font" Type="font" Variable="fontIndex"/>
+        <Parameter Bindable="false" Default="false" Description="Moving Trend" Hidden="false" Name="Moving Trend" Type="bool" Variable="movingTrend"/>
+        <Parameter Bindable="false" Default="true" Description="Set to true" Hidden="true" Name="Design Mode" Type="bool" Variable="designMode"/>
+        <Parameter Bindable="true" Default="0" Description="Drawing Data" Hidden="true" Name="Drawing Data" Type="pointer" Variable="drawingData"/>
+      </Group>
+    </Parameters>
+  </Object>
+  <Object FunctionName="DrawTrendFromMemoryStore" Height="200" Identifier="0x02" IsUpdatable="false" Name="Memory Store Trend" Width="320">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Bindable="false" Default="0" Description="X Axis Memory Store Id" Hidden="false" Name="X Axis Memory Store Id" Type="int" Variable="xAxisMemoryStoreId"/>
+        <Parameter Bindable="false" Default="0;200" Description="X axis range" Hidden="false" Name="X axis range" Type="range" Variable="rangeX"/>
+        <Parameter Bindable="false" Default="-50;200" Description="Y axis range" Hidden="false" Name="Y axis range" Type="range" Variable="rangeY"/>
+        <Parameter Bindable="true" Default="0" Description="Current index in memory store" Hidden="false" Name="Current Index" Type="int" Variable="currentIndex"/>
+        <Parameter Bindable="false" Default="Trend" Description="Header Text" Hidden="false" Name="Header Text" Type="text" Variable="headerText"/>
+        <Parameter Bindable="false" Default="1" Description="Trend 1 Memory Store Id" Hidden="false" Name="Trend 1 Memory Store Id" Type="int" Variable="trend1MemoryStoreId"/>
+        <Parameter Bindable="false" Default="2" Description="Trend 2 Memory Store Id" Hidden="false" Name="Trend 2 Memory Store Id" Type="int" Variable="trend2MemoryStoreId"/>
+        <Parameter Bindable="false" Default="3" Description="Trend 3 Memory Store Id" Hidden="false" Name="Trend 3 Memory Store Id" Type="int" Variable="trend3MemoryStoreId"/>
+        <Parameter Bindable="false" Default="4" Description="Trend 4 Memory Store Id" Hidden="false" Name="Trend 4 Memory Store Id" Type="int" Variable="trend4MemoryStoreId"/>
+      </Group>
+      <Group Name="Design">
+        <Parameter Bindable="false" Default="0" Description="Axis color" Hidden="false" Name="Axis color" Type="color" Variable="axisColor"/>
+        <Parameter Bindable="false" Default="10" Description="Axis X divisions" Hidden="false" Name="Axis X divisions" Type="int" Variable="divisionsAxisX"/>
+        <Parameter Bindable="false" Default="5" Description="Axis Y divisions" Hidden="false" Name="Axis Y divisions" Type="int" Variable="divisionsAxisY"/>
+        <Parameter Bindable="false" Default="66" Description="Trend Line 1 Color" Hidden="false" Name="Trend Line 1 Color" Type="color" Variable="trend1Color"/>
+        <Parameter Bindable="false" Default="186" Description="Trend Line 2 Color" Hidden="false" Name="Trend Line 2 Color" Type="color" Variable="trend2Color"/>
+        <Parameter Bindable="false" Default="4" Description="Trend Line 3 Color" Hidden="false" Name="Trend Line 3 Color" Type="color" Variable="trend3Color"/>
+        <Parameter Bindable="false" Default="0" Description="Trend Line 4 Color" Hidden="false" Name="Trend Line 4 Color" Type="color" Variable="trend4Color"/>
+        <Parameter Bindable="false" Default="129" Description="Grid Color" Hidden="false" Name="Grid Color" Type="color" Variable="gridColor"/>
+        <Parameter Bindable="false" Default="215" Description="Background Color" Hidden="false" Name="Background Color" Type="color" Variable="backgroundColor"/>
+        <Parameter Bindable="false" Default="C-16" Description="Select font" Hidden="false" Name="Font" Type="font" Variable="fontIndex"/>
+        <Parameter Bindable="false" Default="false" Description="Moving Trend" Hidden="false" Name="Moving Trend" Type="bool" Variable="movingTrend"/>
+        <Parameter Bindable="false" Default="true" Description="Set to true" Hidden="true" Name="Design Mode" Type="bool" Variable="designMode"/>
+        <Parameter Bindable="true" Default="0" Description="Drawing Data" Hidden="true" Name="Drawing Data" Type="pointer" Variable="drawingData"/>
+      </Group>
+    </Parameters>
+  </Object>
+  <Object FunctionName="DrawScalableTrend" Height="200" Identifier="0x03" IsUpdatable="true" Name="Scalable Trend" Width="320">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Bindable="false" Default="Trend" Description="" Hidden="false" Name="Header Text" Type="text" Variable="headerText"/>
+        <Parameter Bindable="true" Default="0" Description="Trend Value 1 between minimum and maximum" Hidden="false" Name="Trend value 1" Type="float" Variable="trendValue1"/>
+        <Parameter Bindable="true" Default="50" Description="Trend Value 2 between minimum and maximum" Hidden="false" Name="Trend value 2" Type="float" Variable="trendValue2"/>
+        <Parameter Bindable="true" Default="100" Description="Trend Value 3 between minimum and maximum" Hidden="false" Name="Trend value 3" Type="float" Variable="trendValue3"/>
+        <Parameter Bindable="true" Default="150" Description="Trend Value 4 between minimum and maximum" Hidden="false" Name="Trend value 4" Type="float" Variable="trendValue4"/>
+        <Parameter Bindable="true" Default="0" Description="Current system time" Hidden="false" Name="Current time" Type="int" Variable="currentTime"/>
+        <Parameter Bindable="false" Default="20" Description="Time intervals of data store in ms" Hidden="false" Name="Time interval" Type="int" Variable="timeInterval"/>
+        <Parameter Bindable="false" Default="100" Description="Maximum count of values collected for each channel" Hidden="false" Name="Sample count" Type="int" Variable="sampleCount"/>
+        <Parameter Bindable="true" Default="0" Description="X axis range (min)" Hidden="false" Name="Range X Min" Type="float" Variable="rangeXMin" />
+        <Parameter Bindable="true" Default="200" Description="X axis range (max)" Hidden="false" Name="Range X Max" Type="float" Variable="rangeXMax" />
+        <Parameter Bindable="true" Default="-50" Description="Y axis range (min)" Hidden="false" Name="Range Y Min" Type="float" Variable="rangeYMin" />
+        <Parameter Bindable="true" Default="200" Description="Y axis range (max)" Hidden="false" Name="Range Y Max" Type="float" Variable="rangeYMax" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Bindable="false" Default="0" Description="Axis color" Hidden="false" Name="Axis color" Type="color" Variable="axisColor"/>
+        <Parameter Bindable="true" Default="10" Description="Axis X divisions" Hidden="false" Name="Axis X divisions" Type="int" Variable="divisionsAxisX"/>
+        <Parameter Bindable="true" Default="5" Description="Axis Y divisions" Hidden="false" Name="Axis Y divisions" Type="int" Variable="divisionsAxisY"/>
+        <Parameter Bindable="false" Default="66" Description="Trend Line 1 Color" Hidden="false" Name="Trend Line 1 Color" Type="color" Variable="trend1Color"/>
+        <Parameter Bindable="false" Default="186" Description="Trend Line 2 Color" Hidden="false" Name="Trend Line 2 Color" Type="color" Variable="trend2Color"/>
+        <Parameter Bindable="false" Default="4" Description="Trend Line 3 Color" Hidden="false" Name="Trend Line 3 Color" Type="color" Variable="trend3Color"/>
+        <Parameter Bindable="false" Default="0" Description="Trend Line 4 Color" Hidden="false" Name="Trend Line 4 Color" Type="color" Variable="trend4Color"/>
+        <Parameter Bindable="false" Default="129" Description="Grid Color" Hidden="false" Name="Grid Color" Type="color" Variable="gridColor"/>
+        <Parameter Bindable="false" Default="215" Description="Background Color" Hidden="false" Name="Background Color" Type="color" Variable="backgroundColor"/>
+        <Parameter Bindable="false" Default="C-16" Description="Select font" Hidden="false" Name="Font" Type="font" Variable="fontIndex"/>
+        <Parameter Bindable="false" Default="false" Description="Moving Trend" Hidden="false" Name="Moving Trend" Type="bool" Variable="movingTrend"/>
+        <Parameter Bindable="false" Default="true" Description="Set to true" Hidden="true" Name="Design Mode" Type="bool" Variable="designMode"/>
+        <Parameter Bindable="true" Default="0" Description="Drawing Data" Hidden="true" Name="Drawing Data" Type="pointer" Variable="drawingData"/>
+      </Group>
+    </Parameters>
+  </Object>
+  <Object FunctionName="DrawScalableXY" Height="200" Identifier="0x04" IsUpdatable="true" Name="Scalable XY" Width="320">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Bindable="false" Default="Trend" Description="" Hidden="false" Name="Header Text" Type="text" Variable="headerText"/>
+        <Parameter Bindable="true" Default="0" Description="Trend Value 1 between minimum and maximum" Hidden="false" Name="Trend value 1" Type="float" Variable="trendValue1"/>
+        <Parameter Bindable="true" Default="50" Description="Trend Value 2 between minimum and maximum" Hidden="false" Name="Trend value 2" Type="float" Variable="trendValue2"/>
+        <Parameter Bindable="true" Default="100" Description="Trend Value 3 between minimum and maximum" Hidden="false" Name="Trend value 3" Type="float" Variable="trendValue3"/>
+        <Parameter Bindable="true" Default="150" Description="Trend Value 4 between minimum and maximum" Hidden="false" Name="Trend value 4" Type="float" Variable="trendValue4"/>
+        <Parameter Bindable="true" Default="0" Description="Trend X 1" Hidden="false" Name="Trend X 1" Type="float" Variable="trendX1" />
+        <Parameter Bindable="true" Default="0" Description="Trend X 2" Hidden="false" Name="Trend X 2" Type="float" Variable="trendX2" />
+        <Parameter Bindable="true" Default="0" Description="Trend X 3" Hidden="false" Name="Trend X 3" Type="float" Variable="trendX3" />
+        <Parameter Bindable="true" Default="0" Description="Trend X 4" Hidden="false" Name="Trend X 4" Type="float" Variable="trendX4" />
+        <Parameter Bindable="true" Default="0" Description="Current system time" Hidden="false" Name="Current time" Type="int" Variable="currentTime"/>
+        <Parameter Bindable="false" Default="20" Description="Time intervals of data store in ms" Hidden="false" Name="Time interval" Type="int" Variable="timeInterval"/>
+        <Parameter Bindable="false" Default="100" Description="Maximum count of values collected for each channel" Hidden="false" Name="Sample count" Type="int" Variable="sampleCount"/>
+        <Parameter Bindable="true" Default="0" Description="X axis range (min)" Hidden="false" Name="Range X Min" Type="float" Variable="rangeXMin" />
+        <Parameter Bindable="true" Default="200" Description="X axis range (max)" Hidden="false" Name="Range X Max" Type="float" Variable="rangeXMax" />
+        <Parameter Bindable="true" Default="-50" Description="Y axis range (min)" Hidden="false" Name="Range Y Min" Type="float" Variable="rangeYMin" />
+        <Parameter Bindable="true" Default="200" Description="Y axis range (max)" Hidden="false" Name="Range Y Max" Type="float" Variable="rangeYMax" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Bindable="false" Default="0" Description="Axis color" Hidden="false" Name="Axis color" Type="color" Variable="axisColor"/>
+        <Parameter Bindable="true" Default="10" Description="Axis X divisions" Hidden="false" Name="Axis X divisions" Type="int" Variable="divisionsAxisX"/>
+        <Parameter Bindable="true" Default="5" Description="Axis Y divisions" Hidden="false" Name="Axis Y divisions" Type="int" Variable="divisionsAxisY"/>
+        <Parameter Bindable="false" Default="66" Description="Trend Line 1 Color" Hidden="false" Name="Trend Line 1 Color" Type="color" Variable="trend1Color"/>
+        <Parameter Bindable="false" Default="186" Description="Trend Line 2 Color" Hidden="false" Name="Trend Line 2 Color" Type="color" Variable="trend2Color"/>
+        <Parameter Bindable="false" Default="4" Description="Trend Line 3 Color" Hidden="false" Name="Trend Line 3 Color" Type="color" Variable="trend3Color"/>
+        <Parameter Bindable="false" Default="0" Description="Trend Line 4 Color" Hidden="false" Name="Trend Line 4 Color" Type="color" Variable="trend4Color"/>
+        <Parameter Bindable="false" Default="129" Description="Grid Color" Hidden="false" Name="Grid Color" Type="color" Variable="gridColor"/>
+        <Parameter Bindable="false" Default="215" Description="Background Color" Hidden="false" Name="Background Color" Type="color" Variable="backgroundColor"/>
+        <Parameter Bindable="false" Default="C-16" Description="Select font" Hidden="false" Name="Font" Type="font" Variable="fontIndex"/>
+        <Parameter Bindable="false" Default="false" Description="Moving Trend" Hidden="false" Name="Moving Trend" Type="bool" Variable="movingTrend"/>
+        <Parameter Bindable="false" Default="true" Description="Set to true" Hidden="true" Name="Design Mode" Type="bool" Variable="designMode"/>
+        <Parameter Bindable="true" Default="0" Description="Drawing Data" Hidden="true" Name="Drawing Data" Type="pointer" Variable="drawingData"/>
+      </Group>
+    </Parameters>
+  </Object>
+
+  <Object FunctionName="DrawScalableTrendPlus" Height="200" Identifier="0x05" IsUpdatable="true" Name="Scalable Trend Plus" Width="320">
+         <Parameters>
+            <Group Name="Basic">
+                <Parameter Bindable="false" Default="Trend" Description="" Hidden="false" Name="Header Text" Type="text" Variable="headerText"/>
+                <Parameter Bindable="false" Default="0" Description="" Hidden="false" Name="X Memory Store Id" Type="int" Variable="trendXStore"/>
+                <Parameter Bindable="false" Default="1" Description="" Hidden="false" Name="Y1 Memory Store Id" Type="int" Variable="trendY1Store"/>
+                <Parameter Bindable="false" Default="2" Description="" Hidden="false" Name="Y2 Memory Store Id" Type="int" Variable="trendY2Store"/>
+                <Parameter Bindable="false" Default="3" Description="" Hidden="false" Name="Y3 Memory Store Id" Type="int" Variable="trendY3Store"/>
+                <Parameter Bindable="false" Default="4" Description="" Hidden="false" Name="Y4 Memory Store Id" Type="int" Variable="trendY4Store"/>
+                <Parameter Bindable="false" Default="200" Description="" Hidden="false" Name="Memory Store Size" Type="int" Variable="storeSize"/>
+                <Parameter Bindable="true" Default="0" Description="X axis range (min)" Hidden="false" Name="Range X Min" Type="float" Variable="rangeXMin"/>
+                <Parameter Bindable="true" Default="200" Description="X axis range (max)" Hidden="false" Name="Range X Max" Type="float" Variable="rangeXMax"/>
+                <Parameter Bindable="true" Default="-50" Description="Y axis range (min)" Hidden="false" Name="Range Y Min" Type="float" Variable="rangeYMin"/>
+                <Parameter Bindable="true" Default="200" Description="Y axis range (max)" Hidden="false" Name="Range Y Max" Type="float" Variable="rangeYMax"/>
+                <Parameter Bindable="true" Default="0" Description="Current memory store size" Hidden="false" Name="Current memory store size" Type="int" Variable="currentSize"/>
+                <Parameter Bindable="true" Default="0" Description="Index of last element" Hidden="false" Name="Index of last element" Type="int" Variable="currentIndex"/>
+            </Group>
+            <Group Name="Design">
+                <Parameter Bindable="false" Default="0" Description="Axis color" Hidden="false" Name="Axis color" Type="color" Variable="axisColor"/>
+                <Parameter Bindable="false" Default="66" Description="Trend Line 1 Color" Hidden="false" Name="Trend Line 1 Color" Type="color" Variable="trend1Color"/>
+                <Parameter Bindable="false" Default="186" Description="Trend Line 2 Color" Hidden="false" Name="Trend Line 2 Color" Type="color" Variable="trend2Color"/>
+                <Parameter Bindable="false" Default="4" Description="Trend Line 3 Color" Hidden="false" Name="Trend Line 3 Color" Type="color" Variable="trend3Color"/>
+                <Parameter Bindable="false" Default="0" Description="Trend Line 4 Color" Hidden="false" Name="Trend Line 4 Color" Type="color" Variable="trend4Color"/>
+                <Parameter Bindable="false" Default="0" Description="0 - nothing, 1 - cross, 2 - square" Hidden="false" Name="Point Type of Trend 1" Type="int" Variable="point1Type"/>
+                <Parameter Bindable="false" Default="0" Description="0 - nothing, 1 - cross, 2 - square" Hidden="false" Name="Point Type of Trend 2" Type="int" Variable="point2Type"/>
+                <Parameter Bindable="false" Default="0" Description="0 - nothing, 1 - cross, 2 - square" Hidden="false" Name="Point Type of Trend 3" Type="int" Variable="point3Type"/>
+                <Parameter Bindable="false" Default="0" Description="0 - nothing, 1 - cross, 2 - square" Hidden="false" Name="Point Type of Trend 4" Type="int" Variable="point4Type"/>
+                <Parameter Bindable="false" Default="true" Description="Trend line visible" Hidden="false" Name="Show Trend 1" Type="bool" Variable="show1Line"/>
+                <Parameter Bindable="false" Default="true" Description="Trend line visible" Hidden="false" Name="Show Trend 2" Type="bool" Variable="show2Line"/>
+                <Parameter Bindable="false" Default="true" Description="Trend line visible" Hidden="false" Name="Show Trend 3" Type="bool" Variable="show3Line"/>
+                <Parameter Bindable="false" Default="true" Description="Trend line visible" Hidden="false" Name="Show Trend 4" Type="bool" Variable="show4Line"/>
+                <Parameter Bindable="false" Default="129" Description="Grid Color" Hidden="false" Name="Grid Color" Type="color" Variable="gridColor"/>
+                <Parameter Bindable="false" Default="215" Description="Background Color" Hidden="false" Name="Background Color" Type="color" Variable="backgroundColor"/>
+                <Parameter Bindable="false" Default="C-16" Description="Select font" Hidden="false" Name="Font" Type="font" Variable="fontIndex"/>
+                <Parameter Bindable="false" Default="true" Description="Set to true" Hidden="true" Name="Design Mode" Type="bool" Variable="designMode"/>
+                <Parameter Bindable="true" Default="0" Description="Runtime Drawing Data" Hidden="true" Name="Drawing Data" Type="pointer" Variable="drawingData"/>
+            </Group>
+        </Parameters>
+  </Object>
+
+  <Object FunctionName="DrawScalableXYPlus" Height="200" Identifier="0x06" IsUpdatable="true" Name="Scalable XY Plus" Width="320">
+        <Parameters>
+            <Group Name="Basic">
+                <Parameter Bindable="false" Default="Trend XY" Description="Header Text" Hidden="false" Name="Header Text" Type="text" Variable="headerText"/>
+                <Parameter Bindable="false" Default="0" Description="" Hidden="false" Name="X Memory Store Id" Type="int" Variable="trendXStore"/>
+                <Parameter Bindable="false" Default="0" Description="" Hidden="false" Name="Y Memory Store Id" Type="int" Variable="trendYStore"/>
+                <Parameter Bindable="true" Default="0" Description="X axis range (min)" Hidden="false" Name="Range X Min" Type="float" Variable="rangeXMin"/>
+                <Parameter Bindable="true" Default="200" Description="X axis range (max)" Hidden="false" Name="Range X Max" Type="float" Variable="rangeXMax"/>
+                <Parameter Bindable="true" Default="-50" Description="Y axis range (min)" Hidden="false" Name="Range Y Min" Type="float" Variable="rangeYMin"/>
+                <Parameter Bindable="true" Default="200" Description="Y axis range (max)" Hidden="false" Name="Range Y Max" Type="float" Variable="rangeYMax"/>
+                <Parameter Bindable="false" Default="0" Description="Maximum memory store size" Hidden="false" Name="Memory store size" Type="int" Variable="storeSize"/>
+                <Parameter Bindable="true" Default="0" Description="Current memory store size" Hidden="false" Name="Current memory store size" Type="int" Variable="currentSize"/>
+                <Parameter Bindable="true" Default="0" Description="Index of last element" Hidden="false" Name="Index of last element" Type="int" Variable="currentIndex"/>
+            </Group>
+            <Group Name="Design">
+                <Parameter Bindable="false" Default="0" Description="Axis Color" Hidden="false" Name="Axis Color" Type="color" Variable="axisColor"/>
+                <Parameter Bindable="false" Default="66" Description="Trend Line Color" Hidden="false" Name="Trend Line Color" Type="color" Variable="trend1Color"/>
+                <Parameter Bindable="false" Default="0" Description="0 - nothing, 1 - cross, 2 - square" Hidden="false" Name="Point Type of Trend" Type="int" Variable="point1Type"/>
+                <Parameter Bindable="false" Default="true" Description="Trend line visible" Hidden="false" Name="Show Trend" Type="bool" Variable="show1Line"/>
+                <Parameter Bindable="false" Default="129" Description="Grid Color" Hidden="false" Name="Grid Color" Type="color" Variable="gridColor"/>
+                <Parameter Bindable="false" Default="215" Description="Background Color" Hidden="false" Name="Background Color" Type="color" Variable="backgroundColor"/>
+                <Parameter Bindable="false" Default="C-16" Description="Select font" Hidden="false" Name="Font" Type="font" Variable="fontIndex"/>
+                <Parameter Bindable="false" Default="true" Description="Design Mode" Hidden="true" Name="Set to true" Type="bool" Variable="designMode"/>
+                <Parameter Bindable="true" Default="0" Description="Runtime Drawing Data" Hidden="true" Name="Runtime Drawing Data" Type="pointer" Variable="drawingData"/>
+            </Group>
+        </Parameters>
+    </Object>
+
+</Library>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="55" Height="290" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="55" Height="290" BorderWidth="1" BorderStyle="Flat" BorderColor="DarkShadow" FillColor="GaugeBackground">
+			<Children>
+				<FillBar Width="55" Height="290" FillDirection="BottomToTop" FirstLimit="20" LimitMarkerSize="5" NormalColor="Barfill" LineWidth="0" BorderColor="Transparent" FillPatternColor="Grid" RoundingRadius="0">
+					<Bindings>
+						<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+							</Bindings>
+						</ChannelSecondLimitBinding>
+						<ChannelFirstLimitBinding TargetPropertyName="FirstLimit">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+							</Bindings>
+						</ChannelFirstLimitBinding>
+						<FilteredValueBinding TargetPropertyName="Value" TransitionTime="250">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+						<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+					</Bindings>
+				</FillBar>
+				<Line Width="2" Color="DarkShadow" X0="0" Y0="72.5" X1="55" Y1="72.5">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="75" CompareTolerance="0.001">
+									<Bindings>
+										<ChannelSecondLimitBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+											</Bindings>
+										</ChannelSecondLimitBinding>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+				</Line>
+			</Children>
+		</Panel>
+		<Line Width="2" Color="DarkShadow" X0="0" Y0="217.5" X1="55" Y1="217.5">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="25" CompareTolerance="0.001">
+							<Bindings>
+								<ChannelFirstLimitBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+									</Bindings>
+								</ChannelFirstLimitBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Line>
+		<Line Width="2" Color="DarkShadow" X0="0" Y0="145" X1="55" Y1="145">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" SelectedValue1="False" DefaultValue="True">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="50" CompareTolerance="0.001">
+							<Bindings>
+								<ChannelSecondLimitBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+									</Bindings>
+								</ChannelSecondLimitBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="50" CompareTolerance="0.001">
+							<Bindings>
+								<ChannelFirstLimitBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+									</Bindings>
+								</ChannelFirstLimitBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Line>
+	</Children>
+</RootElement>

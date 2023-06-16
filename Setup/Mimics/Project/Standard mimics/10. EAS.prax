@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement FlashState="Flashing" Flash="True" Width="1920" Height="1080" PermissionLevelRequested="2" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<Panel Width="1035" Height="485" X="365" Y="275" GridSpacing="2" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="GaugeBackground" CornerRoundRadius="10">
+			<Children>
+				<Frame Width="300" Height="67" X="12" Y="10" Path="..\Frames\01. Standard\Frame EAS Button Reset GEA AndOr DeadMan.prax"/>
+				<Frame Width="300" Height="67" X="12" Y="84" Path="..\Frames\01. Standard\Frame EAS Button Attended.prax"/>
+				<Frame Width="300" Height="67" X="12" Y="158" Path="..\Frames\01. Standard\Frame EAS Button Unattended.prax"/>
+				<Frame Width="300" Height="67" X="12" Y="232" Path="..\Frames\01. Standard\Frame EAS Button AlongSide.prax"/>
+				<Frame Width="300" Height="67" X="12" Y="306" Path="..\Frames\01. Standard\Frame EAS Button Sailing.prax"/>
+				<Frame Width="486" Height="46" X="334" Y="10" CABINPANELNR="0" Path="..\Frames\01. Standard\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="46" X="334" Y="56" CABINPANELNR="1" Path="..\Frames\01. Standard\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="46" X="334" Y="102" CABINPANELNR="2" Path="..\Frames\01. Standard\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="46" X="334" Y="148" CABINPANELNR="3" Path="..\Frames\01. Standard\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="46" X="334" Y="194" CABINPANELNR="4" Path="..\Frames\01. Standard\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="46" X="334" Y="240" CABINPANELNR="5" Path="..\Frames\01. Standard\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="46" X="334" Y="286" CABINPANELNR="6" Path="..\Frames\01. Standard\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="46" X="334" Y="332" CABINPANELNR="7" Path="..\Frames\01. Standard\Frame EAS Select Cabin.prax"/>
+				<TextBox Width="990" Height="30" X="20" Y="408" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" VertAlignment="Bottom" TextColor="InfoTextGrey" Font="Praxis;28.0;N;N;N" Text="PATROL TIMER STATUS">
+					<Bindings>
+						<PatrolTimerStatusBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<PatrolTimerStatusToTextConvertParams TextWhenOff="PATROL TIMER: OFF" TextWhenAlarmPD="PATROL TIMER: ALARM">
+									<Bindings>
+										<PatrolTimerValueBinding TargetPropertyName="TextWhenWarning">
+											<ConvertParams>
+												<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" mm:ss WARNING" ConversionFormat="mm:ss"/>
+											</ConvertParams>
+										</PatrolTimerValueBinding>
+										<PatrolTimerValueBinding TargetPropertyName="TextWhenRunning">
+											<ConvertParams>
+												<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" MIN. RUNNING" ConversionFormat="mm"/>
+											</ConvertParams>
+										</PatrolTimerValueBinding>
+									</Bindings>
+								</PatrolTimerStatusToTextConvertParams>
+							</ConvertParams>
+						</PatrolTimerStatusBinding>
+						<PatrolTimerStatusBinding TargetPropertyName="TextColor">
+							<ConvertParams>
+								<PatrolTimerStatusToColorConvertParams ColorWhenRunning="Barfill"/>
+							</ConvertParams>
+						</PatrolTimerStatusBinding>
+					</Bindings>
+				</TextBox>
+				<Frame Width="135" Height="40" X="860" Y="13" TextColor="InfoTextWhite" Path="..\Frames\01. Standard\Frame EAS Button Cabin CallAll.prax"/>
+				<FillBar Width="990" Height="20" X="20" Y="444" FillDirection="RightToLeft" RangeEnd="30" LimitType="OnlyLow" FirstLimit="3" SecondLimit="3" NormalColor="Barfill" LimitLowColor="LimitRed" LimitHighColor="LimitRed" RoundingRadius="0">
+					<Bindings>
+						<PatrolTimerValueBinding TargetPropertyName="RangeEnd" TimerValueType="MaxValue"/>
+						<PatrolTimerValueBinding TargetPropertyName="FirstLimit" TimerValueType="WarningLimit"/>
+						<PatrolTimerValueBinding TargetPropertyName="Value"/>
+					</Bindings>
+				</FillBar>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

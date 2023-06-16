@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1020" Height="90">
+	<Children>
+		<Panel Width="1020" Height="90" GridSpacing="5" BorderColor="PanelFaceBorder" CornerRoundRadius="3">
+			<Children>
+				<AlarmList Width="845" Height="70" X="170" Y="10" HeaderFillColor="PanelFace" FillColor="PanelFace" FileName=".\Frame_ALContextMenu.prax" ShowAlarmType="Unacknowledged">
+					<Bindings>
+						<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+					</Bindings>
+				</AlarmList>
+			</Children>
+		</Panel>
+		<Button Width="115" Height="35" X="20" Y="20" Text="ALARM" Font="Segoe UI-20.0-N-N-N">
+			<ClickActions>
+				<ShowAlarmPageClickAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

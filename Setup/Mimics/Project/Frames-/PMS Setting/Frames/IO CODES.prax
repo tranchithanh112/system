@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="670" Height="760" OnScreenNumpadFramePath="..\..\Numpad\Popup_Numpad.prax" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="670" Height="760" BorderWidth="2" BorderColor="DarkShadow" FillColor="MenuBackground" CornerRoundRadius="10"/>
+		<Button Width="40" Height="40" X="605" Y="10" ClipToBounds="True" Text="X" FillColor="Transparent" Font="Praxis;26.0;N;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<NavFrame LockOverlayColor="IndicatorBlueTrans" Width="670" Height="670" Y="65" NavFrameName="NAVFRAME_IO_Settings" ClipToBounds="True">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="UserActionsLocked" CompareTolerance="0">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\IO CODES INPUT.prax"/>
+				<Address Value=".\IO CODES FUNCTION OUTPUT.prax"/>
+				<Address Value=".\IO CODES OUTPUT1.prax"/>
+				<Address Value=".\IO CODES OUTPUT2.prax"/>
+				<Address Value=".\IO CODES OUTPUT3.prax"/>
+			</AddressList>
+		</NavFrame>
+		<Frame Width="40" Height="40" X="305" Y="15" Path="..\..\01. Standard\ICON_OptionsGear.prax"/>
+		<TextBox Width="200" Height="50" X="10" Y="10" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="10" TextColor="InfoTextWhite" Font="Praxis;26.0;B;N;N" Text="IO CODES"/>
+		<Button Width="50" Height="30" X="245" Y="20" Text="◄" FillColor="Background" TextColor="InfoTextGrey" Font="MS PGothic;48.0;B;N;N">
+			<ClickActions>
+				<NavigateToPreviousUserAction NavFrameName="NAVFRAME_IO_Settings"/>
+			</ClickActions>
+		</Button>
+		<Button Width="50" Height="30" X="355" Y="20" Text="►" FillColor="Background" TextColor="InfoTextGrey" Font="MS PGothic;48.0;B;N;N">
+			<ClickActions>
+				<NavigateToNextUserAction NavFrameName="NAVFRAME_IO_Settings"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

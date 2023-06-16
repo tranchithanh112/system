@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="180" Height="40" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button Width="180" Height="40" Text="Attended" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextWhite" Font="Segoe UI;20.0;N;N;N" HorzAlignment="Left">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="OutlineColor" ButtonType="SetAttended">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="InfoTextWhite"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+			<ClickActions>
+				<EASCommandClickAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

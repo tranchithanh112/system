@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="75" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button FlashFast="True" FlashArea="OutlineOnly" FlashColor="Green" LockOverlayColor="Transparent" Width="75" GridSpacing="1" Text="" FillColor="Transparent" FillColorActionRunning="IndicationLineTransparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="UserActionsLocked" ExportedPropertyName="CTRL_Blocked"/>
+				<SelectFirstBoolBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" SelectedValue0="ButtonOutline" SelectedValue2="White" SelectedValue3="White" DefaultValue="ButtonOutline">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="CTRL_Blocked"/>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="-1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="5">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="6">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Children>
+				<Panel Width="73" Height="98.2372" X="1" Y="0.762772" ClipToBounds="True" BorderWidth="0" FillColor="Background" CornerRoundRadius="5">
+					<Children>
+						<Frame Width="17.3015" Height="17.1346" X="55" Y="80" Path="..\Icons\Lock.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="CTRL_Blocked"/>
+							</Bindings>
+						</Frame>
+					</Children>
+				</Panel>
+				<Rectangle Width="40" Height="60" X="17" Y="30" BorderColor="StatusInactive" FillColor="BackgroundConning"/>
+				<TextBox Width="70" Height="30" X="2" Y="4" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Segoe UI;18.0;N;N;N" Text="Trafo1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+					</Bindings>
+				</TextBox>
+				<Ellipse BorderColor="TextInfo" FillColor="Transparent" CenterX="37" CenterY="50" RadiusX="15" RadiusY="15"/>
+				<Ellipse BorderColor="TextInfo" FillColor="Transparent" CenterX="37" CenterY="70" RadiusX="15" RadiusY="15"/>
+			</Children>
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="30" XOffset="2" YOffset="-161" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="150" Height="220" X="-35.5" Y="-221" ID="Trafo1" BUTTON01_Text="START" CTRL_Channel="0" CTRL_Value="0" BUTTON02_Text="STOP" BUTTON03_Text="RESET" BUTTON04_Text="CANCEL" ID_="Thruster1" Path=".\PopUp_CMD_Start_Stop_Reset[SV].prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+								<FrameBinding TargetPropertyName="CTRL_Value" ExportedPropertyName="CTRL_Value"/>
+								<FrameBinding TargetPropertyName="CTRL_Channel" ExportedPropertyName="CTRL_Channel"/>
+								<FrameBinding TargetPropertyName="BUTTON01_Text" ExportedPropertyName="BUTTON01_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON02_Text" ExportedPropertyName="BUTTON02_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON03_Text" ExportedPropertyName="BUTTON03_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON04_Text" ExportedPropertyName="BUTTON04_Text"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

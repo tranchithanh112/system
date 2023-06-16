@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <LIBRARY name="IEC_61131" crypt="" version="131072">
+    <LIB_HDR>
+      <COMP_VER>00041109</COMP_VER>
+      <CAPABILITIES>
+        <CAPABILITY code="0" />
+        <CAPABILITY code="4000" />
+      </CAPABILITIES>
+      <LIB_INFO>
+        <COPYRIGHT><![CDATA[Praxis Automation Technology]]></COPYRIGHT>
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="27" milisec="810" />
+        <MENU_PATH>Basic/IEC</MENU_PATH>
+        <CONTENT>
+          <ITEM name="CTD" type="FBLK">
+            <PAR kind="INPUT" name="CD" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Down-counting]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="LD" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Load PV]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="PV" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[Programmed value]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Underflow]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="CV" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[Current value]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Down counter]]></COMMENT>
+          </ITEM>
+          <ITEM name="CTU" type="FBLK">
+            <PAR kind="INPUT" name="CU" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Up-counting]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset CV]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="PV" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[Programmed value]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Overflow]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="CV" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[Current value]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Up counter]]></COMMENT>
+          </ITEM>
+          <ITEM name="CTUD" type="FBLK">
+            <PAR kind="INPUT" name="CU" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Up-counting]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="CD" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Down-counting]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset CV]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="LD" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Load PV]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="PV" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[Programmed value]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="QU" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Overflow]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="QD" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Underflow]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="CV" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[Current value]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Up-down counter]]></COMMENT>
+          </ITEM>
+          <ITEM name="F_TRIG" type="FBLK">
+            <PAR kind="INPUT" name="CLK" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Clock]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Falling edge detector]]></COMMENT>
+          </ITEM>
+          <ITEM name="R_TRIG" type="FBLK">
+            <PAR kind="INPUT" name="CLK" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Clock]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Rising edge detector]]></COMMENT>
+          </ITEM>
+          <ITEM name="RS" type="FBLK">
+            <PAR kind="INPUT" name="S" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Set]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R1" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset (dominant)]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q1" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[RS flip-flop]]></COMMENT>
+          </ITEM>
+          <ITEM name="SEMA" type="FBLK">
+            <PAR kind="INPUT" name="CLAIM" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="RELEASE" type="$DEFAULT.BOOL" />
+            <PAR kind="OUTPUT" name="BUSY" type="$DEFAULT.BOOL" />
+            <COMMENT><![CDATA[Semaphore]]></COMMENT>
+          </ITEM>
+          <ITEM name="SR" type="FBLK">
+            <PAR kind="INPUT" name="S1" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Set (dominant)]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q1" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[SR flip-flop]]></COMMENT>
+          </ITEM>
+          <ITEM name="TOF" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Control input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="PT" type="$DEFAULT.TIME">
+              <COMMENT><![CDATA[Programmed time]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="ET" type="$DEFAULT.TIME">
+              <COMMENT><![CDATA[Elapsed time]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Off-delay timing]]></COMMENT>
+          </ITEM>
+          <ITEM name="TON" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Control input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="PT" type="$DEFAULT.TIME">
+              <COMMENT><![CDATA[Programmed time]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="ET" type="$DEFAULT.TIME">
+              <COMMENT><![CDATA[Elapsed time]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[On-delay timing]]></COMMENT>
+          </ITEM>
+          <ITEM name="TP" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Control input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="PT" type="$DEFAULT.TIME">
+              <COMMENT><![CDATA[Programmed time]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="ET" type="$DEFAULT.TIME">
+              <COMMENT><![CDATA[Elapsed time]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Pulse timing]]></COMMENT>
+          </ITEM>
+        </CONTENT>
+      </LIB_INFO>
+      <DEPENDENCIES />
+    </LIB_HDR>
+    <LIB_BODY>
+      <FUNCTION_BLOCKS>
+        <FUNCTION_BLOCK name="CTD" flags="0" cap="0">
+          <VAR_INPUT name="CD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="LD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PV" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="CV" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_MEM name="CDp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0007" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST000C" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?L?CST000F" type="$DEFAULT.INT" visibility="00100000" />
+          <INIT><![CDATA[:?IEC_61131.CTD?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD CV, #/02, #/0000
+$VMSYS.MCD CDp, #/01, #/00
+$VMSYS.MCD ?L?CST000C, #/02, #/0000
+$VMSYS.MCD ?L?CST000F, #/02, #/0100
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.CTD?CODE 
+$VMSYS.JZ LD, :?IEC_61131.CTDIF?B0002
+$VMSYS.MEMCP CV, PV, #/0200
+$VMSYS.JMP :?IEC_61131.CTDIF?E0004
+:?IEC_61131.CTDIF?B0002 
+$VMSYS.JZ CD, :?IEC_61131.CTD?AND0006
+$DEFAULT.NOT ?LR?ANDA0007, CDp
+$VMSYS.JZ ?LR?ANDA0007, :?IEC_61131.CTD?AND0006
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?IEC_61131.CTD?EAND000A
+:?IEC_61131.CTD?AND0006 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?IEC_61131.CTD?EAND000A 
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTDIF?B0005
+$DEFAULT.GT ?IF?CTL, CV, ?L?CST000C
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTDIF?B000B
+$DEFAULT.SUB CV, CV, ?L?CST000F
+:?IEC_61131.CTDIF?B000B 
+:?IEC_61131.CTDIF?B0005 
+:?IEC_61131.CTDIF?E0004 
+$DEFAULT.LE Q, CV, ?L?CST000C
+$VMSYS.MEMCP CDp, CD, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="CTU" flags="0" cap="0">
+          <VAR_INPUT name="CU" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PV" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="CV" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_MEM name="CUp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA001A" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0021" type="$DEFAULT.INT" visibility="00100000" />
+          <INIT><![CDATA[:?IEC_61131.CTU?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD CV, #/02, #/0000
+$VMSYS.MCD CUp, #/01, #/00
+$VMSYS.MCD ?L?CST0021, #/02, #/0100
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.CTU?CODE 
+$VMSYS.JZ R, :?IEC_61131.CTUIF?B0015
+$VMSYS.MCD CV, #/02, #/0000
+$VMSYS.JMP :?IEC_61131.CTUIF?E0017
+:?IEC_61131.CTUIF?B0015 
+$VMSYS.JZ CU, :?IEC_61131.CTU?AND0019
+$DEFAULT.NOT ?LR?ANDA001A, CUp
+$VMSYS.JZ ?LR?ANDA001A, :?IEC_61131.CTU?AND0019
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?IEC_61131.CTU?EAND001D
+:?IEC_61131.CTU?AND0019 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?IEC_61131.CTU?EAND001D 
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUIF?B0018
+$DEFAULT.LT ?IF?CTL, CV, PV
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUIF?B001E
+$DEFAULT.ADD CV, CV, ?L?CST0021
+:?IEC_61131.CTUIF?B001E 
+:?IEC_61131.CTUIF?B0018 
+:?IEC_61131.CTUIF?E0017 
+$DEFAULT.GE Q, CV, PV
+$VMSYS.MEMCP CUp, CU, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="CTUD" flags="0" cap="0">
+          <VAR_INPUT name="CU" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="CD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="LD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PV" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="QU" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="QD" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="CV" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_MEM name="CUp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="CDp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0030" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0037" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?LR?ANDA003B" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0040" type="$DEFAULT.INT" visibility="00100000" />
+          <INIT><![CDATA[:?IEC_61131.CTUD?INIT 
+$VMSYS.MCD QU, #/01, #/00
+$VMSYS.MCD QD, #/01, #/00
+$VMSYS.MCD CV, #/02, #/0000
+$VMSYS.MCD CUp, #/01, #/00
+$VMSYS.MCD CDp, #/01, #/00
+$VMSYS.MCD ?L?CST0037, #/02, #/0100
+$VMSYS.MCD ?L?CST0040, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.CTUD?CODE 
+$VMSYS.JZ R, :?IEC_61131.CTUDIF?B0027
+$VMSYS.MCD CV, #/02, #/0000
+$VMSYS.JMP :?IEC_61131.CTUDIF?E0029
+:?IEC_61131.CTUDIF?B0027 
+$VMSYS.JZ LD, :?IEC_61131.CTUDIF?B002B
+$VMSYS.MEMCP CV, PV, #/0200
+$VMSYS.JMP :?IEC_61131.CTUDIF?E002D
+:?IEC_61131.CTUDIF?B002B 
+$VMSYS.JZ CU, :?IEC_61131.CTUD?AND002F
+$DEFAULT.NOT ?LR?ANDA0030, CUp
+$VMSYS.JZ ?LR?ANDA0030, :?IEC_61131.CTUD?AND002F
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?IEC_61131.CTUD?EAND0033
+:?IEC_61131.CTUD?AND002F 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?IEC_61131.CTUD?EAND0033 
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUDIF?B002E
+$DEFAULT.LT ?IF?CTL, CV, PV
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUDIF?B0034
+$DEFAULT.ADD CV, CV, ?L?CST0037
+:?IEC_61131.CTUDIF?B0034 
+:?IEC_61131.CTUDIF?B002E 
+$VMSYS.JZ CD, :?IEC_61131.CTUD?AND003A
+$DEFAULT.NOT ?LR?ANDA003B, CDp
+$VMSYS.JZ ?LR?ANDA003B, :?IEC_61131.CTUD?AND003A
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?IEC_61131.CTUD?EAND003E
+:?IEC_61131.CTUD?AND003A 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?IEC_61131.CTUD?EAND003E 
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUDIF?B0039
+$DEFAULT.GT ?IF?CTL, CV, ?L?CST0040
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUDIF?B003F
+$DEFAULT.SUB CV, CV, ?L?CST0037
+:?IEC_61131.CTUDIF?B003F 
+:?IEC_61131.CTUDIF?B0039 
+:?IEC_61131.CTUDIF?E002D 
+:?IEC_61131.CTUDIF?E0029 
+$DEFAULT.GE QU, CV, PV
+$DEFAULT.LE QD, CV, ?L?CST0040
+$VMSYS.MEMCP CUp, CU, #/0100
+$VMSYS.MEMCP CDp, CD, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="F_TRIG" flags="0" cap="0">
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?LR?ANDA004C" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.F_TRIG?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD CLKp, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.F_TRIG?CODE 
+$DEFAULT.NOT ?LR?ANDA004C, CLK
+$VMSYS.JZ ?LR?ANDA004C, :?IEC_61131.F_TRIG?AND004B
+$VMSYS.JZ CLKp, :?IEC_61131.F_TRIG?AND004B
+$VMSYS.MCD Q, #/01, #/01
+$VMSYS.JMP :?IEC_61131.F_TRIG?EAND004F
+:?IEC_61131.F_TRIG?AND004B 
+$VMSYS.MCD Q, #/01, #/00
+:?IEC_61131.F_TRIG?EAND004F 
+$VMSYS.MEMCP CLKp, CLK, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="R_TRIG" flags="0" cap="0">
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?LR?ANDA0053" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.R_TRIG?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD CLKp, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.R_TRIG?CODE 
+$VMSYS.JZ CLK, :?IEC_61131.R_TRIG?AND0052
+$DEFAULT.NOT ?LR?ANDA0053, CLKp
+$VMSYS.JZ ?LR?ANDA0053, :?IEC_61131.R_TRIG?AND0052
+$VMSYS.MCD Q, #/01, #/01
+$VMSYS.JMP :?IEC_61131.R_TRIG?EAND0056
+:?IEC_61131.R_TRIG?AND0052 
+$VMSYS.MCD Q, #/01, #/00
+:?IEC_61131.R_TRIG?EAND0056 
+$VMSYS.MEMCP CLKp, CLK, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="RS" flags="0" cap="0">
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q1" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?LR?ANDA005A" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA005C" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.RS?INIT 
+$VMSYS.MCD Q1, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.RS?CODE 
+$DEFAULT.NOT ?LR?ANDA005A, R1
+$VMSYS.JZ ?LR?ANDA005A, :?IEC_61131.RS?AND0059
+$DEFAULT.OR ?LR?ANDA005C, Q1, S
+$VMSYS.JZ ?LR?ANDA005C, :?IEC_61131.RS?AND0059
+$VMSYS.MCD Q1, #/01, #/01
+$VMSYS.JMP :?IEC_61131.RS?EAND005F
+:?IEC_61131.RS?AND0059 
+$VMSYS.MCD Q1, #/01, #/00
+:?IEC_61131.RS?EAND005F 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SEMA" flags="0" cap="0">
+          <VAR_INPUT name="CLAIM" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="RELEASE" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="BUSY" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="X" type="$DEFAULT.BOOL" visibility="00400000" />
+          <INIT><![CDATA[:?IEC_61131.SEMA?INIT 
+$VMSYS.MCD BUSY, #/01, #/00
+$VMSYS.MCD X, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.SEMA?CODE 
+$VMSYS.MEMCP BUSY, X, #/0100
+$VMSYS.JZ CLAIM, :?IEC_61131.SEMAIF?B0062
+$VMSYS.MCD X, #/01, #/01
+$VMSYS.JMP :?IEC_61131.SEMAIF?E0064
+:?IEC_61131.SEMAIF?B0062 
+$VMSYS.JZ RELEASE, :?IEC_61131.SEMAIF?B0066
+$VMSYS.MCD BUSY, #/01, #/00
+$VMSYS.MCD X, #/01, #/00
+:?IEC_61131.SEMAIF?B0066 
+:?IEC_61131.SEMAIF?E0064 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SR" flags="0" cap="0">
+          <VAR_INPUT name="S1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q1" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?LR?ANDA006D" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR006B" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.SR?INIT 
+$VMSYS.MCD Q1, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.SR?CODE 
+$VMSYS.JNZ S1, :?IEC_61131.SR?OR006A
+$DEFAULT.NOT ?LR?ANDA006D, R
+$VMSYS.JZ ?LR?ANDA006D, :?IEC_61131.SR?AND006C
+$VMSYS.JZ Q1, :?IEC_61131.SR?AND006C
+$VMSYS.MCD ?LR?OR006B, #/01, #/01
+$VMSYS.JMP :?IEC_61131.SR?EAND0070
+:?IEC_61131.SR?AND006C 
+$VMSYS.MCD ?LR?OR006B, #/01, #/00
+:?IEC_61131.SR?EAND0070 
+$VMSYS.JNZ ?LR?OR006B, :?IEC_61131.SR?OR006A
+$VMSYS.MCD Q1, #/01, #/00
+$VMSYS.JMP :?IEC_61131.SR?EOR0072
+:?IEC_61131.SR?OR006A 
+$VMSYS.MCD Q1, #/01, #/01
+:?IEC_61131.SR?EOR0072 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TOF" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PT" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="ET" type="$DEFAULT.TIME" visibility="00000020" />
+          <VAR_MEM name="stime" type="$DEFAULT.TIME" visibility="00400000" />
+          <VAR_MEM name="?F?CUR_TIME007D" type="$DEFAULT.TIME" visibility="00200000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <INIT><![CDATA[:?IEC_61131.TOF?INIT 
+$VMSYS.MCD stime, #/04, #/00000000
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD ET, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.TOF?CODE 
+$VMSYS.JZ IN, :?IEC_61131.TOFIF?B0074
+$VMSYS.MCD Q, #/01, #/01
+$VMSYS.MCD ET, #/04, #/00000000
+$DEFAULT.CUR_TIME stime
+$VMSYS.JMP :?IEC_61131.TOFIF?E0079
+:?IEC_61131.TOFIF?B0074 
+$VMSYS.JZ Q, :?IEC_61131.TOFIF?B007B
+$DEFAULT.CUR_TIME ?F?CUR_TIME007D
+$DEFAULT.SUB ET, ?F?CUR_TIME007D, stime
+$DEFAULT.GE ?IF?CTL, ET, PT
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TOFIF?B007F
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MEMCP ET, PT, #/0400
+:?IEC_61131.TOFIF?B007F 
+:?IEC_61131.TOFIF?B007B 
+:?IEC_61131.TOFIF?E0079 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TON" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PT" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="ET" type="$DEFAULT.TIME" visibility="00000020" />
+          <VAR_MEM name="stime" type="$DEFAULT.TIME" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?F?CUR_TIME008D" type="$DEFAULT.TIME" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.TON?INIT 
+$VMSYS.MCD stime, #/04, #/00000000
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD ET, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.TON?CODE 
+$DEFAULT.NOT ?IF?CTL, IN
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TONIF?B0083
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD ET, #/04, #/00000000
+$DEFAULT.CUR_TIME stime
+$VMSYS.JMP :?IEC_61131.TONIF?E0089
+:?IEC_61131.TONIF?B0083 
+$DEFAULT.NOT ?IF?CTL, Q
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TONIF?B008A
+$DEFAULT.CUR_TIME ?F?CUR_TIME008D
+$DEFAULT.SUB ET, ?F?CUR_TIME008D, stime
+$DEFAULT.GE ?IF?CTL, ET, PT
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TONIF?B008F
+$VMSYS.MCD Q, #/01, #/01
+$VMSYS.MEMCP ET, PT, #/0400
+:?IEC_61131.TONIF?B008F 
+:?IEC_61131.TONIF?B008A 
+:?IEC_61131.TONIF?E0089 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TP" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PT" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="ET" type="$DEFAULT.TIME" visibility="00000020" />
+          <VAR_MEM name="stime" type="$DEFAULT.TIME" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0098" type="$DEFAULT.TIME" visibility="00100000" />
+          <VAR_MEM name="?F?CUR_TIME00A5" type="$DEFAULT.TIME" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.TP?INIT 
+$VMSYS.MCD stime, #/04, #/00000000
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD ET, #/04, #/00000000
+$VMSYS.MCD ?L?CST0098, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.TP?CODE 
+$DEFAULT.NOT ?IF?CTL, Q
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TPIF?B0093
+$VMSYS.JZ IN, :?IEC_61131.TPIF?B0096
+$DEFAULT.EQ ?IF?CTL, ET, ?L?CST0098
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TPIF?B0097
+$DEFAULT.GT ?IF?CTL, PT, ?L?CST0098
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TPIF?B009A
+$DEFAULT.CUR_TIME stime
+$VMSYS.MCD Q, #/01, #/01
+:?IEC_61131.TPIF?B009A 
+$VMSYS.JMP :?IEC_61131.TPIF?E009F
+:?IEC_61131.TPIF?B0097 
+$VMSYS.MCD Q, #/01, #/00
+:?IEC_61131.TPIF?E009F 
+$VMSYS.JMP :?IEC_61131.TPIF?E00A1
+:?IEC_61131.TPIF?B0096 
+$VMSYS.MCD ET, #/04, #/00000000
+:?IEC_61131.TPIF?E00A1 
+$VMSYS.JMP :?IEC_61131.TPIF?E00A3
+:?IEC_61131.TPIF?B0093 
+$DEFAULT.CUR_TIME ?F?CUR_TIME00A5
+$DEFAULT.SUB ET, ?F?CUR_TIME00A5, stime
+$DEFAULT.GE ?IF?CTL, ET, PT
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TPIF?B00A7
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MEMCP ET, PT, #/0400
+:?IEC_61131.TPIF?B00A7 
+:?IEC_61131.TPIF?E00A3 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="CTD" flags="0" cap="4000">
+          <VAR_INPUT name="CD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="LD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PV" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="CV" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_MEM name="CDp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0007" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST000C" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?L?CST000F" type="$DEFAULT.INT" visibility="00100000" />
+          <INIT><![CDATA[:?IEC_61131.CTD?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A CV, #/02000000, #/0000FFFF
+$VMSYS.MCD4A CDp, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A ?L?CST000C, #/02000000, #/0000FFFF
+$VMSYS.MCD4A ?L?CST000F, #/02000000, #/0100FFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.CTD?CODE 
+$VMSYS.JZ LD, :?IEC_61131.CTDIF?B0002
+$VMSYS.MEMCP4A CV, PV, #/02000000
+$VMSYS.JMP :?IEC_61131.CTDIF?E0004
+:?IEC_61131.CTDIF?B0002 
+$VMSYS.JZ CD, :?IEC_61131.CTD?AND0006
+$DEFAULT.NOT ?LR?ANDA0007, CDp
+$VMSYS.JZ ?LR?ANDA0007, :?IEC_61131.CTD?AND0006
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?IEC_61131.CTD?EAND000A
+:?IEC_61131.CTD?AND0006 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?IEC_61131.CTD?EAND000A 
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTDIF?B0005
+$DEFAULT.GT ?IF?CTL, CV, ?L?CST000C
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTDIF?B000B
+$DEFAULT.SUB CV, CV, ?L?CST000F
+:?IEC_61131.CTDIF?B000B 
+:?IEC_61131.CTDIF?B0005 
+:?IEC_61131.CTDIF?E0004 
+$DEFAULT.LE Q, CV, ?L?CST000C
+$VMSYS.MEMCP4A CDp, CD, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="CTU" flags="0" cap="4000">
+          <VAR_INPUT name="CU" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PV" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="CV" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_MEM name="CUp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA001A" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0021" type="$DEFAULT.INT" visibility="00100000" />
+          <INIT><![CDATA[:?IEC_61131.CTU?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A CV, #/02000000, #/0000FFFF
+$VMSYS.MCD4A CUp, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A ?L?CST0021, #/02000000, #/0100FFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.CTU?CODE 
+$VMSYS.JZ R, :?IEC_61131.CTUIF?B0015
+$VMSYS.MCD4A CV, #/02000000, #/0000FFFF
+$VMSYS.JMP :?IEC_61131.CTUIF?E0017
+:?IEC_61131.CTUIF?B0015 
+$VMSYS.JZ CU, :?IEC_61131.CTU?AND0019
+$DEFAULT.NOT ?LR?ANDA001A, CUp
+$VMSYS.JZ ?LR?ANDA001A, :?IEC_61131.CTU?AND0019
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?IEC_61131.CTU?EAND001D
+:?IEC_61131.CTU?AND0019 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?IEC_61131.CTU?EAND001D 
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUIF?B0018
+$DEFAULT.LT ?IF?CTL, CV, PV
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUIF?B001E
+$DEFAULT.ADD CV, CV, ?L?CST0021
+:?IEC_61131.CTUIF?B001E 
+:?IEC_61131.CTUIF?B0018 
+:?IEC_61131.CTUIF?E0017 
+$DEFAULT.GE Q, CV, PV
+$VMSYS.MEMCP4A CUp, CU, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="CTUD" flags="0" cap="4000">
+          <VAR_INPUT name="CU" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="CD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="LD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PV" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="QU" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="QD" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="CV" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_MEM name="CUp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="CDp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0030" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0037" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?LR?ANDA003B" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0040" type="$DEFAULT.INT" visibility="00100000" />
+          <INIT><![CDATA[:?IEC_61131.CTUD?INIT 
+$VMSYS.MCD4A QU, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A QD, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A CV, #/02000000, #/0000FFFF
+$VMSYS.MCD4A CUp, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A CDp, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A ?L?CST0037, #/02000000, #/0100FFFF
+$VMSYS.MCD4A ?L?CST0040, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.CTUD?CODE 
+$VMSYS.JZ R, :?IEC_61131.CTUDIF?B0027
+$VMSYS.MCD4A CV, #/02000000, #/0000FFFF
+$VMSYS.JMP :?IEC_61131.CTUDIF?E0029
+:?IEC_61131.CTUDIF?B0027 
+$VMSYS.JZ LD, :?IEC_61131.CTUDIF?B002B
+$VMSYS.MEMCP4A CV, PV, #/02000000
+$VMSYS.JMP :?IEC_61131.CTUDIF?E002D
+:?IEC_61131.CTUDIF?B002B 
+$VMSYS.JZ CU, :?IEC_61131.CTUD?AND002F
+$DEFAULT.NOT ?LR?ANDA0030, CUp
+$VMSYS.JZ ?LR?ANDA0030, :?IEC_61131.CTUD?AND002F
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?IEC_61131.CTUD?EAND0033
+:?IEC_61131.CTUD?AND002F 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?IEC_61131.CTUD?EAND0033 
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUDIF?B002E
+$DEFAULT.LT ?IF?CTL, CV, PV
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUDIF?B0034
+$DEFAULT.ADD CV, CV, ?L?CST0037
+:?IEC_61131.CTUDIF?B0034 
+:?IEC_61131.CTUDIF?B002E 
+$VMSYS.JZ CD, :?IEC_61131.CTUD?AND003A
+$DEFAULT.NOT ?LR?ANDA003B, CDp
+$VMSYS.JZ ?LR?ANDA003B, :?IEC_61131.CTUD?AND003A
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?IEC_61131.CTUD?EAND003E
+:?IEC_61131.CTUD?AND003A 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?IEC_61131.CTUD?EAND003E 
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUDIF?B0039
+$DEFAULT.GT ?IF?CTL, CV, ?L?CST0040
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.CTUDIF?B003F
+$DEFAULT.SUB CV, CV, ?L?CST0037
+:?IEC_61131.CTUDIF?B003F 
+:?IEC_61131.CTUDIF?B0039 
+:?IEC_61131.CTUDIF?E002D 
+:?IEC_61131.CTUDIF?E0029 
+$DEFAULT.GE QU, CV, PV
+$DEFAULT.LE QD, CV, ?L?CST0040
+$VMSYS.MEMCP4A CUp, CU, #/01000000
+$VMSYS.MEMCP4A CDp, CD, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="F_TRIG" flags="0" cap="4000">
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?LR?ANDA004C" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.F_TRIG?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A CLKp, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.F_TRIG?CODE 
+$DEFAULT.NOT ?LR?ANDA004C, CLK
+$VMSYS.JZ ?LR?ANDA004C, :?IEC_61131.F_TRIG?AND004B
+$VMSYS.JZ CLKp, :?IEC_61131.F_TRIG?AND004B
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?IEC_61131.F_TRIG?EAND004F
+:?IEC_61131.F_TRIG?AND004B 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?IEC_61131.F_TRIG?EAND004F 
+$VMSYS.MEMCP4A CLKp, CLK, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="R_TRIG" flags="0" cap="4000">
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?LR?ANDA0053" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.R_TRIG?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A CLKp, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.R_TRIG?CODE 
+$VMSYS.JZ CLK, :?IEC_61131.R_TRIG?AND0052
+$DEFAULT.NOT ?LR?ANDA0053, CLKp
+$VMSYS.JZ ?LR?ANDA0053, :?IEC_61131.R_TRIG?AND0052
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?IEC_61131.R_TRIG?EAND0056
+:?IEC_61131.R_TRIG?AND0052 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?IEC_61131.R_TRIG?EAND0056 
+$VMSYS.MEMCP4A CLKp, CLK, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="RS" flags="0" cap="4000">
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q1" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?LR?ANDA005A" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA005C" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.RS?INIT 
+$VMSYS.MCD4A Q1, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.RS?CODE 
+$DEFAULT.NOT ?LR?ANDA005A, R1
+$VMSYS.JZ ?LR?ANDA005A, :?IEC_61131.RS?AND0059
+$DEFAULT.OR ?LR?ANDA005C, Q1, S
+$VMSYS.JZ ?LR?ANDA005C, :?IEC_61131.RS?AND0059
+$VMSYS.MCD4A Q1, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?IEC_61131.RS?EAND005F
+:?IEC_61131.RS?AND0059 
+$VMSYS.MCD4A Q1, #/01000000, #/00FFFFFF
+:?IEC_61131.RS?EAND005F 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SEMA" flags="0" cap="4000">
+          <VAR_INPUT name="CLAIM" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="RELEASE" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="BUSY" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="X" type="$DEFAULT.BOOL" visibility="00400000" />
+          <INIT><![CDATA[:?IEC_61131.SEMA?INIT 
+$VMSYS.MCD4A BUSY, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A X, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.SEMA?CODE 
+$VMSYS.MEMCP4A BUSY, X, #/01000000
+$VMSYS.JZ CLAIM, :?IEC_61131.SEMAIF?B0062
+$VMSYS.MCD4A X, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?IEC_61131.SEMAIF?E0064
+:?IEC_61131.SEMAIF?B0062 
+$VMSYS.JZ RELEASE, :?IEC_61131.SEMAIF?B0066
+$VMSYS.MCD4A BUSY, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A X, #/01000000, #/00FFFFFF
+:?IEC_61131.SEMAIF?B0066 
+:?IEC_61131.SEMAIF?E0064 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SR" flags="0" cap="4000">
+          <VAR_INPUT name="S1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q1" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?LR?ANDA006D" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR006B" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.SR?INIT 
+$VMSYS.MCD4A Q1, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.SR?CODE 
+$VMSYS.JNZ S1, :?IEC_61131.SR?OR006A
+$DEFAULT.NOT ?LR?ANDA006D, R
+$VMSYS.JZ ?LR?ANDA006D, :?IEC_61131.SR?AND006C
+$VMSYS.JZ Q1, :?IEC_61131.SR?AND006C
+$VMSYS.MCD4A ?LR?OR006B, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?IEC_61131.SR?EAND0070
+:?IEC_61131.SR?AND006C 
+$VMSYS.MCD4A ?LR?OR006B, #/01000000, #/00FFFFFF
+:?IEC_61131.SR?EAND0070 
+$VMSYS.JNZ ?LR?OR006B, :?IEC_61131.SR?OR006A
+$VMSYS.MCD4A Q1, #/01000000, #/00FFFFFF
+$VMSYS.JMP :?IEC_61131.SR?EOR0072
+:?IEC_61131.SR?OR006A 
+$VMSYS.MCD4A Q1, #/01000000, #/01FFFFFF
+:?IEC_61131.SR?EOR0072 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TOF" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PT" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="ET" type="$DEFAULT.TIME" visibility="00000020" />
+          <VAR_MEM name="stime" type="$DEFAULT.TIME" visibility="00400000" />
+          <VAR_MEM name="?F?CUR_TIME007D" type="$DEFAULT.TIME" visibility="00200000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <INIT><![CDATA[:?IEC_61131.TOF?INIT 
+$VMSYS.MCD4A stime, #/04000000, #/00000000
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A ET, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.TOF?CODE 
+$VMSYS.JZ IN, :?IEC_61131.TOFIF?B0074
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+$VMSYS.MCD4A ET, #/04000000, #/00000000
+$DEFAULT.CUR_TIME stime
+$VMSYS.JMP :?IEC_61131.TOFIF?E0079
+:?IEC_61131.TOFIF?B0074 
+$VMSYS.JZ Q, :?IEC_61131.TOFIF?B007B
+$DEFAULT.CUR_TIME ?F?CUR_TIME007D
+$DEFAULT.SUB ET, ?F?CUR_TIME007D, stime
+$DEFAULT.GE ?IF?CTL, ET, PT
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TOFIF?B007F
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MEMCP4A ET, PT, #/04000000
+:?IEC_61131.TOFIF?B007F 
+:?IEC_61131.TOFIF?B007B 
+:?IEC_61131.TOFIF?E0079 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TON" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PT" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="ET" type="$DEFAULT.TIME" visibility="00000020" />
+          <VAR_MEM name="stime" type="$DEFAULT.TIME" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?F?CUR_TIME008D" type="$DEFAULT.TIME" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.TON?INIT 
+$VMSYS.MCD4A stime, #/04000000, #/00000000
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A ET, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.TON?CODE 
+$DEFAULT.NOT ?IF?CTL, IN
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TONIF?B0083
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A ET, #/04000000, #/00000000
+$DEFAULT.CUR_TIME stime
+$VMSYS.JMP :?IEC_61131.TONIF?E0089
+:?IEC_61131.TONIF?B0083 
+$DEFAULT.NOT ?IF?CTL, Q
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TONIF?B008A
+$DEFAULT.CUR_TIME ?F?CUR_TIME008D
+$DEFAULT.SUB ET, ?F?CUR_TIME008D, stime
+$DEFAULT.GE ?IF?CTL, ET, PT
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TONIF?B008F
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+$VMSYS.MEMCP4A ET, PT, #/04000000
+:?IEC_61131.TONIF?B008F 
+:?IEC_61131.TONIF?B008A 
+:?IEC_61131.TONIF?E0089 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TP" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="PT" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="ET" type="$DEFAULT.TIME" visibility="00000020" />
+          <VAR_MEM name="stime" type="$DEFAULT.TIME" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0098" type="$DEFAULT.TIME" visibility="00100000" />
+          <VAR_MEM name="?F?CUR_TIME00A5" type="$DEFAULT.TIME" visibility="00200000" />
+          <INIT><![CDATA[:?IEC_61131.TP?INIT 
+$VMSYS.MCD4A stime, #/04000000, #/00000000
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A ET, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0098, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?IEC_61131.TP?CODE 
+$DEFAULT.NOT ?IF?CTL, Q
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TPIF?B0093
+$VMSYS.JZ IN, :?IEC_61131.TPIF?B0096
+$DEFAULT.EQ ?IF?CTL, ET, ?L?CST0098
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TPIF?B0097
+$DEFAULT.GT ?IF?CTL, PT, ?L?CST0098
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TPIF?B009A
+$DEFAULT.CUR_TIME stime
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+:?IEC_61131.TPIF?B009A 
+$VMSYS.JMP :?IEC_61131.TPIF?E009F
+:?IEC_61131.TPIF?B0097 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?IEC_61131.TPIF?E009F 
+$VMSYS.JMP :?IEC_61131.TPIF?E00A1
+:?IEC_61131.TPIF?B0096 
+$VMSYS.MCD4A ET, #/04000000, #/00000000
+:?IEC_61131.TPIF?E00A1 
+$VMSYS.JMP :?IEC_61131.TPIF?E00A3
+:?IEC_61131.TPIF?B0093 
+$DEFAULT.CUR_TIME ?F?CUR_TIME00A5
+$DEFAULT.SUB ET, ?F?CUR_TIME00A5, stime
+$DEFAULT.GE ?IF?CTL, ET, PT
+$VMSYS.JZ ?IF?CTL, :?IEC_61131.TPIF?B00A7
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MEMCP4A ET, PT, #/04000000
+:?IEC_61131.TPIF?B00A7 
+:?IEC_61131.TPIF?E00A3 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+      </FUNCTION_BLOCKS>
+    </LIB_BODY>
+  </LIBRARY>
+</PAL1131>

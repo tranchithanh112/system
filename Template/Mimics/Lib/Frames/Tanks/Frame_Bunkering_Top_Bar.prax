@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="70" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Panel Width="490" Height="45" X="25" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="495" Height="50" X="15" Y="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="170" Height="40" X="5" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="TOTAL FUEL"/>
+				<TextBox Width="110" Height="40" X="175" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="9999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="2296">
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces" ChannelNumber="2296"/>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="40" Height="35" X="285" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="m³"/>
+				<TextBox Visible="False" Width="110" Height="40" X="335" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="9999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="2297">
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces" ChannelNumber="2297"/>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Visible="False" Width="40" Height="35" X="445" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="ton"/>
+			</Children>
+		</Panel>
+		<Panel Width="345" Height="45" X="540" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="350" Height="50" X="530" Y="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="190" Height="40" X="5" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="TOTAL ULLAGE"/>
+				<TextBox Width="110" Height="40" X="195" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="9999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="2298">
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces" ChannelNumber="2298"/>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="40" Height="35" X="305" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="m³"/>
+			</Children>
+		</Panel>
+		<Panel Width="345" Height="45" X="910" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="350" Height="50" X="900" Y="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="190" Height="40" X="5" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="MAX FUEL"/>
+				<TextBox Width="110" Height="40" X="195" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="9999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="2295">
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces" ChannelNumber="2295"/>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+					<TextEnteredActions>
+						<SetChannelValueTEA ChannelNumber="2295"/>
+					</TextEnteredActions>
+				</TextBox>
+				<TextBox Width="40" Height="35" X="305" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="m³"/>
+			</Children>
+		</Panel>
+		<Panel Width="390" Height="45" X="1280" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="395" Height="50" X="1270" Y="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="190" Height="40" X="5" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="BUNKER MODE">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="TextInfo">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0" ChannelNumber="2024"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<Frame Width="88.8461" Height="35" X="206" Y="8" Status_CH="2294" ColorOn="TextActive" ColorOff="StatusInactive" TextButtonOn="ON" TextButtonOff="ON" Pulse_type="PulseTypeHigh" Pulse_lenght="1000" Pulse_CH="2269" Path="..\Buttons\Button_PulseChannel.prax"/>
+				<Frame Width="88.8461" Height="35" X="300" Y="8" Status_CH="2294" ColorOn="StatusInactive" ColorOff="TextInfo" TextButtonOn="OFF" TextButtonOff="OFF" Pulse_type="PulseTypeHigh" Pulse_lenght="500" Pulse_CH="2270" Path="..\Buttons\Button_PulseChannel.prax"/>
+			</Children>
+		</Panel>
+		<Panel Width="220" Height="45" X="1685" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="225" Height="50" X="1675" Y="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="210" Height="40" X="5" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="H/S MODE N/A">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" SelectedValue1="Orange" DefaultValue="TextInfo">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue1" ChannelNumber="2022"/>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0" ChannelNumber="2023"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SAILING MODE" SelectedValue1="HARBOR MODE" DefaultValue="H/S MODE N/A">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0" ChannelNumber="2022"/>
+								<ChannelValueBinding TargetPropertyName="ConditionValue1" ChannelNumber="2023"/>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

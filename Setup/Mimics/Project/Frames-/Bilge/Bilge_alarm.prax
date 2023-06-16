@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Height="60" GridSpacing="10" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Height="60" BorderWidth="4" BorderColor="Transparent" FillColor="ConningBackground" CornerRoundRadius="5" VertAlignment="Top" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="Bilge"/>
+		<TextBox Height="30" Y="30" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;N;N;N" Text="NORMAL">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelAlarmNotAckBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+							</Bindings>
+						</ChannelAlarmNotAckBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ALARM" SelectedValue1="---" DefaultValue="NORMAL">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

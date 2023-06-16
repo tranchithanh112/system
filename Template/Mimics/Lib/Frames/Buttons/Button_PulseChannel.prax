@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="200" Height="65" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button Width="195" Height="60" X="3" Y="3" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" BorderColor="Transparent" TextColor="TextActive" Font="Praxis;36.0;N;N;N">
+			<Children>
+				<TextBox Width="195" Height="60" BorderWidth="3" BorderColor="ButtonOutline" FillColor="BackgroundGauge" CornerRoundRadius="5" TextColor="TextActive" Font="Praxis;38.0;N;N;N" Text="ON/OFF">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" DefaultValue="StatusInactive">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="ColorOn"/>
+								<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="ColorOff"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ON" DefaultValue="OFF">
+							<Bindings>
+								<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="TextButtonOn"/>
+								<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="TextButtonOff"/>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="PulseType" ExportedPropertyName="Pulse_type"/>
+						<FrameBinding TargetPropertyName="PulseLength" ExportedPropertyName="Pulse_lenght"/>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pulse_CH"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

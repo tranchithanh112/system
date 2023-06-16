@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1055" Height="2" X="495" Y="2590" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<TextBox Width="825" Height="30" X="540" Y="540" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="EXHAUST MEAN"/>
+		<TextBox Width="145" Height="40" X="1015" Y="35" BorderColor="StatusInactive" FillColor="Transparent" TextColor="Green" Font="Praxis;24.0;N;N;N" Text="AHEAD">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Green" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ahead_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="145" Height="40" X="870" Y="35" BorderColor="StatusInactive" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="NEUTRAL">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextInfoHeader" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Neutral_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="145" Height="40" X="725" Y="35" BorderColor="StatusInactive" FillColor="Transparent" TextColor="AlarmRed" Font="Praxis;24.0;N;N;N" Text="ASTERN">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Astern_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="665" Height="355" X="610" Y="660" ExhaustTemp_01="0" ExhaustTemp_HI_01="0" ExhaustTemp_LO_01="0" Path=".\Gauges\EngineExhaustTempBars_8x.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ExhaustTemp_01" ExportedPropertyName="ExhaustTemp_B1"/>
+				<FrameBinding TargetPropertyName="ExhaustTemp_HI_01" ExportedPropertyName="ExhaustTemp_HI_B1"/>
+				<FrameBinding TargetPropertyName="ExhaustTemp_LO_01" ExportedPropertyName="ExhaustTemp_LO_B1"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="665" Height="355" X="610" Y="160" ExhaustTemp_01="0" ExhaustTemp_HI_01="0" ExhaustTemp_LO_01="0" Path=".\Gauges\EngineExhaustTempBars_8x.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ExhaustTemp_01" ExportedPropertyName="ExhaustTemp_A1"/>
+				<FrameBinding TargetPropertyName="ExhaustTemp_HI_01" ExportedPropertyName="ExhaustTemp_HI_A1"/>
+				<FrameBinding TargetPropertyName="ExhaustTemp_LO_01" ExportedPropertyName="ExhaustTemp_LO_A1"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="55" Height="30" X="965" Y="575" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+		<TextBox Width="70" Height="30" X="890" Y="575" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="999">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ExhaustMeanAB"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Panel Width="520" Height="470" X="1385" Y="25" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="365" Height="30" X="80" Y="85" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="UNDER WATER EXHAUST VALVE - STATUS N/A">
+					<Bindings>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="UNDER WATER EXHAUST VALVE - OPEN" SelectedValue1="UNDER WATER EXHAUST VALVE - CLOSED" DefaultValue="UNDER WATER EXHAUST VALVE - STATUS N/A">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="UnderExhaustValveOpen_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<ChannelValueBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="UnderExhaustValveClosed_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" DefaultValue="Orange">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="UnderExhaustValveOpen_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<ChannelValueBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="UnderExhaustValveClosed_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="365" Height="30" X="80" Y="20" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="ABOVE WATER EXHAUST VALVE - STATUS N/A">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" DefaultValue="Orange">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AboveExhaustValveOpen_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<ChannelValueBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AboveExhaustValveClosed_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ABOVE WATER EXHAUST VALVE - OPEN" SelectedValue1="ABOVE WATER EXHAUST VALVE - CLOSED" DefaultValue="ABOVE WATER EXHAUST VALVE - STATUS N/A">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AboveExhaustValveOpen_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<ChannelValueBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AboveExhaustValveClosed_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="365" Height="30" X="80" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="SHAFT BRAKE - OFF">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" DefaultValue="TextInfo">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ShaftBrake_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SHAFT BRAKE - ON" DefaultValue="SHAFT BRAKE - OFF">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ShaftBrake_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="365" Height="30" X="80" Y="215" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="SECURITY SHUTDOWN - INACTIVE">
+					<Bindings>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SECURITY SHUTDOWN - ACTIVE" DefaultValue="SECURITY SHUTDOWN - INACTIVE">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineShutdown_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" DefaultValue="TextInfo">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineShutdown_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="365" Height="30" X="80" Y="280" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="AUTO POWER REDUCTION- INACTIVE">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" DefaultValue="TextInfo">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineReduction_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="AUTO POWER REDUCTION - ACTIVE" DefaultValue="AUTO POWER REDUCTION - INACTIVE">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineReduction_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="365" Height="30" X="80" Y="345" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="EMERGENCY STOP- INACTIVE">
+					<Bindings>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="EMERGENCY STOP - ACTIVE" DefaultValue="EMERGENCY STOP - INACTIVE">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EmergencyStop_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" DefaultValue="TextInfo">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EmergencyStop_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="365" Height="30" X="80" Y="410" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="EMERGENCY OVERRIDE- INACTIVE">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" DefaultValue="TextInfo">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EmergencyOveride_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="EMERGENCY OVERRIDE - ACTIVE" DefaultValue="EMERGENCY OVERRIDE - INACTIVE">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EmergencyOveride_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+		<Panel Visible="False" Width="520" Height="385" X="1385" Y="665" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="410" Height="30" X="50" Y="45" BorderColor="AlarmRed" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="EXHAUST VALVE FAILURE"/>
+				<TextBox Width="410" Height="30" X="50" Y="110" BorderColor="AlarmRed" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="OVERBOARD EXHAUST TEMP"/>
+				<TextBox Width="410" Height="30" X="50" Y="175" BorderColor="AlarmRed" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="STERN TUBE LUBRICATION FLOW"/>
+				<TextBox Width="410" Height="30" X="50" Y="240" BorderColor="AlarmRed" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="STERN TUBE HEADER  TANK LEVEL"/>
+				<TextBox Width="410" Height="30" X="50" Y="305" BorderColor="AlarmRed" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="GEARBOX OIL LEVEL LOW"/>
+			</Children>
+		</Panel>
+		<Panel Width="515" Height="1025" X="20" Y="25" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="225" Height="30" X="85" Y="45" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Engine Speed"/>
+				<TextBox Width="70" Height="30" X="350" Y="45" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="2500">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENGINE_RPM_CH"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="225" Height="30" X="85" Y="80" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Load / Injection Qty"/>
+				<TextBox Width="225" Height="30" X="85" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Fuel Consumption"/>
+				<TextBox Width="70" Height="30" X="350" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FuelConsumption"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="225" Height="30" X="85" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Total Fuel Consumption"/>
+				<TextBox Width="225" Height="30" X="85" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Lube oil Pressure"/>
+				<TextBox Width="225" Height="30" X="85" Y="220" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Coolant Temperature"/>
+				<TextBox Width="225" Height="30" X="85" Y="325" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="ETC 1 Speed"/>
+				<TextBox Width="225" Height="30" X="85" Y="360" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="ETC 2 Speed"/>
+				<TextBox Width="225" Height="30" X="85" Y="395" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Press. Fuel"/>
+				<TextBox Width="225" Height="30" X="85" Y="430" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Coolant Pressure"/>
+				<TextBox Width="225" Height="30" X="85" Y="465" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Charge Air Pressure"/>
+				<TextBox Width="225" Height="30" X="85" Y="500" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Crankcase Pressure"/>
+				<TextBox Width="225" Height="30" X="85" Y="535" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Lube Oil Temperature"/>
+				<TextBox Width="225" Height="30" X="85" Y="570" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Fuel Oil Temperature"/>
+				<TextBox Width="225" Height="30" X="85" Y="605" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Charge Air Temperature"/>
+				<TextBox Width="225" Height="30" X="85" Y="640" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Intake Air Temperature"/>
+				<TextBox Width="225" Height="30" X="85" Y="675" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Air Seq. Valve Temperature"/>
+				<TextBox Width="225" Height="30" X="85" Y="710" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="SW Pressure"/>
+				<TextBox Width="225" Height="30" X="85" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Engine Total Operating Hours"/>
+				<TextBox Width="70" Height="30" X="350" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="9999999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="TotalFuelConsumption"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Oil_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Oil_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Oil_Pressure"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="220" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="WaterCool_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="WaterCool_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="325" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="2500">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETC1_KRPM_CH"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="360" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="2500">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETC2_KRPM_CH"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="395" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fuel_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fuel_Pressure"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fuel_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="430" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Coolant_Press"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Coolant_Press"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Coolant_Press"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="465" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ChargeAir_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ChargeAir_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="2"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="500" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Crankcase_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Crankcase_Pressure"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Crankcase_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="535" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LubeOil_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LubeOil_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="570" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fuel_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fuel_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="605" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ChargeAir_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ChargeAir_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="640" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IntakeAir_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IntakeAir_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="675" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ChargeAirSeqValve_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ChargeAirSeqValve_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="710" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SW_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SW_Pressure"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SW_Pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="225" Height="30" X="85" Y="745" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="GB Control oil Pressure"/>
+				<TextBox Width="225" Height="30" X="85" Y="780" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="GB Lube oil Pressure"/>
+				<TextBox Width="225" Height="30" X="85" Y="815" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="GB Lube oil Temperature"/>
+				<TextBox Width="225" Height="30" X="85" Y="850" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="GB Thrust Bearing Temp."/>
+				<TextBox Width="225" Height="30" X="85" Y="885" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Shaft Speed"/>
+				<TextBox Width="225" Height="30" X="85" Y="920" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Exhaust  Back Pressure"/>
+				<TextBox Width="225" Height="30" X="85" Y="955" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="Oil Refil Pump Pressure"/>
+				<TextBox Width="70" Height="30" X="350" Y="745" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxControl_Press"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxControl_Press"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxControl_Press"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="780" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxLube_Press"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxLube_Press"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxLube_Press"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="815" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxOil_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxOil_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="850" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxBearing_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="GearBoxBearing_Temp"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="885" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="2500">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SHAFT_CH"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="70" Height="30" X="350" Y="920" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Exhaust_Back_pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Exhaust_Back_pressure"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Exhaust_Back_pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="55" Height="30" X="420" Y="45" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="RPM"/>
+				<TextBox Width="55" Height="30" X="420" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="ltr/h"/>
+				<TextBox Width="55" Height="30" X="420" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="ltr"/>
+				<TextBox Width="55" Height="30" X="420" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="55" Height="30" X="420" Y="220" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="55" Height="30" X="420" Y="325" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="KRPM"/>
+				<TextBox Width="55" Height="30" X="420" Y="360" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="KRPM"/>
+				<TextBox Width="55" Height="30" X="420" Y="395" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="55" Height="30" X="420" Y="430" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="55" Height="30" X="420" Y="465" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="55" Height="30" X="420" Y="500" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="55" Height="30" X="420" Y="535" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="55" Height="30" X="420" Y="570" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="55" Height="30" X="420" Y="605" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="55" Height="30" X="420" Y="640" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="55" Height="30" X="420" Y="675" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="55" Height="30" X="420" Y="710" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="55" Height="30" X="420" Y="745" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="55" Height="30" X="420" Y="780" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="55" Height="30" X="420" Y="815" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="55" Height="30" X="420" Y="850" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="55" Height="30" X="420" Y="885" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="RPM"/>
+				<TextBox Width="55" Height="30" X="420" Y="920" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="70" Height="30" X="350" Y="955" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Oil_Refil_Pump_pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams>
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Oil_Refil_Pump_pressure"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Oil_Refil_Pump_pressure"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="55" Height="30" X="420" Y="955" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="bar"/>
+				<TextBox Width="55" Height="30" X="420" Y="80" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="%"/>
+				<TextBox Width="70" Height="30" X="350" Y="15" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="99999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ENGINE_RUNNING_HOURS_CH"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="55" Height="30" X="420" Y="15" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="hours"/>
+				<TextBox Width="70" Height="30" X="350" Y="80" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LoadInjection"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="225" Height="30" X="85" Y="255" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="T Exhaust Comb A"/>
+				<TextBox Width="70" Height="30" X="350" Y="255" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ExhaustMeanA"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="55" Height="30" X="420" Y="255" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="225" Height="30" X="85" Y="290" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="T Exhaust Comb B"/>
+				<TextBox Width="55" Height="30" X="420" Y="290" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="°C"/>
+				<TextBox Width="70" Height="30" X="350" Y="290" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="NoAlarmGreen" Font="Praxis;22.0;N;N;N" Text="999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ExhaustMeanB"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+		<TextBox Width="55" Height="30" X="615" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="A1"/>
+		<TextBox Width="55" Height="30" X="700" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="A2"/>
+		<TextBox Width="55" Height="30" X="785" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="A3"/>
+		<TextBox Width="55" Height="30" X="870" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="A4"/>
+		<TextBox Width="55" Height="30" X="1210" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="A8"/>
+		<TextBox Width="55" Height="30" X="1125" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="A7"/>
+		<TextBox Width="55" Height="30" X="1040" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="A6"/>
+		<TextBox Width="55" Height="30" X="955" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="A5"/>
+		<TextBox Width="55" Height="30" X="1210" Y="630" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="B8"/>
+		<TextBox Width="55" Height="30" X="1125" Y="630" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="B7"/>
+		<TextBox Width="55" Height="30" X="1040" Y="630" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="B6"/>
+		<TextBox Width="55" Height="30" X="955" Y="630" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="B5"/>
+		<TextBox Width="55" Height="30" X="870" Y="630" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="B4"/>
+		<TextBox Width="55" Height="30" X="785" Y="630" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="B3"/>
+		<TextBox Width="55" Height="30" X="700" Y="630" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="B2"/>
+		<TextBox Width="55" Height="30" X="615" Y="630" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="B1"/>
+	</Children>
+</RootElement>

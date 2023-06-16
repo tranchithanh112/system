@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="80" Height="45" GridSpacing="5">
+	<Children>
+		<TextBox Width="40" Height="25" X="20" Y="5" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="360">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" InRangeBegin="0" InRangeEnd="360" OutRangeBegin="0" OutRangeEnd="360">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Input"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<Line X0="40" Y0="30" X1="40" Y1="45"/>
+		<Line X0="15" Y0="40" X1="15" Y1="45"/>
+		<Line X0="65" Y0="40" X1="65" Y1="45"/>
+		<TextBox Width="20" Height="15" X="5" Y="25" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" TextColor="Gray" Font="Segoe UI;10.0;N;N;N" Text="350">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" InRangeBegin="0" InRangeEnd="360" OutRangeBegin="-10" OutRangeEnd="350">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Input"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="20" Height="15" X="55" Y="25" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" TextColor="Gray" Font="Segoe UI;10.0;N;N;N" Text="10">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" InRangeBegin="0" InRangeEnd="360" OutRangeBegin="10" OutRangeEnd="370">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Input"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

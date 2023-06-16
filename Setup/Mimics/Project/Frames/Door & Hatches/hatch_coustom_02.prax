@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="40" Height="35" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="30" Height="26" X="5" Y="4" BorderWidth="0" BorderColor="TextInfo" FillColor="Green" FillPatternColor="TextInfo">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="IndicatorOrange" DefaultValue="Green">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Polyline LineColor="TextInfo" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="LineColor" ExportedPropertyName="InteriorLinesColor"/>
+				<FrameBinding TargetPropertyName="Width" ExportedPropertyName="InteriorLinesWidth"/>
+			</Bindings>
+			<Points>
+				<Point Coord="35;30"/>
+				<Point Coord="5;30"/>
+				<Point Coord="5;4"/>
+				<Point Coord="10;4"/>
+				<Point Coord="10;30"/>
+				<Point Coord="10;4"/>
+				<Point Coord="15;4"/>
+				<Point Coord="15;30"/>
+				<Point Coord="15;4"/>
+				<Point Coord="20;4"/>
+				<Point Coord="20;30"/>
+				<Point Coord="20;4"/>
+				<Point Coord="25;4"/>
+				<Point Coord="25;30"/>
+				<Point Coord="25;4"/>
+				<Point Coord="30;4"/>
+				<Point Coord="30;30"/>
+				<Point Coord="30;4"/>
+				<Point Coord="35;4"/>
+				<Point Coord="35;30"/>
+			</Points>
+		</Polyline>
+		<Button Width="40" Height="34" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction XOffset="2" YOffset="46.5">
+					<Frame>
+						<FloatingFrame Width="540" Height="75" X="-248" Y="26" AL_ChannelNr="0" Path="..\Safety\Alarm_Indicator_Popup.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="AL_ChannelNr" ExportedPropertyName="Open_Ch"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

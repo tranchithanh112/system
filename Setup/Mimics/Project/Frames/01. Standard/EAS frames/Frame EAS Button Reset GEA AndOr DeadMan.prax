@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="300" Height="67" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button FlashSteadyOn="True" FlashArea="TextOnly" Width="300" Height="67" Text="GEA DeadMan" FillColor="Transparent" OutlineColor="InfoTextWhite" TextColor="InfoTextWhite" Font="Segoe UI;24.0;N;N;N">
+			<Bindings>
+				<GEADeadManStatusBinding TargetPropertyName="Flash"/>
+				<GEADeadManDescriptionBinding TargetPropertyName="Text"/>
+			</Bindings>
+			<ClickActions>
+				<ResetGEADeadManClickAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

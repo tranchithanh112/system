@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="140" Height="200" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="122" Height="200" X="9" BorderColor="Black" FillColor="Black"/>
+		<Rectangle Width="85" Height="142" X="27" Y="2" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder"/>
+		<Rectangle Width="15" Height="23" X="9" Y="176" BorderColor="Comment" FillColor="Comment"/>
+		<Rectangle Visible="False" Width="87" Height="199" X="26" Y="1" FillColor="AlarmRed">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="47" Height="22" X="45" Y="55" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Arial;36.0;N;N;N" Text="052">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Number"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="6" Height="6" X="14" Y="181" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="6" Height="6" X="14" Y="191" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="15" Height="22" X="116" Y="177" BorderColor="Comment" FillColor="Comment"/>
+		<Rectangle Width="7" Height="139" X="121" Y="4" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="6" Height="6" X="120" Y="181" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="6" Height="6" X="120" Y="191" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="28" Height="11" X="41" Y="149" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder"/>
+		<Rectangle Width="28" Height="17" X="41" Y="180" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder"/>
+		<Rectangle Width="28" Height="14" X="41" Y="162" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder"/>
+		<Rectangle Width="28" Height="11" X="71" Y="149" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder"/>
+		<Rectangle Width="28" Height="14" X="71" Y="162" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder"/>
+		<Rectangle Width="28" Height="17" X="71" Y="180" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder"/>
+		<Rectangle Width="7" Height="139" X="12" Y="4" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+	</Children>
+</RootElement>

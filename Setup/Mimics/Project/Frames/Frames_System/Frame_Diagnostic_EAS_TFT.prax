@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="150" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="35" Height="35" X="94" Y="145" FillColor="Black" TextColor="TextInfo" Font="Praxis;28.0;N;N;N" Text="B">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="IndicatorOrange">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_B_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_B_CH"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="35" Height="35" X="19" Y="145" FillColor="Black" TextColor="TextInfo" Font="Praxis;28.0;N;N;N" Text="A">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="IndicatorOrange">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_A_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_A_CH"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="139" Height="139" X="5" Y="7" BorderColor="Black" FillColor="Black" CornerRoundRadius="10"/>
+		<Rectangle Visible="False" Width="138" Height="137" X="6" Y="9" FillColor="AlarmRed" CornerRoundRadius="5">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EAS_Fail_CH"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="139" Height="139" X="5" Y="7" BorderWidth="2" BorderColor="MetallicSilver" FillColor="Transparent" CornerRoundRadius="6"/>
+		<TextBox Width="150" Height="40" Y="-38" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="MESS">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Top"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="112" Height="97" X="18" Y="23" BorderWidth="2" BorderColor="MetallicSilver" FillColor="Transparent" CornerRoundRadius="3"/>
+		<TextBox Width="150" Height="25" Y="32" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;28.0;N;N;N" Text="EAS">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Line1"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="25" Y="60" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;28.0;N;N;N" Text="76">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Line2"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="25" Y="91" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Line3"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

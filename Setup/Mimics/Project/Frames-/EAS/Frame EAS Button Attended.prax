@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="300" Height="67" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle FlashSteadyOn="True" Width="300" Height="67" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="FillColor" ButtonType="SetAttended">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="ConningBackground"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+		</Rectangle>
+		<Button Width="300" Height="67" Text="Attended" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;28.0;N;N;N">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="TextColor" ButtonType="SetAttended">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="InfoTextGrey" ColorWhenTrue="ActiveText"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+			<ClickActions>
+				<EASCommandClickAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

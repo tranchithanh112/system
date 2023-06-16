@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="135" Height="40" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="135" Height="40" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="FillColor" ButtonType="CallAll">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="IndicationLine"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+		</Rectangle>
+		<Button Width="135" Height="40" Text="Call All" FillColor="Transparent" OutlineColor="Transparent" TextColor="TextActive" Font="Praxis;26.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="TextColor"/>
+			</Bindings>
+			<ClickActions>
+				<EASCommandClickAction EASCommands="Call All"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

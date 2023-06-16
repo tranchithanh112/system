@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="60" GridSpacing="1">
+	<Children>
+		<Ellipse CenterX="30" CenterY="70" RadiusX="30" RadiusY="30" FillColor="ButtonFill" LightingStyle="Radial">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="BorderColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pump_Running_Channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Neutral" ColorWhenTrue="Green"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pump_Alarm_Channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<Polyline ClosedOutline="True">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pump_Running_Channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Gray" ColorWhenTrue="Green"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="12;47"/>
+				<Point Coord="12;93"/>
+				<Point Coord="59;70"/>
+			</Points>
+		</Polyline>
+		<Button Width="15" Height="15" X="45" Y="20" RoundRadius="1" Text="C" Font="Segoe UI-10.0-B-N-N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Remote_Control_Channel"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Control_Active_Buffer_Channel"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="30" Height="20" RoundRadius="2" Text="START" Font="Segoe UI-8.0-B-N-N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pump_Running_Channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Gray" ColorWhenTrue="Green"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelRangeHighBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Control_Active_Buffer_Channel"/>
+					</Bindings>
+				</ChannelRangeHighBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DO_Start_Channel"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Control_Active_Buffer_Channel"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="30" Height="20" X="30" RoundRadius="2" Text="STOP" Font="Segoe UI-8.0-B-N-N">
+			<Bindings>
+				<ChannelRangeLowBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Control_Active_Buffer_Channel"/>
+					</Bindings>
+				</ChannelRangeLowBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pump_Running_Channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="AlarmRed" ColorWhenTrue="Gray"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DO_Stop_Channel"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Control_Active_Buffer_Channel"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="15" Height="15" Y="20" RoundRadius="1" Text="L" Font="Segoe UI-10.0-B-N-N">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Remote_Control_Channel"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Button>
+		<TextBox Width="60" Height="15" Y="101" BorderColor="ButtonOutline" FillColor="ButtonFill" CornerRoundRadius="5" Font="Segoe UI-10.0-N-N-N" Text="" FillStyle="RadialLighting">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Component_Description"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

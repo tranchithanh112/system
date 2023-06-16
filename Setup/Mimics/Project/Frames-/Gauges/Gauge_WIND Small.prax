@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="660" Height="660" GridSpacing="10" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="80" Y="50" DialColor="GaugeBackground" IndicatorLinesColor="ActiveText" FullDial="True" Path=".\Frame_GAUGE_points.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="FullDial" ExportedPropertyName="FullDial"/>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+			</Bindings>
+		</Frame>
+		<Panel Width="480" Height="480" X="90" Y="60" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+			<Bindings>
+				<FilteredValueBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TransitionTime" ExportedPropertyName="Smoothness"/>
+						<RangeFormulaBinding TargetPropertyName="Value" OutRangeBegin="45" OutRangeEnd="315">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<ChannelRangeLowBinding TargetPropertyName="InRangeBegin">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelRangeLowBinding>
+								<ChannelRangeHighBinding TargetPropertyName="InRangeEnd">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelRangeHighBinding>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+			<Children>
+				<Polyline Width="2" LineColor="DarkShadow" ClosedOutline="True" FillColor="InfoTextWhite">
+					<Points>
+						<Point Coord="225;15"/>
+						<Point Coord="240;80"/>
+						<Point Coord="255;15"/>
+					</Points>
+				</Polyline>
+			</Children>
+		</Panel>
+		<TextBox Width="40" Height="25" X="310" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Saira;40.0;N;N;N" Text="0"/>
+		<TextBox Width="40" Height="25" X="310" Y="565" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Saira;40.0;N;N;N" Text="180"/>
+		<TextBox Width="40" Height="25" X="525" Y="485" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Saira;40.0;N;N;N" Text="135"/>
+		<TextBox Width="40" Height="25" X="595" Y="285" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Saira;40.0;N;N;N" Text="90"/>
+		<TextBox Width="40" Height="25" X="510" Y="95" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Saira;40.0;N;N;N" Text="45"/>
+		<TextBox Width="40" Height="25" X="95" Y="95" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Saira;40.0;N;N;N" Text="-45"/>
+		<TextBox Width="40" Height="25" X="20" Y="285" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Saira;40.0;N;N;N" Text="-90"/>
+		<TextBox Width="40" Height="25" X="95" Y="485" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Saira;40.0;N;N;N" Text="-135"/>
+		<Bezier Width="3" LineColor="ActiveText" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBoat"/>
+			</Bindings>
+			<Points>
+				<Point Coord="330;150"/>
+				<Point Coord="275;245"/>
+				<Point Coord="275;310"/>
+				<Point Coord="295;450"/>
+			</Points>
+		</Bezier>
+		<Bezier Width="3" LineColor="ActiveText" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBoat"/>
+			</Bindings>
+			<Points>
+				<Point Coord="330;150"/>
+				<Point Coord="385;245"/>
+				<Point Coord="385;310"/>
+				<Point Coord="365;450"/>
+			</Points>
+		</Bezier>
+		<Line Width="3" Color="ActiveText" X0="295" Y0="450" X1="365" Y1="450">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBoat"/>
+			</Bindings>
+		</Line>
+		<TextBox Width="285" Height="75" X="20" Y="570" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;60.0;N;N;N" Text="18.2"/>
+		<TextBox Width="280" Height="75" X="25" Y="650" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;48.0;N;N;N" Text="SPEED kn"/>
+		<TextBox Width="285" Height="75" X="355" Y="570" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;60.0;N;N;N" Text="93°"/>
+		<TextBox Width="280" Height="75" X="355" Y="650" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;48.0;N;N;N" Text="DIRECTION"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="800" Height="800" ClipToBounds="True" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="150" Y="150" DialColor="BackgroundConning" IndicatorLinesColor="TextActive" FullDial="True" Path=".\Frame_GAUGE_points_8_Div_360.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+				<FrameBinding TargetPropertyName="IndicatorLinesColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</Frame>
+		<Ellipse BorderWidth="5" LinePosition="Centered" BorderColor="BackgroundShadow" FillColor="Barfill01" CenterX="400" CenterY="400" RadiusX="225" RadiusY="225" ArcBegin="90" ArcEnd="135" ArcLength="45">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Filling"/>
+				<FilteredValueBinding TargetPropertyName="ArcLength">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TransitionTime" ExportedPropertyName="Smoothness"/>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Thr_Angle"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" DefaultValue="Barfill">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="CentralDigitsColor"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Thr_Angle"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+		<Panel Width="480" Height="480" X="160" Y="160" Rotation="45" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Pointer"/>
+				<FilteredValueBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TransitionTime" ExportedPropertyName="Smoothness"/>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Thr_Angle"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+			<Children>
+				<Line Width="3" Color="TextInfoHeader" X0="240" Y0="240" X1="240" Y1="455">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible"/>
+					</Bindings>
+				</Line>
+				<Polyline Width="2" LineColor="BackgroundShadow" ClosedOutline="True" FillColor="StatusActive">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" DefaultValue="IndicationLine">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareOperator=">" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="DialValue_MAX"/>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Thr_Angle"/>
+											</Bindings>
+										</ChannelValueBinding>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="225;425"/>
+						<Point Coord="240;460"/>
+						<Point Coord="255;425"/>
+					</Points>
+				</Polyline>
+			</Children>
+		</Panel>
+		<TextBox Width="40" Height="25" X="665" Y="387" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Saira;48.0;N;N;N" Text="270">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="380" Y="670" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Saira;48.0;N;N;N" Text="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="585" Y="585" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Saira;48.0;N;N;N" Text="315">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Ellipse BorderWidth="3" BorderStyle="Raised" LinePosition="Outside" BorderColor="Background" CenterX="400" CenterY="400" RadiusX="180" RadiusY="180" ArcBegin="540" ArcEnd="900"/>
+		<TextBox Width="40" Height="25" X="585" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Saira;48.0;N;N;N" Text="225">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="380" Y="100" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Saira;48.0;N;N;N" Text="180">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="170" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Saira;48.0;N;N;N" Text="135">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="95" Y="388" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Saira;48.0;N;N;N" Text="90">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="165" Y="580" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Saira;48.0;N;N;N" Text="45">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="300" Height="300" X="250" Y="250" Rotation="45" Path="..\Conning\FRAME_FAN.prax">
+			<Bindings>
+				<FilteredValueBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Thr_Angle"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FrameBinding TargetPropertyName="TransitionTime" ExportedPropertyName="Smoothness"/>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</Frame>
+	</Children>
+</RootElement>

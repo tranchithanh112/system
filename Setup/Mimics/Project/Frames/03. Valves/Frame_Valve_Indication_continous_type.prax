@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="60" Height="60" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Polyline FlashColor="Background" Width="2" LineColor="White" ClosedOutline="True" FillColor="Gray">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue2="Gray" SelectedValue3="Gray" SelectedValue4="Green" SelectedValue5="Green" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_close_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_open_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="40;0"/>
+				<Point Coord="0;0"/>
+				<Point Coord="20;30"/>
+				<Point Coord="40;60"/>
+				<Point Coord="0;60"/>
+			</Points>
+		</Polyline>
+		<Line Width="4" Color="White" X0="20" Y0="30" X1="60" Y1="30"/>
+		<Bezier FlashColor="Background" Width="2" LineColor="White" ClosedOutline="True" FillColor="Gray">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue2="Gray" SelectedValue3="Gray" SelectedValue4="Green" SelectedValue5="Green" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_close_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_open_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="40;10"/>
+				<Point Coord="50;10"/>
+				<Point Coord="60;10"/>
+				<Point Coord="60;30"/>
+				<Point Coord="50;50"/>
+				<Point Coord="40;50"/>
+			</Points>
+		</Bezier>
+		<TextBox Width="20" Height="80" X="80" Y="-10" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Praxis;18.0;B;N;N" Text="23%" Rotation="90">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_position_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelUnitsBinding TargetPropertyName="Suffix">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_position_CH"/>
+									</Bindings>
+								</ChannelUnitsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Line Width="2" Color="White" X0="70" Y0="10" X1="60" Y1="0" P1CapStyle="Arrow"/>
+		<Line Width="2" Color="White" X0="70" Y0="50" X1="60" Y1="60" P1CapStyle="Arrow"/>
+		<Bezier Width="2" LineColor="White" FillColor="Transparent">
+			<Points>
+				<Point Coord="70;10"/>
+				<Point Coord="80;20"/>
+				<Point Coord="80;40"/>
+				<Point Coord="70;50"/>
+			</Points>
+		</Bezier>
+	</Children>
+</RootElement>

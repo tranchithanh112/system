@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="215" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="215" BorderColor="PanelFaceBorder" FillColor="Black"/>
+		<Rectangle Visible="False" Width="215" BorderWidth="0" BorderColor="PanelFaceBorder" FillColor="AlarmRed">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fail_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="205" Height="30" X="5" Y="35" BorderColor="PanelFaceBorder" FillColor="PageInfoLine" TextColor="Black" Font="Praxis;26.0;N;N;N" Text="ETH SWITCH 1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Type"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="15" Height="30" X="3" Y="70" Port_Diagnostic_CH="0" Port="1" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+				<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+				<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port1_Position"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="15" Height="30" X="23" Y="70" Port_Diagnostic_CH="0" Port="2" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+				<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+				<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port2_Position"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="15" Height="30" X="43" Y="70" Port_Diagnostic_CH="0" Port="3" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+				<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+				<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port3_Position"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="15" Height="30" X="63" Y="70" Port_Diagnostic_CH="0" Port="4" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+				<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+				<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port4_Position"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="15" Height="30" X="83" Y="70" Port_Diagnostic_CH="0" Port="5" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+				<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+				<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port5_Position"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="15" Height="30" X="103" Y="70" Port_Diagnostic_CH="0" Port="6" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+				<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+				<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port6_Position"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="15" Height="30" X="123" Y="70" Port_Diagnostic_CH="0" Port="7" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+				<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+				<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port7_Position"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="15" Height="30" X="143" Y="70" Port_Diagnostic_CH="0" Port="8" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+				<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+				<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port8_Position"/>
+			</Bindings>
+		</Frame>
+		<Panel Width="205" Height="35" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Switch_16_Port"/>
+			</Bindings>
+			<Children>
+				<Frame Width="15" Height="30" X="3" Port_Diagnostic_CH="0" Port="9" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Top.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port9_Position"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="15" Height="30" X="23" Port_Diagnostic_CH="0" Port="10" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Top.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port10_Position"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="15" Height="30" X="43" Port_Diagnostic_CH="0" Port="11" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Top.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port11_Position"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="15" Height="30" X="63" Port_Diagnostic_CH="0" Port="12" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Top.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port12_Position"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="15" Height="30" X="83" Port_Diagnostic_CH="0" Port="13" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Top.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port13_Position"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="15" Height="30" X="103" Port_Diagnostic_CH="0" Port="14" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Top.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port14_Position"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="15" Height="30" X="123" Port_Diagnostic_CH="0" Port="15" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Top.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port15_Position"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="15" Height="30" X="143" Port_Diagnostic_CH="0" Port="16" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Top.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port16_Position"/>
+					</Bindings>
+				</Frame>
+			</Children>
+		</Panel>
+		<Panel Width="55" Height="35" X="160" Y="65" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Switch_16_Port"/>
+			</Bindings>
+			<Children>
+				<Frame Width="15" Height="30" X="37" Y="5" Port_Diagnostic_CH="0" Port="18" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port18_Position"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="15" Height="30" X="17" Y="5" Port_Diagnostic_CH="0" Port="17" Show_Port_Number="True" Path=".\Ethernet_Switch_Port_Bottom.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Port_Diagnostic_CH" ExportedPropertyName="Port_01_Diag_CH"/>
+						<FrameBinding TargetPropertyName="Show_Port_Number" ExportedPropertyName="Show_Port_Numbers"/>
+						<FrameBinding TargetPropertyName="Port" ExportedPropertyName="Port17_Position"/>
+					</Bindings>
+				</Frame>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

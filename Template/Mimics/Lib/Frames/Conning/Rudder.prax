@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="500" Height="35" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Panel Width="500" Height="35" ClipToBounds="True" BorderWidth="1" BorderStyle="Sunken" BorderColor="Background" FillColor="BackgroundGauge">
+			<Children>
+				<Slider UserActionsLocked="True" Width="500" Height="35" MinValue="-45" MaxValue="45" ShowThumbLabel="False" LineWidth="35" ThumbSize="35" ThumbTextSize="0" ThumbColor="Transparent" ActiveTrackColor="IndicationLine" InactiveTrackColor="BackgroundConning" StepColor="AlarmRed">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="ActiveTrackColor" SelectedValue0="LightingGreen" SelectedValue1="LightingRed" DefaultValue="Transparent">
+							<Bindings>
+								<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="SB_Color"/>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="0" CompareOperator=">" CompareTolerance="0.001">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+											</Bindings>
+										</ChannelValueBinding>
+									</Bindings>
+								</ValueCompareBinding>
+								<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="0" CompareOperator="&lt;" CompareTolerance="0.001">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+											</Bindings>
+										</ChannelValueBinding>
+									</Bindings>
+								</ValueCompareBinding>
+								<FrameBinding TargetPropertyName="SelectedValue1" ExportedPropertyName="PS_Color"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<FilteredValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+					</Bindings>
+				</Slider>
+				<Line Color="TextInfo" X0="250" Y0="0" X1="250" Y1="35"/>
+			</Children>
+		</Panel>
+		<TextBox Width="500" Height="25" Y="35" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" Text="12°">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" InRangeBegin="-180" InRangeEnd="360" OutRangeBegin="-180" OutRangeEnd="360">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="RightLimitValue"/>
+						<ChannelRangeLowBinding TargetPropertyName="InRangeBegin">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+							</Bindings>
+						</ChannelRangeLowBinding>
+						<ChannelRangeHighBinding TargetPropertyName="InRangeEnd">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+							</Bindings>
+						</ChannelRangeHighBinding>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="LeftLimitValue"/>
+						<FilteredValueBinding TargetPropertyName="Value" TransitionTime="500">
+							<Bindings>
+								<SelectFirstFloatBinding TargetPropertyName="Value">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="SelectedValue0">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="0" CompareOperator=">" CompareTolerance="0.001">
+											<Bindings>
+												<ChannelValueBinding TargetPropertyName="FirstValue">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+													</Bindings>
+												</ChannelValueBinding>
+											</Bindings>
+										</ValueCompareBinding>
+										<UnitConversionBinding TargetPropertyName="DefaultValue" A="-1">
+											<Bindings>
+												<ChannelValueBinding TargetPropertyName="X">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+													</Bindings>
+												</ChannelValueBinding>
+											</Bindings>
+										</UnitConversionBinding>
+									</Bindings>
+								</SelectFirstFloatBinding>
+							</Bindings>
+						</FilteredValueBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix="°">
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="500" Height="15" Y="60" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;12.0;N;N;N" Text="RUDDER">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="235" Y="-20" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="0"/>
+		<TextBox Width="30" Height="20" X="-15" Y="-20" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="40">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="LeftLimitText"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="485" Y="-20" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="40">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="RighLimitText"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="70" Height="20" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="70" Height="18" Y="1" BorderColor="InfoTextGrey" FillColor="Orange" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="SLD">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background" ColorWhenTrue="Orange"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="InfoTextGrey" ColorWhenTrue="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

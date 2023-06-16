@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1570" Height="315" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1566" Height="311" X="2" Y="2" BorderWidth="0" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Panel Width="1560" Height="305" X="5" Y="5" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" FillColor="BackgroundGauge" CornerRoundRadius="5">
+			<Children>
+				<TextBox Width="155" Height="25" X="5" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 1"/>
+				<TextBox Width="1550" Height="25" X="5" Y="5" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="SCENE 1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="SceneValue"/>
+					</Bindings>
+				</TextBox>
+				<Frame Width="155" Height="245" X="5" Y="55" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L1"/>
+					</Bindings>
+				</Frame>
+				<TextBox Width="155" Height="25" X="160" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 2"/>
+				<TextBox Width="155" Height="25" X="315" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 3"/>
+				<TextBox Width="155" Height="25" X="470" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 4"/>
+				<TextBox Width="155" Height="25" X="625" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 5"/>
+				<TextBox Width="155" Height="25" X="780" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 6"/>
+				<TextBox Width="155" Height="25" X="935" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 7"/>
+				<TextBox Width="155" Height="25" X="1090" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 8"/>
+				<TextBox Width="155" Height="25" X="1245" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 9"/>
+				<TextBox Width="155" Height="25" X="1400" Y="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LIGHT 10"/>
+				<Frame Width="155" Height="245" X="160" Y="55" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L2"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="155" Height="245" X="315" Y="55" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L3"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="155" Height="245" X="780" Y="55" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L6"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="155" Height="245" X="625" Y="55" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L5"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="155" Height="245" X="470" Y="55" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L4"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="155" Height="245" X="1245" Y="55" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L9"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="155" Height="245" X="1090" Y="55" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L8"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="155" Height="245" X="935" Y="55" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L7"/>
+					</Bindings>
+				</Frame>
+				<Button Width="30" Height="30" X="1529" Y="1" Text="X" FillColor="Transparent" OutlineColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N">
+					<ClickActions>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+		<Frame Width="155" Height="245" X="1405" Y="60" RGBW_CH_RED="0" Path=".\RGBW_Sliders.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="RGBW_CH_RED" ExportedPropertyName="RGBW_CH_L10"/>
+			</Bindings>
+		</Frame>
+	</Children>
+</RootElement>

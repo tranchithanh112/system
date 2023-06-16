@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <LIBRARY name="DEBUG" crypt="" version="131072">
+    <LIB_HDR>
+      <COMP_VER>00041109</COMP_VER>
+      <CAPABILITIES>
+        <CAPABILITY code="0" />
+        <CAPABILITY code="4000" />
+      </CAPABILITIES>
+      <LIB_INFO>
+        <COPYRIGHT><![CDATA[Praxis Automation Technology]]></COPYRIGHT>
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="28" milisec="287" />
+        <MENU_PATH>DEBUG</MENU_PATH>
+        <CONTENT>
+          <ITEM name="RESET_BPDUDBG" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="GET_MAXTIMEOUT" type="FBLK">
+            <PAR kind="INPUT" name="iPort" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="GET_OCCURANCE" type="FBLK">
+            <PAR kind="INPUT" name="iPort" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="TXTIMEOUT" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+          </ITEM>
+        </CONTENT>
+      </LIB_INFO>
+      <DEPENDENCIES />
+    </LIB_HDR>
+    <LIB_BODY>
+      <FUNCTION_BLOCKS>
+        <FUNCTION_BLOCK name="RESET_BPDUDBG" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0070" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?DEBUG.RESET_BPDUDBG?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="GET_MAXTIMEOUT" flags="64" cap="0">
+          <VAR_INPUT name="iPort" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0071" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?DEBUG.GET_MAXTIMEOUT?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="GET_OCCURANCE" flags="64" cap="0">
+          <VAR_INPUT name="iPort" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0072" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?DEBUG.GET_OCCURANCE?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TXTIMEOUT" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0073" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?DEBUG.TXTIMEOUT?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="RESET_BPDUDBG" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0070" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?DEBUG.RESET_BPDUDBG?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="GET_MAXTIMEOUT" flags="64" cap="4000">
+          <VAR_INPUT name="iPort" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0071" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?DEBUG.GET_MAXTIMEOUT?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="GET_OCCURANCE" flags="64" cap="4000">
+          <VAR_INPUT name="iPort" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0072" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?DEBUG.GET_OCCURANCE?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TXTIMEOUT" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0073" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?DEBUG.TXTIMEOUT?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+      </FUNCTION_BLOCKS>
+    </LIB_BODY>
+  </LIBRARY>
+</PAL1131>

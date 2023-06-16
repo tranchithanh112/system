@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="340" Height="400" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Line Color="IndicationLineTransparent" X0="55" Y0="70" X1="290" Y1="70"/>
+		<Line Color="IndicationLineTransparent" X0="55" Y0="365" X1="290" Y1="365"/>
+		<TextBox Width="25" Height="20" X="80" Y="40" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="D/G 01"/>
+		<TextBox Width="40" Height="20" X="10" Y="355" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="0"/>
+		<TextBox Width="40" Height="20" X="10" Y="305" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="20"/>
+		<TextBox Width="40" Height="20" X="10" Y="255" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="40"/>
+		<TextBox Width="40" Height="20" X="10" Y="200" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="60"/>
+		<TextBox Width="40" Height="20" X="10" Y="150" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="80"/>
+		<TextBox Width="40" Height="20" X="10" Y="105" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="100"/>
+		<TextBox Width="40" Height="20" X="10" Y="60" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="120"/>
+		<Line Color="IndicationLineTransparent" X0="55" Y0="115" X1="290" Y1="115"/>
+		<Line Color="IndicationLineTransparent" X0="55" Y0="160" X1="290" Y1="160"/>
+		<Line Color="IndicationLineTransparent" X0="55" Y0="210" X1="290" Y1="210"/>
+		<Line Color="IndicationLineTransparent" X0="55" Y0="265" X1="290" Y1="265"/>
+		<Line Color="IndicationLineTransparent" X0="55" Y0="315" X1="290" Y1="315"/>
+		<Rectangle Width="23" Height="295" X="80" Y="70" BorderColor="ColorTrendBackGround" BorderStyle="Sunken">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Back_Color"/>
+				<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="Back_Color"/>
+			</Bindings>
+		</Rectangle>
+		<FillBar Width="23" Height="295" X="80" Y="70" FillDirection="BottomToTop" RangeEnd="120" LimitType="HighAndVeryHigh" FirstLimit="100" SecondLimit="110" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="86" NormalColor="Barfill01" BorderWidth="1" BorderColor="Transparent" BorderStyle="Sunken" CornerRoundRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="55" Height="25" X="65" Y="375" BorderColor="Transparent" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="20" Font="Praxis;22.0;N;N;N" Text="86"/>
+		<TextBox Width="20" Height="20" X="160" Y="40" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="D/G 02"/>
+		<TextBox Width="20" Height="20" X="240" Y="40" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="D/G 03"/>
+		<TextBox Width="25" Height="20" X="160" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="GENERATORS POWER"/>
+		<TextBox Width="55" Height="25" X="145" Y="375" BorderColor="Transparent" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="20" Font="Praxis;22.0;N;N;N" Text="80"/>
+		<TextBox Width="55" Height="25" X="225" Y="375" BorderColor="Transparent" BorderStyle="Sunken" FillColor="Transparent" TextColor="TextActive" LeftRightPadding="20" Font="Praxis;22.0;N;N;N" Text="92"/>
+		<TextBox Width="25" Height="25" X="105" Y="375" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="%"/>
+		<TextBox Width="25" Height="25" X="185" Y="375" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="%"/>
+		<TextBox Width="25" Height="25" X="270" Y="375" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="%"/>
+		<Rectangle Width="23" Height="295" X="160" Y="70" BorderColor="ColorTrendBackGround" BorderStyle="Sunken">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Back_Color"/>
+				<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="Back_Color"/>
+			</Bindings>
+		</Rectangle>
+		<FillBar Width="23" Height="295" X="160" Y="70" FillDirection="BottomToTop" RangeEnd="120" LimitType="HighAndVeryHigh" FirstLimit="100" SecondLimit="110" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="86" NormalColor="Barfill01" BorderWidth="1" BorderColor="Transparent" BorderStyle="Sunken" CornerRoundRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+			</Bindings>
+		</FillBar>
+		<Rectangle Width="23" Height="295" X="240" Y="70" BorderColor="ColorTrendBackGround" BorderStyle="Sunken">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Back_Color"/>
+				<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="Back_Color"/>
+			</Bindings>
+		</Rectangle>
+		<FillBar Width="23" Height="295" X="240" Y="70" FillDirection="BottomToTop" RangeEnd="120" LimitType="HighAndVeryHigh" FirstLimit="100" SecondLimit="110" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="86" NormalColor="Barfill01" BorderWidth="1" BorderColor="Transparent" BorderStyle="Sunken" CornerRoundRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+			</Bindings>
+		</FillBar>
+	</Children>
+</RootElement>

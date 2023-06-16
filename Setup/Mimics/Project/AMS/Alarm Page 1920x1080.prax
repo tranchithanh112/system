@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1080" ShowBackground="True" Highlight_Button_NR="12" Page_Title="ALARM PAGE" MultiplePages="False" Path="..\Frames\Menus\CommonMenuFrame_1920x1080.prax" AutoShow_Page_Title="False"/>
+		<AlarmList Width="1645" Height="40" X="5" Y="75" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="Transparent" AlternateFillColor="PageInfoLineShaded" HighlightColor="White" TextColor="BlackWhite" Font="Praxis;20.0;N;N;N" BorderWidth="0" ColumnSepLinesVisible="False" ShowChannel="True">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</AlarmList>
+		<AlarmList Width="1645" Height="80" X="5" Y="150" HeaderVisible="False" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent" FileName="..\Frames\Menus\Frame_ALContextMenu.prax" ShowChannel="True" ShowAlarmType="Emergency">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</AlarmList>
+		<TextBox Width="1645" Height="25" X="5" Y="120" BorderWidth="0" BorderColor="Transparent" FillColor="BackgroundListLine01" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" Text="EMERGENCY ALARMS">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="1645" Height="25" X="5" Y="235" BorderWidth="0" BorderColor="Transparent" FillColor="BackgroundListLine01" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="ALARMS">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="1645" Height="25" X="5" Y="585" BorderWidth="0" BorderColor="Transparent" FillColor="BackgroundListLine01" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="WARNINGS">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="1645" Height="25" X="5" Y="860" BorderWidth="0" BorderColor="Transparent" FillColor="BackgroundListLine01" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="CAUTIONS">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</TextBox>
+		<AlarmList Width="1645" Height="315" X="5" Y="265" HeaderVisible="False" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent" FileName="..\Frames\Menus\Frame_ALContextMenu.prax" ShowChannel="True" ShowAlarmType="Alarm">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</AlarmList>
+		<AlarmList Width="1645" Height="240" X="5" Y="615" HeaderVisible="False" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent" FileName="..\Frames\Menus\Frame_ALContextMenu.prax" ShowChannel="True" ShowAlarmType="Warning">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</AlarmList>
+		<AlarmList Width="1645" Height="120" X="5" Y="890" HeaderVisible="False" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent" FileName="..\Frames\Menus\Frame_ALContextMenu.prax" ShowChannel="True" ShowAlarmType="Caution">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</AlarmList>
+	</Children>
+</RootElement>

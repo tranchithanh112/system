@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="275" Height="40" GridSpacing="1" ColorTableFile="..\Color_Table.colortable">
+	<Children>
+		<TextBox Width="275" Height="40" FillStyle="HorizontalLighting" CornerRoundRadius="5" Font="Segoe UI-18.0-N-N-N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Width" ExportedPropertyName="Box_Width"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="_Text"/>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Yellow" SelectedValue2="Green" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Warning_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" SelectedValue1="Black" SelectedValue2="Black" DefaultValue="Gray">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Warning_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<FrameBinding TargetPropertyName="Height" ExportedPropertyName="Box_Height"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

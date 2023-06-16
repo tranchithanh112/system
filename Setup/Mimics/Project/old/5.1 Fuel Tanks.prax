@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Width="40" Height="30" X="110" Y="600" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="0 %"/>
+		<TextBox Width="70" Height="30" X="90" Y="685" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Level"/>
+		<TextBox Width="70" Height="30" X="90" Y="655" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Sensor"/>
+		<TextBox Width="70" Height="30" X="90" Y="715" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Volume"/>
+		<TextBox Width="70" Height="30" X="90" Y="745" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Weight"/>
+		<TextBox Width="70" Height="30" X="90" Y="775" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Density"/>
+		<TextBox Width="40" Height="30" X="115" Y="200" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="100 %"/>
+		<TextBox Width="40" Height="30" X="110" Y="300" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="75 %"/>
+		<TextBox Width="40" Height="30" X="110" Y="400" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="50 %"/>
+		<TextBox Width="40" Height="30" X="110" Y="500" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="25 %"/>
+		<Frame Width="155" Height="640" X="325" Y="185" Volume="23342" ColourVolumeBar="PipingFuel" Level="23341" ColourLevelBar="PipingFuel" Weight="23343" Density="23340" Sensor="23301" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" VolumeValueCh="0" weight_in_tank="12.6" Filled="0" HighColour="AlarmRed" MAX="102" WeightInTank="12.6" ID="FO Wing Tank 6 SB" PercentFilledCh="0" Tank_ID="Tank 8 PS" FilledCh="0" HIGH="100" Volume_In_tank="12.3" VolumeInTank="12.3" WeightValueCh="0" SoundingValueCh="0" NormalColour="Orange" Ch._Value="0" Ch_value="0" Ch_Value="0"/>
+		<Frame Width="155" Height="640" X="160" Y="185" Volume="13342" ColourVolumeBar="PipingFuel" Level="13341" ColourLevelBar="PipingFuel" Weight="13343" Density="13340" Sensor="13301" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" Ch._Value="0" HIGH="100" SoundingValueCh="0" ID="FO Wing Tank 6 PT" MAX="102" VolumeValueCh="0" Ch_Value="0" Volume_In_tank="12.3" PercentFilledCh="0" WeightValueCh="0" Ch_value="0" Filled="0" weight_in_tank="12.6" HighColour="AlarmRed" VolumeInTank="12.3" FilledCh="0" WeightInTank="12.6" Tank_ID="Tank 8 PS" NormalColour="Orange"/>
+		<Frame Width="155" Height="640" X="490" Y="185" Volume="11654" ColourVolumeBar="PipingFuel" Level="11653" ColourLevelBar="PipingFuel" Weight="11655" Density="11652" Sensor="11603" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" Tank_ID="PS Aft" Filled="100001" weight_in_tank="12.6" NormalColour="Orange" Ch_value="0" MAX="102" PercentFilledCh="100001" Ch_Value="0" FilledCh="100001" SoundingValueCh="0" WeightValueCh="0" HighColour="AlarmRed" WeightInTank="0" HIGH="95" Ch._Value="0" VolumeValueCh="0" Volume_In_tank="12.3" ID="FO Storage Tank 3PS" VolumeInTank="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="VolumeInTank" ChannelNumber="100002">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="WeightInTank" ChannelNumber="100003">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="155" Height="640" X="655" Y="185" Volume="21654" ColourVolumeBar="PipingFuel" Level="21653" ColourLevelBar="PipingFuel" Weight="21655" Density="21652" Sensor="21603" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" NormalColour="Orange" HighColour="AlarmRed" ID="FO Storage Tank 3SB"/>
+		<Frame Width="155" Height="640" X="1315" Y="185" Volume="21642" ColourVolumeBar="PipingFuel" Level="21641" ColourLevelBar="PipingFuel" Weight="21643" Density="21640" Sensor="21601" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" NormalColour="Orange" MAX="102" ID="FO Service Tank SB" Ch_value="0" VolumeInTank="12.3" weight_in_tank="12.6" WeightInTank="12.6" VolumeValueCh="0" Volume_In_tank="12.3" PercentFilledCh="0" HighColour="AlarmRed" Ch_Value="0" Tank_ID="Tank 7 SB" Ch._Value="0" Filled="0" FilledCh="0" WeightValueCh="0" SoundingValueCh="0" HIGH="100"/>
+		<Frame Width="155" Height="640" X="985" Y="185" Volume="21648" ColourVolumeBar="PipingFuel" Level="21647" ColourLevelBar="PipingFuel" Weight="21649" Density="21646" Sensor="21602" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" VolumeValueCh="0" SoundingValueCh="0" NormalColour="Orange" ID="FO Settling Tank SB" WeightValueCh="0" MAX="102" HighColour="AlarmRed" Filled="0" VolumeInTank="12.3" WeightInTank="12.6" Volume_In_tank="12.3" Ch._Value="0" PercentFilledCh="0" Tank_ID="Tank 6 SB" FilledCh="0" Ch_value="0" HIGH="100" weight_in_tank="12.6" Ch_Value="0"/>
+		<Frame Width="155" Height="640" X="1150" Y="185" Volume="11642" ColourVolumeBar="PipingFuel" Level="11641" ColourLevelBar="PipingFuel" Weight="11643" Density="11640" Sensor="11601" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" weight_in_tank="12.6" HIGH="100" WeightValueCh="0" Volume_In_tank="12.3" PercentFilledCh="0" MAX="102" HighColour="AlarmRed" NormalColour="Orange" VolumeInTank="12.3" SoundingValueCh="0" ID="FO Service Tank PS" Ch_value="0" FilledCh="0" WeightInTank="12.6" Ch_Value="0" Filled="0" VolumeValueCh="0" Tank_ID="Tank 7 PS" Ch._Value="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Filled" ChannelNumber="100001"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="155" Height="640" X="820" Y="185" Volume="11648" ColourVolumeBar="PipingFuel" Level="11647" ColourLevelBar="PipingFuel" Weight="11649" Density="11646" Sensor="11602" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" PercentFilledCh="100004" VolumeValueCh="0" Tank_ID="Tank 6 PS" NormalColour="Orange" Filled="0" weight_in_tank="12.6" WeightValueCh="0" FilledCh="0" VolumeInTank="12.3" HIGH="100" Volume_In_tank="12.3" HighColour="AlarmRed" Ch._Value="0" ID="FO Settling Tank PS" Ch_Value="0" Ch_value="0" SoundingValueCh="0" MAX="102" WeightInTank="12.6"/>
+		<TextBox Width="130" Height="30" X="170" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="FO Tank 6 PS"/>
+		<TextBox Width="130" Height="30" X="500" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="FO Tank 3 PS"/>
+		<TextBox Width="130" Height="30" X="1160" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="Service Tank PS"/>
+		<TextBox Width="130" Height="30" X="830" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="Settling Tank PS"/>
+		<TextBox Width="130" Height="30" X="335" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="FO Tank 6 SB"/>
+		<TextBox Width="130" Height="30" X="665" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="FO Tank 3 SB"/>
+		<TextBox Width="130" Height="30" X="1325" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="Service Tank SB"/>
+		<TextBox Width="130" Height="30" X="995" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="Settling Tank SB"/>
+		<Frame Width="155" Height="640" X="1645" Y="185" Volume="11660" ColourVolumeBar="PipingFuel" Level="11659" ColourLevelBar="PipingFuel" Weight="11661" Density="11658" Sensor="11604" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" PercentFilledCh="0" Ch_Value="0" HIGH="100" HighColour="AlarmRed" Ch_value="0" VolumeInTank="12.3" WeightInTank="12.6" Filled="0" VolumeValueCh="0" Ch._Value="0" WeightValueCh="0" SoundingValueCh="0" Volume_In_tank="12.3" MAX="102" Tank_ID="Tank 6 SB" NormalColour="Orange" ID="FO Settling Tank SB" weight_in_tank="12.6" FilledCh="0"/>
+		<TextBox Width="130" Height="30" X="1655" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="Fuel Oil Leak Tank"/>
+		<Frame Width="155" Height="640" X="1480" Y="185" Volume="21672" ColourVolumeBar="PipingFuel" Level="21671" ColourLevelBar="PipingFuel" Weight="21673" Density="21670" Sensor="21604" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax" HighColour="AlarmRed" NormalColour="Orange" ID="Overflow Tank"/>
+		<TextBox Width="130" Height="30" X="1490" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Segoe UI;18.0;N;N;N" Text="Overflow Tank"/>
+		<TextBox Width="85" Height="30" X="275" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Volume">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11691">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="200" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Volume"/>
+		<TextBox Width="90" Height="30" X="200" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Weight"/>
+		<TextBox Width="85" Height="30" X="275" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Weight">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11692">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="200" Height="30" X="200" Y="850" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Total PS"/>
+		<TextBox Width="45" Height="30" X="360" Y="925" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Ton"/>
+		<TextBox Width="45" Height="30" X="360" Y="890" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="m³"/>
+		<TextBox Width="85" Height="30" X="630" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Volume">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11693">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="555" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Volume"/>
+		<TextBox Width="90" Height="30" X="555" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Weight"/>
+		<TextBox Width="85" Height="30" X="630" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Weight">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11694">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="200" Height="30" X="555" Y="850" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Total"/>
+		<TextBox Width="45" Height="30" X="715" Y="925" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Ton"/>
+		<TextBox Width="45" Height="30" X="715" Y="890" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="m³"/>
+		<TextBox Width="85" Height="30" X="985" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Volume">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21691">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="910" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Volume"/>
+		<TextBox Width="90" Height="30" X="910" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Weight"/>
+		<TextBox Width="85" Height="30" X="985" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Weight">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21692">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="200" Height="30" X="910" Y="850" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Total SB"/>
+		<TextBox Width="45" Height="30" X="1070" Y="925" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Ton"/>
+		<TextBox Width="45" Height="30" X="1070" Y="890" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="m³"/>
+		<Line Color="TextInfoHeader" X0="200" Y0="885" X1="385" Y1="885"/>
+		<Line Color="TextInfoHeader" X0="555" Y0="885" X1="740" Y1="885"/>
+		<Line Color="TextInfoHeader" X0="910" Y0="885" X1="1095" Y1="885"/>
+		<Frame Width="410" Height="40" X="1390" Y="80" Path=".\Frames\Conning\Frame_Vessel_Draught.prax"/>
+	</Children>
+</RootElement>

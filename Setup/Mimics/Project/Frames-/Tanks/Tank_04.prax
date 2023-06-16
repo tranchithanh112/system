@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="550" Height="550" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Rectangle Width="550" Height="265" X="15" Y="15" BorderWidth="0" LightingStyle="Radial" CornerRoundRadius="10"/>
+		<Panel Width="550" Height="265" ClipToBounds="True" BorderStyle="Flat" BorderColor="InfoTextGrey" FillColor="Background" CornerRoundRadius="20">
+			<Children>
+				<TabPanel Width="520" Height="85" X="15" Y="90" ClipToBounds="True" HeaderVisible="False" SelectedPageIndex="1">
+					<Bindings>
+						<SelectFirstInt32Binding TargetPropertyName="SelectedPageIndex" SelectedValue0="1" SelectedValue1="1" DefaultValue="0">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="low_level_Ch"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="high_level_Ch"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstInt32Binding>
+					</Bindings>
+					<Children>
+						<TabPage GridSpacing="1" PageName="Page1">
+							<Children>
+								<TextBox Width="510" Height="55" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" VertAlignment="Baseline" TextColor="InfoTextGrey" Font="Praxis;60.0;N;N;N" Text="NORMAL">
+									<Bindings>
+										<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="normal_color"/>
+									</Bindings>
+								</TextBox>
+							</Children>
+						</TabPage>
+						<TabPage PageName="Page2">
+							<Children>
+								<TextBox FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="TextOnly" Width="510" Height="55" X="5" Y="15" BorderColor="Transparent" VertAlignment="Baseline" TextColor="InfoTextGrey" Font="Praxis;60.0;B;N;N" Text="NORMAL">
+									<Bindings>
+										<SelectFirstBoolBinding TargetPropertyName="Flash">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="low_level_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="high_level_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstBoolBinding>
+										<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="LEVEL LOW" SelectedValue1="LEVEL HIGH" DefaultValue="NORMAL">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="low_level_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="high_level_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstTextBinding>
+									</Bindings>
+								</TextBox>
+							</Children>
+						</TabPage>
+					</Children>
+				</TabPanel>
+				<TextBox Width="520" Height="70" X="15" Y="15" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;45.0;B;N;N" Text="DIRTY WATERTANK">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="upper_text"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="520" Height="70" X="15" Y="180" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;45.0;B;N;N" Text="DIRTY WATERTANK">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="lower_text"/>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

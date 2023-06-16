@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="154" Height="154" GridSpacing="2" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="98" Height="150" X="56" Y="4" BorderColor="InfoTextGrey" FillColor="GaugeBackground" HorzAlignment="Right" VertAlignment="Bottom" TextColor="InfoTextGrey" Font="Praxis;9.0;N;N;N" Text="23 m³">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Height" ExportedPropertyName="HeightView"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_MaxVolume"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_MaxVolume"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+								<ChannelUnitsBinding TargetPropertyName="Suffix">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_MaxVolume"/>
+									</Bindings>
+								</ChannelUnitsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="18" X="60" Y="82" BorderWidth="0.5" LightingStyle="Vertical" CornerRoundRadius="3" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;11.0;N;N;N" Text="Perc.">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Perc_Visible"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="18" X="60" Y="62" BorderWidth="0.5" LightingStyle="Vertical" CornerRoundRadius="3" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;11.0;N;N;N" Text="Vol.">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="CuM_Visible"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="18" X="60" Y="122" BorderWidth="0.5" LightingStyle="Vertical" CornerRoundRadius="3" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;11.0;N;N;N" Text="Weig.">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Weight_Visible"/>
+			</Bindings>
+		</TextBox>
+		<Ellipse BorderColor="InfoTextGrey" CenterX="105" CenterY="4" RadiusX="49" RadiusY="2"/>
+		<TextBox Width="70" Height="18" X="70" Y="22" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;12.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TankName2"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="70" Height="18" X="70" Y="8" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;12.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TankName1"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="18" X="60" Y="102" BorderWidth="0.5" LightingStyle="Vertical" CornerRoundRadius="3" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;11.0;N;N;N" Text="Level">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Meter_Visible"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="54" Height="14" X="94" Y="124" BorderWidth="0.5" BorderColor="ButtonOutline" CornerRoundRadius="3" HorzAlignment="Right" TextColor="Yellow" Font="Praxis;12.0;N;N;N" Text="23 kg">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Weight"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" ᵒC ">
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Weight"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+								<ChannelUnitsBinding TargetPropertyName="Suffix">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Weight"/>
+									</Bindings>
+								</ChannelUnitsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Weight_Visible"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Weight"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="54" Height="14" X="94" Y="64" BorderWidth="0.5" BorderColor="ButtonOutline" CornerRoundRadius="3" HorzAlignment="Right" TextColor="Yellow" Font="Praxis;12.0;N;N;N" Text="23 m³">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="CuM_Visible"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_CubM"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" m³"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_CubM"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="54" Height="14" X="94" Y="84" BorderWidth="0.5" BorderColor="ButtonOutline" CornerRoundRadius="3" HorzAlignment="Right" TextColor="Yellow" LeftRightPadding="4.5" Font="Praxis;12.0;N;N;N" Text="23 %">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Perc_Visible"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Perc"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" % "/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Perc"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="54" Height="14" X="94" Y="104" BorderWidth="0.5" BorderColor="ButtonOutline" CornerRoundRadius="3" HorzAlignment="Right" TextColor="Yellow" LeftRightPadding="4.5" Font="Praxis;12.0;N;N;N" Text="1234 m">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Meter_Visible"/>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_M"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" cm "/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_M"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="14" Height="150" X="40" Y="4" FillDirection="BottomToTop" LimitMarkerSize="0" LineWidth="1" BorderColor="InfoTextGrey" FillColor="Black" RoundingRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="LimitLowColor" ExportedPropertyName="BarColor_Low"/>
+				<FrameBinding TargetPropertyName="LimitHighColor" ExportedPropertyName="BarColor_High"/>
+				<ChannelFirstLimitBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Perc"/>
+					</Bindings>
+				</ChannelFirstLimitBinding>
+				<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Perc"/>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<ChannelLimitTypeBinding TargetPropertyName="LimitType">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Perc"/>
+					</Bindings>
+				</ChannelLimitTypeBinding>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Perc"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Perc_Visible"/>
+				<FrameBinding TargetPropertyName="Height" ExportedPropertyName="HeightView"/>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="BarColor"/>
+			</Bindings>
+		</FillBar>
+		<Panel Width="94" Height="22" X="58" Y="40" GridSpacing="2" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Alarm_Visible"/>
+			</Bindings>
+			<Children>
+				<TextBox Width="90" Height="18" X="2" Y="2" BorderWidth="0.5" LightingStyle="Vertical" CornerRoundRadius="3" HorzAlignment="Left" TextColor="InfoTextGrey" LeftRightPadding="20" Font="Praxis;11.0;N;N;N" Text="Level Hi.High">
+					<Bindings>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="Level Hi.High" SelectedValue1="Level Lo.Low" SelectedValue2="Level High" SelectedValue3="Level Low" DefaultValue="Normal">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_LAH"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_LAL"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_LALL"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_LAHH"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<Ellipse BorderWidth="0.5" BorderColor="Background" FillColor="SelectedTextBackground" LightingStyle="Radial" CenterX="12" CenterY="11" RadiusX="6" RadiusY="6">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_LAHH"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_LALL"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_LAH"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_LAL"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Ellipse>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

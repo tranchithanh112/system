@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="120" Height="120" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Bezier Width="0.5" LineColor="Cyan" ClosedOutline="True" FillColor="Background">
+			<Bindings>
+				<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="Vessel_Color"/>
+				<FrameBinding TargetPropertyName="LineColor" ExportedPropertyName="Outline_Color"/>
+			</Bindings>
+			<Points>
+				<Point Coord="47;112"/>
+				<Point Coord="32;37"/>
+				<Point Coord="57;7"/>
+				<Point Coord="60;7"/>
+				<Point Coord="88;37"/>
+				<Point Coord="73;112"/>
+			</Points>
+		</Bezier>
+		<Line Visible="False" Color="Black" X0="60" Y0="62" X1="60" Y1="-63" P1CapStyle="Arrow" P1CapSize="7">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Line_Visible"/>
+			</Bindings>
+		</Line>
+	</Children>
+</RootElement>

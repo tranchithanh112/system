@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Frame Width="1425" Height="50" X="425" Y="10" Path="..\recentalarmlog\frame_recentalarms.prax"/>
+		<TextBox Width="200" Height="50" X="10" Y="10" BorderWidth="0" FillColor="PageInfoLine" CornerRoundRadius="10" Font="Segoe UI;26.0;B;N;N" Text="PMS Simulator"/>
+		<Button Width="40" Height="40" X="1865" Y="15" ClipToBounds="True" Text="X" FillColor="Transparent" Font="Segoe UI;26.0;N;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="60"/>
+			</ClickActions>
+		</Button>
+		<Button Width="30" Height="30" X="180" Y="690" Text="" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="95080"/>
+			</ClickActions>
+		</Button>
+		<Button Width="30" Height="30" X="190" Y="770" Text="" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="95081"/>
+			</ClickActions>
+		</Button>
+		<Button Width="30" Height="30" X="180" Y="850" Text="" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="95082"/>
+			</ClickActions>
+		</Button>
+		<Button Width="30" Height="30" X="190" Y="930" Text="" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="95083"/>
+			</ClickActions>
+		</Button>
+		<Button Width="30" Height="30" X="1150" Y="850" Text="" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="95085"/>
+			</ClickActions>
+		</Button>
+		<Button Width="30" Height="30" X="1270" Y="930" Text="" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<PulseChannelClickAction ChannelNumber="95084"/>
+			</ClickActions>
+		</Button>
+		<Line X0="60" Y0="760" X1="60" Y1="750"/>
+		<Line X0="60" Y0="840" X1="60" Y1="830"/>
+		<Line X0="60" Y0="920" X1="60" Y1="910"/>
+		<Line X0="60" Y0="1000" X1="60" Y1="990"/>
+		<FillBar Width="3" Height="400" X="1799" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95854"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="90" Height="30" X="9" Y="569" BorderColor="ButtonOutline" FillColor="Foreground" HorzAlignment="Left" TextColor="Background" Font="Segoe UI;18.0;B;N;N" Text="GRID#"/>
+		<Frame Width="120" Height="350" X="30" Y="200" GEN_SEQ="61089" GEN_VOLT="95143" GEN_FREQ="95144" SIM_PMS="95123" SIM_REM="95122" SIM_START_FAIL="95124" SIM_RUNNING="95120" SIM_ENERGIZED="95148" BLOCK="95155" SIM_BUS="95154" SIM_READY="95119" GEN_CB="95121" NOT_PRESENT="95159" GEN_KW_PERC="95149" GEN_KVAR_PERC="95150" GEN_AMP="95145" GEN_KW="61045" GEN_KVAR="61047" NOM_VOLT="95162" NOM_FREQ="95163" NOM_AMP="95166" NOM_KW="95167" NOM_KVAR="95164" COS_PHI="95165" BUS_VOLT="95141" BUS_FREQ="95142" Path=".\Frames\GEN_SIM.prax" CHANNEL_NOMKW="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_NOMKVAR="(Text)" CHANNEL_NOMAMP="(Text)" SIM_NOT_PRESENT="False" CHANNEL_GENKVAR_PERC="50" CHANNEL_GENAMP="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_GENKVAR="(Text)" CHANNEL_GENVOLT="(Text)" SIM_BLOCK="-1" CHANNEL_GENFREQ="(Text)" CHANNEL_VOLT="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95168"/>
+			</Bindings>
+		</Frame>
+		<FillBar Width="3" Height="400" X="119" Y="599" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95154"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="40" Height="30" X="59" Y="569" BorderWidth="0" FillColor="Transparent" TextColor="Cyan" Font="Segoe UI;18.0;B;N;N" Text="-1">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95040">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Ellipse CenterX="60" CenterY="740" RadiusX="10" RadiusY="10"/>
+		<TextBox Width="20" Height="20" X="50" Y="730" BorderWidth="0" BorderColor="ButtonOutline" FillColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="2"/>
+		<Ellipse CenterX="60" CenterY="820" RadiusX="10" RadiusY="10"/>
+		<TextBox Width="20" Height="20" X="50" Y="810" BorderWidth="0" BorderColor="ButtonOutline" FillColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="3"/>
+		<Ellipse CenterX="60" CenterY="900" RadiusX="10" RadiusY="10"/>
+		<TextBox Width="20" Height="20" X="50" Y="890" BorderWidth="0" BorderColor="ButtonOutline" FillColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="4"/>
+		<Ellipse CenterX="60" CenterY="980" RadiusX="10" RadiusY="10"/>
+		<TextBox Width="20" Height="20" X="50" Y="970" BorderWidth="0" BorderColor="ButtonOutline" FillColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="5"/>
+		<TextBox Height="30" X="850" Y="570" BorderColor="ButtonOutline" FillColor="Foreground" TextColor="Background" Font="Segoe UI;18.0;B;N;N" Text="ACTUAL"/>
+		<Line X0="120" Y0="619" X1="120" Y1="549"/>
+		<Rectangle Height="80" X="850" Y="600"/>
+		<TextBox Width="60" Height="20" X="850" Y="640" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95001">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="910" Y="640" Font="Segoe UI;18.0;B;N;N" Text="V"/>
+		<TextBox Width="40" Height="20" X="910" Y="660" Font="Segoe UI;18.0;B;N;N" Text="Hz"/>
+		<TextBox Width="60" Height="20" X="850" Y="660" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95006">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Height="80" X="850" Y="680"/>
+		<TextBox Width="60" Height="21" X="850" Y="720" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95002">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="910" Y="720" Font="Segoe UI;18.0;B;N;N" Text="V"/>
+		<TextBox Width="40" Height="20" X="910" Y="740" Font="Segoe UI;18.0;B;N;N" Text="Hz"/>
+		<TextBox Width="60" Height="19" X="850" Y="741" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95007">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="1800" Height="3" X="49" Y="678" BorderColor="Background" FillColor="Foreground"/>
+		<Rectangle Height="80" X="850" Y="760"/>
+		<TextBox Width="60" Height="20" X="850" Y="800" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95003">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="910" Y="800" Font="Segoe UI;18.0;B;N;N" Text="V"/>
+		<TextBox Width="40" Height="20" X="910" Y="820" Font="Segoe UI;18.0;B;N;N" Text="Hz"/>
+		<TextBox Width="60" Height="20" X="850" Y="820" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95008">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Height="80" X="850" Y="840"/>
+		<TextBox Width="60" Height="20" X="850" Y="880" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95004">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="910" Y="880" Font="Segoe UI;18.0;B;N;N" Text="V"/>
+		<TextBox Width="40" Height="20" X="910" Y="900" Font="Segoe UI;18.0;B;N;N" Text="Hz"/>
+		<TextBox Width="60" Height="20" X="850" Y="900" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95009">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Height="80" X="850" Y="920"/>
+		<TextBox Width="60" Height="20" X="850" Y="960" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95005">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="910" Y="960" Font="Segoe UI;18.0;B;N;N" Text="V"/>
+		<TextBox Width="40" Height="20" X="910" Y="980" Font="Segoe UI;18.0;B;N;N" Text="Hz"/>
+		<TextBox Width="60" Height="20" X="850" Y="980" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95010">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="1800" Height="3" X="49" Y="758" BorderColor="Background" FillColor="Foreground"/>
+		<Rectangle Width="1800" Height="3" X="49" Y="839" BorderColor="Background" FillColor="Foreground"/>
+		<Rectangle Width="1800" Height="3" X="49" Y="919" BorderColor="Background" FillColor="Foreground"/>
+		<Rectangle Width="1800" Height="3" X="49" Y="999" BorderColor="Background" FillColor="Foreground"/>
+		<Rectangle Width="10" Height="10" X="144" Y="689"/>
+		<Rectangle Width="10" Height="10" X="144" Y="739"/>
+		<Line Width="3" X0="139" Y0="699" X1="139" Y1="739">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Background" DefaultValue="Foreground">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95068"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="149" Y0="699" X1="149" Y1="739">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Foreground" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95068"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line X0="149" Y0="689" X1="149" Y1="679"/>
+		<Line X0="149" Y0="759" X1="149" Y1="749"/>
+		<Line X0="149" Y0="919" X1="149" Y1="909"/>
+		<Line X0="149" Y0="849" X1="149" Y1="839"/>
+		<Rectangle Width="10" Height="10" X="144" Y="849"/>
+		<Rectangle Width="10" Height="10" X="144" Y="899"/>
+		<Rectangle Width="10" Height="10" X="164" Y="769"/>
+		<Rectangle Width="10" Height="10" X="164" Y="819"/>
+		<Line X0="169" Y0="769" X1="169" Y1="759"/>
+		<Line X0="169" Y0="839" X1="169" Y1="829"/>
+		<Rectangle Width="10" Height="10" X="164" Y="929"/>
+		<Rectangle Width="10" Height="10" X="164" Y="979"/>
+		<Line X0="169" Y0="929" X1="169" Y1="919"/>
+		<Line X0="169" Y0="999" X1="169" Y1="989"/>
+		<Line X0="241" Y0="619" X1="241" Y1="549"/>
+		<Line X0="360" Y0="619" X1="360" Y1="549"/>
+		<Line X0="480" Y0="619" X1="480" Y1="549"/>
+		<FillBar Width="3" Height="400" X="239" Y="599" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95184"/>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="3" Height="400" X="359" Y="599" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95254"/>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="3" Height="400" X="479" Y="599" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95284"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Height="30" X="1810" Y="570" BorderColor="ButtonOutline" FillColor="Foreground" TextColor="Background" Font="Segoe UI;18.0;B;N;N" Text="LOAD"/>
+		<Rectangle Height="80" X="1810" Y="600"/>
+		<TextBox Width="60" Height="20" X="1810" Y="640" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95011">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95011"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="1870" Y="640" Font="Segoe UI;18.0;B;N;N" Text="kVa"/>
+		<TextBox Width="60" Height="20" X="1810" Y="660" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95016">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95016"/>
+			</TextEnteredActions>
+		</TextBox>
+		<Line X0="1800" Y0="620" X1="1800" Y1="550"/>
+		<TextBox Width="40" Height="20" X="1870" Y="660" Font="Segoe UI;18.0;B;N;N" Text="ϕ"/>
+		<Rectangle Height="80" X="1810" Y="680"/>
+		<TextBox Width="60" Height="20" X="1810" Y="720" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95012">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95012"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="1870" Y="720" Font="Segoe UI;18.0;B;N;N" Text="kVa"/>
+		<TextBox Width="60" Height="20" X="1810" Y="740" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95017">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95017"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="1870" Y="740" Font="Segoe UI;18.0;B;N;N" Text="ϕ"/>
+		<Rectangle Height="80" X="1810" Y="760"/>
+		<TextBox Width="60" Height="20" X="1810" Y="800" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95013">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95013"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="1870" Y="800" Font="Segoe UI;18.0;B;N;N" Text="kVa"/>
+		<TextBox Width="60" Height="20" X="1810" Y="820" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95018">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95018"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="1870" Y="820" Font="Segoe UI;18.0;B;N;N" Text="ϕ"/>
+		<Rectangle Height="80" X="1810" Y="840"/>
+		<TextBox Width="60" Height="20" X="1810" Y="880" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95014">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95014"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="1870" Y="880" Font="Segoe UI;18.0;B;N;N" Text="kVa"/>
+		<TextBox Width="60" Height="20" X="1810" Y="900" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95019">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95019"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="1870" Y="900" Font="Segoe UI;18.0;B;N;N" Text="ϕ"/>
+		<Rectangle Height="80" X="1810" Y="920"/>
+		<TextBox Width="60" Height="20" X="1810" Y="960" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95015">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95015"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="1870" Y="960" Font="Segoe UI;18.0;B;N;N" Text="kVa"/>
+		<TextBox Width="60" Height="20" X="1810" Y="980" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95020">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95020"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="1870" Y="980" Font="Segoe UI;18.0;B;N;N" Text="ϕ"/>
+		<Ellipse CenterX="60" CenterY="660" RadiusX="10" RadiusY="10"/>
+		<TextBox Width="20" Height="19" X="50" Y="650" BorderWidth="0" BorderColor="ButtonOutline" FillColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="1"/>
+		<Frame Width="120" Height="350" X="150" Y="200" GEN_SEQ="62089" GEN_VOLT="95173" GEN_FREQ="95174" SIM_PMS="95132" SIM_REM="95131" SIM_START_FAIL="95133" SIM_RUNNING="95129" SIM_ENERGIZED="95178" BLOCK="95185" SIM_BUS="95184" SIM_READY="95128" GEN_CB="95130" NOT_PRESENT="95189" GEN_KW_PERC="95179" GEN_KVAR_PERC="95180" GEN_AMP="95175" GEN_KW="62045" GEN_KVAR="62047" NOM_VOLT="95192" NOM_FREQ="95193" NOM_AMP="95196" NOM_KW="95197" NOM_KVAR="95194" COS_PHI="95195" BUS_VOLT="95171" BUS_FREQ="95172" Path=".\Frames\GEN_SIM.prax" SIM_NOT_PRESENT="False" CHANNEL_GENAMP="(Text)" CHANNEL_NOMKW="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_NOMKVAR="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_GENFREQ="(Text)" SIM_BLOCK="-1" CHANNEL_GENKVAR="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_GENVOLT="(Text)" CHANNEL_VOLT="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95198"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="270" Y="200" GEN_SEQ="63089" GEN_VOLT="95243" GEN_FREQ="95244" SIM_PMS="95223" SIM_REM="95222" SIM_START_FAIL="95224" SIM_RUNNING="95220" SIM_ENERGIZED="95248" BLOCK="95255" SIM_BUS="95254" SIM_READY="95219" GEN_CB="95221" NOT_PRESENT="95259" GEN_KW_PERC="95249" GEN_KVAR_PERC="95250" GEN_AMP="95245" GEN_KW="63045" GEN_KVAR="63047" NOM_VOLT="95262" NOM_FREQ="95263" NOM_AMP="95266" NOM_KW="95267" NOM_KVAR="95264" COS_PHI="95265" BUS_VOLT="95241" BUS_FREQ="95242" Path=".\Frames\GEN_SIM.prax" CHANNEL_GENFREQ="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_GENVOLT="(Text)" SIM_BLOCK="-1" CHANNEL_NOMKW="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_NOMKVAR="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_GENAMP="(Text)" CHANNEL_GENKVAR="(Text)" SIM_NOT_PRESENT="False">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95268"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="390" Y="200" GEN_SEQ="64089" GEN_VOLT="95273" GEN_FREQ="95274" SIM_PMS="95232" SIM_REM="95231" SIM_START_FAIL="95233" SIM_RUNNING="95229" SIM_ENERGIZED="95278" BLOCK="95285" SIM_BUS="95284" SIM_READY="95228" GEN_CB="95230" NOT_PRESENT="95289" GEN_KW_PERC="95279" GEN_KVAR_PERC="95280" GEN_AMP="95275" GEN_KW="64045" GEN_KVAR="64047" NOM_VOLT="95292" NOM_FREQ="95293" NOM_AMP="95296" NOM_KW="95297" NOM_KVAR="95294" COS_PHI="95295" BUS_VOLT="95271" BUS_FREQ="95272" Path=".\Frames\GEN_SIM.prax" CHANNEL_GENVOLT="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_NOMKW="(Text)" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENKVAR="(Text)" CHANNEL_NOMAMP="(Text)" SIM_BLOCK="-1" CHANNEL_GENFREQ="(Text)" CHANNEL_GENKVAR_PERC="50" SIM_NOT_PRESENT="False" CHANNEL_GENKW="(Text)" CHANNEL_GENAMP="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_NOMVOLT="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95298"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1710" Y="200" GEN_SEQ="75089" GEN_VOLT="95843" GEN_FREQ="95844" SIM_PMS="95823" SIM_REM="95822" SIM_START_FAIL="95824" SIM_RUNNING="95820" SIM_ENERGIZED="95848" BLOCK="95855" SIM_BUS="95854" SIM_READY="95819" GEN_CB="95821" NOT_PRESENT="95859" GEN_KW_PERC="95849" GEN_KVAR_PERC="95850" GEN_AMP="95845" GEN_KW="75045" GEN_KVAR="75047" NOM_VOLT="95862" NOM_FREQ="95863" NOM_AMP="95866" NOM_KW="95867" NOM_KVAR="95864" COS_PHI="95865" BUS_VOLT="95841" BUS_FREQ="95842" Path=".\Frames\GEN_SIM.prax" CHANNEL_GENKVAR="(Text)" CHANNEL_GENKVAR_PERC="50" SIM_NOT_PRESENT="False" CHANNEL_GENAMP="(Text)" SIM_BLOCK="-1" CHANNEL_VOLT="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_NOMVOLT="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_NOMKW="(Text)" CHANNEL_GENFREQ="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_NOMKVAR="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95868"/>
+			</Bindings>
+		</Frame>
+		<Line X0="60" Y0="680" X1="60" Y1="670"/>
+		<Frame Width="120" Height="350" X="510" Y="200" GEN_SEQ="65089" GEN_VOLT="95343" GEN_FREQ="95344" SIM_PMS="95323" SIM_REM="95322" SIM_START_FAIL="95324" SIM_RUNNING="95320" SIM_ENERGIZED="95348" BLOCK="95355" SIM_BUS="95354" SIM_READY="95319" GEN_CB="95321" NOT_PRESENT="95359" GEN_KW_PERC="95349" GEN_KVAR_PERC="95350" GEN_AMP="95345" GEN_KW="65045" GEN_KVAR="65047" NOM_VOLT="95362" NOM_FREQ="95363" NOM_AMP="95366" NOM_KW="95367" NOM_KVAR="95364" COS_PHI="95365" BUS_VOLT="95341" BUS_FREQ="95342" Path=".\Frames\GEN_SIM.prax" CHANNEL_NOMAMP="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENAMP="(Text)" CHANNEL_NOMKW="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENKW="(Text)" SIM_NOT_PRESENT="False" CHANNEL_NOMVOLT="(Text)" CHANNEL_GENKVAR="(Text)" CHANNEL_GENFREQ="(Text)" SIM_BLOCK="-1" CHANNEL_GENKW_PERC="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95368"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="630" Y="200" GEN_SEQ="66089" GEN_VOLT="95373" GEN_FREQ="95374" SIM_PMS="95332" SIM_REM="95331" SIM_START_FAIL="95333" SIM_RUNNING="95329" SIM_ENERGIZED="95378" BLOCK="95385" SIM_BUS="95384" SIM_READY="95328" GEN_CB="95330" NOT_PRESENT="95389" GEN_KW_PERC="95379" GEN_KVAR_PERC="95380" GEN_AMP="95375" GEN_KW="66045" GEN_KVAR="66047" NOM_VOLT="95392" NOM_FREQ="95393" NOM_AMP="95396" NOM_KW="95397" NOM_KVAR="95394" COS_PHI="95395" BUS_VOLT="95371" BUS_FREQ="95372" Path=".\Frames\GEN_SIM.prax" CHANNEL_GENKW_PERC="50" CHANNEL_GENFREQ="(Text)" SIM_NOT_PRESENT="False" CHANNEL_NOMKW="(Text)" CHANNEL_NOMKVAR="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENAMP="(Text)" CHANNEL_GENKVAR="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_VOLT="(Text)" SIM_BLOCK="-1" CHANNEL_NOMAMP="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_GENKW="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95398"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="750" Y="200" GEN_SEQ="67089" GEN_VOLT="95443" GEN_FREQ="95444" SIM_PMS="95423" SIM_REM="95422" SIM_START_FAIL="95424" SIM_RUNNING="95420" SIM_ENERGIZED="95448" BLOCK="95455" SIM_BUS="95454" SIM_READY="95419" GEN_CB="95421" NOT_PRESENT="95459" GEN_KW_PERC="95449" GEN_KVAR_PERC="95450" GEN_AMP="95445" GEN_KW="67045" GEN_KVAR="67047" NOM_VOLT="95462" NOM_FREQ="95463" NOM_AMP="95466" NOM_KW="95467" NOM_KVAR="95464" COS_PHI="95465" BUS_VOLT="95441" BUS_FREQ="95442" Path=".\Frames\GEN_SIM.prax" CHANNEL_GENKVAR_PERC="50" CHANNEL_GENKW="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENKVAR="(Text)" CHANNEL_GENAMP="(Text)" CHANNEL_GENFREQ="(Text)" CHANNEL_NOMKW="(Text)" SIM_NOT_PRESENT="False" CHANNEL_GENVOLT="(Text)" CHANNEL_NOMVOLT="(Text)" SIM_BLOCK="-1" CHANNEL_GENKW_PERC="50" CHANNEL_NOMKVAR="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95468"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="870" Y="200" GEN_SEQ="68089" GEN_VOLT="95473" GEN_FREQ="95474" SIM_PMS="95432" SIM_REM="95431" SIM_START_FAIL="95433" SIM_RUNNING="95429" SIM_ENERGIZED="95478" BLOCK="95485" SIM_BUS="95484" SIM_READY="95428" GEN_CB="95430" NOT_PRESENT="95489" GEN_KW_PERC="95479" GEN_KVAR_PERC="95480" GEN_AMP="95475" GEN_KW="68045" GEN_KVAR="68047" NOM_VOLT="95492" NOM_FREQ="95493" NOM_AMP="95496" NOM_KW="95497" NOM_KVAR="95494" COS_PHI="95495" BUS_VOLT="95471" BUS_FREQ="95472" Path=".\Frames\GEN_SIM.prax" CHANNEL_GENKW_PERC="50" CHANNEL_GENKVAR_PERC="50" CHANNEL_VOLT="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_NOMKW="(Text)" CHANNEL_GENFREQ="(Text)" SIM_NOT_PRESENT="False" SIM_BLOCK="-1" CHANNEL_GENKW="(Text)" CHANNEL_GENAMP="(Text)" CHANNEL_GENKVAR="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_NOMKVAR="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENVOLT="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95498"/>
+			</Bindings>
+		</Frame>
+		<Line X0="600" Y0="620" X1="600" Y1="550"/>
+		<FillBar Width="3" Height="400" X="599" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95354"/>
+			</Bindings>
+		</FillBar>
+		<Line X0="720" Y0="620" X1="720" Y1="550"/>
+		<FillBar Width="3" Height="400" X="719" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95384"/>
+			</Bindings>
+		</FillBar>
+		<Line X0="840" Y0="620" X1="840" Y1="550"/>
+		<FillBar Width="3" Height="400" X="839" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95454"/>
+			</Bindings>
+		</FillBar>
+		<Line X0="961" Y0="620" X1="961" Y1="550"/>
+		<FillBar Width="3" Height="400" X="960" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95484"/>
+			</Bindings>
+		</FillBar>
+		<Frame Width="120" Height="350" X="990" Y="200" GEN_SEQ="69089" GEN_VOLT="95543" GEN_FREQ="95544" SIM_PMS="95523" SIM_REM="95522" SIM_START_FAIL="95524" SIM_RUNNING="95520" SIM_ENERGIZED="95548" BLOCK="95555" SIM_BUS="95554" SIM_READY="95519" GEN_CB="95521" NOT_PRESENT="95559" GEN_KW_PERC="95549" GEN_KVAR_PERC="95550" GEN_AMP="95545" GEN_KW="69045" GEN_KVAR="69047" NOM_VOLT="95562" NOM_FREQ="95563" NOM_AMP="95566" NOM_KW="95567" NOM_KVAR="95564" COS_PHI="95565" BUS_VOLT="95541" BUS_FREQ="95542" Path=".\Frames\GEN_SIM.prax" CHANNEL_GENKW_PERC="50" SIM_BLOCK="-1" CHANNEL_GENKW="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_NOMVOLT="(Text)" SIM_NOT_PRESENT="False" CHANNEL_NOMFREQ="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_NOMKW="(Text)" CHANNEL_GENFREQ="(Text)" CHANNEL_GENAMP="(Text)" CHANNEL_GENKVAR="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95568"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1110" Y="200" GEN_SEQ="70089" GEN_VOLT="95573" GEN_FREQ="95574" SIM_PMS="95532" SIM_REM="95531" SIM_START_FAIL="95533" SIM_RUNNING="95529" SIM_ENERGIZED="95578" BLOCK="95585" SIM_BUS="95584" SIM_READY="95528" GEN_CB="95530" NOT_PRESENT="95589" GEN_KW_PERC="95579" GEN_KVAR_PERC="95580" GEN_AMP="95575" GEN_KW="70045" GEN_KVAR="70047" NOM_VOLT="95592" NOM_FREQ="95593" NOM_AMP="95596" NOM_KW="95597" NOM_KVAR="95594" COS_PHI="95595" BUS_VOLT="95571" BUS_FREQ="95572" Path=".\Frames\GEN_SIM.prax" CHANNEL_NOMKW="(Text)" SIM_NOT_PRESENT="False" CHANNEL_GENAMP="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENKVAR="(Text)" CHANNEL_GENFREQ="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_VOLT="(Text)" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_GENKVAR_PERC="50" SIM_BLOCK="-1">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95598"/>
+			</Bindings>
+		</Frame>
+		<Line X0="1080" Y0="620" X1="1080" Y1="550"/>
+		<FillBar Width="3" Height="400" X="1079" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95554"/>
+			</Bindings>
+		</FillBar>
+		<Line X0="1200" Y0="620" X1="1200" Y1="550"/>
+		<FillBar Width="3" Height="400" X="1199" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95584"/>
+			</Bindings>
+		</FillBar>
+		<Frame Width="120" Height="350" X="1230" Y="200" GEN_SEQ="71089" GEN_VOLT="95643" GEN_FREQ="95644" SIM_PMS="95623" SIM_REM="95622" SIM_START_FAIL="95624" SIM_RUNNING="95620" SIM_ENERGIZED="95648" BLOCK="95655" SIM_BUS="95654" SIM_READY="95619" GEN_CB="95621" NOT_PRESENT="95659" GEN_KW_PERC="95649" GEN_KVAR_PERC="95650" GEN_AMP="95645" GEN_KW="70045" GEN_KVAR="70047" NOM_VOLT="95662" NOM_FREQ="95663" NOM_AMP="95666" NOM_KW="95667" NOM_KVAR="95664" COS_PHI="95665" BUS_VOLT="95641" BUS_FREQ="95642" Path=".\Frames\GEN_SIM.prax" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_NOMKW="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_GENKVAR="(Text)" CHANNEL_GENFREQ="(Text)" SIM_BLOCK="-1" CHANNEL_GENAMP="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_GENKVAR_PERC="50" SIM_NOT_PRESENT="False">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95668"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1350" Y="200" GEN_SEQ="72089" GEN_VOLT="95673" GEN_FREQ="95674" SIM_PMS="95632" SIM_REM="95631" SIM_START_FAIL="95633" SIM_RUNNING="95629" SIM_ENERGIZED="95678" BLOCK="95685" SIM_BUS="95684" SIM_READY="95628" GEN_CB="95630" NOT_PRESENT="95689" GEN_KW_PERC="95679" GEN_KVAR_PERC="95680" GEN_AMP="95675" GEN_KW="72045" GEN_KVAR="72047" NOM_VOLT="95692" NOM_FREQ="95693" NOM_AMP="95696" NOM_KW="95697" NOM_KVAR="95694" COS_PHI="95695" BUS_VOLT="95671" BUS_FREQ="95672" Path=".\Frames\GEN_SIM.prax" CHANNEL_NOMAMP="(Text)" CHANNEL_NOMKW="(Text)" CHANNEL_GENVOLT="(Text)" SIM_BLOCK="-1" CHANNEL_GENKW="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_GENFREQ="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENAMP="(Text)" SIM_NOT_PRESENT="False" CHANNEL_GENKVAR="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95698"/>
+			</Bindings>
+		</Frame>
+		<Line X0="1320" Y0="620" X1="1320" Y1="550"/>
+		<FillBar Width="3" Height="400" X="1319" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95654"/>
+			</Bindings>
+		</FillBar>
+		<Line X0="1440" Y0="620" X1="1440" Y1="550"/>
+		<FillBar Width="3" Height="400" X="1439" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95684"/>
+			</Bindings>
+		</FillBar>
+		<Frame Width="120" Height="350" X="1470" Y="200" GEN_SEQ="73089" GEN_VOLT="95743" GEN_FREQ="95744" SIM_PMS="95723" SIM_REM="95722" SIM_START_FAIL="95724" SIM_RUNNING="95720" SIM_ENERGIZED="95748" BLOCK="95755" SIM_BUS="95754" SIM_READY="95719" GEN_CB="95721" NOT_PRESENT="95759" GEN_KW_PERC="95749" GEN_KVAR_PERC="95750" GEN_AMP="95745" GEN_KW="73045" GEN_KVAR="73047" NOM_VOLT="95762" NOM_FREQ="95763" NOM_AMP="95766" NOM_KW="95767" NOM_KVAR="95664" COS_PHI="95765" BUS_VOLT="95741" BUS_FREQ="95742" Path=".\Frames\GEN_SIM.prax" SIM_BLOCK="-1" CHANNEL_NOMFREQ="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_NOMKW="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_GENFREQ="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_VOLT="(Text)" CHANNEL_GENAMP="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_NOMKVAR="(Text)" SIM_NOT_PRESENT="False" CHANNEL_GENKVAR_PERC="50" CHANNEL_GENKVAR="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95768"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1590" Y="200" GEN_SEQ="74089" GEN_VOLT="95773" GEN_FREQ="95774" SIM_PMS="95732" SIM_REM="95731" SIM_START_FAIL="95733" SIM_RUNNING="95729" SIM_ENERGIZED="95778" BLOCK="95785" SIM_BUS="95784" SIM_READY="95728" GEN_CB="95730" NOT_PRESENT="95789" GEN_KW_PERC="95779" GEN_KVAR_PERC="95780" GEN_AMP="95775" GEN_KW="74045" GEN_KVAR="74047" NOM_VOLT="95792" NOM_FREQ="95793" NOM_AMP="95796" NOM_KW="95797" NOM_KVAR="95794" COS_PHI="95795" BUS_VOLT="95771" BUS_FREQ="95772" Path=".\Frames\GEN_SIM.prax" SIM_NOT_PRESENT="False" SIM_BLOCK="-1" CHANNEL_GENAMP="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_GENKVAR="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_VOLT="(Text)" CHANNEL_NOMKW="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENFREQ="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_GENKW="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95798"/>
+			</Bindings>
+		</Frame>
+		<Line X0="1560" Y0="620" X1="1560" Y1="550"/>
+		<FillBar Width="3" Height="400" X="1559" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95754"/>
+			</Bindings>
+		</FillBar>
+		<Line X0="1680" Y0="620" X1="1680" Y1="550"/>
+		<FillBar Width="3" Height="400" X="1679" Y="600" FillDirection="TopToBottom" RangeEnd="5" LimitType="None" LimitMarkerType="None" Value="5" NormalColor="Foreground" LimitLowColor="Foreground" LimitHighColor="Foreground" BorderColor="Background">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95784"/>
+			</Bindings>
+		</FillBar>
+		<Frame Width="120" Height="350" X="150" Y="200" GEN_VOLT="95173" GEN_FREQ="95174" SIM_BUS="95184" GEN_CB="95130" NOT_PRESENT="95189" BUS_VOLT="95171" BUS_FREQ="95172" SIM_PMS="95132" Path=".\Frames\BT_SIM.prax" CHANNEL_GENKVAR="(Text)" CHANNEL_NOMFREQ="(Text)" NOM_FREQ="95193" CHANNEL_VOLT="(Text)" GEN_KVAR_PERC="95180" CHANNEL_GENAMP="(Text)" SIM_REM="95131" CHANNEL_GENFREQ="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_NOMKW="(Text)" SIM_START_FAIL="95133" SIM_BLOCK="-1" COS_PHI="95195" SIM_RUNNING="95129" GEN_KW="62045" GEN_KW_PERC="95179" NOM_KW="95197" SIM_READY="95128" GEN_KVAR="62047" SIM_NOT_PRESENT="False" CHANNEL_GENKW="(Text)" CHANNEL_NOMKVAR="(Text)" GEN_AMP="95175" CHANNEL_GENKVAR_PERC="50" CHANNEL_NOMVOLT="(Text)" NOM_VOLT="95192" BLOCK="95185" GEN_SEQ="62089" CHANNEL_GENKW_PERC="50" NOM_AMP="95196" SIM_ENERGIZED="95178" CHANNEL_NOMAMP="(Text)" NOM_KVAR="95194">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="62321"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="30" Height="20" X="170" Y="740" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="PMS-">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95086"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="180" Y="730" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="ABT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95086"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="200" Y="740" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Left" Font="Segoe UI;10.0;B;N;N" Text="XP">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95086"/>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95092">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="180" Y="820" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="PMS-">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95087"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="190" Y="810" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="ABT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95087"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="210" Y="820" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Left" Font="Segoe UI;10.0;B;N;N" Text="XP">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95087"/>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95093">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="160" Y="900" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="PMS-">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95088"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="170" Y="890" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="ABT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95088"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="190" Y="900" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Left" Font="Segoe UI;10.0;B;N;N" Text="XP">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95088"/>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95094">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="180" Y="980" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="PMS-">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95089"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="190" Y="970" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="ABT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95089"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="210" Y="980" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Left" Font="Segoe UI;10.0;B;N;N" Text="XP">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95089"/>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95095">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Line X0="1130" Y0="920" X1="1130" Y1="910"/>
+		<Line X0="1130" Y0="850" X1="1130" Y1="680">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95091"/>
+			</Bindings>
+		</Line>
+		<Rectangle Width="10" Height="10" X="1125" Y="850"/>
+		<Rectangle Width="10" Height="10" X="1125" Y="900"/>
+		<TextBox Width="30" Height="20" X="1140" Y="900" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="PMS-">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95091"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="1150" Y="890" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="ABT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95091"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="1170" Y="900" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Left" Font="Segoe UI;10.0;B;N;N" Text="XP">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95097">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95091"/>
+			</Bindings>
+		</TextBox>
+		<Line X0="1250" Y0="1000" X1="1250" Y1="990"/>
+		<Line X0="1250" Y0="930" X1="1250" Y1="680">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95090"/>
+			</Bindings>
+		</Line>
+		<Rectangle Width="10" Height="10" X="1245" Y="930"/>
+		<Rectangle Width="10" Height="10" X="1245" Y="980"/>
+		<TextBox Width="30" Height="20" X="1260" Y="980" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="PMS-">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95090"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="1270" Y="970" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;10.0;B;N;N" Text="ABT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95090"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="20" X="1290" Y="980" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" HorzAlignment="Left" Font="Segoe UI;10.0;B;N;N" Text="XP">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="95090"/>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95096">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Frame Width="120" Height="350" X="30" Y="200" GEN_VOLT="95143" GEN_FREQ="95144" SIM_BUS="95154" GEN_CB="95121" NOT_PRESENT="95159" BUS_VOLT="95141" BUS_FREQ="95142" SIM_PMS="95123" Path=".\Frames\BT_SIM.prax" GEN_KVAR="62047" SIM_START_FAIL="95133" SIM_REM="95131" SIM_BLOCK="-1" GEN_SEQ="62089" GEN_AMP="95175" CHANNEL_NOMFREQ="(Text)" NOM_KVAR="95194" CHANNEL_GENKVAR="(Text)" SIM_RUNNING="95129" NOM_KW="95197" CHANNEL_GENVOLT="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_NOMVOLT="(Text)" GEN_KVAR_PERC="95180" SIM_NOT_PRESENT="False" CHANNEL_NOMKVAR="(Text)" CHANNEL_VOLT="(Text)" COS_PHI="95195" NOM_VOLT="95192" NOM_AMP="95196" NOM_FREQ="95193" CHANNEL_GENAMP="(Text)" CHANNEL_GENFREQ="(Text)" SIM_ENERGIZED="95178" CHANNEL_NOMKW="(Text)" BLOCK="95185" SIM_READY="95128" CHANNEL_GENKW="(Text)" GEN_KW_PERC="95179" CHANNEL_NOMAMP="(Text)" GEN_KW="62045" CHANNEL_GENKVAR_PERC="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="390" Y="200" GEN_VOLT="95273" GEN_FREQ="95274" SIM_BUS="95284" GEN_CB="95230" NOT_PRESENT="95289" BUS_VOLT="95271" BUS_FREQ="95272" SIM_PMS="95232" Path=".\Frames\BT_SIM.prax" SIM_START_FAIL="95133" GEN_KVAR_PERC="95180" CHANNEL_VOLT="(Text)" BLOCK="95185" SIM_ENERGIZED="95178" CHANNEL_NOMAMP="(Text)" SIM_NOT_PRESENT="False" SIM_REM="95131" CHANNEL_GENKW="(Text)" GEN_KW="62045" GEN_AMP="95175" NOM_KW="95197" COS_PHI="95195" NOM_AMP="95196" SIM_READY="95128" GEN_KVAR="62047" NOM_KVAR="95194" CHANNEL_NOMKW="(Text)" NOM_FREQ="95193" CHANNEL_GENFREQ="(Text)" GEN_SEQ="62089" CHANNEL_GENAMP="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_NOMVOLT="(Text)" NOM_VOLT="95192" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENKW_PERC="50" GEN_KW_PERC="95179" SIM_RUNNING="95129" CHANNEL_GENKVAR="(Text)" SIM_BLOCK="-1" CHANNEL_GENVOLT="(Text)" CHANNEL_GENKVAR_PERC="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="64321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="270" Y="200" GEN_VOLT="95243" GEN_FREQ="95244" SIM_BUS="95254" GEN_CB="95221" NOT_PRESENT="95259" BUS_VOLT="95241" BUS_FREQ="95242" SIM_PMS="95223" Path=".\Frames\BT_SIM.prax" NOM_KVAR="95194" CHANNEL_GENVOLT="(Text)" CHANNEL_GENFREQ="(Text)" CHANNEL_GENKVAR_PERC="50" SIM_READY="95128" SIM_RUNNING="95129" GEN_SEQ="62089" SIM_START_FAIL="95133" GEN_KW_PERC="95179" SIM_BLOCK="-1" GEN_KVAR="62047" GEN_KW="62045" CHANNEL_GENAMP="(Text)" CHANNEL_NOMVOLT="(Text)" CHANNEL_GENKW="(Text)" NOM_FREQ="95193" BLOCK="95185" NOM_AMP="95196" GEN_AMP="95175" CHANNEL_NOMKVAR="(Text)" CHANNEL_NOMAMP="(Text)" NOM_VOLT="95192" COS_PHI="95195" NOM_KW="95197" CHANNEL_NOMFREQ="(Text)" SIM_ENERGIZED="95178" CHANNEL_VOLT="(Text)" SIM_REM="95131" CHANNEL_GENKVAR="(Text)" CHANNEL_GENKW_PERC="50" SIM_NOT_PRESENT="False" GEN_KVAR_PERC="95180" CHANNEL_NOMKW="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="63321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="630" Y="200" GEN_VOLT="95373" GEN_FREQ="95374" SIM_BUS="95384" GEN_CB="95330" NOT_PRESENT="95389" BUS_VOLT="95371" BUS_FREQ="95372" SIM_PMS="95332" Path=".\Frames\BT_SIM.prax" NOM_FREQ="95193" GEN_SEQ="62089" CHANNEL_GENAMP="(Text)" NOM_VOLT="95192" SIM_BLOCK="-1" GEN_KW="62045" BLOCK="95185" CHANNEL_NOMKW="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENVOLT="(Text)" CHANNEL_GENKW_PERC="50" CHANNEL_NOMAMP="(Text)" CHANNEL_GENKVAR_PERC="50" GEN_KVAR="62047" GEN_KW_PERC="95179" SIM_NOT_PRESENT="False" CHANNEL_GENFREQ="(Text)" NOM_KVAR="95194" COS_PHI="95195" SIM_RUNNING="95129" SIM_REM="95131" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_GENKVAR="(Text)" SIM_ENERGIZED="95178" GEN_AMP="95175" CHANNEL_NOMVOLT="(Text)" SIM_READY="95128" NOM_KW="95197" NOM_AMP="95196" CHANNEL_VOLT="(Text)" SIM_START_FAIL="95133" GEN_KVAR_PERC="95180">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="66321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="510" Y="200" GEN_VOLT="95343" GEN_FREQ="95344" SIM_BUS="95354" GEN_CB="95321" NOT_PRESENT="95359" BUS_VOLT="95341" BUS_FREQ="95342" SIM_PMS="95323" Path=".\Frames\BT_SIM.prax" CHANNEL_GENKVAR="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_NOMKW="(Text)" CHANNEL_GENFREQ="(Text)" NOM_KVAR="95194" CHANNEL_GENVOLT="(Text)" GEN_KW_PERC="95179" GEN_KVAR="62047" COS_PHI="95195" CHANNEL_GENKW_PERC="50" SIM_START_FAIL="95133" SIM_REM="95131" SIM_ENERGIZED="95178" BLOCK="95185" NOM_KW="95197" SIM_NOT_PRESENT="False" SIM_READY="95128" GEN_AMP="95175" NOM_AMP="95196" CHANNEL_NOMVOLT="(Text)" CHANNEL_NOMFREQ="(Text)" CHANNEL_VOLT="(Text)" GEN_SEQ="62089" NOM_FREQ="95193" CHANNEL_GENKW="(Text)" GEN_KVAR_PERC="95180" NOM_VOLT="95192" CHANNEL_NOMAMP="(Text)" GEN_KW="62045" SIM_BLOCK="-1" CHANNEL_GENAMP="(Text)" CHANNEL_NOMKVAR="(Text)" SIM_RUNNING="95129">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="65321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="870" Y="200" GEN_VOLT="95473" GEN_FREQ="95474" SIM_BUS="95484" GEN_CB="95430" NOT_PRESENT="95489" BUS_VOLT="95471" BUS_FREQ="95472" SIM_PMS="95432" Path=".\Frames\BT_SIM.prax" SIM_START_FAIL="95133" NOM_AMP="95196" CHANNEL_GENKW_PERC="50" NOM_VOLT="95192" NOM_KVAR="95194" CHANNEL_NOMVOLT="(Text)" CHANNEL_VOLT="(Text)" SIM_BLOCK="-1" GEN_KVAR="62047" GEN_KW_PERC="95179" COS_PHI="95195" NOM_FREQ="95193" SIM_NOT_PRESENT="False" CHANNEL_GENKVAR="(Text)" BLOCK="95185" CHANNEL_GENAMP="(Text)" CHANNEL_NOMAMP="(Text)" GEN_AMP="95175" SIM_ENERGIZED="95178" CHANNEL_GENKVAR_PERC="50" GEN_KW="62045" SIM_REM="95131" CHANNEL_NOMKVAR="(Text)" SIM_READY="95128" CHANNEL_NOMFREQ="(Text)" NOM_KW="95197" CHANNEL_GENVOLT="(Text)" CHANNEL_NOMKW="(Text)" SIM_RUNNING="95129" CHANNEL_GENKW="(Text)" GEN_SEQ="62089" CHANNEL_GENFREQ="(Text)" GEN_KVAR_PERC="95180">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="68321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="750" Y="200" GEN_VOLT="95443" GEN_FREQ="95444" SIM_BUS="95454" GEN_CB="95421" NOT_PRESENT="95459" BUS_VOLT="95441" BUS_FREQ="95442" SIM_PMS="95423" Path=".\Frames\BT_SIM.prax" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENAMP="(Text)" GEN_KVAR_PERC="95180" CHANNEL_GENKW="(Text)" SIM_READY="95128" SIM_BLOCK="-1" SIM_NOT_PRESENT="False" COS_PHI="95195" CHANNEL_GENFREQ="(Text)" SIM_REM="95131" GEN_KW="62045" CHANNEL_GENKW_PERC="50" NOM_FREQ="95193" GEN_KVAR="62047" SIM_START_FAIL="95133" GEN_SEQ="62089" CHANNEL_GENVOLT="(Text)" NOM_VOLT="95192" CHANNEL_NOMVOLT="(Text)" CHANNEL_NOMAMP="(Text)" BLOCK="95185" SIM_ENERGIZED="95178" GEN_AMP="95175" GEN_KW_PERC="95179" CHANNEL_GENKVAR="(Text)" CHANNEL_NOMKW="(Text)" SIM_RUNNING="95129" CHANNEL_GENKVAR_PERC="50" NOM_KVAR="95194" NOM_KW="95197" NOM_AMP="95196" CHANNEL_VOLT="(Text)" CHANNEL_NOMKVAR="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="67321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1110" Y="200" GEN_VOLT="95573" GEN_FREQ="95574" SIM_BUS="95584" GEN_CB="95530" NOT_PRESENT="95589" BUS_VOLT="95571" BUS_FREQ="95572" SIM_PMS="95532" Path=".\Frames\BT_SIM.prax" CHANNEL_NOMKW="(Text)" GEN_KW="62045" CHANNEL_GENAMP="(Text)" GEN_AMP="95175" CHANNEL_VOLT="(Text)" GEN_KVAR_PERC="95180" BLOCK="95185" NOM_KVAR="95194" NOM_AMP="95196" COS_PHI="95195" SIM_READY="95128" CHANNEL_NOMAMP="(Text)" GEN_SEQ="62089" GEN_KW_PERC="95179" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_GENKW_PERC="50" CHANNEL_NOMVOLT="(Text)" NOM_KW="95197" SIM_NOT_PRESENT="False" NOM_FREQ="95193" CHANNEL_GENFREQ="(Text)" SIM_BLOCK="-1" CHANNEL_GENKVAR="(Text)" CHANNEL_NOMFREQ="(Text)" NOM_VOLT="95192" CHANNEL_GENVOLT="(Text)" SIM_REM="95131" SIM_RUNNING="95129" SIM_ENERGIZED="95178" SIM_START_FAIL="95133" CHANNEL_GENKW="(Text)" GEN_KVAR="62047">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="70321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="990" Y="200" GEN_VOLT="95543" GEN_FREQ="95544" SIM_BUS="95554" GEN_CB="95521" NOT_PRESENT="95559" BUS_VOLT="95541" BUS_FREQ="95542" SIM_PMS="95523" Path=".\Frames\BT_SIM.prax" SIM_RUNNING="95129" CHANNEL_GENAMP="(Text)" CHANNEL_GENKW_PERC="50" NOM_KW="95197" CHANNEL_NOMAMP="(Text)" GEN_KVAR_PERC="95180" CHANNEL_GENVOLT="(Text)" CHANNEL_GENFREQ="(Text)" CHANNEL_NOMKW="(Text)" NOM_KVAR="95194" GEN_KVAR="62047" SIM_READY="95128" SIM_NOT_PRESENT="False" GEN_KW="62045" NOM_AMP="95196" CHANNEL_NOMFREQ="(Text)" NOM_FREQ="95193" GEN_KW_PERC="95179" NOM_VOLT="95192" CHANNEL_VOLT="(Text)" CHANNEL_GENKW="(Text)" GEN_AMP="95175" SIM_BLOCK="-1" CHANNEL_GENKVAR="(Text)" CHANNEL_NOMVOLT="(Text)" BLOCK="95185" CHANNEL_NOMKVAR="(Text)" COS_PHI="95195" SIM_START_FAIL="95133" GEN_SEQ="62089" SIM_REM="95131" SIM_ENERGIZED="95178" CHANNEL_GENKVAR_PERC="50">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="69321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1350" Y="200" GEN_VOLT="95673" GEN_FREQ="95674" SIM_BUS="95684" GEN_CB="95630" NOT_PRESENT="95689" BUS_VOLT="95671" BUS_FREQ="95672" SIM_PMS="95632" Path=".\Frames\BT_SIM.prax" GEN_KW_PERC="95179" CHANNEL_NOMVOLT="(Text)" CHANNEL_GENAMP="(Text)" CHANNEL_NOMFREQ="(Text)" SIM_RUNNING="95129" SIM_BLOCK="-1" SIM_READY="95128" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENFREQ="(Text)" CHANNEL_GENVOLT="(Text)" NOM_KVAR="95194" COS_PHI="95195" SIM_NOT_PRESENT="False" BLOCK="95185" CHANNEL_NOMAMP="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_VOLT="(Text)" GEN_SEQ="62089" CHANNEL_GENKW_PERC="50" GEN_AMP="95175" NOM_VOLT="95192" SIM_START_FAIL="95133" NOM_FREQ="95193" GEN_KVAR="62047" CHANNEL_GENKVAR_PERC="50" GEN_KW="62045" NOM_KW="95197" NOM_AMP="95196" SIM_ENERGIZED="95178" GEN_KVAR_PERC="95180" CHANNEL_NOMKW="(Text)" CHANNEL_GENKVAR="(Text)" SIM_REM="95131">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="72321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1230" Y="200" GEN_VOLT="95643" GEN_FREQ="95644" SIM_BUS="95654" GEN_CB="95621" NOT_PRESENT="95659" BUS_VOLT="95641" BUS_FREQ="95642" SIM_PMS="95623" Path=".\Frames\BT_SIM.prax" CHANNEL_NOMKW="(Text)" CHANNEL_NOMAMP="(Text)" GEN_AMP="95175" CHANNEL_GENKW_PERC="50" SIM_READY="95128" SIM_BLOCK="-1" NOM_KVAR="95194" CHANNEL_NOMVOLT="(Text)" GEN_KW="62045" NOM_KW="95197" CHANNEL_GENFREQ="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_NOMKVAR="(Text)" NOM_VOLT="95192" SIM_ENERGIZED="95178" GEN_SEQ="62089" SIM_NOT_PRESENT="False" CHANNEL_NOMFREQ="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_GENKW="(Text)" SIM_RUNNING="95129" GEN_KW_PERC="95179" SIM_START_FAIL="95133" CHANNEL_GENAMP="(Text)" GEN_KVAR="62047" SIM_REM="95131" NOM_FREQ="95193" CHANNEL_GENVOLT="(Text)" GEN_KVAR_PERC="95180" NOM_AMP="95196" CHANNEL_GENKVAR="(Text)" COS_PHI="95195" BLOCK="95185">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="71321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1590" Y="200" GEN_VOLT="95773" GEN_FREQ="95774" SIM_BUS="95784" GEN_CB="95730" NOT_PRESENT="95789" BUS_VOLT="95771" BUS_FREQ="95772" SIM_PMS="95732" Path=".\Frames\BT_SIM.prax" SIM_READY="95128" NOM_AMP="95196" SIM_REM="95131" NOM_KVAR="95194" SIM_RUNNING="95129" CHANNEL_NOMKVAR="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_GENKVAR="(Text)" SIM_NOT_PRESENT="False" CHANNEL_GENKW_PERC="50" SIM_START_FAIL="95133" CHANNEL_GENFREQ="(Text)" GEN_KVAR="62047" GEN_KW="62045" NOM_VOLT="95192" CHANNEL_GENAMP="(Text)" CHANNEL_GENKVAR_PERC="50" BLOCK="95185" COS_PHI="95195" CHANNEL_NOMFREQ="(Text)" NOM_KW="95197" SIM_BLOCK="-1" GEN_SEQ="62089" CHANNEL_GENKW="(Text)" CHANNEL_NOMKW="(Text)" GEN_KVAR_PERC="95180" GEN_AMP="95175" SIM_ENERGIZED="95178" CHANNEL_NOMAMP="(Text)" GEN_KW_PERC="95179" CHANNEL_GENVOLT="(Text)" NOM_FREQ="95193" CHANNEL_NOMVOLT="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="74321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1470" Y="200" GEN_VOLT="95743" GEN_FREQ="95744" SIM_BUS="95754" GEN_CB="95721" NOT_PRESENT="95759" BUS_VOLT="95741" BUS_FREQ="95742" SIM_PMS="95723" Path=".\Frames\BT_SIM.prax" SIM_RUNNING="95129" SIM_ENERGIZED="95178" CHANNEL_NOMFREQ="(Text)" CHANNEL_NOMKW="(Text)" SIM_NOT_PRESENT="False" CHANNEL_GENKVAR="(Text)" CHANNEL_NOMAMP="(Text)" CHANNEL_GENAMP="(Text)" CHANNEL_GENKW="(Text)" CHANNEL_VOLT="(Text)" CHANNEL_GENVOLT="(Text)" NOM_FREQ="95193" NOM_KW="95197" COS_PHI="95195" CHANNEL_GENFREQ="(Text)" SIM_REM="95131" GEN_KW_PERC="95179" CHANNEL_GENKVAR_PERC="50" NOM_VOLT="95192" GEN_SEQ="62089" SIM_READY="95128" CHANNEL_GENKW_PERC="50" NOM_KVAR="95194" GEN_AMP="95175" GEN_KW="62045" NOM_AMP="95196" SIM_BLOCK="-1" CHANNEL_NOMKVAR="(Text)" CHANNEL_NOMVOLT="(Text)" SIM_START_FAIL="95133" GEN_KVAR_PERC="95180" BLOCK="95185" GEN_KVAR="62047">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="73321"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="120" Height="350" X="1710" Y="200" GEN_VOLT="95843" GEN_FREQ="95844" SIM_BUS="95854" GEN_CB="95821" NOT_PRESENT="95859" BUS_VOLT="95841" BUS_FREQ="95842" SIM_PMS="95823" Path=".\Frames\BT_SIM.prax" CHANNEL_GENKW_PERC="50" CHANNEL_NOMVOLT="(Text)" NOM_VOLT="95192" SIM_ENERGIZED="95178" CHANNEL_NOMAMP="(Text)" GEN_KW="62045" CHANNEL_GENVOLT="(Text)" NOM_AMP="95196" NOM_KVAR="95194" SIM_READY="95128" SIM_BLOCK="-1" GEN_KW_PERC="95179" COS_PHI="95195" SIM_START_FAIL="95133" SIM_RUNNING="95129" CHANNEL_NOMKVAR="(Text)" CHANNEL_GENKVAR_PERC="50" CHANNEL_VOLT="(Text)" NOM_FREQ="95193" CHANNEL_NOMKW="(Text)" CHANNEL_GENKW="(Text)" BLOCK="95185" GEN_SEQ="62089" CHANNEL_GENAMP="(Text)" GEN_AMP="95175" NOM_KW="95197" GEN_KVAR="62047" CHANNEL_NOMFREQ="(Text)" CHANNEL_GENKVAR="(Text)" GEN_KVAR_PERC="95180" SIM_REM="95131" SIM_NOT_PRESENT="False" CHANNEL_GENFREQ="(Text)">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="CHANNEL_VOLT" ChannelNumber="95141">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="75321"/>
+			</Bindings>
+		</Frame>
+		<Line Width="3" X0="170" Y0="780" X1="170" Y1="820">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Foreground" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95070"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="160" Y0="780" X1="160" Y1="820">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Background" DefaultValue="Foreground">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95070"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="150" Y0="860" X1="150" Y1="900">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Foreground" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95072"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="140" Y0="860" X1="140" Y1="900">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Background" DefaultValue="Foreground">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95072"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="170" Y0="940" X1="170" Y1="980">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Foreground" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95074"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="160" Y0="940" X1="160" Y1="980">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Background" DefaultValue="Foreground">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95074"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="1130" Y0="860" X1="1130" Y1="900">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Foreground" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95078"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="1120" Y0="860" X1="1120" Y1="900">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Background" DefaultValue="Foreground">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95078"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="1250" Y0="940" X1="1250" Y1="980">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Foreground" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95076"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<Line Width="3" X0="1240" Y0="940" X1="1240" Y1="980">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="Color" SelectedValue0="Background" DefaultValue="Foreground">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95076"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Line>
+		<TextBox Width="120" Height="20" X="150" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 02"/>
+		<TextBox Width="120" Height="20" X="30" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 01"/>
+		<TextBox Width="120" Height="20" X="270" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 03"/>
+		<TextBox Width="120" Height="20" X="390" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 04"/>
+		<TextBox Width="120" Height="20" X="620" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 06"/>
+		<TextBox Width="120" Height="20" X="500" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 05"/>
+		<TextBox Width="120" Height="20" X="740" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 07"/>
+		<TextBox Width="120" Height="20" X="860" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 08"/>
+		<TextBox Width="120" Height="20" X="1100" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 10"/>
+		<TextBox Width="120" Height="20" X="980" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 09"/>
+		<TextBox Width="120" Height="20" X="1220" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 11"/>
+		<TextBox Width="120" Height="20" X="1340" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 12"/>
+		<TextBox Width="120" Height="20" X="1580" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 14"/>
+		<TextBox Width="120" Height="20" X="1460" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 13"/>
+		<TextBox Width="120" Height="20" X="1700" Y="180" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="PMS - 15"/>
+		<Rectangle Width="1920" Y="75" BorderWidth="2" BorderStyle="Raised" FillColor="PanelFace" CornerRoundRadius="5"/>
+		<TextBox Width="200" Height="30" X="40" Y="115" BorderWidth="2" FillColor="Blue" CornerRoundRadius="3" HorzAlignment="Left" Font="Segoe UI;16.0;B;N;N" Text="  PMS STIMULATOR"/>
+		<Polyline Width="2">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" DefaultValue="PanelFace">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="95041"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="220;125"/>
+				<Point Coord="218.208;121.829"/>
+				<Point Coord="214.416;119.898"/>
+				<Point Coord="209.521;120.45"/>
+				<Point Coord="208.073;123.552"/>
+				<Point Coord="208.418;128.033"/>
+				<Point Coord="220.207;141.615"/>
+				<Point Coord="231.651;127.275"/>
+				<Point Coord="231.858;123.208"/>
+				<Point Coord="230.983;120.361"/>
+				<Point Coord="225.261;120.085"/>
+				<Point Coord="219.931;125.138"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="170" Height="50" X="280" Y="105" BorderWidth="2" BorderStyle="Raised" FillColor="PanelFace" CornerRoundRadius="5"/>
+		<TextBox Height="30" X="290" Y="115" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="3" HorzAlignment="Left" TextColor="Cyan" Font="Segoe UI;16.0;B;N;N" Text="SIMULATOR"/>
+		<Rectangle Width="190" Height="80" X="600" Y="85" BorderWidth="2" BorderStyle="Raised" FillColor="PanelFace" CornerRoundRadius="5"/>
+		<TextBox Width="170" Height="20" X="610" Y="95" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" TextColor="Black" Font="Segoe UI;14.0;B;N;N" Text="VOLTAGE DROOP / RATE"/>
+		<TextBox Width="120" Height="20" X="630" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95031">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2" Suffix=" %"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95031"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="120" Height="20" X="630" Y="135" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95032">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2" Suffix=" % / sec"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95032"/>
+			</TextEnteredActions>
+		</TextBox>
+		<Rectangle Width="190" Height="80" X="800" Y="85" BorderWidth="2" BorderStyle="Raised" FillColor="PanelFace" CornerRoundRadius="5"/>
+		<TextBox Width="170" Height="20" X="810" Y="95" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" TextColor="Black" Font="Segoe UI;14.0;B;N;N" Text="SPEED DROOP / RATE"/>
+		<TextBox Width="120" Height="20" X="830" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95029">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2" Suffix=" %"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95029"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="120" Height="20" X="830" Y="135" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95030">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2" Suffix=" % / sec"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95030"/>
+			</TextEnteredActions>
+		</TextBox>
+		<Rectangle Width="190" Height="80" X="1000" Y="85" BorderWidth="2" BorderStyle="Raised" FillColor="PanelFace" CornerRoundRadius="5"/>
+		<TextBox Width="170" Height="20" X="1010" Y="95" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" TextColor="Black" Font="Segoe UI;14.0;B;N;N" Text="ENGINE START / STOP"/>
+		<TextBox Width="120" Height="20" X="1030" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95027">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2" Suffix=" sec"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95027"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="120" Height="20" X="1030" Y="135" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95028">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2" Suffix=" sec"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95028"/>
+			</TextEnteredActions>
+		</TextBox>
+		<Rectangle Width="190" Height="80" X="1200" Y="85" BorderWidth="2" BorderStyle="Raised" FillColor="PanelFace" CornerRoundRadius="5"/>
+		<TextBox Width="170" Height="20" X="1210" Y="95" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" TextColor="Black" Font="Segoe UI;14.0;B;N;N" Text="LOAD PROGRAM"/>
+		<TextBox Width="80" Height="30" X="1220" Y="125" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="95033">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" sec"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="95033"/>
+			</TextEnteredActions>
+		</TextBox>
+		<Button Width="30" Height="30" X="410" Y="115" Text="" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="95046">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill" ColorWhenTrue="NoAlarmGreen"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="95049" Value="1"/>
+			</ClickActions>
+		</Button>
+		<Button Width="30" Height="30" X="1320" Y="125" Text="" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="95044">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill" ColorWhenTrue="NoAlarmGreen"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="95050" Value="1"/>
+			</ClickActions>
+		</Button>
+		<CheckBox Width="30" Height="30" X="2000" Y="135">
+			<ClickActions>
+				<SetChannelValueCheckBoxAction ChannelNumber="95050"/>
+			</ClickActions>
+		</CheckBox>
+	</Children>
+</RootElement>

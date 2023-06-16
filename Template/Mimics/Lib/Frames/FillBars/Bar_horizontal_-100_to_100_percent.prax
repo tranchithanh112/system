@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="20" GridSpacing="1" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="150" Height="20" X="1" BorderColor="BackgroundConning" BorderStyle="Sunken"/>
+		<Rectangle Width="46" Height="20" X="75" BorderColor="Transparent" FillColor="LightingAmber">
+			<Bindings>
+				<FilteredValueBinding TargetPropertyName="Width">
+					<Bindings>
+						<RangeFormulaBinding TargetPropertyName="Value" OutRangeBegin="-75" OutRangeEnd="75">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pitch"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="2" Height="18" X="74" Y="1" BorderWidth="0" FillColor="LightingIndigo" LightingStyle="Vertical"/>
+	</Children>
+</RootElement>

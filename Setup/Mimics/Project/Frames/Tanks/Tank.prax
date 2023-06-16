@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="230" Height="230" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="165" Height="220" X="5" Y="5" BorderColor="DarkShadow" FillColor="DarkShadow" CornerRoundRadius="3"/>
+		<Panel Width="165" Height="220" ClipToBounds="True" BorderWidth="1.5" BorderStyle="Flat" BorderColor="InfoTextGrey" FillColor="Background" CornerRoundRadius="3">
+			<Children>
+				<Rectangle Width="20" Height="180" X="105" Y="20" BorderStyle="Sunken" BorderColor="BackgroundConning" FillColor="BackgroundConning"/>
+				<TextBox Width="105" Height="25" Y="15" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" LeftRightPadding="5" Font="Praxis;16.0;N;N;N" Text="F.O SERV">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TankID"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="20" Height="15" X="65" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;16.0;N;N;N" Text="%"/>
+				<TextBox Width="20" Height="10" X="130" Y="15" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" LeftRightPadding="4" Font="Praxis;15.0;N;N;N" Text="100"/>
+				<Line Color="InfoTextGrey" X0="132" Y0="20" X1="128" Y1="20"/>
+				<TextBox Width="20" Height="10" X="130" Y="60" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" LeftRightPadding="4" Font="Praxis;15.0;N;N;N" Text="75"/>
+				<Line Color="InfoTextGrey" X0="132" Y0="65" X1="128" Y1="65"/>
+				<TextBox Width="20" Height="10" X="130" Y="105" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" LeftRightPadding="4" Font="Praxis;15.0;N;N;N" Text="50"/>
+				<Line Color="InfoTextGrey" X0="132" Y0="110" X1="128" Y1="110"/>
+				<TextBox Width="20" Height="10" X="130" Y="145" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" LeftRightPadding="4" Font="Praxis;15.0;N;N;N" Text="25"/>
+				<Line Color="InfoTextGrey" X0="132" Y0="150" X1="128" Y1="150"/>
+				<TextBox Width="20" Height="10" X="135" Y="195" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;15.0;N;N;N" Text="0"/>
+				<Line Color="InfoTextGrey" X0="132" Y0="199" X1="128" Y1="199"/>
+				<TextBox Width="104" Height="25" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" LeftRightPadding="5" Font="Praxis;16.0;N;N;N" Text="TANK">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TankID_"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="50" Height="15" X="10" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;24.0;N;N;N" Text="86">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Percent_Ch"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<FillBar FlashColor="Foreground" Width="20" Height="180" X="105" Y="20" FillDirection="BottomToTop" LimitType="None" FirstLimit="30" SecondLimit="20" LimitMarkerType="Triangle" LimitMarkerSize="5" NormalColor="Barfill01" BorderWidth="1" BorderColor="Transparent" CornerRoundRadius="0">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Percent_Ch"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<SelectFirstColorBinding TargetPropertyName="NormalColor" DefaultValue="Barfill01">
+							<Bindings>
+								<SelectFirstBoolBinding TargetPropertyName="ConditionValue4">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" CompareOperator=">" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="LAHH"/>
+												<SelectFirstFloatBinding TargetPropertyName="FirstValue" DefaultValue="-1">
+													<Bindings>
+														<ChannelValueBinding TargetPropertyName="SelectedValue7">
+															<Bindings>
+																<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Percent_Ch"/>
+															</Bindings>
+														</ChannelValueBinding>
+														<SelectFirstBoolBinding TargetPropertyName="ConditionValue7">
+															<Bindings>
+																<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" InvertCondition="True">
+																	<Bindings>
+																		<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="LAHH"/>
+																	</Bindings>
+																</ValueCompareBinding>
+															</Bindings>
+														</SelectFirstBoolBinding>
+													</Bindings>
+												</SelectFirstFloatBinding>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstBoolBinding>
+								<SelectFirstBoolBinding TargetPropertyName="ConditionValue5">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" CompareOperator=">" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="LAH"/>
+												<SelectFirstFloatBinding TargetPropertyName="FirstValue" DefaultValue="-1">
+													<Bindings>
+														<ChannelValueBinding TargetPropertyName="SelectedValue7">
+															<Bindings>
+																<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Percent_Ch"/>
+															</Bindings>
+														</ChannelValueBinding>
+														<SelectFirstBoolBinding TargetPropertyName="ConditionValue7">
+															<Bindings>
+																<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" InvertCondition="True">
+																	<Bindings>
+																		<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="LAH"/>
+																	</Bindings>
+																</ValueCompareBinding>
+															</Bindings>
+														</SelectFirstBoolBinding>
+													</Bindings>
+												</SelectFirstFloatBinding>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstBoolBinding>
+								<SelectFirstBoolBinding TargetPropertyName="ConditionValue6">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" CompareOperator="&lt;" CompareTolerance="0.1">
+											<Bindings>
+												<SelectFirstFloatBinding TargetPropertyName="FirstValue">
+													<Bindings>
+														<ChannelValueBinding TargetPropertyName="SelectedValue7">
+															<Bindings>
+																<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Percent_Ch"/>
+															</Bindings>
+														</ChannelValueBinding>
+														<SelectFirstBoolBinding TargetPropertyName="ConditionValue7">
+															<Bindings>
+																<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" InvertCondition="True">
+																	<Bindings>
+																		<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="LAL"/>
+																	</Bindings>
+																</ValueCompareBinding>
+															</Bindings>
+														</SelectFirstBoolBinding>
+													</Bindings>
+												</SelectFirstFloatBinding>
+												<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="LAL"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstBoolBinding>
+								<SelectFirstBoolBinding TargetPropertyName="ConditionValue7">
+									<Bindings>
+										<SelectFirstBoolBinding TargetPropertyName="ConditionValue7">
+											<Bindings>
+												<ValueCompareBinding TargetPropertyName="ConditionValue7" CompareOperator="&lt;" CompareTolerance="0.1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="LALL"/>
+														<SelectFirstFloatBinding TargetPropertyName="FirstValue">
+															<Bindings>
+																<ChannelValueBinding TargetPropertyName="SelectedValue7">
+																	<Bindings>
+																		<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Percent_Ch"/>
+																	</Bindings>
+																</ChannelValueBinding>
+																<SelectFirstBoolBinding TargetPropertyName="ConditionValue7">
+																	<Bindings>
+																		<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" CompareOperator=">">
+																			<Bindings>
+																				<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="LALL"/>
+																			</Bindings>
+																		</ValueCompareBinding>
+																	</Bindings>
+																</SelectFirstBoolBinding>
+															</Bindings>
+														</SelectFirstFloatBinding>
+													</Bindings>
+												</ValueCompareBinding>
+											</Bindings>
+										</SelectFirstBoolBinding>
+									</Bindings>
+								</SelectFirstBoolBinding>
+								<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="NormalColour"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</FillBar>
+				<TextBox Width="51" Height="20" X="10" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;20.0;N;N;N" Text="7.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Volume_Ch"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="20" X="65" Y="150" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="m³"/>
+				<TextBox Width="80" Height="15" X="11" Y="71" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;12.0;N;N;N" Text="CAPACITY"/>
+				<TextBox Width="51" Height="20" X="10" Y="90" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;20.0;N;N;N" Text="11.8">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Capacity"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="31" Height="20" X="64" Y="90" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="m³"/>
+				<Panel Width="10" Height="10" X="95" Y="15" GridSpacing="1" ClipToBounds="True" BorderWidth="0" FillColor="Transparent">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" CompareTolerance="0.1" InvertCondition="True">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="LAHH"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<RangeFormulaBinding TargetPropertyName="Y" InRangeBegin="0.1" OutRangeBegin="195" OutRangeEnd="15">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="LAHH"/>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+					<Children>
+						<Polyline Width="0" ClosedOutline="True" FillColor="AlarmRed">
+							<Points>
+								<Point Coord="3;1"/>
+								<Point Coord="3;9"/>
+								<Point Coord="9;5"/>
+							</Points>
+						</Polyline>
+					</Children>
+				</Panel>
+				<Panel Width="10" Height="10" X="95" Y="61" GridSpacing="1" ClipToBounds="True" BorderWidth="0" FillColor="Transparent">
+					<Bindings>
+						<RangeFormulaBinding TargetPropertyName="Y" InRangeBegin="0.1" OutRangeBegin="195" OutRangeEnd="15">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="LAH"/>
+							</Bindings>
+						</RangeFormulaBinding>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" CompareOperator=">" CompareTolerance="0.1" InvertCondition="True">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="LAH"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<Children>
+						<Polyline Width="0" ClosedOutline="True" FillColor="AlarmRed">
+							<Points>
+								<Point Coord="3;1"/>
+								<Point Coord="3;9"/>
+								<Point Coord="9;5"/>
+							</Points>
+						</Polyline>
+					</Children>
+				</Panel>
+				<Panel Width="10" Height="10" X="95" Y="145" GridSpacing="1" ClipToBounds="True" BorderWidth="0" FillColor="Transparent">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" CompareOperator=">" CompareTolerance="0.1" InvertCondition="True">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="LAL"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<RangeFormulaBinding TargetPropertyName="Y" InRangeBegin="0" OutRangeBegin="195" OutRangeEnd="15">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="LAL"/>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+					<Children>
+						<Polyline Width="0" ClosedOutline="True" FillColor="AlarmRed">
+							<Points>
+								<Point Coord="3;1"/>
+								<Point Coord="3;9"/>
+								<Point Coord="9;5"/>
+							</Points>
+						</Polyline>
+					</Children>
+				</Panel>
+				<Panel Width="10" Height="10" X="95" Y="194" GridSpacing="1" ClipToBounds="True" BorderWidth="0" FillColor="Transparent">
+					<Bindings>
+						<RangeFormulaBinding TargetPropertyName="Y" InRangeBegin="0.1" OutRangeBegin="195" OutRangeEnd="15">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="LALL"/>
+							</Bindings>
+						</RangeFormulaBinding>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="0" CompareTolerance="0.1" InvertCondition="True">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="LALL"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<Children>
+						<Polyline Width="0" ClosedOutline="True" FillColor="AlarmRed">
+							<Points>
+								<Point Coord="3;1"/>
+								<Point Coord="3;9"/>
+								<Point Coord="9;5"/>
+							</Points>
+						</Polyline>
+					</Children>
+				</Panel>
+				<TextBox Width="51" Height="20" X="10" Y="120" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;20.0;N;N;N" Text="2.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Level_Ch"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="20" X="65" Y="120" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;14.0;N;N;N" Text="m"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

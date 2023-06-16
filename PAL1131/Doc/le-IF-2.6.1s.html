@@ -1,0 +1,124 @@
+﻿<!DOCTYPE HTML PUBLIC " -//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<STYLE TYPE="text/css">
+ <!-- 
+
+BODY { background: #FFFFFF; text: #000000; font-family: 'Courier New'; font-size: small;}
+TH { background: #FFFFFF; text: #000000; font-family: 'Verdana'; font-size: 12px;} 
+TABLE { border-width:1px; border-style:None; border-collapse:collapse; border-top: 1px; border-top-style: solid; border-bottom: 1px; border-bottom-style: solid; border-left: 1px; border-left-style: solid; border-right: 1px; border-right-style: solid;}
+.nor {	background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; font-size: x-small;}
+.ident { background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; }
+.keyw { background-color: #FFFFFF; color: Blue; font-family: 'Courier New'; font: bold;}
+.oper { background-color: #FFFFFF; color: #000000; font-family: 'Verdana'; font-size: x-small;}
+.argum { background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; font-size: x-small;}
+.argt { background-color: Yellow; color: DarkBlue; font-family: 'Courier New'; font-size: x-small;}
+.errpos { background-color: Black; color: Red; font-family: 'Courier New'; font-size: x-small;}
+.good { background-color: Blue; color: #C0C0C0; font-family: 'Courier New'; font-size: x-small;}
+.comment {	background-color: #FFFFFF; color: black; font-family: 'Times New Roman';  font-size: x-small; }
+.typconst { background-color: #C0C0C0; color: DarkGreen; font-family: 'Courier New'; font-size: x-small;} 
+.nums { background-color: #FFFFFF; color: #00AFAF; font-family: 'Courier New'; font-size: x-small;}
+.strs { background-color: #FFFF00; color: DarkGreen; font-family: 'Courier New'; font-size: x-small;}
+.typef { background-color: #FFFFFF; color: Blue; font-family: 'Courier New'; }
+.argcommentname { background-color: #C0C0C0; color: Blue; font-family: 'Courier New'; font-size: x-small; padding-left: 5px; padding-right: 5px;}
+.argcommentdesc { background-color: #FFFFFF; color: DarkBlue; font-family: 'Times New Roman'; font-size: x-small;}
+--> 
+ </STYLE> 
+ </head><body bgcolor="#FFFFFF">
+<h3 align="center">Virtual machine little endian in line functions</h3><div align="right" class="ident">Version: <span class="keyw">2.6.1</span> from date <span class="keyw">2010.11-17 11:25</span></div>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Extended types</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Type</th><th>Implementation</th><th>Details</th><th>Comment</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Removed elementary types</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>No</th><th>Type</th><th>Comment</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Dependent files</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Type</th><th>Order</th><th>Name</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Implemented function</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Code</th><th>Name:Type</th><th>Arguments</th><th>Description</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Specific <i>in-line</i> functions</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Name:Type</th><th>Arguments</th><th>Description</th></tr>
+<tr><td>GET_YEAR:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATE_TIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Returns year value from DATE_AND_TIME parameter</span></td></tr><tr><td>GET_YEAR:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATE:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Returns year value from DATE parameter</span></td></tr><tr><td>GET_MONTH:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATE_TIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Returns month value from DATE_AND_TIME parameter</span></td></tr><tr><td>GET_MONTH:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATE:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Returns month value from DATE parameter</span></td></tr><tr><td>GET_DAY:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATE:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Returns day value from DATE parameter</span></td></tr><tr><td>GET_DAY:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Returns day value from DATE_AND_TIME parameter</span></td></tr><tr><td>GET_HOUR:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PTIMEOFDAY:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Returns hour value from TIME_OF_DAY parameter</span></td></tr><tr><td>GET_HOUR:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Returns hour value from DATE_AND_TIME parameter</span></td></tr><tr><td>GET_MINUTE:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PTIMEOFDAY:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Returns minute value from TIME_OF_DAY parameter</span></td></tr><tr><td>GET_MINUTE:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Returns minute value from DATE_AND_TIME parameter</span></td></tr><tr><td>GET_SECOND:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PTIMEOFDAY:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Returns second value from TIME_OF_DAY parameter</span></td></tr><tr><td>GET_SECOND:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Returns second value from DATE_AND_TIME parameter</span></td></tr><tr><td>GET_HUNDSEC:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PTIMEOFDAY:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Returns 1/100 second value from TIME_OF_DAY parameter</span></td></tr><tr><td>GET_HUNDSEC:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Returns 1/100 second value from DATE_AND_TIME parameter</span></td></tr><tr><td>DT_TO_TOD:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Extracts TIME_OF_DAY from DATE_AND_TIME parameter</span></td></tr><tr><td>BOOL_TO_INT:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Conversion BOOL parameter to INT value</span></td></tr><tr><td>DEPR_INT_TO_DINT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">[Depreciate] Converts INT parameter to DINT value by duplicating the most significant bit</span></td></tr><tr><td>DINT_TO_INT:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Converts DINT parameter to INT value by omitting the most significant bits</span></td></tr><tr><td>BYTE_TO_SINT:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Converts BYTE parameter to SINT value without affection</span></td></tr><tr><td>SINT_TO_BYTE:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Converts SINT parameter to BYTE value without affection</span></td></tr><tr><td>WORD_TO_INT:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Converts WORD parameter to INT value without affection</span></td></tr><tr><td>WORD_TO_BYTE:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Converts WORD parameter to BYTE value</span></td></tr><tr><td>INT_TO_WORD:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Converts INT parameter to WORD value without affection</span></td></tr><tr><td>DWORD_TO_DINT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Converts DWORD parameter to DINT value without affection</span></td></tr><tr><td>DINT_TO_DWORD:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Converts DWORD parameter to DINT value without affection</span></td></tr><tr><td>LWORD_TO_LINT:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Converts LWORD parameter to LINT value without affection</span></td></tr><tr><td>LINT_TO_LWORD:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Converts LINT parameter to LWORD value without affection</span></td></tr><tr><td>DINT_TO_LINT:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Converts DINT parameter to LINT value by duplicating the most significant bit</span></td></tr><tr><td>LINT_TO_DINT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Converts LINT parameter to DINT value by omitting the most significant bits</span></td></tr><tr><td>DWORD_TO_LWORD:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Converts DWORD parameter to LWORD value by filling the most significant bits with zeroes</span></td></tr><tr><td>LWORD_TO_DWORD:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Converts LWORD parameter to DWORD value by omitting the most significant bits</span></td></tr><tr><td>WORD_TO_DWORD:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Converts WORD parameter to DWORD value by filling the most significant bits with zeroes</span></td></tr><tr><td>WORD_TO_LWORD:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Converts WORD parameter to LWORD value by filling the most significant bits with zeroes</span></td></tr><tr><td>INT_TO_LINT:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Converts DINT parameter to LINT value by duplicating the most significant bit</span></td></tr><tr><td>REAL_TO_DINT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Converts REAL parameter to DINT value with truncate</span></td></tr><tr><td>INT_TO_BYTE:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Converts INT parameter to BYTE value by ignoring high part</span></td></tr><tr><td>BYTE_TO_INT:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Converts BYTE parameter to INT value</span></td></tr><tr><td>TEST_BYTE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> VALUE:<span class="typef">BYTE</span><br>
+<b>1</b> MASK:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Checks if two bytes have at least one common bit</span></td></tr><tr><td>SET_HOUR:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> PNEWHOUR:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATETIME</span><span class="argcommentdesc">&nbsp;- Input DATE_AND_TIME</span></div><div align="left"><span class="argcommentname">PNEWHOUR</span><span class="argcommentdesc">&nbsp;- New Hour. It must be between 0 and 23. It value is not checked.</span></div>Sets hour value for DATE_AND_TIME parameter</span></td></tr><tr><td>SET_HOUR:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> PTIMEOFDAY:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> PNEWHOUR:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PTIMEOFDAY</span><span class="argcommentdesc">&nbsp;- Input TIME_OF_DAY</span></div><div align="left"><span class="argcommentname">PNEWHOUR</span><span class="argcommentdesc">&nbsp;- New Hour. It must be between 0 and 23. It value is not checked.</span></div>Sets hour value for TIME_OF_DAY parameter</span></td></tr><tr><td>SET_MINUTE:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> PNEWMINUTE:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATETIME</span><span class="argcommentdesc">&nbsp;- Input DATE_AND_TIME</span></div><div align="left"><span class="argcommentname">PNEWMINUTE</span><span class="argcommentdesc">&nbsp;- New minute. It must be between 0 and 59. Its value is not checked.</span></div>Sets minute value for DATE_AND_TIME parameter</span></td></tr><tr><td>SET_MINUTE:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> PTIMEOFDAY:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> PNEWMINUTE:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PTIMEOFDAY</span><span class="argcommentdesc">&nbsp;- Input TIME_OF_DAY</span></div><div align="left"><span class="argcommentname">PNEWMINUTE</span><span class="argcommentdesc">&nbsp;- New minute. It must be between 0 and 59. Its value is not checked.</span></div>Sets minute value for TIME_OF_DAY parameter</span></td></tr><tr><td>SET_SECOND:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> PNEWSECOND:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATETIME</span><span class="argcommentdesc">&nbsp;- Input DATE_AND_TIME</span></div><div align="left"><span class="argcommentname">PNEWSECOND</span><span class="argcommentdesc">&nbsp;- New second. It must be between 0 and 59. Its value is not checked.</span></div>Sets minute value for DATE_AND_TIME parameter</span></td></tr><tr><td>SET_SECOND:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> PTIMEOFDAY:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> PNEWSECOND:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PTIMEOFDAY</span><span class="argcommentdesc">&nbsp;- Input TIME_OF_DAY</span></div><div align="left"><span class="argcommentname">PNEWSECOND</span><span class="argcommentdesc">&nbsp;- New second. It must be between 0 and 59. Its value is not checked.</span></div>Sets second value for TIME_OF_DAY parameter</span></td></tr><tr><td>SET_HUNDSEC:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> PNEWHUND:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATETIME</span><span class="argcommentdesc">&nbsp;- Input DATE_AND_TIME</span></div><div align="left"><span class="argcommentname">PNEWHUND</span><span class="argcommentdesc">&nbsp;- New hundsec. It must be between 0 and 99. Its value is not checked.</span></div>Sets hundsec value for DATE_AND_TIME parameter</span></td></tr><tr><td>SET_HUNDSEC:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> PTIMEOFDAY:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> PNEWHUND:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PTIMEOFDAY</span><span class="argcommentdesc">&nbsp;- Input TIME_OF_DAY</span></div><div align="left"><span class="argcommentname">PNEWHUND</span><span class="argcommentdesc">&nbsp;- New hundsec. It must be between 0 and 99. Its value is not checked.</span></div>Sets hundredseconds value for TIME_OF_DAY parameter</span></td></tr><tr><td>SET_YEAR:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> PNEWYEAR:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATETIME</span><span class="argcommentdesc">&nbsp;- Input DATE_AND_TIME</span></div><div align="left"><span class="argcommentname">PNEWYEAR</span><span class="argcommentdesc">&nbsp;- New year. It must be between 1 and 4096. Its value is not checked.</span></div>Sets year value for DATE_AND_TIME parameter</span></td></tr><tr><td>SET_YEAR:<span class="typef">DATE</span></td><td><span class="argum"><b>0</b> PDATE:<span class="typef">DATE</span><br>
+<b>1</b> PNEWYEAR:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATE</span><span class="argcommentdesc">&nbsp;- Input DATE</span></div><div align="left"><span class="argcommentname">PNEWYEAR</span><span class="argcommentdesc">&nbsp;- New year. It must be between 1 and 4096. Its value is not checked.</span></div>Sets year value for DATE parameter</span></td></tr><tr><td>SET_MONTH:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> PNEWMONTH:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATETIME</span><span class="argcommentdesc">&nbsp;- Input DATE_AND_TIME</span></div><div align="left"><span class="argcommentname">PNEWMONTH</span><span class="argcommentdesc">&nbsp;- New month. It must be between 1 and 12. Its value is not checked.</span></div>Sets month value for DATE_AND_TIME parameter</span></td></tr><tr><td>SET_MONTH:<span class="typef">DATE</span></td><td><span class="argum"><b>0</b> PDATE:<span class="typef">DATE</span><br>
+<b>1</b> PNEWMONTH:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATE</span><span class="argcommentdesc">&nbsp;- Input DATE</span></div><div align="left"><span class="argcommentname">PNEWMONTH</span><span class="argcommentdesc">&nbsp;- New month. It must be between 1 and 12. Its value is not checked.</span></div>Sets month value for DATE parameter</span></td></tr><tr><td>SET_DAY:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> PNEWDAY:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATETIME</span><span class="argcommentdesc">&nbsp;- Input DATE_AND_TIME</span></div><div align="left"><span class="argcommentname">PNEWDAY</span><span class="argcommentdesc">&nbsp;- New day. It must be between 1 and 31. Its value and date correctness is not checked.</span></div>Sets month value for DATE_AND_TIME parameter</span></td></tr><tr><td>SET_DAY:<span class="typef">DATE</span></td><td><span class="argum"><b>0</b> PDATE:<span class="typef">DATE</span><br>
+<b>1</b> PNEWDAY:<span class="typef">INT</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATE</span><span class="argcommentdesc">&nbsp;- Input DATE</span></div><div align="left"><span class="argcommentname">PNEWDAY</span><span class="argcommentdesc">&nbsp;- New day. It must be between 1 and 31. Its value and date correctness is not checked.</span></div>Sets day value for DATE parameter</span></td></tr><tr><td>DATE_TIME_TO_DATE:<span class="typef">DATE</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">PDATETIME</span><span class="argcommentdesc">&nbsp;- Input DATE_AND_TIME</span></div>Gets DATE value from DATE_AND_TIME parameter</span></td></tr></table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Specific function blocks</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Name</th><th>Input parameters</th><th>Output parameters</th><th>Description</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="right" class="ident">Export date: <span class="keyw">2010.11-18 17:04:40</span></div>
+</body>
+</html>

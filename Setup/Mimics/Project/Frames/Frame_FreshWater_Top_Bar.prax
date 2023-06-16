@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="70" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<Panel Width="495" Height="45" X="45" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="495" Height="50" X="40" Y="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="110" Height="40" X="340" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1628">
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces" ChannelNumber="1628"/>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="40" Height="35" X="450" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="m³"/>
+				<TextBox Width="130" Height="40" X="210" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="ALL TANKS"/>
+				<TextBox Width="200" Height="40" X="10" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="TOTAL WATER"/>
+			</Children>
+		</Panel>
+		<Panel Width="650" Height="45" X="1245" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="775" Height="50" X="1115" Y="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="110" Height="40" X="615" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1630">
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces" ChannelNumber="1630"/>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="40" Height="35" X="725" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="m³"/>
+				<TextBox Width="250" Height="40" X="365" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="TK91+TK92+TK93+TK12"/>
+				<TextBox Width="355" Height="40" X="10" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="TOTAL TECHNICAL WATER"/>
+			</Children>
+		</Panel>
+		<Panel Width="550" Height="45" X="555" Y="15" ClipToBounds="True" BorderWidth="10" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" FillPatternColor="Transparent" CornerRoundRadius="10"/>
+		<Panel Width="550" Height="50" X="550" Y="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="110" Height="40" X="400" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="999.9">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1629">
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces" ChannelNumber="1629"/>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="40" Height="35" X="510" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="m³"/>
+				<TextBox Width="140" Height="40" X="260" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="TK41+TK42"/>
+				<TextBox Width="250" Height="40" X="10" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="DOMESTIC WATER"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

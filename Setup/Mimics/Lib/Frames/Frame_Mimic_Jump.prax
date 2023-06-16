@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Height="55" GridSpacing="1">
+	<Children>
+		<TextBox Height="25" Y="29" BorderWidth="0" FillColor="ButtonFill" VertAlignment="Top" Font="Segoe UI-18.0-N-N-N" Text="Mimic Name" Multiline="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Mimic_Name"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="28" X="18" FillColor="ButtonFill" Font="Segoe UI-18.0-B-N-N" Text="23">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Mimic_Number"/>
+			</Bindings>
+		</TextBox>
+		<Polyline FillColor="ButtonFill">
+			<Points>
+				<Point Coord="68;28"/>
+				<Point Coord="91;13"/>
+				<Point Coord="68;0"/>
+			</Points>
+		</Polyline>
+		<Button Width="74" Height="29" X="15" Y="-1" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="2">
+					<Bindings>
+						<FrameBinding TargetPropertyName="MimicNamePD" ExportedPropertyName="Mimic_Num"/>
+					</Bindings>
+				</OpenMimicByNumberClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <LIBRARY name="Praxis_FUNC" crypt="" version="131072">
+    <LIB_HDR>
+      <COMP_VER>00041109</COMP_VER>
+      <CAPABILITIES>
+        <CAPABILITY code="0" />
+        <CAPABILITY code="4000" />
+      </CAPABILITIES>
+      <LIB_INFO>
+        <COPYRIGHT><![CDATA[Praxis Automation Technology]]></COPYRIGHT>
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="28" milisec="87" />
+        <MENU_PATH>Praxis_FUNC</MENU_PATH>
+        <CONTENT>
+          <ITEM name="FINT_TO_TIME" type="FUN" ret_type="$DEFAULT.TIME">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="TIME_TO_FINT" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.TIME" />
+          </ITEM>
+          <ITEM name="FINT_TO_INT" type="FUN" ret_type="$DEFAULT.INT">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="INT_TO_FINT" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="DIV0" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="X" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="Y" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="ABS_FINT" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="SQRT_FINT" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="HZ_TO_RPM" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="FREQ" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="TEETH" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="MAX_FINT" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="A" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="B" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="MIN_FINT" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="A" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="B" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="ANGLE180" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="ANGLE" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="ANGLE360" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="ANGLE" type="$DEFAULT.FINT" />
+          </ITEM>
+          <ITEM name="ATAN2" type="FUN" ret_type="$DEFAULT.REAL">
+            <PAR kind="INPUT" name="X" type="$DEFAULT.REAL" />
+            <PAR kind="INPUT" name="Y" type="$DEFAULT.REAL" />
+          </ITEM>
+          <ITEM name="DEG_TO_RAD" type="FUN" ret_type="$DEFAULT.REAL">
+            <PAR kind="INPUT" name="DEG" type="$DEFAULT.REAL" />
+          </ITEM>
+          <ITEM name="RAD_TO_DEG" type="FUN" ret_type="$DEFAULT.REAL">
+            <PAR kind="INPUT" name="RAD" type="$DEFAULT.REAL" />
+          </ITEM>
+          <ITEM name="SET_BIT" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="BIT" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="GET_BIT" type="FUN" ret_type="$DEFAULT.BOOL">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="BIT" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="RESET_BIT" type="FUN" ret_type="$DEFAULT.FINT">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="BIT" type="$DEFAULT.INT" />
+          </ITEM>
+        </CONTENT>
+      </LIB_INFO>
+      <DEPENDENCIES />
+    </LIB_HDR>
+    <LIB_BODY>
+      <FUNCTIONS>
+        <FUNCTION name="FINT_TO_TIME" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="FINT_TO_TIME" type="$DEFAULT.TIME" visibility="00000000" />
+          <VAR_MEM name="?L?CST0002" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0003" type="$DEFAULT.FINT" visibility="00200000" />
+          <VAR_MEM name="?F?FINT_TO_REAL0004" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.FINT_TO_TIME?CODE 
+$VMSYS.MCD FINT_TO_TIME, #/04, #/00000000
+$VMSYS.MCD ?L?CST0002, #/04, #/40420F00
+$DEFAULT.MUL ?F?$DEFAULT_MUL0003, IN, ?L?CST0002
+$DEFAULT.FINT_TO_REAL ?F?FINT_TO_REAL0004, ?F?$DEFAULT_MUL0003
+$DEFAULT.REAL_TO_TIME FINT_TO_TIME, ?F?FINT_TO_REAL0004
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="TIME_TO_FINT" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_MEM name="TIME_TO_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?F?TIME_TO_REAL0007" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.TIME_TO_FINT?CODE 
+$VMSYS.MCD TIME_TO_FINT, #/04, #/00000000
+$DEFAULT.TIME_TO_REAL ?F?TIME_TO_REAL0007, IN
+$DEFAULT.REAL_TO_FINT TIME_TO_FINT, ?F?TIME_TO_REAL0007
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="FINT_TO_INT" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="FINT_TO_INT" type="$DEFAULT.INT" visibility="00000000" />
+          <VAR_MEM name="?F?FINT_TO_REAL000A" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.FINT_TO_INT?CODE 
+$VMSYS.MCD FINT_TO_INT, #/02, #/0000
+$DEFAULT.FINT_TO_REAL ?F?FINT_TO_REAL000A, IN
+$DEFAULT.REAL_TO_INT FINT_TO_INT, ?F?FINT_TO_REAL000A
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="INT_TO_FINT" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_MEM name="INT_TO_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?F?INT_TO_REAL000D" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.INT_TO_FINT?CODE 
+$VMSYS.MCD INT_TO_FINT, #/04, #/00000000
+$DEFAULT.INT_TO_REAL ?F?INT_TO_REAL000D, IN
+$DEFAULT.REAL_TO_FINT INT_TO_FINT, ?F?INT_TO_REAL000D
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="DIV0" cap="0">
+          <VAR_INPUT name="X" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="Y" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="DIV0" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0010" type="$DEFAULT.FINT" visibility="00100000" />
+          <CODE><![CDATA[:?Praxis_FUNC.DIV0?CODE 
+$VMSYS.MCD DIV0, #/04, #/00000000
+$VMSYS.MCD ?L?CST0010, #/04, #/00000000
+$DEFAULT.EQ ?IF?CTL, Y, ?L?CST0010
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.DIV0IF?B000F
+$VMSYS.MCD DIV0, #/04, #/00000000
+$VMSYS.JMP :?Praxis_FUNC.DIV0IF?E0013
+:?Praxis_FUNC.DIV0IF?B000F 
+$DEFAULT.DIV DIV0, X, Y
+:?Praxis_FUNC.DIV0IF?E0013 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="ABS_FINT" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="ABS_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0017" type="$DEFAULT.FINT" visibility="00100000" />
+          <CODE><![CDATA[:?Praxis_FUNC.ABS_FINT?CODE 
+$VMSYS.MCD ABS_FINT, #/04, #/00000000
+$VMSYS.MCD ?L?CST0017, #/04, #/00000000
+$DEFAULT.LT ?IF?CTL, IN, ?L?CST0017
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ABS_FINTIF?B0016
+$DEFAULT.NEG ABS_FINT, IN
+$VMSYS.JMP :?Praxis_FUNC.ABS_FINTIF?E001B
+:?Praxis_FUNC.ABS_FINTIF?B0016 
+$VMSYS.MEMCP ABS_FINT, IN, #/0400
+:?Praxis_FUNC.ABS_FINTIF?E001B 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="SQRT_FINT" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="SQRT_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?F?FINT_TO_REAL001E" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?SQRT001F" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.SQRT_FINT?CODE 
+$VMSYS.MCD SQRT_FINT, #/04, #/00000000
+$DEFAULT.FINT_TO_REAL ?F?FINT_TO_REAL001E, IN
+$DEFAULT.SQRT ?F?SQRT001F, ?F?FINT_TO_REAL001E
+$DEFAULT.REAL_TO_FINT SQRT_FINT, ?F?SQRT001F
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="HZ_TO_RPM" cap="0">
+          <VAR_INPUT name="FREQ" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="TEETH" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="HZ_TO_RPM" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?L?CST0022" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0023" type="$DEFAULT.FINT" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.HZ_TO_RPM?CODE 
+$VMSYS.MCD HZ_TO_RPM, #/04, #/00000000
+$VMSYS.MCD ?L?CST0022, #/04, #/60EA0000
+$DEFAULT.MUL ?F?$DEFAULT_MUL0023, FREQ, ?L?CST0022
+$DEFAULT.DIV HZ_TO_RPM, ?F?$DEFAULT_MUL0023, TEETH
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="MAX_FINT" cap="0">
+          <VAR_INPUT name="A" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="B" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="MAX_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <CODE><![CDATA[:?Praxis_FUNC.MAX_FINT?CODE 
+$VMSYS.MCD MAX_FINT, #/04, #/00000000
+$DEFAULT.GE ?IF?CTL, A, B
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.MAX_FINTIF?B0025
+$VMSYS.MEMCP MAX_FINT, A, #/0400
+$VMSYS.JMP :?Praxis_FUNC.MAX_FINTIF?E0028
+:?Praxis_FUNC.MAX_FINTIF?B0025 
+$VMSYS.MEMCP MAX_FINT, B, #/0400
+:?Praxis_FUNC.MAX_FINTIF?E0028 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="MIN_FINT" cap="0">
+          <VAR_INPUT name="A" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="B" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="MIN_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <CODE><![CDATA[:?Praxis_FUNC.MIN_FINT?CODE 
+$VMSYS.MCD MIN_FINT, #/04, #/00000000
+$DEFAULT.LT ?IF?CTL, A, B
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.MIN_FINTIF?B002A
+$VMSYS.MEMCP MIN_FINT, A, #/0400
+$VMSYS.JMP :?Praxis_FUNC.MIN_FINTIF?E002D
+:?Praxis_FUNC.MIN_FINTIF?B002A 
+$VMSYS.MEMCP MIN_FINT, B, #/0400
+:?Praxis_FUNC.MIN_FINTIF?E002D 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="ANGLE180" cap="0">
+          <VAR_INPUT name="ANGLE" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="ANGLE180" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="TRUNC" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?L?CST0030" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST0033" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0036" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST003B" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL003C" type="$DEFAULT.FINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST003F" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST0044" type="$DEFAULT.FINT" visibility="00100000" />
+          <CODE><![CDATA[:?Praxis_FUNC.ANGLE180?CODE 
+$VMSYS.MCD ANGLE180, #/04, #/00000000
+$VMSYS.MCD TRUNC, #/04, #/00000000
+$VMSYS.MCD ?L?CST0030, #/04, #/002A7515
+$VMSYS.MCD ?L?CST0033, #/04, #/40420F00
+$VMSYS.MCD ?L?CST0036, #/04, #/00000000
+$VMSYS.MCD ?L?CST003B, #/04, #/407E0500
+$VMSYS.MCD ?L?CST003F, #/04, #/20BF0200
+$VMSYS.MCD ?L?CST0044, #/04, #/E040FDFF
+$DEFAULT.DIV TRUNC, ANGLE, ?L?CST0030
+$DEFAULT.MUL TRUNC, TRUNC, ?L?CST0033
+$DEFAULT.EQ ?IF?CTL, TRUNC, ?L?CST0036
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE180IF?B0035
+$VMSYS.MEMCP ANGLE180, ANGLE, #/0400
+$VMSYS.JMP :?Praxis_FUNC.ANGLE180IF?E0039
+:?Praxis_FUNC.ANGLE180IF?B0035 
+$DEFAULT.MUL ?F?$DEFAULT_MUL003C, TRUNC, ?L?CST003B
+$DEFAULT.SUB ANGLE180, ANGLE, ?F?$DEFAULT_MUL003C
+:?Praxis_FUNC.ANGLE180IF?E0039 
+$DEFAULT.GT ?IF?CTL, ANGLE180, ?L?CST003F
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE180IF?B003E
+$DEFAULT.SUB ANGLE180, ANGLE180, ?L?CST003B
+$VMSYS.JMP :?Praxis_FUNC.ANGLE180IF?E003E
+:?Praxis_FUNC.ANGLE180IF?B003E 
+$DEFAULT.LE ?IF?CTL, ANGLE180, ?L?CST0044
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE180IF?S0043
+$DEFAULT.ADD ANGLE180, ANGLE180, ?L?CST003B
+:?Praxis_FUNC.ANGLE180IF?S0043 
+:?Praxis_FUNC.ANGLE180IF?E003E 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="ANGLE360" cap="0">
+          <VAR_INPUT name="ANGLE" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="ANGLE360" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="TRUNC" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?L?CST0049" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST004C" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST004F" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST0054" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0055" type="$DEFAULT.FINT" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.ANGLE360?CODE 
+$VMSYS.MCD ANGLE360, #/04, #/00000000
+$VMSYS.MCD TRUNC, #/04, #/00000000
+$VMSYS.MCD ?L?CST0049, #/04, #/002A7515
+$VMSYS.MCD ?L?CST004C, #/04, #/40420F00
+$VMSYS.MCD ?L?CST004F, #/04, #/00000000
+$VMSYS.MCD ?L?CST0054, #/04, #/407E0500
+$DEFAULT.DIV TRUNC, ANGLE, ?L?CST0049
+$DEFAULT.MUL TRUNC, TRUNC, ?L?CST004C
+$DEFAULT.EQ ?IF?CTL, TRUNC, ?L?CST004F
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE360IF?B004E
+$VMSYS.MEMCP ANGLE360, ANGLE, #/0400
+$VMSYS.JMP :?Praxis_FUNC.ANGLE360IF?E0052
+:?Praxis_FUNC.ANGLE360IF?B004E 
+$DEFAULT.MUL ?F?$DEFAULT_MUL0055, TRUNC, ?L?CST0054
+$DEFAULT.SUB ANGLE360, ANGLE, ?F?$DEFAULT_MUL0055
+:?Praxis_FUNC.ANGLE360IF?E0052 
+$DEFAULT.GT ?IF?CTL, ANGLE360, ?L?CST0054
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE360IF?B0057
+$DEFAULT.SUB ANGLE360, ANGLE360, ?L?CST0054
+$VMSYS.JMP :?Praxis_FUNC.ANGLE360IF?E0057
+:?Praxis_FUNC.ANGLE360IF?B0057 
+$DEFAULT.LE ?IF?CTL, ANGLE360, ?L?CST004F
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE360IF?S005B
+$DEFAULT.ADD ANGLE360, ANGLE360, ?L?CST0054
+:?Praxis_FUNC.ANGLE360IF?S005B 
+:?Praxis_FUNC.ANGLE360IF?E0057 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="ATAN2" cap="0">
+          <VAR_INPUT name="X" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="Y" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_MEM name="ATAN2" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="PI" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0060" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV0063" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV006A" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?ATAN006B" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV006F" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?ATAN0070" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0075" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?L?CST007A" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV007B" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.ATAN2?CODE 
+$VMSYS.MCD ATAN2, #/04, #/00000000
+$VMSYS.MCD PI, #/04, #/DB0F4940
+$VMSYS.MCD ?L?CST0060, #/04, #/00000000
+$VMSYS.MCD ?L?CST0075, #/04, #/00000040
+$VMSYS.MCD ?L?CST007A, #/04, #/000080BF
+$DEFAULT.GT ?IF?CTL, X, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?B005F
+$DEFAULT.DIV ?F?$DEFAULT_DIV0063, Y, X
+$DEFAULT.ATAN ATAN2, ?F?$DEFAULT_DIV0063
+$VMSYS.JMP :?Praxis_FUNC.ATAN2IF?E005F
+:?Praxis_FUNC.ATAN2IF?B005F 
+$DEFAULT.LT ?IF?CTL, X, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?S0065
+$DEFAULT.GE ?IF?CTL, Y, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?B0067
+$DEFAULT.DIV ?F?$DEFAULT_DIV006A, Y, X
+$DEFAULT.ATAN ?F?ATAN006B, ?F?$DEFAULT_DIV006A
+$DEFAULT.ADD ATAN2, ?F?ATAN006B, PI
+$VMSYS.JMP :?Praxis_FUNC.ATAN2IF?E006D
+:?Praxis_FUNC.ATAN2IF?B0067 
+$DEFAULT.DIV ?F?$DEFAULT_DIV006F, Y, X
+$DEFAULT.ATAN ?F?ATAN0070, ?F?$DEFAULT_DIV006F
+$DEFAULT.SUB ATAN2, ?F?ATAN0070, PI
+:?Praxis_FUNC.ATAN2IF?E006D 
+$VMSYS.JMP :?Praxis_FUNC.ATAN2IF?E005F
+:?Praxis_FUNC.ATAN2IF?S0065 
+$DEFAULT.GT ?IF?CTL, Y, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?S0072
+$DEFAULT.DIV ATAN2, PI, ?L?CST0075
+$VMSYS.JMP :?Praxis_FUNC.ATAN2IF?E005F
+:?Praxis_FUNC.ATAN2IF?S0072 
+$DEFAULT.LT ?IF?CTL, Y, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?S0077
+$DEFAULT.DIV ?F?$DEFAULT_DIV007B, PI, ?L?CST0075
+$DEFAULT.MUL ATAN2, ?F?$DEFAULT_DIV007B, ?L?CST007A
+:?Praxis_FUNC.ATAN2IF?S0077 
+:?Praxis_FUNC.ATAN2IF?E005F 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="DEG_TO_RAD" cap="0">
+          <VAR_INPUT name="DEG" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_MEM name="DEG_TO_RAD" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="PI" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="?L?CST007E" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL007F" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.DEG_TO_RAD?CODE 
+$VMSYS.MCD DEG_TO_RAD, #/04, #/00000000
+$VMSYS.MCD PI, #/04, #/DB0F4940
+$VMSYS.MCD ?L?CST007E, #/04, #/00003443
+$DEFAULT.MUL ?F?$DEFAULT_MUL007F, DEG, PI
+$DEFAULT.DIV DEG_TO_RAD, ?F?$DEFAULT_MUL007F, ?L?CST007E
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="RAD_TO_DEG" cap="0">
+          <VAR_INPUT name="RAD" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_MEM name="RAD_TO_DEG" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="PI" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0082" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0083" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.RAD_TO_DEG?CODE 
+$VMSYS.MCD RAD_TO_DEG, #/04, #/00000000
+$VMSYS.MCD PI, #/04, #/DB0F4940
+$VMSYS.MCD ?L?CST0082, #/04, #/00003443
+$DEFAULT.MUL ?F?$DEFAULT_MUL0083, RAD, ?L?CST0082
+$DEFAULT.DIV RAD_TO_DEG, ?F?$DEFAULT_MUL0083, PI
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="SET_BIT" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="BIT" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_MEM name="SET_BIT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="_IN_DWORD" type="$DEFAULT.DWORD" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0086" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?L?CST008F" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_LT0090" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA008C" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA008E" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?I?CAST_FINT_TO_DINT0095" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST0099" type="$DEFAULT.DWORD" visibility="00100000" />
+          <VAR_MEM name="?F?SHL009A" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?F?OR009B" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?I?DWORD_TO_DINT009C" type="$DEFAULT.DINT" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.SET_BIT?CODE 
+$VMSYS.MCD SET_BIT, #/04, #/00000000
+$VMSYS.MCD _IN_DWORD, #/04, #/00000000
+$VMSYS.MCD ?L?CST0086, #/02, #/1F00
+$VMSYS.MCD ?L?CST008F, #/02, #/0000
+$VMSYS.MCD ?L?CST0099, #/04, #/01000000
+$DEFAULT.EQ ?IF?CTL, BIT, ?L?CST0086
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.SET_BITIF?B0085
+$DEFAULT.NEG SET_BIT, IN
+$VMSYS.JMP :?Praxis_FUNC.SET_BITIF?E0085
+:?Praxis_FUNC.SET_BITIF?B0085 
+$DEFAULT.LT ?LR?ANDA008C, BIT, ?L?CST0086
+$VMSYS.JZ ?LR?ANDA008C, :?Praxis_FUNC.SET_BIT?AND008B
+$DEFAULT.LT ?F?$DEFAULT_LT0090, BIT, ?L?CST008F
+$DEFAULT.NOT ?LR?ANDA008E, ?F?$DEFAULT_LT0090
+$VMSYS.JZ ?LR?ANDA008E, :?Praxis_FUNC.SET_BIT?AND008B
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?Praxis_FUNC.SET_BIT?EAND0093
+:?Praxis_FUNC.SET_BIT?AND008B 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?Praxis_FUNC.SET_BIT?EAND0093 
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.SET_BITIF?S008A
+$VMSYS.MEMCP ?I?CAST_FINT_TO_DINT0095, IN, #/0400
+$VMSYS.MEMCP _IN_DWORD, ?I?CAST_FINT_TO_DINT0095, #/0400
+$DEFAULT.SHL ?F?SHL009A, ?L?CST0099, BIT
+$DEFAULT.OR ?F?OR009B, _IN_DWORD, ?F?SHL009A
+$VMSYS.MEMCP ?I?DWORD_TO_DINT009C, ?F?OR009B, #/0400
+$VMSYS.MEMCP SET_BIT, ?I?DWORD_TO_DINT009C, #/0400
+$VMSYS.JMP :?Praxis_FUNC.SET_BITIF?E009E
+:?Praxis_FUNC.SET_BITIF?S008A 
+$VMSYS.MEMCP SET_BIT, IN, #/0400
+:?Praxis_FUNC.SET_BITIF?E009E 
+:?Praxis_FUNC.SET_BITIF?E0085 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="GET_BIT" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="BIT" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_MEM name="GET_BIT" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="_IN_DWORD" type="$DEFAULT.DWORD" visibility="00000000" />
+          <VAR_MEM name="HELP_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST00A1" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?ABS00A4" type="$DEFAULT.FINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST00AB" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_LT00AC" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00A8" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00AA" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST00B2" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST00B5" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST00B8" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?I?CAST_FINT_TO_DINT00BB" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST00BE" type="$DEFAULT.DWORD" visibility="00100000" />
+          <VAR_MEM name="?L?CST00BF" type="$DEFAULT.DWORD" visibility="00100000" />
+          <VAR_MEM name="?F?SHL00C0" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?F?AND00C1" type="$DEFAULT.DWORD" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.GET_BIT?CODE 
+$VMSYS.MCD GET_BIT, #/01, #/00
+$VMSYS.MCD _IN_DWORD, #/04, #/00000000
+$VMSYS.MCD HELP_FINT, #/04, #/00000000
+$VMSYS.MCD ?L?CST00A1, #/02, #/1F00
+$VMSYS.MCD ?L?CST00AB, #/02, #/0000
+$VMSYS.MCD ?L?CST00B2, #/04, #/00000000
+$VMSYS.MCD ?L?CST00B5, #/04, #/FFFFFF7F
+$VMSYS.MCD ?L?CST00B8, #/04, #/01000000
+$VMSYS.MCD ?L?CST00BE, #/04, #/01000000
+$VMSYS.MCD ?L?CST00BF, #/04, #/00000000
+$DEFAULT.EQ ?IF?CTL, BIT, ?L?CST00A1
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.GET_BITIF?B00A0
+$DEFAULT.ABS ?F?ABS00A4, IN
+$DEFAULT.NE GET_BIT, IN, ?F?ABS00A4
+$VMSYS.JMP :?Praxis_FUNC.GET_BITIF?E00A0
+:?Praxis_FUNC.GET_BITIF?B00A0 
+$DEFAULT.LT ?LR?ANDA00A8, BIT, ?L?CST00A1
+$VMSYS.JZ ?LR?ANDA00A8, :?Praxis_FUNC.GET_BIT?AND00A7
+$DEFAULT.LT ?F?$DEFAULT_LT00AC, BIT, ?L?CST00AB
+$DEFAULT.NOT ?LR?ANDA00AA, ?F?$DEFAULT_LT00AC
+$VMSYS.JZ ?LR?ANDA00AA, :?Praxis_FUNC.GET_BIT?AND00A7
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?Praxis_FUNC.GET_BIT?EAND00AF
+:?Praxis_FUNC.GET_BIT?AND00A7 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?Praxis_FUNC.GET_BIT?EAND00AF 
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.GET_BITIF?S00A6
+$VMSYS.MEMCP HELP_FINT, IN, #/0400
+$DEFAULT.LT ?IF?CTL, HELP_FINT, ?L?CST00B2
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.GET_BITIF?B00B1
+$DEFAULT.ADD HELP_FINT, HELP_FINT, ?L?CST00B5
+$DEFAULT.ADD HELP_FINT, HELP_FINT, ?L?CST00B8
+:?Praxis_FUNC.GET_BITIF?B00B1 
+$VMSYS.MEMCP ?I?CAST_FINT_TO_DINT00BB, HELP_FINT, #/0400
+$VMSYS.MEMCP _IN_DWORD, ?I?CAST_FINT_TO_DINT00BB, #/0400
+$DEFAULT.SHL ?F?SHL00C0, ?L?CST00BE, BIT
+$DEFAULT.AND ?F?AND00C1, _IN_DWORD, ?F?SHL00C0
+$DEFAULT.GT GET_BIT, ?F?AND00C1, ?L?CST00BF
+$VMSYS.JMP :?Praxis_FUNC.GET_BITIF?E00C3
+:?Praxis_FUNC.GET_BITIF?S00A6 
+$VMSYS.MCD GET_BIT, #/01, #/00
+:?Praxis_FUNC.GET_BITIF?E00C3 
+:?Praxis_FUNC.GET_BITIF?E00A0 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="RESET_BIT" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="BIT" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_MEM name="RESET_BIT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="_IN_DWORD" type="$DEFAULT.DWORD" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LCALL?Praxis_FUNC_GET_BIT" type="Praxis_FUNC.GET_BIT" visibility="00000000" />
+          <VAR_MEM name="?L?CST00C8" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?L?CST00D1" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_LT00D2" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00CE" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00D0" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?I?CAST_FINT_TO_DINT00D7" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST00DA" type="$DEFAULT.DWORD" visibility="00100000" />
+          <VAR_MEM name="?F?SHL00DB" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?F?XOR00DC" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?I?DWORD_TO_DINT00DD" type="$DEFAULT.DINT" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.RESET_BIT?CODE 
+$VMSYS.MCD RESET_BIT, #/04, #/00000000
+$VMSYS.MCD _IN_DWORD, #/04, #/00000000
+$VMSYS.MCD ?L?CST00C8, #/02, #/1F00
+$VMSYS.MCD ?L?CST00D1, #/02, #/0000
+$VMSYS.MCD ?L?CST00DA, #/04, #/01000000
+$VMSYS.MEMCP ?LCALL?Praxis_FUNC_GET_BIT.IN, IN, #/0400
+$VMSYS.MEMCP ?LCALL?Praxis_FUNC_GET_BIT.BIT, BIT, #/0200
+$VMSYS.CALF ?LCALL?Praxis_FUNC_GET_BIT, :?Praxis_FUNC.GET_BIT?CODE
+$VMSYS.MEMCP ?IF?CTL, ?LCALL?Praxis_FUNC_GET_BIT.GET_BIT, #/0100
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.RESET_BITIF?B00C5
+$DEFAULT.EQ ?IF?CTL, BIT, ?L?CST00C8
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.RESET_BITIF?B00C7
+$DEFAULT.ABS RESET_BIT, IN
+$VMSYS.JMP :?Praxis_FUNC.RESET_BITIF?E00C7
+:?Praxis_FUNC.RESET_BITIF?B00C7 
+$DEFAULT.LT ?LR?ANDA00CE, BIT, ?L?CST00C8
+$VMSYS.JZ ?LR?ANDA00CE, :?Praxis_FUNC.RESET_BIT?AND00CD
+$DEFAULT.LT ?F?$DEFAULT_LT00D2, BIT, ?L?CST00D1
+$DEFAULT.NOT ?LR?ANDA00D0, ?F?$DEFAULT_LT00D2
+$VMSYS.JZ ?LR?ANDA00D0, :?Praxis_FUNC.RESET_BIT?AND00CD
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?Praxis_FUNC.RESET_BIT?EAND00D5
+:?Praxis_FUNC.RESET_BIT?AND00CD 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?Praxis_FUNC.RESET_BIT?EAND00D5 
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.RESET_BITIF?S00CC
+$VMSYS.MEMCP ?I?CAST_FINT_TO_DINT00D7, IN, #/0400
+$VMSYS.MEMCP _IN_DWORD, ?I?CAST_FINT_TO_DINT00D7, #/0400
+$DEFAULT.SHL ?F?SHL00DB, ?L?CST00DA, BIT
+$DEFAULT.XOR ?F?XOR00DC, _IN_DWORD, ?F?SHL00DB
+$VMSYS.MEMCP ?I?DWORD_TO_DINT00DD, ?F?XOR00DC, #/0400
+$VMSYS.MEMCP RESET_BIT, ?I?DWORD_TO_DINT00DD, #/0400
+$VMSYS.JMP :?Praxis_FUNC.RESET_BITIF?E00DF
+:?Praxis_FUNC.RESET_BITIF?S00CC 
+$VMSYS.MEMCP RESET_BIT, IN, #/0400
+:?Praxis_FUNC.RESET_BITIF?E00DF 
+:?Praxis_FUNC.RESET_BITIF?E00C7 
+$VMSYS.JMP :?Praxis_FUNC.RESET_BITIF?E00E1
+:?Praxis_FUNC.RESET_BITIF?B00C5 
+$VMSYS.MEMCP RESET_BIT, IN, #/0400
+:?Praxis_FUNC.RESET_BITIF?E00E1 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="FINT_TO_TIME" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="FINT_TO_TIME" type="$DEFAULT.TIME" visibility="00000000" />
+          <VAR_MEM name="?L?CST0002" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0003" type="$DEFAULT.FINT" visibility="00200000" />
+          <VAR_MEM name="?F?FINT_TO_REAL0004" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.FINT_TO_TIME?CODE 
+$VMSYS.MCD4A FINT_TO_TIME, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0002, #/04000000, #/40420F00
+$DEFAULT.MUL ?F?$DEFAULT_MUL0003, IN, ?L?CST0002
+$DEFAULT.FINT_TO_REAL ?F?FINT_TO_REAL0004, ?F?$DEFAULT_MUL0003
+$DEFAULT.REAL_TO_TIME FINT_TO_TIME, ?F?FINT_TO_REAL0004
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="TIME_TO_FINT" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_MEM name="TIME_TO_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?F?TIME_TO_REAL0007" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.TIME_TO_FINT?CODE 
+$VMSYS.MCD4A TIME_TO_FINT, #/04000000, #/00000000
+$DEFAULT.TIME_TO_REAL ?F?TIME_TO_REAL0007, IN
+$DEFAULT.REAL_TO_FINT TIME_TO_FINT, ?F?TIME_TO_REAL0007
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="FINT_TO_INT" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="FINT_TO_INT" type="$DEFAULT.INT" visibility="00000000" />
+          <VAR_MEM name="?F?FINT_TO_REAL000A" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.FINT_TO_INT?CODE 
+$VMSYS.MCD4A FINT_TO_INT, #/02000000, #/0000FFFF
+$DEFAULT.FINT_TO_REAL ?F?FINT_TO_REAL000A, IN
+$DEFAULT.REAL_TO_INT FINT_TO_INT, ?F?FINT_TO_REAL000A
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="INT_TO_FINT" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_MEM name="INT_TO_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?F?INT_TO_REAL000D" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.INT_TO_FINT?CODE 
+$VMSYS.MCD4A INT_TO_FINT, #/04000000, #/00000000
+$DEFAULT.INT_TO_REAL ?F?INT_TO_REAL000D, IN
+$DEFAULT.REAL_TO_FINT INT_TO_FINT, ?F?INT_TO_REAL000D
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="DIV0" cap="4000">
+          <VAR_INPUT name="X" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="Y" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="DIV0" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0010" type="$DEFAULT.FINT" visibility="00100000" />
+          <CODE><![CDATA[:?Praxis_FUNC.DIV0?CODE 
+$VMSYS.MCD4A DIV0, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0010, #/04000000, #/00000000
+$DEFAULT.EQ ?IF?CTL, Y, ?L?CST0010
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.DIV0IF?B000F
+$VMSYS.MCD4A DIV0, #/04000000, #/00000000
+$VMSYS.JMP :?Praxis_FUNC.DIV0IF?E0013
+:?Praxis_FUNC.DIV0IF?B000F 
+$DEFAULT.DIV DIV0, X, Y
+:?Praxis_FUNC.DIV0IF?E0013 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="ABS_FINT" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="ABS_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0017" type="$DEFAULT.FINT" visibility="00100000" />
+          <CODE><![CDATA[:?Praxis_FUNC.ABS_FINT?CODE 
+$VMSYS.MCD4A ABS_FINT, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0017, #/04000000, #/00000000
+$DEFAULT.LT ?IF?CTL, IN, ?L?CST0017
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ABS_FINTIF?B0016
+$DEFAULT.NEG ABS_FINT, IN
+$VMSYS.JMP :?Praxis_FUNC.ABS_FINTIF?E001B
+:?Praxis_FUNC.ABS_FINTIF?B0016 
+$VMSYS.MEMCP4A ABS_FINT, IN, #/04000000
+:?Praxis_FUNC.ABS_FINTIF?E001B 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="SQRT_FINT" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="SQRT_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?F?FINT_TO_REAL001E" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?SQRT001F" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.SQRT_FINT?CODE 
+$VMSYS.MCD4A SQRT_FINT, #/04000000, #/00000000
+$DEFAULT.FINT_TO_REAL ?F?FINT_TO_REAL001E, IN
+$DEFAULT.SQRT ?F?SQRT001F, ?F?FINT_TO_REAL001E
+$DEFAULT.REAL_TO_FINT SQRT_FINT, ?F?SQRT001F
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="HZ_TO_RPM" cap="4000">
+          <VAR_INPUT name="FREQ" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="TEETH" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="HZ_TO_RPM" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?L?CST0022" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0023" type="$DEFAULT.FINT" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.HZ_TO_RPM?CODE 
+$VMSYS.MCD4A HZ_TO_RPM, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0022, #/04000000, #/60EA0000
+$DEFAULT.MUL ?F?$DEFAULT_MUL0023, FREQ, ?L?CST0022
+$DEFAULT.DIV HZ_TO_RPM, ?F?$DEFAULT_MUL0023, TEETH
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="MAX_FINT" cap="4000">
+          <VAR_INPUT name="A" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="B" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="MAX_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <CODE><![CDATA[:?Praxis_FUNC.MAX_FINT?CODE 
+$VMSYS.MCD4A MAX_FINT, #/04000000, #/00000000
+$DEFAULT.GE ?IF?CTL, A, B
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.MAX_FINTIF?B0025
+$VMSYS.MEMCP4A MAX_FINT, A, #/04000000
+$VMSYS.JMP :?Praxis_FUNC.MAX_FINTIF?E0028
+:?Praxis_FUNC.MAX_FINTIF?B0025 
+$VMSYS.MEMCP4A MAX_FINT, B, #/04000000
+:?Praxis_FUNC.MAX_FINTIF?E0028 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="MIN_FINT" cap="4000">
+          <VAR_INPUT name="A" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="B" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="MIN_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <CODE><![CDATA[:?Praxis_FUNC.MIN_FINT?CODE 
+$VMSYS.MCD4A MIN_FINT, #/04000000, #/00000000
+$DEFAULT.LT ?IF?CTL, A, B
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.MIN_FINTIF?B002A
+$VMSYS.MEMCP4A MIN_FINT, A, #/04000000
+$VMSYS.JMP :?Praxis_FUNC.MIN_FINTIF?E002D
+:?Praxis_FUNC.MIN_FINTIF?B002A 
+$VMSYS.MEMCP4A MIN_FINT, B, #/04000000
+:?Praxis_FUNC.MIN_FINTIF?E002D 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="ANGLE180" cap="4000">
+          <VAR_INPUT name="ANGLE" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="ANGLE180" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="TRUNC" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?L?CST0030" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST0033" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0036" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST003B" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL003C" type="$DEFAULT.FINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST003F" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST0044" type="$DEFAULT.FINT" visibility="00100000" />
+          <CODE><![CDATA[:?Praxis_FUNC.ANGLE180?CODE 
+$VMSYS.MCD4A ANGLE180, #/04000000, #/00000000
+$VMSYS.MCD4A TRUNC, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0030, #/04000000, #/002A7515
+$VMSYS.MCD4A ?L?CST0033, #/04000000, #/40420F00
+$VMSYS.MCD4A ?L?CST0036, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST003B, #/04000000, #/407E0500
+$VMSYS.MCD4A ?L?CST003F, #/04000000, #/20BF0200
+$VMSYS.MCD4A ?L?CST0044, #/04000000, #/E040FDFF
+$DEFAULT.DIV TRUNC, ANGLE, ?L?CST0030
+$DEFAULT.MUL TRUNC, TRUNC, ?L?CST0033
+$DEFAULT.EQ ?IF?CTL, TRUNC, ?L?CST0036
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE180IF?B0035
+$VMSYS.MEMCP4A ANGLE180, ANGLE, #/04000000
+$VMSYS.JMP :?Praxis_FUNC.ANGLE180IF?E0039
+:?Praxis_FUNC.ANGLE180IF?B0035 
+$DEFAULT.MUL ?F?$DEFAULT_MUL003C, TRUNC, ?L?CST003B
+$DEFAULT.SUB ANGLE180, ANGLE, ?F?$DEFAULT_MUL003C
+:?Praxis_FUNC.ANGLE180IF?E0039 
+$DEFAULT.GT ?IF?CTL, ANGLE180, ?L?CST003F
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE180IF?B003E
+$DEFAULT.SUB ANGLE180, ANGLE180, ?L?CST003B
+$VMSYS.JMP :?Praxis_FUNC.ANGLE180IF?E003E
+:?Praxis_FUNC.ANGLE180IF?B003E 
+$DEFAULT.LE ?IF?CTL, ANGLE180, ?L?CST0044
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE180IF?S0043
+$DEFAULT.ADD ANGLE180, ANGLE180, ?L?CST003B
+:?Praxis_FUNC.ANGLE180IF?S0043 
+:?Praxis_FUNC.ANGLE180IF?E003E 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="ANGLE360" cap="4000">
+          <VAR_INPUT name="ANGLE" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_MEM name="ANGLE360" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="TRUNC" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?L?CST0049" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST004C" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST004F" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST0054" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0055" type="$DEFAULT.FINT" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.ANGLE360?CODE 
+$VMSYS.MCD4A ANGLE360, #/04000000, #/00000000
+$VMSYS.MCD4A TRUNC, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0049, #/04000000, #/002A7515
+$VMSYS.MCD4A ?L?CST004C, #/04000000, #/40420F00
+$VMSYS.MCD4A ?L?CST004F, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0054, #/04000000, #/407E0500
+$DEFAULT.DIV TRUNC, ANGLE, ?L?CST0049
+$DEFAULT.MUL TRUNC, TRUNC, ?L?CST004C
+$DEFAULT.EQ ?IF?CTL, TRUNC, ?L?CST004F
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE360IF?B004E
+$VMSYS.MEMCP4A ANGLE360, ANGLE, #/04000000
+$VMSYS.JMP :?Praxis_FUNC.ANGLE360IF?E0052
+:?Praxis_FUNC.ANGLE360IF?B004E 
+$DEFAULT.MUL ?F?$DEFAULT_MUL0055, TRUNC, ?L?CST0054
+$DEFAULT.SUB ANGLE360, ANGLE, ?F?$DEFAULT_MUL0055
+:?Praxis_FUNC.ANGLE360IF?E0052 
+$DEFAULT.GT ?IF?CTL, ANGLE360, ?L?CST0054
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE360IF?B0057
+$DEFAULT.SUB ANGLE360, ANGLE360, ?L?CST0054
+$VMSYS.JMP :?Praxis_FUNC.ANGLE360IF?E0057
+:?Praxis_FUNC.ANGLE360IF?B0057 
+$DEFAULT.LE ?IF?CTL, ANGLE360, ?L?CST004F
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ANGLE360IF?S005B
+$DEFAULT.ADD ANGLE360, ANGLE360, ?L?CST0054
+:?Praxis_FUNC.ANGLE360IF?S005B 
+:?Praxis_FUNC.ANGLE360IF?E0057 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="ATAN2" cap="4000">
+          <VAR_INPUT name="X" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="Y" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_MEM name="ATAN2" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="PI" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0060" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV0063" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV006A" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?ATAN006B" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV006F" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?ATAN0070" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0075" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?L?CST007A" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV007B" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.ATAN2?CODE 
+$VMSYS.MCD4A ATAN2, #/04000000, #/00000000
+$VMSYS.MCD4A PI, #/04000000, #/DB0F4940
+$VMSYS.MCD4A ?L?CST0060, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0075, #/04000000, #/00000040
+$VMSYS.MCD4A ?L?CST007A, #/04000000, #/000080BF
+$DEFAULT.GT ?IF?CTL, X, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?B005F
+$DEFAULT.DIV ?F?$DEFAULT_DIV0063, Y, X
+$DEFAULT.ATAN ATAN2, ?F?$DEFAULT_DIV0063
+$VMSYS.JMP :?Praxis_FUNC.ATAN2IF?E005F
+:?Praxis_FUNC.ATAN2IF?B005F 
+$DEFAULT.LT ?IF?CTL, X, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?S0065
+$DEFAULT.GE ?IF?CTL, Y, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?B0067
+$DEFAULT.DIV ?F?$DEFAULT_DIV006A, Y, X
+$DEFAULT.ATAN ?F?ATAN006B, ?F?$DEFAULT_DIV006A
+$DEFAULT.ADD ATAN2, ?F?ATAN006B, PI
+$VMSYS.JMP :?Praxis_FUNC.ATAN2IF?E006D
+:?Praxis_FUNC.ATAN2IF?B0067 
+$DEFAULT.DIV ?F?$DEFAULT_DIV006F, Y, X
+$DEFAULT.ATAN ?F?ATAN0070, ?F?$DEFAULT_DIV006F
+$DEFAULT.SUB ATAN2, ?F?ATAN0070, PI
+:?Praxis_FUNC.ATAN2IF?E006D 
+$VMSYS.JMP :?Praxis_FUNC.ATAN2IF?E005F
+:?Praxis_FUNC.ATAN2IF?S0065 
+$DEFAULT.GT ?IF?CTL, Y, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?S0072
+$DEFAULT.DIV ATAN2, PI, ?L?CST0075
+$VMSYS.JMP :?Praxis_FUNC.ATAN2IF?E005F
+:?Praxis_FUNC.ATAN2IF?S0072 
+$DEFAULT.LT ?IF?CTL, Y, ?L?CST0060
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.ATAN2IF?S0077
+$DEFAULT.DIV ?F?$DEFAULT_DIV007B, PI, ?L?CST0075
+$DEFAULT.MUL ATAN2, ?F?$DEFAULT_DIV007B, ?L?CST007A
+:?Praxis_FUNC.ATAN2IF?S0077 
+:?Praxis_FUNC.ATAN2IF?E005F 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="DEG_TO_RAD" cap="4000">
+          <VAR_INPUT name="DEG" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_MEM name="DEG_TO_RAD" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="PI" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="?L?CST007E" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL007F" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.DEG_TO_RAD?CODE 
+$VMSYS.MCD4A DEG_TO_RAD, #/04000000, #/00000000
+$VMSYS.MCD4A PI, #/04000000, #/DB0F4940
+$VMSYS.MCD4A ?L?CST007E, #/04000000, #/00003443
+$DEFAULT.MUL ?F?$DEFAULT_MUL007F, DEG, PI
+$DEFAULT.DIV DEG_TO_RAD, ?F?$DEFAULT_MUL007F, ?L?CST007E
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="RAD_TO_DEG" cap="4000">
+          <VAR_INPUT name="RAD" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_MEM name="RAD_TO_DEG" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="PI" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0082" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0083" type="$DEFAULT.REAL" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.RAD_TO_DEG?CODE 
+$VMSYS.MCD4A RAD_TO_DEG, #/04000000, #/00000000
+$VMSYS.MCD4A PI, #/04000000, #/DB0F4940
+$VMSYS.MCD4A ?L?CST0082, #/04000000, #/00003443
+$DEFAULT.MUL ?F?$DEFAULT_MUL0083, RAD, ?L?CST0082
+$DEFAULT.DIV RAD_TO_DEG, ?F?$DEFAULT_MUL0083, PI
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="SET_BIT" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="BIT" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_MEM name="SET_BIT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="_IN_DWORD" type="$DEFAULT.DWORD" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0086" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?L?CST008F" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_LT0090" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA008C" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA008E" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?I?CAST_FINT_TO_DINT0095" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST0099" type="$DEFAULT.DWORD" visibility="00100000" />
+          <VAR_MEM name="?F?SHL009A" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?F?OR009B" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?I?DWORD_TO_DINT009C" type="$DEFAULT.DINT" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.SET_BIT?CODE 
+$VMSYS.MCD4A SET_BIT, #/04000000, #/00000000
+$VMSYS.MCD4A _IN_DWORD, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0086, #/02000000, #/1F00FFFF
+$VMSYS.MCD4A ?L?CST008F, #/02000000, #/0000FFFF
+$VMSYS.MCD4A ?L?CST0099, #/04000000, #/01000000
+$DEFAULT.EQ ?IF?CTL, BIT, ?L?CST0086
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.SET_BITIF?B0085
+$DEFAULT.NEG SET_BIT, IN
+$VMSYS.JMP :?Praxis_FUNC.SET_BITIF?E0085
+:?Praxis_FUNC.SET_BITIF?B0085 
+$DEFAULT.LT ?LR?ANDA008C, BIT, ?L?CST0086
+$VMSYS.JZ ?LR?ANDA008C, :?Praxis_FUNC.SET_BIT?AND008B
+$DEFAULT.LT ?F?$DEFAULT_LT0090, BIT, ?L?CST008F
+$DEFAULT.NOT ?LR?ANDA008E, ?F?$DEFAULT_LT0090
+$VMSYS.JZ ?LR?ANDA008E, :?Praxis_FUNC.SET_BIT?AND008B
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Praxis_FUNC.SET_BIT?EAND0093
+:?Praxis_FUNC.SET_BIT?AND008B 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?Praxis_FUNC.SET_BIT?EAND0093 
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.SET_BITIF?S008A
+$VMSYS.MEMCP4A ?I?CAST_FINT_TO_DINT0095, IN, #/04000000
+$VMSYS.MEMCP4A _IN_DWORD, ?I?CAST_FINT_TO_DINT0095, #/04000000
+$DEFAULT.SHL ?F?SHL009A, ?L?CST0099, BIT
+$DEFAULT.OR ?F?OR009B, _IN_DWORD, ?F?SHL009A
+$VMSYS.MEMCP4A ?I?DWORD_TO_DINT009C, ?F?OR009B, #/04000000
+$VMSYS.MEMCP4A SET_BIT, ?I?DWORD_TO_DINT009C, #/04000000
+$VMSYS.JMP :?Praxis_FUNC.SET_BITIF?E009E
+:?Praxis_FUNC.SET_BITIF?S008A 
+$VMSYS.MEMCP4A SET_BIT, IN, #/04000000
+:?Praxis_FUNC.SET_BITIF?E009E 
+:?Praxis_FUNC.SET_BITIF?E0085 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="GET_BIT" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="BIT" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_MEM name="GET_BIT" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="_IN_DWORD" type="$DEFAULT.DWORD" visibility="00000000" />
+          <VAR_MEM name="HELP_FINT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST00A1" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?ABS00A4" type="$DEFAULT.FINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST00AB" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_LT00AC" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00A8" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00AA" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?L?CST00B2" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST00B5" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?L?CST00B8" type="$DEFAULT.FINT" visibility="00100000" />
+          <VAR_MEM name="?I?CAST_FINT_TO_DINT00BB" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST00BE" type="$DEFAULT.DWORD" visibility="00100000" />
+          <VAR_MEM name="?L?CST00BF" type="$DEFAULT.DWORD" visibility="00100000" />
+          <VAR_MEM name="?F?SHL00C0" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?F?AND00C1" type="$DEFAULT.DWORD" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.GET_BIT?CODE 
+$VMSYS.MCD4A GET_BIT, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A _IN_DWORD, #/04000000, #/00000000
+$VMSYS.MCD4A HELP_FINT, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST00A1, #/02000000, #/1F00FFFF
+$VMSYS.MCD4A ?L?CST00AB, #/02000000, #/0000FFFF
+$VMSYS.MCD4A ?L?CST00B2, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST00B5, #/04000000, #/FFFFFF7F
+$VMSYS.MCD4A ?L?CST00B8, #/04000000, #/01000000
+$VMSYS.MCD4A ?L?CST00BE, #/04000000, #/01000000
+$VMSYS.MCD4A ?L?CST00BF, #/04000000, #/00000000
+$DEFAULT.EQ ?IF?CTL, BIT, ?L?CST00A1
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.GET_BITIF?B00A0
+$DEFAULT.ABS ?F?ABS00A4, IN
+$DEFAULT.NE GET_BIT, IN, ?F?ABS00A4
+$VMSYS.JMP :?Praxis_FUNC.GET_BITIF?E00A0
+:?Praxis_FUNC.GET_BITIF?B00A0 
+$DEFAULT.LT ?LR?ANDA00A8, BIT, ?L?CST00A1
+$VMSYS.JZ ?LR?ANDA00A8, :?Praxis_FUNC.GET_BIT?AND00A7
+$DEFAULT.LT ?F?$DEFAULT_LT00AC, BIT, ?L?CST00AB
+$DEFAULT.NOT ?LR?ANDA00AA, ?F?$DEFAULT_LT00AC
+$VMSYS.JZ ?LR?ANDA00AA, :?Praxis_FUNC.GET_BIT?AND00A7
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Praxis_FUNC.GET_BIT?EAND00AF
+:?Praxis_FUNC.GET_BIT?AND00A7 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?Praxis_FUNC.GET_BIT?EAND00AF 
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.GET_BITIF?S00A6
+$VMSYS.MEMCP4A HELP_FINT, IN, #/04000000
+$DEFAULT.LT ?IF?CTL, HELP_FINT, ?L?CST00B2
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.GET_BITIF?B00B1
+$DEFAULT.ADD HELP_FINT, HELP_FINT, ?L?CST00B5
+$DEFAULT.ADD HELP_FINT, HELP_FINT, ?L?CST00B8
+:?Praxis_FUNC.GET_BITIF?B00B1 
+$VMSYS.MEMCP4A ?I?CAST_FINT_TO_DINT00BB, HELP_FINT, #/04000000
+$VMSYS.MEMCP4A _IN_DWORD, ?I?CAST_FINT_TO_DINT00BB, #/04000000
+$DEFAULT.SHL ?F?SHL00C0, ?L?CST00BE, BIT
+$DEFAULT.AND ?F?AND00C1, _IN_DWORD, ?F?SHL00C0
+$DEFAULT.GT GET_BIT, ?F?AND00C1, ?L?CST00BF
+$VMSYS.JMP :?Praxis_FUNC.GET_BITIF?E00C3
+:?Praxis_FUNC.GET_BITIF?S00A6 
+$VMSYS.MCD4A GET_BIT, #/01000000, #/00FFFFFF
+:?Praxis_FUNC.GET_BITIF?E00C3 
+:?Praxis_FUNC.GET_BITIF?E00A0 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="RESET_BIT" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="BIT" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_MEM name="RESET_BIT" type="$DEFAULT.FINT" visibility="00000000" />
+          <VAR_MEM name="_IN_DWORD" type="$DEFAULT.DWORD" visibility="00000000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LCALL?Praxis_FUNC_GET_BIT" type="Praxis_FUNC.GET_BIT" visibility="00000000" />
+          <VAR_MEM name="?L?CST00C8" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?L?CST00D1" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_LT00D2" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00CE" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00D0" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?I?CAST_FINT_TO_DINT00D7" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?L?CST00DA" type="$DEFAULT.DWORD" visibility="00100000" />
+          <VAR_MEM name="?F?SHL00DB" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?F?XOR00DC" type="$DEFAULT.DWORD" visibility="00200000" />
+          <VAR_MEM name="?I?DWORD_TO_DINT00DD" type="$DEFAULT.DINT" visibility="00200000" />
+          <CODE><![CDATA[:?Praxis_FUNC.RESET_BIT?CODE 
+$VMSYS.MCD4A RESET_BIT, #/04000000, #/00000000
+$VMSYS.MCD4A _IN_DWORD, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST00C8, #/02000000, #/1F00FFFF
+$VMSYS.MCD4A ?L?CST00D1, #/02000000, #/0000FFFF
+$VMSYS.MCD4A ?L?CST00DA, #/04000000, #/01000000
+$VMSYS.MEMCP4A ?LCALL?Praxis_FUNC_GET_BIT.IN, IN, #/04000000
+$VMSYS.MEMCP4A ?LCALL?Praxis_FUNC_GET_BIT.BIT, BIT, #/02000000
+$VMSYS.CALF ?LCALL?Praxis_FUNC_GET_BIT, :?Praxis_FUNC.GET_BIT?CODE
+$VMSYS.MEMCP4A ?IF?CTL, ?LCALL?Praxis_FUNC_GET_BIT.GET_BIT, #/01000000
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.RESET_BITIF?B00C5
+$DEFAULT.EQ ?IF?CTL, BIT, ?L?CST00C8
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.RESET_BITIF?B00C7
+$DEFAULT.ABS RESET_BIT, IN
+$VMSYS.JMP :?Praxis_FUNC.RESET_BITIF?E00C7
+:?Praxis_FUNC.RESET_BITIF?B00C7 
+$DEFAULT.LT ?LR?ANDA00CE, BIT, ?L?CST00C8
+$VMSYS.JZ ?LR?ANDA00CE, :?Praxis_FUNC.RESET_BIT?AND00CD
+$DEFAULT.LT ?F?$DEFAULT_LT00D2, BIT, ?L?CST00D1
+$DEFAULT.NOT ?LR?ANDA00D0, ?F?$DEFAULT_LT00D2
+$VMSYS.JZ ?LR?ANDA00D0, :?Praxis_FUNC.RESET_BIT?AND00CD
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Praxis_FUNC.RESET_BIT?EAND00D5
+:?Praxis_FUNC.RESET_BIT?AND00CD 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?Praxis_FUNC.RESET_BIT?EAND00D5 
+$VMSYS.JZ ?IF?CTL, :?Praxis_FUNC.RESET_BITIF?S00CC
+$VMSYS.MEMCP4A ?I?CAST_FINT_TO_DINT00D7, IN, #/04000000
+$VMSYS.MEMCP4A _IN_DWORD, ?I?CAST_FINT_TO_DINT00D7, #/04000000
+$DEFAULT.SHL ?F?SHL00DB, ?L?CST00DA, BIT
+$DEFAULT.XOR ?F?XOR00DC, _IN_DWORD, ?F?SHL00DB
+$VMSYS.MEMCP4A ?I?DWORD_TO_DINT00DD, ?F?XOR00DC, #/04000000
+$VMSYS.MEMCP4A RESET_BIT, ?I?DWORD_TO_DINT00DD, #/04000000
+$VMSYS.JMP :?Praxis_FUNC.RESET_BITIF?E00DF
+:?Praxis_FUNC.RESET_BITIF?S00CC 
+$VMSYS.MEMCP4A RESET_BIT, IN, #/04000000
+:?Praxis_FUNC.RESET_BITIF?E00DF 
+:?Praxis_FUNC.RESET_BITIF?E00C7 
+$VMSYS.JMP :?Praxis_FUNC.RESET_BITIF?E00E1
+:?Praxis_FUNC.RESET_BITIF?B00C5 
+$VMSYS.MEMCP4A RESET_BIT, IN, #/04000000
+:?Praxis_FUNC.RESET_BITIF?E00E1 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+      </FUNCTIONS>
+    </LIB_BODY>
+  </LIBRARY>
+</PAL1131>

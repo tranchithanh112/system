@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement X="0" Y="0" Width="1024" Height="768" GridSpacing="5" ColorTableFile="..\ColorfileTable.colortable">
+	<Bindings>
+		<ChannelValueBinding TargetPropertyName="SelectedThemeTest" ChannelNumber="1090"/>
+	</Bindings>
+	<Children>
+		<Frame X="0" Y="667.667" Width="1020" Height="100" Path=".\Frame_Bottom.prax"/>
+		<Frame X="0" Y="575" Width="1020" Height="90" Path=".\Frame_Alarm_bottom.prax"/>
+		<Frame X="0" Y="0" Width="1020" Height="60" Path=".\Frame_Menu.prax"/>
+		<Frame X="276" Y="90" Width="124" Height="130" Path=".\Frame_Diagnostic_EAS.prax" FAIL="True">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="FAIL" ChannelNumber="108019"/>
+			</Bindings>
+		</Frame>
+	</Children>
+</RootElement>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="705" Height="1015" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="105" Y="200" DialColor="BackgroundGauge" IndicatorLinesColor="IndicationLine" FullDial="True" Path=".\Frame_GAUGE_points.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="FullDial" ExportedPropertyName="FullDial"/>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+			</Bindings>
+		</Frame>
+		<Panel Width="480" Height="480" X="115" Y="210" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Rotation" A="-1">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="B">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FilteredValueBinding TargetPropertyName="X">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Heading_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+					</Bindings>
+				</UnitConversionBinding>
+			</Bindings>
+			<Children>
+				<Polyline Width="2" LineColor="BackgroundShadow" ClosedOutline="True" FillColor="TextInfoHeader">
+					<Points>
+						<Point Coord="225;15"/>
+						<Point Coord="240;80"/>
+						<Point Coord="255;15"/>
+					</Points>
+				</Polyline>
+			</Children>
+		</Panel>
+		<TextBox Width="40" Height="25" X="335" Y="155" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="0"/>
+		<TextBox Width="40" Height="25" X="335" Y="715" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="180"/>
+		<TextBox Width="40" Height="25" X="550" Y="635" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="135"/>
+		<TextBox Width="40" Height="25" X="620" Y="435" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="90"/>
+		<TextBox Width="40" Height="25" X="535" Y="245" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="45"/>
+		<TextBox Width="40" Height="25" X="120" Y="245" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="-45"/>
+		<TextBox Width="40" Height="25" X="45" Y="435" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="-90"/>
+		<TextBox Width="40" Height="25" X="120" Y="635" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="-135"/>
+		<Bezier Width="3" LineColor="IndicationLine" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBoat"/>
+			</Bindings>
+			<Points>
+				<Point Coord="355;300"/>
+				<Point Coord="300;395"/>
+				<Point Coord="300;460"/>
+				<Point Coord="320;600"/>
+			</Points>
+		</Bezier>
+		<Bezier Width="3" LineColor="IndicationLine" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBoat"/>
+			</Bindings>
+			<Points>
+				<Point Coord="355;300"/>
+				<Point Coord="410;395"/>
+				<Point Coord="410;460"/>
+				<Point Coord="390;600"/>
+			</Points>
+		</Bezier>
+		<Line Width="3" Color="IndicationLine" X0="320" Y0="600" X1="390" Y1="600">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBoat"/>
+			</Bindings>
+		</Line>
+		<TextBox Visible="False" Width="235" Height="75" X="50" Y="830" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;94.0;N;N;N" Text="18.2">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="WindVelocity"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Width="280" Height="75" X="50" Y="895" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="SPEED"/>
+		<TextBox Visible="False" Width="200" Height="75" X="380" Y="830" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;94.0;N;N;N" Text="93">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="WindAngle"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Width="200" Height="75" X="380" Y="895" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="DIRECTION"/>
+		<TextBox Width="695" Height="75" X="5" Y="35" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;48.0;N;N;N" Text="WIND RELATIVE">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Width="45" Height="35" X="285" Y="870" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="kn"/>
+		<TextBox Visible="False" Width="45" Height="35" X="580" Y="830" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="°"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,4226 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="XP95">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <SUBJECT><![CDATA[]]></SUBJECT>
+      <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+      <CREATED year="2010" month="11" day="2" hour="17" minutes="30" seconds="32" milisec="115" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="000001E0" />
+      <II value="00000038" />
+      <PAL1131G used="0" />
+      <LC year="2022" month="11" day="28" hour="10" minutes="9" seconds="30" milisec="472" />
+      <LCF>
+        <ABSOLUTE>D:\Software\System\PAL1131\VM\VM-Praxis-XP.xml</ABSOLUTE>
+        <APPVARS>VM\VM-Praxis-XP.xml</APPVARS>
+        <ENVVARS>VM\VM-Praxis-XP.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.0</CREATOR>
+      <LASTSAVEDWITH>1.3.0.0
+</LASTSAVEDWITH>
+      <HCPFlags enabled="0" />
+      <OverrideDefaultPaths enabled="0" />
+      <COMPILER>
+        <DEFINE><![CDATA[]]></DEFINE>
+        <UNDEF><![CDATA[]]></UNDEF>
+      </COMPILER>
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="IEC 61131-3.lcp">
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="27" milisec="810" />
+        <APPVARS>Libraries\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>Libraries\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="ST" disabled="0" type="PRG" name="GLOB_VAR" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM GLOB_VAR
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+(* ########################################################## *)
+(* DECLARE GLOBAL VARIABLES => FIRST POU / NO CODE !          *)
+(* ########################################################## *)
+
+
+ VAR
+
+ END_VAR
+ 
+ (* NO CODE HERE IN THIS POU  !!!!!! *)
+
+ 
+ (****************************************************************) 
+ (* PMS SIMULATOR ************************************************)
+ (****************************************************************)
+ (*                                                              *)
+ (* REVISION : 5                                                 *)
+ (* DATE     : 23-02-2017                                        *)
+ (* AUTHOR   : MH                                                *)
+ (* UPDATE   : EXTENDED FROM 9 TO 15 PMS CONTROLLERS             *)
+ (*                                                              *)
+ (****************************************************************)
+ (*                                                              *)
+ (* REVISION : 4                                                 *)
+ (* DATE     : 02-11-2012                                        *)
+ (* AUTHOR   : RvdM                                              *)
+ (* UPDATE   : EXTENDED FROM 8 TO 9 PMS CONTROLLERS              *)
+ (*                                                              *)
+ (****************************************************************)
+ (*                                                              *)
+ (* REVISION : 3                                                 *)
+ (* DATE     : 22-05-2012                                        *)
+ (* AUTHOR   : RES                                               *)
+ (* UPDATE   : UPDATED TOTAL BUS LOAD WITH BT + UPDATED SHA/SHO MIMICS  *) 
+ (*                                                              *)
+ (****************************************************************)
+ (*                                                              *)
+ (* REVISION : 2                                                 *)
+ (* DATE     : 01-09-2011                                        *)
+ (* AUTHOR   : RES                                               *)
+ (* UPDATE   : ADAPT TO E-SERIES                                 *) 
+ (*                                                              *)
+ (*--------------------------------------------------------------*)
+ (* REVISION : 1                                                 *)
+ (* AUTHOR   : TF                                                *)
+ (* UPDATE   : SMART DESIGN                                      *)         
+ (*--------------------------------------------------------------*)
+
+
+
+VAR_GLOBAL
+
+   (************************************************************)
+   (*    GENERAL                                               *)
+   (************************************************************)
+
+   GRID                 : INT; 
+   LOOP_TIME            : FINT;     (* LOOP TIME IN SEC *)     
+   MAXXP                : INT;
+   MAXBUS               : INT;   
+   
+   (************************************************************)
+   (*    BUS INTERNAL VARIABLES                                *)
+   (************************************************************)
+                    
+   
+   BUS1ADD              : ARRAY[1..5] OF BOOL;     (* CONNECTED BUSSES *)
+   BUS2ADD              : ARRAY[1..5] OF BOOL;     (* E.G. BUS3ADD[4] = BUS3 + BUS4 *)                                           
+   BUS3ADD              : ARRAY[1..5] OF BOOL;     (* USED TO ADD POWERS ETC *)
+   BUS4ADD              : ARRAY[1..5] OF BOOL;
+   BUS5ADD              : ARRAY[1..5] OF BOOL; 
+
+   KVAR_BUS             : ARRAY[1..5] OF FINT ;
+   KW_BUS               : ARRAY[1..5] OF FINT ;
+   
+   BUS_MD_SPEED         : ARRAY[1..5] OF FINT;
+   BUS_MD_VOLT          : ARRAY[1..5] OF FINT;
+   BUS_SP               : ARRAY[1..5] OF FINT;
+     
+   BUS_TOTAL_KW         : ARRAY[1..5] OF FINT;
+   BUS_TOTAL_KVAR       : ARRAY[1..5] OF FINT; 
+
+   BUS_LOAD_PERCENT     : ARRAY[1..5] OF FINT;       (* LOAD PROGRAM *)
+
+   (************************************************************)
+   (*    D/G INTERNAL VARIABLES                                *)
+   (************************************************************)
+
+   AVAILABLE		    : ARRAY[1..15] OF BOOL ;            (* XP GEDETECTEERD *)                                        
+
+   SPEED_SP			    : ARRAY[1..15] OF FINT ;
+   SPEED_MAX_DROOP 	    : ARRAY[1..15] OF FINT ;
+
+   VOLT_SP   			: ARRAY[1..15] OF FINT ;
+   VOLT_MAX_DROOP   	: ARRAY[1..15] OF FINT ;
+
+   BUSNO                : ARRAY[0..15] OF INT;               (* =SET_BUSNO[XP] BUT CHECKED FOR ARRAY BOUND *)    
+
+END_VAR
+ 
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="CONFIG" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM CONFIG
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+    XP              : INT;
+    BUS             : INT;
+   _ENABLE_LOADPGM  : BOOL; 
+   _ENABLE_PMSSIM   : BOOL;      
+   _ENABLE_PMSWIRED : BOOL;           
+    
+    BT1_STAT        : RS;
+    BT2_STAT        : RS;    
+    BT3_STAT        : RS; 
+    BT4_STAT        : RS; 
+    BT5_STAT        : RS;
+    BT6_STAT        : RS;    
+    
+    _FREEZE_SIM     : BOOL;
+    CLOCK           : TON;
+    TEST            : FINT;
+    
+    LIVE_CHECK      : FLASHER;
+
+    I               : INT := 1;
+    COUNT           : ARRAY[1..15] OF INT;
+    OLD_LC          : ARRAY[1..15] OF INT;
+    COMM_TO         : ARRAY[1..15] OF BOOL;
+    CHECKS_TIMEOUT  : INT;
+    CHECKS_NORMAL   : INT;
+    
+ END_VAR
+ 
+(* BOUNDARIES *) 
+MAXXP  := 15;      
+MAXBUS := 5;
+
+(* CHECK AVAILABLE CONTROLLERS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+FOR XP:= 1 TO MAXXP DO
+   AVAILABLE[XP]   := (ADDRESS[XP] = XP) AND NOT COMM_TO[XP] ;        (* ADDRESS vs IP = OK => CONTROLLER PRESENT *)
+   SETUP_ERROR[XP] := NOT AVAILABLE[XP];
+
+   BUSNO[XP] := SET_BUSNO[XP] ;                           (* PREVENT BUS ARRAY BOUNDARY CRASH *)
+   IF (BUSNO[XP]<1) OR (BUSNO[XP]>5) THEN
+      BUSNO[XP] := 1;
+   END_IF
+   
+END_FOR 
+
+(*########################################################################################*)
+(* CHECK ONE CONTROLLERS EACH LOOP  ######################################################*)
+(*########################################################################################*)
+
+(* CHECK CONTROLLERS LIVE CHECKS *)
+
+CHECKS_TIMEOUT := 5 ;       (* NUMBER OF WRONG LC-CHECKS BEFORE TIME-OUT: T= X*LOOP TIME*MAX_XP *)
+CHECKS_NORMAL  := 3 ;       (* NUMBER OF CORRECT LC-CHECKS BEFORE RESET TIME-OUT *)
+
+IF ADDRESS[I] = I THEN    (* POWERED-UP *)
+   IF _LIVE_CHECK[I] = OLD_LC[I] THEN                  (* COMMUNICATION TIME-OUT *)
+     COUNT[I] :=  COUNT[I] + 1;
+   ELSE                                                   (* COMMUNICATION OKAY *)
+     COUNT[I] :=  COUNT[I] - 1;                         
+   END_IF
+   OLD_LC[I] := _LIVE_CHECK[I] ;
+
+   IF (COUNT[I] >= CHECKS_TIMEOUT) AND NOT COMM_TO[I] THEN                  (* SET TIME-OUT *)
+     COMM_TO[I] := TRUE;
+   ELSIF (COUNT[I] <= (CHECKS_TIMEOUT - CHECKS_NORMAL)) AND COMM_TO[I] THEN   (* RESET TIME-OUT *)
+     COMM_TO[I] := FALSE;
+     COUNT[I]   := 0;
+   END_IF 
+   IF COUNT[I]<0 THEN 
+      COUNT[I]   := 0; 
+   ELSIF COUNT[I] > CHECKS_TIMEOUT THEN
+      COUNT[I]   := CHECKS_TIMEOUT;
+   END_IF  
+END_IF
+
+(* NEXT *)
+ 
+I := I+1;  
+IF I>MAXXP THEN
+  I := 1;
+END_IF
+
+
+
+(* FREEZE SIMULATOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+IF  FREEZE_SIM AND NOT _FREEZE_SIM THEN      (* EDGE *)
+    FROZEN_SIM :=  NOT FROZEN_SIM;
+END_IF    
+_FREEZE_SIM := FREEZE_SIM;  
+
+
+(* ENABLE/DISABLE LOAD PROGRAM +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+IF  ENABLE_LOADPGM AND NOT _ENABLE_LOADPGM THEN      (* EDGE *)
+    LOADPGM_ENABLED :=  NOT LOADPGM_ENABLED;
+END_IF    
+_ENABLE_LOADPGM := ENABLE_LOADPGM;  
+
+(* ENABLE/DISABLE PMS SIMULATION MODE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+IF  PB_SIM_ON AND NOT _ENABLE_PMSSIM THEN      (* EDGE *)
+    SIM_ON :=  NOT SIM_ON;
+END_IF    
+_ENABLE_PMSSIM := PB_SIM_ON;  
+
+(* ENABLE/DISABLE PMS SIMULATION WIRED MODE (SIM WITH HARDWARE BOARDS) ++++++++++++++++++++++++++++++++++++*)
+IF  PB_WIRED_MODE AND NOT _ENABLE_PMSWIRED THEN      (* EDGE *)
+    WIRED_MODE :=  NOT WIRED_MODE;
+END_IF    
+_ENABLE_PMSWIRED := PB_WIRED_MODE;  
+
+(* PUT ALL PMS BOARDS IN SIMULATION MODE *)
+IF SIM_ON THEN
+   IF WIRED_MODE THEN
+      PMS_SIM_MODE := 1;
+   ELSE
+      PMS_SIM_MODE := 2;
+   END_IF
+ELSE
+   PMS_SIM_MODE := 0;
+END_IF
+
+(* GRID SETTING ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+IF SET_GRID_TYPE>5 THEN
+   GRID := 5;
+ELSIF SET_GRID_TYPE<1 THEN   
+   GRID := 1;
+ELSE
+   GRID:= SET_GRID_TYPE;
+END_IF
+
+IF (GRID<>SET_GRID_TYPE) THEN
+   SETUP_ERROR[1] := TRUE;
+END_IF
+
+GRID_NOT_4 := GRID<>4;               (* MIMIC *)
+GRID_NOT_5 := GRID<>5;               (* MIMIC *)
+
+
+(*  PROGRAM LOOP TIME +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+TEST :=REAL_TO_FINT(TIME_TO_REAL(CLOCK.ET)/1000.0);					(* EXPIRED TIME [Sec] *)
+
+IF (TEST>FINT#0) THEN						
+   CLOCK(PT:=T#5000, IN:=FALSE);
+END_IF
+CLOCK(PT:=T#5000, IN:=TRUE);
+
+
+LOOP_TIME := FINT#0.1;
+
+
+(* LIVE CHECK MIMIC INDICATION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+LIVE_CHECK(START:= TRUE, PULSE:= T#500,  CYCLE:= T#1000);
+ALIVE :=  LIVE_CHECK.Q;
+
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="BUS_TIES" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM BUS_TIES
+
+(* SIMULATE BUS TIES *)
+
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+    XPX         : INT;         
+    BTX         : INT;
+    OPEN        : BOOL;
+    CLOSE       : BOOL;
+    PULSE       : BOOL; 
+       
+    BT12        : BREAKER;                 (* 1 *)
+    BT23        : BREAKER;                 (* 2 *)
+    BT34        : BREAKER;                 (* 3 *)
+    BT45        : BREAKER;                 (* 4 *)
+    BT51        : BREAKER;                 (* 5 *)
+    BT41        : BREAKER;                 (* 6 *)
+           
+ END_VAR
+
+IF GRID > 1 THEN
+
+(* CHECK FOR ABT CONTROLLERS AND ASSIGN TO BTx **************************************************)
+
+  FOR BTX:=1 TO 6 DO               (* INIT *)
+      ABT_BT[BTX] := FALSE;
+      ABT_ADDRESS[BTX] := 0;
+  END_FOR
+  
+  FOR XPX:=1 TO MAXXP DO
+     IF AVAILABLE[XPX] AND (SET_FUNCTION[XPX]=5) THEN               (* CONTROLLER XPX = ABT *)
+  
+        BTX := BUSNO[XPX] ;                                     (* ASSIGN ABT TO BTx *)
+        IF (GRID=4) AND (BUSNO[XPX]=4) THEN
+           BTX := 6 ; 
+        END_IF    
+        ABT_BT[BTX] := TRUE;
+        ABT_ADDRESS[BTX] := XPX;                                    
+         
+     END_IF
+  END_FOR
+  
+  (* BT12 **************************************************************************************)
+
+  BTX := 1;
+  IF ABT_BT[BTX] THEN                  (* = ABT *)
+     XPX := ABT_ADDRESS[BTX];
+     CB_BT[BTX]  := CB[XPX];            (* COPY CB STATUS FROM CONTROLLER *)
+  ELSE                                  (* OPEN/CLOSE BT *)
+    BT12(OPEN:=OPEN_CB_BT[BTX], CLOSE:=CLOSE_CB_BT[BTX],  TOGGLE:=PULSE_BT[BTX], ENABLE:= TRUE);   
+    CB_BT[BTX]  := BT12.BREAKER; 
+  END_IF
+  
+  IF GRID > 2 THEN        (* BT23 **************************************************************************************)
+  
+    BTX := 2;
+    IF ABT_BT[BTX] THEN                  (* = ABT *)
+       XPX := ABT_ADDRESS[BTX];
+       CB_BT[BTX]  := CB[XPX];            (* COPY CB STATUS FROM CONTROLLER *)
+    ELSE                                  (* OPEN/CLOSE BT *)
+      BT23(OPEN:=OPEN_CB_BT[BTX], CLOSE:=CLOSE_CB_BT[BTX],  TOGGLE:=PULSE_BT[BTX], ENABLE:= TRUE);   
+      CB_BT[BTX]  := BT23.BREAKER; 
+    END_IF
+
+
+    IF GRID > 3 THEN   (* BT34 **************************************************************************************)
+    
+      BTX := 3;
+      IF ABT_BT[BTX] THEN                  (* = ABT *)
+         XPX := ABT_ADDRESS[BTX];
+         CB_BT[BTX]  := CB[XPX];            (* COPY CB STATUS FROM CONTROLLER *)
+      ELSE                                  (* OPEN/CLOSE BT *)
+        BT34(OPEN:=OPEN_CB_BT[BTX], CLOSE:=CLOSE_CB_BT[BTX],  TOGGLE:=PULSE_BT[BTX], ENABLE:= TRUE);   
+        CB_BT[BTX]  := BT34.BREAKER; 
+      END_IF
+   
+      IF GRID = 4 THEN   (* BT41 **************************************************************************************)
+ 
+        BTX := 6;
+        IF ABT_BT[BTX] THEN                  (* = ABT *)
+           XPX := ABT_ADDRESS[BTX];
+           CB_BT[BTX]  := CB[XPX];            (* COPY CB STATUS FROM CONTROLLER *)
+        ELSE                                  (* OPEN/CLOSE BT *)
+          BT41(OPEN:=OPEN_CB_BT[BTX], CLOSE:=CLOSE_CB_BT[BTX],  TOGGLE:=PULSE_BT[BTX], ENABLE:= TRUE);   
+          CB_BT[BTX]  := BT41.BREAKER; 
+        END_IF
+    
+      ELSIF GRID = 5 THEN 
+
+        (* BT45 **************************************************************************************)
+
+        BTX := 4;
+        IF ABT_BT[BTX] THEN                  (* = ABT *)
+           XPX := ABT_ADDRESS[BTX];
+           CB_BT[BTX]  := CB[XPX];            (* COPY CB STATUS FROM CONTROLLER *)
+        ELSE                                  (* OPEN/CLOSE BT *)
+          BT45(OPEN:=OPEN_CB_BT[BTX], CLOSE:=CLOSE_CB_BT[BTX],  TOGGLE:=PULSE_BT[BTX], ENABLE:= TRUE);   
+          CB_BT[BTX]  := BT45.BREAKER; 
+        END_IF
+
+        (* BT51 **************************************************************************************)
+
+        BTX := 5;
+        IF ABT_BT[BTX] THEN                  (* = ABT *)
+           XPX := ABT_ADDRESS[BTX];
+           CB_BT[BTX]  := CB[XPX];            (* COPY CB STATUS FROM CONTROLLER *)
+        ELSE                                  (* OPEN/CLOSE BT *)
+          BT51(OPEN:=OPEN_CB_BT[BTX], CLOSE:=CLOSE_CB_BT[BTX],  TOGGLE:=PULSE_BT[BTX], ENABLE:= TRUE);   
+          CB_BT[BTX]  := BT51.BREAKER; 
+        END_IF
+
+      END_IF     (* END GRID=4 OR 5 *)
+    END_IF       (* END GRID>3 *)
+  END_IF         (* END GRID>2 *)
+END_IF           (* END GRID>1 *)
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="BUS_ADD" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM BUS_ADD
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+
+(* FILLS BUSxADD[BUS] ARRAYS *)
+(* E.G. BUS3ADD[4] = TRUE WHEN BUS3 + BUS4 ARE CONNECTED  *)
+ 
+
+VAR
+   
+  BT12:BOOL;                                                                                                                                 
+  BT23:BOOL;                                 
+  BT34:BOOL;                                 
+  BT45:BOOL;                                 
+  BT14:BOOL;                                  
+  BT15:BOOL;       
+
+END_VAR
+
+(* ASSIGN BT => TO USE SAME CODE AS PMS *)
+
+BT12:= CB_BT[1];                                                                                                                                 
+BT23:= CB_BT[2];                                 
+BT34:= CB_BT[3];                                 
+BT45:= CB_BT[4];                                 
+BT14:= CB_BT[6];    (* USED WITH GRID 4 ONLY *)                              
+BT15:= CB_BT[5];            
+
+
+(* counter clockwise *)
+
+BUS1ADD[5] := BT15 AND (GRID=5);
+BUS2ADD[5] := BT12 AND BUS1ADD[5];
+BUS3ADD[5] := BT23 AND BUS2ADD[5];
+BUS4ADD[5] := BT34 AND BUS3ADD[5];
+BUS5ADD[5] := TRUE;
+
+BUS5ADD[4] := BT45 AND (GRID=5);
+BUS1ADD[4] := (BUS1ADD[5] AND BUS5ADD[4]) OR (BT14 AND (GRID=4));
+BUS2ADD[4] := BT12 AND BUS1ADD[4];
+BUS3ADD[4] := BT23 AND BUS2ADD[4];
+BUS4ADD[4] := TRUE;
+
+BUS4ADD[3] := BT34 AND (GRID>=4);
+BUS5ADD[3] := BUS5ADD[4] AND BUS4ADD[3];
+BUS1ADD[3] := BUS1ADD[4] AND BUS4ADD[3];
+BUS2ADD[3] := BUS1ADD[3] AND BT12;
+BUS3ADD[3] := TRUE; 
+
+BUS3ADD[2] := BT23 AND (GRID>=3);
+BUS4ADD[2] := BUS4ADD[3] AND BUS3ADD[2];
+BUS5ADD[2] := BUS5ADD[3] AND BUS3ADD[2];
+BUS1ADD[2] := BUS1ADD[3] AND BUS3ADD[2];
+BUS2ADD[2] := TRUE;
+
+BUS2ADD[1] := BT12 AND (GRID>=3);
+BUS3ADD[1] := BUS3ADD[2] AND BUS2ADD[1];
+BUS4ADD[1] := BUS4ADD[2] AND BUS2ADD[1];
+BUS5ADD[1] := BUS5ADD[2] AND BUS2ADD[1];
+BUS1ADD[1] := TRUE;
+
+(* clockwise (OR ccw) *)
+
+BUS1ADD[2] := BUS1ADD[2] OR ((GRID>=2)AND BT12);
+BUS1ADD[3] := BUS1ADD[3] OR ((GRID>=3)AND BT12 AND BT23);
+BUS1ADD[4] := BUS1ADD[4] OR ((GRID>=4)AND BT12 AND BT23 AND BT34);
+BUS1ADD[5] := BUS1ADD[5] OR ((GRID>=5)AND BT12 AND BT23 AND BT34 AND BT45);
+
+BUS2ADD[1] := BUS1ADD[2];
+BUS2ADD[3] := BUS2ADD[3] OR ((GRID>=3)AND BT23);
+BUS2ADD[4] := BUS2ADD[4] OR ((GRID>=4)AND BT23 AND BT34);
+BUS2ADD[5] := BUS2ADD[5] OR ((GRID>=5)AND BT23 AND BT34 AND BT45);
+
+BUS3ADD[1] := BUS1ADD[3];
+BUS3ADD[2] := BUS2ADD[3];
+BUS3ADD[4] := BUS3ADD[4] OR ((GRID>=4)AND BT34);
+BUS3ADD[5] := BUS3ADD[5] OR ((GRID>=5)AND BT34 AND BT45);
+
+BUS4ADD[1] := BUS1ADD[4];
+BUS4ADD[2] := BUS2ADD[4];
+BUS4ADD[3] := BUS3ADD[4];
+BUS4ADD[5] := BUS4ADD[5] OR ((GRID>=5)AND BT45);
+
+BUS5ADD[1] := BUS1ADD[5];
+BUS5ADD[2] := BUS2ADD[5];
+BUS5ADD[3] := BUS3ADD[5];
+BUS5ADD[4] := BUS4ADD[5];
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP1" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP1
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 1;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP2" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP2
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 2;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP3" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP3
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 3;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP4" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP4
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 4;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP5" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP5
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 5;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP6" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP6
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 6;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP7" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP7
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 7;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP8" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP8
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 8;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP9" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP9
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 9;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP10" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP10
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 10;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP11" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP11
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 11;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP12" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP12
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 12;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP13" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP13
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 13;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP14" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP14
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 14;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="XP15" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM XP15
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+
+ VAR
+   XPX            : INT; 
+   BUSX           : INT;    
+
+   XP             : XP_STATUS ;
+   DG             : GENERATOR;
+   CODE           : ENCODE_INT;
+   DG_LOAD        : DG_LOAD ; 
+   DG_CURRENT     : DG_CURRENT;
+   CIRCUIT_BREAKER: BREAKER;
+   ABT            : ABT_VF;
+   BUS_SIDE       : BUS_VF;
+ END_VAR
+
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+XPX := 15;
+(*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+
+
+BUS_NO[XPX]      := BOOL_TO_INT(AVAILABLE[XPX]) * BUSNO[XPX];      (* INDICATION ONLY ! *)
+   
+IF NOT FROZEN_SIM THEN
+
+  (*  CONTROLLER   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  XP(
+       XP               := XPX,     
+       AVAILABLE        := AVAILABLE[XPX],
+       PMS_IN           := PULSE_PMS_REMOTE[XPX],
+       REMOTE_IN        := PULSE_D_REMOTE[XPX],
+       FUNC_IN          := SET_FUNCTION[XPX]
+     );
+  
+  PMS_REMOTE[XPX]       := XP.ON ;
+  D_REMOTE[XPX]         := XP.REMOTE;
+
+
+  IF AVAILABLE[XPX] THEN             (* XP PRESENT *) 
+  
+    (* BREAKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+    
+    CIRCUIT_BREAKER( OPEN   := OPEN_CB[XPX] , 
+                     CLOSE  := CLOSE_CB[XPX], 
+                     TOGGLE := FALSE, 
+                     ENABLE := TRUE 
+                    );
+    CB[XPX] := (CIRCUIT_BREAKER.BREAKER OR (BLOCKING[XPX]=6)) AND NOT (BLOCKING[XPX]=4) ;
+    
+    
+
+    (* FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)  
+
+    IF SET_FUNCTION[XPX] <= 4  THEN          (* D/G + E/G + SHAFT + SHORE *)
+   
+
+      (* GENERATOR LOAD / CURRENT ++++++(placed here for processing order after busses) ++++++++++++++*)
+     
+      DG_LOAD(N:= XPX, B:= BUSNO[XPX]);
+      KW_LOAD[XPX]   := DG_LOAD.KW_LOAD;
+      KVAR_LOAD[XPX] := DG_LOAD.KVAR_LOAD;
+      
+      DG_CURRENT(N:= XPX);
+      G_AMP[XPX] := DG_CURRENT.I;
+
+
+      (* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*) 
+
+       DG(
+           T_LOOP           := LOOP_TIME,
+           XP               := XPX,
+           START_TIME       := SET_T_START,
+           STOP_TIME        := SET_T_STOP,
+           SPEED_DROOP      := SET_DROOP_SPEED,
+           SPEED_RATE       := SET_RATE_SPEED,
+           VOLT_DROOP       := SET_DROOP_VOLT,
+           VOLT_RATE        := SET_RATE_VOLT
+          );
+  
+  
+        D_START_FAIL[XPX]       := DG.START_FAIL;  
+        D_READY[XPX]            := DG.READY_TO_START;
+        D_RUNNING[XPX]          := DG.RUNNING;
+        G_ENERGIZED[XPX]        := DG.ENERGIZED;
+
+        SPEED_SP[XPX]           := DG.SPEED_SP;
+        G_FREQ[XPX]             := DG.SPEED_DG;
+        SPEED_MAX_DROOP[XPX]    := DG.SPEED_MAX_DROOP;
+        
+        VOLT_SP[XPX]            := DG.VOLT_SP;
+        G_VOLT[XPX]             := DG.VOLT_DG;
+        VOLT_MAX_DROOP[XPX]     := DG.VOLT_MAX_DROOP;
+        
+        KW_LOAD_PERC[XPX]       := DG.ACTIVE_LOAD_PERC;
+        KVAR_LOAD_PERC[XPX]     := DG.REACTIVE_LOAD_PERC;
+
+
+      ELSE       (* ABT *)         
+
+        (* ABT GENERATOR-SIDE V/F *****************************************)
+
+        ABT( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+        G_VOLT[XPX] :=  ABT.GEN_VOLT ;
+        G_FREQ[XPX] :=  ABT.GEN_FREQ ;
+
+      END_IF 
+      
+      
+
+      (* BUS-SIDE V/F +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+      BUS_SIDE( BUS_NO := BUSNO[XPX], BUS_GRID := GRID );
+      B_VOLT[XPX]   :=  BUS_SIDE.VOLT_OUT;
+      B_FREQ[XPX]   :=  BUS_SIDE.FREQ_OUT ;
+
+      SETUP_ERROR[XPX]  :=  BUS_SIDE.FAULT ;
+      
+  END_IF
+
+
+END_IF
+
+(*******************************************************************) 
+(* SIMULATOR OUTPUT CODING FOR WIRE-LESS TESTING - 6-BIT PACKED    *)
+(*******************************************************************)
+ 
+CODE(
+     B1:= CB[XPX],
+     B2:= D_RUNNING[XPX],     
+     B3:= D_START_FAIL[XPX], 
+     B4:= D_READY[XPX], 
+     B5:= PMS_REMOTE[XPX], 
+     B6:= D_REMOTE[XPX]
+    ); 
+     
+SIM_OUT_CODE[XPX] := CODE.OUT;
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="BUS1" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM BUS1
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR                          
+
+   BUSX     : INT; 
+   XPX      : INT; 
+   BB       : INT;
+   USE_DG   : BOOL;
+   RAMP_UP	: BOOL;
+
+  _SET_KVA_LOAD_BUS : REAL;
+  _SET_KW_LOAD_BUS  : REAL;
+  
+ END_VAR
+
+
+IF NOT FROZEN_SIM THEN 
+
+(* BUS NO. ++++++++++++++++++++++++++++++++++++++++*)
+
+BUSX := 1;
+  
+(*+++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  VOLT_BUS[BUSX] := FINT#0;
+  FREQ_BUS[BUSX] := FINT#0;      
+
+  IF (GRID>=BUSX) THEN            (* BUS IN USE *)
+
+    (* BUS VOLT/FREQ = FROM FIRST CONNECTED SOURCE  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    FOR XPX:=1 TO MAXXP DO   
+  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND         (* OWN BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+          VOLT_BUS[BUSX] := G_VOLT[XPX];
+          FREQ_BUS[BUSX] := G_FREQ[XPX];
+          EXIT;                                (* USE V/F OF FIRST CONNECTED DG *)
+       END_IF
+    
+    END_FOR
+
+    (* CALCULATE BUS ACTIVE/REACTIVE LOADSETTINGS FROM MIMIC LOAD SETTINGS +++++++++++++++++++++++++++++++++++++*)
+
+    KW_BUS[BUSX]	  := SET_KVA_LOAD_BUS[BUSX] * SET_PHI_LOAD_BUS[BUSX];
+
+    _SET_KVA_LOAD_BUS := FINT_TO_REAL(SET_KVA_LOAD_BUS[BUSX]);
+    _SET_KW_LOAD_BUS  := FINT_TO_REAL(KW_BUS[BUSX]);
+    KVAR_BUS[BUSX]    := REAL_TO_FINT(SQRT((_SET_KVA_LOAD_BUS *_SET_KVA_LOAD_BUS)-(_SET_KW_LOAD_BUS*_SET_KW_LOAD_BUS)));
+
+    (* LOAD PROGRAM +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    IF LOADPGM_ENABLED THEN
+
+    	(*** RAMP UP/DOWN ***)
+    	
+    	IF (BUS_LOAD_PERCENT[BUSX] <= FINT#0)THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#0;       (* LOWEST *) 
+    		RAMP_UP:=TRUE;
+    	ELSIF (BUS_LOAD_PERCENT[BUSX] >= FINT#100) THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#100;
+    		RAMP_UP:=FALSE;
+    	END_IF
+    
+    	IF RAMP_UP THEN
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX]	+ (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	ELSE
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX] - (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	END_IF
+    	
+      KW_BUS[BUSX]   :=  BUS_LOAD_PERCENT[BUSX] / FINT#100 * KW_BUS[BUSX];
+      KVAR_BUS[BUSX] :=   BUS_LOAD_PERCENT[BUSX] / FINT#100 * KVAR_BUS[BUSX];
+
+    END_IF      (* END - LOAD PROGRAM *)
+
+    (* LOAD DISTRIBUTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+  
+    BUS_MD_SPEED[BUSX] := FINT#0;   (* INIT *)
+    BUS_MD_VOLT[BUSX]  := FINT#0;
+    ACTUAL_KW_BUS[BUSX]:= FINT#0;
+    
+    FOR XPX:=1 TO MAXXP DO  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND             (* OWN/CONNECTED BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+         BUS_MD_SPEED[BUSX] := BUS_MD_SPEED[BUSX] + SPEED_MAX_DROOP[XPX];        (* MAX KW DROOP ON BUS *)
+         BUS_MD_VOLT[BUSX]  := BUS_MD_VOLT[BUSX]  + VOLT_MAX_DROOP[XPX];         (* MAX KVAR DROOP ON BUS *)
+         ACTUAL_KW_BUS[BUSX]:= ACTUAL_KW_BUS[BUSX] + KW_LOAD[XPX];
+       END_IF
+    
+    END_FOR
+    
+    (* BUS TOTAL LOAD ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+    BUS_TOTAL_KW[BUSX]   := FINT#0;
+    BUS_TOTAL_KVAR[BUSX] := FINT#0;    
+   
+    FOR BB:=1 TO GRID DO              (* ADD FOR RELEVANT BUSSES *)
+       IF BUSADD(BUSX, BB) THEN
+          BUS_TOTAL_KW[BUSX]   := BUS_TOTAL_KW[BUSX]   +   KW_BUS[BB];
+          BUS_TOTAL_KVAR[BUSX] := BUS_TOTAL_KVAR[BUSX] + KVAR_BUS[BB];
+       END_IF 
+    END_FOR 
+
+
+
+  END_IF    (* END - BUS IN USE *)
+  
+END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="BUS2" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM BUS2
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR                          
+
+   BUSX     : INT; 
+   XPX      : INT; 
+   BB       : INT;
+   USE_DG   : BOOL;
+   RAMP_UP	: BOOL;
+
+  _SET_KVA_LOAD_BUS : REAL;
+  _SET_KW_LOAD_BUS  : REAL;
+
+ END_VAR
+
+
+IF NOT FROZEN_SIM THEN 
+
+(* BUS NO. ++++++++++++++++++++++++++++++++++++++++*)
+
+BUSX := 2;
+  
+(*+++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  VOLT_BUS[BUSX] := FINT#0;
+  FREQ_BUS[BUSX] := FINT#0;      
+
+  IF (GRID>=BUSX) THEN            (* BUS IN USE *)
+
+    (* BUS VOLT/FREQ = FROM FIRST CONNECTED SOURCE  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    FOR XPX:=1 TO MAXXP DO   
+  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND         (* OWN BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+          VOLT_BUS[BUSX] := G_VOLT[XPX];
+          FREQ_BUS[BUSX] := G_FREQ[XPX];
+          EXIT;                                (* USE V/F OF FIRST CONNECTED DG *)
+       END_IF
+    
+    END_FOR
+
+    (* CALCULATE BUS ACTIVE/REACTIVE LOADSETTINGS FROM MIMIC LOAD SETTINGS +++++++++++++++++++++++++++++++++++++*)
+
+    KW_BUS[BUSX]	  := SET_KVA_LOAD_BUS[BUSX] * SET_PHI_LOAD_BUS[BUSX];
+
+    _SET_KVA_LOAD_BUS := FINT_TO_REAL(SET_KVA_LOAD_BUS[BUSX]);
+    _SET_KW_LOAD_BUS  := FINT_TO_REAL(KW_BUS[BUSX]);
+    KVAR_BUS[BUSX]  := REAL_TO_FINT(SQRT((_SET_KVA_LOAD_BUS *_SET_KVA_LOAD_BUS)-(_SET_KW_LOAD_BUS*_SET_KW_LOAD_BUS)));
+
+    (* LOAD PROGRAM +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    IF LOADPGM_ENABLED THEN
+
+    	(*** RAMP UP/DOWN ***)
+    	
+    	IF (BUS_LOAD_PERCENT[BUSX] <= FINT#0)THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#0;       (* LOWEST *) 
+    		RAMP_UP:=TRUE;
+    	ELSIF (BUS_LOAD_PERCENT[BUSX] >= FINT#100) THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#100;
+    		RAMP_UP:=FALSE;
+    	END_IF
+    
+    	IF RAMP_UP THEN
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX]	+ (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	ELSE
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX] - (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	END_IF
+    	
+      KW_BUS[BUSX]   :=  BUS_LOAD_PERCENT[BUSX] / FINT#100 * KW_BUS[BUSX];
+      KVAR_BUS[BUSX] :=   BUS_LOAD_PERCENT[BUSX] / FINT#100 * KVAR_BUS[BUSX];
+
+    END_IF      (* END - LOAD PROGRAM *)
+
+    (* LOAD DISTRIBUTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+  
+    BUS_MD_SPEED[BUSX] := FINT#0;   (* INIT *)
+    BUS_MD_VOLT[BUSX]  := FINT#0;
+    ACTUAL_KW_BUS[BUSX]:= FINT#0;
+    
+    FOR XPX:=1 TO MAXXP DO  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND             (* OWN/CONNECTED BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+         BUS_MD_SPEED[BUSX] := BUS_MD_SPEED[BUSX] + SPEED_MAX_DROOP[XPX];        (* MAX KW DROOP ON BUS *)
+         BUS_MD_VOLT[BUSX]  := BUS_MD_VOLT[BUSX]  + VOLT_MAX_DROOP[XPX];         (* MAX KVAR DROOP ON BUS *)
+         ACTUAL_KW_BUS[BUSX]:= ACTUAL_KW_BUS[BUSX] + KW_LOAD[XPX];
+       END_IF
+    
+    END_FOR
+    
+    (* BUS TOTAL LOAD ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+    BUS_TOTAL_KW[BUSX]   := FINT#0;
+    BUS_TOTAL_KVAR[BUSX] := FINT#0;    
+   
+    FOR BB:=1 TO GRID DO              (* ADD FOR RELEVANT BUSSES *)
+       IF BUSADD(BUSX, BB) THEN
+          BUS_TOTAL_KW[BUSX]   := BUS_TOTAL_KW[BUSX]   +   KW_BUS[BB];
+          BUS_TOTAL_KVAR[BUSX] := BUS_TOTAL_KVAR[BUSX] + KVAR_BUS[BB];
+       END_IF 
+    END_FOR 
+
+
+
+  END_IF    (* END - BUS IN USE *)
+  
+END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="BUS3" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM BUS3
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR                          
+
+   BUSX     : INT; 
+   XPX      : INT; 
+   BB       : INT;
+   USE_DG   : BOOL;
+   RAMP_UP	: BOOL;
+
+  _SET_KVA_LOAD_BUS : REAL;
+  _SET_KW_LOAD_BUS : REAL;
+
+ END_VAR
+
+
+IF NOT FROZEN_SIM THEN 
+
+(* BUS NO. ++++++++++++++++++++++++++++++++++++++++*)
+
+BUSX := 3;
+  
+(*+++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  VOLT_BUS[BUSX] := FINT#0;
+  FREQ_BUS[BUSX] := FINT#0;      
+
+  IF (GRID>=BUSX) THEN            (* BUS IN USE *)
+
+    (* BUS VOLT/FREQ = FROM FIRST CONNECTED SOURCE  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    FOR XPX:=1 TO MAXXP DO   
+  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND         (* OWN BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+          VOLT_BUS[BUSX] := G_VOLT[XPX];
+          FREQ_BUS[BUSX] := G_FREQ[XPX];
+          EXIT;                                (* USE V/F OF FIRST CONNECTED DG *)
+       END_IF
+    
+    END_FOR
+
+    (* CALCULATE BUS ACTIVE/REACTIVE LOADSETTINGS FROM MIMIC LOAD SETTINGS +++++++++++++++++++++++++++++++++++++*)
+
+    KW_BUS[BUSX]	  := SET_KVA_LOAD_BUS[BUSX] * SET_PHI_LOAD_BUS[BUSX];
+
+    _SET_KVA_LOAD_BUS := FINT_TO_REAL(SET_KVA_LOAD_BUS[BUSX]);
+    _SET_KW_LOAD_BUS  := FINT_TO_REAL(KW_BUS[BUSX]);
+    KVAR_BUS[BUSX]  := REAL_TO_FINT(SQRT((_SET_KVA_LOAD_BUS *_SET_KVA_LOAD_BUS)-(_SET_KW_LOAD_BUS*_SET_KW_LOAD_BUS)));
+
+
+    (* LOAD PROGRAM +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    IF LOADPGM_ENABLED THEN
+
+    	(*** RAMP UP/DOWN ***)
+    	
+    	IF (BUS_LOAD_PERCENT[BUSX] <= FINT#0)THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#0;       (* LOWEST *) 
+    		RAMP_UP:=TRUE;
+    		
+    	ELSIF (BUS_LOAD_PERCENT[BUSX] >= FINT#100) THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#100;
+    		RAMP_UP:=FALSE;
+    	END_IF
+    
+    	IF RAMP_UP THEN
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX]	+ (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	ELSE
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX] - (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	END_IF
+    	
+      KW_BUS[BUSX]   :=   BUS_LOAD_PERCENT[BUSX] / FINT#100 * KW_BUS[BUSX];
+      KVAR_BUS[BUSX] :=   BUS_LOAD_PERCENT[BUSX] / FINT#100 * KVAR_BUS[BUSX];
+
+    END_IF      (* END - LOAD PROGRAM *)
+
+
+    (* LOAD DISTRIBUTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+  
+    BUS_MD_SPEED[BUSX] := FINT#0;   (* INIT *)
+    BUS_MD_VOLT[BUSX]  := FINT#0;
+    ACTUAL_KW_BUS[BUSX]:= FINT#0;
+    
+    FOR XPX:=1 TO MAXXP DO  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND             (* OWN/CONNECTED BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+         BUS_MD_SPEED[BUSX] := BUS_MD_SPEED[BUSX] + SPEED_MAX_DROOP[XPX];        (* MAX KW DROOP ON BUS *)
+         BUS_MD_VOLT[BUSX]  := BUS_MD_VOLT[BUSX]  + VOLT_MAX_DROOP[XPX];         (* MAX KVAR DROOP ON BUS *)
+         ACTUAL_KW_BUS[BUSX]:= ACTUAL_KW_BUS[BUSX] + KW_LOAD[XPX];
+       END_IF
+    
+    END_FOR
+    
+    (* BUS TOTAL LOAD ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+    BUS_TOTAL_KW[BUSX]   := FINT#0;
+    BUS_TOTAL_KVAR[BUSX] := FINT#0;    
+   
+    FOR BB:=1 TO GRID DO              (* ADD FOR RELEVANT BUSSES *)
+       IF BUSADD(BUSX, BB) THEN
+          BUS_TOTAL_KW[BUSX]   := BUS_TOTAL_KW[BUSX]   +   KW_BUS[BB];
+          BUS_TOTAL_KVAR[BUSX] := BUS_TOTAL_KVAR[BUSX] + KVAR_BUS[BB];
+       END_IF 
+    END_FOR 
+
+
+
+  END_IF    (* END - BUS IN USE *)
+  
+END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="BUS4" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM BUS4
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR                          
+
+   BUSX     : INT; 
+   XPX      : INT; 
+   BB       : INT;
+   USE_DG   : BOOL;
+   RAMP_UP	: BOOL;
+
+  _SET_KVA_LOAD_BUS : REAL;
+  _SET_KW_LOAD_BUS : REAL;
+
+ END_VAR
+
+
+IF NOT FROZEN_SIM THEN 
+
+(* BUS NO. ++++++++++++++++++++++++++++++++++++++++*)
+
+BUSX := 4;
+  
+(*+++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  VOLT_BUS[BUSX] := FINT#0;
+  FREQ_BUS[BUSX] := FINT#0;      
+
+  IF (GRID>=BUSX) THEN            (* BUS IN USE *)
+
+    (* BUS VOLT/FREQ = FROM FIRST CONNECTED SOURCE  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    FOR XPX:=1 TO MAXXP DO   
+  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND         (* OWN BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+          VOLT_BUS[BUSX] := G_VOLT[XPX];
+          FREQ_BUS[BUSX] := G_FREQ[XPX];
+          EXIT;                                (* USE V/F OF FIRST CONNECTED DG *)
+       END_IF
+    
+    END_FOR
+
+    (* CALCULATE BUS ACTIVE/REACTIVE LOADSETTINGS FROM MIMIC LOAD SETTINGS +++++++++++++++++++++++++++++++++++++*)
+
+    KW_BUS[BUSX]	  := SET_KVA_LOAD_BUS[BUSX] * SET_PHI_LOAD_BUS[BUSX];
+
+    _SET_KVA_LOAD_BUS := FINT_TO_REAL(SET_KVA_LOAD_BUS[BUSX]);
+    _SET_KW_LOAD_BUS  := FINT_TO_REAL(KW_BUS[BUSX]);
+    KVAR_BUS[BUSX]  := REAL_TO_FINT(SQRT((_SET_KVA_LOAD_BUS *_SET_KVA_LOAD_BUS)-(_SET_KW_LOAD_BUS*_SET_KW_LOAD_BUS)));
+
+
+    (* LOAD PROGRAM +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    IF LOADPGM_ENABLED THEN
+
+    	(*** RAMP UP/DOWN ***)
+    	
+    	IF (BUS_LOAD_PERCENT[BUSX] <= FINT#0)THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#0;       (* LOWEST *) 
+    		RAMP_UP:=TRUE;
+    		
+    	ELSIF (BUS_LOAD_PERCENT[BUSX] >= FINT#100) THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#100;
+    		RAMP_UP:=FALSE;
+    	END_IF
+    
+    	IF RAMP_UP THEN
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX]	+ (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	ELSE
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX] - (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	END_IF
+    	
+      KW_BUS[BUSX]   :=   BUS_LOAD_PERCENT[BUSX] / FINT#100 * KW_BUS[BUSX];
+      KVAR_BUS[BUSX] :=   BUS_LOAD_PERCENT[BUSX] / FINT#100 * KVAR_BUS[BUSX];
+
+    END_IF      (* END - LOAD PROGRAM *)
+
+
+    (* LOAD DISTRIBUTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+  
+    BUS_MD_SPEED[BUSX] := FINT#0;   (* INIT *)
+    BUS_MD_VOLT[BUSX]  := FINT#0;
+    ACTUAL_KW_BUS[BUSX]:= FINT#0;
+    
+    FOR XPX:=1 TO MAXXP DO  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND             (* OWN/CONNECTED BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+         BUS_MD_SPEED[BUSX] := BUS_MD_SPEED[BUSX] + SPEED_MAX_DROOP[XPX];        (* MAX KW DROOP ON BUS *)
+         BUS_MD_VOLT[BUSX]  := BUS_MD_VOLT[BUSX]  + VOLT_MAX_DROOP[XPX];         (* MAX KVAR DROOP ON BUS *)
+         ACTUAL_KW_BUS[BUSX]:= ACTUAL_KW_BUS[BUSX] + KW_LOAD[XPX];
+       END_IF
+    
+    END_FOR
+    
+    (* BUS TOTAL LOAD ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+    BUS_TOTAL_KW[BUSX]   := FINT#0;
+    BUS_TOTAL_KVAR[BUSX] := FINT#0;    
+   
+    FOR BB:=1 TO GRID DO              (* ADD FOR RELEVANT BUSSES *)
+       IF BUSADD(BUSX, BB) THEN
+          BUS_TOTAL_KW[BUSX]   := BUS_TOTAL_KW[BUSX]   +   KW_BUS[BB];
+          BUS_TOTAL_KVAR[BUSX] := BUS_TOTAL_KVAR[BUSX] + KVAR_BUS[BB];
+       END_IF 
+    END_FOR 
+
+
+
+  END_IF    (* END - BUS IN USE *)
+  
+END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="BUS5" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM BUS5
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR                          
+
+   BUSX     : INT; 
+   XPX      : INT; 
+   BB       : INT;
+   USE_DG   : BOOL;
+   RAMP_UP	: BOOL;
+
+  _SET_KVA_LOAD_BUS : REAL;
+  _SET_KW_LOAD_BUS : REAL;
+
+ END_VAR
+
+
+IF NOT FROZEN_SIM THEN 
+
+(* BUS NO. ++++++++++++++++++++++++++++++++++++++++*)
+
+BUSX := 5;
+  
+(*+++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+  VOLT_BUS[BUSX] := FINT#0;
+  FREQ_BUS[BUSX] := FINT#0;      
+
+  IF (GRID>=BUSX) THEN            (* BUS IN USE *)
+
+    (* BUS VOLT/FREQ = FROM FIRST CONNECTED SOURCE  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    FOR XPX:=1 TO MAXXP DO   
+  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND         (* OWN BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+          VOLT_BUS[BUSX] := G_VOLT[XPX];
+          FREQ_BUS[BUSX] := G_FREQ[XPX];
+          EXIT;                                (* USE V/F OF FIRST CONNECTED DG *)
+       END_IF
+    
+    END_FOR
+
+    (* CALCULATE BUS ACTIVE/REACTIVE LOADSETTINGS FROM MIMIC LOAD SETTINGS +++++++++++++++++++++++++++++++++++++*)
+
+    KW_BUS[BUSX]	  := SET_KVA_LOAD_BUS[BUSX] * SET_PHI_LOAD_BUS[BUSX];
+
+    _SET_KVA_LOAD_BUS := FINT_TO_REAL(SET_KVA_LOAD_BUS[BUSX]);
+    _SET_KW_LOAD_BUS  := FINT_TO_REAL(KW_BUS[BUSX]);
+    KVAR_BUS[BUSX]  := REAL_TO_FINT(SQRT((_SET_KVA_LOAD_BUS *_SET_KVA_LOAD_BUS)-(_SET_KW_LOAD_BUS*_SET_KW_LOAD_BUS)));
+
+
+    (* LOAD PROGRAM +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+    
+    IF LOADPGM_ENABLED THEN
+
+    	(*** RAMP UP/DOWN ***)
+    	
+    	IF (BUS_LOAD_PERCENT[BUSX] <= FINT#0)THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#0;       (* LOWEST *) 
+    		RAMP_UP:=TRUE;
+    		
+    	ELSIF (BUS_LOAD_PERCENT[BUSX] >= FINT#100) THEN
+    		BUS_LOAD_PERCENT[BUSX] := FINT#100;
+    		RAMP_UP:=FALSE;
+    	END_IF
+    
+    	IF RAMP_UP THEN
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX]	+ (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	ELSE
+    		BUS_LOAD_PERCENT[BUSX]	:= BUS_LOAD_PERCENT[BUSX] - (LOOP_TIME * FINT#100 / SET_BUS_RAMP) ;
+    	END_IF
+    	
+      KW_BUS[BUSX]   :=   BUS_LOAD_PERCENT[BUSX] / FINT#100 * KW_BUS[BUSX];
+      KVAR_BUS[BUSX] :=   BUS_LOAD_PERCENT[BUSX] / FINT#100 * KVAR_BUS[BUSX];
+
+    END_IF      (* END - LOAD PROGRAM *)
+
+
+    (* LOAD DISTRIBUTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+  
+    BUS_MD_SPEED[BUSX] := FINT#0;   (* INIT *)
+    BUS_MD_VOLT[BUSX]  := FINT#0;
+    ACTUAL_KW_BUS[BUSX]:= FINT#0;
+    
+    FOR XPX:=1 TO MAXXP DO  
+       USE_DG :=  BUSADD(BUSNO[XPX],BUSX) AND             (* OWN/CONNECTED BUS *)
+                  CB[XPX] AND                             (* CONNECTED *)
+                  ( (SET_FUNCTION[XPX] = 1) OR            (* IF D/G - EM - SHAFT - SHORE *)
+                    (SET_FUNCTION[XPX] = 2) OR 
+                    (SET_FUNCTION[XPX] = 3) OR 
+                    (SET_FUNCTION[XPX] = 4)
+                  ) AND
+                  AVAILABLE[XPX] ;                        (* XP IS DETECTED *)
+       
+       IF USE_DG THEN 
+         BUS_MD_SPEED[BUSX] := BUS_MD_SPEED[BUSX] + SPEED_MAX_DROOP[XPX];        (* MAX KW DROOP ON BUS *)
+         BUS_MD_VOLT[BUSX]  := BUS_MD_VOLT[BUSX]  + VOLT_MAX_DROOP[XPX];         (* MAX KVAR DROOP ON BUS *)
+         ACTUAL_KW_BUS[BUSX]:= ACTUAL_KW_BUS[BUSX] + KW_LOAD[XPX];
+       END_IF
+    
+    END_FOR
+    
+    (* BUS TOTAL LOAD ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*)
+
+    BUS_TOTAL_KW[BUSX]   := FINT#0;
+    BUS_TOTAL_KVAR[BUSX] := FINT#0;    
+   
+    FOR BB:=1 TO GRID DO              (* ADD FOR RELEVANT BUSSES *)
+       IF BUSADD(BUSX, BB) THEN
+          BUS_TOTAL_KW[BUSX]   := BUS_TOTAL_KW[BUSX]   +   KW_BUS[BB];
+          BUS_TOTAL_KVAR[BUSX] := BUS_TOTAL_KVAR[BUSX] + KVAR_BUS[BB];
+       END_IF 
+    END_FOR 
+
+
+
+  END_IF    (* END - BUS IN USE *)
+  
+END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="CLOCK" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK CLOCK
+VAR_INPUT
+  T : TIME;    (* CLOCK INTERVAL IN MSEC *)
+ 
+END_VAR
+VAR_OUTPUT
+  Q:      BOOL;   (* ONE SCAN PULSE *)
+  ET:     TIME;
+
+END_VAR
+
+VAR
+ 
+   TIMER    : TON;
+  
+END_VAR  
+
+
+(*##############################################*)
+
+  
+TIMER(IN := NOT TIMER.Q , PT :=  T) ;
+
+ET:= TIMER.ET;
+Q := TIMER.Q  ;
+   
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FUN" name="BUSADD" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION BUSADD : BOOL (*RET_TYPE*)
+
+(* BUSADD = TRUE WHEN BUS1 AND BUS2 ARE CONNECTED *)
+(* USING PRELOADED ARRAYS FROM BT'S EVALUATION *)
+
+ VAR_INPUT
+    
+    BUS1 :      INT;
+    BUS2 :      INT;
+    
+ END_VAR
+
+BUSADD := FALSE;
+ 
+IF (BUS1 = BUS2) THEN
+  BUSADD := TRUE;
+ELSE
+  CASE BUS1 OF 
+     1:   BUSADD :=  BUS1ADD[BUS2];   (* VIRTUAL "TWO" DIMENSIONAL ARRAY *)
+     2:   BUSADD :=  BUS2ADD[BUS2];   (* CONCERNING CONNECTED BUS ?? *)
+     3:   BUSADD :=  BUS3ADD[BUS2];
+     4:   BUSADD :=  BUS4ADD[BUS2]; 
+     5:   BUSADD :=  BUS5ADD[BUS2];
+  END_CASE
+END_IF 
+
+ 
+
+END_FUNCTION]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="BREAKER" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK BREAKER
+VAR_INPUT 
+  
+
+   OPEN   : BOOL;
+   CLOSE  : BOOL;
+   TOGGLE : BOOL;
+   ENABLE : BOOL;
+
+END_VAR
+VAR_OUTPUT
+
+   BREAKER:    BOOL;        
+
+END_VAR
+
+VAR
+   PULSE : R_TRIG;
+   LATCH : RS;
+
+END_VAR
+
+IF ENABLE THEN
+
+  PULSE(CLK:= TOGGLE);
+  
+  LATCH(S:= (NOT BREAKER AND PULSE.Q) OR CLOSE, R1:= (BREAKER AND PULSE.Q) OR OPEN);
+  
+  BREAKER := LATCH.Q1;
+END_IF
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="DG_LOAD" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK DG_LOAD
+
+(* CALCULATE GENERATOR LOAD *)
+
+VAR_INPUT 
+
+  N             : INT;     (* DG NUMBER *)
+  B             : INT;     (* BUS NUMBER *)
+
+END_VAR
+VAR_OUTPUT
+
+  KW_LOAD   : FINT;
+  KVAR_LOAD : FINT; 
+           
+
+END_VAR
+
+VAR
+  G             : INT;
+  USE_DG        : BOOL;
+  
+  MINUS_KW   : FINT;
+  MINUS_KVAR : FINT;
+
+END_VAR
+
+KW_LOAD   := FINT#0;
+KVAR_LOAD := FINT#0;
+
+MINUS_KW   := FINT#0;
+MINUS_KVAR := FINT#0;
+
+FOR G:=1 TO 8 DO
+
+   USE_DG :=  BUSADD(B, BUSNO[G]) AND         (* BUS CONNECTED TO OWN BUS *)
+              CB[G] AND                         (* CONNECTED *)
+              (SET_FUNCTION[G] <= 4) AND        (* GENERATOR *)
+              AVAILABLE[G] ;                     (* XP IS DETECTED *)
+ 
+   IF USE_DG THEN                                         (* FOR EVERY SOURCE CONNECTED ON THIS BUS *)
+      MINUS_KW   := MINUS_KW   + (SPEED_MAX_DROOP[G] * (SPEED_SP[G]-SPEED_SP[N] ));
+      MINUS_KVAR := MINUS_KVAR + (VOLT_MAX_DROOP[G]  * (VOLT_SP[G] -VOLT_SP[N] ));
+   END_IF
+   
+END_FOR
+
+
+IF CB[N] THEN
+
+   (* DG ACTIVE LOAD *)
+   KW_LOAD := ((BUS_TOTAL_KW[B] - MINUS_KW) / BUS_MD_SPEED[B]) * SPEED_MAX_DROOP[N];
+   
+   (* DG REACTIVE LOAD *)
+   KVAR_LOAD := ((BUS_TOTAL_KVAR[B] - MINUS_KVAR ) / BUS_MD_VOLT[B]) * VOLT_MAX_DROOP[N];
+
+ELSE
+   KW_LOAD   := FINT#0;
+   KVAR_LOAD := FINT#0;
+END_IF
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="ENCODE_INT" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK ENCODE_INT
+VAR_INPUT 
+
+   B1 : BOOL;       (* LSS *)
+   B2 : BOOL;
+   B3 : BOOL;
+   B4 : BOOL;
+   B5 : BOOL;
+   B6 : BOOL;
+
+
+END_VAR
+VAR_OUTPUT
+   OUT    : INT;
+         
+END_VAR
+VAR
+ 
+END_VAR
+
+OUT := (BOOL_TO_INT(B1) * INT#2) +
+       (BOOL_TO_INT(B2) * INT#4) +
+       (BOOL_TO_INT(B3) * INT#8) +
+       (BOOL_TO_INT(B4) * INT#16) +
+       (BOOL_TO_INT(B5) * INT#32) +
+       (BOOL_TO_INT(B6) * INT#64);
+
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="DECODE_INT" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK DECODE_INT
+VAR_INPUT 
+
+   IN:    INT;
+          
+END_VAR
+VAR_OUTPUT
+
+   B1:    BOOL;
+   B2:    BOOL;          
+   B3:    BOOL;
+   B4:    BOOL;
+   B5:    BOOL;          
+   B6:    BOOL;   
+
+END_VAR
+
+VAR 
+   V : INT;
+END_VAR
+
+V:= IN;
+B6 := INT_TO_BOOL(V/INT#64);
+V  := V -(BOOL_TO_INT(B6)*INT#64);
+B5 := INT_TO_BOOL(V/INT#32);
+V  := V -(BOOL_TO_INT(B5)*INT#32);
+B4 := INT_TO_BOOL(V/INT#16);
+V  := V -(BOOL_TO_INT(B4)*INT#16);
+B3 := INT_TO_BOOL(V/INT#8);
+V  := V -(BOOL_TO_INT(B3)*INT#8);
+B2 := INT_TO_BOOL(V/INT#4);
+V  := V -(BOOL_TO_INT(B2)*INT#4);
+B1 := INT_TO_BOOL(V/INT#2);
+
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="GENERATOR" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK GENERATOR
+VAR_INPUT
+
+  T_LOOP   : FINT ;          (* LOOP TIME *)       
+  XP       : INT;            (* CONTROLLER NUMBER *)        
+
+	START_TIME		    :	FINT;
+	STOP_TIME		      :	FINT;
+	SPEED_DROOP			  :	FINT;
+	SPEED_RATE			  :	FINT;
+	VOLT_DROOP			  :	FINT;
+	VOLT_RATE			    :	FINT;	
+
+
+END_VAR
+VAR_OUTPUT
+
+   START_FAIL       : BOOL;
+  
+   READY_TO_START	  : BOOL;
+   RUNNING					:	BOOL;
+   ENERGIZED				:	BOOL;
+
+   SPEED_SP				  :	FINT;   
+   SPEED_DG				  :	FINT;
+   SPEED_MAX_DROOP	:	FINT;
+
+   VOLT_SP				  :	FINT;               
+   VOLT_DG					:	FINT;
+   VOLT_MAX_DROOP	  :	FINT;
+   
+   ACTIVE_LOAD_PERC		:	FINT;
+   REACTIVE_LOAD_PERC	:	FINT;
+ 
+END_VAR
+
+VAR
+
+	GEN_REACTIVE_MAX	   : FINT;
+	SPEED_PERC           : FINT;
+	VOLT_PERC            : FINT;
+	SPEED_IDLE			     : FINT;
+  SPEED_ADJUST		     : FINT;
+  VOLT_IDLE			       : FINT;
+  VOLT_ADJUST			     : FINT; 
+  START_T              : FINT;
+  STARTING             : BOOL := FALSE;
+  STOPPING             : BOOL := FALSE;
+  VOLT_LIMIT           : FINT;
+  _SET_MAX_KVA               : REAL;
+
+END_VAR
+
+
+(************************************************************************)
+
+
+(* KVAR MAX OF !!!GENERATOR *)
+_SET_MAX_KVA := FINT_TO_REAL(SET_MAX_KVA[XP]);
+GEN_REACTIVE_MAX :=  REAL_TO_FINT(SQRT( (_SET_MAX_KVA*_SET_MAX_KVA) - FINT_TO_REAL( FINT#1 - (SET_PF[XP]*SET_PF[XP])) ));
+
+
+(* STARTING/STOPPING/ FREQ ADJUST *)
+IF (SET_FUNCTION[XP]=1) OR (SET_FUNCTION[XP]=2) THEN     (* D/G+E/G *)
+
+  IF PMS_REMOTE[XP] THEN
+  
+    IF NOT D_REMOTE[XP] THEN     (* RESETS *)
+      STARTING   := FALSE;
+      STOPPING   := FALSE;      
+      START_FAIL := FALSE;
+      START_T := FINT#0 ;
+    END_IF
+    
+    IF (BLOCKING[XP]<>1) THEN
+      START_FAIL := FALSE;
+    END_IF
+    
+    (***STARTING***)
+    
+    IF (D_START[XP] OR STARTING) AND NOT START_FAIL AND D_REMOTE[XP] THEN
+      STARTING := TRUE;
+      STOPPING := FALSE;   
+      START_T := START_T + T_LOOP ;
+      
+      IF (BLOCKING[XP]=1) AND (START_T > (START_TIME*FINT#0.3 )) THEN    (* STARTING HANGS AT 30% = BELOW RUNNING *)
+        START_FAIL :=  TRUE;
+        STARTING   := FALSE;
+      ELSE
+
+    	  SPEED_IDLE	:= SPEED_IDLE + ( FINT#100 * T_LOOP / START_TIME) ;   
+        VOLT_IDLE	  := VOLT_IDLE 	+ ( FINT#100 * T_LOOP / START_TIME) ;
+        
+    	  IF (SPEED_IDLE > FINT#100) THEN
+  			  SPEED_IDLE := FINT#100;   (* LIMIT *)
+  			  VOLT_IDLE  := FINT#100; 
+          STARTING   := FALSE;
+    	  END_IF
+        
+    	  IF (BLOCKING[XP]=2) THEN                                (* VOLTAGE HANGS 10% BELOW ENERGIZED LEVEL *)
+    	    VOLT_LIMIT :=  ENERGIZED_LVL[XP] - FINT#10 ;
+    	  ELSE
+    	    VOLT_LIMIT :=  FINT#100 ;
+    	  END_IF
+	          	  
+  			IF (VOLT_IDLE > VOLT_LIMIT) THEN
+  			  VOLT_IDLE := VOLT_LIMIT;   (* LIMIT *)
+  			END_IF    	  
+    	  
+  		END_IF
+    END_IF	
+
+    (***STOPPING***)
+    
+    IF (D_STOP[XP] OR STOPPING) AND (BLOCKING[XP]<>7) AND D_REMOTE[XP] OR START_FAIL THEN
+      STARTING     := FALSE;
+      STOPPING     := TRUE;   
+      START_T      := FINT#0 ;
+      SPEED_ADJUST := FINT#0;
+      VOLT_ADJUST  := FINT#0;
+      
+  	  SPEED_IDLE	:= SPEED_IDLE - ( FINT#100 * T_LOOP / STOP_TIME) ;   
+      VOLT_IDLE	  := VOLT_IDLE 	- ( FINT#100 * T_LOOP / STOP_TIME) ;
+        
+  	  IF (SPEED_IDLE < FINT#0) THEN
+			  SPEED_IDLE := FINT#0;   (* LIMIT *)
+			  VOLT_IDLE  := FINT#0; 
+        STOPPING   := FALSE;
+  	  END_IF
+          	  
+			IF (VOLT_IDLE < FINT#0) THEN
+			  VOLT_IDLE := FINT#0;   (* LIMIT *)
+			END_IF    	  
+  	  
+		END_IF	
+    
+    (***SPEED ADJUST***)
+    IF RAISE_RPM[XP] AND D_REMOTE[XP] THEN
+    	SPEED_ADJUST	:= SPEED_ADJUST + (T_LOOP * SPEED_RATE) ;
+    END_IF
+    IF LOWER_RPM[XP] AND D_REMOTE[XP] AND (BLOCKING[XP]<>5) THEN
+    	SPEED_ADJUST	:= SPEED_ADJUST - (T_LOOP * SPEED_RATE) ;
+    END_IF
+
+  END_IF
+    
+  (***DETECT READY_TO_START***)
+  IF (SPEED_IDLE=FINT#0) AND D_REMOTE[XP] AND NOT START_FAIL THEN
+  	READY_TO_START := TRUE;
+  ELSE
+  	READY_TO_START := FALSE;
+  END_IF
+
+ELSE                (* NO FREQ CONTROL/ NO DROOP - SHORE/SHAFT *)
+  SPEED_IDLE   := FINT#100;
+  VOLT_IDLE    := FINT#100;
+  SPEED_ADJUST := FINT#0;
+  SPEED_DROOP  := FINT#0;
+  VOLT_DROOP   := FINT#0;
+  
+END_IF
+
+(***VOLTAGE ADJUST***)
+IF (SET_FUNCTION[XP]=1) OR (SET_FUNCTION[XP]=2) OR (SET_FUNCTION[XP]=3)  THEN     (* D/G+E/G+SHAFT *)  
+  IF PMS_REMOTE[XP] THEN
+    IF RAISE_VOLT[XP] AND D_REMOTE[XP] THEN
+    	VOLT_ADJUST	:= VOLT_ADJUST + (T_LOOP * VOLT_RATE) ;
+    END_IF
+    IF LOWER_VOLT[XP] AND D_REMOTE[XP] THEN
+    	VOLT_ADJUST	:= VOLT_ADJUST - (T_LOOP * VOLT_RATE) ;
+    END_IF
+  END_IF
+ELSE
+  VOLT_ADJUST := FINT#0;
+END_IF  
+
+    
+(***DETECT RUNNING***)
+IF (SPEED_IDLE > FINT#40) THEN
+	RUNNING := TRUE;
+ELSE
+	RUNNING := FALSE;
+END_IF    
+
+(***DETECT ENERGIZED***)
+IF (VOLT_IDLE > ENERGIZED_LVL[XP]) THEN
+	ENERGIZED := TRUE;
+ELSE
+	ENERGIZED := FALSE;
+END_IF
+
+(***CALCULATE SPEED / VOLTAGE / SP AND DG VALUES***)
+
+IF (SPEED_IDLE> FINT#0) THEN
+   SPEED_SP   	:= (SPEED_IDLE + SPEED_ADJUST);
+
+   IF (BLOCKING[XP]=3) AND NOT CB[XP] AND (SPEED_SP > FINT#98)  THEN     (* LIMIT *)
+        SPEED_SP   	:=  FINT#98 ;        
+   END_IF  
+
+  SPEED_PERC	:= SPEED_SP - (KW_LOAD[XP] / SET_MAX_KW[XP] * SPEED_DROOP);
+
+ELSE
+   SPEED_SP   :=FINT#0;
+   SPEED_PERC :=FINT#0;
+END_IF
+
+IF (VOLT_IDLE>FINT#0) THEN
+   VOLT_SP			:= (VOLT_IDLE + VOLT_ADJUST);
+   VOLT_PERC		:= VOLT_SP - (KVAR_LOAD[XP] / GEN_REACTIVE_MAX * VOLT_DROOP);
+ELSE
+   VOLT_SP   :=FINT#0;
+   VOLT_PERC :=FINT#0;
+END_IF
+
+
+(* FREQ/VOLT OUTPUT *)  
+SPEED_DG := (SET_NOM_FREQ[XP]/FINT#100 * SPEED_PERC);
+VOLT_DG  := (SET_NOM_VOLT[XP]/FINT#100 * VOLT_PERC);
+
+(* CALCULATE FOR LOAD DISTRIBUTION + BARGRAPH *)
+IF CB[XP] THEN
+
+   IF SPEED_DROOP=FINT#0 THEN
+      SPEED_MAX_DROOP := SET_MAX_KW[XP];
+   ELSE
+      SPEED_MAX_DROOP := SET_MAX_KW[XP]   / SPEED_DROOP;      (* KW/% *)
+   END_IF
+   
+   IF VOLT_DROOP=FINT#0 THEN
+      VOLT_MAX_DROOP := GEN_REACTIVE_MAX ;
+   ELSE
+      VOLT_MAX_DROOP	 := GEN_REACTIVE_MAX / VOLT_DROOP;       (* KVAR/% *)
+   END_IF   
+   
+	ACTIVE_LOAD_PERC		:=KW_LOAD[XP] 	/ SET_MAX_KW[XP] 	 * FINT#100;
+	REACTIVE_LOAD_PERC	:=KVAR_LOAD[XP] / GEN_REACTIVE_MAX * FINT#100;
+ELSE
+	SPEED_MAX_DROOP	    :=FINT#0;
+	VOLT_MAX_DROOP		    :=FINT#0;
+	ACTIVE_LOAD_PERC	 	 :=FINT#0;
+	REACTIVE_LOAD_PERC	 :=FINT#0;
+END_IF
+
+
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="DG_CURRENT" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK DG_CURRENT
+
+VAR_INPUT
+
+   N: INT;    (* DG NUMBER *)
+
+END_VAR
+VAR_OUTPUT
+
+   I: FINT;
+END_VAR
+VAR
+   P : FINT;
+END_VAR
+
+
+P := SQRT((KW_LOAD[N] * KW_LOAD[N])  + (KVAR_LOAD[N] * KVAR_LOAD[N])) / SQRT(FINT#3);
+
+IF G_VOLT[N] > FINT#0 THEN 
+
+   I :=  (P * FINT#1000) / G_VOLT[N]; 
+
+ELSE 
+
+   I := FINT#0;
+   
+END_IF
+
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="FLASHER" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK FLASHER
+
+VAR_INPUT                                                                                                                       
+   START : BOOL ;
+   PULSE : TIME ;
+   CYCLE : TIME ;
+END_VAR
+VAR_OUTPUT
+   Q :    BOOL;
+   ET:    TIME ;
+
+END_VAR
+VAR
+ 
+   TIMER    : TON;
+  
+END_VAR  
+
+
+(*##############################################*)
+
+   
+TIMER(IN := START AND NOT TIMER.Q , PT :=  CYCLE) ;
+
+ET:= TIMER.ET;
+Q := (ET <= PULSE) OR (PULSE >= CYCLE)  ;
+   
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="XP_STATUS" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK XP_STATUS
+VAR_INPUT 
+   XP                : INT;
+   AVAILABLE         : BOOL;
+   PMS_IN            : BOOL;
+   REMOTE_IN         : BOOL;
+   FUNC_IN           : INT;     
+               
+END_VAR
+VAR_OUTPUT
+   ON                : BOOL;
+   REMOTE            : BOOL;
+   
+END_VAR
+
+VAR
+   _PMS_IN            : BOOL;
+   _REMOTE_IN         : BOOL;
+	 _AVAILABLE         : BOOL;
+END_VAR
+
+
+(************************************************************************)
+
+IF AVAILABLE THEN
+   
+   IF NOT _AVAILABLE THEN       (* DEFAULT WHEN BECOMING AVAILABLE *)
+     ON       := TRUE;
+     REMOTE   := TRUE;
+   END_IF
+
+  (* PMS CONTROLLER ON/OFF *)
+  IF  PMS_IN AND NOT _PMS_IN THEN      (* EDGE *)
+      ON :=  NOT PMS_REMOTE[XP] ;
+  END_IF    
+  _PMS_IN := PMS_IN;  
+
+  IF (FUNC_IN>=1) AND (FUNC_IN<=4) THEN               
+     
+    (* DIESEL - REMOTE ON/OFF *)
+    IF  REMOTE_IN AND NOT _REMOTE_IN THEN      (* EDGE *)
+        REMOTE :=  NOT D_REMOTE[XP] ;
+    END_IF    
+    _REMOTE_IN := REMOTE_IN;    
+
+  ELSE
+   REMOTE   := FALSE;
+
+  END_IF 
+
+ELSE                        (* BLOCK WHEN NOT AVAILABLE *)
+   ON       := FALSE;
+   REMOTE   := FALSE;
+END_IF
+
+_AVAILABLE := AVAILABLE ;
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="ABT_VF" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK ABT_VF
+VAR_INPUT 
+
+  BUS_NO       : INT;
+  BUS_GRID     : INT;
+
+END_VAR
+VAR_OUTPUT
+  GEN_VOLT  : FINT;
+  GEN_FREQ  : FINT;
+  GEN_BUSNO : INT;
+
+END_VAR
+
+GEN_BUSNO := BUS_NO + 1;  
+   
+IF ((BUS_GRID=4) AND (GEN_BUSNO>=5))OR ((BUS_GRID=5) AND (GEN_BUSNO>=6)) THEN
+  GEN_BUSNO := 1 ;
+END_IF 
+
+IF (GEN_BUSNO>=1) AND (GEN_BUSNO<=5) THEN     (* CHECK FOR ARRAY BOUND *)
+
+  GEN_VOLT :=  VOLT_BUS[GEN_BUSNO] ;
+  GEN_FREQ :=  FREQ_BUS[GEN_BUSNO] ;
+  
+ELSE
+
+  GEN_VOLT :=  FINT#0 ;
+  GEN_FREQ :=  FINT#0 ;
+
+END_IF
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="BUS_VF" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK BUS_VF
+
+VAR_INPUT
+  BUS_NO       : INT;
+  BUS_GRID     : INT;
+
+END_VAR
+VAR_OUTPUT
+  VOLT_OUT  : FINT;
+  FREQ_OUT  : FINT;
+  FAULT     : BOOL;
+
+END_VAR
+
+IF (BUS_NO>=1) AND (BUS_NO<=5) THEN     (* CHECK FOR ARRAY BOUND *)
+
+  VOLT_OUT := VOLT_BUS[BUS_NO];
+  FREQ_OUT := FREQ_BUS[BUS_NO];
+
+ELSE
+  FAULT := TRUE;         
+  VOLT_OUT      := FINT#0;
+  FREQ_OUT      := FINT#0;
+
+END_IF
+
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="ABT_ADDRESS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ABT_ADDRESS (*$COMMENT 95092 BT1/2 -ABT ADDRESS*) : ARRAY[1..6] OF INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ABT_BT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ABT_BT (*$COMMENT 95086 BT1/2 -IS ABT*) : ARRAY[1..6] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ACTUAL_KW_BUS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ACTUAL_KW_BUS (*$COMMENT 95021 BUS 1 ACTIVE LOAD*) : ARRAY[1..5] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ADDRESS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ADDRESS (*$COMMENT 61041 CONTROLLER ADDRESS*) : ARRAY[1..15] OF INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ALIVE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ALIVE (*$COMMENT 95041 1131 LIVE CHECK*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BLOCKING" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BLOCKING (*$COMMENT 95155 DG1 -MIMIC BLOCKS*) : ARRAY[1..15] OF INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUS_NO" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUS_NO (*$COMMENT 95154 DG1 -BUS NO.*) : ARRAY[1..15] OF INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="B_FREQ" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ B_FREQ (*$COMMENT 95142 DG1 - BUS FREQUENCY*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="B_VOLT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ B_VOLT (*$COMMENT 95141 DG1 - BUS VOLTAGE*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CB" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CB (*$COMMENT 95121 DG1 - BREAKER CLOSED*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CB_BT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CB_BT (*$COMMENT 95068 BT1/2 - BREAKER CLOSED (A)*) : ARRAY[1..6] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CLOSE_CB" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CLOSE_CB (*$COMMENT 95103 DG1 - BREAKER CLOSE CMD*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CLOSE_CB_BT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CLOSE_CB_BT (*$COMMENT 95056 BT1/2 - BREAKER CLOSE CMD*) : ARRAY[1..6] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="D_READY" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ D_READY (*$COMMENT 95119 DG1 - ENGINE READY TO START*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="D_REMOTE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ D_REMOTE (*$COMMENT 95122 DG1 - ENGINE IN REMOTE*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="D_RUNNING" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ D_RUNNING (*$COMMENT 95120 DG1 - ENGINE RUNNING*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="D_START" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ D_START (*$COMMENT 95101 DG1 - ENGINE START CMD*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="D_START_FAIL" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ D_START_FAIL (*$COMMENT 95124 DG1 - START FAIL*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="D_STOP" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ D_STOP (*$COMMENT 95102 DG1 - ENGINE STOP CMD*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ENABLE_LOADPGM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ENABLE_LOADPGM (*$COMMENT 95050 ENABLE LOAD PROGRAM*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ENERGIZED_LVL" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ENERGIZED_LVL (*$COMMENT 61378 VOLTAGE ENERGIZED LEVEL*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FREEZE_SIM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FREEZE_SIM (*$COMMENT 95051 FREEZE SIMULATOR*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FREQ_BUS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FREQ_BUS (*$COMMENT 95006 BUS 1 -FREQUENCY*) : ARRAY[1..5] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FROZEN_SIM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FROZEN_SIM (*$COMMENT 95045 SIMULATOR FROZEN*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GRID_NOT_4" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GRID_NOT_4 (*$COMMENT 95038 GRID # 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GRID_NOT_5" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GRID_NOT_5 (*$COMMENT 95039 GRID # 5*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="G_AMP" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ G_AMP (*$COMMENT 95145 DG1 - CURRENT*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="G_ENERGIZED" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ G_ENERGIZED (*$COMMENT 95148 DG1 - ENERGIZED*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="G_FREQ" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ G_FREQ (*$COMMENT 95144 DG1 - FREQUENCY*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="G_VOLT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ G_VOLT (*$COMMENT 95143 DG1 - VOLTAGE*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="KVAR_LOAD" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ KVAR_LOAD (*$COMMENT 95147 DG1 - REACTIVE LOAD*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="KVAR_LOAD_PERC" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ KVAR_LOAD_PERC (*$COMMENT 95150 DG1 - REACTIVE LOAD (%)*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="KW_LOAD" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ KW_LOAD (*$COMMENT 95146 DG1 - ACTIVE LOAD*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="KW_LOAD_PERC" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ KW_LOAD_PERC (*$COMMENT 95149 DG1 - ACTIVE LOAD (%)*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LOADPGM_ENABLED" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LOADPGM_ENABLED (*$COMMENT 95044 LOAD PROGRAM ENABLED*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LOWER_RPM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LOWER_RPM (*$COMMENT 95106 DG1 - SPEED LOWER CMD*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LOWER_VOLT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LOWER_VOLT (*$COMMENT 95108 DG1 - VOLTAGE LOWER CMD*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="OPEN_CB" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ OPEN_CB (*$COMMENT 95104 DG1 - BREAKER OPEN CMD*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="OPEN_CB_BT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ OPEN_CB_BT (*$COMMENT 95057 BT1/2 - BREAKER OPEN CMD*) : ARRAY[1..6] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_SIM_ON" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_SIM_ON (*$COMMENT 95049 ENABLE SIMULATOR *) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PB_WIRED_MODE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PB_WIRED_MODE (*$COMMENT 95048 ENABLE WIRED MODE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PMS_REMOTE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PMS_REMOTE (*$COMMENT 95123 DG1 - PMS REMOTE*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PMS_SIM_MODE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PMS_SIM_MODE (*$COMMENT 95026 PMS SIMULATOR MODE*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PULSE_BT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PULSE_BT (*$COMMENT 95080 BT1/2 -MIMIC TOGGLE INPUT*) : ARRAY[1..6] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PULSE_D_REMOTE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PULSE_D_REMOTE (*$COMMENT 95156 DG1 -MIMIC TOGGLE: ENGINE REMOTE*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PULSE_PMS_REMOTE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PULSE_PMS_REMOTE (*$COMMENT 95157 DG1 -MIMIC TOGGLE: PMS REMOTE*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="RAISE_RPM" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ RAISE_RPM (*$COMMENT 95105 DG1 - SPEED RAISE CMD*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="RAISE_VOLT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ RAISE_VOLT (*$COMMENT 95107 DG1 - VOLTAGE RAISE CMD*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SETUP_ERROR" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SETUP_ERROR (*$COMMENT 95159 DG1 -SETUP ERROR*) : ARRAY[1..15] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_BUSNO" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_BUSNO (*$COMMENT 95161 DG1 -CONNECTED TO BUS NO.*) : ARRAY[1..15] OF INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_BUS_RAMP" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_BUS_RAMP (*$COMMENT 95033 BUS RAMP TIME*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_DROOP_SPEED" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_DROOP_SPEED (*$COMMENT 95029 DG SPEED DROOP*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_DROOP_VOLT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_DROOP_VOLT (*$COMMENT 95031 DG VOLTAGE DROOP*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_FUNCTION" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_FUNCTION (*$COMMENT 61042 CONTROLLER FUNCTION*) : ARRAY[1..15] OF INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_GRID_TYPE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_GRID_TYPE (*$COMMENT 95040 GRID TYPE (DG1)*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_KVA_LOAD_BUS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_KVA_LOAD_BUS (*$COMMENT 95011 BUS 1- SET APPEARENT LOAD*) : ARRAY[1..5] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_MAX_AMP" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_MAX_AMP (*$COMMENT 95166 DG1 -GENERATOR RATED CURRENT*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_MAX_KVA" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_MAX_KVA (*$COMMENT 95164 DG1 -GENERATOR CAPACITY*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_MAX_KW" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_MAX_KW (*$COMMENT 95167 DG1 -ENGINE CAPACITY*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_NOM_FREQ" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_NOM_FREQ (*$COMMENT 95163 DG1 -GENERATOR NOMINAL FREQUENCY*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_NOM_VOLT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_NOM_VOLT (*$COMMENT 95162 DG1 -GENERATOR NOMINAL VOLTAGE*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_PF" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_PF (*$COMMENT 95165 DG1 -GENERATOR POWER FACTOR*) : ARRAY[1..15] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_PHI_LOAD_BUS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_PHI_LOAD_BUS (*$COMMENT 95016 BUS 1 -SET COS PHI*) : ARRAY[1..5] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_RATE_SPEED" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_RATE_SPEED (*$COMMENT 95030 DG SPEED RATE *) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_RATE_VOLT" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_RATE_VOLT (*$COMMENT 95032 DG VOLTAGE RATE*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_T_START" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_T_START (*$COMMENT 95027 DG START PULSE*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SET_T_STOP" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SET_T_STOP (*$COMMENT 95028 DG STOP PULSE*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIM_ON" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIM_ON (*$COMMENT 95046 SIMULATOR ON*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIM_OUT_CODE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIM_OUT_CODE (*$COMMENT 95151 DG1 - SIMULATION OUTPUT CODE*) : ARRAY[1..15] OF INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="VOLT_BUS" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ VOLT_BUS (*$COMMENT 95001 BUS 1 -VOLTAGE*) : ARRAY[1..5] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="WIRED_MODE" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ WIRED_MODE (*$COMMENT 95047 WIRED MODE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="_LIVE_CHECK" flags="00804000"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ _LIVE_CHECK (*$COMMENT 61051 LIVE CHECK*) : ARRAY[1..15] OF INT;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK" loop_kind="0" interval="100"><![CDATA[GLOB_VAR
+CONFIG
+BUS_TIES
+BUS_ADD
+XP1
+XP2
+XP3
+XP4
+XP5
+XP6
+XP7
+XP8
+XP9
+XP10
+XP11
+XP12
+XP13
+XP14
+XP15
+BUS1
+BUS2
+BUS3
+BUS4
+BUS5
+]]></ITEM>
+    </TASK>
+    <USER_TYPES><![CDATA[]]></USER_TYPES>
+    <BUILD_FLAGS>
+      <SCANNER_FLAGS>688</SCANNER_FLAGS>
+      <COMPILER_FLAGS>13617</COMPILER_FLAGS>
+      <CODE_GENERATOR_FLAG>1</CODE_GENERATOR_FLAG>
+      <DEBUG_CONTENTS_FLAG>dcInhibitNone</DEBUG_CONTENTS_FLAG>
+      <CODE_OPTIMIZATION_LEVEL>5</CODE_OPTIMIZATION_LEVEL>
+    </BUILD_FLAGS>
+  </PROJECT>
+</PAL1131>
+

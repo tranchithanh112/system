@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="400" Height="400" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Panel Width="400" Height="400" ClipToBounds="True" BorderColor="Transparent" FillColor="Background">
+			<Children>
+				<Ellipse BorderWidth="10" BorderColor="PageInfoLineShaded" CenterX="200" CenterY="120" RadiusX="80" RadiusY="80"/>
+				<Ellipse BorderWidth="10" BorderColor="PageInfoLineShaded" FillColor="Transparent" CenterX="200" CenterY="220" RadiusX="80" RadiusY="80"/>
+				<TextBox Width="255" Height="85" X="45" Y="315" BorderColor="Transparent" FillColor="Transparent" TextColor="PageInfoLineShaded" Font="Praxis;60.0;N;N;N" Text="TRANFO"/>
+				<TextBox Height="85" X="300" Y="315" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="PageInfoLineShaded" Font="Praxis;60.0;N;N;N" Text="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="transformer_No_txt"/>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+		<TextBox Width="400" Height="70" Y="-70" BorderColor="PageInfoLineShaded" FillColor="KeyboardInputBackground" CornerRoundRadius="5" TextColor="White" Font="Praxis;62.0;N;N;N" Text="Earth Fault">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="earth_fault_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

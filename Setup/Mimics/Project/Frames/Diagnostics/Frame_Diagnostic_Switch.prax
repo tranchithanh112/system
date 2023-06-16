@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="200" Height="101" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="200" Y="1" BorderWidth="2" BorderColor="Black" FillColor="Black">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Switch_Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="135" Height="41" X="26" Y="29" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder" CornerRoundRadius="2"/>
+		<TextBox Width="47" Height="22" X="72" Y="38" BorderColor="Transparent" FillColor="Transparent" TextColor="StatusInactive" Font="Praxis;26.0;N;N;N" Text="SWITCH_1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Switch_Name"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="16" Height="18" X="26" Y="81"/>
+		<Rectangle Width="16" Height="6" X="26" Y="73" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="12" Height="10" X="28" Y="87" FillColor="Black"/>
+		<Rectangle Width="16" Height="6" X="43" Y="73" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="18" X="43" Y="81"/>
+		<Rectangle Width="12" Height="10" X="45" Y="87" FillColor="Black"/>
+		<Rectangle Width="16" Height="6" X="77" Y="73" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="18" X="77" Y="81"/>
+		<Rectangle Width="12" Height="10" X="79" Y="87" FillColor="Black"/>
+		<Rectangle Width="16" Height="6" X="60" Y="73" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="6" X="111" Y="73" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="18" X="111" Y="81"/>
+		<Rectangle Width="12" Height="10" X="113" Y="87" FillColor="Black"/>
+		<Rectangle Width="16" Height="6" X="94" Y="73" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="6" X="145" Y="73" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="18" X="145" Y="81"/>
+		<Rectangle Width="12" Height="10" X="147" Y="87" FillColor="Black"/>
+		<Rectangle Width="15" Height="6" X="129" Y="73" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="11" Height="6" X="1" Y="93" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="6" X="164" Y="64" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="6" X="181" Y="64" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="11" Height="6" X="13" Y="93" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="18" X="129" Y="2"/>
+		<Rectangle Width="16" Height="18" X="95" Y="2"/>
+		<Rectangle Width="16" Height="18" X="61" Y="2"/>
+		<Rectangle Width="16" Height="18" X="27" Y="2"/>
+		<Rectangle Width="16" Height="6" X="27" Y="21" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="12" Height="10" X="29" Y="8" FillColor="Black"/>
+		<Rectangle Width="16" Height="6" X="44" Y="21" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="18" X="44" Y="2"/>
+		<Rectangle Width="12" Height="10" X="46" Y="8" FillColor="Black"/>
+		<Rectangle Width="16" Height="6" X="78" Y="21" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="18" X="78" Y="2"/>
+		<Rectangle Width="12" Height="10" X="80" Y="8" FillColor="Black"/>
+		<Rectangle Width="12" Height="10" X="63" Y="8" FillColor="Black"/>
+		<Rectangle Width="16" Height="6" X="61" Y="21" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="6" X="112" Y="21" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="18" X="112" Y="2"/>
+		<Rectangle Width="12" Height="10" X="114" Y="8" FillColor="Black"/>
+		<Rectangle Width="12" Height="10" X="97" Y="8" FillColor="Black"/>
+		<Rectangle Width="16" Height="6" X="95" Y="21" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="6" X="146" Y="21" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="16" Height="18" X="146" Y="2"/>
+		<Rectangle Width="12" Height="10" X="148" Y="8" FillColor="Black"/>
+		<Rectangle Width="12" Height="10" X="131" Y="8" FillColor="Black"/>
+		<Rectangle Width="16" Height="6" X="129" Y="21" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="23" Height="41" X="2" Y="29" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder" CornerRoundRadius="2"/>
+		<Rectangle Width="16" Height="18" X="60" Y="81"/>
+		<Rectangle Width="12" Height="10" X="62" Y="87" FillColor="Black"/>
+		<Rectangle Width="16" Height="18" X="94" Y="81"/>
+		<Rectangle Width="16" Height="18" X="128" Y="81"/>
+		<Rectangle Width="12" Height="10" X="96" Y="87" FillColor="Black"/>
+		<Rectangle Width="12" Height="10" X="130" Y="87" FillColor="Black"/>
+		<Rectangle Width="33" Height="51" X="164" Y="11" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder" CornerRoundRadius="2"/>
+	</Children>
+</RootElement>

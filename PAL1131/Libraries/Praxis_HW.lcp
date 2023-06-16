@@ -1,0 +1,1605 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <LIBRARY name="PRAXIS_HW" crypt="" version="131072">
+    <LIB_HDR>
+      <COMP_VER>00041110</COMP_VER>
+      <CAPABILITIES>
+        <CAPABILITY code="0" />
+        <CAPABILITY code="4000" />
+      </CAPABILITIES>
+      <LIB_INFO>
+        <COPYRIGHT><![CDATA[Praxis Automation Technology]]></COPYRIGHT>
+        <CREATED year="2022" month="3" day="9" hour="14" minutes="3" seconds="3" milisec="472" />
+        <MENU_PATH>Praxis_HW</MENU_PATH>
+        <CONTENT>
+          <ITEM name="HW_LOAD" type="FBLK">
+            <PAR kind="OUTPUT" name="MAX_CPU_LOAD" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="CPU_LOAD_1131" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[Get XP Load information ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_XP" type="FBLK">
+            <PAR kind="OUTPUT" name="ADDRESS" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[Get XP Number as a INT]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_TIMING" type="FBLK">
+            <PAR kind="OUTPUT" name="CYCLE_TIME" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="CYCLE_DURATION" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="TIME_BETWEEN_CYCLES" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[The block is implemented in C (see native_blocks.c ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_VERSIONS" type="FBLK">
+            <PAR kind="OUTPUT" name="XP_LDR" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO1_LDR" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO2_LDR" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO3_LDR" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO4_LDR" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO5_LDR" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO6_LDR" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO7_LDR" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO8_LDR" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="XP_FW" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO1_FW" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO2_FW" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO3_FW" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO4_FW" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO5_FW" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO6_FW" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO7_FW" type="$DEFAULT.DWORD" />
+            <PAR kind="OUTPUT" name="IO8_FW" type="$DEFAULT.DWORD" />
+            <COMMENT><![CDATA[GET Bootloader/Firmware revisions]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SCROLL_UP" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[UPDATE SCOLLBAR OFFSET]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SCROLL_DOWN" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[UPDATE SCOLLBAR OFFSET]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_ACCEPT" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[ACCEPT ALARM LIST BOX]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_BUTTON_ID" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET BUTTON ID TO LIST BOX]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_TOUCH_GET_THR" type="FBLK">
+            <PAR kind="OUTPUT" name="val" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="err" type="$DEFAULT.BOOL" />
+          </ITEM>
+          <ITEM name="HW_TOUCH_SET_THR" type="FBLK">
+            <PAR kind="INPUT" name="val" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="err" type="$DEFAULT.BOOL" />
+          </ITEM>
+          <ITEM name="HW_SET_ALT_LANG" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET TFT ALT LANG OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_ALT_LANG" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET TFT ALT LANG OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_ALARM_PULSE_ON_NEXT" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET TFT ALARM PULSE ON NEXT OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_UNACCEPT" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET TFT UNACCEPT OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_UNACCEPT_ALM" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET TFT UNACCEPT OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SET_TFT_PAGE" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET TFT PAGE OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_TFT_PAGE" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iSub" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET TFT PAGE OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SET_TFT_FLASH" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET TFT FLASH OPTION FOR SYNCH BLINKING]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_DETACH_ELVR" type="FBLK">
+            <PAR kind="INPUT" name="POTMETER" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="HW_GETSTATUS_ELVR" type="FBLK">
+            <PAR kind="INPUT" name="LEVER" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="STATUS" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="HW_GETSTATUS_IOW24" type="FBLK">
+            <PAR kind="OUTPUT" name="STATUS" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="HW_SPEED_ELVR" type="FBLK">
+            <PAR kind="INPUT" name="FASTDB" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="STOPDB" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="SETPOINT" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="FBCH" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="ENABLEMOTOR" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="INVERTDIR" type="$DEFAULT.BOOL" />
+            <PAR kind="OUTPUT" name="ERROR" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="HW_STEER_ELVR" type="FBLK">
+            <PAR kind="INPUT" name="FASTDB" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="STOPDB" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="SETPOINT" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="FBCH" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="ENABLEMOTOR" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="INVERTDIR" type="$DEFAULT.BOOL" />
+            <PAR kind="OUTPUT" name="ERROR" type="$DEFAULT.INT" />
+          </ITEM>
+          <ITEM name="HW_STEERBLK_ELVR" type="FBLK">
+            <PAR kind="INPUT" name="FASTDB" type="$DEFAULT.FINT">
+              <COMMENT><![CDATA[OFFSET FAST>SLOW        ]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="STOPDB" type="$DEFAULT.FINT">
+              <COMMENT><![CDATA[OFFSET SLOW>STOP        ]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="SETPOINT" type="$DEFAULT.FINT">
+              <COMMENT><![CDATA[POSITION SETPOINT       ]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="FBCH" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[CHAN. NUMBER OF LEVER POSITION (CAN BE FROM 1131)  ]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="POTMETERINDEX" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[POTMETER NR. (2.4" LEVER=2)]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="ENABLEMOTOR" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[ENABLE EL-SHAFT MOTOR      ]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="INVERTDIR" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[INVERT MOTOR DIRECTION     ]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="ERROR" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[USE FOR AZIPOD STEER LEVER WITH BLOCKED RANGE ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_MENU_PUBLIC_KEY" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET/GET TFT MENU OPTION TO START WITH PUBLIC KEY]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_MENU_FIRST_PAGE" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET/GET FIRST PAGE TFT MENU OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_MENU_AFTER_LOGIN_PULSE" type="FBLK">
+            <PAR kind="INPUT" name="iLevel" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[AFTER LOGIN PULSE FOR 5 SEC]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_MENU_PW_CHANGE" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET/GET TFT MENU PASSWORD CHANGE OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_TFT_FLASH" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET TFT FLASH INTERN]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SET_RD_ACTIVE" type="FBLK">
+            <PAR kind="INPUT" name="iIndex" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="iActive" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET REMOTE DATA ACTIVE]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SET_WOODS_JIS" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET WOODS JIS OPTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="RETAIN_TO_FACTORY" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.DINT" />
+            <COMMENT><![CDATA[Backup RETAIN TO FACTORY ]]></COMMENT>
+          </ITEM>
+          <ITEM name="FACTORY_TO_RETAIN" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.DINT" />
+            <COMMENT><![CDATA[Restore FACTORY TO RETAIN ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_ALARM_PULSE_ON_NEXT_V02" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[Total=0,Emergency=1,Alarm=2,Warning=3,Caution=4]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET ALARM PULSE ON NEXT, SPECIFIC E A W C]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_UNACCEPT_V02" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[Total=0,Emergency=1,Alarm=2,Warning=3,Caution=4]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET UNACCEPT (ALL ALARMS + FLASHING NORMALS), SPECIFIC E A W C]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_UNACCEPT_ALM_V02" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[Total=0,Emergency=1,Alarm=2,Warning=3,Caution=4]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET UNACCEPT ALARMS (ONLY ALARMS), SPECIFIC E A W C]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SET_TFT_ALM_SUM_DAY_WEEK_MON" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[+/-   DAY 1/-1   WEEK 2/-2   MONTH 3/-3]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET ALARM SUMMARY OFFSET, SPECIFIC DAY / WEEK / MONTH]]></COMMENT>
+          </ITEM>
+          <ITEM name="SET_ORIENTATION" type="FBLK">
+            <PAR kind="INPUT" name="MV" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="MX" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="MY" type="$DEFAULT.BOOL" />
+          </ITEM>
+          <ITEM name="HW_SET_RD_COMPORT" type="FBLK">
+            <PAR kind="INPUT" name="iIndex" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[RD NR 0..3]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="iActive" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[0 = TURN OFF 1 = TURN ON]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="iComPort" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[COMPORT NR 1..4]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="iBaudrate" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[0..9 - 0(=300) 1(=600) 2(=1200) 3(=2400) 4(=4800) 5(=9600) 6(=19200) 7(=38400) 8(=57600) 9(=115200)]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="iDatabits" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[5..8 DATA BITS]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="iParity" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[0..4 - 0(=NONE) 1(=ODD) 2(=EVEN) 3(=MARK) 4(=SPACE)]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="iStopBits" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[1..2 Stopbits ]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET REMOTE DATA COMPORT ACTIVE]]></COMMENT>
+          </ITEM>
+          <ITEM name="LONG_FOLLOWUP" type="FBLK">
+            <PAR kind="INPUT" name="STEER_LEVER_RAW" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="THRUSTER_POS" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="THRUSTER_LFU_DIR" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="LEVER_OFFSET" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="SFU_RANGE" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="LEVER_WIRE_BREAK" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="ENABLE_ROTARY" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="ENABLE_LFU" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="IN_CONTROL" type="$DEFAULT.BOOL" />
+            <PAR kind="OUTPUT" name="STEER_LEVER_CAL" type="$DEFAULT.FINT" />
+            <PAR kind="OUTPUT" name="LFU_COMMAND" type="$DEFAULT.FINT" />
+            <PAR kind="OUTPUT" name="SFU_ON" type="$DEFAULT.BOOL" />
+            <COMMENT><![CDATA[LONG_FOLLOWUPFW]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_MENU_TOUCH_FUNCTION" type="FBLK">
+            <PAR kind="INPUT" name="USE_TB_LOGIN" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="USE_TB_CHANGE_PWD" type="$DEFAULT.BOOL" />
+            <PAR kind="INPUT" name="USE_TB_EDIT" type="$DEFAULT.BOOL" />
+            <COMMENT><![CDATA[HW_MENU_TOUCH_FUNCTION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_MENU_TOUCH_BUTTON_PRESS" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[0..12]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[HW_MENU_TOUCH_BUTTON_PRESS]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_GET_EAS_RESET_SIGNAL" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET EAS RESET SIGNAL]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SET_TFT_GROUP_NR_PAGE" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET TFT GROUP NR PAGE]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_ORD_PRN_SET_ON_OFF" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET ORDER PRINTER ON/OFF ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_ORD_PRN_PERIODIC_PRINT" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET ORDER PRINTER - PERIODIC PRINT ON/OFF ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_ORD_PRN_PERIODIC_HOURS" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET ORDER PRINTER - PERIODIC HOURS 12/24 ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_ORD_PRN_PRINT_STATUS" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SET ORDER PRINTER - PRINT STATUS CMD ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SHOW_MENU_SET_DATE" type="FBLK">
+            <PAR kind="INPUT" name="Page" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="MainMenu" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="SubMenu" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="SubItem" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SHOW MENU - SET DATE ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_SHOW_MENU_SET_TIME" type="FBLK">
+            <PAR kind="INPUT" name="Page" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="MainMenu" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="SubMenu" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="SubItem" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[SHOW MENU - SET TIME ]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_FORCE_REDRAW_DISPLAY" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[HW FORCE A REDRAW OF CURRENT DISPLAY]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_ORD_PRN_GET_STATUS_INFO" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[GET ORDER PRINTER STATUS INFORMATION]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_TFT_EAS_SEND_STOP_HORN" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[TFT EAS SEND STOP HORN TO IOSERVER]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_TFT_EAS_SEND_ACK" type="FBLK">
+            <PAR kind="INPUT" name="iInput" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[TFT EAS SEND ACK TO IOSERVER]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_NWSW_ROOTSTATE" type="FBLK">
+            <PAR kind="INPUT" name="BRIDGE_INDEX" type="$DEFAULT.INT" />
+            <PAR kind="OUTPUT" name="SWITCH_IS_ROOTSWITCH" type="$DEFAULT.BOOL" />
+            <COMMENT><![CDATA[CHECKS IF SWITCH=ROOT]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_READ_INPUT_TEXT" type="FBLK">
+            <PAR kind="INPUT" name="iKeyNr" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[1..28]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="iShift" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[0..2]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="szResult" type="PRAXIS_HW.?STRING?0001" />
+            <COMMENT><![CDATA[HW_READ_INPUT_TEXT]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_RESET_INPUT_TEXT" type="FBLK">
+            <PAR kind="OUTPUT" name="iRet" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[HW_RESET_INPUT_TEXT]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_LOAD_INPUT_TEXT" type="FBLK">
+            <PAR kind="INPUT" name="iKeyNr" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[1..28]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="iShift" type="$DEFAULT.INT">
+              <COMMENT><![CDATA[0..2]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="szInput" type="PRAXIS_HW.?STRING?0002" />
+            <COMMENT><![CDATA[HW_LOAD_INPUT_TEXT]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_CHANGE_PARAMETER" type="FBLK">
+            <PAR kind="INPUT" name="FRAME_NR" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="NR_OF_DEC" type="$DEFAULT.INT" />
+            <PAR kind="INPUT" name="DISPLAY" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="ENG_LOW" type="$DEFAULT.FINT" />
+            <PAR kind="INPUT" name="ENG_HIGH" type="$DEFAULT.FINT" />
+            <PAR kind="OUTPUT" name="CANCEL" type="$DEFAULT.BOOL" />
+            <PAR kind="OUTPUT" name="ACCEPT" type="$DEFAULT.BOOL" />
+            <PAR kind="OUTPUT" name="RET_VALUE" type="$DEFAULT.FINT" />
+            <COMMENT><![CDATA[HW_CHANGE_PARAMETER]]></COMMENT>
+          </ITEM>
+          <ITEM name="HW_PCS96_MODE" type="FBLK">
+            <PAR kind="INPUT" name="Mode" type="$DEFAULT.INT" />
+            <COMMENT><![CDATA[HW_PCS96_MODE]]></COMMENT>
+          </ITEM>
+          <ITEM name="?STRING?0001" type="STRING" />
+          <ITEM name="?STRING?0002" type="STRING" />
+        </CONTENT>
+      </LIB_INFO>
+      <DEPENDENCIES />
+    </LIB_HDR>
+    <LIB_BODY>
+      <FUNCTION_BLOCKS>
+        <FUNCTION_BLOCK name="HW_LOAD" flags="64" cap="0">
+          <VAR_OUTPUT name="MAX_CPU_LOAD" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="CPU_LOAD_1131" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0012" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_LOAD?INIT 
+$VMSYS.MCD MAX_CPU_LOAD, #/02, #/0000
+$VMSYS.MCD CPU_LOAD_1131, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_XP" flags="64" cap="0">
+          <VAR_OUTPUT name="ADDRESS" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0010" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_XP?INIT 
+$VMSYS.MCD ADDRESS, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TIMING" flags="64" cap="0">
+          <VAR_OUTPUT name="CYCLE_TIME" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="CYCLE_DURATION" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="TIME_BETWEEN_CYCLES" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0011" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TIMING?INIT 
+$VMSYS.MCD CYCLE_TIME, #/02, #/0000
+$VMSYS.MCD CYCLE_DURATION, #/02, #/0000
+$VMSYS.MCD TIME_BETWEEN_CYCLES, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_VERSIONS" flags="64" cap="0">
+          <VAR_OUTPUT name="XP_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO1_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO2_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO3_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO4_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO5_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO6_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO7_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO8_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="XP_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO1_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO2_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO3_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO4_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO5_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO6_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO7_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO8_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <HARDWARE id="0013" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_VERSIONS?INIT 
+$VMSYS.MCD XP_LDR, #/04, #/00000000
+$VMSYS.MCD IO1_LDR, #/04, #/00000000
+$VMSYS.MCD IO2_LDR, #/04, #/00000000
+$VMSYS.MCD IO3_LDR, #/04, #/00000000
+$VMSYS.MCD IO4_LDR, #/04, #/00000000
+$VMSYS.MCD IO5_LDR, #/04, #/00000000
+$VMSYS.MCD IO6_LDR, #/04, #/00000000
+$VMSYS.MCD IO7_LDR, #/04, #/00000000
+$VMSYS.MCD IO8_LDR, #/04, #/00000000
+$VMSYS.MCD XP_FW, #/04, #/00000000
+$VMSYS.MCD IO1_FW, #/04, #/00000000
+$VMSYS.MCD IO2_FW, #/04, #/00000000
+$VMSYS.MCD IO3_FW, #/04, #/00000000
+$VMSYS.MCD IO4_FW, #/04, #/00000000
+$VMSYS.MCD IO5_FW, #/04, #/00000000
+$VMSYS.MCD IO6_FW, #/04, #/00000000
+$VMSYS.MCD IO7_FW, #/04, #/00000000
+$VMSYS.MCD IO8_FW, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SCROLL_UP" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0034" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SCROLL_UP?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SCROLL_DOWN" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0035" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SCROLL_DOWN?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ACCEPT" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0036" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ACCEPT?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_BUTTON_ID" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0037" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_BUTTON_ID?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TOUCH_GET_THR" flags="64" cap="0">
+          <VAR_OUTPUT name="val" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="err" type="$DEFAULT.BOOL" visibility="00000020" />
+          <HARDWARE id="0038" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TOUCH_GET_THR?INIT 
+$VMSYS.MCD val, #/02, #/0000
+$VMSYS.MCD err, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TOUCH_SET_THR" flags="64" cap="0">
+          <VAR_INPUT name="val" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="err" type="$DEFAULT.BOOL" visibility="00000020" />
+          <HARDWARE id="0039" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TOUCH_SET_THR?INIT 
+$VMSYS.MCD err, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_ALT_LANG" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0040" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_ALT_LANG?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_ALT_LANG" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0041" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_ALT_LANG?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_ALARM_PULSE_ON_NEXT" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0042" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_ALARM_PULSE_ON_NEXT?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_UNACCEPT" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0043" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_UNACCEPT?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_UNACCEPT_ALM" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0044" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_UNACCEPT_ALM?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_TFT_PAGE" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0045" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_TFT_PAGE?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_TFT_PAGE" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="iSub" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0046" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_TFT_PAGE?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.MCD iSub, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_TFT_FLASH" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0047" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_TFT_FLASH?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_DETACH_ELVR" flags="64" cap="0">
+          <VAR_INPUT name="POTMETER" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0060" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_DETACH_ELVR?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GETSTATUS_ELVR" flags="64" cap="0">
+          <VAR_INPUT name="LEVER" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="STATUS" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0061" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GETSTATUS_ELVR?INIT 
+$VMSYS.MCD STATUS, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GETSTATUS_IOW24" flags="64" cap="0">
+          <VAR_OUTPUT name="STATUS" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0062" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GETSTATUS_IOW24?INIT 
+$VMSYS.MCD STATUS, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SPEED_ELVR" flags="64" cap="0">
+          <VAR_INPUT name="FASTDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="STOPDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="SETPOINT" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="FBCH" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="ENABLEMOTOR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="INVERTDIR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="ERROR" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0063" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SPEED_ELVR?INIT 
+$VMSYS.MCD ERROR, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_STEER_ELVR" flags="64" cap="0">
+          <VAR_INPUT name="FASTDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="STOPDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="SETPOINT" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="FBCH" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="ENABLEMOTOR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="INVERTDIR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="ERROR" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0064" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_STEER_ELVR?INIT 
+$VMSYS.MCD ERROR, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_STEERBLK_ELVR" flags="64" cap="0">
+          <VAR_INPUT name="FASTDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="STOPDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="SETPOINT" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="FBCH" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="POTMETERINDEX" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="ENABLEMOTOR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="INVERTDIR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="ERROR" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="006a" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_STEERBLK_ELVR?INIT 
+$VMSYS.MCD ERROR, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_PUBLIC_KEY" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0048" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_PUBLIC_KEY?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_FIRST_PAGE" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0049" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_FIRST_PAGE?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_AFTER_LOGIN_PULSE" flags="64" cap="0">
+          <VAR_INPUT name="iLevel" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004a" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_AFTER_LOGIN_PULSE?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_PW_CHANGE" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004b" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_PW_CHANGE?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_TFT_FLASH" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004c" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_TFT_FLASH?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_RD_ACTIVE" flags="64" cap="0">
+          <VAR_INPUT name="iIndex" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iActive" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="001d" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_RD_ACTIVE?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_WOODS_JIS" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004d" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_WOODS_JIS?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="RETAIN_TO_FACTORY" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.DINT" visibility="00000020" />
+          <HARDWARE id="001e" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.RETAIN_TO_FACTORY?INIT 
+$VMSYS.MCD iRet, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="FACTORY_TO_RETAIN" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.DINT" visibility="00000020" />
+          <HARDWARE id="001f" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.FACTORY_TO_RETAIN?INIT 
+$VMSYS.MCD iRet, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_ALARM_PULSE_ON_NEXT_V02" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004e" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_ALARM_PULSE_ON_NEXT_V02?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_UNACCEPT_V02" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004f" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_UNACCEPT_V02?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_UNACCEPT_ALM_V02" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0051" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_UNACCEPT_ALM_V02?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_TFT_ALM_SUM_DAY_WEEK_MON" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0052" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_TFT_ALM_SUM_DAY_WEEK_MON?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SET_ORIENTATION" flags="64" cap="0">
+          <VAR_INPUT name="MV" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="MX" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="MY" type="$DEFAULT.BOOL" visibility="00000010" />
+          <HARDWARE id="0053" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.SET_ORIENTATION?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_RD_COMPORT" flags="64" cap="0">
+          <VAR_INPUT name="iIndex" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iActive" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iComPort" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iBaudrate" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iDatabits" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iParity" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iStopBits" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0020" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_RD_COMPORT?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="LONG_FOLLOWUP" flags="64" cap="0">
+          <VAR_INPUT name="STEER_LEVER_RAW" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="THRUSTER_POS" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="THRUSTER_LFU_DIR" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="LEVER_OFFSET" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="SFU_RANGE" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="LEVER_WIRE_BREAK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="ENABLE_ROTARY" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="ENABLE_LFU" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="IN_CONTROL" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="STEER_LEVER_CAL" type="$DEFAULT.FINT" visibility="00000020" />
+          <VAR_OUTPUT name="LFU_COMMAND" type="$DEFAULT.FINT" visibility="00000020" />
+          <VAR_OUTPUT name="SFU_ON" type="$DEFAULT.BOOL" visibility="00000020" />
+          <HARDWARE id="0054" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.LONG_FOLLOWUP?INIT 
+$VMSYS.MCD STEER_LEVER_CAL, #/04, #/00000000
+$VMSYS.MCD LFU_COMMAND, #/04, #/00000000
+$VMSYS.MCD SFU_ON, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_TOUCH_FUNCTION" flags="64" cap="0">
+          <VAR_INPUT name="USE_TB_LOGIN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="USE_TB_CHANGE_PWD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="USE_TB_EDIT" type="$DEFAULT.BOOL" visibility="00000010" />
+          <HARDWARE id="0055" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_TOUCH_FUNCTION?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_TOUCH_BUTTON_PRESS" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0056" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_TOUCH_BUTTON_PRESS?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_EAS_RESET_SIGNAL" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0065" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_EAS_RESET_SIGNAL?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_TFT_GROUP_NR_PAGE" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0066" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_TFT_GROUP_NR_PAGE?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_SET_ON_OFF" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0070" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_SET_ON_OFF?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_PERIODIC_PRINT" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0071" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_PERIODIC_PRINT?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_PERIODIC_HOURS" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0072" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_PERIODIC_HOURS?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_PRINT_STATUS" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0073" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_PRINT_STATUS?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SHOW_MENU_SET_DATE" flags="64" cap="0">
+          <VAR_INPUT name="Page" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="MainMenu" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="SubMenu" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="SubItem" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0074" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SHOW_MENU_SET_DATE?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SHOW_MENU_SET_TIME" flags="64" cap="0">
+          <VAR_INPUT name="Page" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="MainMenu" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="SubMenu" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="SubItem" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0075" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SHOW_MENU_SET_TIME?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_FORCE_REDRAW_DISPLAY" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0067" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_FORCE_REDRAW_DISPLAY?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_GET_STATUS_INFO" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0076" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_GET_STATUS_INFO?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TFT_EAS_SEND_STOP_HORN" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0068" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TFT_EAS_SEND_STOP_HORN?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TFT_EAS_SEND_ACK" flags="64" cap="0">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0069" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TFT_EAS_SEND_ACK?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_NWSW_ROOTSTATE" flags="64" cap="0">
+          <VAR_INPUT name="BRIDGE_INDEX" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="SWITCH_IS_ROOTSWITCH" type="$DEFAULT.BOOL" visibility="00000020" />
+          <HARDWARE id="0021" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_NWSW_ROOTSTATE?INIT 
+$VMSYS.MCD SWITCH_IS_ROOTSWITCH, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_READ_INPUT_TEXT" flags="64" cap="0">
+          <VAR_INPUT name="iKeyNr" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iShift" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="szResult" type="PRAXIS_HW.?STRING?0001" visibility="00000020" />
+          <HARDWARE id="0081" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_READ_INPUT_TEXT?INIT 
+$VMSYS.MCD szResult, #/04, #/00320000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_RESET_INPUT_TEXT" flags="64" cap="0">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0082" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_RESET_INPUT_TEXT?INIT 
+$VMSYS.MCD iRet, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_LOAD_INPUT_TEXT" flags="64" cap="0">
+          <VAR_INPUT name="iKeyNr" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iShift" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="szInput" type="PRAXIS_HW.?STRING?0002" visibility="00000010" />
+          <HARDWARE id="0083" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_LOAD_INPUT_TEXT?INIT 
+$VMSYS.MCD szInput, #/04, #/00320000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_CHANGE_PARAMETER" flags="64" cap="0">
+          <VAR_INPUT name="FRAME_NR" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="NR_OF_DEC" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="DISPLAY" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="ENG_LOW" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="ENG_HIGH" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_OUTPUT name="CANCEL" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="ACCEPT" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="RET_VALUE" type="$DEFAULT.FINT" visibility="00000020" />
+          <HARDWARE id="0084" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_CHANGE_PARAMETER?INIT 
+$VMSYS.MCD CANCEL, #/01, #/00
+$VMSYS.MCD ACCEPT, #/01, #/00
+$VMSYS.MCD RET_VALUE, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_PCS96_MODE" flags="64" cap="0">
+          <VAR_INPUT name="Mode" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="00ff" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_PCS96_MODE?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_LOAD" flags="64" cap="4000">
+          <VAR_OUTPUT name="MAX_CPU_LOAD" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="CPU_LOAD_1131" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0012" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_LOAD?INIT 
+$VMSYS.MCD4A MAX_CPU_LOAD, #/02000000, #/0000FFFF
+$VMSYS.MCD4A CPU_LOAD_1131, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_XP" flags="64" cap="4000">
+          <VAR_OUTPUT name="ADDRESS" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0010" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_XP?INIT 
+$VMSYS.MCD4A ADDRESS, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TIMING" flags="64" cap="4000">
+          <VAR_OUTPUT name="CYCLE_TIME" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="CYCLE_DURATION" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="TIME_BETWEEN_CYCLES" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0011" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TIMING?INIT 
+$VMSYS.MCD4A CYCLE_TIME, #/02000000, #/0000FFFF
+$VMSYS.MCD4A CYCLE_DURATION, #/02000000, #/0000FFFF
+$VMSYS.MCD4A TIME_BETWEEN_CYCLES, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_VERSIONS" flags="64" cap="4000">
+          <VAR_OUTPUT name="XP_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO1_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO2_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO3_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO4_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO5_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO6_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO7_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO8_LDR" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="XP_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO1_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO2_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO3_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO4_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO5_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO6_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO7_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <VAR_OUTPUT name="IO8_FW" type="$DEFAULT.DWORD" visibility="00000020" />
+          <HARDWARE id="0013" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_VERSIONS?INIT 
+$VMSYS.MCD4A XP_LDR, #/04000000, #/00000000
+$VMSYS.MCD4A IO1_LDR, #/04000000, #/00000000
+$VMSYS.MCD4A IO2_LDR, #/04000000, #/00000000
+$VMSYS.MCD4A IO3_LDR, #/04000000, #/00000000
+$VMSYS.MCD4A IO4_LDR, #/04000000, #/00000000
+$VMSYS.MCD4A IO5_LDR, #/04000000, #/00000000
+$VMSYS.MCD4A IO6_LDR, #/04000000, #/00000000
+$VMSYS.MCD4A IO7_LDR, #/04000000, #/00000000
+$VMSYS.MCD4A IO8_LDR, #/04000000, #/00000000
+$VMSYS.MCD4A XP_FW, #/04000000, #/00000000
+$VMSYS.MCD4A IO1_FW, #/04000000, #/00000000
+$VMSYS.MCD4A IO2_FW, #/04000000, #/00000000
+$VMSYS.MCD4A IO3_FW, #/04000000, #/00000000
+$VMSYS.MCD4A IO4_FW, #/04000000, #/00000000
+$VMSYS.MCD4A IO5_FW, #/04000000, #/00000000
+$VMSYS.MCD4A IO6_FW, #/04000000, #/00000000
+$VMSYS.MCD4A IO7_FW, #/04000000, #/00000000
+$VMSYS.MCD4A IO8_FW, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SCROLL_UP" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0034" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SCROLL_UP?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SCROLL_DOWN" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0035" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SCROLL_DOWN?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ACCEPT" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0036" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ACCEPT?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_BUTTON_ID" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0037" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_BUTTON_ID?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TOUCH_GET_THR" flags="64" cap="4000">
+          <VAR_OUTPUT name="val" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="err" type="$DEFAULT.BOOL" visibility="00000020" />
+          <HARDWARE id="0038" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TOUCH_GET_THR?INIT 
+$VMSYS.MCD4A val, #/02000000, #/0000FFFF
+$VMSYS.MCD4A err, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TOUCH_SET_THR" flags="64" cap="4000">
+          <VAR_INPUT name="val" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="err" type="$DEFAULT.BOOL" visibility="00000020" />
+          <HARDWARE id="0039" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TOUCH_SET_THR?INIT 
+$VMSYS.MCD4A err, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_ALT_LANG" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0040" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_ALT_LANG?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_ALT_LANG" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0041" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_ALT_LANG?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_ALARM_PULSE_ON_NEXT" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0042" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_ALARM_PULSE_ON_NEXT?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_UNACCEPT" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0043" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_UNACCEPT?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_UNACCEPT_ALM" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0044" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_UNACCEPT_ALM?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_TFT_PAGE" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0045" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_TFT_PAGE?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_TFT_PAGE" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <VAR_OUTPUT name="iSub" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0046" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_TFT_PAGE?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.MCD4A iSub, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_TFT_FLASH" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0047" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_TFT_FLASH?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_DETACH_ELVR" flags="64" cap="4000">
+          <VAR_INPUT name="POTMETER" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0060" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_DETACH_ELVR?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GETSTATUS_ELVR" flags="64" cap="4000">
+          <VAR_INPUT name="LEVER" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="STATUS" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0061" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GETSTATUS_ELVR?INIT 
+$VMSYS.MCD4A STATUS, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GETSTATUS_IOW24" flags="64" cap="4000">
+          <VAR_OUTPUT name="STATUS" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0062" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GETSTATUS_IOW24?INIT 
+$VMSYS.MCD4A STATUS, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SPEED_ELVR" flags="64" cap="4000">
+          <VAR_INPUT name="FASTDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="STOPDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="SETPOINT" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="FBCH" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="ENABLEMOTOR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="INVERTDIR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="ERROR" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0063" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SPEED_ELVR?INIT 
+$VMSYS.MCD4A ERROR, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_STEER_ELVR" flags="64" cap="4000">
+          <VAR_INPUT name="FASTDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="STOPDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="SETPOINT" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="FBCH" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="ENABLEMOTOR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="INVERTDIR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="ERROR" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0064" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_STEER_ELVR?INIT 
+$VMSYS.MCD4A ERROR, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_STEERBLK_ELVR" flags="64" cap="4000">
+          <VAR_INPUT name="FASTDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="STOPDB" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="SETPOINT" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="FBCH" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="POTMETERINDEX" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="ENABLEMOTOR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="INVERTDIR" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="ERROR" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="006a" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_STEERBLK_ELVR?INIT 
+$VMSYS.MCD4A ERROR, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_PUBLIC_KEY" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0048" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_PUBLIC_KEY?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_FIRST_PAGE" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0049" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_FIRST_PAGE?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_AFTER_LOGIN_PULSE" flags="64" cap="4000">
+          <VAR_INPUT name="iLevel" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004a" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_AFTER_LOGIN_PULSE?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_PW_CHANGE" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004b" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_PW_CHANGE?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_TFT_FLASH" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004c" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_TFT_FLASH?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_RD_ACTIVE" flags="64" cap="4000">
+          <VAR_INPUT name="iIndex" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iActive" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="001d" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_RD_ACTIVE?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_WOODS_JIS" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004d" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_WOODS_JIS?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="RETAIN_TO_FACTORY" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.DINT" visibility="00000020" />
+          <HARDWARE id="001e" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.RETAIN_TO_FACTORY?INIT 
+$VMSYS.MCD4A iRet, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="FACTORY_TO_RETAIN" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.DINT" visibility="00000020" />
+          <HARDWARE id="001f" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.FACTORY_TO_RETAIN?INIT 
+$VMSYS.MCD4A iRet, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_ALARM_PULSE_ON_NEXT_V02" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004e" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_ALARM_PULSE_ON_NEXT_V02?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_UNACCEPT_V02" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="004f" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_UNACCEPT_V02?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_UNACCEPT_ALM_V02" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0051" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_UNACCEPT_ALM_V02?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_TFT_ALM_SUM_DAY_WEEK_MON" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0052" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_TFT_ALM_SUM_DAY_WEEK_MON?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SET_ORIENTATION" flags="64" cap="4000">
+          <VAR_INPUT name="MV" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="MX" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="MY" type="$DEFAULT.BOOL" visibility="00000010" />
+          <HARDWARE id="0053" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.SET_ORIENTATION?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_RD_COMPORT" flags="64" cap="4000">
+          <VAR_INPUT name="iIndex" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iActive" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iComPort" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iBaudrate" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iDatabits" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iParity" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iStopBits" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0020" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_RD_COMPORT?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="LONG_FOLLOWUP" flags="64" cap="4000">
+          <VAR_INPUT name="STEER_LEVER_RAW" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="THRUSTER_POS" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="THRUSTER_LFU_DIR" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="LEVER_OFFSET" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="SFU_RANGE" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="LEVER_WIRE_BREAK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="ENABLE_ROTARY" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="ENABLE_LFU" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="IN_CONTROL" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="STEER_LEVER_CAL" type="$DEFAULT.FINT" visibility="00000020" />
+          <VAR_OUTPUT name="LFU_COMMAND" type="$DEFAULT.FINT" visibility="00000020" />
+          <VAR_OUTPUT name="SFU_ON" type="$DEFAULT.BOOL" visibility="00000020" />
+          <HARDWARE id="0054" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.LONG_FOLLOWUP?INIT 
+$VMSYS.MCD4A STEER_LEVER_CAL, #/04000000, #/00000000
+$VMSYS.MCD4A LFU_COMMAND, #/04000000, #/00000000
+$VMSYS.MCD4A SFU_ON, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_TOUCH_FUNCTION" flags="64" cap="4000">
+          <VAR_INPUT name="USE_TB_LOGIN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="USE_TB_CHANGE_PWD" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="USE_TB_EDIT" type="$DEFAULT.BOOL" visibility="00000010" />
+          <HARDWARE id="0055" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_TOUCH_FUNCTION?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_MENU_TOUCH_BUTTON_PRESS" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0056" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_MENU_TOUCH_BUTTON_PRESS?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_GET_EAS_RESET_SIGNAL" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0065" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_GET_EAS_RESET_SIGNAL?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SET_TFT_GROUP_NR_PAGE" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0066" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SET_TFT_GROUP_NR_PAGE?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_SET_ON_OFF" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0070" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_SET_ON_OFF?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_PERIODIC_PRINT" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0071" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_PERIODIC_PRINT?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_PERIODIC_HOURS" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0072" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_PERIODIC_HOURS?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_PRINT_STATUS" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0073" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_PRINT_STATUS?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SHOW_MENU_SET_DATE" flags="64" cap="4000">
+          <VAR_INPUT name="Page" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="MainMenu" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="SubMenu" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="SubItem" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0074" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SHOW_MENU_SET_DATE?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_SHOW_MENU_SET_TIME" flags="64" cap="4000">
+          <VAR_INPUT name="Page" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="MainMenu" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="SubMenu" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="SubItem" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0075" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_SHOW_MENU_SET_TIME?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_FORCE_REDRAW_DISPLAY" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0067" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_FORCE_REDRAW_DISPLAY?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_ORD_PRN_GET_STATUS_INFO" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0076" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_ORD_PRN_GET_STATUS_INFO?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TFT_EAS_SEND_STOP_HORN" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0068" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TFT_EAS_SEND_STOP_HORN?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_TFT_EAS_SEND_ACK" flags="64" cap="4000">
+          <VAR_INPUT name="iInput" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="0069" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_TFT_EAS_SEND_ACK?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_NWSW_ROOTSTATE" flags="64" cap="4000">
+          <VAR_INPUT name="BRIDGE_INDEX" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="SWITCH_IS_ROOTSWITCH" type="$DEFAULT.BOOL" visibility="00000020" />
+          <HARDWARE id="0021" align="1" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_NWSW_ROOTSTATE?INIT 
+$VMSYS.MCD4A SWITCH_IS_ROOTSWITCH, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_READ_INPUT_TEXT" flags="64" cap="4000">
+          <VAR_INPUT name="iKeyNr" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iShift" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_OUTPUT name="szResult" type="PRAXIS_HW.?STRING?0001" visibility="00000020" />
+          <HARDWARE id="0081" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_READ_INPUT_TEXT?INIT 
+$VMSYS.MCD4A szResult, #/04000000, #/00320000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_RESET_INPUT_TEXT" flags="64" cap="4000">
+          <VAR_OUTPUT name="iRet" type="$DEFAULT.INT" visibility="00000020" />
+          <HARDWARE id="0082" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_RESET_INPUT_TEXT?INIT 
+$VMSYS.MCD4A iRet, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_LOAD_INPUT_TEXT" flags="64" cap="4000">
+          <VAR_INPUT name="iKeyNr" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="iShift" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="szInput" type="PRAXIS_HW.?STRING?0002" visibility="00000010" />
+          <HARDWARE id="0083" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_LOAD_INPUT_TEXT?INIT 
+$VMSYS.MCD4A szInput, #/04000000, #/00320000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_CHANGE_PARAMETER" flags="64" cap="4000">
+          <VAR_INPUT name="FRAME_NR" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="NR_OF_DEC" type="$DEFAULT.INT" visibility="00000010" />
+          <VAR_INPUT name="DISPLAY" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="ENG_LOW" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_INPUT name="ENG_HIGH" type="$DEFAULT.FINT" visibility="00000010" />
+          <VAR_OUTPUT name="CANCEL" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="ACCEPT" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="RET_VALUE" type="$DEFAULT.FINT" visibility="00000020" />
+          <HARDWARE id="0084" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_CHANGE_PARAMETER?INIT 
+$VMSYS.MCD4A CANCEL, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A ACCEPT, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A RET_VALUE, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="HW_PCS96_MODE" flags="64" cap="4000">
+          <VAR_INPUT name="Mode" type="$DEFAULT.INT" visibility="00000010" />
+          <HARDWARE id="00ff" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?PRAXIS_HW.HW_PCS96_MODE?INIT 
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+      </FUNCTION_BLOCKS>
+      <STRINGS>
+        <STRING name="?STRING?0001" size="50" fixed="0" cap="0">
+          <INIT><![CDATA['']]></INIT>
+        </STRING>
+        <STRING name="?STRING?0002" size="50" fixed="0" cap="0">
+          <INIT><![CDATA['']]></INIT>
+        </STRING>
+        <STRING name="?STRING?0001" size="50" fixed="0" cap="4000">
+          <INIT><![CDATA['']]></INIT>
+        </STRING>
+        <STRING name="?STRING?0002" size="50" fixed="0" cap="4000">
+          <INIT><![CDATA['']]></INIT>
+        </STRING>
+      </STRINGS>
+    </LIB_BODY>
+  </LIBRARY>
+</PAL1131>

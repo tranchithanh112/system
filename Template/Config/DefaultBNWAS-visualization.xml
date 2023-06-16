@@ -1,0 +1,1407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Name="Pal1131_XP45" VariableDisplayNumber="PAGE" EnableLimitProcessing="0" EnableBoolMultipleState="0" EnableIntProcessValue="0" FontFilePath="D:/software/system/Firmware/lp-tft-en.bin">
+  <Options>
+    <Alt-Language Path="../../TFT/AltLanguage.xls" Enabled="0" />
+  </Options>
+  <Libraries>
+    <Library Path="PAL1131G.Objects.Basic.xml" />
+    <Library Path="PAL1131G.Objects.Praxis.xml" />
+  </Libraries>
+  <Displays>
+    <Display Name="MAIN_PAGE" Width="640" Height="480">
+      <Objects>
+        <Object Name="Frame" FullName="PAL1131G.Objects.Praxis:Frame" X="243" Y="100" Width="152" Height="182" IsUpdatable="True">
+          <Properties>
+            <Property Name="Show Page in frame" Value="5" Variable="" />
+            <Property Name="Use as pop-up window" Value="True" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="5" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Text" Value="HOME" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/pb57_home.bmp" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/pb57_home.bmp" Variable="" />
+            <Property Name="Button ID" Value="1" Variable="" />
+            <Property Name="Variable ID" Value="OP_MAIN_BUTTON_HOME" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="330" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="0" Variable="OP_VISUAL_ALARM" />
+            <Property Name="Background Color" Value="129" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Shade" Value="False" Variable="" />
+            <Property Name="Text" Value="RESET" Variable="" />
+            <Property Name="Font Size" Value="Arial-12" Variable="" />
+            <Property Name="Text Color" Value="215" Variable="" />
+            <Property Name="Background Color 1" Value="180" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="RESET" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-12" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Background Color 2" Value="215" Variable="" />
+            <Property Name="Foreground Color 2" Value="215" Variable="" />
+            <Property Name="Text 2" Value="RESET" Variable="" />
+            <Property Name="Font Size 2" Value="Arial-12" Variable="" />
+            <Property Name="Text Color 2" Value="180" Variable="" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Manual Flash" Value="False" Variable="" />
+            <Property Name="Button ID" Value="4" Variable="" />
+            <Property Name="Variable ID" Value="OP_MAIN_BUTTON_RESET" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="440" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="0" Variable="SWAP_EM_CALL_COLOR2" />
+            <Property Name="Background Color" Value="129" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Text" Value="EM CALL" Variable="" />
+            <Property Name="Text Color" Value="215" Variable="" />
+            <Property Name="Background Color 1" Value="180" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="EM CALL" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="5" Variable="" />
+            <Property Name="Variable ID" Value="OP_MAIN_BUTTON_EM_CALL" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="547" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Text" Value="MENU" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/pb57_setup.bmp" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="6" Variable="" />
+            <Property Name="Variable ID" Value="OP_MENU_BUTTON_MENU" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="113" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/pb57_dim_down.bmp" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/pb57_dim_down.bmp" Variable="" />
+            <Property Name="Button ID" Value="2" Variable="" />
+            <Property Name="Variable ID" Value="OP_DIM_UP_BUTTON" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="221" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/pb57_dim.bmp" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/pb57_dim.bmp" Variable="" />
+            <Property Name="Button ID" Value="3" Variable="" />
+            <Property Name="Variable ID" Value="OP_DIM_DOWN_BUTTON" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Image" FullName="PAL1131G.Objects.Basic:Image" X="110" Y="30" Width="420" Height="32" IsUpdatable="False">
+          <Properties>
+            <Property Name="Image" Value="../../TFT/BNWAS/bnwas text.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Image" FullName="PAL1131G.Objects.Basic:Image" X="5" Y="100" Width="223" Height="280" IsUpdatable="False">
+          <Properties>
+            <Property Name="Image" Value="../../TFT/BNWAS/Bridge Watch Mode.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Image" FullName="PAL1131G.Objects.Basic:Image" X="410" Y="100" Width="223" Height="280" IsUpdatable="False">
+          <Properties>
+            <Property Name="Image" Value="../../TFT/BNWAS/Bridge Watch On Call.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="25" Y="169" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="0" Variable="SWAP_WATCH_ON_BUTTON" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_WATCH_ON_BUTTON" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="129" Y="169" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="" Variable="SWAP_WATCH_ON_BUTTON" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_WATCH_OFF_BUTTON" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="431" Y="168" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="" Variable="SWAP_OFFICER_BUTTON" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_OFFICER_1_ON_CALL" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="533" Y="168" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="" Variable="SWAP_OFFICER_BUTTON" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_OFFICER_2_ON_CALL" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="430" Y="275" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="" Variable="SWAP_OFFICER_BUTTON" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_OFFICER_3_ON_CALL" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="534" Y="275" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="" Variable="SWAP_OFFICER_BUTTON" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_OFFICER_4_ON_CALL" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="25" Y="169" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="" Variable="SWAP_WATCH_ON_BUTTON" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/Watch_on_grey.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/Watch_on_green.bmp" Variable="" />
+            <Property Name="Image 2" Value="../../TFT/BNWAS/Watch_on_grey.bmp" Variable="" />
+            <Property Name="Image 3" Value="../../TFT/BNWAS/Watch_on_grey.bmp" Variable="" />
+            <Property Name="Image 4" Value="../../TFT/BNWAS/Watch_on_grey.bmp" Variable="" />
+            <Property Name="Image 5" Value="../../TFT/BNWAS/Watch_on_grey.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="129" Y="167" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="SWAP_WATCH_ON_BUTTON" />
+            <Property Name="Background Color" Value="129" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/Watch_off_grey.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/Watch_off_grey.bmp" Variable="" />
+            <Property Name="Image 2" Value="../../TFT/BNWAS/Watch_off_grey.bmp" Variable="" />
+            <Property Name="Image 3" Value="../../TFT/BNWAS/Watch_off_grey.bmp" Variable="" />
+            <Property Name="Image 4" Value="../../TFT/BNWAS/Watch_off_green.bmp" Variable="" />
+            <Property Name="Image 5" Value="../../TFT/BNWAS/Watch_off_grey.bmp" Variable="" />
+            <Property Name="Image 6" Value="../../TFT/BNWAS/Watch_off_grey.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="281" Y="304" Width="76" Height="76" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="2" Variable="" />
+            <Property Name="Border Length" Value="10" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="" Variable="G1131_ELEVATED_LOGIN_STATUS" />
+            <Property Name="Text" Value="..." Variable="" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/cfas_locked.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/cfas_unlocked.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="ELEVATED_LOGIN_BUTTON" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="431" Y="169" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="SWAP_OFFICER_BUTTON" />
+            <Property Name="Background Color" Value="129" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/Master_gray.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/Master_green.bmp" Variable="" />
+            <Property Name="Image 2" Value="../../TFT/BNWAS/Master_gray.bmp" Variable="" />
+            <Property Name="Image 3" Value="../../TFT/BNWAS/Master_gray.bmp" Variable="" />
+            <Property Name="Image 4" Value="../../TFT/BNWAS/Master_gray.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="534" Y="169" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="SWAP_OFFICER_BUTTON" />
+            <Property Name="Background Color" Value="129" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/1st_off_grey.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/1st_off_grey.bmp" Variable="" />
+            <Property Name="Image 2" Value="../../TFT/BNWAS/1st_off_green.bmp" Variable="" />
+            <Property Name="Image 3" Value="../../TFT/BNWAS/1st_off_grey.bmp" Variable="" />
+            <Property Name="Image 4" Value="../../TFT/BNWAS/1st_off_grey.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="430" Y="276" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="SWAP_OFFICER_BUTTON" />
+            <Property Name="Background Color" Value="129" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/2nd_off_grey.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/2nd_off_grey.bmp" Variable="" />
+            <Property Name="Image 2" Value="../../TFT/BNWAS/2nd_off_grey.bmp" Variable="" />
+            <Property Name="Image 3" Value="../../TFT/BNWAS/2nd_off_green.bmp" Variable="" />
+            <Property Name="Image 4" Value="../../TFT/BNWAS/2nd_off_grey.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="534" Y="276" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="SWAP_OFFICER_BUTTON" />
+            <Property Name="Background Color" Value="129" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/3rd_off_grey.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/3rd_off_grey.bmp" Variable="" />
+            <Property Name="Image 2" Value="../../TFT/BNWAS/3rd_off_grey.bmp" Variable="" />
+            <Property Name="Image 3" Value="../../TFT/BNWAS/3rd_off_grey.bmp" Variable="" />
+            <Property Name="Image 4" Value="../../TFT/BNWAS/3rd_off_green.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Frame" FullName="PAL1131G.Objects.Praxis:Frame" X="251" Y="204" Width="140" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Show Page in frame" Value="6" Variable="FRAME_NR_WATCHTIMER" />
+            <Property Name="Use as pop-up window" Value="True" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Frame" FullName="PAL1131G.Objects.Praxis:Frame" X="250" Y="136" Width="140" Height="60" IsUpdatable="True">
+          <Properties>
+            <Property Name="Show Page in frame" Value="2" Variable="FRAME_NR_TIMER_ON" />
+            <Property Name="Use as pop-up window" Value="True" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Frame" FullName="PAL1131G.Objects.Praxis:Frame" X="0" Y="0" Width="640" Height="28" IsUpdatable="True">
+          <Properties>
+            <Property Name="Show Page in frame" Value="3" Variable="" />
+            <Property Name="Use as pop-up window" Value="True" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Frame" FullName="PAL1131G.Objects.Praxis:Frame" X="19" Y="265" Width="200" Height="100" IsUpdatable="True">
+          <Properties>
+            <Property Name="Show Page in frame" Value="4" Variable="SWAP_WATCH_AUTO_MODE" />
+            <Property Name="Use as pop-up window" Value="True" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Display>
+    <Display Name="SPARE" Width="640" Height="480">
+      <Objects>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="7" Y="416" Width="86" Height="64" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="0" Variable="TOUCH_PANEL_RESET_STATE" />
+            <Property Name="Shade" Value="True" Variable="" />
+            <Property Name="Text" Value="PANEL&#xD;&#xA;RESET" Variable="" />
+            <Property Name="Shade 1" Value="False" Variable="" />
+            <Property Name="Text 1" Value="PANEL&#xD;&#xA;RESET" Variable="" />
+            <Property Name="Button ID" Value="1" Variable="" />
+            <Property Name="Variable ID" Value="TOUCH_BUTTON_1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="114" Y="416" Width="86" Height="64" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Text" Value="  " Variable="" />
+            <Property Name="Text 1" Value="  " Variable="" />
+            <Property Name="Button ID" Value="2" Variable="" />
+            <Property Name="Variable ID" Value="TOUCH_BUTTON_2" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="224" Y="416" Width="86" Height="64" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Text" Value="CONFIG" Variable="" />
+            <Property Name="Button ID" Value="3" Variable="" />
+            <Property Name="Variable ID" Value="TOUCH_BUTTON_3" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="333" Y="416" Width="86" Height="64" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="" Variable="PASSWORD_LOCKED_STATE" />
+            <Property Name="Text" Value="LOGIN" Variable="" />
+            <Property Name="Text 1" Value="LOGOUT" Variable="" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Button ID" Value="4" Variable="" />
+            <Property Name="Variable ID" Value="TOUCH_BUTTON_4" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="442" Y="416" Width="86" Height="64" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Text" Value="DIM&#xD;&#xA;DOWN" Variable="" />
+            <Property Name="Text 1" Value="  " Variable="" />
+            <Property Name="Button ID" Value="5" Variable="" />
+            <Property Name="Variable ID" Value="TOUCH_BUTTON_5" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="547" Y="416" Width="86" Height="64" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Text" Value="DIM&#xD;&#xA;UP" Variable="" />
+            <Property Name="Button ID" Value="6" Variable="" />
+            <Property Name="Variable ID" Value="TOUCH_BUTTON_6" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Display>
+    <Display Name="PASSWORD" Width="640" Height="480">
+      <Objects>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="264" Y="167" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_2.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_2.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_2" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="113" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value=" " Variable="" />
+            <Property Name="Font Size 1" Value="Arial-10" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="2" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_2" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="221" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value=" " Variable="" />
+            <Property Name="Font Size 1" Value="Arial-10" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="3" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_3" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="440" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Text" Value="&#xD;&#xA; GIVE&#xD;&#xA; AWAY&#xD;&#xA;CONTROL" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="ACCEPT" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-12" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="5" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_5" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="330" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Text" Value="&#xD;&#xA;SELECT&#xD;&#xA;BUTTON&#xD;&#xA;CONTROL" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value=" " Variable="" />
+            <Property Name="Font Size 1" Value="Arial-10" Variable="" />
+            <Property Name="Button ID" Value="4" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_4" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="547" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="EXIT" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-12" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="6" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_6" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="5" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="1" Variable="" />
+            <Property Name="Border Length" Value="20" Variable="" />
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Shade" Value="False" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Shade 1" Value="False" Variable="" />
+            <Property Name="Text 1" Value=" " Variable="" />
+            <Property Name="Font Size 1" Value="Arial-10" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Font Size 2" Value="Arial-10" Variable="" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Button ID" Value="1" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="List Box" FullName="PAL1131G.Objects.Praxis:List Box" X="20" Y="50" Width="600" Height="100" IsUpdatable="True">
+          <Properties>
+            <Property Name="Font" Value="Arial-12" Variable="" />
+            <Property Name="Number of lines on screen" Value="5" Variable="" />
+            <Property Name="Index of selected row" Value="1" Variable="" />
+            <Property Name="Index of the first row on the screen" Value="1" Variable="" />
+            <Property Name="Listbox Type" Value="1" Variable="" />
+            <Property Name="Color Type" Value="2" Variable="" />
+            <Property Name="Number of columns" Value="1" Variable="" />
+            <Property Name="Width of the first column" Value="600" Variable="" />
+            <Property Name="Width of the second column" Value="350" Variable="" />
+            <Property Name="Text Color" Value="0" Variable="" />
+            <Property Name="Background Color" Value="215" Variable="" />
+            <Property Name="Border Color" Value="0" Variable="" />
+            <Property Name="High Color" Value="66" Variable="" />
+            <Property Name="Alarm Color" Value="180" Variable="" />
+            <Property Name="Selected Row Text Color" Value="0" Variable="" />
+            <Property Name="Selected Row Background Color" Value="210" Variable="" />
+            <Property Name="Header Text" Value="LOGIN" Variable="" />
+            <Property Name="Header Color" Value="215" Variable="" />
+            <Property Name="Header Background Color" Value="129" Variable="" />
+            <Property Name="Scrollbar Bar Color" Value="129" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="204" Y="167" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_1.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Text 1" Value="1" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_1.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="264" Y="226" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_5.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_5.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_5" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="204" Y="286" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_7.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_7.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_7" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="324" Y="167" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_3.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_3.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_3" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="324" Y="226" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_6.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_6.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_6" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="324" Y="286" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_9.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_9.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_9" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="384" Y="165" Width="50" Height="229" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_back.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Text 1" Value="&lt;" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-24" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_back.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_DEL" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="204" Y="226" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_4.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_4.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_4" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="264" Y="286" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_8.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Text 1" Value="8" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_8.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_8" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="204" Y="346" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_plus.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_plus.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_MIN" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="264" Y="346" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_0.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_0.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_0" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="324" Y="346" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_dot.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-24" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_dot.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_DOT" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Display>
+    <Display Name="MAIN_MENU" Width="640" Height="480">
+      <Objects>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="113" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="CHANGE&#xD;&#xA;PASSWORD" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-10" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="2" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_2" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="221" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-10" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/pb57_arrow_down.bmp" Variable="" />
+            <Property Name="Button ID" Value="3" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_3" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="440" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Text" Value="..." Variable="" />
+            <Property Name="Text Color" Value="0" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="ACCEPT" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-12" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="5" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_5" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="330" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Text Color" Value="0" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-10" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/pb57_arrow_up.bmp" Variable="" />
+            <Property Name="Button ID" Value="4" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_4" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="547" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Text Color" Value="0" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="EXIT" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-12" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="6" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_6" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="List Box" FullName="PAL1131G.Objects.Praxis:List Box" X="20" Y="48" Width="600" Height="336" IsUpdatable="True">
+          <Properties>
+            <Property Name="Font" Value="Arial-12" Variable="" />
+            <Property Name="Number of lines on screen" Value="16" Variable="" />
+            <Property Name="Index of selected row" Value="1" Variable="" />
+            <Property Name="Index of the first row on the screen" Value="1" Variable="" />
+            <Property Name="Listbox Type" Value="1" Variable="" />
+            <Property Name="Color Type" Value="0" Variable="" />
+            <Property Name="Number of columns" Value="2" Variable="" />
+            <Property Name="Width of the first column" Value="50" Variable="" />
+            <Property Name="Width of the second column" Value="500" Variable="" />
+            <Property Name="Width of the third column" Value="150" Variable="" />
+            <Property Name="Text Color" Value="0" Variable="" />
+            <Property Name="Background Color" Value="215" Variable="" />
+            <Property Name="Border Color" Value="0" Variable="" />
+            <Property Name="High Color" Value="66" Variable="" />
+            <Property Name="Alarm Color" Value="180" Variable="" />
+            <Property Name="Selected Row Text Color" Value="0" Variable="" />
+            <Property Name="Selected Row Background Color" Value="210" Variable="" />
+            <Property Name="Header Text" Value="MAIN MENU" Variable="" />
+            <Property Name="Header Color" Value="215" Variable="" />
+            <Property Name="Header Background Color" Value="129" Variable="" />
+            <Property Name="Scrollbar Bar Color" Value="129" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="4" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="1" Variable="" />
+            <Property Name="Border Length" Value="20" Variable="" />
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Shade" Value="False" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Shade 1" Value="False" Variable="" />
+            <Property Name="Text 1" Value=" " Variable="" />
+            <Property Name="Font Size 1" Value="Arial-10" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Font Size 2" Value="Arial-10" Variable="" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Button ID" Value="1" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_1" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Display>
+    <Display Name="MENU_EDIT" Width="640" Height="480">
+      <Objects>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="113" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-32" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/pb57_arrow_right.bmp" Variable="" />
+            <Property Name="Button ID" Value="2" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_2" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="222" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-32" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/pb57_arrow_down.bmp" Variable="" />
+            <Property Name="Button ID" Value="3" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_3" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="440" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="ACCEPT" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-12" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="5" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_5" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="330" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Text" Value="&#xD;&#xA;SELECT&#xD;&#xA;BUTTON&#xD;&#xA;CONTROL" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="&#xD;&#xA;^" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-32" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/pb57_arrow_up.bmp" Variable="" />
+            <Property Name="Button ID" Value="4" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_4" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="547" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-10" Variable="" />
+            <Property Name="Text Color" Value="0" Variable="" />
+            <Property Name="Background Color 1" Value="129" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Text 1" Value="CANCEL" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-12" Variable="" />
+            <Property Name="Text Color 1" Value="215" Variable="" />
+            <Property Name="Button ID" Value="6" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_6" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="4" Y="430" Width="88" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="1" Variable="" />
+            <Property Name="Border Length" Value="20" Variable="" />
+            <Property Name="Border Type" Value="4" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Foreground Color" Value="215" Variable="" />
+            <Property Name="Shade" Value="False" Variable="" />
+            <Property Name="Foreground Color 1" Value="215" Variable="" />
+            <Property Name="Shade 1" Value="False" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-32" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/pb57_arrow_left.bmp" Variable="" />
+            <Property Name="Font Size 2" Value="Arial-10" Variable="" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Button ID" Value="1" Variable="" />
+            <Property Name="Variable ID" Value="BUT_ID_1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="List Box" FullName="PAL1131G.Objects.Praxis:List Box" X="20" Y="50" Width="600" Height="100" IsUpdatable="True">
+          <Properties>
+            <Property Name="Font" Value="Arial-12" Variable="" />
+            <Property Name="Number of lines on screen" Value="5" Variable="" />
+            <Property Name="Index of selected row" Value="1" Variable="" />
+            <Property Name="Index of the first row on the screen" Value="1" Variable="" />
+            <Property Name="Listbox Type" Value="1" Variable="" />
+            <Property Name="Color Type" Value="2" Variable="" />
+            <Property Name="Number of columns" Value="1" Variable="" />
+            <Property Name="Width of the first column" Value="50" Variable="" />
+            <Property Name="Width of the second column" Value="350" Variable="" />
+            <Property Name="Text Color" Value="0" Variable="" />
+            <Property Name="Background Color" Value="215" Variable="" />
+            <Property Name="Border Color" Value="0" Variable="" />
+            <Property Name="High Color" Value="66" Variable="" />
+            <Property Name="Alarm Color" Value="180" Variable="" />
+            <Property Name="Selected Row Text Color" Value="0" Variable="" />
+            <Property Name="Selected Row Background Color" Value="210" Variable="" />
+            <Property Name="Header Text" Value=" CHANGE" Variable="" />
+            <Property Name="Header Color" Value="215" Variable="" />
+            <Property Name="Header Background Color" Value="129" Variable="" />
+            <Property Name="Scrollbar Bar Color" Value="129" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="200" Y="168" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_1.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Text 1" Value="1" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_1.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="260" Y="168" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_2.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_2.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_2" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="260" Y="228" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_5.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_5.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_5" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="200" Y="288" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_7.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_7.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_7" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="320" Y="168" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_3.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_3.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_3" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="320" Y="228" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_6.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_6.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_6" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="320" Y="288" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_9.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_9.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_9" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="380" Y="168" Width="50" Height="229" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_back.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Text 1" Value="&lt;" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-24" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_back.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_DEL" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="200" Y="228" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_4.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_4.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_4" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="260" Y="288" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_8.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Text 1" Value="8" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_8.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_8" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="200" Y="348" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_plus.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_plus.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_MIN" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="260" Y="348" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_0.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-16" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_0.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_0" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="320" Y="348" Width="50" Height="50" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="1" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/GENERAL/nr_dot.bmp" Variable="" />
+            <Property Name="Background Color 1" Value="0" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-24" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/GENERAL/nr_dot.bmp" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="TB_DOT" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Display>
+    <Display Name="EMPTY_PAGE" Width="640" Height="480">
+      <Objects />
+    </Display>
+  </Displays>
+  <Frames>
+    <Frame Name="WATCHTIMER" Width="140" Height="100">
+      <Objects>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="94" Y="37" Width="35" Height="35" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_SET_TIMER_PLUS_BUTTON" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="10" Y="38" Width="35" Height="35" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_SET_TIMER_MINUS_BUTTON" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Process Value" FullName="PAL1131G.Objects.Basic:Process Value" X="56" Y="39" Width="30" Height="30" IsUpdatable="True">
+          <Properties>
+            <Property Name="Maximum Range" Value="750" Variable="" />
+            <Property Name="Current Value" Value="3" Variable="SELECT_WATCHTIMER_PERIOD" />
+            <Property Name="Decimals" Value="0" Variable="" />
+            <Property Name="Low Color" Value="215" Variable="" />
+            <Property Name="Normal Color" Value="215" Variable="" />
+            <Property Name="High Color" Value="215" Variable="" />
+            <Property Name="Invalid Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-14" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="11" Y="38" Width="35" Height="35" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/button_min.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/button_min.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="94" Y="38" Width="35" Height="35" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="" />
+            <Property Name="Background Color" Value="0" Variable="" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/button_plus.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/button_plus.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Text Box" FullName="PAL1131G.Objects.Basic:Text Box" X="20" Y="3" Width="100" Height="30" IsUpdatable="False">
+          <Properties>
+            <Property Name="Text" Value="SET TIMER" Variable="" />
+            <Property Name="Font" Value="Arial-12" Variable="" />
+            <Property Name="Horizontal Alignment" Value="1" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Frame>
+    <Frame Name="TIMER ON FRAME" Width="140" Height="80">
+      <Objects>
+        <Object Name="BarGraph" FullName="PAL1131G.Objects.Basic:BarGraph" X="20" Y="20" Width="100" Height="20" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current Value" Value="25" Variable="OP_TIMER_BAR" />
+            <Property Name="Alignment" Value="2" Variable="" />
+            <Property Name="Indicators Number" Value="6" Variable="" />
+            <Property Name="Indicator Color" Value="215" Variable="" />
+            <Property Name="Deadband Color" Value="211" Variable="" />
+            <Property Name="Negative Bar Color" Value="211" Variable="" />
+            <Property Name="Positive Bar Color" Value="211" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Process Value" FullName="PAL1131G.Objects.Basic:Process Value" X="40" Y="51" Width="25" Height="20" IsUpdatable="True">
+          <Properties>
+            <Property Name="Maximum Range" Value="750" Variable="" />
+            <Property Name="Current Value" Value="3" Variable="OP_TIMER_M" />
+            <Property Name="Decimals" Value="0" Variable="" />
+            <Property Name="Low Color" Value="215" Variable="" />
+            <Property Name="Low Range" Value="0;1" Variable="" />
+            <Property Name="Normal Color" Value="215" Variable="" />
+            <Property Name="High Color" Value="215" Variable="" />
+            <Property Name="Invalid Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-14" Variable="" />
+            <Property Name="Horizontal Alignment" Value="2" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Process Value" FullName="PAL1131G.Objects.Basic:Process Value" X="-120" Y="-2080" Width="20" Height="20" IsUpdatable="True">
+          <Properties>
+            <Property Name="Maximum Range" Value="750" Variable="" />
+            <Property Name="Current Value" Value="10" Variable="OP_TIMER_M" />
+            <Property Name="Decimals" Value="0" Variable="" />
+            <Property Name="Low Color" Value="210" Variable="" />
+            <Property Name="Normal Color" Value="215" Variable="" />
+            <Property Name="High Color" Value="215" Variable="" />
+            <Property Name="Invalid Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-12" Variable="" />
+            <Property Name="Horizontal Alignment" Value="2" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Process Value" FullName="PAL1131G.Objects.Basic:Process Value" X="-90" Y="-2080" Width="14" Height="20" IsUpdatable="True">
+          <Properties>
+            <Property Name="Maximum Range" Value="9" Variable="" />
+            <Property Name="Current Value" Value="0" Variable="OP_TIMER_S1" />
+            <Property Name="Decimals" Value="0" Variable="" />
+            <Property Name="Low Color" Value="210" Variable="" />
+            <Property Name="Normal Color" Value="215" Variable="" />
+            <Property Name="High Color" Value="215" Variable="" />
+            <Property Name="Invalid Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-12" Variable="" />
+            <Property Name="Horizontal Alignment" Value="1" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Process Value" FullName="PAL1131G.Objects.Basic:Process Value" X="-100" Y="-2080" Width="14" Height="20" IsUpdatable="True">
+          <Properties>
+            <Property Name="Maximum Range" Value="10" Variable="" />
+            <Property Name="Current Value" Value="0" Variable="OP_TIMER_S10" />
+            <Property Name="Decimals" Value="0" Variable="" />
+            <Property Name="Low Color" Value="210" Variable="" />
+            <Property Name="Normal Color" Value="215" Variable="" />
+            <Property Name="High Color" Value="215" Variable="" />
+            <Property Name="Invalid Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-12" Variable="" />
+            <Property Name="Horizontal Alignment" Value="1" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Text Box" FullName="PAL1131G.Objects.Basic:Text Box" X="-100" Y="-2080" Width="4" Height="20" IsUpdatable="False">
+          <Properties>
+            <Property Name="Text" Value=":" Variable="" />
+            <Property Name="Font" Value="Arial-12" Variable="" />
+            <Property Name="Horizontal Alignment" Value="1" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Process Value" FullName="PAL1131G.Objects.Basic:Process Value" X="68" Y="51" Width="14" Height="20" IsUpdatable="True">
+          <Properties>
+            <Property Name="Maximum Range" Value="9" Variable="" />
+            <Property Name="Current Value" Value="0" Variable="OP_TIMER_S10" />
+            <Property Name="Decimals" Value="0" Variable="" />
+            <Property Name="Low Color" Value="215" Variable="" />
+            <Property Name="Normal Color" Value="215" Variable="" />
+            <Property Name="High Color" Value="215" Variable="" />
+            <Property Name="Invalid Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-14" Variable="" />
+            <Property Name="Horizontal Alignment" Value="1" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Process Value" FullName="PAL1131G.Objects.Basic:Process Value" X="82" Y="51" Width="14" Height="20" IsUpdatable="True">
+          <Properties>
+            <Property Name="Maximum Range" Value="9" Variable="" />
+            <Property Name="Current Value" Value="0" Variable="OP_TIMER_S1" />
+            <Property Name="Decimals" Value="0" Variable="" />
+            <Property Name="Low Color" Value="215" Variable="" />
+            <Property Name="Normal Color" Value="215" Variable="" />
+            <Property Name="High Color" Value="215" Variable="" />
+            <Property Name="Invalid Color" Value="215" Variable="" />
+            <Property Name="Font Size" Value="Arial-14" Variable="" />
+            <Property Name="Horizontal Alignment" Value="1" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Text Box" FullName="PAL1131G.Objects.Basic:Text Box" X="62" Y="49" Width="7" Height="20" IsUpdatable="False">
+          <Properties>
+            <Property Name="Text" Value=":" Variable="" />
+            <Property Name="Font" Value="Arial-14" Variable="" />
+            <Property Name="Horizontal Alignment" Value="1" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Frame>
+    <Frame Name="TOP BAR " Width="640" Height="28">
+      <Objects>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="0" Y="0" Width="640" Height="28" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="FRAME_TOP_BAR" />
+            <Property Name="Border Width" Value="1" Variable="" />
+            <Property Name="Manual Flash" Value="False" Variable="" />
+            <Property Name="Background Color" Value="86" Variable="" />
+            <Property Name="Foreground Color" Value="0" Variable="" />
+            <Property Name="Shade" Value="False" Variable="" />
+            <Property Name="Text" Value="SYSTEM HEALTHY" Variable="" />
+            <Property Name="Font Size" Value="Arial-12" Variable="" />
+            <Property Name="Text Color" Value="215" Variable="" />
+            <Property Name="Background Color 1" Value="180" Variable="" />
+            <Property Name="Foreground Color 1" Value="0" Variable="" />
+            <Property Name="Shade 1" Value="False" Variable="" />
+            <Property Name="Text 1" Value="VISUAL ALARM ACTIVE" Variable="" />
+            <Property Name="Font Size 1" Value="Arial-12" Variable="" />
+            <Property Name="Background Color 2" Value="180" Variable="" />
+            <Property Name="Foreground Color 2" Value="0" Variable="" />
+            <Property Name="Text 2" Value="BRIDGE ALARM ACTIVE" Variable="" />
+            <Property Name="Font Size 2" Value="Arial-12" Variable="" />
+            <Property Name="Background Color 3" Value="180" Variable="" />
+            <Property Name="Foreground Color 3" Value="0" Variable="" />
+            <Property Name="Text 3" Value="EMERGENCY CALL ACTIVE (Hold reset button for 2 sec. to clear alarm)" Variable="" />
+            <Property Name="Font Size 3" Value="Arial-12" Variable="" />
+            <Property Name="Background Color 4" Value="180" Variable="" />
+            <Property Name="Foreground Color 4" Value="0" Variable="" />
+            <Property Name="Text 4" Value="OFFICER ALARM ACTIVE" Variable="" />
+            <Property Name="Font Size 4" Value="Arial-12" Variable="" />
+            <Property Name="Background Color 5" Value="180" Variable="" />
+            <Property Name="Foreground Color 5" Value="0" Variable="" />
+            <Property Name="Text 5" Value="CREW ALARM ACTIVE" Variable="" />
+            <Property Name="Font Size 5" Value="Arial-12" Variable="" />
+            <Property Name="Background Color 6" Value="180" Variable="" />
+            <Property Name="Foreground Color 6" Value="0" Variable="" />
+            <Property Name="Text 6" Value="MAIN OR BACK-UP SUPPLY FAULT" Variable="" />
+            <Property Name="Font Size 6" Value="Arial-12" Variable="" />
+            <Property Name="Background Color 7" Value="180" Variable="" />
+            <Property Name="Foreground Color 7" Value="0" Variable="" />
+            <Property Name="Text 7" Value="BNWAS MODULE NO COMMUNICATION" Variable="" />
+            <Property Name="Font Size 7" Value="Arial-12" Variable="" />
+            <Property Name="Text Color 7" Value="215" Variable="" />
+            <Property Name="Background Color 8" Value="180" Variable="" />
+            <Property Name="Foreground Color 8" Value="0" Variable="" />
+            <Property Name="Text 8" Value="NO COMMUNICATION ALARM ETHERNET A" Variable="" />
+            <Property Name="Font Size 8" Value="Arial-12" Variable="" />
+            <Property Name="Background Color 9" Value="180" Variable="" />
+            <Property Name="Foreground Color 9" Value="0" Variable="" />
+            <Property Name="Text 9" Value="NO COMMUNICATION ALARM ETHERNET B" Variable="" />
+            <Property Name="Font Size 9" Value="Arial-12" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Frame>
+    <Frame Name="WATCH AUTO ON" Width="200" Height="100">
+      <Objects>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="6" Y="10" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="0" Variable="SWAP_WATCH_ON_BUTTON" />
+            <Property Name="Invert when pressed" Value="True" Variable="" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_WATCH_AUTO_ON_BUTTON" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Button" FullName="PAL1131G.Objects.Praxis:Button" X="112" Y="10" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Border Length" Value="0" Variable="" />
+            <Property Name="Border Type" Value="3" Variable="" />
+            <Property Name="Current State" Value="0" Variable="SWAP_WATCH_ON_BUTTON" />
+            <Property Name="Button ID" Value="13" Variable="" />
+            <Property Name="Variable ID" Value="OP_WATCH_STANDBY_BUTTON" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="6" Y="10" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="SWAP_WATCH_ON_BUTTON" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/Watch_auto_on_grey.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/Watch_auto_on_grey.bmp" Variable="" />
+            <Property Name="Image 2" Value="../../TFT/BNWAS/Watch_auto_on_green.bmp" Variable="" />
+            <Property Name="Image 3" Value="../../TFT/BNWAS/Watch_auto_on_grey.bmp" Variable="" />
+            <Property Name="Image 4" Value="../../TFT/BNWAS/Watch_auto_on_grey.bmp" Variable="" />
+            <Property Name="Image 5" Value="../../TFT/BNWAS/Watch_auto_on_grey.bmp" Variable="" />
+          </Properties>
+        </Object>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="112" Y="10" Width="80" Height="80" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="0" Variable="SWAP_WATCH_ON_BUTTON" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/Watch_stand_by_grey.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/Watch_stand_by_grey.bmp" Variable="" />
+            <Property Name="Image 2" Value="../../TFT/BNWAS/Watch_stand_by_grey.bmp" Variable="" />
+            <Property Name="Image 3" Value="../../TFT/BNWAS/Watch_stand_by_green.bmp" Variable="" />
+            <Property Name="Image 4" Value="../../TFT/BNWAS/Watch_stand_by_grey.bmp" Variable="" />
+            <Property Name="Image 5" Value="../../TFT/BNWAS/Watch_stand_by_grey.bmp" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Frame>
+    <Frame Name="WATCH TIMER BACKGROUND" Width="152" Height="182">
+      <Objects>
+        <Object Name="Multiple Status" FullName="PAL1131G.Objects.Praxis:Multiple Status" X="0" Y="0" Width="152" Height="182" IsUpdatable="True">
+          <Properties>
+            <Property Name="Current state" Value="2" Variable="OP_VISUAL_ALARM" />
+            <Property Name="Border Width" Value="0" Variable="" />
+            <Property Name="Manual Flash" Value="True" Variable="FLASH" />
+            <Property Name="Image 0" Value="../../TFT/BNWAS/watchtimer.bmp" Variable="" />
+            <Property Name="Image 1" Value="../../TFT/BNWAS/watch_timer_red.bmp" Variable="" />
+            <Property Name="Image 2" Value="../../TFT/BNWAS/watch_timer_red.bmp" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Frame>
+    <Frame Name="RESET LINE" Width="140" Height="50">
+      <Objects>
+        <Object Name="Text Box" FullName="PAL1131G.Objects.Basic:Text Box" X="0" Y="3" Width="140" Height="30" IsUpdatable="False">
+          <Properties>
+            <Property Name="Text" Value="PLEASE RESET TIMER" Variable="" />
+            <Property Name="Font" Value="Arial-10" Variable="" />
+            <Property Name="Horizontal Alignment" Value="1" Variable="" />
+            <Property Name="Vertical Alignment" Value="1" Variable="" />
+          </Properties>
+        </Object>
+      </Objects>
+    </Frame>
+  </Frames>
+</Project>

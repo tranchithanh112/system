@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1920" Height="1010" Y="70" BorderWidth="0" FillColor="BackgroundConning">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBackground"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="1920" Height="70" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Frame Width="244.828" Height="60" X="1610" Y="5" Path="..\Logos\Frame_PRAXIS_LOGO.prax"/>
+		<Rectangle Width="1920" Height="5" Y="65" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Rectangle Width="1920" Height="3" Y="66" BorderWidth="0" BorderColor="StatusInactive" FillColor="StatusInactive"/>
+		<Button Width="350" Height="55" X="1250" Y="5" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" FillColorActionRunning="Transparent" FillPatternColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<TextBox Width="31" Height="11" X="25" Y="35" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;12.0;N;N;N" Text="GMT">
+					<Bindings>
+						<MiscellaneousStringBinding TargetPropertyName="Text"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="130" Height="30" X="55" Y="20" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="00:00:00">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="135" Height="30" X="190" Y="20" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="2020-01-01">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams Format="d.mm.yyyy"/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<GeneralCAMClientCommandsClickAction CAMClientCommandType="Toggle Date Time"/>
+			</ClickActions>
+		</Button>
+		<Button Width="410" Height="55" X="705" Y="5" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="5"/>
+			</ClickActions>
+		</Button>
+		<Button Width="65" Height="65" X="20" ClipToBounds="True" Text="ME NU" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<NavigateToIndexUserAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

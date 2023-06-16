@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="400" Height="400" GridSpacing="1" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<TextBox FlashFast="True" Width="400" Height="40" BorderColor="InfoTextGrey" FillColor="Comment" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N" Text="SECURED">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Width" ExportedPropertyName="width_txt"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="alarm_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="TextWhenFalse" ExportedPropertyName="status_false_txt"/>
+								<FrameBinding TargetPropertyName="TextWhenTrue" ExportedPropertyName="status_true_txt"/>
+							</Bindings>
+						</BoolToStringConvertParams>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="alarm_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Comment">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ColorWhenFalse" ExportedPropertyName="false_color"/>
+								<FrameBinding TargetPropertyName="ColorWhenTrue" ExportedPropertyName="true_color"/>
+							</Bindings>
+						</BoolToColorConvertParams>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

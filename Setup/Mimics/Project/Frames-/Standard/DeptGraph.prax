@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="610" Height="340" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Trending Width="525" Height="250" X="60" Y="50" ShowLegend="False" ShowTime="False" ScrollBarSize="0" SmoothScrolling="True">
+			<Runs>
+				<TrendingRun Title="Dept" LineColor="InfoTextWhite" LineWidth="1" FillColor="TrendBackground" BottomValue="100" TopValue="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DEPT_CH"/>
+					</Bindings>
+				</TrendingRun>
+			</Runs>
+		</Trending>
+		<Line Color="IndicatorBlue" X0="45" Y0="300" X1="585" Y1="300"/>
+		<Line Color="IndicatorBlueTrans" X0="45" Y0="275" X1="585" Y1="275"/>
+		<Line Color="IndicatorBlueTrans" X0="45" Y0="250" X1="585" Y1="250"/>
+		<Line Color="IndicatorBlueTrans" X0="45" Y0="225" X1="585" Y1="225"/>
+		<Line Color="IndicatorBlueTrans" X0="45" Y0="200" X1="585" Y1="200"/>
+		<Line Color="IndicatorBlueTrans" X0="45" Y0="175" X1="585" Y1="175"/>
+		<Line Color="IndicatorBlueTrans" X0="45" Y0="150" X1="585" Y1="150"/>
+		<Line Color="IndicatorBlueTrans" X0="45" Y0="125" X1="585" Y1="125"/>
+		<Line Color="IndicatorBlueTrans" X0="45" Y0="100" X1="585" Y1="100"/>
+		<Line Color="IndicatorBlueTrans" X0="45" Y0="75" X1="585" Y1="75"/>
+		<Line Color="InfoTextGrey" X0="45" Y0="50" X1="585" Y1="50"/>
+		<Line Color="IndicatorBlue" X0="585" Y0="315" X1="585" Y1="50"/>
+		<Line Color="IndicatorBlueTrans" X0="480" Y0="315" X1="480" Y1="50"/>
+		<Line Color="IndicatorBlueTrans" X0="375" Y0="315" X1="375" Y1="50"/>
+		<Line Color="IndicatorBlueTrans" X0="270" Y0="315" X1="270" Y1="50"/>
+		<Line Color="IndicatorBlueTrans" X0="165" Y0="315" X1="165" Y1="50"/>
+		<Line Color="IndicatorBlue" X0="60" Y0="315" X1="60" Y1="50"/>
+		<TextBox Width="40" Height="25" X="40" Y="315" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;20.0;N;N;N" Text="-10"/>
+		<TextBox Width="40" Height="25" X="145" Y="315" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;20.0;N;N;N" Text="-8"/>
+		<TextBox Width="40" Height="25" X="250" Y="315" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;20.0;N;N;N" Text="-6"/>
+		<TextBox Width="40" Height="25" X="355" Y="315" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;20.0;N;N;N" Text="-4"/>
+		<TextBox Width="40" Height="25" X="460" Y="315" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;20.0;N;N;N" Text="-2"/>
+		<TextBox Width="40" Height="25" X="565" Y="315" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;20.0;N;N;N" Text="0min"/>
+		<TextBox Width="40" Height="20" X="5" Y="290" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="100"/>
+		<TextBox Width="40" Height="20" X="5" Y="265" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="90"/>
+		<TextBox Width="40" Height="20" X="5" Y="240" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="80"/>
+		<TextBox Width="40" Height="20" X="5" Y="215" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="70"/>
+		<TextBox Width="40" Height="20" X="5" Y="190" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="60"/>
+		<TextBox Width="40" Height="20" X="5" Y="165" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="50"/>
+		<TextBox Width="40" Height="20" X="5" Y="140" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="40"/>
+		<TextBox Width="40" Height="20" X="5" Y="115" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="30"/>
+		<TextBox Width="40" Height="20" X="5" Y="90" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="20"/>
+		<TextBox Width="40" Height="20" X="5" Y="65" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Praxis;18.0;N;N;N" Text="10"/>
+		<TextBox Width="40" Height="20" X="5" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;18.0;N;N;N" Text="0 m"/>
+		<TextBox Width="40" Height="20" X="105" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Praxis;28.0;N;N;N" Text="68m">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DEPT_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix="m">
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DEPT_CH"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" X="55" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;28.0;N;N;N" Text="DPT"/>
+	</Children>
+</RootElement>

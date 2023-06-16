@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" GridSpacing="1">
+	<Children>
+		<Rectangle Width="50" Height="50" FillColor="ButtonFill">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bilge_Alarm"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Line Width="2" X0="25" Y0="10" X1="25" Y1="41" Color="InactivePanelFace">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Color">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bilge_Alarm"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="InactivePanelFace" ColorWhenTrue="White"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Line Width="2" X0="25" Y0="10" X1="30" Y1="22" Color="InactivePanelFace">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Color">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bilge_Alarm"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="InactivePanelFace" ColorWhenTrue="White"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Line Width="2" X0="25" Y0="10" X1="20" Y1="22" Color="InactivePanelFace">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Color">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Bilge_Alarm"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="InactivePanelFace" ColorWhenTrue="White"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+	</Children>
+</RootElement>

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE HTML PUBLIC " -//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<STYLE TYPE="text/css">
+ <!-- 
+
+BODY { background: #FFFFFF; text: #000000; font-family: 'Courier New'; font-size: small;}
+TH { background: #FFFFFF; text: #000000; font-family: 'Verdana'; font-size: 12px;} 
+TABLE { border-width:1px; border-style:None; border-collapse:collapse; border-top: 1px; border-top-style: solid; border-bottom: 1px; border-bottom-style: solid; border-left: 1px; border-left-style: solid; border-right: 1px; border-right-style: solid;}
+.nor {	background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; font-size: x-small;}
+.ident { background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; }
+.keyw { background-color: #FFFFFF; color: Blue; font-family: 'Courier New'; font: bold;}
+.oper { background-color: #FFFFFF; color: #000000; font-family: 'Verdana'; font-size: x-small;}
+.argum { background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; font-size: x-small;}
+.argt { background-color: Yellow; color: DarkBlue; font-family: 'Courier New'; font-size: x-small;}
+.errpos { background-color: Black; color: Red; font-family: 'Courier New'; font-size: x-small;}
+.good { background-color: Blue; color: #C0C0C0; font-family: 'Courier New'; font-size: x-small;}
+.comment {	background-color: #FFFFFF; color: black; font-family: 'Times New Roman';  font-size: x-small; }
+.typconst { background-color: #C0C0C0; color: DarkGreen; font-family: 'Courier New'; font-size: x-small;} 
+.nums { background-color: #FFFFFF; color: #00AFAF; font-family: 'Courier New'; font-size: x-small;}
+.strs { background-color: #FFFF00; color: DarkGreen; font-family: 'Courier New'; font-size: x-small;}
+.typef { background-color: #FFFFFF; color: Blue; font-family: 'Courier New'; }
+.argcommentname { background-color: #C0C0C0; color: Blue; font-family: 'Courier New'; font-size: x-small; padding-left: 5px; padding-right: 5px;}
+.argcommentdesc { background-color: #FFFFFF; color: DarkBlue; font-family: 'Times New Roman'; font-size: x-small;}
+--> 
+ </STYLE> 
+ </head><body bgcolor="#FFFFFF">
+<h3 align="center">Functions for LREAL type support</h3><div align="right" class="ident">Version: <span class="keyw">2.6.0</span> from date <span class="keyw">2009.07-13 21:24</span></div>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Extended types</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Type</th><th>Implementation</th><th>Details</th><th>Comment</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Removed elementary types</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>No</th><th>Type</th><th>Comment</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Dependent files</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Type</th><th>Order</th><th>Name</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Implemented function</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Code</th><th>Name:Type</th><th>Arguments</th><th>Description</th></tr>
+<tr><td>190D</td><td>REAL_TO_LREAL:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Converts REAL value to LREAL value</span></td></tr><tr><td>190E</td><td>LREAL_TO_REAL:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Converts LREAL value to REAL value</span></td></tr><tr><td>01*A</td><td>ADD:<span class="typef">LREAL</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Adds two or more LREAL operands</span></td></tr><tr><td>020A</td><td>SUB:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">LREAL</span><br>
+<b>1</b> subtrahend:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>03*A</td><td>MUL:<span class="typef">LREAL</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Multiplies two or more LREAL factors</span></td></tr><tr><td>040A</td><td>DIV:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">LREAL</span><br>
+<b>1</b> divisor:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0509</td><td>NEG:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Changes sign of the signed value</span></td></tr><tr><td>061A</td><td>ABS:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>0621</td><td>SQRT:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> D:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Returns the square root of a specified number</span></td></tr><tr><td>0623</td><td>LN:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> D:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Returns the natural (base e) logarithm of a specified number</span></td></tr><tr><td>0625</td><td>LOG:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> D:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Returns the base 10 logarithm of a specified number</span></td></tr><tr><td>0627</td><td>EXP:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> Y:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Returns e raised to the specified power (Y)</span></td></tr><tr><td>0629</td><td>SIN:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> A:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">A</span><span class="argcommentdesc">&nbsp;- An angle, measured in radians</span></div>Returns the sine of the specified angle</span></td></tr><tr><td>062B</td><td>COS:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> A:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">A</span><span class="argcommentdesc">&nbsp;- An angle, measured in radians</span></div>Returns the cosine of the specified angle</span></td></tr><tr><td>062D</td><td>TAN:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> A:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">A</span><span class="argcommentdesc">&nbsp;- An angle, measured in radians</span></div>Returns the tangent of the specified angle</span></td></tr><tr><td>062F</td><td>ASIN:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> D:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">D</span><span class="argcommentdesc">&nbsp;- A number representing a sine, where -1 <= D <= 1</span></div>Returns the angle PHI (measured in radians, such that -PI/2 <= PHI <= PI/2) whose sine is the specified number.</span></td></tr><tr><td>0631</td><td>ACOS:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> D:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">D</span><span class="argcommentdesc">&nbsp;- A number representing a sine, where -1 <= D <= 1</span></div>Returns the angle PHI (measured in radians, such that 0 <= PHI <= PI) whose cosine is the specified number.</span></td></tr><tr><td>0633</td><td>ATAN:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> D:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">D</span><span class="argcommentdesc">&nbsp;- A number representing a tangent</span></div>Returns the angle PHI (measured in radians, such that -PI/2 <= PHI <= PI/2) whose tangent is the specified number.</span></td></tr><tr><td>0635</td><td>TRUNC:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> D:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Calculates the integral part of LREAL number to LINT value</span></td></tr><tr><td>0637</td><td>ROUND:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Rounds a value to the nearest integer</span></td></tr><tr><td>0C0A</td><td>SEL:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">LREAL</span><br>
+<b>2</b> case_true:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0D0A</td><td>LIMIT:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> value:<span class="typef">LREAL</span><br>
+<b>1</b> min:<span class="typef">LREAL</span><br>
+<b>2</b> max:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0E0A</td><td>MAX:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+<b>1</b> in1:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0F0A</td><td>MIN:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+<b>1</b> in1:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>100A</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+<b>1</b> in1:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>110A</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+<b>1</b> in1:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>120A</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+<b>1</b> in1:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>130A</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+<b>1</b> in1:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>140A</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+<b>1</b> in1:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>150A</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LREAL</span><br>
+<b>1</b> in1:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>16*A</td><td>MUX:<span class="typef">LREAL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">LREAL</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr></table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Specific <i>in-line</i> functions</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Name:Type</th><th>Arguments</th><th>Description</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Specific function blocks</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Name</th><th>Input parameters</th><th>Output parameters</th><th>Description</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="right" class="ident">Export date: <span class="keyw">2009.08-19 10:44:20</span></div>
+</body>
+</html>

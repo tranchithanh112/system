@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="290" Height="290" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<TabPanel Width="290" Height="290" ClipToBounds="True" HeaderVisible="False" SelectedPageIndex="1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="SelectedPageIndex" ExportedPropertyName="vertical"/>
+			</Bindings>
+			<Children>
+				<TabPage PageName="Page1" Color="Transparent">
+					<Children>
+						<Panel Width="290" Height="290" ClipToBounds="True" BorderColor="Transparent" FillColor="Transparent">
+							<Children>
+								<Polyline Width="3" LineColor="White" ClosedOutline="True" FillColor="Background">
+									<Bindings>
+										<SelectFirstColorBinding TargetPropertyName="LineColor" SelectedValue1="Green" SelectedValue2="PageInfoLineShaded" DefaultValue="White">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="failed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fb_opened_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fb_closed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstColorBinding>
+									</Bindings>
+									<Points>
+										<Point Coord="200;120"/>
+										<Point Coord="200;170"/>
+										<Point Coord="90;120"/>
+										<Point Coord="90;170"/>
+										<Point Coord="200;120"/>
+									</Points>
+								</Polyline>
+								<Ellipse BorderWidth="0" BorderColor="InfoTextGrey" FillColor="InfoTextGrey" CenterX="145" CenterY="145" RadiusX="8" RadiusY="8"/>
+								<Line Width="3" Color="InfoTextGrey" X0="145" Y0="145" X1="145" Y1="115"/>
+								<Rectangle Width="40" Height="25" X="125" Y="90" BorderWidth="3" BorderColor="InfoTextGrey" CornerRoundRadius="5">
+									<Bindings>
+										<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Green" SelectedValue2="Green" DefaultValue="Background">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="failed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="open_output_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="close_output_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstColorBinding>
+									</Bindings>
+								</Rectangle>
+								<Rectangle FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="OutlineOnly" FlashColor="OldAlarm" Width="130" Height="130" X="80" Y="80" BorderWidth="2" BorderColor="Background" FillColor="Transparent" CornerRoundRadius="10">
+									<Bindings>
+										<ChannelCurrentAlarmBinding TargetPropertyName="FlashColor">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="failed_Ch"/>
+											</Bindings>
+											<ConvertParams>
+												<BoolToColorConvertParams ColorWhenFalse="OldAlarm"/>
+											</ConvertParams>
+										</ChannelCurrentAlarmBinding>
+										<SelectFirstBoolBinding TargetPropertyName="Flash" SelectedValue0="False" SelectedValue1="False" DefaultValue="True">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fb_opened_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fb_closed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstBoolBinding>
+									</Bindings>
+								</Rectangle>
+								<TextBox Height="45" X="95" Y="35" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Saira SemiCondensed;46.0;N;N;N" Text="V17">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Text" ExportedPropertyName="valve_name_upper_txt"/>
+									</Bindings>
+								</TextBox>
+								<TextBox Height="45" X="95" Y="185" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Saira SemiCondensed;46.0;N;N;N" Text="V17">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Text" ExportedPropertyName="valve_name_lower_txt"/>
+									</Bindings>
+								</TextBox>
+							</Children>
+						</Panel>
+					</Children>
+				</TabPage>
+				<TabPage PageName="Page2" Color="Transparent">
+					<Children>
+						<Panel Width="290" Height="290" ClipToBounds="True" BorderColor="Transparent" FillColor="Transparent">
+							<Children>
+								<Polyline Width="3" LineColor="White" ClosedOutline="True" FillColor="Background">
+									<Bindings>
+										<SelectFirstColorBinding TargetPropertyName="LineColor" SelectedValue1="Green" SelectedValue2="PageInfoLineShaded" DefaultValue="White">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="failed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fb_opened_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fb_closed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstColorBinding>
+									</Bindings>
+									<Points>
+										<Point Coord="110;90"/>
+										<Point Coord="160;90"/>
+										<Point Coord="110;200"/>
+										<Point Coord="160;200"/>
+										<Point Coord="110;90"/>
+									</Points>
+								</Polyline>
+								<Ellipse BorderWidth="3" BorderColor="InfoTextGrey" FillColor="InfoTextGrey" CenterX="135" CenterY="145" RadiusX="8" RadiusY="8" ArcBegin="90" ArcEnd="450"/>
+								<Line Width="3" Color="InfoTextGrey" X0="135" Y0="145" X1="165" Y1="145"/>
+								<Rectangle FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="OutlineOnly" FlashColor="OldAlarm" Width="130" Height="130" X="70" Y="80" BorderWidth="2" BorderColor="Background" FillColor="Transparent" CornerRoundRadius="10">
+									<Bindings>
+										<SelectFirstBoolBinding TargetPropertyName="Flash" SelectedValue0="False" SelectedValue1="False" DefaultValue="True">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fb_opened_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fb_closed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstBoolBinding>
+										<ChannelCurrentAlarmBinding TargetPropertyName="FlashColor">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="failed_Ch"/>
+											</Bindings>
+											<ConvertParams>
+												<BoolToColorConvertParams ColorWhenFalse="OldAlarm"/>
+											</ConvertParams>
+										</ChannelCurrentAlarmBinding>
+									</Bindings>
+								</Rectangle>
+								<TextBox Width="95" Height="50" X="195" Y="120" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Saira SemiCondensed;46.0;N;N;N" Text="V17">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Text" ExportedPropertyName="valve_name_right_txt"/>
+									</Bindings>
+								</TextBox>
+								<TextBox Height="50" X="10" Y="120" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Saira SemiCondensed;46.0;N;N;N" Text="V17">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Text" ExportedPropertyName="valve_name_left_txt"/>
+									</Bindings>
+								</TextBox>
+								<Rectangle Width="25" Height="40" X="165" Y="125" BorderWidth="3" BorderColor="InfoTextGrey" CornerRoundRadius="5">
+									<Bindings>
+										<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Green" SelectedValue2="Green" DefaultValue="Background">
+											<Bindings>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="failed_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="open_output_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="close_output_Ch"/>
+													</Bindings>
+												</ChannelCurrentAlarmBinding>
+											</Bindings>
+										</SelectFirstColorBinding>
+									</Bindings>
+								</Rectangle>
+							</Children>
+						</Panel>
+					</Children>
+				</TabPage>
+			</Children>
+		</TabPanel>
+		<Button Width="120" Height="120" X="85" Y="85" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction>
+					<Frame>
+						<FloatingFrame Width="160" Height="250" X="65" Y="20" Path="..\..\Elements\PopUp_CMD_Box\02_PopUp_CMD_3Buttons_SV.prax" Button1_Text="Open" Button1_Value="1" CMD_Channel_2="0" CMD_Channel_1="0" Button2_Value="1" Button2_Text="Close" CMD_Channel_3="0" Button3_Text="Reset" Button3_Value="1"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

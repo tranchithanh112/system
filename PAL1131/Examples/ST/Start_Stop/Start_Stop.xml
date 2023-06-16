@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="START_STOP">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2008" month="10" day="8" hour="14" minutes="35" seconds="57" milisec="183" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="00000001" />
+      <II value="00000038" />
+      <LC year="2008" month="10" day="8" hour="14" minutes="38" seconds="57" milisec="692" />
+    </OPTIONS>
+    <LIBRARY />
+    <POU>
+      <ITEM type="FBLK" name="TON"><![CDATA[FUNCTION_BLOCK TON               (* TON - Opóźnione załączenie         *)
+(*$COMMENT Opóźnienie włączenia*)
+VAR
+    STIME: TIME;                 (* Czas początkowy, uaktywnienia IN   *)
+END_VAR
+VAR_INPUT
+    IN (*$COMMENT Wejście*) : BOOL;(* Wejście                          *)
+    PT (*$COMMENT Czas do odmierzenia*) : TIME;(* Czas do odmierzenia  *)
+END_VAR
+VAR_OUTPUT
+    Q (*$COMMENT Wyjście*) : BOOL;(* Wyjście                           *)
+    ET(*$COMMENT Odmierzany czas*): TIME;(* Odmierzany czas            *)
+END_VAR
+
+IF NOT IN THEN                   (* Jeśli wejście nieaktywne           *)
+    Q := FALSE;                  (* Zeruj wyjście                      *)
+    ET := t#0ms;                 (* Zeruj licznik odmierzanego czasu   *)
+    STIME := CUR_TIME();         (* Odczytaj zegar systemowy           *)
+ELSE
+    IF NOT Q THEN                (* Dopóki nie uaktywniono wyjścia     *)
+        ET := CUR_TIME() - STIME;(* Czas od uaktywnienia wejścia       *)
+        IF ET >= PT THEN         (* Jeśli upłynął zadany czas          *)
+            Q := TRUE;           (* Uaktywnij wyjście                  *)
+            ET := PT;            (* Zadany czas opóźnienia             *)
+        END_IF
+    END_IF
+END_IF
+END_FUNCTION_BLOCK]]></ITEM>
+      <ITEM type="FBLK" name="TOF"><![CDATA[FUNCTION_BLOCK TOF               (* TOF - Opóźnione załączenie         *)
+(*$COMMENT Opóźnienie wyłączenia*)
+VAR
+    STIME: TIME;                 (* Czas początkowy, uaktywnienia IN   *)
+END_VAR
+VAR_INPUT
+    IN (*$COMMENT Wejście*): BOOL;(* Wejście                            *)
+    PT (*$COMMENT Czas do odmierzenia*): TIME;(* Czas do odmierzenia    *)
+END_VAR
+VAR_OUTPUT
+    Q (*$COMMENT Wyjście*): BOOL; (* Wyjście                            *)
+    ET (*$COMMENT Odmierzany czas*): TIME;(* Odmierzany czas            *)
+END_VAR
+
+IF IN THEN                       (* Jeśli wejście aktywne              *)
+    Q := TRUE;                   (* Uaktywnij wyjście                  *)
+    ET := t#0ms;                 (* Zeruj licznik odmierzanego czasu   *)
+    STIME := CUR_TIME();         (* Odczytaj zegar systemowy           *)
+ELSE
+    IF Q THEN                    (* Dopóki aktywne wyjście             *)
+        ET := CUR_TIME() - STIME;(* Odmierzaj zadany czas              *)
+        IF ET >= PT THEN         (* Jeśli upłynął zadany czas          *)
+            Q := FALSE;          (* Zeruj wyjście                      *)
+            ET := PT;            (* Pamiętaj zadany czas opóźnienia    *)
+        END_IF
+    END_IF
+END_IF
+END_FUNCTION_BLOCK]]></ITEM>
+      <ITEM type="PRG" name="STARTSTOP"><![CDATA[PROGRAM STARTSTOP
+VAR
+    OPOZN_ON : TON;                   (* Instancja bloku TON *)
+    OPOZN_OFF: TOF;                   (* Instancja bloku TOF *)
+END_VAR
+
+VAR_EXTERNAL
+    START : BOOL (*$READ*);
+    STOP : BOOL  (*$READ*);
+    ALARM : BOOL (*$READ*);
+    SILNIK : BOOL;
+    POMPA : BOOL (*$WRITE*);
+END_VAR
+
+SILNIK := (START OR SILNIK) AND NOT STOP AND NOT ALARM;
+
+OPOZN_ON(IN:=SILNIK, PT:=t#5s);       (* Blok TON - opóźnione załączenie *)
+OPOZN_OFF(IN:= OPOZN_ON.Q, PT:=t#5s); (* Blok TOF - opóźnione wyłączenie *)
+POMPA := OPOZN_OFF.Q;                 (* Stan załączenia pompy           *)
+END_PROGRAM]]></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="START" flags="00000000"><![CDATA[VAR_GLOBAL 
+START AT %0000 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="STOP" flags="00000000"><![CDATA[VAR_GLOBAL 
+STOP AT %0001 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ALARM" flags="00000000"><![CDATA[VAR_GLOBAL 
+ALARM AT %0002 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SILNIK" flags="00000000"><![CDATA[VAR_GLOBAL 
+SILNIK AT %0008 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="POMPA" flags="00000000"><![CDATA[VAR_GLOBAL 
+POMPA AT %0009 : BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="Task0001" loop_kind="0" interval="200"><![CDATA[STARTSTOP
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

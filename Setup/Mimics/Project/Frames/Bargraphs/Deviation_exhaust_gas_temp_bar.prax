@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="440" Height="230" GridSpacing="10" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Rectangle Width="440" Height="230" BorderWidth="3" BorderColor="InactiveGrey" BorderStyle="Raised" LinePosition="Outside" FillColor="DarkShadow"/>
+		<Rectangle Width="20" Height="120" X="40" Y="60" BorderWidth="2" BorderColor="InactiveGrey" BorderStyle="Sunken" LinePosition="Outside"/>
+		<FillBar Width="20" Height="60" X="40" Y="60" FillDirection="BottomToTop" LimitType="None" LimitMarkerType="None" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A1"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<Rectangle Width="20" Height="120" X="100" Y="60" BorderWidth="2" BorderColor="InactiveGrey" BorderStyle="Sunken" LinePosition="Outside"/>
+		<Rectangle Width="20" Height="120" X="160" Y="60" BorderWidth="2" BorderColor="InactiveGrey" BorderStyle="Sunken" LinePosition="Outside"/>
+		<Rectangle Width="20" Height="120" X="220" Y="60" BorderWidth="2" BorderColor="InactiveGrey" BorderStyle="Sunken" LinePosition="Outside"/>
+		<Rectangle Width="20" Height="120" X="340" Y="60" BorderWidth="2" BorderColor="InactiveGrey" BorderStyle="Sunken" LinePosition="Outside"/>
+		<TextBox Width="20" Height="20" X="40" Y="200" BorderWidth="0" FillColor="Transparent" TextColor="KeyboardInputBackground" Font="Praxis;22.0;B;N;N" Text="555">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A1"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="200" Height="30" X="120" BorderWidth="0" FillColor="Transparent" Font="Praxis;22.0;B;N;N" Text="DEVIATION EXHAUST GAS TEMP BANK A">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title"/>
+			</Bindings>
+		</TextBox>
+		<Line X0="370" Y0="60" X1="370" Y1="180"/>
+		<Line X0="380" Y0="60" X1="370" Y1="60"/>
+		<Line X0="380" Y0="180" X1="370" Y1="180"/>
+		<Line X0="380" Y0="90" X1="370" Y1="90"/>
+		<Line X0="380" Y0="120" X1="370" Y1="120"/>
+		<Line X0="380" Y0="150" X1="370" Y1="150"/>
+		<TextBox Width="20" Height="20" X="380" Y="50" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;18.0;N;N;N" Text="100"/>
+		<TextBox Width="20" Height="20" X="380" Y="110" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;18.0;N;N;N" Text="0 (°C)"/>
+		<TextBox Width="20" Height="20" X="380" Y="170" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;18.0;N;N;N" Text="-100"/>
+		<Rectangle Width="20" Height="120" X="280" Y="60" BorderWidth="2" BorderColor="InactiveGrey" BorderStyle="Sunken" LinePosition="Outside"/>
+		<TextBox Width="20" Height="20" X="380" Y="140" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;18.0;N;N;N" Text="-50"/>
+		<TextBox Width="20" Height="20" X="380" Y="80" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;18.0;N;N;N" Text="50"/>
+		<FillBar Width="20" Height="60" X="40" Y="120" FillDirection="TopToBottom" RangeEnd="-100" LimitType="None" LimitMarkerType="None" Value="-50" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A1"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="20" Height="60" X="100" Y="60" FillDirection="BottomToTop" LimitType="None" LimitMarkerType="None" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A2"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="20" Height="60" X="100" Y="120" FillDirection="TopToBottom" RangeEnd="-100" LimitType="None" LimitMarkerType="None" Value="-50" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A2"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="20" Height="20" X="100" Y="200" BorderWidth="0" FillColor="Transparent" TextColor="KeyboardInputBackground" Font="Praxis;22.0;B;N;N" Text="555">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A2"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="20" Height="60" X="160" Y="60" FillDirection="BottomToTop" LimitType="None" LimitMarkerType="None" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A3"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="20" Height="60" X="160" Y="120" FillDirection="TopToBottom" RangeEnd="-100" LimitType="None" LimitMarkerType="None" Value="-50" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A3"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="20" Height="20" X="160" Y="200" BorderWidth="0" FillColor="Transparent" TextColor="KeyboardInputBackground" Font="Praxis;22.0;B;N;N" Text="555">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A3"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="20" Height="60" X="220" Y="60" FillDirection="BottomToTop" LimitType="None" LimitMarkerType="None" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A4"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="20" Height="60" X="220" Y="120" FillDirection="TopToBottom" RangeEnd="-100" LimitType="None" LimitMarkerType="None" Value="-50" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A4"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="20" Height="20" X="220" Y="200" BorderWidth="0" FillColor="Transparent" TextColor="KeyboardInputBackground" Font="Praxis;22.0;B;N;N" Text="555">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A4"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="20" Height="60" X="280" Y="60" FillDirection="BottomToTop" LimitType="None" LimitMarkerType="None" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A5"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="20" Height="60" X="280" Y="120" FillDirection="TopToBottom" RangeEnd="-100" LimitType="None" LimitMarkerType="None" Value="-50" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A5"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="20" Height="20" X="280" Y="200" BorderWidth="0" FillColor="Transparent" TextColor="KeyboardInputBackground" Font="Praxis;22.0;B;N;N" Text="555">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A5"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="20" Height="60" X="340" Y="60" FillDirection="BottomToTop" LimitType="None" LimitMarkerType="None" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A6"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="20" Height="60" X="340" Y="120" FillDirection="TopToBottom" RangeEnd="-100" LimitType="None" LimitMarkerType="None" Value="-50" LineWidth="0" RoundingRadius="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A6"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="20" Height="20" X="340" Y="200" BorderWidth="0" FillColor="Transparent" TextColor="KeyboardInputBackground" Font="Praxis;22.0;B;N;N" Text="555">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Dev_temp_A6"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Line X0="310" Y0="60" X1="310" Y1="180"/>
+		<Line X0="320" Y0="60" X1="310" Y1="60"/>
+		<Line X0="320" Y0="180" X1="310" Y1="180"/>
+		<Line X0="320" Y0="90" X1="310" Y1="90"/>
+		<Line X0="320" Y0="120" X1="310" Y1="120"/>
+		<Line X0="320" Y0="150" X1="310" Y1="150"/>
+		<Line X0="250" Y0="60" X1="250" Y1="180"/>
+		<Line X0="260" Y0="60" X1="250" Y1="60"/>
+		<Line X0="260" Y0="180" X1="250" Y1="180"/>
+		<Line X0="260" Y0="90" X1="250" Y1="90"/>
+		<Line X0="260" Y0="120" X1="250" Y1="120"/>
+		<Line X0="260" Y0="150" X1="250" Y1="150"/>
+		<Line X0="190" Y0="60" X1="190" Y1="180"/>
+		<Line X0="200" Y0="60" X1="190" Y1="60"/>
+		<Line X0="200" Y0="180" X1="190" Y1="180"/>
+		<Line X0="200" Y0="90" X1="190" Y1="90"/>
+		<Line X0="200" Y0="120" X1="190" Y1="120"/>
+		<Line X0="200" Y0="150" X1="190" Y1="150"/>
+		<Line X0="130" Y0="60" X1="130" Y1="180"/>
+		<Line X0="140" Y0="60" X1="130" Y1="60"/>
+		<Line X0="140" Y0="180" X1="130" Y1="180"/>
+		<Line X0="140" Y0="90" X1="130" Y1="90"/>
+		<Line X0="140" Y0="120" X1="130" Y1="120"/>
+		<Line X0="140" Y0="150" X1="130" Y1="150"/>
+		<Line X0="70" Y0="60" X1="70" Y1="180"/>
+		<Line X0="80" Y0="60" X1="70" Y1="60"/>
+		<Line X0="80" Y0="180" X1="70" Y1="180"/>
+		<Line X0="80" Y0="90" X1="70" Y1="90"/>
+		<Line X0="80" Y0="120" X1="70" Y1="120"/>
+		<Line X0="80" Y0="150" X1="70" Y1="150"/>
+		<TextBox Width="10" Height="20" X="50" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="1"/>
+		<TextBox Width="10" Height="20" X="110" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="2"/>
+		<TextBox Width="10" Height="20" X="170" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="3"/>
+		<TextBox Width="10" Height="20" X="230" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="4"/>
+		<TextBox Width="10" Height="20" X="290" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="5"/>
+		<TextBox Width="10" Height="20" X="350" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="6"/>
+		<TextBox Width="10" Height="20" X="40" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="A">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bank"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="10" Height="20" X="100" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="A">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bank"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="10" Height="20" X="220" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="A">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bank"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="10" Height="20" X="160" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="A">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bank"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="10" Height="20" X="340" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="A">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bank"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="10" Height="20" X="280" Y="30" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="0" Font="Praxis;18.0;N;N;N" Text="A">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Bank"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

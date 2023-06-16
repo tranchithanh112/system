@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1080" ShowBackground="True" Highlight_Button_NR="2" Page_Title="GENERAL INFO" MultiplePages="True" Path=".\Frames\Menus\CommonMenuFrame_1920x1080.prax" AutoShow_Page_Title="True"/>
+		<NavFrame Width="1645" Height="925" X="5" Y="80" OriginOffsetX="0" OriginOffsetY="0" ClipToBounds="True">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Height" DefaultValue="1080" ActivateValue="925" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="X" ActivateValue="5" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="Y" ActivateValue="80" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1920" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<VariableBinding TargetPropertyName="NavFrameCurrentAddress">
+					<Variable>
+						<FloatVariable Name="Navframe_Index" IsLocal="False" IsRetain="True"/>
+					</Variable>
+				</VariableBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\02.1 Propulsion.prax"/>
+				<Address Value=".\02.2 Thrusters.prax"/>
+			</AddressList>
+		</NavFrame>
+	</Children>
+</RootElement>

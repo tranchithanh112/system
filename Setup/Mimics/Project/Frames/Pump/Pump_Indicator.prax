@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="20" Height="20" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Ellipse BorderWidth="0" FillColor="Foreground" CenterX="10" CenterY="10" RadiusX="10" RadiusY="10">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="White" SelectedValue2="Green" DefaultValue="Foreground">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FeedbackStop_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FeedbackFail_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FeedbackStart_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+	</Children>
+</RootElement>

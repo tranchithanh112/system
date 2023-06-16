@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="200" Height="200" GridSpacing="1" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="60" Height="200" X="109" BorderWidth="2" BorderColor="TextInfo" FillColor="Green" FillPatternColor="TextInfo" CornerRoundRadius="2">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="IndicatorOrange" SelectedValue1="Green" DefaultValue="AlarmRed">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Closed_Ch"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Closed_Ch"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Button Width="200" Height="200" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction YOffset="106.5">
+					<Frame>
+						<FloatingFrame Width="540" Height="75" X="-170" Y="169" AL_ChannelNr="0" Path="..\Safety\Alarm_Indicator_Popup.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="AL_ChannelNr" ExportedPropertyName="Closed_Ch"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

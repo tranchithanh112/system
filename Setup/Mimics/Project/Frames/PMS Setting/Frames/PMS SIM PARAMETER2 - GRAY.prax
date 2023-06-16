@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="80" Height="20" PermissionLevelRequested="2" OnScreenNumpadFramePath="..\..\Numpad\Popup_Numpad.prax" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="80" Height="20" BorderColor="StatusInactive" LinePosition="Centered" FillColor="BackgroundMenu"/>
+		<TextBox Width="35" Height="20" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" LeftRightPadding="5" Font="Praxis;14.0;N;N;N" Text="VAL1">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VAL1"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="DEC1"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VAL1"/>
+					</Bindings>
+				</SetChannelValueTEA>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="35" Height="20" X="45" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" LeftRightPadding="0" Font="Praxis;14.0;N;N;N" Text="VAL2">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VAL2"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="DEC2"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VAL2"/>
+					</Bindings>
+				</SetChannelValueTEA>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="10" Height="20" X="35" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="~"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Height="30" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button Height="30" Text="Color" FillColor="Transparent" FillColorActionRunning="LightingIndigo" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="White" SelectedValue1="Red" SelectedValue2="Green" SelectedValue3="Yellow" DefaultValue="ButtonFill">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Color_Ch"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Color_Ch"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Color_Ch"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Color_Ch"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="5" XOffset="105" YOffset="50">
+					<Frame>
+						<FloatingFrame Width="110" Height="130" X="100" Color_Ch="0" Path=".\Popup_Color.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Color_Ch" ExportedPropertyName="Color_Ch"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

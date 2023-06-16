@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Polyline LineColor="TextInfo" ClosedOutline="True" FillColor="GaugeBackground">
+			<Points>
+				<Point Coord="15;47"/>
+				<Point Coord="25;30"/>
+				<Point Coord="8;20"/>
+				<Point Coord="8;40"/>
+				<Point Coord="25;30"/>
+				<Point Coord="42;20"/>
+				<Point Coord="42;40"/>
+				<Point Coord="25;30"/>
+				<Point Coord="35;47"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="1.5" LineColor="TextInfo" ClosedOutline="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="T_visible"/>
+			</Bindings>
+			<Points>
+				<Point Coord="25;30"/>
+				<Point Coord="25;15"/>
+				<Point Coord="19;15"/>
+				<Point Coord="31;15"/>
+				<Point Coord="25;15"/>
+			</Points>
+		</Polyline>
+		<Polyline LineColor="TextInfo" ClosedOutline="True" FillColor="GaugeBackground">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="O_visible"/>
+			</Bindings>
+			<Points>
+				<Point Coord="25;30"/>
+				<Point Coord="25;17"/>
+				<Point Coord="18;17"/>
+				<Point Coord="18;9"/>
+				<Point Coord="32;9"/>
+				<Point Coord="32;17"/>
+				<Point Coord="25;17"/>
+			</Points>
+		</Polyline>
+		<Ellipse BorderColor="TextInfo" FillColor="GaugeBackground" CenterX="25" CenterY="30" RadiusX="6" RadiusY="6" ArcBegin="270" ArcEnd="630">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Ball_visible"/>
+			</Bindings>
+		</Ellipse>
+	</Children>
+</RootElement>

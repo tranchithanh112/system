@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="240" Height="160" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="240" Height="160" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="5"/>
+		<Rectangle Width="216" Height="130" X="12" Y="10" BorderWidth="3" BorderColor="PanelFaceBorder" FillColor="NoAlarmGreen" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="NoAlarmGreen" DefaultValue="PageInfoLineShaded">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="fail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="active_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="11" Height="11" X="85" Y="144" BorderColor="PanelFaceBorder" FillColor="Transparent" CornerRoundRadius="2"/>
+		<Rectangle Width="11" Height="11" X="144" Y="144" BorderColor="PanelFaceBorder" FillColor="Transparent" CornerRoundRadius="2"/>
+		<TextBox Width="120" Height="40" X="58" Y="49" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;24.0;B;N;N" Text="SERVER_1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="PC_Name"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="40" X="58" Y="88" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;20.0;N;N;N" Text="ACTIVE">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="active_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="44" Height="11" X="98" Y="144" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="2"/>
+		<Rectangle Width="34" Height="8" X="103" Y="146" BorderColor="PanelFaceBorder" FillColor="Transparent" CornerRoundRadius="2"/>
+	</Children>
+</RootElement>

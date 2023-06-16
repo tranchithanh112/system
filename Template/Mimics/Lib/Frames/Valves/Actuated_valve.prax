@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="36" Height="36" GridSpacing="2" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button FlashArea="OutlineOnly" Width="36" Height="40" Y="-2" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="5" XOffset="3" YOffset="148" OpenAnimationDuration="60">
+					<Frame>
+						<FloatingFrame Visible="False" Width="130" Height="230" X="-98" Y="63" Path=".\Frame_ActuateValve_BIG.prax" OPEN_CMD="0" IsClosed="0" Mimic_Close="0" IsOpen="0" CLOSE_CMD="0" ForceChannel="0" Mimic_Open="0" Channel="0" aass="0" Actuate="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Mimic_Open" ExportedPropertyName="Mimic_Open"/>
+								<FrameBinding TargetPropertyName="Mimic_Close" ExportedPropertyName="Mimic_Close"/>
+								<FrameBinding TargetPropertyName="ForceChannel" ExportedPropertyName="SimChannelActuate"/>
+								<FrameBinding TargetPropertyName="Channel" ExportedPropertyName="SimChannelActuate"/>
+								<FrameBinding TargetPropertyName="IsOpen" ExportedPropertyName="SimChannelIsOpen"/>
+								<FrameBinding TargetPropertyName="IsClosed" ExportedPropertyName="SimChannelIsClosed"/>
+								<FrameBinding TargetPropertyName="Actuate" ExportedPropertyName="SimChannelActuate"/>
+								<FrameBinding TargetPropertyName="OPEN_CMD" ExportedPropertyName="OPEN_CMD"/>
+								<FrameBinding TargetPropertyName="CLOSE_CMD" ExportedPropertyName="CLOSE_CMD"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="36" Height="14" Y="34" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;11.0;N;N;N" Text="00000">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="36" Height="14" Y="-18" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;11.0;N;N;N" Text="00000">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG2"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle FlashState="Flashing" Flash="True" FlashFast="True" FlashArea="OutlineOnly" Width="36" Height="36" BorderColor="White" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VALVE_FAIL"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+		<Panel Width="36" Height="34" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Rotation" ExportedPropertyName="Rotation"/>
+			</Bindings>
+			<Children>
+				<Polyline ClosedOutline="True" FillColor="Gray">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Gray" SelectedValue2="Green" DefaultValue="Yellow">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VALVE_IS_CLOSED"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VALVE_IS_OPEN"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="6;18"/>
+						<Point Coord="6;32"/>
+						<Point Coord="30;18"/>
+						<Point Coord="30;32"/>
+					</Points>
+				</Polyline>
+				<Line X0="18" Y0="9" X1="18" Y1="25"/>
+				<Rectangle Width="12" Height="10" X="12" Y="2" FillColor="White"/>
+				<Line X0="22" Y0="18" X1="14" Y1="32"/>
+				<Ellipse BorderWidth="0" FillColor="Foreground" CenterX="18" CenterY="25" RadiusX="4" RadiusY="4" ArcBegin="270" ArcEnd="630"/>
+				<Button FlashArea="OutlineOnly" Width="12" Height="10" X="12" Y="2" RoundRadius="0" Text="" FillColor="Green" OutlineColor="Green" Font="Segoe UI;18.0;B;N;N">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="Green" SelectedValue1="Gray" DefaultValue="Transparent">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CLOSE_OUT"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<ChannelValueBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OPEN_OUT"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

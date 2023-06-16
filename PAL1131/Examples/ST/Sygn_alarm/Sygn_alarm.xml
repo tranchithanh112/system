@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="SYGN_ALARM">
+    <POU>
+      <ITEM type="PRG" name="Sygn_Alarm"><![CDATA[PROGRAM SYGN_ALARM
+VAR
+    CZUJNIKI     : BOOL;          (* Zadziałanie jednego z czujników *)
+    PRZERZUTNIK  : RS;            (* Instancja przerzutnika RS       *)
+    ZAPAMIETANIE : RS;            (* Instancja przerzutnika RS       *)
+    POMOCNICZA   : BOOL;          (* Pomocnicza do kompilacji        *)
+END_VAR
+
+VAR_EXTERNAL
+    OTW_OKNA1    : BOOL (*$READ*);       (* Czujnik otwarcia okna 1  *)
+    OTW_OKNA2    : BOOL (*$READ*);       (* Czujnik otwarcia okna 2  *)
+    OTW_DRZWI    : BOOL (*$READ*);       (* Czujnik otwarcia drzwi   *)
+    CZUJNIK_RUCHU: BOOL (*$READ*);       (* Czujnik ruchu            *)
+    ZALWYL       : BOOL (*$READ*);       (* Gotowość alarmu - sprzęt *)
+    ZEZWOLENIE   : BOOL (*$READ*);       (* Gotowość alarmu - użytk. *)
+    WYL_DZWIEK   : BOOL (*$READ*);       (* Wyłączenie dźwięku       *)
+    AL_SWIATLO   : BOOL;                 (* Sygnalizacja świetlna    *)
+    AL_DZWIEK    : BOOL;                 (* Sygnalizacja dźwiękowa   *)
+    ZALWYL_ALARMU: BOOL;                 (* Sygnalizacja aktywności  *)
+END_VAR
+
+CZUJNIKI := OTW_OKNA1 OR OTW_OKNA2 OR OTW_DRZWI OR CZUJNIK_RUCHU;
+ZALWYL_ALARMU := ZALWYL AND ZEZWOLENIE;           (* Gotowość alarmu *)
+POMOCNICZA := NOT(ZALWYL_ALARMU);
+ZAPAMIETANIE(S:=CZUJNIKI, R1:= POMOCNICZA );      (* Przerzutnik RS  *)
+AL_SWIATLO := ZAPAMIETANIE.Q1;                    (* Alarm świetlny  *)
+POMOCNICZA := NOT(AL_SWIATLO);
+PRZERZUTNIK(S:=WYL_DZWIEK, R1:= POMOCNICZA);      (* Przerzutnik RS  *)
+AL_DZWIEK := AL_SWIATLO AND (NOT PRZERZUTNIK.Q1); (* Alarm dźwiękowy *)
+END_PROGRAM
+]]></ITEM>
+      <ITEM type="FBLK" name="RS"><![CDATA[FUNCTION_BLOCK RS                (* RS - przerzutnik RS               *)
+VAR_INPUT
+    S : BOOL;                    (* Wejście ustawiające               *)
+    R1: BOOL;                    (* Wejście zerujące                  *)
+END_VAR
+VAR_OUTPUT
+    Q1: BOOL;                    (* Wyjście                           *)
+END_VAR
+
+Q1 := (NOT R1) AND (Q1 OR S);
+END_FUNCTION_BLOCK
+]]></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="OTW_OKNA1" flags="00000000"><![CDATA[VAR_GLOBAL 
+OTW_OKNA1 AT %0000 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="OTW_OKNA2" flags="00000000"><![CDATA[VAR_GLOBAL 
+OTW_OKNA2 AT %0001 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="OTW_DRZWI" flags="00000000"><![CDATA[VAR_GLOBAL 
+OTW_DRZWI AT %0002 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CZUJNIK_RUCHU" flags="00000000"><![CDATA[VAR_GLOBAL 
+CZUJNIK_RUCHU AT %0003 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZALWYL" flags="00000000"><![CDATA[VAR_GLOBAL 
+ZALWYL AT %0004 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZEZWOLENIE" flags="00000000"><![CDATA[VAR_GLOBAL 
+ZEZWOLENIE AT %0005 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="WYL_DZWIEK" flags="00000000"><![CDATA[VAR_GLOBAL 
+WYL_DZWIEK AT %0006 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="AL_SWIATLO" flags="00000000"><![CDATA[VAR_GLOBAL 
+AL_SWIATLO AT %0008 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="AL_DZWIEK" flags="00000000"><![CDATA[VAR_GLOBAL 
+AL_DZWIEK AT %0009 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZALWYL_ALARMU" flags="00000000"><![CDATA[VAR_GLOBAL 
+ZALWYL_ALARMU AT %0010 : BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="Task0001"><![CDATA[Sygn_Alarm
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

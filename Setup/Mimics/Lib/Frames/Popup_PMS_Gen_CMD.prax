@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="71" Height="230">
+	<Children>
+		<Panel Width="71" Height="230" GridSpacing="1" BorderColor="ButtonOutline" FillColor="ButtonFill">
+			<Children>
+				<Button Width="65" Height="24" X="3" Y="29" Text="Manual" Font="Segoe UI-16.0-N-N-N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cmd_Manual"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="3" Y="60" Text="Start" Font="Segoe UI-16.0-N-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cmd_Start"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="3" Y="85" Text="Stop" Font="Segoe UI-16.0-N-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cmd_Stop"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="3" Y="116" Text="Open" Font="Segoe UI-16.0-N-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cmd_Open"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="3" Y="141" Text="Close" Font="Segoe UI-16.0-N-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cmd_Close"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="3" Y="202" Text="Cancel" Font="Segoe UI-16.0-N-N-N">
+					<ClickActions>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="3" Y="172" Text="Reset" Font="Segoe UI-16.0-N-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cmd_Reset"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="24" X="3" Y="4" Text="Auto" Font="Segoe UI-16.0-N-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cmd_Auto"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

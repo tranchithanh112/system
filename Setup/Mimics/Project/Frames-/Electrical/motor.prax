@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="150" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Ellipse BorderColor="PageInfoLineShaded" CenterX="75" CenterY="75" RadiusX="65" RadiusY="65">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="Comment" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="running_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="failed_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox Width="150" Height="35" Y="40" BorderColor="Transparent" FillColor="Transparent" TextColor="PageInfoLineShaded" Font="Praxis;50.0;N;N;N" Text="M"/>
+		<TextBox Width="150" Height="35" Y="85" BorderColor="Transparent" FillColor="Transparent" TextColor="White" Font="Praxis;30.0;N;N;N" Text="M">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="motor_desc_txt"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

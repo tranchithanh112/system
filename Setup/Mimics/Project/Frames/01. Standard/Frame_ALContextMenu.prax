@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="390" Height="80" GridSpacing="10" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<Panel Width="390" Height="80" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="InfoTextGrey" FillColor="Background" CornerRoundRadius="5">
+			<Children>
+				<Button Width="30" Height="30" X="360" Text="X" FillColor="Transparent" OutlineColor="InfoTextGrey" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N">
+					<ClickActions>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="60" Height="20" BorderColor="Transparent" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;14.0;B;N;N">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="AL_ChanNrString"/>
+					</Bindings>
+				</TextBox>
+				<Frame Width="80" Height="20" X="60" Y="20" CHANNELNR="0" Path=".\Frame_Process_Value.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CHANNELNR" ExportedPropertyName="AL_ChannelNr"/>
+					</Bindings>
+				</Frame>
+				<Button Width="120" Height="30" X="270" Y="50" Text="Skip" FillColor="Transparent" OutlineColor="InfoTextGrey" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N">
+					<Bindings>
+						<AllowanceCheckBinding TargetPropertyName="Visible"/>
+					</Bindings>
+					<ClickActions>
+						<SkipChannelClickAction ChannelNumber="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AL_ChannelNr"/>
+							</Bindings>
+						</SkipChannelClickAction>
+					</ClickActions>
+				</Button>
+				<TextBox Width="300" Height="20" X="60" BorderColor="Transparent" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;14.0;B;N;N">
+					<Bindings>
+						<ChannelDescriptionBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AL_ChannelNr"/>
+							</Bindings>
+						</ChannelDescriptionBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="60" Height="20" Y="20" BorderColor="Transparent" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;14.0;B;N;N" Text="Value"/>
+				<Button Width="120" Height="30" X="140" Y="50" Text="Acknowledge" FillColor="Transparent" OutlineColor="InfoTextGrey" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N">
+					<Bindings>
+						<AllowanceCheckBinding TargetPropertyName="Visible" AllowWhat="Acknowledge Channel"/>
+					</Bindings>
+					<ClickActions>
+						<AckContextMenuAlarmClickAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

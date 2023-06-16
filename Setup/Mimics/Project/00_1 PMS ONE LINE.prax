@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Children>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<Line Width="4" Color="Orange" X0="65" Y0="200" X1="940" Y1="200">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Color" ChannelNumber="61286">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Orange"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Frame Width="372.5" Height="815" X="160" Y="200" RevertContainerRotation="True" RevertContainerScaling="True" Gen_Volts="61184" ID="GEN 1" Gen_KW="61045" Alarm_Group_INT="61" Alarm_Group_UINT="61" Gen_Hz="61185" Gen_Amps="61199" Starting="61079" Synchronizing="61080" Offloading="61081" Stopping="61084" First_To_Start="61076" First_To_Stop="61088" CB_Closed="61188" Running="61083" Lubricate="61120" Engine_Remote="61114" Cooldown_Time="61097" Blackout="61286" CB_Tripped="61049" Synchonizing="61080" CMD_Auto="61486" CMD_Manual="61489" CMD_Start="61487" CMD_Stop="61490" CMD_Close="61488" CMD_Open="61491" CMD_Reset="61496" Pre_Alarm="61101" Short_Circuit="61267" Shutdown="61249" Reverse_Power="61264" ActuatorFail="0" Manual="61029" Auto="61023" Gen_KVAR="61047" I_L1="61142" I_L2="61143" I_L3="61144" KW_L1="61150" KW_L2="61151" KW_L3="61152" KVAR_L1="61153" KVAR_L2="61154" KVAR_L3="61155" Gen_KWp="61071" Load_SP_KW="61479" Load_SP_KVAr="61478" Gen_KVARp="61072" Gen_KWH="61557" RUN_HRS="61551" RESET_KWH_CMD="61547" Engine_Ready="61112" Path=".\Frames\PMS\00 PMS_Gen_Full_Info.prax" KeepHorizontal="True" Engine_Local="0" Max_kW="500" CMD_OverrideWBShutdown="65241">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Max_kW" ChannelNumber="61326"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="372.5" Height="815" X="1395" Y="200" RevertContainerRotation="True" RevertContainerScaling="True" Gen_Volts="62184" ID="GEN 2" Gen_KW="62045" Alarm_Group_INT="62" Alarm_Group_UINT="62" Gen_Hz="62185" Gen_Amps="62199" Starting="62079" Synchronizing="62080" Offloading="62081" Stopping="62084" First_To_Start="62076" First_To_Stop="62088" CB_Closed="62188" Running="62083" Lubricate="62120" Engine_Remote="62114" Cooldown_Time="62097" Blackout="62286" CB_Tripped="62049" Synchonizing="62080" CMD_Auto="62486" CMD_Manual="62489" CMD_Start="62487" CMD_Stop="62490" CMD_Close="62488" CMD_Open="62491" CMD_Reset="62496" Pre_Alarm="62101" Short_Circuit="62267" Shutdown="62249" Reverse_Power="62264" ActuatorFail="0" Manual="62029" Auto="62023" Gen_KVAR="62047" I_L1="62142" I_L2="62143" I_L3="62144" KW_L1="62150" KW_L2="62151" KW_L3="62152" KVAR_L1="62153" KVAR_L2="62154" KVAR_L3="62155" Gen_KWp="62071" Load_SP_KW="62479" Load_SP_KVAr="62478" Gen_KVARp="62072" Gen_KWH="62557" RUN_HRS="62551" RESET_KWH_CMD="62547" Engine_Ready="62112" Path=".\Frames\PMS\00 PMS_Gen_Full_Info.prax" KeepHorizontal="True" CMD_OverrideWBShutdown="65242" Engine_Local="0" Max_kW="500">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Max_kW" ChannelNumber="62326"/>
+			</Bindings>
+		</Frame>
+		<Frame Visible="False" Width="372.5" Height="815" X="2000" Y="200" RevertContainerRotation="True" RevertContainerScaling="True" Gen_Volts="63184" ID="SHORE" Gen_KW="63045" Alarm_Group_INT="63" Alarm_Group_UINT="63" Gen_Hz="63185" Gen_Amps="63199" Runnning="63083" Blackout="63286" CB_Tripped="63049" Synchonizing="63080" Offloading="63081" CB_Closed="63188" CMD_Close="63488" CMD_Open="63491" CMD_Reset="63496" Pre_Alarm="63101" Short_Circuit="63267" Shutdown="63249" Reverse_Power="63264" ActuatorFail="0" Manual="63029" Auto="63023" Gen_KVAR="63047" I_L1="63142" I_L2="63143" I_L3="63144" KW_L1="63150" KW_L2="63151" KW_L3="63152" KVAR_L1="63153" KVAR_L2="63154" KVAR_L3="63155" Gen_KWp="63071" Load_SP_KW="63479" Load_SP_KVAr="63478" Gen_KVARp="63072" Gen_KWH="63557" RUN_HRS="109103" RESET_KWH_CMD="63547" Path=".\Frames\PMS\00 PMS_Shore_Full_Info.prax" KeepHorizontal="True" Max_kW="500" Engine_Remote="0" First_To_Start="63076" CMD_Manual="63489" CMD_Auto="63486" Engine_Local="0" Cooldown_Time="63097" Lubricate="63120" Starting="63079" Synchronizing="63080" CMD_OverrideWBShutdown="66241" CMD_Start="63487" First_To_Stop="63088" Stopping="63084" Engine_Ready="63112" CMD_Stop="63490" Running="63083">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Max_kW" ChannelNumber="63326"/>
+			</Bindings>
+		</Frame>
+		<Frame Width="415" Height="95" X="255" Y="75" Bus_ID="BUS" Path=".\Frames\PMS\PMS_Bus_Info.prax" Bus_Load="0" Bus_Capacity="0"/>
+		<Line Width="4" Color="Orange" X0="980" Y0="200" X1="1860" Y1="200">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Color" ChannelNumber="62286">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Orange"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<TextBox Width="60" Height="25" X="930" Y="230" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="TB1">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="TB1 AUTO" SelectedValue1="TB1 SEMI-AUTO" DefaultValue="TB1 MANUAL">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="63023"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="63029"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="LightingGreen" SelectedValue1="KeyboardInputBackground" DefaultValue="AlarmRed">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="63023"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="63029"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="25" X="100" Y="165" BorderWidth="0" FillColor="Transparent" TextColor="AlarmRed" Font="Praxis;18.0;N;N;N" Text="BLACK OUT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61286"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="25" X="1750" Y="165" BorderWidth="0" FillColor="Transparent" TextColor="AlarmRed" Font="Praxis;18.0;N;N;N" Text="BLACK OUT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="62286"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="240" Height="90" X="1255" Y="80" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Frame Visible="False" Width="210" Height="95" X="1695" Y="75" Path=".\Frames\PMS\PMS_Sequence.prax"/>
+		<Rectangle Width="240" Height="90" X="1250" Y="75" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<TextBox Width="230" Height="30" X="1255" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="LowLoadStop"/>
+		<Line Color="TextInfo" X0="1260" Y0="105" X1="1480" Y1="105"/>
+		<Button Width="60" Height="40" X="1340" Y="115" Text="OFF" FillColor="Transparent" TextColor="TextInfo" Font="Segoe UI;18.0;N;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Text" ChannelNumber="61483">
+					<ConvertParams>
+						<BoolToStringConvertParams TextWhenFalse="OFF" TextWhenTrue="ON"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61483">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="Comment"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" XOffset="4" YOffset="-12" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="150" Height="190" X="1299" Y="28" LL_ACTIVATE="61521" LL_DEACTIVATE="61522" ID="LowLoadStop" Path=".\Frames\PMS\PopUp_CMD_On_Off_Redundand[SV].prax" CMD_ON_value="1" CMD_OFF2="0" CMD_ON2="0" CMD_OFF1="61521" CMD_ON1="61521" CMD_OFF_value="1"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="80" Height="80" X="920" Y="150" Rotation="90" CTRL_Blocked="False" ID="SHORE" CMD_Auto="63486" CMD_Manual="63489" CMD_Close="63488" CMD_Open="63491" CMD_Reset="63496" CB_Sync="63080" CB_Offload="63081" CB_Tripped="63049" CB_Closed="63188" CB_Interlock="0" Path=".\Frames\PMS\BUSTIE_CTRL.prax"/>
+		<TextBox Width="210" Height="25" X="915" Y="405" BorderWidth="0" FillColor="Transparent" TextColor="Orange" Font="Praxis;28.0;N;N;N" Text="MSB ALARM"/>
+		<Frame Width="420" Height="40" X="510" Y="460" Alarm_Ch="1101" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="ES/PREF. TRIP SOURCE FAIL" Alarm_Text="ES/PREF. TRIP SOURCE FAIL" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1101"/>
+		<Frame Width="420" Height="40" X="510" Y="505" Alarm_Ch="1109" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="PREFERENTIAL TRIP" Alarm_Text="PREFERENTIAL TRIP" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1102"/>
+		<Frame Width="420" Height="40" X="510" Y="550" Alarm_Ch="1123" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="440 VAC EARTH FAULT" Alarm_Text="440 VAC EARTH FAULT" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1103"/>
+		<Frame Width="420" Height="40" X="510" Y="595" Alarm_Ch="1102" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="MSB COMMON FAULT" Alarm_Text="MSB COMMON FAULT" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1104"/>
+		<Frame Width="420" Height="40" X="510" Y="640" Alarm_Ch="1104" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="PMS FAULT" Alarm_Text="PMS FAULT" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1105"/>
+		<Frame Width="420" Height="40" X="510" Y="685" Alarm_Ch="1103" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="DC24V SOURCE FAIL" Alarm_Text="DC24V SOURCE FAIL" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1123"/>
+		<Frame Width="420" Height="40" X="510" Y="730" Alarm_Ch="1105" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="MSB BLACKOUT" Alarm_Text="MSB BLACKOUT" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1121"/>
+		<Frame Width="420" Height="40" X="510" Y="775" Alarm_Ch="61115" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="DG 1 MCCB ABNORMAL TRIP" Alarm_Text="DG 1 MCCB ABNORMAL TRIP" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1122"/>
+		<Frame Width="420" Height="40" X="510" Y="820" Alarm_Ch="62115" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="DG 2 MCCB ABNORMAL TRIP" Alarm_Text="DG 2 MCCB ABNORMAL TRIP" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1124"/>
+		<Frame Width="420" Height="40" X="510" Y="910" Alarm_Ch="1122" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="DG 2 COMMON ALARM" Alarm_Text="DG 2 COMMON ALARM" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1107"/>
+		<Frame Width="420" Height="40" X="510" Y="955" Alarm_Ch="1124" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="HG COMMON ALARM" Alarm_Text="HG COMMON ALARM" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1108"/>
+		<Frame Width="420" Height="40" X="510" Y="865" Alarm_Ch="1121" Nomal_Color="StatusInactive" Active_Color="AlarmRed" Normal_Text="DG 1 COMMON ALARM" Alarm_Text="DG 1 COMMON ALARM" Width_Text="650" Path=".\Frames\Parameter\Frame_Alarm_Box_New.prax" Channel="1106"/>
+	</Children>
+</RootElement>

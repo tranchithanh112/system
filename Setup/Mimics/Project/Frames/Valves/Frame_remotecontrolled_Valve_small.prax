@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="141" Height="60" GridSpacing="5">
+	<Children>
+		<TextBox Width="61.714" Height="62" X="28" Y="-2" BorderWidth="0" FillColor="Transparent" FillPatternColor="Transparent" Font="Segoe UI;24.0;B;N;N" Text="Vxxx" Multiline="True" KeepHorizontal="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ValveID"/>
+			</Bindings>
+		</TextBox>
+		<Polyline FlashColor="Yellow" ClosedOutline="True" FillColor="ButtonFill">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="NoAlarmGreen" SelectedValue1="Black" SelectedValue2="Black" SelectedValue3="NoAlarmGreen" DefaultValue="Gray">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="3" CompareTolerance="0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="StatusCh"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="4" CompareTolerance="0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="StatusCh"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2" CompareTolerance="0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="StatusCh"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="StatusCh"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ValueCompareBinding TargetPropertyName="Flash" SecondValue="4" CompareTolerance="1">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="FirstValue">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="StatusCh"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="120;0"/>
+				<Point Coord="80;0"/>
+				<Point Coord="100;30"/>
+				<Point Coord="120;60"/>
+				<Point Coord="80;60"/>
+			</Points>
+		</Polyline>
+		<Ellipse FillColor="ButtonFill" LightingStyle="Radial" CenterX="100" CenterY="30" RadiusX="10" RadiusY="10" ArcBegin="90" ArcEnd="450"/>
+		<Button Width="60" Height="60" X="81" Y="1" GridSpacing="1" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" OpenAnimationDuration="0" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="105" Height="160" X="24.5" Y="-49" CtrlCh="0" Valve_ID="(Text)" Path=".\popups\valvecontrol.prax" Start_Ch="0" Open_Ch="0" Close_Ch="0" Frame_Text="(Text)" Stop_Ch="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Open_Ch" ExportedPropertyName="Open_Ch"/>
+								<FrameBinding TargetPropertyName="Close_Ch" ExportedPropertyName="Close_ch"/>
+								<FrameBinding TargetPropertyName="Frame_Text" ExportedPropertyName="Frame_Text"/>
+								<FrameBinding TargetPropertyName="Valve_ID" ExportedPropertyName="ValveID"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<Line X0="109" Y0="30" X1="125" Y1="30"/>
+		<Rectangle FlashFast="True" Width="16.6984" Height="32" X="125" Y="14" FillColor="White">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AlarmCh"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="White"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+	</Children>
+</RootElement>

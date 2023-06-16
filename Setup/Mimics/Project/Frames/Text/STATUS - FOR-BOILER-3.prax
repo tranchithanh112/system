@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="170" Height="40" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox FlashColor="Comment" Width="170" Height="40" BorderWidth="0" CornerRoundRadius="3" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="StatusActive" DefaultValue="TextInfo">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="0.5" CompareOperator=">" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="STATE_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="-0.5" CompareOperator="&lt;" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="STATE_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="EMERGENCY" SelectedValue1="STOPPED" SelectedValue2="READY" SelectedValue3="PMS REQUEST" SelectedValue4="STARTING" SelectedValue5="" SelectedValue6="" SelectedValue7="" DefaultValue="SHUTDOWN">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SelectedValue1" ExportedPropertyName="STATUS_TEXT_2"/>
+						<FrameBinding TargetPropertyName="SelectedValue2" ExportedPropertyName="STATUS_TEXT_3"/>
+						<FrameBinding TargetPropertyName="SelectedValue3" ExportedPropertyName="STATUS_TEXT_4"/>
+						<FrameBinding TargetPropertyName="SelectedValue4" ExportedPropertyName="STATUS_TEXT_5"/>
+						<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="STATUS_TEXT_1"/>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="17" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="STATE_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="18" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="STATE_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="19" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="STATE_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="20" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="STATE_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue4" SecondValue="25" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="STATE_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="DEF_TEXT"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

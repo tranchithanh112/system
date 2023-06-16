@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1680" Height="60" ColorTableFile="..\Color_Table.colortable">
+	<Children>
+		<Panel Width="1680" Height="60" GridSpacing="5" BorderColor="PanelFaceBorder" CornerRoundRadius="3">
+			<Children>
+				<TextBox Width="340" Height="50" X="670" Y="5" LightingStyle="Horizontal" CornerRoundRadius="6" Font="Tahoma-32.0-N-N-N" Text=""/>
+				<Button Width="140" Height="50" X="1390" Y="5" GridSpacing="5" Text="Diagnostic" Font="System UI-20.0-N-N-N">
+					<ClickActions>
+						<OpenFrameUserAction>
+							<Frame>
+								<FloatingFrame Width="150" Height="255" X="1385" Path="..\Pop-ups\Frame_select_mimic_Diagnostic.prax"/>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Frame Width="50" Height="50" X="1610" Y="5" Path=".\Frame_Button_question.prax" CenterY="30" CenterX="1635"/>
+				<Button Name="Previous" Width="45" Height="40" X="670" Y="10" GridSpacing="5" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI-18.0-B-N-N">
+					<Children>
+						<Line Width="3" X0="15" Y0="20" X1="30" Y1="5"/>
+						<Line Width="3" X0="15" Y0="20" X1="30" Y1="35"/>
+					</Children>
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="MimicNamePD" ExportedPropertyName="Previous"/>
+							</Bindings>
+						</OpenMimicByNumberClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="45" Height="40" X="965" Y="10" GridSpacing="5" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI-18.0-B-N-N">
+					<Children>
+						<Line Width="3" X0="30" Y0="20" X1="15" Y1="5"/>
+						<Line Width="3" X0="30" Y0="20" X1="15" Y1="35"/>
+					</Children>
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="MimicNamePD" ExportedPropertyName="Next"/>
+							</Bindings>
+						</OpenMimicByNumberClickAction>
+					</ClickActions>
+				</Button>
+				<TextBox Width="340" Height="50" X="670" Y="5" FillColor="Transparent" LightingStyle="Vertical" CornerRoundRadius="6" Font="Tahoma-32.0-N-N-N" Text="Conning">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Mimic_Title"/>
+					</Bindings>
+				</TextBox>
+				<Button Width="140" Height="50" X="505" Y="5" GridSpacing="5" Text="Safety" Font="System UI-20.0-N-N-N">
+					<ClickActions>
+						<OpenFrameUserAction>
+							<Frame>
+								<FloatingFrame Width="150" Height="525" X="500" Path="..\Pop-ups\Frame_select_mimic_Safety.prax"/>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<TextBox Width="145" Height="40" X="1205" Y="10" CornerRoundRadius="2" HorzAlignment="Right" Font="Segoe UI-18.0-N-N-N" Text="Date">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams Format="d.mm.yyyy"/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="145" Height="40" X="1055" Y="10" CornerRoundRadius="2" HorzAlignment="Right" Font="Segoe UI-18.0-N-N-N" Text="Time">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+				<Bitmap Width="35.0248" Height="35.0771" X="1065" Y="12.79" FilePath="..\Icons\clock-icon.png"/>
+				<Bitmap Width="38.2408" Height="36.4731" X="1211.86" Y="12.4399" FilePath="..\Icons\calendar-icon.png"/>
+				<Button Width="160" Height="40" X="10" Y="10" Text="PMS SIMULATOR" Font="Segoe UI-18.0-B-N-N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="16"/>
+					</ClickActions>
+				</Button>
+				<Button Width="160" Height="40" X="190" Y="10" Text="ONE LINE" Font="Segoe UI-18.0-B-N-N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="17"/>
+					</ClickActions>
+				</Button>
+				<Button Width="90" Height="40" X="360" Y="10" Text="MENU 1" Font="Segoe UI-18.0-B-N-N">
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="1"/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

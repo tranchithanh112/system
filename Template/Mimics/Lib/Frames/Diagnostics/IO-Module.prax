@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="140" Height="200" GridSpacing="1"  ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="140" Height="200" BorderColor="Black" FillColor="Black"/>
+		<Rectangle Width="119" Height="192" X="11" Y="4" BorderColor="PanelFaceBorder" FillColor="TextInfo">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="OldAlarm" DefaultValue="Gray">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EarthFail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="9" Height="93" X="132" Y="2" BorderColor="Comment" FillColor="Comment"/>
+		<Rectangle Width="9" Height="93" X="132" Y="103" BorderColor="Comment" FillColor="Comment"/>
+		<Rectangle Width="9" Height="93" Y="2" BorderColor="Comment" FillColor="Comment"/>
+		<Rectangle Width="9" Height="93" Y="103" BorderColor="Comment" FillColor="Comment"/>
+		<TextBox Width="85" Height="45" X="29" Y="131" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;36.0;N;N;N" Text="052">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Number"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="83" Height="39" X="30" Y="39" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;36.0;N;N;N" Text="36Di">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Type"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="83" Height="39" X="30" Y="77" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;36.0;N;N;N" Text="">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Type_2"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

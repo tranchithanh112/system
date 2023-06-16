@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="670" Height="760" OnScreenNumpadFramePath="..\..\Numpad\Popup_Numpad.prax" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="670" Height="760" BorderWidth="2" BorderColor="BackgroundShadow" FillColor="ColorTrendBackGround" CornerRoundRadius="10"/>
+		<Button Width="40" Height="40" X="605" Y="10" ClipToBounds="True" Text="X" FillColor="Transparent" Font="Praxis;26.0;N;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<NavFrame LockOverlayColor="IndicationLineTransparent" Width="670" Height="670" Y="65" NavFrameName="NAVFRAME_IO_Settings" NavFrameCurrentAddress="1" ClipToBounds="True">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="UserActionsLocked" CompareTolerance="0">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\IO CODES INPUT.prax"/>
+				<Address Value=".\IO CODES FUNCTION OUTPUT.prax"/>
+				<Address Value=".\IO CODES OUTPUT1.prax"/>
+				<Address Value=".\IO CODES OUTPUT2.prax"/>
+				<Address Value=".\IO CODES OUTPUT3.prax"/>
+			</AddressList>
+		</NavFrame>
+		<Button Width="50" Height="50" X="240" Y="10" CornerRoundRadius="25" Text="" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="ButtonFillActionRunning" DefaultValue="ButtonFill">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="Mimics"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Children>
+				<Ellipse CenterX="25" CenterY="25" RadiusX="20" RadiusY="20"/>
+				<Line X0="40" Y0="25" X1="15" Y1="25"/>
+				<Line X0="15" Y0="25" X1="25" Y1="15"/>
+				<Line X0="25" Y0="35" X1="15" Y1="25"/>
+			</Children>
+			<ClickActions>
+				<NavigateToPreviousUserAction NavFrameName="NAVFRAME_IO_Settings"/>
+			</ClickActions>
+		</Button>
+		<Button Width="50" Height="50" X="360" Y="10" CornerRoundRadius="25" Text="" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="ButtonFillActionRunning" DefaultValue="ButtonFill">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="Mimics"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Children>
+				<Ellipse CenterX="25" CenterY="25" RadiusX="20" RadiusY="20" ArcBegin="-180" ArcEnd="-540" ArcLength="-360"/>
+				<Line X0="25" Y0="35" X1="35" Y1="25"/>
+				<Line X0="10" Y0="25" X1="35" Y1="25"/>
+				<Line X0="35" Y0="25" X1="25" Y1="15"/>
+			</Children>
+			<ClickActions>
+				<NavigateToNextUserAction NavFrameName="NAVFRAME_IO_Settings"/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="200" Height="50" X="10" Y="10" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="10" TextColor="TextActive" Font="Praxis;26.0;B;N;N" Text="IO CODES"/>
+	</Children>
+</RootElement>

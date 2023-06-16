@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" GridSpacing="2" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="50" Height="14" Y="-15" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;14.0;N;N;N" Text="00000">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG_Top"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="36" Height="14" X="50" Y="16" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI;14.0;N;N;N" Text="00000">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG_Right"/>
+			</Bindings>
+		</TextBox>
+		<Panel Width="50" Height="50" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Rotation" ExportedPropertyName="Rotation_"/>
+			</Bindings>
+			<Children>
+				<Polyline Width="2" ClosedOutline="True" FillColor="Gray">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Gray" SelectedValue2="Green" DefaultValue="Yellow">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VALVE_IS_CLOSED"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VALVE_IS_OPEN"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="5;18"/>
+						<Point Coord="5;43"/>
+						<Point Coord="45;18"/>
+						<Point Coord="45;43"/>
+					</Points>
+				</Polyline>
+				<Line Width="2" X0="25" Y0="19" X1="25" Y1="31"/>
+				<Rectangle Width="14" Height="14" X="18" Y="5" FillColor="Foreground">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="Green" SelectedValue1="Gray" DefaultValue="Foreground">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CLOSE_OUT_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<ChannelValueBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OPEN_OUT_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Rectangle>
+			</Children>
+		</Panel>
+		<Button FlashArea="OutlineOnly" Width="50" Height="50" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="5" XOffset="0.5" YOffset="113" OpenAnimationDuration="60">
+					<Frame>
+						<FloatingFrame Visible="False" Width="125" Height="180" X="-37" Y="48" CommandOpen_CH="0" CommandClose_CH="0" Path=".\Popup_OpenCloseValve_Pulses.prax" CLOSE_CMD="0" ForceChannel="0" Mimic_Close="0" Mimic_Open="0" Actuate="0" IsClosed="0" OPEN_CMD="0" IsOpen="0" Channel="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Mimic_Open" ExportedPropertyName="Mimic_Open"/>
+								<FrameBinding TargetPropertyName="Mimic_Close" ExportedPropertyName="Mimic_Close"/>
+								<FrameBinding TargetPropertyName="ForceChannel" ExportedPropertyName="SimChannelActuate"/>
+								<FrameBinding TargetPropertyName="Channel" ExportedPropertyName="SimChannelActuate"/>
+								<FrameBinding TargetPropertyName="IsOpen" ExportedPropertyName="SimChannelIsOpen"/>
+								<FrameBinding TargetPropertyName="IsClosed" ExportedPropertyName="SimChannelIsClosed"/>
+								<FrameBinding TargetPropertyName="Actuate" ExportedPropertyName="SimChannelActuate"/>
+								<FrameBinding TargetPropertyName="OPEN_CMD" ExportedPropertyName="OPEN_CMD"/>
+								<FrameBinding TargetPropertyName="CLOSE_CMD" ExportedPropertyName="CLOSE_CMD"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

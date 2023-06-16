@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="210" Height="415" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="210" Height="415" BorderColor="BackgroundShadow" FillColor="BackgroundMenu" CornerRoundRadius="5"/>
+		<TextBox Width="65" Height="30" X="75" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;B;N;N" Text="DG">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Gen_Name"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="30" X="15" Y="155" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="ACTIVE LOAD"/>
+		<TextBox Width="30" Height="30" X="15" Y="275" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="REACTIVE LOAD"/>
+		<Rectangle Width="180" Height="90" X="15" Y="65" BorderWidth="0" BorderColor="StatusInactive" FillColor="BackgroundConning" CornerRoundRadius="5"/>
+		<Rectangle Width="180" Height="90" X="15" Y="185" BorderWidth="0" BorderColor="StatusInactive" FillColor="BackgroundConning" CornerRoundRadius="5"/>
+		<Rectangle Width="180" Height="90" X="15" Y="305" BorderWidth="0" BorderColor="StatusInactive" FillColor="BackgroundConning" CornerRoundRadius="5"/>
+		<TextBox Width="30" Height="30" X="15" Y="35" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="CURRENT"/>
+		<TextBox Width="50" Height="25" X="150" Y="370" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="kVAr"/>
+		<TextBox Width="50" Height="25" X="150" Y="340" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="kVAr"/>
+		<TextBox Width="30" Height="30" X="30" Y="365" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="L3"/>
+		<TextBox Width="30" Height="30" X="30" Y="335" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="L2"/>
+		<TextBox Width="30" Height="30" X="30" Y="305" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="L1"/>
+		<TextBox Width="50" Height="25" X="150" Y="310" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="kVAr"/>
+		<TextBox Width="80" Height="30" X="70" Y="365" BorderWidth="0" BorderColor="InactiveGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" LeftRightPadding="10" Font="Praxis;24.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="KVAR_L3"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="70" Y="335" BorderWidth="0" BorderColor="InactiveGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" LeftRightPadding="10" Font="Praxis;24.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="KVAR_L2"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="70" Y="305" BorderWidth="0" BorderColor="InactiveGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" LeftRightPadding="10" Font="Praxis;24.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="KVAR_L1"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="30" X="30" Y="245" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="L3"/>
+		<TextBox Width="30" Height="30" X="30" Y="215" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="L2"/>
+		<TextBox Width="30" Height="30" X="30" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="L1"/>
+		<TextBox Width="40" Height="25" X="150" Y="190" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="40" Height="25" X="150" Y="220" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="40" Height="25" X="150" Y="250" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="kW"/>
+		<TextBox Width="80" Height="30" X="70" Y="245" BorderWidth="0" BorderColor="InactiveGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" LeftRightPadding="10" Font="Praxis;24.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="KW_L3"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="70" Y="215" BorderWidth="0" BorderColor="InactiveGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" LeftRightPadding="10" Font="Praxis;24.0;N;N;N" Text="150">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="KW_L2"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="30" X="70" Y="185" BorderWidth="0" BorderColor="InactiveGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" LeftRightPadding="10" Font="Praxis;24.0;N;N;N" Text="150">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="KW_L1"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="155" Y="130" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="A"/>
+		<TextBox Width="75" Height="30" X="80" Y="125" BorderWidth="0" BorderColor="InactiveGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" LeftRightPadding="10" Font="Praxis;24.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="I_L3"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="30" X="30" Y="125" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="L3"/>
+		<TextBox Width="40" Height="25" X="155" Y="100" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="A"/>
+		<TextBox Width="75" Height="30" X="80" Y="95" BorderWidth="0" BorderColor="InactiveGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" LeftRightPadding="10" Font="Praxis;24.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="I_L2"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="30" Height="30" X="30" Y="95" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="L2"/>
+		<TextBox Width="30" Height="30" X="30" Y="65" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="L1"/>
+		<TextBox Width="40" Height="25" X="155" Y="70" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="A"/>
+		<TextBox Width="75" Height="30" X="80" Y="65" BorderWidth="0" BorderColor="InactiveGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" LeftRightPadding="10" Font="Praxis;24.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="I_L1"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

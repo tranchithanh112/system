@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="60" Height="60" GridSpacing="10" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Polyline FlashColor="ButtonOutline" Width="2" LineColor="White" ClosedOutline="True" FillColor="Background">
+			<Bindings>
+				<FrameBinding TargetPropertyName="LineColor" ExportedPropertyName="Valve_Color"/>
+			</Bindings>
+			<Points>
+				<Point Coord="40;0"/>
+				<Point Coord="7.62939e-06;-5.72205e-06"/>
+				<Point Coord="20;30"/>
+				<Point Coord="40;60"/>
+				<Point Coord="-3.8147e-06;60"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="0" LineColor="White" ClosedOutline="True" FillColor="White">
+			<Bindings>
+				<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="Valve_Color"/>
+			</Bindings>
+			<Points>
+				<Point Coord="20;30"/>
+				<Point Coord="0;60"/>
+				<Point Coord="40;60"/>
+			</Points>
+		</Polyline>
+		<Line Width="2" Color="White" X0="0" Y0="20" X1="40" Y1="40">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Color" ExportedPropertyName="Valve_Color"/>
+			</Bindings>
+		</Line>
+		<Ellipse BorderWidth="2" BorderColor="White" CenterX="0" CenterY="20" RadiusX="5" RadiusY="5">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Valve_Color"/>
+			</Bindings>
+		</Ellipse>
+	</Children>
+</RootElement>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="180" Height="40" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button FlashArea="TextOnly" Width="180" Height="40" Text="UnAttended" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextWhite" Font="Segoe UI;20.0;N;N;N" HorzAlignment="Left">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="Flash" ButtonType="UnattRequestPending"/>
+				<EASButtonStatusBinding TargetPropertyName="OutlineColor" ButtonType="SetUnattended">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="InfoTextWhite"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+			<ClickActions>
+				<EASCommandClickAction EASCommands="Set UnAttended"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

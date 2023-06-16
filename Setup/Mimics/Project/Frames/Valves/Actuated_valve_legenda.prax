@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="36" Height="36" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button FlashArea="OutlineOnly" Width="36" Height="40" Y="-2" Text="" FillColor="Transparent" BorderColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" XOffset="-88" YOffset="0.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="130" Height="195" X="-135" Y="-79" BUTTON01_Text="OPEN" CTRL_Channel="0" ID="VALVE" BUTTON02_Text="CLOSE" BUTTON03_Text="RESET" Path=".\Frame_Popup_Valve_Control.prax" TAG2="00000" Close_Ch="0" Open_Ch="0" Reset_Ch="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Open_Ch" ExportedPropertyName="Open_Ch"/>
+								<FrameBinding TargetPropertyName="Close_Ch" ExportedPropertyName="Close_Ch"/>
+								<FrameBinding TargetPropertyName="Reset_Ch" ExportedPropertyName="Reset_Ch"/>
+								<FrameBinding TargetPropertyName="TAG2" ExportedPropertyName="TAG2"/>
+								<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+								<FrameBinding TargetPropertyName="CTRL_Channel" ExportedPropertyName="CTRL"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="36" Height="16" X="28" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;11.0;N;N;N" Text="00000" KeepHorizontal="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ID_"/>
+			</Bindings>
+		</TextBox>
+		<Panel Width="36" Height="36" GridSpacing="1" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Rotation" ExportedPropertyName="Rotation_"/>
+			</Bindings>
+			<Children>
+				<Polyline FlashFast="True" FlashArea="OutlineOnly" Width="0.75" LineColor="WhiteBlack" ClosedOutline="True" FillColor="BackgroundGauge">
+					<Bindings>
+						<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="FillColour"/>
+					</Bindings>
+					<Points>
+						<Point Coord="6;18"/>
+						<Point Coord="6;32"/>
+						<Point Coord="30;18"/>
+						<Point Coord="30;32"/>
+					</Points>
+				</Polyline>
+				<Line Width="0.75" Color="WhiteBlack" X0="18" Y0="9" X1="18" Y1="25"/>
+				<Ellipse BorderWidth="0.75" BorderColor="WhiteBlack" FillColor="BackgroundConning" CenterX="18" CenterY="25" RadiusX="4" RadiusY="4" ArcBegin="270" ArcEnd="630"/>
+				<Polyline FlashFast="True" FlashArea="OutlineOnly" Width="0.75" LineColor="WhiteBlack" ClosedOutline="True" FillColor="BackgroundGauge">
+					<Bindings>
+						<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="FillColour"/>
+					</Bindings>
+					<Points>
+						<Point Coord="12.5;4.5"/>
+						<Point Coord="12.5;12.5"/>
+						<Point Coord="23.5;12.5"/>
+						<Point Coord="23.5;4.5"/>
+					</Points>
+				</Polyline>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

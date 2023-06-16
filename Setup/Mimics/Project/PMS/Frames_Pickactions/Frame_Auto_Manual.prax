@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="120" Height="150" GridSpacing="5" ColorTableFile="..\ColorfileTable.colortable">
+	<Children>
+		<Panel Width="120" Height="150" GridSpacing="2">
+			<Children>
+				<Button Height="30" X="8" Y="10" GridSpacing="5" Text="Auto" Font="Segoe UI-18.0-B-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Mimic_Auto"/>
+							</Bindings>
+						</PulseChannelClickAction>
+					</ClickActions>
+				</Button>
+				<Button Height="30" X="8" Y="50" GridSpacing="5" Text="Manual" Font="Segoe UI-18.0-B-N-N">
+					<ClickActions>
+						<PulseChannelClickAction>
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Mimic_Manual"/>
+							</Bindings>
+						</PulseChannelClickAction>
+					</ClickActions>
+				</Button>
+				<Button Height="30" X="8" Y="108" GridSpacing="5" Text="Cancel" Font="Segoe UI-18.0-B-N-N">
+					<ClickActions>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

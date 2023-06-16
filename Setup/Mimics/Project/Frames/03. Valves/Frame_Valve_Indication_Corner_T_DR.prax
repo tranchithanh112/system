@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="60" Height="60" GridSpacing="10" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Polyline FlashColor="ButtonOutline" Width="2" LineColor="White" ClosedOutline="True" FillColor="Background">
+			<Bindings>
+				<FrameBinding TargetPropertyName="LineColor" ExportedPropertyName="Valve_Color"/>
+			</Bindings>
+			<Points>
+				<Point Coord="50;0"/>
+				<Point Coord="50;40"/>
+				<Point Coord="20;20"/>
+				<Point Coord="40;50"/>
+				<Point Coord="0;50"/>
+				<Point Coord="20;20"/>
+			</Points>
+		</Polyline>
+		<Line Width="2" Color="White" X0="20" Y0="20" X1="20" Y1="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Color" ExportedPropertyName="Valve_Color"/>
+			</Bindings>
+		</Line>
+		<Line Width="4" Color="White" X0="5" Y0="0" X1="35" Y1="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Color" ExportedPropertyName="Valve_Color"/>
+			</Bindings>
+		</Line>
+	</Children>
+</RootElement>

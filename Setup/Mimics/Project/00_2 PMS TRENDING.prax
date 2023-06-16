@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" OnScreenNumpadFramePath=".\Frames\PMS Setting\Frames\Popup_Numpad.prax" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Children>
+		<Trending Width="1845" Height="660" X="75" Y="70" DurationShown="60" DurationStored="21600" BorderColor="Transparent" FillColor="ColorTrendBackGround" LegendFontSize="20">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="DurationShown" ChannelNumber="1044"/>
+				<RangeFormulaBinding TargetPropertyName="DurationStored" InRangeBegin="0" InRangeEnd="1" OutRangeBegin="0" OutRangeEnd="60">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="1045"/>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+			<Runs>
+				<TrendingRun LineColor="TextActive" LineWidth="1">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="BottomValue" ChannelNumber="100228"/>
+						<ChannelValueBinding TargetPropertyName="TopValue" ChannelNumber="100229"/>
+						<ChannelValueBinding TargetPropertyName="ChannelNumber" ChannelNumber="100221"/>
+						<ChannelDescriptionBinding TargetPropertyName="Title">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ChannelNumber" ChannelNumber="100221"/>
+							</Bindings>
+						</ChannelDescriptionBinding>
+					</Bindings>
+				</TrendingRun>
+				<TrendingRun LineColor="Orange" LineWidth="1">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="BottomValue" ChannelNumber="100228"/>
+						<ChannelValueBinding TargetPropertyName="TopValue" ChannelNumber="100229"/>
+						<ChannelValueBinding TargetPropertyName="ChannelNumber" ChannelNumber="100222"/>
+						<ChannelDescriptionBinding TargetPropertyName="Title">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ChannelNumber" ChannelNumber="100222"/>
+							</Bindings>
+						</ChannelDescriptionBinding>
+					</Bindings>
+				</TrendingRun>
+				<TrendingRun LineColor="Yellow" LineWidth="1">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="BottomValue" ChannelNumber="100228"/>
+						<ChannelValueBinding TargetPropertyName="TopValue" ChannelNumber="100229"/>
+						<ChannelValueBinding TargetPropertyName="ChannelNumber" ChannelNumber="100223"/>
+						<ChannelDescriptionBinding TargetPropertyName="Title">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ChannelNumber" ChannelNumber="100223"/>
+							</Bindings>
+						</ChannelDescriptionBinding>
+					</Bindings>
+				</TrendingRun>
+				<TrendingRun LineColor="Green" LineWidth="1">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="BottomValue" ChannelNumber="100228"/>
+						<ChannelValueBinding TargetPropertyName="TopValue" ChannelNumber="100229"/>
+						<ChannelValueBinding TargetPropertyName="ChannelNumber" ChannelNumber="100224"/>
+						<ChannelDescriptionBinding TargetPropertyName="Title">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ChannelNumber" ChannelNumber="100224"/>
+							</Bindings>
+						</ChannelDescriptionBinding>
+					</Bindings>
+				</TrendingRun>
+			</Runs>
+		</Trending>
+		<GroupList Width="1270" Height="275" X="650" Y="735" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="StatusInactive" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderWidth="0" BorderColor="Gray" FileName=".\Frames\Menus\Frame_ALContextMenu.prax" ShowReportType="False" ShowDT="False" ShowStatus="False" ShowGroupDescription="False"/>
+		<GroupOverviewList Width="645" Height="275" Y="735" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="StatusInactive" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderWidth="0" BorderColor="Gray" GroupRange="61,62,63"/>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<GroupOverviewList Width="645" Height="275" Y="735" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderColor="Transparent" GroupRange="61,62"/>
+		<GroupList Width="1270" Height="275" X="650" Y="735" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderColor="Transparent" FileName=".\Frames\Menus\Frame_ALContextMenu.prax" ShowReportType="False" ShowDT="False" ShowStatus="False" ShowGroupDescription="False"/>
+		<TextBox Width="60" Height="20" X="1840" Y="80" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="120">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="100229">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100229"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="60" Height="25" X="185" Y="84" BorderWidth="0" BorderColor="Yellow" FillColor="ColorTrendBackGround" TextColor="TextActive" Font="Segoe UI;20.0;B;N;N" Text="61071">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="100221">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100221"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="60" Height="25" X="185" Y="109" BorderWidth="0" BorderColor="Yellow" FillColor="ColorTrendBackGround" TextColor="Orange" Font="Segoe UI;20.0;B;N;N" Text="61071">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="100222">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100222"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="60" Height="25" X="185" Y="134" BorderWidth="0" BorderColor="Yellow" FillColor="ColorTrendBackGround" TextColor="Yellow" Font="Segoe UI;20.0;B;N;N" Text="61071">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="100223">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100223"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="60" Height="25" X="185" Y="159" BorderWidth="0" BorderColor="Yellow" FillColor="ColorTrendBackGround" TextColor="Green" Font="Segoe UI;20.0;B;N;N" Text="61071">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="100224">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100224"/>
+			</TextEnteredActions>
+		</TextBox>
+		<TextBox Width="60" Height="20" X="1840" Y="650" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="Yellow" Font="Praxis;22.0;N;N;N" Text="120">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="100228">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="100228"/>
+			</TextEnteredActions>
+		</TextBox>
+		<Slider Width="539.637" Height="30" X="-210" Y="435.306" Rotation="270" Value="1" Step="1" ShowSteps="True" RoundCap="True" ThumbColor="TextActive" ActiveTrackColor="TextActive">
+			<DraggingActions>
+				<SetChannelValueSDA ChannelNumber="1046"/>
+			</DraggingActions>
+		</Slider>
+		<Button Width="50" Height="40" X="10" Y="75" ClipToBounds="True" Text="+" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<ZoomTrendingClickAction TrendZoomAction="Zoom Right In"/>
+			</ClickActions>
+		</Button>
+		<Button Width="50" Height="40" X="10" Y="120" ClipToBounds="True" Text="-" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<ZoomTrendingClickAction TrendZoomAction="Zoom Right Out"/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="20" Height="25" X="5" Y="175" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="12" Rotation="270">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="1046">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="20" X="5" Y="205" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Days Shown" Rotation="270"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="85" Height="190" GridSpacing="5" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button Width="75" Height="40" X="5" Y="5" Text="Actuate" FillColor="Transparent" Font="Segoe UI;14.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Actuate"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Green" ColorWhenTrue="Transparent"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" SetValueType="Toggle Digital">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Actuate"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="64" Height="10" X="10" Y="48" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;14.0;B;N;N" Text="Feedback"/>
+		<Button Width="75" Height="40" X="5" Y="101" Text="Is Closed" FillColor="Transparent" Font="Segoe UI;14.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IsClosed"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Green" ColorWhenTrue="Transparent"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" SetValueType="Toggle Digital">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IsClosed"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IsOpen"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="75" Height="40" X="5" Y="146" Text="Exit" FillColor="Transparent" Font="Segoe UI;14.0;B;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="75" Height="40" X="5" Y="60" Text="Is Open" FillColor="Transparent" Font="Segoe UI;14.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IsOpen"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Green" ColorWhenTrue="Transparent"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" SetValueType="Toggle Digital">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IsOpen"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IsClosed"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

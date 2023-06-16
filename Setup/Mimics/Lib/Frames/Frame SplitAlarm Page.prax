@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" GridSpacing="1">
+	<Children>
+		<AlarmList Width="1920" Height="26" HeaderFillColor="PageInfoLine" FillColor="PageInfoLine" AlternateFillColor="PageInfoLineShaded" ColumnSepLinesVisible="False">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ShowIndex" ExportedPropertyName="ShowIndex"/>
+				<FrameBinding TargetPropertyName="ShowTag" ExportedPropertyName="ShowTag"/>
+				<FrameBinding TargetPropertyName="ShowChannel" ExportedPropertyName="ShowChannel"/>
+				<FrameBinding TargetPropertyName="ShowDate" ExportedPropertyName="ShowDate"/>
+				<FrameBinding TargetPropertyName="ShowTime" ExportedPropertyName="ShowTime"/>
+				<FrameBinding TargetPropertyName="ShowReportType" ExportedPropertyName="ShowReportType"/>
+				<FrameBinding TargetPropertyName="ShowDescription" ExportedPropertyName="ShowDescription"/>
+				<FrameBinding TargetPropertyName="ShowValue" ExportedPropertyName="ShowValue"/>
+				<FrameBinding TargetPropertyName="ShowUnits" ExportedPropertyName="ShowUnits"/>
+				<FrameBinding TargetPropertyName="ShowLimits" ExportedPropertyName="ShowLimits"/>
+				<FrameBinding TargetPropertyName="ShowDT" ExportedPropertyName="ShowDT"/>
+				<FrameBinding TargetPropertyName="ShowStatus" ExportedPropertyName="ShowStatus"/>
+			</Bindings>
+		</AlarmList>
+		<Rectangle Width="1920" Height="26" Y="26" FillColor="PageInfoLine"/>
+		<TextBox Width="300" Height="26" X="805" Y="26" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI-18.0-B-N-N" Text="Emergency Alarms"/>
+		<TextBox Width="50" Height="25" X="1840" Y="26" FillColor="AlarmRed" LightingStyle="Radial" CornerRoundRadius="50" TextColor="White" Font="Segoe UI-18.0-B-N-N" Text="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="FillColor" AlarmPriorityFilter="Emergency">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Emergency">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<AlarmList Width="1920" Height="238" Y="52" HeaderVisible="False" FillColor="PageInfoLine" AlternateFillColor="PageInfoLineShaded" HighlightColor="White" ColumnSepLinesVisible="False" FileName=".\Frame_ALContextMenu.prax" ShowAlarmType="Emergency">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ShowIndex" ExportedPropertyName="ShowIndex"/>
+				<FrameBinding TargetPropertyName="ShowTag" ExportedPropertyName="ShowTag"/>
+				<FrameBinding TargetPropertyName="ShowChannel" ExportedPropertyName="ShowChannel"/>
+				<FrameBinding TargetPropertyName="ShowDate" ExportedPropertyName="ShowDate"/>
+				<FrameBinding TargetPropertyName="ShowTime" ExportedPropertyName="ShowTime"/>
+				<FrameBinding TargetPropertyName="ShowReportType" ExportedPropertyName="ShowReportType"/>
+				<FrameBinding TargetPropertyName="ShowDescription" ExportedPropertyName="ShowDescription"/>
+				<FrameBinding TargetPropertyName="ShowValue" ExportedPropertyName="ShowValue"/>
+				<FrameBinding TargetPropertyName="ShowUnits" ExportedPropertyName="ShowUnits"/>
+				<FrameBinding TargetPropertyName="ShowLimits" ExportedPropertyName="ShowLimits"/>
+				<FrameBinding TargetPropertyName="ShowDT" ExportedPropertyName="ShowDT"/>
+				<FrameBinding TargetPropertyName="ShowStatus" ExportedPropertyName="ShowStatus"/>
+				<FrameBinding TargetPropertyName="HighlightColor" ExportedPropertyName="HighlightColor"/>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<Rectangle Width="1920" Height="26" Y="290" FillColor="PageInfoLine"/>
+		<TextBox Width="300" Height="26" X="805" Y="290" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI-18.0-B-N-N" Text="Alarms"/>
+		<TextBox Width="50" Height="25" X="1840" Y="290" FillColor="AlarmRed" LightingStyle="Radial" CornerRoundRadius="50" TextColor="White" Font="Segoe UI-18.0-B-N-N" Text="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Alarm">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FillColor" AlarmPriorityFilter="Alarm">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<AlarmList Width="1920" Height="239" Y="316" HeaderVisible="False" FillColor="PageInfoLine" AlternateFillColor="PageInfoLineShaded" HighlightColor="White" ColumnSepLinesVisible="False" FileName=".\Frame_ALContextMenu.prax" ShowAlarmType="Alarm">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ShowIndex" ExportedPropertyName="ShowIndex"/>
+				<FrameBinding TargetPropertyName="ShowTag" ExportedPropertyName="ShowTag"/>
+				<FrameBinding TargetPropertyName="ShowChannel" ExportedPropertyName="ShowChannel"/>
+				<FrameBinding TargetPropertyName="ShowDate" ExportedPropertyName="ShowDate"/>
+				<FrameBinding TargetPropertyName="ShowTime" ExportedPropertyName="ShowTime"/>
+				<FrameBinding TargetPropertyName="ShowReportType" ExportedPropertyName="ShowReportType"/>
+				<FrameBinding TargetPropertyName="ShowDescription" ExportedPropertyName="ShowDescription"/>
+				<FrameBinding TargetPropertyName="ShowValue" ExportedPropertyName="ShowValue"/>
+				<FrameBinding TargetPropertyName="ShowUnits" ExportedPropertyName="ShowUnits"/>
+				<FrameBinding TargetPropertyName="ShowLimits" ExportedPropertyName="ShowLimits"/>
+				<FrameBinding TargetPropertyName="ShowDT" ExportedPropertyName="ShowDT"/>
+				<FrameBinding TargetPropertyName="ShowStatus" ExportedPropertyName="ShowStatus"/>
+				<FrameBinding TargetPropertyName="HighlightColor" ExportedPropertyName="HighlightColor"/>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<Rectangle Width="1920" Height="26" Y="555" FillColor="PageInfoLine"/>
+		<TextBox Width="300" Height="26" X="805" Y="555" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI-18.0-B-N-N" Text="Warnings"/>
+		<TextBox Width="50" Height="25" X="1840" Y="555" FillColor="Orange" LightingStyle="Radial" CornerRoundRadius="50" TextColor="White" Font="Segoe UI-18.0-B-N-N" Text="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Warning">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FillColor" AlarmPriorityFilter="Warning">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray" ColorWhenNonZero="Orange"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<AlarmList Width="1920" Height="238" Y="581" HeaderVisible="False" FillColor="PageInfoLine" AlternateFillColor="PageInfoLineShaded" HighlightColor="White" ColumnSepLinesVisible="False" FileName=".\Frame_ALContextMenu.prax" ShowAlarmType="Warning">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ShowIndex" ExportedPropertyName="ShowIndex"/>
+				<FrameBinding TargetPropertyName="ShowTag" ExportedPropertyName="ShowTag"/>
+				<FrameBinding TargetPropertyName="ShowChannel" ExportedPropertyName="ShowChannel"/>
+				<FrameBinding TargetPropertyName="ShowDate" ExportedPropertyName="ShowDate"/>
+				<FrameBinding TargetPropertyName="ShowTime" ExportedPropertyName="ShowTime"/>
+				<FrameBinding TargetPropertyName="ShowReportType" ExportedPropertyName="ShowReportType"/>
+				<FrameBinding TargetPropertyName="ShowDescription" ExportedPropertyName="ShowDescription"/>
+				<FrameBinding TargetPropertyName="ShowValue" ExportedPropertyName="ShowValue"/>
+				<FrameBinding TargetPropertyName="ShowUnits" ExportedPropertyName="ShowUnits"/>
+				<FrameBinding TargetPropertyName="ShowLimits" ExportedPropertyName="ShowLimits"/>
+				<FrameBinding TargetPropertyName="ShowDT" ExportedPropertyName="ShowDT"/>
+				<FrameBinding TargetPropertyName="ShowStatus" ExportedPropertyName="ShowStatus"/>
+				<FrameBinding TargetPropertyName="HighlightColor" ExportedPropertyName="HighlightColor"/>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<Rectangle Width="1920" Height="26" Y="819" FillColor="PageInfoLine"/>
+		<TextBox Width="300" Height="26" X="805" Y="819" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI-18.0-B-N-N" Text="Cautions"/>
+		<TextBox Width="50" Height="25" X="1840" Y="819" FillColor="Yellow" LightingStyle="Radial" CornerRoundRadius="50" Font="Segoe UI-18.0-B-N-N" Text="0">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text" AlarmPriorityFilter="Caution">
+					<ConvertParams>
+						<UInt32ToStringConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FillColor" AlarmPriorityFilter="Caution">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray" ColorWhenNonZero="Yellow"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<AlarmList Width="1920" Height="237" Y="844" HeaderVisible="False" FillColor="PageInfoLine" AlternateFillColor="PageInfoLineShaded" ColumnSepLinesVisible="False" FileName=".\Frame_ALContextMenu.prax" ShowAlarmType="Caution">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ShowIndex" ExportedPropertyName="ShowIndex"/>
+				<FrameBinding TargetPropertyName="ShowTag" ExportedPropertyName="ShowTag"/>
+				<FrameBinding TargetPropertyName="ShowChannel" ExportedPropertyName="ShowChannel"/>
+				<FrameBinding TargetPropertyName="ShowDate" ExportedPropertyName="ShowDate"/>
+				<FrameBinding TargetPropertyName="ShowTime" ExportedPropertyName="ShowTime"/>
+				<FrameBinding TargetPropertyName="ShowReportType" ExportedPropertyName="ShowReportType"/>
+				<FrameBinding TargetPropertyName="ShowDescription" ExportedPropertyName="ShowDescription"/>
+				<FrameBinding TargetPropertyName="ShowValue" ExportedPropertyName="ShowValue"/>
+				<FrameBinding TargetPropertyName="ShowUnits" ExportedPropertyName="ShowUnits"/>
+				<FrameBinding TargetPropertyName="ShowLimits" ExportedPropertyName="ShowLimits"/>
+				<FrameBinding TargetPropertyName="ShowDT" ExportedPropertyName="ShowDT"/>
+				<FrameBinding TargetPropertyName="ShowStatus" ExportedPropertyName="ShowStatus"/>
+				<FrameBinding TargetPropertyName="HighlightColor" ExportedPropertyName="HighlightColor"/>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+	</Children>
+</RootElement>

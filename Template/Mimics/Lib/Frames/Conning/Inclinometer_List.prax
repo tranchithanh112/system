@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="645" Height="425" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="80" Y="50" DialColor="BackgroundConning" IndicatorLinesColor="IndicationLine" Path="..\Gauges\Frame_min60toplus60_GAUGE_points.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="40" Height="25" X="465" Y="50" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="15"/>
+		<Ellipse BorderWidth="3" BorderColor="Background" BorderStyle="Raised" LinePosition="Outside" CenterX="330" CenterY="300" RadiusX="180" RadiusY="180" ArcBegin="210" ArcEnd="330" ArcLength="120"/>
+		<TextBox Width="500" Height="25" X="80" Y="440" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="List °">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Units"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="310" Y="9.99999" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="0"/>
+		<TextBox Width="40" Height="25" X="155" Y="50" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="-15"/>
+		<TextBox Width="85" Height="25" X="50" Y="205" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="STBD"/>
+		<TextBox Width="85" Height="25" X="510" Y="205" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="PORT"/>
+		<Panel X="279" Y="250" GridSpacing="1" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstCoordBinding TargetPropertyName="Rotation" DefaultValue="0">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<RangeFormulaBinding TargetPropertyName="DefaultValue" OutRangeBegin="-60" OutRangeEnd="60">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<ChannelRangeLowBinding TargetPropertyName="InRangeBegin">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+									</Bindings>
+								</ChannelRangeLowBinding>
+								<ChannelRangeHighBinding TargetPropertyName="InRangeEnd">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+									</Bindings>
+								</ChannelRangeHighBinding>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</SelectFirstCoordBinding>
+			</Bindings>
+			<Children>
+				<Line Visible="False" X0="1" Y0="0" X1="100" Y1="100"/>
+				<Line Visible="False" X0="100" Y0="0" X1="1" Y1="100"/>
+				<Line Width="5" Color="AlarmRed" X0="51" Y0="-175" X1="51" Y1="-135"/>
+				<Frame Width="150" Height="150" X="-24" Y="-102" Path=".\Frame_Inclinometer_vessel_front.prax"/>
+			</Children>
+		</Panel>
+		<TextBox Width="40" Height="25" X="65" Y="145" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="-30"/>
+		<TextBox Width="40" Height="25" X="570" Y="145" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="30"/>
+		<TextBox Width="500" Height="39" X="80" Y="365" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="TextActive" Font="Praxis;90.0;N;N;N" Text="9999">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<RangeFormulaBinding TargetPropertyName="Text" OutRangeBegin="-30" OutRangeEnd="30">
+					<Bindings>
+						<ChannelRangeLowBinding TargetPropertyName="InRangeBegin">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+							</Bindings>
+						</ChannelRangeLowBinding>
+						<ChannelRangeHighBinding TargetPropertyName="InRangeEnd">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+							</Bindings>
+						</ChannelRangeHighBinding>
+						<FilteredValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

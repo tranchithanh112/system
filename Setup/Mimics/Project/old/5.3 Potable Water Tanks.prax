@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<TextBox Width="65" Height="30" X="575" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Pot. Water Tank 1 PS"/>
+		<TextBox Width="65" Height="30" X="1065" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Pot. Water Tank 2 PS"/>
+		<TextBox Width="85" Height="30" X="785" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Pot. Water Tank 1 SB"/>
+		<Frame Width="155" Height="640" X="530" Y="185" Volume="11672" ColourVolumeBar="TextActive" Level="11671" ColourLevelBar="TextActive" Weight="11673" Density="11670" Sensor="11607" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax"/>
+		<Frame Width="155" Height="640" X="1020" Y="185" Volume="11666" ColourVolumeBar="TextActive" Level="11665" ColourLevelBar="TextActive" Weight="11667" Density="11664" Sensor="11606" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax"/>
+		<TextBox Width="85" Height="30" X="1275" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Pot. Water Tank 2 SB"/>
+		<Frame Width="155" Height="640" X="750" Y="185" Volume="21666" ColourVolumeBar="TextActive" Level="21665" ColourLevelBar="TextActive" Weight="21667" Density="21664" Sensor="21607" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax"/>
+		<Frame Width="155" Height="640" X="1240" Y="185" Volume="21660" ColourVolumeBar="TextActive" Level="21659" ColourLevelBar="TextActive" Weight="21661" Density="21658" Sensor="21606" Path=".\Frames\Tanks\Frame_TankVolumeBar.prax"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Width="85" Height="30" X="275" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Volume">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11696">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="200" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Volume"/>
+		<TextBox Width="90" Height="30" X="200" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Weight"/>
+		<TextBox Width="85" Height="30" X="275" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Weight">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11697">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="200" Height="30" X="200" Y="850" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Total PS"/>
+		<TextBox Width="45" Height="30" X="360" Y="925" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Ton"/>
+		<TextBox Width="45" Height="30" X="360" Y="890" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="m³"/>
+		<TextBox Width="85" Height="30" X="630" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Volume">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11698">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="555" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Volume"/>
+		<TextBox Width="90" Height="30" X="555" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Weight"/>
+		<TextBox Width="85" Height="30" X="630" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Weight">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11699">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="200" Height="30" X="555" Y="850" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Total"/>
+		<TextBox Width="45" Height="30" X="715" Y="925" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Ton"/>
+		<TextBox Width="45" Height="30" X="715" Y="890" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="m³"/>
+		<TextBox Width="85" Height="30" X="985" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Volume">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21696">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="90" Height="30" X="910" Y="890" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Volume"/>
+		<TextBox Width="90" Height="30" X="910" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="Weight"/>
+		<TextBox Width="85" Height="30" X="985" Y="925" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="Weight">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21697">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="200" Height="30" X="910" Y="850" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="Total SB"/>
+		<TextBox Width="45" Height="30" X="1070" Y="925" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Ton"/>
+		<TextBox Width="45" Height="30" X="1070" Y="890" BorderWidth="0" BorderColor="Background" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="m³"/>
+		<Line Color="TextInfoHeader" X0="200" Y0="885" X1="385" Y1="885"/>
+		<Line Color="TextInfoHeader" X0="555" Y0="885" X1="740" Y1="885"/>
+		<Line Color="TextInfoHeader" X0="910" Y0="885" X1="1095" Y1="885"/>
+		<TextBox Width="70" Height="30" X="460" Y="655" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Sensor"/>
+		<TextBox Width="70" Height="30" X="460" Y="685" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Level"/>
+		<TextBox Width="70" Height="30" X="460" Y="715" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Volume"/>
+		<TextBox Width="70" Height="30" X="460" Y="745" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Weight"/>
+		<TextBox Width="70" Height="30" X="460" Y="775" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Density"/>
+		<TextBox Width="40" Height="30" X="480" Y="600" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="0 %"/>
+		<TextBox Width="40" Height="30" X="480" Y="500" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="25 %"/>
+		<TextBox Width="40" Height="30" X="480" Y="400" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="50 %"/>
+		<TextBox Width="40" Height="30" X="480" Y="300" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="75 %"/>
+		<TextBox Width="40" Height="30" X="485" Y="200" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="100 %"/>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<Frame Width="410" Height="40" X="1390" Y="80" Path=".\Frames\Conning\Frame_Vessel_Draught.prax"/>
+	</Children>
+</RootElement>

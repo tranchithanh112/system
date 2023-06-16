@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="65" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="150" Height="35" BorderWidth="0" FillColor="Black" TextColor="Orange" Font="Praxis;28.0;N;N;N" Text="NETWORK">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="NetworkHighLoad_CH"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="35" Y="30" BorderWidth="0" FillColor="Black" TextColor="Orange" Font="Praxis;28.0;N;N;N" Text="HIGH LOAD">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="NetworkHighLoad_CH"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="185" Height="245" ColorTableFile="..\..\Color_Table.colortable">
+	<Children>
+		<Panel Width="185" Height="245" GridSpacing="1" BorderColor="PanelFaceBorder" FillColor="Background" LightingStyle="Horizontal">
+			<Children>
+				<Button Width="150" Height="50" X="16" Y="52" Text="Connect" FillColor="Background" Font="Segoe UI;26.0;B;N;N">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Button1"/>
+					</Bindings>
+					<ClickActions>
+						<PulseChannelClickAction PulseLength="5000">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Button1"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="185" Height="40" Y="4" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;B;N;U" Text="Connect / Disconnect">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title"/>
+					</Bindings>
+				</TextBox>
+				<Button Width="150" Height="50" X="16" Y="110" Text="Disconnect" FillColor="Background" Font="Segoe UI;26.0;B;N;N">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Button2"/>
+					</Bindings>
+					<ClickActions>
+						<PulseChannelClickAction PulseLength="5000">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Button2"/>
+								<FrameBinding TargetPropertyName="PulseLength" ExportedPropertyName="PULSE_LENGHT"/>
+							</Bindings>
+						</PulseChannelClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="150" Height="50" X="16" Y="182" Text="Cancel" FillColor="Background" Font="Segoe UI;26.0;B;N;N">
+					<ClickActions>
+						<PulseChannelClickAction/>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

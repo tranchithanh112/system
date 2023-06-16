@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="36" Height="36" GridSpacing="2" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button FlashArea="OutlineOnly" LockOverlayVisible="False" LockOverlayColor="Transparent" Width="36" Height="40" Y="-2" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="UserActionsLocked">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Auto_Mode"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+				<ValueCompareBinding TargetPropertyName="Visible">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="SecondValue"/>
+						<SelectFirstFloatBinding TargetPropertyName="FirstValue" SelectedValue7="100001" DefaultValue="0">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="5255">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100002"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstFloatBinding>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" XOffset="-76" YOffset="7.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="120" Height="185" X="-118" Y="-67" Open_Ch="0" Close_Ch="0" Reset_Ch="0" TAG2="00000" Path=".\Frame_Popup_Valve_Control.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="TAG2" ExportedPropertyName="TAG2"/>
+								<FrameBinding TargetPropertyName="Open_Ch" ExportedPropertyName="Open_M_Ch"/>
+								<FrameBinding TargetPropertyName="Close_Ch" ExportedPropertyName="Close_M_Ch"/>
+								<FrameBinding TargetPropertyName="Reset_Ch" ExportedPropertyName="Reset_M_Ch"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="36" Height="16" X="28" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;11.0;N;N;N" Text="00000">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG2"/>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="TAG2_"/>
+			</Bindings>
+		</TextBox>
+		<Panel Width="36" Height="36" GridSpacing="1" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Rotation" ExportedPropertyName="Rotation_"/>
+			</Bindings>
+			<Children>
+				<Polyline FlashFast="True" FlashArea="OutlineOnly" LineColor="AlwaysWhite" ClosedOutline="True" FillColor="BackgroundGauge">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Gray" SelectedValue2="Green" DefaultValue="BackgroundGauge">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Is_Closed"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Is_Opened"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="6;18"/>
+						<Point Coord="6;32"/>
+						<Point Coord="30;18"/>
+						<Point Coord="30;32"/>
+					</Points>
+				</Polyline>
+				<Line Color="AlwaysWhite" X0="18" Y0="9" X1="18" Y1="25"/>
+				<Rectangle FlashFast="True" FlashArea="OutlineOnly" Width="12" Height="9" X="12" Y="4" BorderColor="AlwaysWhite" FillColor="BackgroundGauge">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Flash">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Fail_Ch"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Fail_Ch"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue6="Green" SelectedValue7="Black" DefaultValue="BackgroundGauge">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_Out"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Out"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Rectangle>
+				<Line Color="AlwaysWhite" X0="22" Y0="18" X1="14" Y1="32"/>
+				<Ellipse BorderColor="AlwaysWhite" FillColor="BackgroundConning" CenterX="18" CenterY="25" RadiusX="4" RadiusY="4" ArcBegin="270" ArcEnd="630"/>
+			</Children>
+		</Panel>
+		<Button FlashArea="OutlineOnly" LockOverlayVisible="False" LockOverlayColor="Transparent" Width="36" Height="40" Y="2" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="UserActionsLocked" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Auto_Mode"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+				<ValueCompareBinding TargetPropertyName="Visible">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="SecondValue"/>
+						<ChannelValueBinding TargetPropertyName="FirstValue">
+							<Bindings>
+								<SelectFirstChannelNumberBinding TargetPropertyName="ChannelNumber" SelectedValue7="100001">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue7" SecondValue="5255">
+											<Bindings>
+												<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100002"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstChannelNumberBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" XOffset="-78" YOffset="6.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="120" Height="185" X="-120" Y="-64" Reset_Ch="0" TAG2="00000" Path=".\Frame_Popup_Valve_Control_Auto.prax" Close_Ch="0" Open_Ch="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Open_Ch" ExportedPropertyName="Open_Ch"/>
+								<FrameBinding TargetPropertyName="Close_Ch" ExportedPropertyName="Close_Ch"/>
+								<FrameBinding TargetPropertyName="TAG2" ExportedPropertyName="TAG2"/>
+								<FrameBinding TargetPropertyName="Reset_Ch" ExportedPropertyName="Reset_M_Ch"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

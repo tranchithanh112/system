@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" GridSpacing="2" ColorTableFile="..\Color_Table.colortable">
+	<Children>
+		<Rectangle Width="5" Height="32" X="12" Y="8" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_CB"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="5" Height="5" X="32" Y="4"/>
+		<Rectangle Width="5" Height="5" X="32" Y="40"/>
+		<Rectangle Width="14" Height="30" X="26" Y="10" BorderWidth="0"/>
+		<Rectangle Width="5" Height="32" X="32" Y="8" FillColor="NoAlarmGreen">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_CB"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+	</Children>
+</RootElement>

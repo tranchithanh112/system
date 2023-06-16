@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="500" Height="500" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" DialColor="BackgroundConning" IndicatorLinesColor="TextActive" Path=".\Frame_Gauge_Rudder.prax" FullDial="True">
+			<Bindings>
+				<FrameBinding TargetPropertyName="IndicatorLinesColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="40" Height="30" X="230" Y="520" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Rudder_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="250" Y="520" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;36.0;N;N;N" Text="°"/>
+		<Ellipse BorderColor="Background" CenterX="250" CenterY="245" RadiusX="300" RadiusY="300" ArcBegin="135" ArcEnd="405" ArcLength="270"/>
+		<TextBox Width="45" Height="30" X="480" Y="430" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;36.0;N;N;N" Text="°">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="445" Y="430" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;36.0;N;N;N" Text="-30">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" Y="430" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;36.0;N;N;N" Text="30">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="30" X="30" Y="430" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;36.0;N;N;N" Text="°">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Ellipse BorderWidth="2" BorderColor="LightingAmber" FillColor="LightingAmber" CenterX="250" CenterY="250" RadiusX="230" RadiusY="230" ArcBegin="90" ArcEnd="115" ArcLength="25">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="ArcLength" InRangeBegin="-30" InRangeEnd="30" OutRangeBegin="-45" OutRangeEnd="45">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Rudder_Ch"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</Ellipse>
+		<Ellipse BorderWidth="0" BorderColor="Background" BorderStyle="Raised" LinePosition="Outside" CenterX="250" CenterY="250" RadiusX="190" RadiusY="190" ArcBegin="540" ArcEnd="900"/>
+		<Line Width="4" Color="LightingAmber" X0="250" Y0="440" X1="250" Y1="480"/>
+		<Line Width="5" Color="IndicationLineTransparent" X0="250" Y0="500" X1="250" Y1="470"/>
+	</Children>
+</RootElement>

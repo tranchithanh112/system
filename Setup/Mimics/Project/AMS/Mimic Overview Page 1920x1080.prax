@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1080" ShowBackground="True" Highlight_Button_NR="21" Page_Title="MIMICS OVERVIEW" MultiplePages="False" Path="..\Frames\Menus\CommonMenuFrame_1920x1080.prax" AutoShow_Page_Title="False"/>
+		<MimicOverviewList Width="1645" Height="935" X="5" Y="75" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="StatusInactive" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1645" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</MimicOverviewList>
+	</Children>
+</RootElement>

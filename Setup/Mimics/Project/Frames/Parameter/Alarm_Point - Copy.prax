@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="10" Height="10" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Ellipse FlashState="Flashing" Flash="True" FlashColor="Background" BorderWidth="0.7" LinePosition="Outside" BorderColor="InfoTextWhite" FillColor="AlarmRed" LightingStyle="Radial" CenterX="5" CenterY="5" RadiusX="5" RadiusY="5">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm"/>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue5="Orange" SelectedValue6="Green" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Alarm"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ALARM2_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+	</Children>
+</RootElement>

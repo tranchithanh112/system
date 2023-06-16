@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="68" Height="68" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="38" Height="21" X="15" BorderColor="InfoTextGrey">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="PaperOut_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="40" Height="4" X="14" Y="18" BorderColor="InfoTextGrey"/>
+		<Polyline LineColor="InfoTextGrey" ClosedOutline="True" FillColor="PageInfoLineShaded">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OffLine_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Foreground"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="1;48"/>
+				<Point Coord="1;33"/>
+				<Point Coord="5;21"/>
+				<Point Coord="15;21"/>
+				<Point Coord="11;33"/>
+				<Point Coord="11;48"/>
+			</Points>
+		</Polyline>
+		<Polyline LineColor="InfoTextGrey" ClosedOutline="True" FillColor="PageInfoLineShaded">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OffLine_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="PageInfoLineShaded"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="68;48"/>
+				<Point Coord="68;33"/>
+				<Point Coord="64;21"/>
+				<Point Coord="54;21"/>
+				<Point Coord="58;33"/>
+				<Point Coord="58;48"/>
+			</Points>
+		</Polyline>
+		<Line Color="InfoTextGrey" X0="1" Y0="33" X1="68" Y1="33"/>
+		<Rectangle Width="67" Height="11" X="1" Y="48" BorderColor="InfoTextGrey" LinePosition="Centered"/>
+		<Polyline LineColor="InfoTextGrey" ClosedOutline="True" FillColor="Background">
+			<Points>
+				<Point Coord="11;48"/>
+				<Point Coord="58;48"/>
+				<Point Coord="62;62"/>
+				<Point Coord="6;62"/>
+			</Points>
+		</Polyline>
+		<Polyline LineColor="InfoTextGrey" ClosedOutline="True" FillColor="Background">
+			<Points>
+				<Point Coord="14;21"/>
+				<Point Coord="54;21"/>
+				<Point Coord="58;33"/>
+				<Point Coord="11;33"/>
+			</Points>
+		</Polyline>
+		<Polyline LineColor="InfoTextGrey" ClosedOutline="True" FillColor="Background">
+			<Points>
+				<Point Coord="11;33"/>
+				<Point Coord="58;33"/>
+				<Point Coord="58;48"/>
+				<Point Coord="11;48"/>
+			</Points>
+		</Polyline>
+	</Children>
+</RootElement>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="200" Height="338" GridSpacing="2" ColorTableFile="..\Color_TableASRV.colortable">
+	<Children>
+		<Panel Width="200" Height="338" GridSpacing="2" FillColor="Transparent">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="BorderColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Not_Present"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="PanelFace"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Children>
+				<FillBar Width="16" Height="240" X="24" Y="38" FillDirection="BottomToTop" RangeEnd="120" LimitType="OnlyHigh" FirstLimit="0" SecondLimit="100" LimitMarkerSize="0" Value="0">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_KWp"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FillBar>
+				<FillBar Width="16" Height="240" X="48" Y="38" FillDirection="BottomToTop" RangeEnd="120" LimitType="OnlyHigh" SecondLimit="100" LimitMarkerSize="0" Value="0" NormalColor="Blue">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_kVArp"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FillBar>
+				<TextBox Width="30" Height="20" X="14" Y="18" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;12.0;N;N;N" Text="KW"/>
+				<TextBox Width="30" Height="20" X="42" Y="18" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;12.0;N;N;N" Text="KWAr"/>
+				<TextBox Width="30" Height="20" X="106" Y="2" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;24.0;B;N;N" Text="EDG">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Header"/>
+					</Bindings>
+				</TextBox>
+				<Line Width="2" X0="132" Y0="252" X1="132" Y1="282"/>
+				<TextBox Width="110" Height="22" X="76" Y="144" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="0 kVAr">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_KVAR"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams Suffix=" kVAr"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="110" Height="22" X="76" Y="166" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="0 A">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Amps"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams Suffix=" A"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<Line Width="0.5" X0="64" Y0="276" X1="22" Y1="276"/>
+				<Line Width="0.5" X0="66" Y0="238" X1="22" Y1="238"/>
+				<Line Width="0.5" X0="64" Y0="198" X1="22" Y1="198"/>
+				<Line Width="0.5" X0="64" Y0="158" X1="22" Y1="158"/>
+				<Line Width="0.5" X0="64" Y0="118" X1="22" Y1="118"/>
+				<Line Width="0.5" X0="64" Y0="78" X1="22" Y1="78"/>
+				<Line Width="0.5" X0="61" Y0="39" X1="22" Y1="39"/>
+				<TextBox Width="20" Height="20" X="2" Y="228" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;10.0;N;N;N" Text="20"/>
+				<TextBox Width="108" Height="20" X="76" Y="30" FillColor="AlarmRed" CornerRoundRadius="5" Font="Segoe UI;16.0;N;N;N" Text="SWBD" FillStyle="HorizontalLighting">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Manual"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="Foreground" ColorWhenTrue="Black"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="Semi" SelectedValue1="Auto" SelectedValue2="Manual" DefaultValue="SWBD">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Auto"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Semi"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Manual"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="OldAlarm" SelectedValue1="NoAlarmGreen" SelectedValue2="OldAlarm" DefaultValue="AlarmRed">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Manual"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Auto"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Semi"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="108" Height="20" X="76" Y="52" FillColor="InactivePanelFace" CornerRoundRadius="5" Font="Segoe UI;16.0;N;N;N" Text="STATUS" FillStyle="HorizontalLighting">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" SelectedValue1="Foreground" SelectedValue2="Foreground" SelectedValue3="Foreground" SelectedValue4="Black" SelectedValue5="Black" SelectedValue6="Black" SelectedValue7="Black" DefaultValue="Foreground">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stby-2nd"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stop-1st"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stby-1st"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cool_Down"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue3="Orange" SelectedValue4="OldAlarm" SelectedValue5="OldAlarm" SelectedValue6="Color_FF0080FF" SelectedValue7="Cyan" DefaultValue="InactivePanelFace">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shutdown"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB-Trip"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pre-alarm"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stby-1st"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stby-2nd"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stop-1st"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cool_Down"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SHUTDOWN" SelectedValue1="CB-TRIP" SelectedValue2="FAIL" SelectedValue3="PRE-AL" SelectedValue4="1st ST-BY" SelectedValue5="2nd ST-BY" SelectedValue6="1st TO STOP" SelectedValue7="COOLDOWN" DefaultValue="STATUS">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Pre-alarm"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB-Trip"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shutdown"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stby-1st"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stby-2nd"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Cool_Down"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stop-1st"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="20" Height="20" X="2" Y="30" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;10.0;N;N;N" Text="120"/>
+				<TextBox Width="20" Height="20" X="2" Y="66" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;10.0;N;N;N" Text="100"/>
+				<TextBox Width="20" Height="20" X="2" Y="106" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;10.0;N;N;N" Text="80"/>
+				<TextBox Width="20" Height="20" X="2" Y="146" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;10.0;N;N;N" Text="60"/>
+				<TextBox Width="20" Height="20" X="2" Y="186" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;10.0;N;N;N" Text="40"/>
+				<TextBox Width="20" Height="20" X="6" Y="264" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;10.0;N;N;N" Text="0"/>
+				<TextBox Width="110" Height="28" X="76" Y="116" FillColor="Transparent" Font="Segoe UI;24.0;B;N;N" Text="0 kW">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_KW"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams Suffix=" kW"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="110" Height="22" X="76" Y="74" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="0 V">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Volts"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams Suffix=" V"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="110" Height="22" X="76" Y="94" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="0 Hz">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Hz"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1" Suffix=" Hz"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<Frame Width="46" Height="48" X="100" Y="278" Channel_CB="0" Ch_Unload="0" Ch_Sync="0" Path=".\Frame_CB.prax" CenterX="170" CenterY="246">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Channel_CB" ExportedPropertyName="Channel_CB"/>
+						<FrameBinding TargetPropertyName="Ch_Unload" ExportedPropertyName="Channel_Unload"/>
+						<FrameBinding TargetPropertyName="Ch_Sync" ExportedPropertyName="Channel_Sync"/>
+					</Bindings>
+				</Frame>
+				<Line Width="2" X0="132" Y0="320" X1="132" Y1="356"/>
+				<TextBox Width="30" Height="30" X="156" Y="254" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="0">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Sequence"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+						<ValueCompareBinding TargetPropertyName="Visible" SecondValue="0" InvertCondition="True">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Sequence"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</TextBox>
+				<Button Width="52" Height="26" X="22" Y="294" Text="Cmd" Font="Segoe UI;14.0;B;N;N">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="UserActionsLocked" InvertCondition="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IPMS_CTRL"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IPMS_CTRL"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="InactivePanelFace" ColorWhenTrue="Foreground"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+					<ClickActions>
+						<OpenFrameUserAction AutoCloseTimeout="15">
+							<Frame>
+								<FloatingFrame Width="71" Height="165" X="12.5" Y="179.5" Cmd_Manual="0" Cmd_Stop="0" Cmd_Open="0" Cmd_Reset="0" Cmd_Auto="0" Path="..\Pop-up\Frame_EmCyGen_CMD.prax" Cmd_Start="0" Cmd_Semi="0" Cmd_Close="0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Cmd_Manual" ExportedPropertyName="Cmd_Manual"/>
+										<FrameBinding TargetPropertyName="Cmd_Start" ExportedPropertyName="Cmd_Start"/>
+										<FrameBinding TargetPropertyName="Cmd_Stop" ExportedPropertyName="Cmd_Stop"/>
+										<FrameBinding TargetPropertyName="Cmd_Open" ExportedPropertyName="Cmd_Open"/>
+										<FrameBinding TargetPropertyName="Cmd_Close" ExportedPropertyName="Cmd_Close"/>
+										<FrameBinding TargetPropertyName="Cmd_Reset" ExportedPropertyName="Cmd_Reset"/>
+										<FrameBinding TargetPropertyName="Cmd_Auto" ExportedPropertyName="Cmd_Auto"/>
+										<FrameBinding TargetPropertyName="Cmd_Semi" ExportedPropertyName="Cmd_Semi"/>
+									</Bindings>
+								</FloatingFrame>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<TextBox Width="30" Height="30" X="72" Y="254" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="S">
+					<Bindings>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="I" SelectedValue1="P" SelectedValue2="" DefaultValue="S">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="IPMS_CTRL"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="PMS_CTRL"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<Line Visible="False" Width="3" Color="AlarmRed" X0="0" Y0="0" X1="200" Y1="338">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Not_Present"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</Line>
+				<Line Visible="False" Width="3" Color="AlarmRed" X0="200" Y0="0" X1="0" Y1="338">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Not_Present"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</Line>
+				<Ellipse FlashArea="OutlineOnly" FlashColor="OldAlarm" BorderWidth="3" BorderColor="Gray" FillColor="Gray" LightingStyle="Radial" CenterX="132" CenterY="232" RadiusX="32" RadiusY="32">
+					<Bindings>
+						<ChannelAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61083">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Running"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="Gray" ColorWhenTrue="Green"/>
+							</ConvertParams>
+						</ChannelAlarmBinding>
+						<SelectFirstBoolBinding TargetPropertyName="Flash">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Starting"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_Stopping"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+				</Ellipse>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

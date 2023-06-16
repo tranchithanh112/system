@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="165" Height="65" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="160" Height="60" X="5" Y="5" BorderWidth="2" FillColor="Foreground" CornerRoundRadius="5"/>
+		<Rectangle Width="160" Height="60" X="2" Y="2" BorderWidth="2" BorderColor="TextInfo" FillColor="TextInfo" CornerRoundRadius="5"/>
+		<Button Width="160" Height="60" X="3" Y="3" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="StatusInactive" TextColor="TextActive" Font="Praxis;36.0;N;N;N">
+			<Children>
+				<TextBox Width="160" Height="60" BorderWidth="2" BorderColor="StatusInactive" FillColor="BackgroundGauge" CornerRoundRadius="5" TextColor="TextActive" Font="Praxis;38.0;B;N;N" Text="ON/OFF">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" DefaultValue="StatusInactive">
+							<Bindings>
+								<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="ColorOff"/>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="ColorOn"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ON" DefaultValue="OFF">
+							<Bindings>
+								<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="TextButtonOn"/>
+								<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="TextButtonOff"/>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SetValueType" ExportedPropertyName="ClickAction"/>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="ClickAction_SetValue"/>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ClickAction_CH"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

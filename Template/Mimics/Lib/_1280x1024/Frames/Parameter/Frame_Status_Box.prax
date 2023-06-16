@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="95" Height="25" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="95" Height="25" BorderColor="StatusInactive" FillColor="BackgroundConning" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="RUNNING">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Active_channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToStringConvertParams TextWhenFalse="NORMAL" TextWhenTrue="ALARM">
+							<Bindings>
+								<FrameBinding TargetPropertyName="TextWhenTrue" ExportedPropertyName="Active_text"/>
+							</Bindings>
+						</BoolToStringConvertParams>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Active_channel"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="BackgroundConning" ColorWhenTrue="TextActive"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

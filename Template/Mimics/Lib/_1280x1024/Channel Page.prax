@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="1024" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Panel Width="1270" Height="915" X="5" Y="50" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="AlarmRed" FillColor="Transparent">
+			<Children>
+				<ChannelListInputBox LockOverlayColor="Transparent" Width="150" Height="35" X="750" Y="865" BorderColor="TextInfo" CornerRoundRadius="5" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" Text="000000">
+					<TextEnteredActions>
+						<AddChannelToChannelList ChannelNumber="0"/>
+					</TextEnteredActions>
+				</ChannelListInputBox>
+				<Button Width="140" Height="35" X="905" Y="865" ClipToBounds="True" Text="CLEAR" BorderWidth="1" BorderColor="TextInfo" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N">
+					<ClickActions>
+						<ResetChannelList/>
+					</ClickActions>
+				</Button>
+				<ChannelList Width="1270" Height="850" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderWidth="0" BorderColor="Transparent" ColumnSepLinesVisible="False" FileName=".\Frames\Menus\AlarmContextMenu.prax" ShowReportType="False">
+					<Bindings>
+						<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+					</Bindings>
+				</ChannelList>
+				<Frame Width="40" Height="37.9999" X="695" Y="865" Path=".\Frames\Menus\Button_Open_Numpad.prax"/>
+			</Children>
+		</Panel>
+		<Frame Width="1280" Height="1024" ShowBackground="False" Highlight_Button_NR="24" Page_Title="CHANNELS LIST" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame 1280x1024.prax"/>
+	</Children>
+</RootElement>

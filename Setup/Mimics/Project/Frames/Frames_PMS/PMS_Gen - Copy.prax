@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="420" Height="630" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="105" Height="40" X="90" Y="40" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Saira;26.0;N;N;N" Text="0">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="StatusInactive"/>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="PRIORITY 1" SelectedValue1="PRIORITY 2" SelectedValue2="PRIORITY 3">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="3" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<SelectFirstChannelNumberBinding TargetPropertyName="ChannelNumber">
+											<Bindings>
+												<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Priority_CH"/>
+												<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="Priority_CH_SIM"/>
+												<ChannelValueBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<NameLookupBinding TargetPropertyName="ChannelNumber" Name="PMS_SIM_ACTIVE"/>
+													</Bindings>
+												</ChannelValueBinding>
+											</Bindings>
+										</SelectFirstChannelNumberBinding>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<SelectFirstChannelNumberBinding TargetPropertyName="ChannelNumber">
+											<Bindings>
+												<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Priority_CH"/>
+												<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="Priority_CH_SIM"/>
+												<ChannelValueBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<NameLookupBinding TargetPropertyName="ChannelNumber" Name="PMS_SIM_ACTIVE"/>
+													</Bindings>
+												</ChannelValueBinding>
+											</Bindings>
+										</SelectFirstChannelNumberBinding>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<SelectFirstChannelNumberBinding TargetPropertyName="ChannelNumber">
+											<Bindings>
+												<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Priority_CH"/>
+												<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="Priority_CH_SIM"/>
+												<ChannelValueBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<NameLookupBinding TargetPropertyName="ChannelNumber" Name="PMS_SIM_ACTIVE"/>
+													</Bindings>
+												</ChannelValueBinding>
+											</Bindings>
+										</SelectFirstChannelNumberBinding>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

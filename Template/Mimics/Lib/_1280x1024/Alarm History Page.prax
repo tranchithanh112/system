@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="1024" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<AlarmHistoryList Width="1270" Height="870" X="5" Y="50" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderColor="Transparent" FileName=".\Frames\Menus\AlarmContextMenu.prax" ShowTag="False" ShowReportType="False" ShowAcknowledge="False" ChannelFilter="" GroupFilter="">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmHistoryList>
+		<Button Width="190" Height="35" X="210" Y="925" ClipToBounds="True" Text="&lt; PREVIOUS DAY" BorderColor="BackgroundShadow" FillColor="Transparent" Font="Praxis;22.0;N;N;N">
+			<ClickActions>
+				<AlarmHistoryUserAction ActionType="PreviousDay AlarmHistory"/>
+			</ClickActions>
+		</Button>
+		<Button Width="190" Height="35" X="860" Y="925" ClipToBounds="True" Text="NEXT DAY  >" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;22.0;N;N;N">
+			<ClickActions>
+				<AlarmHistoryUserAction/>
+			</ClickActions>
+		</Button>
+		<Frame LockOverlayVisible="False" Width="1280" Height="1024" ShowBackground="False" Highlight_Button_NR="23" Page_Title="ALARMS - HISTORY" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame 1280x1024.prax"/>
+	</Children>
+</RootElement>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="Fala_LD_PLC">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2015" month="10" day="2" hour="17" minutes="45" seconds="1" milisec="218" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="00000009" />
+      <II value="00000038" />
+      <CPVis used="0" />
+      <LC year="2015" month="11" day="1" hour="9" minutes="10" seconds="23" milisec="640" />
+      <LCF>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\VM\VM-Praxis32.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis32.xml</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\VM\VM-Praxis32.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.1.1.15</CREATOR>
+      <LASTSAVEDWITH>1.1.1.19</LASTSAVEDWITH>
+      <DCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.dcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.dcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.dcp</ENVVARS>
+      </DCP>
+      <XCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.xcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.xcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.xcp</ENVVARS>
+      </XCP>
+      <HCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.hcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.hcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.hcp</ENVVARS>
+      </HCP>
+      <CST>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.cst</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.cst</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Fala_LD_PLC\Fala_LD_PLC.cst</ENVVARS>
+      </CST>
+      <HCPFlags enabled="0" />
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="C:\Program Files\CPDevFBD\Biblioteki\IEC 61131-3.lcp">
+        <CREATED year="2015" month="10" day="14" hour="13" minutes="0" seconds="9" milisec="969" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Biblioteki\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="LD" type="PRG" name="Fala_LD_PLC" editor="LDEditor-MarcinJamro"><![CDATA[PROGRAM Fala_LD_PLC
+
+VAR_EXTERNAL
+   TON1Q: BOOL;
+   TON2Q: BOOL;
+   RESET: BOOL;
+   IN: BOOL;
+   LIGHT: BOOL;
+   COUNT: INT;
+END_VAR
+
+VAR
+   out_contact_TON1Q_110_250: BOOL;
+   out_contact_TON2Q_110_130: BOOL;
+   out_contact_TON1Q_200_350: BOOL;
+   out_contact_TON1Q_80_440: BOOL;
+   out_contact_RESET_80_480: BOOL;
+   out_contact_IN_110_350: BOOL;
+   out_coil_TON1Q_300_130: BOOL;
+   out_coil_TON2Q_300_250: BOOL;
+   out_coil_LIGHT_300_350: BOOL;
+   ton1: TON;
+   out_ton1_Q: BOOL;
+   ton2: TON;
+   out_ton2_Q: BOOL;
+   ctu1: CTU;
+   out_ctu1_Q: BOOL;
+   out_ctu1_CV: INT;
+END_VAR
+
+out_contact_TON2Q_110_130 := NOT TON2Q;
+ton1(IN:=out_contact_TON2Q_110_130,PT:=T#1s,Q=>out_ton1_Q);
+out_coil_TON1Q_300_130 := out_ton1_Q;
+TON1Q := out_ton1_Q;
+
+out_contact_TON1Q_110_250 := TON1Q;
+ton2(IN:=out_contact_TON1Q_110_250,PT:=T#2s,Q=>out_ton2_Q);
+out_coil_TON2Q_300_250 := out_ton2_Q;
+TON2Q := out_ton2_Q;
+
+out_contact_IN_110_350 := IN;
+out_contact_TON1Q_200_350 := out_contact_IN_110_350 AND TON1Q;
+out_coil_LIGHT_300_350 := out_contact_TON1Q_200_350;
+LIGHT := out_contact_TON1Q_200_350;
+
+out_contact_TON1Q_80_440 := TON1Q;
+out_contact_RESET_80_480 := RESET;
+ctu1(CU:=out_contact_TON1Q_80_440,R:=out_contact_RESET_80_480,PV:=10,Q=>out_ctu1_Q,CV=>out_ctu1_CV);
+COUNT := out_ctu1_CV;
+
+out_contact_TON1Q_80_440 := TON1Q;
+
+END_PROGRAM
+]]><EDITOR><![CDATA[<?xml version="1.0" encoding="utf-16"?><project><fileHeader companyName="" creationDateTime="2015-11-01T09:19:41" productName="Fala_LD_PLC" productVersion="" contentType="Program" /><contentHeader name="prj"><coordinateInfo><fbd><scaling x="10" y="10" /></fbd><ld><scaling x="10" y="10" /></ld><sfc><scaling x="10" y="10" /></sfc></coordinateInfo></contentHeader><types><dataTypes /><pous><pou name="FBD Diagram" pouType="functionBlock"><interface><localVars><variable name="TON1Q"><type><BOOL /></type></variable><variable name="TON2Q"><type><BOOL /></type></variable><variable name="TON1Q"><type><BOOL /></type></variable><variable name="TON1Q"><type><BOOL /></type></variable><variable name="RESET"><type><BOOL /></type></variable><variable name="IN"><type><BOOL /></type></variable><variable name="variable1" constant="True"><type><TIME /></type></variable><variable name="variable2" constant="True"><type><TIME /></type></variable><variable name="variable3" constant="True"><type><INT /></type></variable><variable name="TON1Q"><type><BOOL /></type></variable><variable name="TON2Q"><type><BOOL /></type></variable><variable name="LIGHT"><type><BOOL /></type></variable><variable name="COUNT"><type><INT /></type></variable></localVars></interface><body><LD><leftPowerRail localId="0" /><rightPowerRail localId="1"><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="Q" refLocalId="19"><position x="360" y="440" /><position x="230" y="440" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="6"><position x="360" y="130" /><position x="300" y="130" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="7"><position x="360" y="250" /><position x="300" y="250" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="14"><position x="360" y="350" /><position x="300" y="350" /></connection></connectionPointIn></rightPowerRail><contact height="40" localId="5" width="20" type="NormallyOpenContact"><position x="80" y="220" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="70" y="250" /><position x="10" y="250" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>TON1Q</expression></contact><contact height="40" localId="10" width="20" type="NormallyClosedContact"><position x="80" y="100" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="70" y="130" /><position x="10" y="130" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>TON2Q</expression></contact><contact height="40" localId="13" width="20" type="NormallyOpenContact"><position x="170" y="320" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="26"><position x="160" y="350" /><position x="110" y="350" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>TON1Q</expression></contact><contact height="40" localId="20" width="20" type="NormallyOpenContact"><position x="50" y="410" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="40" y="440" /><position x="10" y="440" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>TON1Q</expression></contact><contact height="40" localId="21" width="20" type="NormallyOpenContact"><position x="50" y="450" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="40" y="480" /><position x="10" y="480" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>RESET</expression></contact><contact height="40" localId="26" width="20" type="NormallyOpenContact"><position x="80" y="320" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="70" y="350" /><position x="10" y="350" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>IN</expression></contact><inVariable height="20" localId="8" width="40" constant="True"><position x="70" y="140" /><connectionPointOut><relPosition x="50" y="10" /></connectionPointOut><expression>variable1</expression><value>T#1s</value></inVariable><inVariable height="20" localId="9" width="40" constant="True"><position x="70" y="260" /><connectionPointOut><relPosition x="50" y="10" /></connectionPointOut><expression>variable2</expression><value>T#2s</value></inVariable><inVariable height="20" localId="23" width="40" constant="True"><position x="70" y="490" /><connectionPointOut><relPosition x="50" y="10" /></connectionPointOut><expression>variable3</expression><value>10</value></inVariable><block height="100" instanceName="ton1" localId="3" typeName="TON" width="60"><position x="150" y="80" /><inputVariables><variable formalParameter="IN"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="10"><position x="140" y="130" /><position x="110" y="130" /></connection></connectionPointIn></variable><variable formalParameter="PT"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="8"><position x="140" y="150" /><position x="120" y="150" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q"><connectionPointOut><relPosition x="70" y="50" /></connectionPointOut></variable><variable formalParameter="ET"><connectionPointOut><relPosition x="70" y="70" /></connectionPointOut></variable></outputVariables></block><block height="100" instanceName="ton2" localId="4" typeName="TON" width="60"><position x="150" y="200" /><inputVariables><variable formalParameter="IN"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="5"><position x="140" y="250" /><position x="110" y="250" /></connection></connectionPointIn></variable><variable formalParameter="PT"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="9"><position x="140" y="270" /><position x="120" y="270" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q"><connectionPointOut><relPosition x="70" y="50" /></connectionPointOut></variable><variable formalParameter="ET"><connectionPointOut><relPosition x="70" y="70" /></connectionPointOut></variable></outputVariables></block><block height="120" instanceName="ctu1" localId="19" typeName="CTU" width="70"><position x="150" y="390" /><inputVariables><variable formalParameter="CU"><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="20"><position x="140" y="440" /><position x="80" y="440" /></connection></connectionPointIn></variable><variable formalParameter="R"><connectionPointIn><relPosition x="-10" y="50" /><connection formalParameter="" refLocalId="21"><position x="140" y="460" /><position x="130" y="460" /><position x="130" y="480" /><position x="80" y="480" /></connection></connectionPointIn></variable><variable formalParameter="PV"><connectionPointIn><relPosition x="-10" y="70" /><connection formalParameter="" refLocalId="23"><position x="140" y="480" /><position x="130" y="480" /><position x="130" y="500" /><position x="120" y="500" /></connection></connectionPointIn></variable></inputVariables><inOutVariables /><outputVariables><variable formalParameter="Q"><connectionPointOut><relPosition x="80" y="50" /></connectionPointOut></variable><variable formalParameter="CV"><connectionPointOut><relPosition x="80" y="70" /></connectionPointOut></variable></outputVariables></block><coil height="40" localId="6" width="20" type="Coil"><position x="270" y="100" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="Q" refLocalId="3"><position x="260" y="130" /><position x="220" y="130" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>TON1Q</expression></coil><coil height="40" localId="7" width="20" type="Coil"><position x="270" y="220" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="Q" refLocalId="4"><position x="260" y="250" /><position x="220" y="250" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>TON2Q</expression></coil><coil height="40" localId="14" width="20" type="Coil"><position x="270" y="320" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="13"><position x="260" y="350" /><position x="200" y="350" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>LIGHT</expression></coil><outVariable height="20" localId="22" width="60"><position x="260" y="450" /><connectionPointIn><relPosition x="-10" y="10" /><connection formalParameter="CV" refLocalId="19"><position x="250" y="460" /><position x="230" y="460" /></connection></connectionPointIn><expression>COUNT</expression></outVariable></LD></body></pou></pous></types><instances><configurations /></instances><globalVariables><globalVariable name="TON1Q" type="BOOL" /><globalVariable name="TON2Q" type="BOOL" /><globalVariable name="COUNT" type="INT" /><globalVariable name="RESET" type="BOOL" /><globalVariable name="IN" type="BOOL" /><globalVariable name="LIGHT" type="BOOL" /></globalVariables><comments><comment localId="27" width="200" height="20"><position x="80" y="30" /><expression>BLINKING LIGHT AND COUNTER</expression></comment></comments><breakpoints /><conditions /><safestatevalues /></project>]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="TON1Q" flags="00004000"><![CDATA[VAR_GLOBAL 
+ TON1Q  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TON2Q" flags="00004000"><![CDATA[VAR_GLOBAL 
+ TON2Q  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="COUNT" flags="00004000"><![CDATA[VAR_GLOBAL 
+ COUNT  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="RESET" flags="00004000"><![CDATA[VAR_GLOBAL 
+ RESET  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IN" flags="00004000"><![CDATA[VAR_GLOBAL 
+ IN  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LIGHT" flags="00004000"><![CDATA[VAR_GLOBAL 
+ LIGHT  : BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK_LD_PLC" loop_kind="0" interval="100"><![CDATA[Fala_LD_PLC
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="36" Height="36" GridSpacing="2" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="36" Height="16" X="28" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;11.0;N;N;N" Text="00000">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG2"/>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="TAG2_"/>
+			</Bindings>
+		</TextBox>
+		<Panel Width="36" Height="36" GridSpacing="1" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Rotation" ExportedPropertyName="Rotation_"/>
+			</Bindings>
+			<Children>
+				<Polyline FlashFast="True" FlashArea="OutlineOnly" LineColor="AlwaysWhite" ClosedOutline="True" FillColor="BackgroundGauge">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue2="Green" DefaultValue="BackgroundGauge">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VALVE_IS_CLOSED"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VALVE_IS_OPEN"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="6;18"/>
+						<Point Coord="6;32"/>
+						<Point Coord="30;18"/>
+						<Point Coord="30;32"/>
+					</Points>
+				</Polyline>
+				<Line Color="AlwaysWhite" X0="18" Y0="14" X1="18" Y1="25"/>
+				<Line Color="AlwaysWhite" X0="22" Y0="18" X1="14" Y1="32"/>
+				<Ellipse BorderColor="AlwaysWhite" FillColor="BackgroundConning" CenterX="18" CenterY="25" RadiusX="4" RadiusY="4" ArcBegin="270" ArcEnd="630"/>
+				<Line Color="AlwaysWhite" X0="23" Y0="14" X1="13" Y1="14"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

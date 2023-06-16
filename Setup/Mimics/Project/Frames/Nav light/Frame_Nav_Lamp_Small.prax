@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="10" Height="15" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Polyline FlashColor="BackgroundConning" Width="0" ClosedOutline="True" FillColor="Black">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" DefaultValue="BackgroundConning">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<FrameBinding TargetPropertyName="SelectedValue6" ExportedPropertyName="Light_Color"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="On_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="11;0"/>
+				<Point Coord="11;15"/>
+				<Point Coord="0;15"/>
+				<Point Coord="0;0"/>
+			</Points>
+		</Polyline>
+		<Rectangle Width="11" Height="15" BorderColor="White" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="White">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="On_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<FrameBinding TargetPropertyName="SelectedValue7" ExportedPropertyName="Light_Color"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+	</Children>
+</RootElement>

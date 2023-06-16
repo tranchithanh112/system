@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="55" Height="290" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Polyline Width="4" LineColor="InactiveGrey" ClosedOutline="True" FillColor="Transparent">
+			<Points>
+				<Point Coord="50;5"/>
+				<Point Coord="50;285"/>
+				<Point Coord="0;290"/>
+				<Point Coord="55;290"/>
+				<Point Coord="55;0"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="4" ClosedOutline="True" FillColor="Transparent">
+			<Points>
+				<Point Coord="0;290"/>
+				<Point Coord="5;5"/>
+				<Point Coord="55;0"/>
+				<Point Coord="0;0"/>
+			</Points>
+		</Polyline>
+		<Panel Width="55" Height="290" BorderWidth="1" BorderStyle="Flat" BorderColor="DarkShadow" FillColor="GaugeBackground">
+			<Children>
+				<FillBar Width="55" Height="290" FillDirection="BottomToTop" LimitType="OnlyHigh" FirstLimit="10" SecondLimit="50" LimitMarkerSize="5" Value="40" NormalColor="Barfill" LineWidth="0" BorderColor="Transparent" FillPatternColor="Grid" RoundingRadius="0">
+					<Bindings>
+						<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+							</Bindings>
+						</ChannelSecondLimitBinding>
+						<FilteredValueBinding TargetPropertyName="Value" TransitionTime="250">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+						<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Bar_Range_High"/>
+					</Bindings>
+				</FillBar>
+				<Line Width="2" Color="DarkShadow" X0="0" Y0="72.5" X1="55" Y1="72.5">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="75" CompareTolerance="0.001">
+									<Bindings>
+										<ChannelSecondLimitBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+											</Bindings>
+										</ChannelSecondLimitBinding>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+				</Line>
+			</Children>
+		</Panel>
+		<Line Width="2" Color="DarkShadow" X0="0" Y0="217.5" X1="55" Y1="217.5">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="25" CompareTolerance="0.001">
+							<Bindings>
+								<ChannelFirstLimitBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+									</Bindings>
+								</ChannelFirstLimitBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Line>
+		<Line Width="2" Color="DarkShadow" X0="0" Y0="145" X1="55" Y1="145">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" SelectedValue1="False" DefaultValue="True">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="50" CompareTolerance="0.001">
+							<Bindings>
+								<ChannelSecondLimitBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+									</Bindings>
+								</ChannelSecondLimitBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="50" CompareTolerance="0.001">
+							<Bindings>
+								<ChannelFirstLimitBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="_Channel"/>
+									</Bindings>
+								</ChannelFirstLimitBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Line>
+	</Children>
+</RootElement>

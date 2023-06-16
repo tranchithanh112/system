@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="55" Height="55" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button Width="55" Height="55" ClipToBounds="True" Text="" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N">
+			<Children>
+				<Panel Width="55" Height="55" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<VariableBinding TargetPropertyName="ConditionValue0">
+									<Variable>
+										<BoolVariable Name="TREND_EXPAND" IsLocal="False" DefaultValue="False"/>
+									</Variable>
+								</VariableBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<Children>
+						<Line Width="4" Color="TextInfo" X0="3" Y0="3" X1="18" Y1="18" P0CapStyle="Arrow" P0CapSize="15"/>
+						<Line Width="4" Color="TextInfo" X0="52" Y0="3" X1="37" Y1="18" P0CapStyle="Arrow" P0CapSize="15"/>
+						<Line Width="4" Color="TextInfo" X0="3" Y0="52" X1="18" Y1="37" P0CapStyle="Arrow" P0CapSize="15"/>
+						<Line Width="4" Color="TextInfo" X0="52" Y0="52" X1="37" Y1="37" P0CapStyle="Arrow" P0CapSize="15"/>
+					</Children>
+				</Panel>
+				<Panel Width="55" Height="55" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible">
+							<Bindings>
+								<VariableBinding TargetPropertyName="ConditionValue0">
+									<Variable>
+										<BoolVariable Name="TREND_EXPAND" IsLocal="False" DefaultValue="False"/>
+									</Variable>
+								</VariableBinding>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<Children>
+						<Line Width="4" Color="TextInfo" X0="37" Y0="18" X1="52" Y1="3" P0CapStyle="Arrow" P0CapSize="15"/>
+						<Line Width="4" Color="TextInfo" X0="20" Y0="20" X1="5" Y1="5" P0CapStyle="Arrow" P0CapSize="15"/>
+						<Line Width="4" Color="TextInfo" X0="20" Y0="35" X1="5" Y1="50" P0CapStyle="Arrow" P0CapSize="15"/>
+						<Line Width="4" Color="TextInfo" X0="35" Y0="35" X1="50" Y1="50" P0CapStyle="Arrow" P0CapSize="15"/>
+					</Children>
+				</Panel>
+			</Children>
+			<ClickActions>
+				<SetVariableValueClickAction>
+					<Variable>
+						<BoolVariable Name="TREND_EXPAND" IsLocal="False" DefaultValue="False"/>
+					</Variable>
+					<VariableSetter>
+						<BoolVariableSetter SetValueType="Toggle"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+				<SetVariableValueClickAction>
+					<Variable>
+						<BoolVariable Name="Show_Side_Menu"/>
+					</Variable>
+					<VariableSetter>
+						<BoolVariableSetter>
+							<Bindings>
+								<SelectFirstBoolBinding TargetPropertyName="Value" SelectedValue0="False">
+									<Bindings>
+										<VariableBinding TargetPropertyName="ConditionValue0">
+											<Variable>
+												<BoolVariable Name="Show_Side_Menu"/>
+											</Variable>
+										</VariableBinding>
+										<SelectFirstBoolBinding TargetPropertyName="SelectedValue0" SelectedValue0="False" DefaultValue="True">
+											<Bindings>
+												<VariableBinding TargetPropertyName="ConditionValue0">
+													<Variable>
+														<BoolVariable Name="TREND_EXPAND" DefaultValue="False"/>
+													</Variable>
+												</VariableBinding>
+											</Bindings>
+										</SelectFirstBoolBinding>
+									</Bindings>
+								</SelectFirstBoolBinding>
+							</Bindings>
+						</BoolVariableSetter>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

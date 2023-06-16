@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="205" Height="65" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="200" Height="60" X="2" Y="3" BorderWidth="2" FillColor="Foreground" CornerRoundRadius="5"/>
+		<Button Width="200" Height="60" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" TextColor="ActiveText" Font="Praxis;36.0;N;N;N">
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_1"/>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Value_CH1"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_2"/>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Value_CH2"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_3"/>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Value_CH3"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<Rectangle Width="195" Height="60" BorderWidth="2" BorderColor="InfoTextGrey" FillColor="InfoTextGrey" CornerRoundRadius="5"/>
+		<TextBox Width="199" Height="60" X="1" Y="1" BorderWidth="2" BorderColor="InactiveGrey" FillColor="GaugeBackground" CornerRoundRadius="5" TextColor="ActiveText" Font="Praxis;38.0;B;N;N" Text="SCENE 01">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="ActiveText" DefaultValue="InactiveGrey">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="ColorOn"/>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="ColorOff"/>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Scenario_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Scenario"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ON" DefaultValue="OFF">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="TextButtonOn"/>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="TextButtonOff"/>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Scenario_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Scenario"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="20" Height="20" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="20" Height="20" BorderColor="Green" FillColor="Green">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="BilgeAlarmCh"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Green"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="BorderColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="BilgeAlarmCh"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Green"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="20" Height="20" Y="-1" BorderWidth="0" BorderColor="TextInfo" FillColor="Transparent" TextColor="Black" Font="Segoe UI;20.0;B;N;N" Text="H">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="BilgeAlarmCh"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Black" ColorWhenTrue="White"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

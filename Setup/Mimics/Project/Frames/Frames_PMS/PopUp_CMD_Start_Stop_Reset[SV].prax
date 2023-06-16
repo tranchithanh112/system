@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="220" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="150" Height="220" BorderWidth="2" BorderColor="BackgroundShadow" FillColor="BackgroundMenu" CornerRoundRadius="5"/>
+		<TextBox Width="130" Height="30" X="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;16.0;N;N;N" Text="Thruster1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+			</Bindings>
+		</TextBox>
+		<Button Width="130" Height="35" X="10" Y="55" Text="START" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="BUTTON01_Text"/>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CTRL_Channel"/>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="CTRL_Value"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="95" Text="STOP" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="BUTTON02_Text"/>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CTRL_Channel"/>
+						<RangeFormulaBinding TargetPropertyName="Value" InRangeBegin="0" InRangeEnd="10" OutRangeBegin="10" OutRangeEnd="20">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="CTRL_Value"/>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="135" Text="RESET" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="BUTTON03_Text"/>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CTRL_Channel"/>
+						<RangeFormulaBinding TargetPropertyName="Value" InRangeBegin="0" InRangeEnd="10" OutRangeBegin="20" OutRangeEnd="30">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="CTRL_Value"/>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="10" Y="175" Text="CANCEL" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="BUTTON04_Text"/>
+			</Bindings>
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="130" Height="30" X="10" Y="25" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;16.0;N;N;N" Text="Thruster1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID_"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

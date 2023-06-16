@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="130" Height="230" GridSpacing="5" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Button Width="120" Height="70" X="5" Y="5" Text="OPEN" FillColor="Transparent" Font="Segoe UI;20.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OPEN_CMD"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Green" ColorWhenTrue="Transparent"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OPEN_CMD"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CLOSE_CMD"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="70" X="5" Y="155" Text="EXIT" FillColor="Transparent" Font="Segoe UI;20.0;B;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="70" X="5" Y="80" Text="SHUT" FillColor="Transparent" Font="Segoe UI;20.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CLOSE_CMD"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Green" ColorWhenTrue="Transparent"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CLOSE_CMD"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="OPEN_CMD"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

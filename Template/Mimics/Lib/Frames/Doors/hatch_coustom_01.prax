@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="130" Height="65" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Polyline LineColor="TextInfo" FillColor="AlarmRed">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="0;5"/>
+				<Point Coord="0;54"/>
+				<Point Coord="15;60"/>
+				<Point Coord="24;60"/>
+				<Point Coord="24;64"/>
+				<Point Coord="46;64"/>
+				<Point Coord="46;59"/>
+				<Point Coord="83;59"/>
+				<Point Coord="83;64"/>
+				<Point Coord="106;64"/>
+				<Point Coord="106;59"/>
+				<Point Coord="117;59"/>
+				<Point Coord="129;52"/>
+				<Point Coord="129;6"/>
+				<Point Coord="117;-1"/>
+				<Point Coord="13;-1"/>
+				<Point Coord="0;5"/>
+			</Points>
+		</Polyline>
+		<Polyline LineColor="TextInfo" FillColor="Green">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="IndicatorOrange" DefaultValue="Green">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="0;5"/>
+				<Point Coord="0;54"/>
+				<Point Coord="15;60"/>
+				<Point Coord="24;60"/>
+				<Point Coord="24;64"/>
+				<Point Coord="46;64"/>
+				<Point Coord="46;59"/>
+				<Point Coord="83;59"/>
+				<Point Coord="83;64"/>
+				<Point Coord="106;64"/>
+				<Point Coord="106;59"/>
+				<Point Coord="117;59"/>
+				<Point Coord="129;52"/>
+				<Point Coord="129;6"/>
+				<Point Coord="117;-1"/>
+				<Point Coord="13;-1"/>
+				<Point Coord="0;5"/>
+			</Points>
+		</Polyline>
+		<Button Width="130" Height="65" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<ClickActions>
+				<OpenFrameUserAction YOffset="46">
+					<Frame>
+						<FloatingFrame Width="540" Height="75" X="-205" Y="41" AL_ChannelNr="0" Path="..\Safety\Alarm_Indicator_Popup.prax">
+							<Bindings>
+								<FrameBinding TargetPropertyName="AL_ChannelNr" ExportedPropertyName="Open_Ch"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

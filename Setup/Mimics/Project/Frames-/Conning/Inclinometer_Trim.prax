@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="645" Height="425" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="80" Y="50" DialColor="ConningBackground" IndicatorLinesColor="ActiveText" Path="..\Gauges\Frame_Half_GAUGE_points.prax" FullDial="False">
+			<Bindings>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+				<FrameBinding TargetPropertyName="IndicatorLinesColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="40" Height="25" X="590" Y="287" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="ActiveText" Font="Saira;36.0;N;N;N" Text="90">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Polyline LineColor="Background" FillColor="Background">
+			<Points>
+				<Point Coord="585;570"/>
+				<Point Coord="85;570"/>
+				<Point Coord="210;435"/>
+				<Point Coord="445;435"/>
+			</Points>
+		</Polyline>
+		<Ellipse BorderWidth="3" BorderColor="Background" BorderStyle="Raised" LinePosition="Outside" CenterX="330" CenterY="300" RadiusX="180" RadiusY="180" ArcBegin="540" ArcEnd="720" ArcLength="180"/>
+		<TextBox Width="500" Height="39" X="80" Y="385" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;90.0;N;N;N" Text="9999">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<FilteredValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+									</Bindings>
+								</ChannelNrDecimalsBinding>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</FilteredValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="500" Height="25" X="80" Y="450" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Saira;36.0;N;N;N" Text="Trim °">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Units"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="310" Y="9.99999" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Saira;36.0;N;N;N" Text="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="30" Y="288" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="ActiveText" Font="Saira;36.0;N;N;N" Text="-90">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Panel X="279" Y="250" GridSpacing="1" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CH_Value_Angle"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+			<Children>
+				<Line Visible="False" X0="1" Y0="0" X1="100" Y1="100"/>
+				<Line Visible="False" X0="100" Y0="0" X1="1" Y1="100"/>
+				<Line Width="5" Color="AlarmRed" X0="51" Y0="-175" X1="51" Y1="-135"/>
+				<Frame Width="150" Height="150" X="-24" Y="-66" Path=".\Frame_Inclinometer_vessel_side.prax"/>
+			</Children>
+		</Panel>
+		<TextBox Width="85" Height="25" X="495" Y="345" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Saira;36.0;N;N;N" Text="FWD"/>
+		<TextBox Width="85" Height="25" X="80" Y="345" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Saira;36.0;N;N;N" Text="AFT"/>
+	</Children>
+</RootElement>

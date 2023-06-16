@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement FlashState="Flashing" Flash="True" Width="1045" Height="700" PermissionLevelRequested="2" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Panel Width="1045" Height="700" GridSpacing="2" BorderWidth="0" BorderStyle="Flat" BorderColor="BackgroundShadow" FillColor="BackgroundConning" CornerRoundRadius="10"/>
+		<Panel Width="710" Height="510" X="330" Y="5" GridSpacing="2" BorderWidth="0" BorderStyle="Flat" BorderColor="Foreground" FillColor="BackgroundListLine01" CornerRoundRadius="10">
+			<Children>
+				<Frame Width="486" Height="45" X="36" Y="82" CABINPANELNR="0" Path=".\EAS\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="45" X="36" Y="130" CABINPANELNR="1" Path=".\EAS\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="45" X="36" Y="178" CABINPANELNR="2" Path=".\EAS\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="45" X="36" Y="226" CABINPANELNR="3" Path=".\EAS\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="45" X="36" Y="274" CABINPANELNR="4" Path=".\EAS\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="45" X="36" Y="322" CABINPANELNR="5" Path=".\EAS\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="45" X="36" Y="370" CABINPANELNR="6" Path=".\EAS\Frame EAS Select Cabin.prax"/>
+				<Frame Width="486" Height="45" X="36" Y="418" CABINPANELNR="7" Path=".\EAS\Frame EAS Select Cabin.prax"/>
+				<Frame Width="135" Height="45" X="542" Y="82" TextColor="TextInfoHeader" Path=".\EAS\Frame EAS Button Cabin CallAll.prax"/>
+				<TextBox Width="692" Height="32" X="2" Y="12" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" VertAlignment="Bottom" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="DUTY SELECTION"/>
+			</Children>
+		</Panel>
+		<Panel Width="1035" Height="170" X="5" Y="525" GridSpacing="2" BorderWidth="0" BorderStyle="Flat" BorderColor="Foreground" FillColor="BackgroundListLine01" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="1032" Height="30" X="2" Y="18" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" VertAlignment="Bottom" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="PATROL TIMER STATUS">
+					<Bindings>
+						<PatrolTimerStatusBinding TargetPropertyName="TextColor">
+							<ConvertParams>
+								<PatrolTimerStatusToColorConvertParams ColorWhenRunning="Barfill01"/>
+							</ConvertParams>
+						</PatrolTimerStatusBinding>
+						<PatrolTimerStatusBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<PatrolTimerStatusToTextConvertParams TextWhenOff="PATROL TIMER: OFF" TextWhenAlarmPD="PATROL TIMER: ALARM">
+									<Bindings>
+										<PatrolTimerValueBinding TargetPropertyName="TextWhenWarning">
+											<ConvertParams>
+												<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" mm:ss WARNING" ConversionFormat="mm:ss"/>
+											</ConvertParams>
+										</PatrolTimerValueBinding>
+										<PatrolTimerValueBinding TargetPropertyName="TextWhenRunning">
+											<ConvertParams>
+												<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" MIN. RUNNING" ConversionFormat="mm"/>
+											</ConvertParams>
+										</PatrolTimerValueBinding>
+									</Bindings>
+								</PatrolTimerStatusToTextConvertParams>
+							</ConvertParams>
+						</PatrolTimerStatusBinding>
+					</Bindings>
+				</TextBox>
+				<FillBar Width="990" Height="20" X="24" Y="64" FillDirection="RightToLeft" RangeEnd="30" LimitType="OnlyLow" FirstLimit="3" SecondLimit="3" NormalColor="Barfill01" LimitLowColor="AlarmSetpoint" LimitHighColor="AlarmSetpoint" CornerRoundRadius="0">
+					<Bindings>
+						<PatrolTimerValueBinding TargetPropertyName="RangeEnd" TimerValueType="MaxValue"/>
+						<PatrolTimerValueBinding TargetPropertyName="FirstLimit" TimerValueType="WarningLimit"/>
+						<PatrolTimerValueBinding TargetPropertyName="Value"/>
+					</Bindings>
+				</FillBar>
+				<Frame Width="240" Height="45" X="398" Y="102" Path=".\EAS\Frame EAS Button Reset GEA AndOr DeadMan.prax"/>
+			</Children>
+		</Panel>
+		<Panel Width="315" Height="510" X="5" Y="5" GridSpacing="2" BorderWidth="0" BorderStyle="Flat" BorderColor="Foreground" FillColor="BackgroundListLine01" CornerRoundRadius="10">
+			<Children>
+				<Frame Width="240" Height="45" X="36" Y="82" Path=".\EAS\Frame EAS Button Attended.prax"/>
+				<Frame Width="240" Height="45" X="36" Y="130" Path=".\EAS\Frame EAS Button Unattended.prax"/>
+				<Frame Width="240" Height="45" X="36" Y="178" Path=".\EAS\Frame EAS Button AlongSide.prax"/>
+				<Frame Width="240" Height="45" X="36" Y="226" Path=".\EAS\Frame EAS Button Sailing.prax"/>
+				<TextBox Width="310" Height="32" X="2" Y="16" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" VertAlignment="Bottom" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="ATTENDANCE MODE"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

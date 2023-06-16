@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Panel Width="615" Height="290" X="195" Y="150" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="40" Height="20" X="60" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="1"/>
+				<TextBox Width="40" Height="20" X="110" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="2"/>
+				<TextBox Width="40" Height="20" X="160" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="3"/>
+				<TextBox Width="40" Height="20" X="210" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="4"/>
+				<TextBox Width="40" Height="20" X="260" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="5"/>
+				<TextBox Width="40" Height="20" X="310" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="6"/>
+				<TextBox Width="40" Height="20" X="360" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="7"/>
+				<TextBox Width="40" Height="20" X="410" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="8"/>
+				<TextBox Width="40" Height="20" X="460" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="9"/>
+				<TextBox Width="40" Height="20" X="510" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="10"/>
+				<TextBox Width="40" Height="20" X="10" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="0"/>
+				<Frame Width="30" Height="200" X="65" Y="80" ValueCh="21752" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" SecondHighLimit="115" RangeEnd="150" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="15" Y="80" ValueCh="21751" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" SecondHighLimit="115" RangeEnd="150" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="115" Y="80" ValueCh="21753" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" FirstHighLimit="105" SecondHighLimit="115" RangeEnd="150"/>
+				<Frame Width="30" Height="200" X="165" Y="80" ValueCh="21754" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" SecondHighLimit="115" FirstHighLimit="105" RangeEnd="150"/>
+				<Frame Width="30" Height="200" X="215" Y="80" ValueCh="21755" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" FirstHighLimit="105" RangeEnd="150" SecondHighLimit="115"/>
+				<Frame Width="30" Height="200" X="265" Y="80" ValueCh="21756" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" SecondHighLimit="115" RangeEnd="150" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="315" Y="80" ValueCh="21757" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" SecondHighLimit="115" FirstHighLimit="105" RangeEnd="150"/>
+				<Frame Width="30" Height="200" X="365" Y="80" ValueCh="21758" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" RangeEnd="150" FirstHighLimit="105" SecondHighLimit="115"/>
+				<Frame Width="30" Height="200" X="415" Y="80" ValueCh="21759" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" SecondHighLimit="115" RangeEnd="150" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="465" Y="80" ValueCh="21760" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" RangeEnd="150" SecondHighLimit="115" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="515" Y="80" ValueCh="21761" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" RangeEnd="150" FirstHighLimit="105" SecondHighLimit="115"/>
+				<TextBox Width="275" Height="30" X="10" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Bearing Temperatures Engine 3"/>
+				<Line Color="TextInfoHeader" X0="10" Y0="40" X1="285" Y1="40"/>
+				<TextBox Width="20" Height="20" X="550" Y="50" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="H">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="21861">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="20" X="575" Y="50" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="HH">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="21862">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="50" Height="30" X="550" Y="70" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="150 °C"/>
+				<TextBox Width="50" Height="30" X="550" Y="235" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="0"/>
+			</Children>
+		</Panel>
+		<Panel Width="615" Height="290" X="1110" Y="150" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="40" Height="20" X="60" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="1"/>
+				<TextBox Width="40" Height="20" X="110" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="2"/>
+				<TextBox Width="40" Height="20" X="160" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="3"/>
+				<TextBox Width="40" Height="20" X="210" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="4"/>
+				<TextBox Width="40" Height="20" X="260" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="5"/>
+				<TextBox Width="40" Height="20" X="310" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="6"/>
+				<TextBox Width="40" Height="20" X="360" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="7"/>
+				<TextBox Width="40" Height="20" X="410" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="8"/>
+				<TextBox Width="40" Height="20" X="460" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="9"/>
+				<TextBox Width="40" Height="20" X="510" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="10"/>
+				<TextBox Width="40" Height="20" X="10" Y="50" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="0"/>
+				<Frame Width="30" Height="200" X="65" Y="80" ValueCh="22752" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" RangeEnd="150" SecondHighLimit="115" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="15" Y="80" ValueCh="22751" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" SecondHighLimit="115" RangeEnd="150" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="115" Y="80" ValueCh="22753" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" SecondHighLimit="115" FirstHighLimit="105" RangeEnd="150"/>
+				<Frame Width="30" Height="200" X="165" Y="80" ValueCh="22754" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" RangeEnd="150" SecondHighLimit="115" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="215" Y="80" ValueCh="22755" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" RangeEnd="150" SecondHighLimit="115" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="265" Y="80" ValueCh="22756" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" SecondHighLimit="115" RangeEnd="150" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="315" Y="80" ValueCh="22757" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" FirstHighLimit="105" SecondHighLimit="115" RangeEnd="150"/>
+				<Frame Width="30" Height="200" X="365" Y="80" ValueCh="22758" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" FirstHighLimit="105" SecondHighLimit="115" RangeEnd="150"/>
+				<Frame Width="30" Height="200" X="415" Y="80" ValueCh="22759" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" RangeEnd="150" SecondHighLimit="115" FirstHighLimit="105"/>
+				<Frame Width="30" Height="200" X="465" Y="80" ValueCh="22760" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" RangeEnd="150" FirstHighLimit="105" SecondHighLimit="115"/>
+				<Frame Width="30" Height="200" X="515" Y="80" ValueCh="22761" Value="0" Path=".\Frames\Frames_Misc\Frame_Tempbar_HHL.prax" FirstHighLimit="105" RangeEnd="150" SecondHighLimit="115"/>
+				<TextBox Width="275" Height="30" X="10" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Bearing Temperatures Engine 4"/>
+				<Line Color="TextInfoHeader" X0="10" Y0="40" X1="285" Y1="40"/>
+				<TextBox Width="20" Height="20" X="550" Y="50" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="H">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="22861">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="30" Height="20" X="575" Y="50" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="HH">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="22862">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="50" Height="30" X="550" Y="70" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="150 °C"/>
+				<TextBox Width="50" Height="30" X="550" Y="235" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="0"/>
+			</Children>
+		</Panel>
+		<Frame Width="830" Height="380" X="80" Y="575" DurationShown="600" DurationStored="6000" Trend_Range_Low="0" Trend_Range_High="150" Trend_LineWith="1" Channel1="21751" Title1="1" Channel2="21752" Title2="2" Channel3="21753" Title3="3" Channel4="21754" Title4="4" Channel5="21755" Title5="5" Channel6="21757" Title6="6" Channel7="21758" Title7="7" Channel8="21759" Title8="8" Channel9="21760" Title9="9" Channel10="21761" Title10="10" Path=".\Frames\Frame_Trend\Frame_Trend_10x.prax"/>
+		<Frame Width="830" Height="380" X="1000" Y="575" DurationShown="600" DurationStored="6000" Trend_Range_Low="0" Trend_Range_High="150" Trend_LineWith="1" Channel1="22751" Title1="1" Channel2="22752" Title2="2" Channel3="22753" Title3="3" Channel4="22754" Title4="4" Channel5="22755" Title5="5" Channel6="22756" Title6="6" Channel7="22757" Title7="7" Channel8="22758" Title8="8" Channel9="12759" Title9="9" Channel10="22760" Title10="10" Path=".\Frames\Frame_Trend\Frame_Trend_10x.prax"/>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+	</Children>
+</RootElement>

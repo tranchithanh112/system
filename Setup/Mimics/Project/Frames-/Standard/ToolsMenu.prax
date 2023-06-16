@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="260" Height="690" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="260" Height="690" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="DarkShadow" FillColor="MenuBackground" CornerRoundRadius="10">
+			<Children>
+				<Button Width="240" Height="45" X="10" Y="485" ClipToBounds="True" Text="VIRTUAL KEYBOARD" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<ExecuteShellCommandUserAction File="StartOSK64.exe" Parameters="" WorkingDir="D:\Software\System\BIN"/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="535" ClipToBounds="True" Text="PRINT SCREEN" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<ClickActions>
+						<TakeSnapshotClickAction CustomDir="D:\Software\System\Data\SNAPSHOTS"/>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="300" ClipToBounds="True" Text="DAY" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<ClickActions>
+						<SetDimmingThemeClickAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="635" ClipToBounds="True" Text="EXIT CAMCLIENT" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="Exit CAMClient"/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="350" ClipToBounds="True" Text="NIGHT" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<ClickActions>
+						<SetDimmingThemeClickAction Theme="NightTheme"/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="160" Height="30" X="10" Y="15" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Praxis;20.0;N;N;N" Text="STATION ID:"/>
+				<TextBox Width="150" Height="30" X="10" Y="45" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="IndicatorOrange" Font="Praxis;22.0;N;N;N" Text="STATION ID">
+					<Bindings>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SERVER 1" SelectedValue1="SERVER 2" SelectedValue2="CLIENT 1" SelectedValue3="CLIENT 2" SelectedValue4="CLIENT 3">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="101">
+									<Bindings>
+										<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+									</Bindings>
+								</ValueCompareBinding>
+								<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="102">
+									<Bindings>
+										<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+									</Bindings>
+								</ValueCompareBinding>
+								<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="111">
+									<Bindings>
+										<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+									</Bindings>
+								</ValueCompareBinding>
+								<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="112">
+									<Bindings>
+										<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+									</Bindings>
+								</ValueCompareBinding>
+								<ValueCompareBinding TargetPropertyName="ConditionValue4" SecondValue="113" CompareTolerance="0.1">
+									<Bindings>
+										<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="160" Height="30" X="10" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="ActiveText" Font="Praxis;22.0;N;N;N" Text="SERVER 1">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="ActiveText" DefaultValue="InactiveGrey">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0" ChannelNumber="100001"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue6="SERVER 2" SelectedValue7="SERVER 1" DefaultValue="---">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7" ChannelNumber="100001"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6" ChannelNumber="100003"/>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="160" Height="30" X="10" Y="85" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Praxis;20.0;N;N;N" Text="ACTIVE SERVER:"/>
+				<TextBox Visible="False" Width="160" Height="30" X="10" Y="145" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="ActiveText" Font="Praxis;22.0;N;N;N" Text="SERVER 2"/>
+				<Line Color="DarkShadow" X0="0" Y0="190" X1="260" Y1="190"/>
+				<Line Color="DarkShadow" X0="0" Y0="245" X1="260" Y1="245"/>
+				<Line Color="DarkShadow" X0="0" Y0="625" X1="260" Y1="625"/>
+				<TextBox Width="160" Height="30" X="10" Y="270" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Praxis;20.0;N;N;N" Text="THEME:"/>
+				<Line Color="DarkShadow" X0="0" Y0="470" X1="260" Y1="470"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

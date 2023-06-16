@@ -1,0 +1,1368 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="XP45">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <SUBJECT><![CDATA[]]></SUBJECT>
+      <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+      <CREATED year="2010" month="11" day="2" hour="17" minutes="30" seconds="32" milisec="115" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="000002B9" />
+      <II value="00000038" />
+      <PAL1131G used="1" />
+      <LC year="2021" month="9" day="29" hour="14" minutes="34" seconds="23" milisec="103" />
+      <LCF>
+        <ABSOLUTE>D:\Software\System\PAL1131\VM\VM-Praxis-TFT57.xml</ABSOLUTE>
+        <APPVARS>VM\VM-Praxis-TFT57.xml</APPVARS>
+        <ENVVARS>VM\VM-Praxis-TFT57.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.0</CREATOR>
+      <LASTSAVEDWITH>1.2.5.8
+</LASTSAVEDWITH>
+      <HCPFlags enabled="0" />
+      <OverrideDefaultPaths enabled="0" />
+      <COMPILER>
+        <DEFINE><![CDATA[]]></DEFINE>
+        <UNDEF><![CDATA[]]></UNDEF>
+      </COMPILER>
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="IEC 61131-3.lcp">
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="27" milisec="810" />
+        <APPVARS>Libraries\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>Libraries\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+      <PKG name="Praxis_FUNC" version="131072" filename="Praxis_FUNC.lcp">
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="28" milisec="87" />
+        <APPVARS>Libraries\Praxis_FUNC.lcp</APPVARS>
+        <ENVVARS>Libraries\Praxis_FUNC.lcp</ENVVARS>
+        <IMP name="FINT_TO_TIME" type="FUN" />
+        <IMP name="TIME_TO_FINT" type="FUN" />
+        <IMP name="FINT_TO_INT" type="FUN" />
+        <IMP name="INT_TO_FINT" type="FUN" />
+        <IMP name="DIV0" type="FUN" />
+        <IMP name="ABS_FINT" type="FUN" />
+        <IMP name="SQRT_FINT" type="FUN" />
+        <IMP name="HZ_TO_RPM" type="FUN" />
+        <IMP name="MAX_FINT" type="FUN" />
+        <IMP name="MIN_FINT" type="FUN" />
+        <IMP name="ANGLE180" type="FUN" />
+        <IMP name="ANGLE360" type="FUN" />
+        <IMP name="ATAN2" type="FUN" />
+        <IMP name="DEG_TO_RAD" type="FUN" />
+        <IMP name="RAD_TO_DEG" type="FUN" />
+        <IMP name="SET_BIT" type="FUN" />
+        <IMP name="GET_BIT" type="FUN" />
+        <IMP name="RESET_BIT" type="FUN" />
+      </PKG>
+      <PKG name="PRAXIS_HW" version="131072" filename="Praxis_HW.lcp">
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="28" milisec="18" />
+        <APPVARS>Libraries\Praxis_HW.lcp</APPVARS>
+        <ENVVARS>Libraries\Praxis_HW.lcp</ENVVARS>
+        <IMP name="HW_LOAD" type="FBLK" />
+        <IMP name="HW_XP" type="FBLK" />
+        <IMP name="HW_TIMING" type="FBLK" />
+        <IMP name="HW_VERSIONS" type="FBLK" />
+        <IMP name="HW_SCROLL_UP" type="FBLK" />
+        <IMP name="HW_SCROLL_DOWN" type="FBLK" />
+        <IMP name="HW_ACCEPT" type="FBLK" />
+        <IMP name="HW_BUTTON_ID" type="FBLK" />
+        <IMP name="HW_TOUCH_GET_THR" type="FBLK" />
+        <IMP name="HW_TOUCH_SET_THR" type="FBLK" />
+        <IMP name="HW_SET_ALT_LANG" type="FBLK" />
+        <IMP name="HW_GET_ALT_LANG" type="FBLK" />
+        <IMP name="HW_GET_ALARM_PULSE_ON_NEXT" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_ALM" type="FBLK" />
+        <IMP name="HW_SET_TFT_PAGE" type="FBLK" />
+        <IMP name="HW_GET_TFT_PAGE" type="FBLK" />
+        <IMP name="HW_SET_TFT_FLASH" type="FBLK" />
+        <IMP name="HW_DETACH_ELVR" type="FBLK" />
+        <IMP name="HW_GETSTATUS_ELVR" type="FBLK" />
+        <IMP name="HW_GETSTATUS_IOW24" type="FBLK" />
+        <IMP name="HW_SPEED_ELVR" type="FBLK" />
+        <IMP name="HW_STEER_ELVR" type="FBLK" />
+        <IMP name="HW_MENU_PUBLIC_KEY" type="FBLK" />
+        <IMP name="HW_MENU_FIRST_PAGE" type="FBLK" />
+        <IMP name="HW_MENU_AFTER_LOGIN_PULSE" type="FBLK" />
+        <IMP name="HW_MENU_PW_CHANGE" type="FBLK" />
+        <IMP name="HW_GET_TFT_FLASH" type="FBLK" />
+        <IMP name="HW_SET_RD_ACTIVE" type="FBLK" />
+        <IMP name="HW_SET_WOODS_JIS" type="FBLK" />
+        <IMP name="RETAIN_TO_FACTORY" type="FBLK" />
+        <IMP name="FACTORY_TO_RETAIN" type="FBLK" />
+        <IMP name="HW_GET_ALARM_PULSE_ON_NEXT_V02" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_V02" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_ALM_V02" type="FBLK" />
+        <IMP name="HW_SET_TFT_ALM_SUM_DAY_WEEK_MON" type="FBLK" />
+        <IMP name="SET_ORIENTATION" type="FBLK" />
+        <IMP name="HW_SET_RD_COMPORT" type="FBLK" />
+        <IMP name="LONG_FOLLOWUP" type="FBLK" />
+        <IMP name="HW_MENU_TOUCH_FUNCTION" type="FBLK" />
+        <IMP name="HW_MENU_TOUCH_BUTTON_PRESS" type="FBLK" />
+        <IMP name="HW_GET_EAS_RESET_SIGNAL" type="FBLK" />
+        <IMP name="HW_SET_TFT_GROUP_NR_PAGE" type="FBLK" />
+        <IMP name="HW_ORD_PRN_SET_ON_OFF" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PERIODIC_PRINT" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PERIODIC_HOURS" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PRINT_STATUS" type="FBLK" />
+        <IMP name="HW_SHOW_MENU_SET_DATE" type="FBLK" />
+        <IMP name="HW_SHOW_MENU_SET_TIME" type="FBLK" />
+        <IMP name="HW_FORCE_REDRAW_DISPLAY" type="FBLK" />
+        <IMP name="HW_ORD_PRN_GET_STATUS_INFO" type="FBLK" />
+        <IMP name="HW_TFT_EAS_SEND_STOP_HORN" type="FBLK" />
+        <IMP name="HW_TFT_EAS_SEND_ACK" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="ST" disabled="0" type="PRG" name="GLOB_VAR" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM GLOB_VAR
+VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!! APPLICATION NOTES !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ // ----------------------------------------------------------------------------
+ //
+ //
+ // ----------------------------------------------------------------------------
+ 
+ // -------------------------- APPLICATION REVISIONS --------------------------- 
+ // ----------------------------------------------------------------------------
+ // 
+ // USE FOLLOWING APPLICATION REVISION NUMBER TEMPLATE :                                
+ // *****   YYXXXS.SSX   *******    
+ // WHERE:  YYXXX       = PROJECT SPECIAL FOR PROJECT NPYY-XXX   
+ //              S.SS   = STANDARD EAS APPLICATION NUMBER        
+ //                  X  = SPECIAL                                
+ // ---------------------------------------------------------------------------- 
+ // REVISION :    1.004               
+ // DATE     :    2019-09-29   
+ // AUTHOR   :    DO                
+ // ADDED    :    - some minor issue
+ // UPDATED POU:  ALL  
+ // TESTED WITH:  Release: 2021-08-31 (6.0.1.18)  
+ //
+ // SOFTWARE NR VARIABLES ARE SET IN THE STARTUP CODE OF THE MAIN_SCREEN        
+ // ---------------------------------------------------------------------------- 
+ //
+ // ---------------------------------------------------------------------------- 
+ // REVISION :    1.003               
+ // DATE     :    2019-09-28   
+ // AUTHOR   :    TvS                 
+ // ADDED    :    - Config with a workable basic functionality
+ // UPDATED POU:  ALL  
+ // TESTED WITH:  Release: 2021-01-30 (6.0.1.15) Update 01  
+ //
+ // SOFTWARE NR VARIABLES ARE SET IN THE STARTUP CODE OF THE MAIN_SCREEN        
+ // ---------------------------------------------------------------------------- 
+
+ // ---------------------------------------------------------------------------- 
+ // REVISION :    1.002               
+ // DATE     :    2019, AUG-24     
+ // AUTHOR   :    JV/MH                 
+ // ADDED    :    - Initial Version
+ //               - Did some code clean up
+ //               - Add wh horn 2 + panel dimming
+ // UPDATED POU:  ALL  
+ // TESTED WITH:  Release: 2019-05-01 (6.0.1.9) Update 02  
+ //
+ // SOFTWARE NR VARIABLES ARE SET IN THE STARTUP CODE OF THE MAIN_SCREEN        
+ // ---------------------------------------------------------------------------- 
+ 
+VAR_GLOBAL
+
+  FLASH : BOOL;
+
+  FRAME_NR_WATCHTIMER        : INT:= 0;
+  FRAME_NR_TIMER_ON          : INT:= 0;
+  FRAME_TOP_BAR              : INT:= 0;
+
+  INPUT_RESET                : BOOL;                                                           // COMMENT
+  INPUT_EMERGENCY            : BOOL;
+  INPUT_AUTOPILOT            : BOOL; 
+  INPUT_ECDIS                : BOOL; 
+  PAGE                       : INT:=0;
+  EMERGENCY_CALL_INTERNAL    : BOOL;
+  DIMMING_LEVEL              : INT;
+ 
+  //TFT panel buttons
+  OP_MAIN_BUTTON_HOME       : BOOL;
+  OP_MAIN_BUTTON_RESET      : BOOL;
+  OP_MAIN_BUTTON_EM_CALL    : BOOL;
+  OP_MENU_BUTTON_MENU       : BOOL;
+  OP_DIM_UP_BUTTON          : BOOL;
+  OP_DIM_DOWN_BUTTON        : BOOL;
+  SWAP_RESET_COLOR          : BOOL;
+  SWAP_EM_CALL_COLOR        : INT := 0;
+  SWAP_EM_CALL_COLOR2       : INT := 0;
+  SWAP_WATCH_AUTO_MODE      : INT := 4;
+  
+  SWAP_WATCH_ON_BUTTON      : INT;
+  OP_WATCH_ON_BUTTON        : BOOL;
+  OP_WATCH_AUTO_ON_BUTTON   : BOOL;
+  OP_WATCH_STANDBY_BUTTON   : BOOL;
+  OP_WATCH_OFF_BUTTON       : BOOL;
+  
+  SWAP_OFFICER_BUTTON       : INT;
+  OP_OFFICER_1_ON_CALL      : BOOL;
+  OP_OFFICER_2_ON_CALL      : BOOL;
+  OP_OFFICER_3_ON_CALL      : BOOL;
+  OP_OFFICER_4_ON_CALL      : BOOL;
+  
+  OP_PASSWORD_BUTTON        : BOOL;
+  OP_SET_TIMER_MINUS_BUTTON : BOOL;
+  OP_SET_TIMER_PLUS_BUTTON  : BOOL;
+    
+  OPERATOR_LVL               : INT;
+  
+  OP_TIMER_M                : FINT;
+  OP_TIMER_S10              : FINT;
+  OP_TIMER_S1               : FINT;
+  OP_TIMER_BAR              : FINT;
+  
+  OP_VISUAL_ALARM           : INT := 0;
+  SELECT_WATCHTIMER_PERIOD  : FINT; 
+     
+     // Page Numbers 
+  MAIN_PAGE_NR  : INT := 0;
+  ALARM_PAGE_NR : INT := 1;
+  LOGIN_PAGE_NR : INT := 2;
+ 
+  // Numpad Login 
+  TB_0   : BOOL := FALSE;
+  TB_1   : BOOL := FALSE;
+  TB_2   : BOOL := FALSE;
+  TB_3   : BOOL := FALSE;
+  TB_4   : BOOL := FALSE;
+  TB_5   : BOOL := FALSE;
+  TB_6   : BOOL := FALSE;
+  TB_7   : BOOL := FALSE;
+  TB_8   : BOOL := FALSE;
+  TB_9   : BOOL := FALSE;
+  TB_DOT : BOOL := FALSE;
+  TB_DEL : BOOL := FALSE;
+  TB_MIN : BOOL := FALSE; 
+  
+  START_LOGIN_LEVEL_0 : BOOL; //TODO
+  START_LOGIN_LEVEL_1 : BOOL;
+  START_LOGIN_LEVEL_2 : BOOL; 
+  
+  ELEVATED_LOGIN_BUTTON : BOOL := FALSE;
+  
+  POWER_ON : BOOL := FALSE;
+  POWER_UP : BOOL := FALSE;
+  
+  G1131_ELEVATED_LOGIN_STATUS : INT := 0; // 0 = NOT ELEVATED, 1 = ELEVATED 
+  
+  
+  TOUCH_PANEL_RESET_STATE : INT:=0;
+  PASSWORD_LOCKED_STATE : INT:=0;  
+  TOUCH_BUTTON_1  : BOOL := FALSE;
+  TOUCH_BUTTON_2  : BOOL := FALSE;
+  TOUCH_BUTTON_3  : BOOL := FALSE;
+  TOUCH_BUTTON_4  : BOOL := FALSE;
+  TOUCH_BUTTON_5  : BOOL := FALSE;
+  TOUCH_BUTTON_6  : BOOL := FALSE;
+    
+END_VAR
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="INPUTS" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM INPUTS
+VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+VAR CONSTANT
+  LOGOUT_INTERVAL : TIME := T#30s;       
+END_VAR
+ 
+ 
+VAR
+  ELEVATED_LOGIN_BUTTON_TRIGGER : R_TRIG;
+  OP_MENU_BUTTON_MENU_TRIGGER : R_TRIG;
+  //G1131_ELEVATED_LOGIN_TIMER : TON;
+  LAST_USED_TIME  : TIME := T#0s;
+  DELTA_TIME      : TIME := T#0s;  
+  BUTTON_PRESS : BOOL;
+END_VAR
+
+  //G1131_ELEVATED_LOGIN_TIMER(IN:= G1131_ELEVATED_LOGIN_STATUS <> 0, PT:=T#60s);       
+  
+  //IF G1131_ELEVATED_LOGIN_TIMER.Q THEN         
+    //G1131_ELEVATED_LOGIN_STATUS := 0;
+  //END_IF  
+  
+  //IF ANY BUTTON IS PRESSED, WE RESET TIMER
+  BUTTON_PRESS:=FALSE;
+  
+  BUTTON_PRESS :=OR( OP_MAIN_BUTTON_HOME,     
+  OP_MENU_BUTTON_MENU,     
+  OP_DIM_UP_BUTTON,        
+  OP_DIM_DOWN_BUTTON,        
+  OP_WATCH_ON_BUTTON,      
+  OP_WATCH_AUTO_ON_BUTTON, 
+  OP_WATCH_STANDBY_BUTTON, 
+  OP_WATCH_OFF_BUTTON,       
+  OP_OFFICER_1_ON_CALL,    
+  OP_OFFICER_2_ON_CALL,    
+  OP_OFFICER_3_ON_CALL,    
+  OP_OFFICER_4_ON_CALL,      
+  OP_PASSWORD_BUTTON,
+  OP_SET_TIMER_MINUS_BUTTON,
+  OP_SET_TIMER_PLUS_BUTTON);      
+  
+  IF (G1131_ELEVATED_LOGIN_STATUS = 0) THEN         
+    G1131_ELEVATED_LOGIN_STATUS := BOOL_TO_INT(START_LOGIN_LEVEL_1);
+    IF START_LOGIN_LEVEL_1 THEN
+      LAST_USED_TIME := CUR_TIME();
+    END_IF
+  END_IF 
+       
+ // ----------------------------------------------------------------------------
+ // Device will logout, after 5 minutes of inactivity
+    
+  IF (G1131_ELEVATED_LOGIN_STATUS = 1) THEN     
+    IF (BUTTON_PRESS OR OP_MAIN_BUTTON_RESET) THEN    
+      LAST_USED_TIME := CUR_TIME();
+    END_IF    
+  END_IF
+  
+  DELTA_TIME := CUR_TIME() - LAST_USED_TIME;
+  IF (DELTA_TIME > LOGOUT_INTERVAL) THEN
+    G1131_ELEVATED_LOGIN_STATUS := 0;        
+  END_IF  
+  
+          
+  ELEVATED_LOGIN_BUTTON_TRIGGER(CLK := ELEVATED_LOGIN_BUTTON);
+  IF (ELEVATED_LOGIN_BUTTON_TRIGGER.Q) THEN
+    MENU_LEVEL0 := FALSE;
+    MENU_LEVEL1 := TRUE;  // ELEVATED
+    MENU_LEVEL2 := FALSE;
+    PAGE := 2;  
+  END_IF
+  
+  OP_MENU_BUTTON_MENU_TRIGGER(CLK := OP_MENU_BUTTON_MENU);        
+  IF (OP_MENU_BUTTON_MENU_TRIGGER.Q) THEN
+    MENU_LEVEL0 := FALSE;
+    MENU_LEVEL1 := FALSE;
+    MENU_LEVEL2 := TRUE; // CONFIG
+    PAGE := 2;
+  END_IF
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PAGE_MENUS" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM PAGE_MENUS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+   SHOWN     : BOOL;
+   MODE      : INT;
+   TBMODE    : INT;
+   BUT_ID    : HW_BUTTON_ID;
+   TRIGGER   : R_TRIG;
+   TBTRIGGER : R_TRIG;
+   
+   A1: INT ;
+   B1: INT ;
+   
+   GET_TFT_PAGE_2  : HW_GET_TFT_PAGE; //FOR TT
+   ISUBPAGE        : INT :=0;    //FOR TT    
+
+   ILEVEL0              : INT;
+   ILEVEL1              : INT;
+   ILEVEL2              : INT;    
+   GET_TFT_LOGIN_PULSE  : HW_MENU_AFTER_LOGIN_PULSE;     
+   SET_TB_PRESS         : HW_MENU_TOUCH_BUTTON_PRESS; 
+   
+   TEST_TRIG : R_TRIG;
+   SET_TFT_PAGE :   HW_SET_TFT_PAGE;
+
+ END_VAR
+
+ VAR_GLOBAL
+ 
+   BUT_ID_1        : BOOL;
+   BUT_ID_2        : BOOL;
+   BUT_ID_3        : BOOL;
+   BUT_ID_4        : BOOL;
+   BUT_ID_5        : BOOL;
+   BUT_ID_6        : BOOL;
+ 
+ END_VAR
+
+
+(******************************************************************************)
+ 
+GET_TFT_PAGE_2();
+ISUBPAGE := GET_TFT_PAGE_2.ISUB;
+
+SHOWN := PAGE_IN_MENU;  (* MENU PAGES ACTIVE *)
+
+MODE := 0;      // MENU FIRMWARE INTERFACE
+TBMODE := -1;
+
+IF SHOWN THEN  
+
+    IF TB_0 THEN
+      TBMODE := 0;
+    ELSIF TB_1 THEN
+      TBMODE := 1;
+    ELSIF TB_2 THEN
+      TBMODE := 2;
+    ELSIF TB_3 THEN
+      TBMODE := 3;
+    ELSIF TB_4 THEN
+      TBMODE := 4;
+    ELSIF TB_5 THEN
+      TBMODE := 5;
+    ELSIF TB_6 THEN
+      TBMODE := 6;
+    ELSIF TB_7 THEN
+      TBMODE := 7;
+    ELSIF TB_8 THEN
+      TBMODE := 8;
+    ELSIF TB_9 THEN
+      TBMODE := 9;
+    ELSIF TB_DOT THEN
+      TBMODE := 11;
+    ELSIF TB_DEL THEN
+      TBMODE := 12;
+    ELSIF TB_MIN THEN
+      TBMODE := 10;
+    END_IF   
+        
+  TBTRIGGER(CLK:= (TBMODE > -1));
+  IF TBTRIGGER.Q THEN
+    SET_TB_PRESS(IINPUT:=TBMODE);
+  END_IF 
+          
+  IF BUT_ID_1 THEN
+    MODE := 1;
+  ELSIF BUT_ID_2 THEN
+    MODE := 2;   
+  ELSIF BUT_ID_3 THEN
+    MODE := 3;     
+  ELSIF BUT_ID_4 THEN
+    MODE := 4;     
+  ELSIF BUT_ID_5 THEN
+    MODE := 5;     
+  ELSIF BUT_ID_6 THEN
+    MODE := 6;     
+  END_IF  
+ 
+  TRIGGER(CLK:= (MODE > 0));
+  IF TRIGGER.Q THEN
+    IF MODE = 5 AND MENU_LEVEL1 THEN
+        BUT_ID(IINPUT:=MODE);
+        SET_TFT_PAGE(iInput := 0); // Must be here because implemented in the BUT_ID function
+    ELSE
+        BUT_ID(IINPUT:=MODE);
+    END_IF
+  
+    //BUT_ID(IINPUT:=MODE);
+  END_IF 
+  
+  GET_TFT_LOGIN_PULSE(ILEVEL:=0);
+  IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+    START_LOGIN_LEVEL_0:=TRUE;
+    START_LOGIN_LEVEL_1:=FALSE;
+    START_LOGIN_LEVEL_2:=FALSE;  
+  END_IF
+  
+  GET_TFT_LOGIN_PULSE(ILEVEL:=1); 
+  IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+    START_LOGIN_LEVEL_0:=FALSE;
+    START_LOGIN_LEVEL_1:=TRUE;
+    START_LOGIN_LEVEL_2:=FALSE;
+  END_IF
+  
+  GET_TFT_LOGIN_PULSE(ILEVEL:=2); 
+  IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+    START_LOGIN_LEVEL_0:=FALSE;
+    START_LOGIN_LEVEL_1:=FALSE;
+    START_LOGIN_LEVEL_2:=TRUE;  
+  END_IF
+    
+  IF BUT_ID_2 THEN
+    IF PAGE = PAGE_NR_MENU+1 THEN    
+      PAGE_CHANGE_PW := TRUE;
+    END_IF
+  END_IF
+    
+  IF BUT_ID_5 OR BUT_ID_6 THEN  
+    IF PAGE = PAGE_NR_MENU OR PAGE = PAGE_NR_MENU+1 THEN  
+      PAGE_CHANGE_PW := FALSE;
+    END_IF
+  END_IF
+
+  //RETURN TO MAIN 
+  
+  IF BUT_ID_6 THEN  
+    IF PAGE = PAGE_NR_MENU+2 AND ISUBPAGE = 0 THEN  
+      PAGE := PAGE_NR_MENU;
+    END_IF
+  END_IF
+
+ELSE
+
+ START_LOGIN_LEVEL_0 := FALSE;
+ START_LOGIN_LEVEL_1 := FALSE;
+ START_LOGIN_LEVEL_2 := FALSE;
+END_IF
+  
+      
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PAGE_NAVIGATION" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM PAGE_NAVIGATION
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ CMD_TH_BUTTON_1        : R_TRIG;
+ CMD_TH_BUTTON_2        : R_TRIG;
+ CMD_TH_BUTTON_3        : R_TRIG;
+ CMD_TH_BUTTON_4        : R_TRIG;
+ CMD_TH_BUTTON_5        : R_TRIG;
+ CMD_TH_BUTTON_6        : R_TRIG;
+   TO_MAIN1 : BOOL ;
+   TO_ALM   : BOOL ; 
+   TO_MAIN_TOV : R_TRIG ;
+   
+   LAST_PAGE   : INT ;
+   OLD_PAGE    : INT ;
+   
+   TO_PREV : R_TRIG;
+
+   GET_TFT_PAGE         : HW_GET_TFT_PAGE;
+   SET_TFT_PAGE         : HW_SET_TFT_PAGE;                 
+   IRETURN              : INT;
+   RESET_PG_MENUS       : INT; 
+   SET_PUBLIC_KEY_TWO   : HW_MENU_PUBLIC_KEY;
+ END_VAR
+ 
+ VAR_GLOBAL
+ 
+   (* TFT PAGE NUMBERS AS CONFIGURED IN GRAPHIC EDITOR  => EDIT WHEN ADDING/SORTING/DELETING FRAMES IN PAL1131G  !!! *)
+   PAGE_NR_MAIN1      : INT := 0 ;     
+   PAGE_NR_ALARM      : INT := 1 ; // TODO:
+   PAGE_NR_MENU       : INT := 2 ;
+   
+
+   PAGE_IN_MENU       : BOOL := FALSE ;
+   PAGE_CHANGE_PK     : BOOL := FALSE ; 
+   PAGE_CHANGE_PW     : BOOL := FALSE ;  
+  
+    
+   PB_DUMMY           : BOOL ;
+   PB_PG_MAIN         : BOOL ;
+   PB_PG_SELECT       : BOOL ;    
+   PB_PG_ALARM        : BOOL ;              
+   PB_PG_MENU         : BOOL ;  
+   PB_PK_EXIT         : BOOL ;
+   PB_PG_PREVIOUS     : BOOL ;
+   PB_PG_PARAM0       : BOOL ;     
+   PB_PG_PARAM1       : BOOL ;    
+   PB_PG_PARAM2       : BOOL ; 
+   PB_PG_CHANGE_PK    : BOOL ;
+   PB_PG_DEPTH        : BOOL ;            
+   
+   PBSWAP_MENU_PG     : INT := 1 ;     
+   PBSWAP_PREV_PG     : INT := 1 ;         
+//PBSWAP FOR INDICATION   
+                   
+ END_VAR
+ 
+(* ########################################################################*)
+
+
+   CMD_TH_BUTTON_1(CLK:=TOUCH_BUTTON_1);
+   CMD_TH_BUTTON_2(CLK:=TOUCH_BUTTON_2);
+   CMD_TH_BUTTON_3(CLK:=TOUCH_BUTTON_3);
+   CMD_TH_BUTTON_4(CLK:=TOUCH_BUTTON_4);
+   CMD_TH_BUTTON_5(CLK:=TOUCH_BUTTON_5);
+   CMD_TH_BUTTON_6(CLK:=TOUCH_BUTTON_6);
+
+    // SELECT TFT PAGE
+    IRETURN := 0;
+    
+    GET_TFT_PAGE();
+    IRETURN := GET_TFT_PAGE.IRET;
+    
+    //RESET
+    IF PAGE >= PAGE_NR_MENU AND PAGE <= (PAGE_NR_MENU+2) THEN
+      RESET_PG_MENUS := RESET_PG_MENUS + 1;
+      IF RESET_PG_MENUS > 20 THEN
+        RESET_PG_MENUS := 20;       
+        IF IRETURN >= 0 AND IRETURN <= 1 THEN
+          PAGE := IRETURN;
+          RESET_PG_MENUS := 0;
+        END_IF 
+      END_IF
+    END_IF
+    
+    
+    IF IRETURN >= (PAGE_NR_MENU+1) AND IRETURN <= (PAGE_NR_MENU+2) THEN   
+      PAGE := IRETURN; 
+      IRETURN  := 1; //DO NOT CHANGE THE PAGE
+    ELSE
+      IRETURN := 0;
+    END_IF
+    
+    IF PAGE_CHANGE_PW THEN
+      IRETURN  := 1; //DO NOT CHANGE THE PAGE
+    END_IF
+    
+    IF IRETURN = 0 THEN  
+      SET_TFT_PAGE(IINPUT:=PAGE);
+    END_IF 
+    
+    
+    (* PAGE SELECTIONS *)
+    
+    IF PAGE<>OLD_PAGE THEN        // STORE PREVIOUS PAGE AT PAGE CHANGE
+      LAST_PAGE := OLD_PAGE ;
+      RESET_PG_MENUS := 0; //RESET 
+    END_IF
+    
+    OLD_PAGE := PAGE ;
+    TO_PREV(CLK:= PB_PG_PREVIOUS);
+    
+    IF TO_PREV.Q THEN       (* PREVIOUS PAGE *)
+      PAGE :=  LAST_PAGE ;
+    
+    ELSIF    PB_PG_MAIN OR TO_MAIN1 THEN    (* MAIN PAGE *)          
+      PAGE :=  PAGE_NR_MAIN1 ;
+     
+    ELSIF PB_PG_ALARM OR TO_ALM THEN    (* ALARM PAGE *) 
+      PAGE :=  PAGE_NR_ALARM ;
+      
+    ELSIF PB_PG_MENU AND (PBSWAP_MENU_PG>0)  THEN   // MENU PUBLIC KEY PAGE  
+      PAGE :=  PAGE_NR_MENU ;  
+    
+    ELSIF PAGE_CHANGE_PW THEN   //MENU CHANGE PWD     
+      PAGE :=  PAGE_NR_MENU ;
+    
+    ELSIF PB_PK_EXIT THEN
+      PAGE :=  PAGE_NR_MAIN1 ;
+    END_IF
+    
+    PAGE_IN_MENU := (PAGE >= PAGE_NR_MENU)  AND (PAGE <= PAGE_NR_MENU + 2); // MENUS
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="SYSTEM" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM SYSTEM
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+
+  FLASHING               : FLASHER ;  
+
+    START_UP             : R_TRIG;
+     
+    SET_PUBLIC_KEY       : HW_MENU_PUBLIC_KEY;
+    SET_TFT_FIRST        : HW_MENU_FIRST_PAGE;
+    SET_TFT_PW_CHANGE    : HW_MENU_PW_CHANGE;
+    SET_TFT_TB_MENUS     : HW_MENU_TOUCH_FUNCTION;
+    
+    DIMMING_INCR	     : R_TRIG;
+    DIMMING_DECR		 : R_TRIG;
+    DIMMING_STEP		 : INT;
+    MAX_DIMMING 		 : INT := 99;
+    DIM_UP_BUTTON_TON    : TON;
+    DIM_DOWN_BUTTON_TON  : TON;
+    DIM_PANEL            : BOOL;
+    DIM_INS              : BOOL;
+    OLD_DIM_PANEL_LEVEL  : FINT;
+  
+ END_VAR
+ 
+ VAR_GLOBAL
+    BUZZER_ON_PLS        : R_TRIG;
+    BUZZER_OFF_PLS       : R_TRIG;
+    
+ END_VAR
+ 
+// FLASHERS
+FLASHING( START:= TRUE , PULSE:= 1000, CYCLE:= 2000 , TSCAN:= 100, Q => FLASH ) ;    (* TAKE-OVER *)
+
+ // Power Up 
+ START_UP(CLK:= TRUE);
+ POWER_UP := START_UP.Q ;
+ 
+  DIM_INS             := (DIM_INS OR (OLD_DIM_PANEL_LEVEL <> PANEL_DIMMING_LEVEL)) AND NOT (PANEL_DIMMING_LEVEL = FINT#0) AND NOT DIMMING_INCR.Q AND NOT DIMMING_DECR.Q;
+  DIM_PANEL           := NOT DIM_INS;
+  OLD_DIM_PANEL_LEVEL := PANEL_DIMMING_LEVEL;
+
+ // Init power up cycle
+ // Login Menu's 
+ IF POWER_UP THEN           
+   MASTER_SW_VER  := FINT#1.004;
+   PROJECT_SW_VER := FINT#0.004;;      
+   SET_PUBLIC_KEY(IINPUT:=0);
+   SET_TFT_FIRST(IINPUT:=PAGE_NR_MENU);
+   SET_TFT_PW_CHANGE(IINPUT:=1);
+   SET_TFT_TB_MENUS(USE_TB_LOGIN:=TRUE,USE_TB_CHANGE_PWD:=TRUE,USE_TB_EDIT:=TRUE);
+ END_IF
+ 
+ DIMMING_INCR(CLK:= OP_DIM_UP_BUTTON OR TOUCH_BUTTON_3);
+ DIMMING_DECR(CLK:= OP_DIM_DOWN_BUTTON OR TOUCH_BUTTON_2);
+ 
+IF DIMMING_INCR.Q THEN
+   	IF TFT_DIM >= 95 THEN
+		DIMMING_STEP := 1;
+		
+	ELSIF TFT_DIM >= 90 THEN
+		DIMMING_STEP := 5;
+	ELSE
+		DIMMING_STEP := 10;
+	END_IF
+	
+	TFT_DIM := TFT_DIM + DIMMING_STEP;
+END_IF 
+	
+IF DIMMING_DECR.Q THEN
+	IF TFT_DIM > 95 THEN
+   		DIMMING_STEP := 1;
+	ELSIF TFT_DIM > 90 THEN 
+   		DIMMING_STEP := 5;
+   	ELSE 
+   		DIMMING_STEP := 10;
+   	END_IF
+
+	TFT_DIM := TFT_DIM - DIMMING_STEP;
+END_IF
+ 
+IF DIM_INS THEN TFT_DIM := PANEL_DIMMING_LEVEL; END_IF 
+
+IF TFT_DIM > MAX_DIMMING THEN
+	TFT_DIM := MAX_DIMMING;
+END_IF
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="FLASHER" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION_BLOCK FLASHER
+(***************************************************************************************************************
+flasher with settable pulse & duty cycle
+
+****************************************************************************************************************
+SOURCE:            PCS_LIB
+
+FUNCTION VERSION:  1
+UPDATE:            library version creation
+***************************************************************************************************************)
+
+VAR_INPUT                                                                                                                       
+   START : BOOL ;
+   PULSE : FINT ; // PULSE TIME [mSec] 
+   CYCLE : FINT ; // CYCLE TIME [mSec] 
+   TSCAN : FINT ; // PROGRAM LOOP TIME [mSec] 
+END_VAR
+VAR_OUTPUT
+   Q :    BOOL;
+
+END_VAR
+VAR
+ 
+  ET: FINT;
+  
+END_VAR  
+
+
+// ##############################################
+
+IF START THEN
+   ET := ET + TSCAN ;
+   IF ET>=CYCLE THEN
+      ET:= FINT#0;
+   END_IF
+   Q:=  ET<=PULSE ;   
+ELSE
+   ET:= FINT#0 ;
+END_IF
+
+   
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FUN" name="FINT_TO_SEC" editor="PAL1131.ST" virtualFolder=""><![CDATA[FUNCTION FINT_TO_SEC : TIME (*RET_TYPE*)
+
+ VAR_INPUT
+ IN : FINT;
+ END_VAR
+
+ FINT_TO_SEC := REAL_TO_TIME(FINT_TO_REAL(IN* FINT#1000));
+ 
+END_FUNCTION]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="BNWAS_IOM" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM BNWAS_IOM
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+   CURRENT_WATCH_TIMER_MIN       : FINT;
+   CURRENT_WATCH_TIMER_SEC       : FINT;  
+   SET_TIMER_MINUS_BUTTON_PLS    : R_TRIG;
+   SET_TIMER_PLUS_BUTTON_PLS     : R_TRIG;
+   
+   DELAY_TIMER_OFF1 	: TP;
+   DELAY_TIMER_OFF2     : TP;
+   DELAY_TIMER_OFF3 	: TP;
+   DELAY_TIMER_OFF4 	: TP;
+   DELAY_TIMER_BW		: TP;
+   
+   DELAY_TRIGGER_OFF1: R_TRIG;
+   DELAY_TRIGGER_OFF2: R_TRIG;
+   DELAY_TRIGGER_OFF3: R_TRIG;
+   DELAY_TRIGGER_OFF4: R_TRIG;
+   DELAY_TRIGGER_BW	 : R_TRIG;
+   
+   DELAY_TIMER_WATCH_ON	: TP;
+   DELAY_TIMER_WATCH_OFF: TP;
+   DELAY_TIMER_AUTO 	: TP;
+   DELAY_TIMER_STDBY 	: TP;
+   
+   DELAY_TRIGGER_WATCH_ON	: R_TRIG;
+   DELAY_TRIGGER_WATCH_OFF	: R_TRIG;
+   DELAY_TRIGGER_AUTO 		: R_TRIG;
+   DELAY_TRIGGER_STDBY 		: R_TRIG;
+   
+//   RESET_REQUEST	: BOOL;
+   RESET_TRIGGER	: R_TRIG;
+  P_H2                 : F_TRIG;
+  INIT_WATCH_TIMER: R_TRIG;
+  RST_WATCH_TIMER: TP;
+  T_EM_CALL_ACTIVE: F_TRIG;
+  P_EM_CALL_ACTIVE: TP;  
+  DUMMY : FINT; 
+  BUTTON_PRESSED : BOOL;
+ END_VAR
+  
+// HORN 2 OFF
+  P_H2(CLK:= WH_HORN2);  
+  // RESET NEEDED TO START NEW TIMER
+  INIT_WATCH_TIMER(CLK:= CURRENT_BNWAS_MODE<>4);
+  RST_WATCH_TIMER(IN:=INIT_WATCH_TIMER.Q, PT:=T#2s); 
+  
+  
+  //IF ANY BUTTON IS PRESSED, WE RESET TIMER
+  BUTTON_PRESSED:=FALSE;
+  
+  BUTTON_PRESSED :=OR( OP_MAIN_BUTTON_HOME,     
+  OP_MENU_BUTTON_MENU,     
+  OP_DIM_UP_BUTTON,        
+  OP_DIM_DOWN_BUTTON,        
+  OP_WATCH_ON_BUTTON,      
+  OP_WATCH_AUTO_ON_BUTTON, 
+  OP_WATCH_STANDBY_BUTTON, 
+  OP_WATCH_OFF_BUTTON,       
+  OP_OFFICER_1_ON_CALL,    
+  OP_OFFICER_2_ON_CALL,    
+  OP_OFFICER_3_ON_CALL,    
+  OP_OFFICER_4_ON_CALL,      
+  OP_PASSWORD_BUTTON);      
+  
+  
+    
+  RESET_TRIGGER (CLK:= OP_MAIN_BUTTON_RESET OR P_H2.Q OR TOUCH_BUTTON_4 OR BUTTON_PRESSED);
+  
+  // EMCY CALL IS MODE 5 - IGNORE FOR TFT IND.
+  IF CURRENT_BNWAS_MODE=FINT#5 THEN
+    SWAP_WATCH_ON_BUTTON := FINT_TO_INT(IOM_SELECT_BNWAS_MODE);                 // USE SELECTED WITH EM'CY ACTIVE 
+  ELSE  
+  SWAP_WATCH_ON_BUTTON := FINT_TO_INT(CURRENT_BNWAS_MODE);
+  END_IF  
+
+  // RESET MODE AFTER EM'CY CALL
+  T_EM_CALL_ACTIVE(CLK:= EM_CALL_ACTIVE);
+  P_EM_CALL_ACTIVE(IN:= T_EM_CALL_ACTIVE.Q, PT:=T#800ms); 
+  
+  // REMEMBER
+  IF T_EM_CALL_ACTIVE.Q THEN DUMMY := IOM_SELECT_BNWAS_MODE; END_IF
+  
+  IF (P_EM_CALL_ACTIVE.ET > T#1ms) AND(P_EM_CALL_ACTIVE.ET < T#400ms)  THEN
+     IOM_SELECT_BNWAS_MODE := FINT#0;                           // RESET AFTER EM'CY ACTIVE 
+  ELSIF (P_EM_CALL_ACTIVE.ET > T#250ms) AND(P_EM_CALL_ACTIVE.ET < T#800ms) THEN
+     IOM_SELECT_BNWAS_MODE := DUMMY;                            // USE SELECTED AFTER EM'CY ACTIVE 
+  END_IF
+  
+  SWAP_OFFICER_BUTTON := FINT_TO_INT(CURRENT_ON_CALL_OFFICER);
+  //SELECT_BNWAS_MODE := CURRENT_BNWAS_MODE;
+
+  IF IOM_BNWAS_MISSING THEN
+    FRAME_TOP_BAR := 7;
+(* ALARM HANDLING *)  
+  ELSIF EM_CALL_ACTIVE THEN
+    FRAME_TOP_BAR := 3;
+    SWAP_EM_CALL_COLOR := 1;
+    SWAP_EM_CALL_COLOR2 := BOOL_TO_INT(FLASH);
+    OP_VISUAL_ALARM := 2; //BOOL_TO_INT(FLASH);
+    FRAME_NR_TIMER_ON  := 0;          
+  ELSIF CREW_ALARM THEN
+    FRAME_TOP_BAR := 5;
+  ELSIF OFFICER_ALARM THEN
+    FRAME_TOP_BAR := 4;
+  ELSIF BRIDGE_ALARM THEN
+    FRAME_TOP_BAR := 2;    
+  ELSIF VISUAL_ALARM THEN 
+    OP_VISUAL_ALARM := BOOL_TO_INT(FLASH);
+    FRAME_TOP_BAR := 1;
+    FRAME_NR_TIMER_ON  := 0; 
+  ELSE
+    OP_VISUAL_ALARM := 0;
+    IF MAIN_SUPPLY_FAULT OR BACKUP_SUPPLY_FAULT THEN
+        FRAME_TOP_BAR := 6;
+    ELSE
+        FRAME_TOP_BAR := 0;
+    END_IF
+    SWAP_EM_CALL_COLOR := 0;
+    SWAP_EM_CALL_COLOR2 := 0;
+(* NORMAL HANDLING *)
+    IF IOM_SELECT_BNWAS_MODE = 1 OR IOM_SELECT_BNWAS_MODE = 2 OR IOM_SELECT_BNWAS_MODE = 3  THEN
+      FRAME_NR_TIMER_ON  := 2;
+    ELSE        
+      FRAME_NR_TIMER_ON  := 0;    
+    END_IF               
+  END_IF  
+  
+  //ETHERNET PORT A+B ALARM  
+  IF FRAME_TOP_BAR = 0 THEN
+    IF ETH_A_FAIL_ALARM THEN
+      FRAME_TOP_BAR := 8;    
+    ELSIF ETH_B_FAIL_ALARM THEN
+      FRAME_TOP_BAR := 9;
+    END_IF        
+  END_IF 
+       
+  CURRENT_WATCH_TIMER_MIN := INT_TO_FINT(FINT_TO_INT(CURRENT_WATCH_TIMER/60)); 
+  OP_TIMER_M   := CURRENT_WATCH_TIMER_MIN;  
+  CURRENT_WATCH_TIMER_SEC := CURRENT_WATCH_TIMER - (OP_TIMER_M * FINT#60);           
+  OP_TIMER_S10 := INT_TO_FINT(FINT_TO_INT(CURRENT_WATCH_TIMER_SEC/10));             
+  OP_TIMER_S10 := (OP_TIMER_S10 / FINT#1000) * FINT#1000;
+  CURRENT_WATCH_TIMER_SEC := CURRENT_WATCH_TIMER_SEC - (OP_TIMER_S10 * FINT#10);           
+  OP_TIMER_S1  := CURRENT_WATCH_TIMER_SEC; 
+  OP_TIMER_S1  := (OP_TIMER_S1  / FINT#1000) * FINT#1000;
+//  IF OP_TIMER_S1>FINT#9 THEN OP_TIMER_S1:= FINT#9; END_IF             
+  OP_TIMER_BAR := (CURRENT_WATCH_TIMER * FINT#100) / (IOM_SELECT_WATCHTIMER_PERIOD * FINT#60);  
+
+   //BUTTONS ON PANEL
+IF G1131_ELEVATED_LOGIN_STATUS > 0 THEN //OR ON_CALL_SELECT_PERMISSIONS>0 THEN
+
+  DELAY_TRIGGER_OFF1	(CLK:= OP_OFFICER_1_ON_CALL);
+  DELAY_TRIGGER_OFF2	(CLK:= OP_OFFICER_2_ON_CALL);
+  DELAY_TRIGGER_OFF3	(CLK:= OP_OFFICER_3_ON_CALL);
+  DELAY_TRIGGER_OFF4	(CLK:= OP_OFFICER_4_ON_CALL);
+
+  DELAY_TIMER_OFF1(IN:= DELAY_TRIGGER_OFF1.Q, PT:= 500);
+  IF DELAY_TIMER_OFF1.Q THEN
+    IOM_SELECT_ON_CALL_OFFICER := 1; 
+  END_IF
+  
+  DELAY_TIMER_OFF2(IN:= DELAY_TRIGGER_OFF2.Q, PT:= 500);
+  IF DELAY_TIMER_OFF2.Q THEN
+    IOM_SELECT_ON_CALL_OFFICER := 2; 
+  END_IF
+  	
+  DELAY_TIMER_OFF3(IN:= DELAY_TRIGGER_OFF3.Q, PT:= 500);
+  IF DELAY_TIMER_OFF3.Q THEN
+    IOM_SELECT_ON_CALL_OFFICER := 3; 
+  END_IF
+
+  DELAY_TIMER_OFF4(IN:= DELAY_TRIGGER_OFF4.Q, PT:= 500);
+  IF DELAY_TIMER_OFF4.Q THEN
+    IOM_SELECT_ON_CALL_OFFICER := 4; 
+  END_IF
+  
+(*  IF BRIDGE_WATCH_ON_CALL > 0 THEN 
+    DELAY_TIMER_BW(IN:= DELAY_TRIGGER_BW.Q, PT:= 500);
+   	IF DELAY_TIMER_BW.Q THEN
+  		IOM_SELECT_ON_CALL_OFFICER := BRIDGE_WATCH_ON_CALL; 
+  	END_IF
+  END_IF
+*)  
+END_IF  
+IF G1131_ELEVATED_LOGIN_STATUS > 0 THEN
+
+  DELAY_TRIGGER_WATCH_ON	(CLK:= OP_WATCH_ON_BUTTON);
+  DELAY_TRIGGER_WATCH_OFF	(CLK:= OP_WATCH_OFF_BUTTON);
+  DELAY_TRIGGER_AUTO 		(CLK:= OP_WATCH_AUTO_ON_BUTTON);
+  DELAY_TRIGGER_STDBY 		(CLK:= OP_WATCH_STANDBY_BUTTON);
+
+  DELAY_TIMER_WATCH_ON(IN:= DELAY_TRIGGER_WATCH_ON.Q, PT:= 800);
+  IF DELAY_TIMER_WATCH_ON.Q THEN
+    IOM_SELECT_BNWAS_MODE := 1; 
+  END_IF
+  
+  DELAY_TIMER_WATCH_OFF(IN:= DELAY_TRIGGER_WATCH_OFF.Q, PT:= 800);
+  IF DELAY_TIMER_WATCH_OFF.Q THEN
+    IOM_SELECT_BNWAS_MODE := 4; 
+  END_IF
+  	
+  DELAY_TIMER_AUTO(IN:= DELAY_TRIGGER_AUTO.Q, PT:= 800);
+  IF DELAY_TIMER_AUTO.Q THEN
+    IOM_SELECT_BNWAS_MODE := 2; 
+  END_IF
+
+  DELAY_TIMER_STDBY(IN:= DELAY_TRIGGER_STDBY.Q, PT:= 800);
+  IF DELAY_TIMER_STDBY.Q THEN
+    IOM_SELECT_BNWAS_MODE := 3; 
+  END_IF
+  
+(*  IF BRIDGE_WATCH_ON_CALL > 0 THEN 
+    DELAY_TIMER_BW(IN:= DELAY_TRIGGER_BW.Q, PT:= 800);
+   	IF DELAY_TIMER_BW.Q THEN
+  		IOM_SELECT_ON_CALL_OFFICER := BRIDGE_WATCH_ON_CALL; 
+  	END_IF
+  END_IF
+  *)
+  
+  SET_TIMER_MINUS_BUTTON_PLS(CLK:=OP_SET_TIMER_MINUS_BUTTON);
+  SET_TIMER_PLUS_BUTTON_PLS(CLK:=OP_SET_TIMER_PLUS_BUTTON);
+  IOM_SELECT_WATCHTIMER_PERIOD:= IOM_SELECT_WATCHTIMER_PERIOD + BOOL_TO_INT(SET_TIMER_PLUS_BUTTON_PLS.Q) - BOOL_TO_INT(SET_TIMER_MINUS_BUTTON_PLS.Q);
+
+//	IF SET_TIMER_MINUS_BUTTON_PLS.Q OR SET_TIMER_PLUS_BUTTON_PLS.Q THEN
+//		RESET_REQUEST := TRUE;
+//	END_IF
+
+ 
+  IF IOM_SELECT_WATCHTIMER_PERIOD > 12 THEN 
+  	IOM_SELECT_WATCHTIMER_PERIOD := 12; 
+  END_IF
+  
+  IF IOM_SELECT_WATCHTIMER_PERIOD < 3 THEN 
+  	IOM_SELECT_WATCHTIMER_PERIOD := 3;  
+  END_IF
+  
+  IF RESET_TRIGGER.Q AND (OP_TIMER_M = IOM_SELECT_WATCHTIMER_PERIOD) THEN
+  	FRAME_NR_WATCHTIMER := 0;
+  ELSIF IOM_SELECT_BNWAS_MODE = 4 THEN
+  	FRAME_NR_WATCHTIMER := 1;
+//  ELSIF (OP_TIMER_M <> IOM_SELECT_WATCHTIMER_PERIOD) AND RESET_REQUEST THEN
+//  	FRAME_NR_WATCHTIMER := 6;
+  ELSE
+  	FRAME_NR_WATCHTIMER := 0;
+  END_IF
+  	
+//  IF RESET_TRIGGER.Q THEN
+//	RESET_REQUEST := FALSE;
+//  END_IF
+ELSE
+
+//  FRAME_NR_WATCHTIMER := 0;
+  
+END_IF
+
+(* BNWAS IO-MODULE HANDLING *)
+  IOM_SELECT_CURRENT_SECURITY_LEVEL := 2 * G1131_ELEVATED_LOGIN_STATUS;
+
+  IOM_EM_CALL_OUT := OP_MAIN_BUTTON_EM_CALL;
+  IOM_WATCHTIMER_RESET := OP_MAIN_BUTTON_RESET OR P_H2.Q OR TOUCH_BUTTON_4 OR RST_WATCH_TIMER.Q OR BUTTON_PRESSED;
+(*  IF G1131_ELEVATED_LOGIN_STATUS > 0 THEN
+    IOM_SELECT_BNWAS_MODE := IOM_SELECT_BNWAS_MODE;
+    IOM_SELECT_ON_CALL_OFFICER := IOM_SELECT_ON_CALL_OFFICER;
+    IOM_SELECT_WATCHTIMER_PERIOD := IOM_SELECT_WATCHTIMER_PERIOD;
+  END_IF    
+*)
+  // TFT IND.
+  SELECT_WATCHTIMER_PERIOD := IOM_SELECT_WATCHTIMER_PERIOD;
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="AUDIBLE" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM AUDIBLE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+ 
+   PBT_BUZZER           : BOOL ;    PBI_BUZZER   : INT ;   // 0=BUZ OFF, 1=BUZ_ON
+   P_MAIN_SUPPLY_FAULT  : R_TRIG;
+   P_BACKUP_SUPPLY_FAULT: R_TRIG;
+   P_IOM_BNWAS_MISSING  : R_TRIG;
+   P_ETH_A_FAIL_ALARM   : R_TRIG;
+   P_ETH_B_FAIL_ALARM   : R_TRIG;
+   P_ETH_C_FAIL_ALARM   : R_TRIG;
+   P_ETH_D_FAIL_ALARM   : R_TRIG;
+   P_ANY_ALARM          : BOOL;
+   
+   
+ END_VAR
+ 
+ VAR
+
+  BUZZER_PULSE_TIMER1 : TON;
+  BUZZER_PULSE_TIMER2 : TOF;
+
+  SILENCE              : BOOL := TRUE ; 
+  
+  NEW_ALM              : R_TRIG ;
+  ALM_HORN             : RS ;
+  
+  _PB_STOP             : R_TRIG ;
+  STOP_BUZZER          : BOOL ;
+  P_H2                 : F_TRIG;
+  
+  //P_TEST_VALUE         : BOOL;
+ END_VAR
+ 
+  
+// INIT
+SILENCE   := DEV_TEST_MODE >0 ;                               //  DISABLE BUZZER (iFAT)
+STOP_BUZZER := FALSE ; 
+
+  
+// HORN 2 OFF
+P_H2(CLK:= WH_HORN2); 
+
+P_MAIN_SUPPLY_FAULT(CLK:= MAIN_SUPPLY_FAULT);
+P_BACKUP_SUPPLY_FAULT(CLK:= BACKUP_SUPPLY_FAULT);
+P_IOM_BNWAS_MISSING(CLK:= IOM_BNWAS_MISSING);
+P_ETH_A_FAIL_ALARM(CLK:= ETH_A_FAIL_ALARM);
+P_ETH_B_FAIL_ALARM(CLK:= ETH_B_FAIL_ALARM);
+P_ETH_C_FAIL_ALARM(CLK:= ETH_C_FAIL_ALARM);
+P_ETH_D_FAIL_ALARM(CLK:= ETH_D_FAIL_ALARM);
+
+//P_TEST_VALUE:= OR (P_ANY_ALARM, P_MAIN_SUPPLY_FAULT.Q);
+//P_TEST_VALUE:= OR (P_ANY_ALARM, P_MAIN_SUPPLY_FAULT.Q, P_BACKUP_SUPPLY_FAULT.Q, P_IOM_BNWAS_MISSING.Q);
+
+P_ANY_ALARM:= OR (P_ANY_ALARM, P_MAIN_SUPPLY_FAULT.Q, P_BACKUP_SUPPLY_FAULT.Q, P_IOM_BNWAS_MISSING.Q,
+                  P_ETH_A_FAIL_ALARM.Q, P_ETH_B_FAIL_ALARM.Q, P_ETH_C_FAIL_ALARM.Q, P_ETH_D_FAIL_ALARM.Q)
+                  AND NOT (OP_MAIN_BUTTON_RESET OR P_H2.Q OR TOUCH_BUTTON_4);
+
+IF SILENCE THEN
+  BUZZER := FALSE ;
+
+
+ELSIF BRIDGE_ALARM OR OFFICER_ALARM OR CREW_ALARM OR P_ANY_ALARM THEN
+  
+  IF  ALARM_TYPE = 1 THEN 
+	BUZZER_PULSE_TIMER1(IN:= NOT BUZZER_PULSE_TIMER2.Q, PT:= 700);
+	BUZZER_PULSE_TIMER2(IN:= BUZZER_PULSE_TIMER1.Q, PT:= 300);
+	
+	IF BUZZER_PULSE_TIMER2.Q THEN
+		BUZZER := TRUE;
+	ELSE
+		BUZZER := FALSE;
+	END_IF
+  ELSE
+    BUZZER := TRUE;
+  END_IF
+  
+ELSE
+	BUZZER := FALSE;
+END_IF
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="CHECK_ETHERNET_STATUS" editor="PAL1131.ST" virtualFolder=""><![CDATA[PROGRAM CHECK_ETHERNET_STATUS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+
+ END_VAR
+  
+ // ----------------------------------------------------------------------------
+ // Check if the ethernet is healthy
+ 
+ IF (NO_COM_ETH_A_ENABLED) THEN
+    ETH_A_FAIL_ALARM := ETH_A_FAIL_STATUS;
+ ELSE
+    ETH_A_FAIL_ALARM := FALSE;
+ END_IF
+
+ IF (NO_COM_ETH_B_ENABLED) THEN
+    ETH_B_FAIL_ALARM := ETH_B_FAIL_STATUS;
+ ELSE
+    ETH_B_FAIL_ALARM := FALSE;
+ END_IF
+
+ IF (NO_COM_ETH_C_ENABLED) THEN
+    ETH_C_FAIL_ALARM := ETH_C_FAIL_STATUS;
+ ELSE
+    ETH_C_FAIL_ALARM := FALSE;
+ END_IF
+
+ IF (NO_COM_ETH_D_ENABLED) THEN
+    ETH_D_FAIL_ALARM := ETH_D_FAIL_STATUS;
+ ELSE
+    ETH_D_FAIL_ALARM := FALSE;
+ END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="BUTTON_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_1 (*$COMMENT 45001 BUTTON 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_2 (*$COMMENT 45002 BUTTON 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_3" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_3 (*$COMMENT 45003 BUTTON 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_4" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_4 (*$COMMENT 45004 BUTTON 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_5" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_5 (*$COMMENT 45005 BUTTON 5*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_6" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_6 (*$COMMENT 45006 BUTTON 6*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TFT_DIM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ TFT_DIM (*$COMMENT 45018 OUTPUT - DIMMING TFT BACKLIGHT*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUZZER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUZZER (*$COMMENT 45024 FRONT BUZZER*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ALARM_TYPE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ALARM_TYPE (*$COMMENT 45025 ALARM TYPE PULSE*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NO_COM_ETH_A_ENABLED" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NO_COM_ETH_A_ENABLED (*$COMMENT 45028 CFG LINK ALARM A ENABLE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NO_COM_ETH_B_ENABLED" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NO_COM_ETH_B_ENABLED (*$COMMENT 45029 CFG LINK ALARM B ENABLE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NO_COM_ETH_C_ENABLED" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NO_COM_ETH_C_ENABLED (*$COMMENT 45030 CFG LINK ALARM C ENABLE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NO_COM_ETH_D_ENABLED" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NO_COM_ETH_D_ENABLED (*$COMMENT 45031 CFG LINK ALARM D ENABLE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_A_FAIL_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_A_FAIL_ALARM (*$COMMENT 45032 NO COMMUNICATION ALARM ETHERNET A*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_B_FAIL_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_B_FAIL_ALARM (*$COMMENT 45033 NO COMMUNICATION ALARM ETHERNET B*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_C_FAIL_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_C_FAIL_ALARM (*$COMMENT 45034 NO COMMUNICATION ALARM ETHERNET C*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_D_FAIL_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_D_FAIL_ALARM (*$COMMENT 45035 NO COMMUNICATION ALARM ETHERNET D*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DEV_TEST_MODE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DEV_TEST_MODE (*$COMMENT 45038 TEST MODE*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_A_FAIL_STATUS" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_A_FAIL_STATUS (*$COMMENT 45044 ETHERNET PORT A NO COMMUNICATION*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_B_FAIL_STATUS" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_B_FAIL_STATUS (*$COMMENT 45045 ETHERNET PORT B NO COMMUNICATION*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_C_FAIL_STATUS" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_C_FAIL_STATUS (*$COMMENT 45046 ETHERNET PORT C NO COMMUNICATION*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_D_FAIL_STATUS" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_D_FAIL_STATUS (*$COMMENT 45047 ETHERNET PORT D NO COMMUNICATION*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PROJECT_SW_VER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PROJECT_SW_VER (*$COMMENT 45050 PROJECT SOFTWARE VERSION (R/O)*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MASTER_SW_VER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MASTER_SW_VER (*$COMMENT 45051 MASTER SOFTWARE VERSION (R/O)*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PROJECT_NR" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PROJECT_NR (*$COMMENT 45052 PROJECT NUMBER*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PANEL_DIMMING_LEVEL" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PANEL_DIMMING_LEVEL (*$COMMENT 45057 PANEL DIMMING LEVEL*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IOM_BNWAS_MISSING" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IOM_BNWAS_MISSING (*$COMMENT 45085 BNWAS MODULE 1 NOT PRESENT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL0" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL0 (*$COMMENT 45094 MENU LEVEL 0*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL1 (*$COMMENT 45095 MENU LEVEL 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL2 (*$COMMENT 45096 MENU LEVEL 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="WH_HORN2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ WH_HORN2 (*$COMMENT 45099 WH - HORN2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IOM_WATCHTIMER_RESET" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IOM_WATCHTIMER_RESET (*$COMMENT 45101 WATCHTIMER RESET*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IOM_EM_CALL_OUT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IOM_EM_CALL_OUT (*$COMMENT 45102 EM CALL*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IOM_SELECT_BNWAS_MODE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IOM_SELECT_BNWAS_MODE (*$COMMENT 45103 SELECT BNWAS MODE*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IOM_SELECT_ON_CALL_OFFICER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IOM_SELECT_ON_CALL_OFFICER (*$COMMENT 45104 SELECT ON CALL OFFICER*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IOM_SELECT_WATCHTIMER_PERIOD" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IOM_SELECT_WATCHTIMER_PERIOD (*$COMMENT 45105 SELECT WATCHTIMER PERIOD*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IOM_SELECT_CURRENT_SECURITY_LEVEL" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IOM_SELECT_CURRENT_SECURITY_LEVEL (*$COMMENT 45106 SELECT CURRENT SECURITY LEVEL*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="IOM_SELECT_CUR_REMOTE_BUTTON_DIM_LVL_" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ IOM_SELECT_CUR_REMOTE_BUTTON_DIM_LVL_ (*$COMMENT 45107 SELECT CURRENT REMOTE BUTTON DIM LVL *) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CURRENT_WATCH_TIMER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CURRENT_WATCH_TIMER (*$COMMENT 45121 CURRENT WATCH TIMER*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="RESET_INPUT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ RESET_INPUT (*$COMMENT 45122 RESET INPUT *) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="EM_CALL_ACTIVE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ EM_CALL_ACTIVE (*$COMMENT 45123 BNWAS EM CALL ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="VISUAL_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ VISUAL_ALARM (*$COMMENT 45124 BNWAS VISUAL ALARM*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BRIDGE_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BRIDGE_ALARM (*$COMMENT 45125 BNWAS BRIDGE ALARM*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="OFFICER_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ OFFICER_ALARM (*$COMMENT 45126 BNWAS OFFICER ALARM*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CREW_ALARM" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CREW_ALARM (*$COMMENT 45127 BNWAS CREW ALARM*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAIN_SUPPLY_FAULT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MAIN_SUPPLY_FAULT (*$COMMENT 45128 BNWAS MAIN SUPPLY FAULT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BACKUP_SUPPLY_FAULT" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BACKUP_SUPPLY_FAULT (*$COMMENT 45129 BNWAS BACKUP SUPPLY FAULT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CONFIGURABLE_ALARM_1" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CONFIGURABLE_ALARM_1 (*$COMMENT 45130 CONFIGURABLE ALARM 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CONFIGURABLE_ALARM_2" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CONFIGURABLE_ALARM_2 (*$COMMENT 45131 CONFIGURABLE ALARM 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CURRENT_BNWAS_MODE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CURRENT_BNWAS_MODE (*$COMMENT 45132 CURRENT BNWAS MODE*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CURRENT_ON_CALL_OFFICER" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CURRENT_ON_CALL_OFFICER (*$COMMENT 45133 CURRENT ON CALL OFFICER*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAULT_RELAY_ON_STATE" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FAULT_RELAY_ON_STATE (*$COMMENT 45134 FAULT RELAY ON STATE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="AUTOPILOT_IN" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ AUTOPILOT_IN (*$COMMENT 45136 AUTOPILOT IN *) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ECDIS_ON" flags="00804000" disabled="0" virtualFolder=""><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ECDIS_ON (*$COMMENT 45137 ECDIS ON*) : BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK" loop_kind="0" interval="100"><![CDATA[GLOB_VAR
+INPUTS
+PAGE_MENUS
+PAGE_NAVIGATION
+SYSTEM
+BNWAS_IOM
+AUDIBLE
+CHECK_ETHERNET_STATUS
+]]></ITEM>
+    </TASK>
+    <USER_TYPES><![CDATA[]]></USER_TYPES>
+  </PROJECT>
+</PAL1131>

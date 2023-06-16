@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="540" Height="465" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button Width="245" Height="65" X="295" Y="10" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Frame_number_to_Show"/>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="215" Height="65" X="315" Y="10" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Saira;24.0;N;N;N" Text="MAIN BUTTON XX">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ButtonText"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="250" Height="65" X="285" Y="10" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="Visible" CompareTolerance="0.1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show"/>
+						<ChannelValueBinding TargetPropertyName="FirstValue">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+		</Rectangle>
+		<Button Width="243" Height="65" X="290" Y="10" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="SubMenu"/>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+						<SelectFirstFloatBinding TargetPropertyName="Value" DefaultValue="0">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="0" CompareTolerance="0.1">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="SubMenuNumberToShow"/>
+									</Bindings>
+								</ValueCompareBinding>
+								<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="SubMenuNumberToShow"/>
+							</Bindings>
+						</SelectFirstFloatBinding>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+		<Polyline Width="2" LineColor="InfoTextGrey" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="SubMenu"/>
+			</Bindings>
+			<Points>
+				<Point Coord="310;38"/>
+				<Point Coord="295;43"/>
+				<Point Coord="310;48"/>
+			</Points>
+		</Polyline>
+		<Panel Width="260" Height="455" X="15" Y="5" ClipToBounds="True" BorderStyle="Flat" BorderColor="DarkShadow" FillColor="Background" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="SubMenuNumberToShow"/>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+			<Children>
+				<Button Width="245" Height="65" X="10" Y="5" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Frame_number_to_Show_S1"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<SetChannelValueClickAction ChannelNumber="0">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+					</ClickActions>
+				</Button>
+				<Rectangle Width="250" Height="65" X="5" Y="5" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="5">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="Visible" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S1"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</Rectangle>
+				<Button Width="245" Height="65" X="10" Y="80" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Frame_number_to_Show_S2"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<SetChannelValueClickAction ChannelNumber="0">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+					</ClickActions>
+				</Button>
+				<Rectangle Width="250" Height="65" X="5" Y="80" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="5">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="Visible" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S2"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</Rectangle>
+				<TextBox Width="215" Height="65" X="25" Y="80" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Saira;24.0;N;N;N" Text="SUB BUTTON 02">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ButtonText_S2"/>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S2"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<Button Width="245" Height="65" X="10" Y="155" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Frame_number_to_Show_S3"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<SetChannelValueClickAction ChannelNumber="0">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+					</ClickActions>
+				</Button>
+				<Rectangle Width="250" Height="65" X="5" Y="155" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="5">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="Visible" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S3"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</Rectangle>
+				<TextBox Width="215" Height="65" X="25" Y="155" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Saira;24.0;N;N;N" Text="SUB BUTTON 03">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ButtonText_S3"/>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S3"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<Button Width="245" Height="65" X="10" Y="230" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Frame_number_to_Show_S4"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<SetChannelValueClickAction ChannelNumber="0">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+					</ClickActions>
+				</Button>
+				<Rectangle Width="250" Height="65" X="5" Y="230" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="5">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="Visible" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S4"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</Rectangle>
+				<TextBox Width="215" Height="65" X="25" Y="230" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Saira;24.0;N;N;N" Text="SUB BUTTON 04">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ButtonText_S4"/>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S4"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<Button Width="245" Height="65" X="10" Y="305" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Frame_number_to_Show_S5"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<SetChannelValueClickAction ChannelNumber="0">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+					</ClickActions>
+				</Button>
+				<Rectangle Width="250" Height="65" X="5" Y="305" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="5">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="Visible" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S5"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</Rectangle>
+				<TextBox Width="215" Height="65" X="25" Y="305" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Saira;24.0;N;N;N" Text="SUB BUTTON 05">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ButtonText_S5"/>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S5"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<Button Width="245" Height="65" X="10" Y="380" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Frame_number_to_Show_S6"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<SetChannelValueClickAction ChannelNumber="0">
+							<Bindings>
+								<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowSubMenuNumber"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+					</ClickActions>
+				</Button>
+				<Rectangle Width="250" Height="65" X="5" Y="380" BorderColor="InfoTextGrey" FillColor="Transparent" CornerRoundRadius="5">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="Visible" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S6"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</Rectangle>
+				<TextBox Width="215" Height="65" X="25" Y="380" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Saira;24.0;N;N;N" Text="SUB BUTTON 06">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ButtonText_S6"/>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S6"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="215" Height="65" X="25" Y="5" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="InfoTextWhite" Font="Saira;24.0;N;N;N" Text="SUB BUTTON 01">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ButtonText_S1"/>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<NameLookupBinding TargetPropertyName="ChannelNumber" Name="ShowFrameNumber"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="Frame_number_to_Show_S1"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

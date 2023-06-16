@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement FlashArea="TextOnly" Width="80" Height="20" GridSpacing="10" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<TextBox FlashArea="TextOnly" Width="80" Height="20" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextWhite" Font="Praxis;18.0;N;N;N" Text="0">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="OldAlarm" SelectedValue2="Orange" DefaultValue="Foreground">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelAlarmNotAckBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+							</Bindings>
+						</ChannelAlarmNotAckBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

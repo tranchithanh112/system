@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="80" Height="20" PermissionLevelRequested="2" OnScreenNumpadFramePath="..\Frames_Pickactions\Frame_Numpad.prax" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="80" Height="20" BorderColor="InactiveGrey" LinePosition="Centered" FillColor="ConningBackground" TextColor="InfoTextGrey" LeftRightPadding="10" Font="Praxis;14.0;N;N;N" Text="VAL">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VAL"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams>
+							<Bindings>
+								<FrameBinding TargetPropertyName="DecimalPlaces" ExportedPropertyName="DEC"/>
+							</Bindings>
+						</FloatToStringConvertParams>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<TextEnteredActions>
+				<SetChannelValueTEA ChannelNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="VAL"/>
+					</Bindings>
+				</SetChannelValueTEA>
+			</TextEnteredActions>
+		</TextBox>
+	</Children>
+</RootElement>

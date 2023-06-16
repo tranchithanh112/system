@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>CPDev 1.0 Historia wersji</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+<style type="text/css">
+	body		{ font: small verdana, arial, sans-serif; color: black; background-color: white }
+	a:link		{ color: #264b99; background-color: white }
+	a:visited	{ color: #5e85d7; background-color: white }
+	a:active	{ color: #7799dd; background-color: white }
+	tt		{ font: small "courier new", monospace }
+	li		{ margin-top: 0.15em; margin-bottom: 0.15em }
+	div.bluehead	{ text-align: center; color: white; background-color: #264b99; padding: 5px; font-weight: bold }
+	.head1		{ font-size: xx-large }
+	.head2		{ font-size: large }
+	.ver		{ font-size: large; font-weight: bold }
+	.date		{ font-size: x-small; font-weight: bold }
+</style>
+</head>
+<body>
+<div class="bluehead"><span class="head1">CPDev - 1.0</span><br /><span class="head2">Historia wersji</span></div>
+<p>Copyright &copy; 2007-2010 Katedra Informatyki i Automatyki - Politechnika Rzeszowska.
+</p>
+<p><span class="ver">1.0.2.30</span>&nbsp;<span class="date">(2010-11-18A)</span></p>
+<ul><li>Poprawiono błąd filtra w przypadku otwierania edytora zmiennych globalnych z pustą listą zmiennych.</li>
+<li>Dodano funkcje do manipulacji datą i czasem: <tt>SET_YEAR</tt>, <tt>SET_MONTH</tt>, <tt>SET_DAY</tt>, <tt>SET_HOUR</tt>, <tt>SET_MINUTE</tt>, <tt>SET_SECOND</tt>, <tt>SET_HUNDSEC</tt>, <tt>DATE_TIME_TO_DATE</tt>.</li>
+<li>Poprawiono obsługę typu <tt>DATE</tt> w CPSim.</li>
+</ul>
+<p><span class="ver">1.0.2.29</span>&nbsp;<span class="date">(2010-11-16B)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.24</tt>:<ul>
+<li>Dodano dyrektywę <tt>(*$HIDDEN*)</tt> do ukrywania zmiennych globalnych w raporcie kompilacji. Stosuję się ją podobnie jak modyfikatory <tt>RETAIN</tt> czy <tt>CONSTANT</tt>.</li></ul></li>
+<li>Dodano kolumny do edytora zmiennych globalnych: Wartość początkowa oraz komentarz.</li>
+<li>Dodano przyciski do przesuwania zmiennych w edytorze zmiennych globalnych.</li>
+<li>Dodano szybkie wyszukiwanie zmiennej po nazwie w edytorze zmiennych globalnych.</li>
+<li>Dodano sprawdzanie czy folder jest pusty przed zapisem projektu. Można go wyłączyć poprzez ustawienie wartości <tt>CheckForEmptyDirWhenSaving</tt> konfiguracji na wartość <tt>False</tt>.</li>
+</ul>
+<p><span class="ver">1.0.2.28</span>&nbsp;<span class="date">(2010-11-04B)</span></p>
+<ul><li>Zaktualizowano firmware SMC do wersji <tt>1.38</tt> i CPCon do wersji <tt>1.1.38</tt>.</ul>
+<p><span class="ver">1.0.2.27</span>&nbsp;<span class="date">(2010-10-06A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.23</tt>:<ul>
+<li>Dodano nową flagę do kompilatora pozwalającą na interpretowanie zmiennych globalnych jak w normie IEC 61131-3, znacząco wpływa na <tt>VAR CONSTANT</tt> zadeklarowane globalnie (z włączoną flagą teraz powinno być <tt>VAR_GLOBAL CONSTANT</tt>, w przeciwnym razie zmienna nie będzie wszędzie widoczna jako globalna),</li>
+<li>Usunięto błąd, w stytuacjach gdy wartość stałej globalnej została przesłonięta przez dyrektywę <tt>(*$AUTO*)</tt>.</li>
+<li>Dodano sprawdzenie zakończenia pętli <tt>END_FOR</tt> przed zakończeniem POU.</li>
+</ul></li>
+<li>Dodano opcję w oknie konfiguracji do przełączenia kompilacji zmiennych <tt>VAR_GLOBAL</tt> w trybie zgodności z normą.</li>
+<li>Dodano w menu kontekstowym możliwość sortowania zmiennych globalnych w drzewie projektu alfabetycznie (rosnąco/malejąco) oraz możliwość przywrócenia porządku wg deklaracji.</li>
+<li>Usunięto problemy z funkcjami <tt>ABS</tt> i <tt>NE</tt> działającymi na typie <tt>FINT</tt>.</li>
+</ul>
+<p><span class="ver">1.0.2.26</span>&nbsp;<span class="date">(2010-09-08A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.22</tt>:<ul>
+<li>Usunięto usterkę z usuwaniem kodu ciała dla bloku mającego stałe wejścia.</li>
+<li>Zidentyfikowano problem z błędnie zagnieżdżanymi typami w przypadku błędnego kodu. Tymczasowe rozwiązanie dodaje prefiks "!Check code {typ}" dla nazwy krótkiej.</ul>
+<li>Wprowadzono blok obsługi nowego SM3 jako <tt>COM_SM3</tt>. Poprzedni <tt>COM_SM3</tt> został zachowany w celu kompatybilności jako <tt>COM_SM3_SIMPLE</tt>.</li>
+<li>Dodano menu kontekstowe wytnij / kopiuj / wklej do edytora pojedynczego kolorowanego.</li>
+<li>Zamieniono komentarze w bibliotekach IEC i basic na anglojęzyczne.</li>
+</ul>
+<p><span class="ver">1.0.2.25</span>&nbsp;<span class="date">(2010-07-21B)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.20</tt>:<ul>
+<li>Zmodyfikowano strukturę zadania dla maszyn wielozadaniowych,</li>
+<li>Dodano sprawdzanie indeksów tablicy w przypadku wartości stałych podanych jako indeksery.</li>
+<li>Zmieniono ostrzeżenie o brakującym średniku do postaci błędu.</li>
+</ul></li>
+<li>Wprowadzono oddzielne menu kontekstowe dla zmiennych globalnych.</li>
+<li>Dodano skrót klawiszowy <tt>Ctrl</tt> + <tt>Del</tt> do kasowania wszystkich komunikatów w dolnej liście.</li>
+<li>Dodano dwie opcje poszukiwania nazwy identyfikatora - wskazanej zmiennej globalnej w drzewie i skorzystanie z menu kontekstowego, albo poprzez menu 'Projekt | Narzędzia | Lokalizuj identyfikator' i podanie nazwy identyfikatora. Znalezione referencje pojawią się w liście komunikatów. Podwójne kliknięcie pozycji otworzy edytor i przeniesie kursor po początku wystąpienia identyfikatora. Wskazanie zmiennej poprzez menu kontekstowe drzewa pomija wystąpienie jej deklarację w liście znalezionych referencji.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.21</tt>:<ul>
+<li>Dodano dyrektywę <tt>NO_ALIGN_VAR</tt> do bloków funkcjonalnych nie pozwalającą na wyrównywanie zmiennych w instancjach tego bloku, dawniej implikowana przez kombinację dyrektyw <tt>CONST_INIT_INSTANCE</tt>, <tt>PLACE_INSTANCES_IN_DCP</tt>, <tt>EMPTY_BODY_CALL</tt>.</li>
+</ul></ul>
+<p><span class="ver">1.0.2.24</span>&nbsp;<span class="date">(2010-06-23A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.19</tt>:<ul>
+<li>Usunięto zapętlenie kompilatora w przypadku kompilacji wyrażeń logicznych z operatorami zawierającymi błędne operandy.</li>
+</ul></ul>
+<p><span class="ver">1.0.2.23</span>&nbsp;<span class="date">(2010-06-16A)</span></p>
+<ul><li>Naprawiono nie wyświetlanie komentarzy dla prostych zmiennych.</li></ul>
+<p><span class="ver">1.0.2.22</span>&nbsp;<span class="date">(2010-06-14A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.18</tt>:<ul>
+<li>Dodano optymalizację indeksera tablicy, gdy jest on zmienną i gdy tablica indeksowana jest od zera.</li>
+</ul>
+<li>Dodano nowe opcje w wyświetlaniu kolumn w raporcie projektu: pełną nazwę i komentarz zmiennej.</li>
+<li>Zaznaczenie opcji w widoczności kolumny w raporcie projektu wpływa na jej pojawienie się na wydruku/eksporcie.</li>
+</ul>
+<p><span class="ver">1.0.2.21</span>&nbsp;<span class="date">(2010-06-09A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.17</tt>:<ul>
+<li>Dodano dyrektywę <tt>FORCE_DEFAULT</tt> umieszczoną po słowie kluczowym <tt>else</tt> w celu jednoznacznego oznaczenia domyślnego przypadku w przetwarzaniu instrukcji <tt>CASE</tt>,</li>
+<li>Usunięto generowanie ostrzeżeń w przypadku podstawiania do parametrów wejściowych bloków funkcjonalnych tablice globalne,</li>
+<li>Usunięto nie przechwycony wyjątek w przypadku kompilacji niedomkniętego łańcucha tekstowego.</li></ul></li>
+<li>Usunięto wyjątek zgłaszany w przypadku próby importu nieznanego obiektu do drzewa POU.</li>
+<li>Naprawiono zgubioną obsługę przycisku <tt>Czcionka</tt> na formularzu z opcjami edytora.</li>
+<li>Poprawiono anglojęzyczną wersję CPSim.</li>
+</ul>
+<p><span class="ver">1.0.2.20</span>&nbsp;<span class="date">(2010-05-31C)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.16</tt>:<ul>
+<li>Usunięto błąd w funkcji określającej poprawność tekstu jako identyfikatora,</li>
+<li>Usunięto błąd w linkerze gdy napotkano wywołanie funkcji użytkownika w funkcji użytkownika.</li>
+</ul>
+<li>Usunięto błąd pozwalający na utworzenie zmiennej w oknie globalnym o nazwie rozpoczynającej się od znaku zapytania '<tt>?</tt>'.</li>
+<li>Dodano rozkład tabelaryczny okna importu/eksportu biblioteki.</li>
+<li>Dodano możliwość definiowania szerokości znaku tabulacji w edytorze kolorowanym.</li>
+<li>Dodano przycisk umożliwiający konfigurowanie zaawansowanych opcji edytora ST.</li>
+<li>Dodano opcje w konfiguracji umożliwiające zmianę domyślnego kompilatora dla środowiska.</li>
+</ul>
+<p><span class="ver">1.0.2.19</span>&nbsp;<span class="date">(2010-05-17A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.15</tt>:<ul>
+<li>Usunięto błąd z brakiem offsetów w eksportach biblioteki,</li>
+<li>Dodano wirtualizację niektórych metod pozwalając na podmianę ich działania przez kompilatory i generatory innych odbiorców.</li></ul>
+<li>Usunięto polskie znaki diakrytyczne z nazw identyfikatorów w kodzie źródłowym.</li>
+</ul>
+<p><span class="ver">1.0.2.18</span>&nbsp;<span class="date">(2010-05-11B)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.13</tt>:<ul>
+<li>Poprawiono błąd z niepoprawnym przetwarzaniem wzajemnie zagnieżdżonych tablic i struktur,</li>
+<li>Dodano dyrektywę <tt>COMMENT</tt> do komentowania typu tablicowego,</li>
+<li>Usunięto usterkę w generowanym kodzie w przypadku inicjacji tablic o rozmiarach większych niż 255 bajtów,</li>
+<li>Dodano dyrektywę <tt>ANSI</tt> przed literałem typu znakowego, która automatycznie generuje kody znaków literału rozdzielane przecinkiem (niekiedy przydatne przy inicjalizacji tablic liczb całkowitych kodami łańcucha tekstowego),</li>
+<li>Usunięto usterkę w niepoprawnie generowanych kodach szesnastkowych dla literałów typu znakowego,</li>
+<li>Dodano dyrektywę <tt>STRDISP</tt> dla deklaracji typu tablicowego, w celu ułatwienia wyświetlania tablicy bajtów jako łańcuch znakowy.</li></ul>
+<li>Usunięto błąd w blokowaniu przycisku OK we właściwościach zmiennej globalnej.</li>
+<li>Usunięto nie przechwycony wyjątek w przypadku próby wklejenia ze schowka do drzewa obiektu danych nie będących poprawnym dokumentem XML.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.14</tt>:<ul>
+<li>Wprowadzono nowy typ <tt>FINT</tt> dostępny tylko w dystrybucji dla Praxis.</li></ul>
+<li>Nowy parametr konfiguracji CPDev IDE <tt>Debug_DisplayStartedProcess</tt> - wyświetla w liście komunikatów nowo uruchamiane procesy potomne.</li>
+<li>Tekst zaznaczonej pozycji z dolnej listy komunikatów może zostać skopiowany do schowka za pomocą menu kontekstowego.</li>
+<li>Usunięto błędy powodujące nieprzechwycony wyjątek podczas próby usunięcia obiektu POU wykorzystując menu kontekstowe wierzchołka drzewa.</li>
+<li>Dodano przycisk 'Anuluj' w oknie aktualizacji firmware.</li>
+</ul>
+<p><span class="ver">1.0.2.17</span>&nbsp;<span class="date">(2010-04-28B)</span></p>
+<ul><li>Poprawiono błąd z nie zdefiniowanym edytorem dla nowych obiektów.</li>
+<li>Zmieniona strona tytułowa dla angielskiej instrukcji SMC.</li>
+</ul>
+<p><span class="ver">1.0.2.16</span>&nbsp;<span class="date">(2010-04-26A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.12</tt>:
+<ul><li>Usunięto zgłaszany wyjątek podczas przetwarzania pustej klauzuli <tt>VAR</tt> ... <tt>END_VAR</tt> w blokach funkcjonalnych, które znajdowały się na początku pliku.</li></ul></li>
+<li>Dodano komentarze do elementów ładowanych z bibliotek do drzewa.</li>
+<li>Poprawiono mało znaczące błędy w przypadku niestandardowych sytuacji z edytorem pojedynczym kolorowanym.</li>
+<li>Zmieniono wygląd globalnego okna ustawień do konfiguracji komunikacji dla SMC.</li>
+<li>Wprowadzono bootloader w SMC.</li>
+</ul>
+<p><span class="ver">1.0.2.15</span>&nbsp;<span class="date">(2010-03-29A)</span></p>
+<ul><li>Zaktualizowano instrukcję w języku polskim.</li>
+<li>Zaktualizowano CPSim.</li>
+<li>Zaktualizowano CPCon.</li>
+</ul>
+<p><span class="ver">1.0.2.14</span>&nbsp;<span class="date">(2010-03-11A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.11</tt>:
+<ul><li>Poprawiono błąd "Spodziewano się identyfikatora" w deklaracji typów.</li></ul></li>
+</ul>
+<p><span class="ver">1.0.2.13</span>&nbsp;<span class="date">(2010-02-01A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.8</tt>:
+<ul><li>Dodano instrukcję <tt>TASKSETUP</tt> do konfiguracji dla FPGA,</li>
+<li>Dodano w inicjacji zmiennych globalnych wywołanie instrukcji <tt>TASKSETUP</tt> w konfiguracji dla FPGA.</li>
+</ul>
+<li>Zaktualizowano kontrolkę do kontrolkę ActiveX do wyświetlania składni tekstu (wersja 0.5, rozszerzono metody interfejsu).</li>
+<li>Pełny numer wersji jest wyświetlany w polu o programie.</li>
+<li>Raport kompilacji projektu zawiera informacje o ilości zajętej pamięci.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.9</tt>:
+<ul><li>Dodano zapamiętywanie pierwszego pliku opisującego maszynę wirtualną.</li>
+<li>Opcjonalne umieszczanie położenia pliku opisującego maszynę wirtualną zostało włączone "na sztywno".</li>
+<li>Poprawiono zgłaszanie błędu w przypadku wywoływania funkcji in-line bez wartości zwracanej.</li></ul></li>
+<li>Dodano nowy typ argumentu/wartości ('<tt>l</tt>' - dla <tt>long</tt> (Int64)) w ustawieniach.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.10</tt>:
+<ul><li>Poprawiono błąd z inicjowaniem zmiennych 2-go poziomu dla dystrybucji FPGA.</li>
+<li>Poprawiono błąd występujący przy wielokrotnych deklaracjach typów w sekcjach <tt>TYPE ... END_TYPE</tt>.</li>
+<li>Dodano zapisywanie zależnych blibliotek podczas eksportu blblioteki.</li>
+<li>Dodano przetwarzanie zależności bibliotek, wszystkie brakujące biblioteki zgłaszane są jako ostrzeżenia.</li></ul></li>
+</ul>
+<p><span class="ver">1.0.2.12</span>&nbsp;<span class="date">(2009-12-21A)</span></p>
+<ul>
+<li>Usunięto zbędne ostrzeżenie w przypadku otwierania projektu bez zmiennych globalnych.</li>
+<li>Dodano automatyczne usuwanie informacji o kompilacji z listy komunikatów w przypadku zamykania projektu.</li>
+<li>Dodano opcję do automatycznego przewijania w liście komunikatów do podczas zgłaszania nowej wiadomości.</li>
+<li>Usunięto wyjścia <tt>C</tt> w blokach obsługujących pamięć flash.</li>
+</ul>
+<p><span class="ver">1.0.2.11</span>&nbsp;<span class="date">(2009-12-14B)</span></p>
+<ul>
+<li>Dodano ekran startowy CPDev.</li>
+<li>Dodano logowanie nie przechwyconych wyjątków dla CPSim.</li>
+<li>Poprawiono obsługę globalnych zmiennych tablicowych przez CPDev IDE.</li>
+<li>Dodano sprawdzanie poprawności adresów w raporcie kompilacji dostępnych dla SMC i Intouch.</li>
+<li>Drobna poprawka podczas ustalania nowego adresu w liście zmiennych globalnych.</li>
+</ul>
+<p><span class="ver">1.0.2.10</span>&nbsp;<span class="date">(2009-11-24A)</span></p>
+<ul>
+<li>Dodano bloki funkcjonalne <tt>ACOM</tt> i <tt>COM_TIMEOUT</tt> dla SMC.</li>
+<li>Dodano funkcję <i>in-line</i> <tt>REAL_TO_DINT</tt> jako makro na istniejącą funkcję <tt>TRUNC</tt>.</li>
+<li>Zmieniono organizację zależności plików w CPSim i klasie <tt>CPTarget</tt>.</li>
+</ul>
+<p><span class="ver">1.0.2.9</span>&nbsp;<span class="date">(2009-11-18A)</span></p>
+<ul><li>Zaktualizowano kompilator do wersji <tt>0.4.11.7</tt>:
+<ul><li>Dodano dyrektywę <tt>PLACE_UID_VAR</tt> dla bloków sprzętowych w konfiguracji dla FPGA,</li>
+<li>Rozmiar pola w dyrektywie <tt>PLACE_UID_VAR</tt> jest sterowany za pomocą wielkości atrybutu <tt>align</tt> w dyrektywie <tt>HARDWARE_BODY_CALL</tt> następująco: <i>1</i> -> <tt>BYTE</tt>; <i>inne</i> -> <tt>WORD</tt>,</li>
+<li>Poprawiono wykrywanie bloków komunikacyjnych w alokacji zmiennych lokalnych, jednocześnie usunięto błąd w alokacji zmiennych lokalnych dla bloków z dyrektywą <tt>CONST_INIT_INSTANCE</tt>,</li>
+<li>Usunięto błąd w mapie obiektów powstający w przypadku korzystania z bloków funkcjonalnych w blokach funkcjonalnych.</li>
+</ul>
+<li>Dodano opcję kompilacji w IDE włączającą podląd zmiennych lokalnych dla CPSim.</li>
+<li>Poprawiono pustą listę typów w oknie deklaracji zmiennej globalnej w nowym projekcie.</li>
+<li>Poprawiono listę widocznych typów podczas tworzenia nowej funkcji.</li>
+<li>Nowy parametr we wspólnej konfiguracji <tt>CPDev.Run.ConfigurerArguments</tt> pozwala na zmianę domyślnych parametrów konfiguratora (<tt>{0}</tt> jest zastępowane bieżącym kodem języka; <tt>{1}</tt> jest zastępowana plikiem *.dcp projektu).</li>
+</ul>
+<p><span class="ver">1.0.2.8</span>&nbsp;<span class="date">(2009-11-05B)</span></p>
+<ul><li>Usunięto problem w Maszynie Wirtualnej z instrukcją <tt>SEL</tt>.</li>
+<li>Usunięto problem z trybem <i>commisioning</i> w CPSim z 250 i więcej zmiennymi.</li>
+</ul>
+<p><span class="ver">1.0.2.7</span>&nbsp;<span class="date">(2009-10-26A)</span></p>
+<ul>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.6</tt>:
+<ul><li>Naprawiono błąd w generowaniu kodu dla tablicy o rozmiarach typów równym 1, 2, 4 lub 8 dla platformy FPGA,</li>
+<li>Ulepszono korzystanie ze stałych globalnych,</li>
+<li>Dodano informacje do pliku *.dcp o zmiennych z typem tablica lub struktura,</li>
+<li>Ustalono modyfikator '<tt>%D</tt>' dla pozycjonowania struktur i tablic globalnych,</li>
+<li>Poprawiono automatyczne pozycjonowanie początku zmiennych globalnych typu strukturalnego do wielokrotności 4,</li>
+<li>Ustalono automatyczne pozycjonowanie początku tablic globalnych do wielokrotności 4,</li>
+<li>Dodano możliwość pomijania tablic globalnych w deklaracjach <tt>VAR_EXTERNAL</tt>.</li>
+</ul>
+<li>Dodano możliwość pobierania więcej niż 250 zmiennych przez <tt>CPInspect</tt>.</li>
+</ul>
+<p><span class="ver">1.0.2.6</span>&nbsp;<span class="date">(2009-10-14C)</span></p>
+<ul><li>Przyśpieszono proces zatwierdzania listy zmiennych globalnych z dużą ilością zmiennych.</li>
+<li>Dodano bloki funkcjonalne i funkcje operujące na pamięci FLASH.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.5</tt>:
+<ul>
+<li>Dodano wczytywanie standardowych funkcji użytkownika z poziomu pliku LCF,</li>
+<li>Poprawiono problem z nietypowymi blokami funkcjonalnymi w mapie obiektów Fenixile.</li>
+</ul></li>
+</ul>
+<p><span class="ver">1.0.2.5</span>&nbsp;<span class="date">(2009-10-05A)</span></p>
+<ul><li>Przyśpieszono proces otwierania projektów z dużą ilością zmiennych.</li>
+<li>Zaktualizowano angielską dokumentację.</li>
+<li>Wprowadzono limity na liczbę wyświetlanych zmiennych w menu kontekstowym usuwania obiektów.</li>
+</ul>
+<p><span class="ver">1.0.2.4</span>&nbsp;<span class="date">(2009-09-24A)</span></p>
+<ul>
+<li>Nowy argument linii poleceń <tt>--execute-script</tt> do umieszczania argumentów lini poleceń w pliku.</li>
+<li>Nowe postacie konwersji: <ul>
+<li><tt>p</tt> - <tt>--set-conf</tt> rozwija w argumencie zmienną aplikacji, (<tt>--get-conf</tt> koduje ścieżkę do zmiennej aplikacji),</li>
+<li><tt>F</tt> - jak '<tt>f</tt>' (float) lecz separator dziesiętny jest zawsze kropką '<tt>.</tt>',</li>
+<li><tt>D</tt> - jak '<tt>d</tt>' (double) lecz separator dziesiętny jest zawsze kropką '<tt>.</tt>'.</li>
+</ul></li>
+<li>Zmiana okna edycji kodu między różnymi projektami powoduje również zmianę aktualnie zaznaczonego projektu.</li>
+<li>Dodano ograniczenia w typie zadań i czasie cyklu dla konfiguracji z SMC.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.4</tt>:
+<ul><li>Usunięto błędnie zgłaszaną podpowiedź o przekroczeniu zakresu w przypadku korzystania z <tt>DWORD#16#FFFFFFFF</tt></li></ul></li>
+</ul>
+<p><span class="ver">1.0.2.3</span>&nbsp;<span class="date">(2009-09-17A)</span></p>
+<ul>
+<li>Usunięto problem ze zawsze zgłaszanym błędem kompilacji w przypadku użycia środowiska IDE.</li>
+<li>Aktualizacja CPCon do wersji <tt>1.1.0.14</tt>.</li>
+<li>Bieżąca wersja firmware w SMC <tt>2.6.0-2</tt>.</li>
+</ul>
+<p><span class="ver">1.0.2.2</span>&nbsp;<span class="date">(2009-09-10A)</span></p>
+<ul>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.3</tt>:
+<ul><li>Dodano sprawdzenie liczby argumentów w przypadku korzystania z funkcji wieloargumentowych.</li></ul>
+<li>Dodano przechwytywanie nie obsłużonych wyjątków przez kompilator i wyświetlanie ich w liście komunikatów.</li>
+<li>Zaktualizowano CPCon do wersji <tt>1.1.0.12</tt>.
+<li>Dodano globalne ustawienie użytkownika <tt>CPDev.ST.EnableBackgroundCompilation</tt> pozwalające na zablokowanie kompilacji projektu w tle dla edytorów kodu.</li>
+</ul>
+<p><span class="ver">1.0.2.1</span>&nbsp;<span class="date">(2009-09-07A)</span></p>
+<ul>
+<li>Poprawiono zanikającą etykietę w angielskiej wersji językowej w oknie właściwości bloku funkcjonalnego.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.1</tt>:
+<ul><li>Wykonano modyfikację tokenizera do oznaczania leksemów będących operatorami słownymi po ograniczniku '<tt>(</tt>' jako słowa kluczowe.</li>
+</ul>
+<li>Zaktualizowano bibliotekę systemu pomocy do korzystania z numeru strony elementu docelowego w przypadku braku definicji strony w elemencie indeksowym.</li>
+<li>Dodano angielskie pliki do systemu pomocy.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.2</tt>:
+<ul><li>Wykonano modyfikację tokenizera do oznaczania leksemów będących operatorami słownymi po słowach kluczowych jako słowa kluczowe,</li>
+<li>Wykonano modyfikację generowanych instrukcji dla platformy FPGA,</li>
+<li>Zmodyfikowano kolejność inicjacji zmiennych bloków funkcjonalnych będących stałymi argumentami.</li>
+</ul>
+<li>Poprawiono angielskie okna aplikacji.</li>
+<li>Zmieniono kolejność wyświetlanych języków.</li>
+</ul>
+<p><span class="ver">1.0.2.0</span>&nbsp;<span class="date">(2009-08-03A)</span></p>
+<ul>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.11.0</tt>:
+<ul><li>Rozszerzono możliwości bloków komunikacyjnych <tt>COM_SM</tt><i>x</i> - mogą być wywoływane wielokrotnie z tym samym adresem urządzenia i <tt>timeOut</tt>em,</li>
+<li>Dodano możliwość definiowania sprzętowych bloków funkcjonalnych zapisanych w C,</li>
+<li>Naprawiono problemy z tablicami i strukturami importowanymi z bibliotek,</li>
+<li>Dodano możliwość definiowania bloków funkcjonalnych z automatycznym wyliczaniem instancji w ramach projektu.</li>
+</ul></li>
+<li>Dodano pozycję w menu 'Projekt|Narzędzia' wyświetlającą linię poleceń dla kompilatora STComp05 w celu automatyzacji kompilacji za pomocą pliku wsadowego (<tt>*.bat</tt>) lub innych narzędzi np. CstEd'a.</li>
+<li>Uzupełniono kod maszyny wirtualnej o brakujące funkcje konwersji dla typów <tt>REAL</tt>/<tt>LREAL</tt>.</li>
+</ul>
+<p><span class="ver">1.0.1.14</span>&nbsp;<span class="date">(2009-07-23A)</span></p>
+<ul>
+<li>Poprawiono problem z aplikacją, gdy zostało zamykane okno edycji z wyświetlonym dialogiem Znajdź/Zamień.</li>
+<li>Usunięto eksperymentalne dyrektywy <tt>ALIGNED</tt> dla struktur i tablic.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.10.32</tt>:
+<ul><li>Naprawiono błąd z inicjacją tablicy z typem <tt>REAL</tt>,</li>
+<li>Naprawiono problemy z plikiem <tt>*.dcp</tt> w przypadku używania polskiej wersji kompilatora,</li>
+<li>Dodano zapisu typu bazowego tablicy do pliku <tt>*.dcp</tt>,</li>
+<li>Dodano ograniczenia na szerokość kolumny kodu VMASM w pliku <tt>*.dcp</tt>,</li>
+<li>Dodano więcej reguł implikacji typów stałych w wyrażeniach inicjujących zmienne,</li>
+<li>Zmieniono system inicjacji tablic oraz struktur.</li>
+<li>Dodano łańcuchowe wczytywanie plików LCF poprzez encje <tt>INCLUDE</tt> oraz <tt>PRE</tt> i <tt>POST</tt>. Nazwy plików są relatywne w stosunku do folderu w którym obecnie wczytywany LCF się znajduje.</li>
+</ul>
+<li>Usunięto bibliotekę SMC, bloki funkcjonalne <tt>APON</tt> i <tt>ASTR</tt> przeniesiono do pliku LCF <tt>VM-SMC.xml</tt>,
+<li>Zaktualizowano kompilator do wersji <tt>0.4.10.34</tt>:
+<ul><li>Usunięto błąd z brakiem inicjalizacji zmiennych <tt>VAR_OUTPUT</tt> bez wartości początkowej,</li>
+<li>Dodano eksport struktur do bibliotek (import jeszcze nie gotowy).</li>
+</ul>
+</ul>
+<p><span class="ver">1.0.1.13</span>&nbsp;<span class="date">(2009-06-29A)</span></p>
+<ul>
+<li>Zmodyfikowano system zarządzania ustawieniami podczas uruchamiania.</li>
+<li>Dodano podczas zapisywania projektu wpis LCF w postaci ze zmiennymi applikacji i systemowymi oraz ich przywracanie podczas ładowania pliku z dysku.</li>
+<li>Dodano zapis referencji do bibliotek w postaci ze zmiennymi applikacji i zmiennymi systemowymi, oraz ich przywracanie podczas ładowania pliku z dysku.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.10.28</tt>:
+<ul><li>Dodano obsługę samodzielnych deklaracji typu strukturalnego, i ich użycie przez zmienne lokalne,</li>
+<li>Dodano eksperytmentalną dyrektywę <tt>ALIGNED</tt> do wyrównywania zmiennych lokalnych w strukturze.</li></ul>
+<li>Naprawiono wstawianie szablonów z klawiatury w bibliotece STCPD_Edit.ocx.</li>
+<li>Naprawiono problem z argumentem <tt>--help</tt> w linii poleceń.</li>
+</ul>
+<p><span class="ver">1.0.1.12</span>&nbsp;<span class="date">(2009-06-16A)</span></p>
+<ul>
+<li>Usunięto błąd z nie generowaniem kodu przez kompilator typu <i>command-line</i>,</li>
+<li>Zaktualizowano kontrolkę ActiveX do wyświetlania kolorowanego tekstu:
+<ul><li>Dodano funkcję do wyświetlania/ukrywania/raportowania stanu widoczności okna znajdź zamień,</li>
+<li>Przełączanie do okna znajdującego się pod głównym oknem aplikacji za pomocą standardowego skrótu [Alt]+[F6],</li>
+<li>Dodano dwa nowe tryby kolorowania - procedury specjalne <tt>(*# ... *)</tt> oraz warunki weryfikujące <tt>(*@ ... *)</tt>.</li></ul>
+</li>
+</ul>
+<p><span class="ver">1.0.1.11</span>&nbsp;<span class="date">(2009-06-09C)</span></p>
+<ul>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.10.27</tt>:
+<ul><li>Usunięto problem z błędnym generowaniem kodu w klauzuli <tt>IF</tt> .. <tt>ELSIF</tt> .. <tt>ELSE</tt> .. <tt>END_IF</tt>,</li>
+<li>Dodano polskie komunikaty o błędach w czasie kompilacji.</li></ul>
+<li>Aktualizacja CPSim.</li>
+</ul>
+<p><span class="ver">1.0.1.10</span>&nbsp;<span class="date">(2009-05-27B)</span></p>
+<ul>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.10.25</tt>:
+<ul><li>Dodano eksport komentarzy zmiennych wejściowych i wyjściowych funkcji oraz bloków funkcjonalnych do kodu biblioteki,</li>
+<li>Dodano import komentarzy zmiennych wejściowych i wyjściowych funkcji oraz bloków funkcjonalnych z biblioteki,</li>
+<li>Dodano bezwarunkowe wczytywanie sekcji <tt>init</tt> oraz <tt>code</tt> z pliku LCF,</li>
+<li>Dodano parametry typu <tt>VAR_IN_OUT</tt> do bloków funkcjonalnych definiowanych w pliku LCF,</li>
+<li>Dodano wczytywanie zmiennych lokalnych do bloków funkcjonalnych definiowanych w pliku LCF,</li>
+<li>Kompilator został przekwalifikowany na moduł ładowany dynamicznie.</li>
+</ul></li>
+<li>Przebudowano system konfiguracji programu CPDev na obsługujący wielu użytkowników oraz języków zależnie od wybranego języka instalacji.</li>
+<li>Program CPDev wzbogacono o zmienne aplikacji, które mogą być konfigurowane w trybie zaawansowanego użytkownika.</li>
+<li>Podczas instalacji tworzone są nazwy folderów w uprzednio wybranym języku.</li>
+<li>Poprawiono zmianę widoczności adresów Modbus w oknie raportu kompilacji.</li>
+</ul>
+<p><span class="ver">1.0.1.9</span>&nbsp;<span class="date">(2009-05-14D)</span></p>
+<ul>
+<li>Uaktualniono angielską wersję językową.</li>
+<li>Zmieniono format pliku <tt>cpcon.cfg</tt> do wersji wielojęzycznej.</li>
+<li>Uaktualniono wyświetlane anglojęzyczne bitmapy.</li>
+</ul>
+<p><span class="ver">1.0.1.8</span>&nbsp;<span class="date">(2009-05-05A)</span></p>
+<ul>
+<li>Uaktualniono instrukcję programowania.</li>
+<li>Wersja bieżącego firmware: <tt>2.5.1-2</tt></li>
+<li>Pozostawiono tylko elementarne typy w polu wyboru listy zmiennych globalnych.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.10.23</tt>:
+<ul><li>Poprawiono import bloków funkcjonalych wywołujących importowane funkcje użytkownika.</li></ul></li>
+<li>Naciśnięcie klawisza [Ins] w drzewie projektu przy zaznaczonym folderze 'Biblioteki' powoduje wywołanie okna importującego bibliotekę, gdy zaznaczono 'Zadania' to dodaje nowe zadanie, gdy 'Zmienne globalne' to dodaje nową zmienną globalną.</li>
+<li>Dodano import projektu ze standardu PLCopen.</li>
+<li>Dodano standardowo dołączaną bibliotekę alarmów.</li>
+<li>Podczas resetowania ustawień cała aplikacja kończy działanie w tle, bez chwilowego wyświetlania głównego okna.</li>
+</ul>
+<p><span class="ver">1.0.1.7</span>&nbsp;<span class="date">(2009-04-08A)</span></p>
+<ul>
+<li>Wersja bieżącego firmware: <tt>2.5.1-1</tt>.</li>
+<li>Dodano naturalne sortowanie do kolumn z adresami w raporcie kompilacji.</li>
+<li>Zaktualizowano kompilator do wersji <tt>0.4.10.21</tt>:
+<ul><li>Usunięto problem uniemożliwiający kompilację kodu w języku IL z funkcjami użytkownika.</li></ul>
+</li>
+</ul>
+<p><span class="ver">1.0.1.6</span>&nbsp;<span class="date">(2009-02-16A)</span></p>
+<ul>
+<li>Wersja bieżącego firmware: <tt>2.5.1-0</tt>.</li>
+<li>Zmiana indeksu w systemie pomocy, dodano możliwość tworzenia zagnieżdżeń oraz wyświetlanie dokumentów w formacie html.</li>
+<li>Zaktualizowano CPSim.</li>
+<li>Zaktualizowano CPCon do wersji 1.0.7.</li>
+</ul>
+<p><span class="ver">1.0.1.5</span>&nbsp;<span class="date">(2009-01-26B)</span></p>
+<ul>
+<li>Wersja bieżącego firmware: <tt>2.5.0-3</tt>.</li>
+<li>Automatyczne sprawdzenie zmian w pliku *.dcp przez okna raportu po zakończonej kompilacji.</li>
+<li>Zmieniono domyślne zachowanie podczas podwójnego kliknięcia w informację o błędzie/ostrzeżeniu/podpowiedzi kompilacji. Obecnie aktywowane jest okno edycji kodu z pozycją kursora na danej linii lub okno właściwości obiektu.</li>
+<li>Uaktualniono instrukcje: <tt>Bledy_kompilacji.pdf</tt>, <tt>Nowe_biblioteki</tt>.</li>
+<li>Kompilator: 0.4.10.20:
+<ul><li>Drobne poprawki w klauzuli przetwarzania zmiennych,</li>
+<li>Usunięto problem z zawieszeniem kompilatora w przypadku użycia niepoprawnej konstrukcji <tt>].</tt> .</li></ul>
+<li>Dodano uzupełnianie adresów w drzewie zmiennych globalnych po kompilacji projektu.</li>
+<li>Drobne poprawki: usunięcie wywołania systemowego sygnału 'Beep' po naciśnięciu [Enter] w drzewie projektu, usuwanie zbędnych informacji o błędach kompilacji w przypadku zamykania projektu, adresy szesnastkowe wyświetlane za pomocą dużych liter.</li>
+<li>Wykonano możliwość dodania/usuwania składników biblioteki importowanych do projektu za pomocą okna 'Właściwości biblioteki'.</li>
+<li>Zaktualizowano CPCon.</li>
+<li>Zaktualizowano CPSim - dodano obsługę podglądu zmiennych w SMC.</li>
+</ul>
+<p><span class="ver">1.0.1.4</span>&nbsp;<span class="date">(2009-01-05B)</span></p>
+<ul>
+<li>Reorganizacja dokowania komponentów w oknie raportu kompilacji.</li>
+<li>Dodano obsługę drukowania kodu oraz zmodyfikowano metodę drukowania raportu kompilacji:
+<ul>
+<li>Wybranie z menu '<tt>Plik</tt>|<tt>Drukuj</tt>' powoduje możliwość wyboru drukarki oraz jej ustawień,</li>
+<li>Kliknięcie w ikonę na pasku narzędzi powoduje drukowanie na domyślnej drukarce z domyślnymi ustawieniami.</li>
+</ul>
+</li>
+<li>Kompilator: 0.4.10.15:
+<ul><li>Poprawiono wczytywanie funkcji użytkownika z bibliotek,</li>
+<li>Dodano nową opcjonalną parę klucz-wartość w deklaracji importu biblioteki - <tt>timestamp</tt> z wartością znacznika czasowego kompilacji biblioteki w formacie <tt>'YYYY-MM-DD-HH24:NN:SS.TTT'</tt>.
+W przypadku niezgodności deklarowanej wersji ze znalezioną zostanie zgłoszone ostrzeżenie. Brak klucza oznacza zgodność domyślną.</li></ul>
+<li>Zmodyfikowano obsługę wyszukiwania: [Ctrl]+F przenosi fokus do wpisania szukanego tekstu; [Enter] lub [Ctrl]+F w polu wyszukiwania znajdują pasujące elementy. Wyszukiwanie wstecz
+dostępne jest pod skrótami [Shift]+[Enter],[Shift]+[Ctrl]+F. W przypadku zmiany kierunku wyszukiwania pierwszy znaleziony element pozostaje bez zmian, dopiero drugie żądanie wyszukiwania w tym samym kierunku spowoduje przejście do następnego dopasowanego elementu.</li>
+<li>Dodano zapisywanie znaczników czasowych bibliotek do pliku projektu, oraz ich sprawdzanie podczas otwierania. Niezgodność znacznika sygnalizowana jest przez ostrzeżenie w oknie komunikatów.</li>
+<li>Zmieniono domyślny schemat kolorowania składni dotyczący niewłaściwych tokenów, dotychczas powodujący wyświetlanie czerwonego tekstu na czerwonym tle w oknie informacji o błędzie. Nową wartość domyślną umieszczono w pliku <tt>Definiowanie kolorow.pdf</tt>.</li>
+<li>Dynamiczne włączanie i wyłączanie dostępności opcji związanych z operacją na plikach oraz zarządzania projektem.</li>
+<li>Zmiany w edytorze zmiennych globalnych (lista zmiennych globalnych):
+<ul><li>Zastosowano tabelaryczny rozkład dla dotychczasowych komponentów w grupie 'Parametry zmiennej',</li>
+<li>Uaktywnianie przycisku 'Popraw' w przypadku dokonania zmian w kontrolkach,</li>
+<li>Naciśnięcie 'OK' bez dokonania zatwierdzenia zmian spowoduje wyświetlenie okna z pytaniem czy należy je zatwierdzić (przyciskiem 'Popraw'). W przypadku odpowiedzi twierdzącej i wykonaniu operacji aktualizacji bez błędów okno zamknie się z zastosowanymi zmianami,</li>
+<li>Możliwość deklarowania nazw wielu zmiennych oddzielonych znakami przecinka ('<tt>,</tt>') lub spacji ('<tt>&nbsp;</tt>'). Wielokrotne separatory występujące obok siebie (np. '<tt>,,</tt>' lub '<tt>,&nbsp;,</tt>') są traktowane jak pojedynczy separator,</li>
+<li>Sprawdzanie czy nazwy zmiennych wpisane przez użytkownika mogą być identyfikatorami,</li>
+<li>Sprawdzanie unikalności wprowadzanych nazw z będącymi na liście oraz z pozostałymi podanymi w polu nazwy,</li>
+<li>Zabezpieczenie przed podaniem pustej nazwy typu dla zmiennych.</li>
+</ul></li>
+<li>W dialogu właściwości projektu dodano tabelaryczny rozkład komponentów oraz wyświetlono pole z plikiem specyfikacji Maszyny Wirtualnej. Podwójne kliknięcie w niego spowoduje wyświetlenie dialogu ułatwiającego jego zmianę.</li>
+<li>Fix sprawdzania poprawności nazwy projektu jako identyfikatora.</li>
+<li>Dodano opcję konfiguracji w zakładce 'Różne' - do ignorowania wpisów z plikiem specyfikacji w projekcie i zastąpieniu go domyślnym plikiem z ustawień programu.</li>
+<li>Zmieniono wygląd oraz zachowanie okna 'Właściwości zmiennej globalnej':
+<ul><li>Lista typów domyślnie wyświetla tylko dostępne typy proste,</li>
+<li>Zlikwidowano przyciski 'Dodaj' i 'Zastąp',</li>
+<li>Wprowadzono dwukierunkową obsługę okno - obiekt.</li></ul>
+<li>Dodano wyświetlanie typów, adresów fizycznych, adresów logicznych i komentarzy zmiennym globalnym. Wyświetlane obiekty są konfigurowane w odpowiednich polach ustawień na zakładce 'Różne'.</li>
+<li>Kompilator: 0.4.10.18:
+<ul>
+<li>Dodano opcjonalną optymalizację obszaru zmiennych globalnych w przypadku, gdy projekt zawiera jedno zadanie,</li>
+<li>Została dodana opcja w ustawieniach na zakładce 'Projekty' do przełączania tej opcji,</li>
+<li>Dodano eksperymentalny kompilator języka IL (odłączany od projektu w czasie kompilacji wersji finalnych).</li>
+</ul>
+</ul>
+<p><span class="ver">1.0.1.3</span>&nbsp;<span class="date">(2008-12-08A)</span></p>
+<ul>
+<li>Wersja bieżącego firmware: <tt>2.5.0-2</tt>.</li>
+<li>Dodano nowe przyciski w pasku narzędzi do: budowania projektu, uruchamiania symulatora i uruchamiania kompilatora.</li>
+<li>Poprawiono brak operacji kopiuj/wklej/wytnij itp. w polu wyszukiwania tekstu z użyciem Windowsowych skrótów ([Ctrl]+C, itp.).</li>
+<li>Nowy CPCon - wersja: 1.0.0.2 .</li>
+<li>Zmiany w CPSim.</li>
+</ul>
+<p><span class="ver">1.0.1.2</span>&nbsp;<span class="date">(2008-11-21A)</span></p>
+<ul>
+<li>Zaktualizowano CPCon do wersji: 1.0.0.1 .</li>
+<li>Zaktualizowano CPSim.</li>
+<li>Dodano w dokumentacji plik <tt>CPSim_zmiany.pdf</tt>.</li>
+<li>Uzupełniono w dokumentacji plik <tt>Definiowanie_kolorow.pdf</tt>.</li>
+</ul>
+<p><span class="ver">1.0.1.1</span>&nbsp;<span class="date">(2008-10-13A)</span></p>
+<ul>
+<li>Zastąpiono pole tekstowe do edycji ustawień kolorowania tekstu, profesjonalnie wyglądającym interfejsem.</li>
+<li>Dodano przycisk na formularzu raportu kompilacji, zapisujący go do pliku w formacie HTML.</li>
+<li>Dodano w głównym menu pozycję: '<tt>Projekt</tt>|<tt>Narzędzia</tt>|<tt>Otwórz folder projektu</tt>' do szybkiej lokalizacji folderu na dysku.</li>
+<li>Zaktualizowana biblioteka <tt>Basic_blocks.lcp</tt>.</li>
+<li>Dodano pliki dokumentacji technicznej: <tt>CPSim_zmiany.pdf</tt>, <tt>Nowe_biblioteki.pdf</tt>. Zmodyfikowano: <tt>Definiowanie_kolorów.pdf</tt></li>
+</ul>
+<p><span class="ver">1.0.1.0</span>&nbsp;<span class="date">(2008-10-08A)</span></p>
+<ul>
+<li>Kompilator 0.4.10.13:
+<ul><li>Poprawiono i uzupełniono genrerowanie mapy obiektów ze zmiennymi lokalnymi</li>
+<li>Dodano możliwość blokowania wyświetlania zmiennej lokalnej poprzez dyrektywę <tt>HIDDEN</tt></li>
+<li>Usunięto problem z opuszczeniem generowanego kodu w przypadku gdy lewy argument operatorów <tt>AND</tt> i <tt>OR</tt> nie był typu <tt>BOOL</tt></li>
+</ul></li>
+<li>Dodano możliwość obserwacji zmiennych lokalnych w CPSim.</li>
+<li>Usunięto usterkę z brakiem możliwości resetowania ustawień w module wspólnej konfiguracji pakietu.</li>
+<li>Dodano informację gdy zostanie przekroczona dopuszczalna liczba zadań w projekcie.</li>
+<li>Zablokowano zmiany prędkości komunikacji w ustawieniach globalnych.</li>
+<li>Zaktualizowano bibliotekę <tt>Basic_blocks.lcp</tt>.</li>
+<li>Zaktualizowano przykład <tt>Start_Stop.xml</tt> o komentarze dokumentacyjne.</li>
+</ul>
+<p><span class="ver">1.0.0.10</span>&nbsp;<span class="date">(2008-09-22B)</span></p>
+<ul>
+<li>Dołączono nowy CPCon z obsługą testów systemowych przez Modbus.</li>
+<li>Kompilator 0.4.10.11:
+<ul><li>Usunięto błąd kompilatora z brakiem jednoargumentowej negacji</li></ul></li>
+<li>Usunięto błąd z brakiem podpowiedzi, uzupełnienia gdy identyfikator zawierał cyfrę</li>
+<li>Usunięto błąd z zastępowaniem całej linii wstawianym kodem z szablonu</li>
+<li>Zablokowano wyświetlanie niepotrzebnego menu kontekstowego dla liczb</li>
+<li>Zablokowanie liczenia czasu pracy sterownika w trakcie pauzy i stopu</li>
+</ul>
+<p><span class="ver">1.0.0.9</span>&nbsp;<span class="date">(2008-08-25A)</span></p>
+<ul>
+<li>Zmiany w edytorze pojedynczym kolorowanym:
+<ul><li>Dodano implementator wywołania bloków funkcjonalnych dostępny z głównego menu oraz ze skrótu [Ctrl]+[Shift]+S</li>
+<li>Dodano podpowiadacz parametrów funkcji, i bloków funkcjonalnych dostępny z głównego menu oraz skrótu [Ctrl]+[Shift]+P</li>
+</ul>Szczegóły zmian są dostępne w dokumentacji technicznej - plik: "Skroty_STCPDocx.pdf" strona 5.</li>
+<li>Kompilator 0.4.10.10:
+<ul><li>Usunięto wyrównywanie adresów dla parametrów komunikacyjnych bloków funkcjonalnych (<tt>COM_SM1</tt>, <tt>COM_SM2</tt>, etc).</li>
+<li>Usunięto dziwne flagi z definicji wejść bloku komunikacyjnego <tt>COM_SM4</tt></li></ul>
+<li>Zaktualizowano CPCon do wersji obsługującej <tt>RETAIN.</tt></li>
+</ul>
+<p><span class="ver">1.0.0.8</span>&nbsp;<span class="date">(2008-08-18A)</span></p>
+<ul>
+<li>Zmiana interfejsu kontrolki ActiveX do kolorwania tekstu (interfejs nie kompatybilny z poprzednią wersją 0.2.x).</li>
+<li>Dodano w ustawieniach nowe parametry konfiguracyjne do jednolinijkowych komentarzy w języku ST.</li>
+<li>Edytor pojedynczy kolorowany:
+<ul><li>Dodano podpowiadacz typów dostępny z głównego menu oraz ze skrótu [Ctrl]+[Shift]+T</li>
+<li>Dodano podpowiadacz słów kluczowych dostępny z głównego menu oraz skrótu [Ctrl]+[Shift]+K</li>
+<li>Dodano autouzpełniacz szablonu kodów dostępny z głównego menu oraz skrótu [Ctrl]+[Shift]+W</li>
+</ul>Szczegóły zmian są dostępne w dokumentacji technicznej - plik: "Skroty_STCPDocx.pdf" strona 2.</li>
+<li>Wybranie z menu 'Projekt | Składnik | Zmień nazwę' powoduje zmianę nazwy obiektu w drzewie (pod warunkiem że nowa jest unikalna). Zmiana ta nie modyfikuje kodu.</li>
+<li>Ustawienie parametru <tt>RETAIN</tt> (podtrzymanie) zmiennej powoduje zapamiętanie jej wartości przy następnym starcie.</li>
+</ul>
+<p><span class="ver">1.0.0.7</span>&nbsp;<span class="date">(2008-07-28A)</span></p>
+<ul>
+<li>Zmieniono wyświetlane teksty w menu 'Pomoc' z 'Dokumentacja' na 'Instrukcja programowania'.</li>
+<li>Zmieniono domyślną nazwę nowego bloku funkcjonalnego z '<tt>FUN_BLK</tt>' na '<tt>FB</tt>'.</li>
+</ul>
+<p><span class="ver">1.0.0.6</span>&nbsp;<span class="date">(2008-07-22B)</span></p>
+<ul>
+<li>Bieżący stan rzeczy zawiera dostarczona razem z pakietem dokumentacja.</li>
+</ul>
+</body>
+</html>

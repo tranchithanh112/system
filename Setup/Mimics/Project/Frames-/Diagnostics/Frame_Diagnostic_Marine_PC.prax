@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="160" Height="120" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="35" Height="35" X="100" Y="113" FillColor="Black" TextColor="InfoTextGrey" Font="Praxis;28.0;N;N;N" Text="B">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_B_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="35" Height="35" X="24" Y="113" FillColor="Black" TextColor="InfoTextGrey" Font="Praxis;28.0;N;N;N" Text="A">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ETH_Port_A_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Polyline Width="3">
+			<Points>
+				<Point Coord="0;115"/>
+				<Point Coord="15;115"/>
+				<Point Coord="15;80"/>
+				<Point Coord="145;80"/>
+				<Point Coord="145;115"/>
+				<Point Coord="160;115"/>
+			</Points>
+		</Polyline>
+		<TextBox Width="150" Height="40" X="5" Y="-50" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;36.0;N;N;N" Text="WORKSTATION 1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Top_1"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="40" X="5" Y="-10" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;36.0;N;N;N" Text="(ER)">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Top_2"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="150" Height="40" X="5" Y="35" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;28.0;N;N;N" Text="SERVER 1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Bottom_1"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

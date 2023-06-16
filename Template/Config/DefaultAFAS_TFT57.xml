@@ -1,0 +1,4742 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="XP10">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <SUBJECT><![CDATA[]]></SUBJECT>
+      <CREATED year="2010" month="11" day="2" hour="17" minutes="30" seconds="32" milisec="115" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="000005AB" />
+      <II value="00000038" />
+      <PAL1131G used="1" />
+      <LC year="2019" month="8" day="23" hour="9" minutes="32" seconds="32" milisec="21" />
+      <LCF>
+        <ABSOLUTE>D:\Software\System\PAL1131\VM\VM-Praxis-TFT57.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis-TFT57.xml</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\VM\VM-Praxis-TFT57.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.0</CREATOR>
+      <LASTSAVEDWITH>1.1.5.2</LASTSAVEDWITH>
+      <DCP>
+        <ABSOLUTE>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.dcp</ABSOLUTE>
+        <APPVARS>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.dcp</APPVARS>
+        <ENVVARS>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.dcp</ENVVARS>
+      </DCP>
+      <XCP>
+        <ABSOLUTE>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.xcp</ABSOLUTE>
+        <APPVARS>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.xcp</APPVARS>
+        <ENVVARS>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.xcp</ENVVARS>
+      </XCP>
+      <HCP>
+        <ABSOLUTE>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.hcp</ABSOLUTE>
+        <APPVARS>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.hcp</APPVARS>
+        <ENVVARS>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.hcp</ENVVARS>
+      </HCP>
+      <CST>
+        <ABSOLUTE>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.cst</ABSOLUTE>
+        <APPVARS>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.cst</APPVARS>
+        <ENVVARS>D:\SOFTWARE\SYSTEM\SETUP\XP\XP10\Pal1131_XP10.cst</ENVVARS>
+      </CST>
+      <HCPFlags enabled="0" />
+      <OverrideDefaultPaths enabled="0" />
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="D:\Software\System\PAL1131\Libraries\IEC 61131-3.lcp">
+        <CREATED year="2018" month="12" day="11" hour="12" minutes="51" seconds="37" milisec="18" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\Libraries\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+      <PKG name="Praxis_FUNC" version="131072" filename="D:\Software\System\PAL1131\Libraries\Praxis_FUNC.lcp">
+        <CREATED year="2018" month="12" day="11" hour="12" minutes="51" seconds="38" milisec="905" />
+        <APPVARS>$LibDir\Praxis_FUNC.lcp</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\Libraries\Praxis_FUNC.lcp</ENVVARS>
+        <IMP name="FINT_TO_TIME" type="FUN" />
+        <IMP name="TIME_TO_FINT" type="FUN" />
+        <IMP name="FINT_TO_INT" type="FUN" />
+        <IMP name="INT_TO_FINT" type="FUN" />
+        <IMP name="DIV0" type="FUN" />
+        <IMP name="ABS_FINT" type="FUN" />
+        <IMP name="SQRT_FINT" type="FUN" />
+        <IMP name="HZ_TO_RPM" type="FUN" />
+        <IMP name="MAX_FINT" type="FUN" />
+        <IMP name="MIN_FINT" type="FUN" />
+        <IMP name="ANGLE180" type="FUN" />
+        <IMP name="ANGLE360" type="FUN" />
+        <IMP name="ATAN2" type="FUN" />
+        <IMP name="DEG_TO_RAD" type="FUN" />
+        <IMP name="RAD_TO_DEG" type="FUN" />
+        <IMP name="SET_BIT" type="FUN" />
+        <IMP name="GET_BIT" type="FUN" />
+        <IMP name="RESET_BIT" type="FUN" />
+      </PKG>
+      <PKG name="PRAXIS_HW" version="131072" filename="D:\Software\System\PAL1131\Libraries\Praxis_HW.lcp">
+        <CREATED year="2018" month="12" day="11" hour="12" minutes="51" seconds="37" milisec="797" />
+        <APPVARS>$LibDir\Praxis_HW.lcp</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\Libraries\Praxis_HW.lcp</ENVVARS>
+        <IMP name="HW_LOAD" type="FBLK" />
+        <IMP name="HW_XP" type="FBLK" />
+        <IMP name="HW_TIMING" type="FBLK" />
+        <IMP name="HW_VERSIONS" type="FBLK" />
+        <IMP name="HW_SCROLL_UP" type="FBLK" />
+        <IMP name="HW_SCROLL_DOWN" type="FBLK" />
+        <IMP name="HW_ACCEPT" type="FBLK" />
+        <IMP name="HW_BUTTON_ID" type="FBLK" />
+        <IMP name="HW_TOUCH_GET_THR" type="FBLK" />
+        <IMP name="HW_TOUCH_SET_THR" type="FBLK" />
+        <IMP name="HW_SET_ALT_LANG" type="FBLK" />
+        <IMP name="HW_GET_ALT_LANG" type="FBLK" />
+        <IMP name="HW_GET_ALARM_PULSE_ON_NEXT" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_ALM" type="FBLK" />
+        <IMP name="HW_SET_TFT_PAGE" type="FBLK" />
+        <IMP name="HW_GET_TFT_PAGE" type="FBLK" />
+        <IMP name="HW_SET_TFT_FLASH" type="FBLK" />
+        <IMP name="HW_DETACH_ELVR" type="FBLK" />
+        <IMP name="HW_GETSTATUS_ELVR" type="FBLK" />
+        <IMP name="HW_GETSTATUS_IOW24" type="FBLK" />
+        <IMP name="HW_SPEED_ELVR" type="FBLK" />
+        <IMP name="HW_STEER_ELVR" type="FBLK" />
+        <IMP name="HW_MENU_PUBLIC_KEY" type="FBLK" />
+        <IMP name="HW_MENU_FIRST_PAGE" type="FBLK" />
+        <IMP name="HW_MENU_AFTER_LOGIN_PULSE" type="FBLK" />
+        <IMP name="HW_MENU_PW_CHANGE" type="FBLK" />
+        <IMP name="HW_GET_TFT_FLASH" type="FBLK" />
+        <IMP name="HW_SET_RD_ACTIVE" type="FBLK" />
+        <IMP name="HW_SET_WOODS_JIS" type="FBLK" />
+        <IMP name="RETAIN_TO_FACTORY" type="FBLK" />
+        <IMP name="FACTORY_TO_RETAIN" type="FBLK" />
+        <IMP name="HW_GET_ALARM_PULSE_ON_NEXT_V02" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_V02" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_ALM_V02" type="FBLK" />
+        <IMP name="HW_SET_TFT_ALM_SUM_DAY_WEEK_MON" type="FBLK" />
+        <IMP name="SET_ORIENTATION" type="FBLK" />
+        <IMP name="HW_SET_RD_COMPORT" type="FBLK" />
+        <IMP name="LONG_FOLLOWUP" type="FBLK" />
+        <IMP name="HW_MENU_TOUCH_FUNCTION" type="FBLK" />
+        <IMP name="HW_MENU_TOUCH_BUTTON_PRESS" type="FBLK" />
+        <IMP name="HW_GET_EAS_RESET_SIGNAL" type="FBLK" />
+        <IMP name="HW_SET_TFT_GROUP_NR_PAGE" type="FBLK" />
+        <IMP name="HW_ORD_PRN_SET_ON_OFF" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PERIODIC_PRINT" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PERIODIC_HOURS" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PRINT_STATUS" type="FBLK" />
+        <IMP name="HW_SHOW_MENU_SET_DATE" type="FBLK" />
+        <IMP name="HW_SHOW_MENU_SET_TIME" type="FBLK" />
+        <IMP name="HW_FORCE_REDRAW_DISPLAY" type="FBLK" />
+        <IMP name="HW_ORD_PRN_GET_STATUS_INFO" type="FBLK" />
+        <IMP name="HW_TFT_EAS_SEND_STOP_HORN" type="FBLK" />
+        <IMP name="HW_TFT_EAS_SEND_ACK" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="ST" disabled="0" type="PRG" name="INIT_FAS" editor="PAL1131.ST"><![CDATA[PROGRAM INIT_FAS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+
+  // APPLICATION REVISIONS ------------------------------------------------------------- 
+ // ----------------------------------------------------------------------------------- 
+ // USE FOLLOWING APPLICATION REVISION NUMBER TEMPLATE :                                
+ // *****   YYXXXS.SSX   *******    
+ // WHERE:  YYXXX       = PROJECT SPECIAL FOR PROJECT NPYY-XXX   
+ //              S.SS   = STANDARD EAS APPLICATION NUMBER        
+ //                  X  = SPECIAL                                
+ 
+ //**********************************
+ // REVISION :    1.01               
+ // DATE     :    2019, AUG-29     
+ // AUTHOR   :    CS/DO                 
+ // ADDED    :    INITIAL VERSION 5.7' TFT TOUCH AFAS    
+ // UPDATED POU:  ALL  
+ // TESTED WITH:  Release: 2019-04-27 (6.0.1.9) Update 2            
+ 
+ VAR
+ BOARD_AUTODISCOVERY: REQUEST_BOARD_AUTODISCOVERY;
+ oldStartAutoDiscovery: BOOL := false;
+ TEST_LAMP_TOGGLE: SYSTEM_TOGGLE;
+ FIRST_TIME: BOOL := true;
+ newStartAutoDiscovery : BOOL := false; 
+ CT: TIME;
+ deltaCT: TIME;
+ powerupStartTick: TIME;
+ END_VAR
+
+  CT := CUR_TIME();
+  IF (FIRST_TIME = true) THEN // simulate good diagnostics for not used boards
+    FIRST_TIME := false;
+    powerupStartTick := CT;
+    //DUMMY_RETAIN := DUMMY_RETAIN + 1; 
+    PROJECT_SW_VER:=FINT#1.01;
+    MASTER_SW_VER:=FINT#1.01;       
+  END_IF
+  
+  deltaCT := CT - powerupStartTick;
+  IF deltaCT > T#3m THEN
+    powerupDelayElapsed := true;
+    powerupRemainTime := T#0s;
+  ELSE
+    powerupDelayElapsed := false;
+    powerupRemainTime := T#3m - deltaCT;
+  END_IF
+  
+  IF (oldStartAutoDiscovery = false AND START_AUTO_DISCOVERY = true) THEN
+    newStartAutoDiscovery := true;
+  END_IF
+  oldStartAutoDiscovery := START_AUTO_DISCOVERY; 
+    
+      
+  IF SELECT_LOOP_AUTO_DISCOVERY <> 0
+     AND autoDiscoveryPending = false 
+     AND START_AUTO_DISCOVERY = true
+     AND newStartAutoDiscovery = true THEN
+    autoDiscoveryPending := true; 
+    DONE_AUTO_DISCOVERY := false;
+    RETURN;
+  END_IF
+  
+  IF autoDiscoveryPending = true THEN  
+    BOARD_AUTODISCOVERY (board := SELECT_LOOP_AUTO_DISCOVERY - 1,start:= START_AUTO_DISCOVERY,paramHandling:= PARAMETER_HANDLING_AUTO_DISCOVERY);
+    DONE_AUTO_DISCOVERY := BOARD_AUTODISCOVERY.done;
+    IF BOARD_AUTODISCOVERY.done = true THEN
+      ERROR_CODE_AUTO_DISCOVERY := BOARD_AUTODISCOVERY.error;
+      autoDiscoveryPending := false;
+      newStartAutoDiscovery := false;
+      RETURN;
+    END_IF
+    //BLOCK_HANDLE_LAMP_TEST := true;
+    //TEST_LAMP_TOGGLE(start:=BLOCK_HANDLE_LAMP_TEST,io:=LAMP_TEST,delay:=t#200ms);
+    //LAMP_TEST := TEST_LAMP_TOGGLE.io;
+  ELSE
+    //BLOCK_HANDLE_LAMP_TEST := false;
+    //LAMP_TEST := START_AUTO_DISCOVERY;  
+  END_IF
+    
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="HANDLE_ACK" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_ACK
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ GET_BOARD_STATE: SYSTEM_GET_BOARD_STATE;
+ SET_IOP_PROPERTY: SYSTEM_SET_IOP_PROPERTY;
+ ACK_TOGGLE: SYSTEM_TOGGLE;
+ tempAckMaster : BOOL := false;
+ previousState: BOOL := false;
+ newAck: BOOL :=false;
+ board: INT;
+ sirenFail: ARRAY [0..7] OF BOOL;
+ loopLineFail: ARRAY [0..7] OF BOOL;
+ Mask: BYTE;
+ END_VAR
+ 
+ // detect new ACK pressed
+ IF (START_ACK = true) AND (previousState = false) THEN
+   newAck := true;
+ ELSE
+   newAck := false;  
+ END_IF
+ previousState := START_ACK;
+  
+ // handle ACK for Fire Alarms
+ IF newAck = true AND (CURRENT_LOGIN_LEVEL = 2) THEN
+   FIRE_ALARM_ACK := true;
+   pendingGlobalFireRelay := false; // cancel the pending command of FireRelay (if any)
+ END_IF
+ 
+ IF ANY_NACK_FIREALARM = FALSE THEN
+   // all firealarms are ACK
+   // lets handle the firealarm led & relay
+   IF ANY_FIREALARM_ON = TRUE THEN
+     //LAMP_FIREALARM := true;// fire alarm led is steady on
+     // fire alarm relay unchanged
+   ELSE  
+     //LAMP_FIREALARM := false;// fire alarm led is off
+     FIREALARM_RELAY1 := false;// fire alarm relay is off
+     FIREALARM_RELAY2 := false;// ??? fire alarm relay is off
+     FIREALARM_RELAY3 := false;// fire alarm relay is off
+     FIREALARM_RELAY4 := false;// ??? fire alarm relay is off
+     //LAMP_FIRE_OUTPUT := false;   
+   END_IF
+ END_IF
+
+   
+ // handle ACK for Faults  
+ IF (newAck = true AND (CURRENT_LOGIN_LEVEL = 2 OR ACK_FOR_FAULT > 0)) // new ACK pressed and security level matches
+     OR (ACK_FOR_FAULT = 2 AND ANY_FAULT_ON = true) THEN // or automatic ACK for faults and any fault on
+   FAULT_ACK := true;
+   Mask := BYTE#1;
+   FOR board := 0 TO 7 DO
+     sirenFail[board]    :=  ((SIREN_OUTPUT_FAILURE_MASK AND Mask ) > BYTE#0) 
+                          OR ((SIREN_LINE_FAILURE_MASK   AND Mask ) > BYTE#0);
+     loopLineFail[board] :=  ((LOOP_SHORT_FAILURE_MASK   AND Mask ) > BYTE#0);
+                            
+     GET_BOARD_STATE (Board := board,BoardType:= 10); // check if board is present and it is a FAS board
+     IF GET_BOARD_STATE.state = false THEN // board present
+       // send ACK
+       IF (loopLineFail[board] = true) THEN
+         SET_IOP_PROPERTY (Board := board,IOP := 0,PrID := 160,PrValue := 1); // ACK loop fail
+       END_IF
+       IF (sirenFail[board] = true) THEN                 
+          SET_IOP_PROPERTY (Board := board,IOP := 0,PrID := 161,PrValue := 1); // ACK siren fail
+       END_IF
+     END_IF
+     Mask := Mask * Byte#2;
+   END_FOR   
+ END_IF
+ //!!IF ANY_NACK_FAULT = false THEN
+   // all faults are ACK
+   // lets handle fault led & relay
+   IF ANY_FAULT_ON = true THEN
+     //LAMP_GENERAL_FAULT := true;// fault led is steady ON
+     //LAMP_FAULT := true;// general fault is steady ON
+     // fault relay remains unchanged
+   ELSE
+     //LAMP_GENERAL_FAULT := false;// fault led is OFF
+    // LAMP_FAULT := false;// general fault is OFF
+     FAIL_OUTPUT := false;// fault relay is OFF
+   END_IF
+ //!!END_IF
+ 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_GET_BOARD_STATE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_GET_BOARD_STATE
+(*$HARDWARE_BODY_CALL ID:0018; Align:1 *)
+(*$CONST_INIT_INSTANCE*)
+(*COMMENT The block is implemented in C *)
+VAR_INPUT 
+Board: INT;
+BoardType: INT;
+END_VAR
+VAR_OUTPUT
+State: BOOL;
+END_VAR
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_SET_IOP_PROPERTY" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_SET_IOP_PROPERTY
+(*$HARDWARE_BODY_CALL ID:0019; Align:1 *)
+(*$CONST_INIT_INSTANCE*)
+(*COMMENT The block is implemented in C *)
+VAR_INPUT 
+Board: INT;
+IOP: INT;
+PrID: INT;
+PrValue: DINT;
+END_VAR
+VAR_OUTPUT
+END_VAR
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_REQUEST_PROPERTY" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_REQUEST_PROPERTY
+(*$HARDWARE_BODY_CALL ID:001a; Align:1 *)
+(*$CONST_INIT_INSTANCE*)
+(*COMMENT The block is implemented in C *)
+VAR_INPUT 
+Board: INT;
+IOP: INT;
+PrID: INT;
+END_VAR
+VAR_OUTPUT
+END_VAR
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_CHECK_REQUEST_PROPERTY_DONE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_CHECK_REQUEST_PROPERTY_DONE
+(*$HARDWARE_BODY_CALL ID:001b; Align:1 *)
+(*$CONST_INIT_INSTANCE*)
+(*COMMENT The block is implemented in C *)
+VAR_INPUT 
+Board: INT;
+END_VAR
+VAR_OUTPUT
+Status: INT;
+END_VAR
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_GET_REQUEST_PROPERTY" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_GET_REQUEST_PROPERTY
+(*$HARDWARE_BODY_CALL ID:001c; Align:1 *)
+(*$CONST_INIT_INSTANCE*)
+(*COMMENT The block is implemented in C *)
+VAR_INPUT 
+Board: INT;
+END_VAR
+VAR_OUTPUT
+Value: DINT;
+END_VAR
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="REQUEST_BOARD_AUTODISCOVERY" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK REQUEST_BOARD_AUTODISCOVERY
+VAR_INPUT 
+board: INT;
+start: BOOL;
+paramHandling: INT;
+END_VAR
+
+VAR_OUTPUT
+done: BOOL;
+error: INT;
+END_VAR
+
+VAR
+ GET_BOARD_STATE: SYSTEM_GET_BOARD_STATE;
+ (*SET_IOP_PROPERTY: SYSTEM_SET_IOP_PROPERTY;
+ REQUEST_PROPERTY: SYSTEM_REQUEST_PROPERTY;
+ CHECK_REQUEST_PROPERTY: SYSTEM_CHECK_REQUEST_PROPERTY_DONE;
+ GET_REQUEST_PROPERTY: SYSTEM_GET_REQUEST_PROPERTY;*)
+ SET_IOP_VALUE: SYSTEM_SET_IOP_VALUE;
+ GET_IOP_VALUE: SYSTEM_GET_IOP_VALUE;
+ autoDiscoveryStarted: BOOL := false;
+ detectedBoard: BOOL;
+ iopValue: DINT;
+ CT: TIME;
+ autodiscoveryTimeout: TIME:=t#0s;
+ autodiscoveryLastCT: TIME:=t#0s;
+ autoDiscoveryMode: DINT;
+END_VAR
+
+ IF start = true THEN
+   IF autoDiscoveryStarted = false THEN
+     GET_BOARD_STATE (Board := board,BoardType:= 10); // check if board is present and it is a FAS board
+     detectedBoard := NOT GET_BOARD_STATE.state;
+     IF detectedBoard = true THEN
+       // start auto discovery on detected boards
+       (*SET_IOP_PROPERTY (Board := board,IOP := 0,PrID := 150,PrValue := 162); // set board mode to 0xA2=162=AUTO_DISCOVERY
+       REQUEST_PROPERTY (Board := board,IOP := 0,PrID := 150);*)
+       IF paramHandling = 0 THEN
+         autoDiscoveryMode := DINT#162; // AUTO_DISCOVERY mode 0xA2=162
+       ELSE
+         autoDiscoveryMode := DINT#163; // AUTO_DISCOVERY_AND_INIT_TO_DEFAULT mode 0xA3=163
+       END_IF         
+       SET_IOP_VALUE (Board := board,IOP := 137,Value := autoDiscoveryMode); // set board mode to AUTO_DISCOVERY
+       autodiscoveryTimeout:=t#0s;
+       autodiscoveryLastCT:=CUR_TIME();
+       done := false;
+       error := 0;
+     ELSE
+       error := 100; // mark as error - board not present
+       done := true;
+       autoDiscoveryStarted := false;  
+       RETURN; 
+     END_IF
+     autoDiscoveryStarted := true;
+     RETURN;
+   ELSE
+     // auto discovery already started
+     IF done = false THEN
+       // check board present
+       GET_BOARD_STATE (Board := board,BoardType:= 10); // check if board is present and it is a FAS board
+       detectedBoard := NOT GET_BOARD_STATE.state;
+       IF detectedBoard = false THEN
+         error := 100; // mark as error - board not present
+         done := true;
+         autoDiscoveryStarted := false;  
+         RETURN;
+       ELSE   
+         // check auto discovery done
+         (*CHECK_REQUEST_PROPERTY (Board := board);
+         IF CHECK_REQUEST_PROPERTY.Status = 1 THEN
+           RETURN;// retrigger
+         ELSIF CHECK_REQUEST_PROPERTY.Status = 0 THEN
+           GET_REQUEST_PROPERTY (Board := board);// check reply
+           IF GET_REQUEST_PROPERTY.Value = DINT#162 THEN // board mode is still autodiscovery
+             // still in auto discovery
+             // send a new read request
+             REQUEST_PROPERTY (Board := board,IOP := 0,PrID := 150);
+           ELSIF GET_REQUEST_PROPERTY.Value = DINT#160 THEN // board mode is LOOP_NOT_CONFIGURED - no sensor was found in loop
+             error := 160; // mark as error
+             done := true;
+             autoDiscoveryStarted := false;  
+             RETURN; 
+           ELSIF GET_REQUEST_PROPERTY.Value = DINT#161 THEN // board mode is NORMAL_SCANNING
+             // auto discovery done for this board
+             error := 0; // OK
+             done := true;
+             autoDiscoveryStarted := false;  
+             RETURN; 
+           END_IF;
+         ELSE
+           error := CHECK_REQUEST_PROPERTY.Status;// error code
+           done := true;
+           autoDiscoveryStarted := false;  
+           RETURN;
+         END_IF*)
+
+          CT:=CUR_TIME();
+          autodiscoveryTimeout:=autodiscoveryTimeout+CT-autodiscoveryLastCT;
+          autodiscoveryLastCT:=CT;
+          IF autodiscoveryTimeout>=t#300s THEN
+            error := 101;// error code - timeout autodiscovery
+            done := true;
+            autoDiscoveryStarted := false;  
+            RETURN;
+          ELSE 
+            GET_IOP_VALUE (Board := board,IOP := 137);
+            iopValue := GET_IOP_VALUE.Value;
+            IF iopValue = autoDiscoveryMode THEN // board mode is still autodiscovery
+               // still in auto discovery,wait to finish or to timeout
+               RETURN;
+            ELSIF iopValue = DINT#160 THEN // board mode is LOOP_NOT_CONFIGURED - no sensor was found in loop
+              error := 102; // mark as error
+              done := true;
+              autoDiscoveryStarted := false;  
+              RETURN;
+            ELSIF iopValue = DINT#161 THEN // board mode is NORMAL_SCANNING 
+              // auto discovery done for this board
+              error := 0; // OK
+              done := true;
+              autoDiscoveryStarted := false;  
+              RETURN; 
+            END_IF
+          END_IF 
+         
+         
+       END_IF
+     END_IF    
+   END_IF
+      
+ ELSE
+   autoDiscoveryStarted := false;  
+   done := false;
+ END_IF
+
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_READ_PROPERTY" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_READ_PROPERTY
+VAR_INPUT 
+board: INT;
+start: BOOL;
+iop: INT;
+prID: INT;
+END_VAR
+
+VAR_OUTPUT
+done: BOOL;
+value: DINT;
+error: INT;
+END_VAR
+
+VAR
+ GET_BOARD_STATE: SYSTEM_GET_BOARD_STATE;
+ SET_IOP_PROPERTY: SYSTEM_SET_IOP_PROPERTY;
+ REQUEST_PROPERTY: SYSTEM_REQUEST_PROPERTY;
+ CHECK_REQUEST_PROPERTY: SYSTEM_CHECK_REQUEST_PROPERTY_DONE;
+ GET_REQUEST_PROPERTY: SYSTEM_GET_REQUEST_PROPERTY;
+ started: BOOL := false;
+ detectedBoard: BOOL;
+END_VAR
+
+ IF start = true THEN
+   IF started = false THEN
+     GET_BOARD_STATE (Board := board,BoardType:= 10); // check if board is present and it is a FAS board
+     detectedBoard := NOT GET_BOARD_STATE.state;
+     IF detectedBoard = true THEN
+       REQUEST_PROPERTY (Board := board,IOP := iop,PrID := prID);
+       done := false;
+       error := 0;
+     ELSE
+       error := 100;// error code - board missing
+       done := true;
+       started := false;  
+       RETURN;     
+     END_IF
+     started := true;
+   ELSE
+     // read request started
+     IF done = false THEN
+       GET_BOARD_STATE (Board := board,BoardType:= 10); // check if board is present and it is a FAS board
+       IF detectedBoard = false THEN
+         error := 100;// error code - board missing
+         done := true;
+         started := false;  
+         RETURN;     
+       ELSE
+       // check read request done
+         CHECK_REQUEST_PROPERTY (Board := board);
+         IF CHECK_REQUEST_PROPERTY.Status = 1 THEN
+           RETURN;// retrigger
+         ELSIF CHECK_REQUEST_PROPERTY.Status = 0 THEN
+           GET_REQUEST_PROPERTY (Board := board);// check reply
+           value := GET_REQUEST_PROPERTY.Value;
+           done := true;
+           error := 0;
+           started := false;  
+           RETURN; 
+         ELSE
+           error := CHECK_REQUEST_PROPERTY.Status;// error code
+           done := true;
+           started := false;  
+           RETURN;
+         END_IF
+       END_IF
+     END_IF    
+   END_IF
+      
+ ELSE
+   started := false;  
+   done := false;
+ END_IF
+ 
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="READ_BOARD_DIAG" editor="PAL1131.ST"><![CDATA[PROGRAM READ_BOARD_DIAG
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ GET_BOARD_STATE: SYSTEM_GET_BOARD_STATE;
+ EXTRACT_BIT: SYSTEM_EXTRACT_BIT;
+ EXTRACT_BYTE: SYSTEM_EXTRACT_BYTE;
+ END_VAR
+
+ IF autoDiscoveryPending = false THEN
+   CAN_FAILURE_MASK := BYTE#0;
+   (* AFAS Board 0 *)
+   GET_BOARD_STATE (Board := 0,BoardType:= 10); // check if board is present and it is a FAS board
+   IF GET_BOARD_STATE.state THEN
+     CAN_FAILURE_MASK := OR( CAN_FAILURE_MASK, BYTE#3);
+   ELSE
+     GET_BOARD_STATE (Board := 1,BoardType:= 10); // check if board is present and it is a FAS board
+     IF GET_BOARD_STATE.state THEN
+       CAN_FAILURE_MASK := OR( CAN_FAILURE_MASK, BYTE#2);
+     END_IF    
+   END_IF    
+
+   (* AFAS Board 1 *)
+   GET_BOARD_STATE (Board := 2,BoardType:= 10); // check if board is present and it is a FAS board
+   IF GET_BOARD_STATE.state THEN
+     CAN_FAILURE_MASK := OR( CAN_FAILURE_MASK, BYTE#12);
+   ELSE
+     GET_BOARD_STATE (Board := 3,BoardType:= 10); // check if board is present and it is a FAS board
+     IF GET_BOARD_STATE.state THEN
+       CAN_FAILURE_MASK := OR( CAN_FAILURE_MASK, BYTE#8);
+     END_IF    
+   END_IF    
+
+   (* AFAS Board 2 *)
+   GET_BOARD_STATE (Board := 4,BoardType:= 10); // check if board is present and it is a FAS board
+   IF GET_BOARD_STATE.state THEN
+     CAN_FAILURE_MASK := OR( CAN_FAILURE_MASK, BYTE#48);
+   ELSE
+     GET_BOARD_STATE (Board := 5,BoardType:= 10); // check if board is present and it is a FAS board
+     IF GET_BOARD_STATE.state THEN
+       CAN_FAILURE_MASK := OR( CAN_FAILURE_MASK, BYTE#32);
+     END_IF    
+   END_IF    
+
+   (* AFAS Board 3 *)
+   GET_BOARD_STATE (Board := 6,BoardType:= 10); // check if board is present and it is a FAS board
+   IF GET_BOARD_STATE.state THEN
+     CAN_FAILURE_MASK := OR( CAN_FAILURE_MASK, BYTE#192);
+   ELSE
+     GET_BOARD_STATE (Board := 7,BoardType:= 10); // check if board is present and it is a FAS board
+     IF GET_BOARD_STATE.state THEN
+       CAN_FAILURE_MASK := OR( CAN_FAILURE_MASK, BYTE#128);
+     END_IF    
+   END_IF    
+   
+  CAN_FAILURE_MASK := AND (CAN_FAILURE_MASK,USED_BOARD_MASK);
+   
+  EXTRACT_BIT (Data:=DINT_TO_DWORD(INT_TO_DINT(ANY_DISABLE_ON_ANY_TEST_ON)),Pos:=0);
+  ANY_DISABLE_ON := EXTRACT_BIT.Bit;
+  EXTRACT_BIT (Data:=DINT_TO_DWORD(INT_TO_DINT(ANY_DISABLE_ON_ANY_TEST_ON)),Pos:=1);
+  ANY_TEST_ON := EXTRACT_BIT.Bit;
+  
+  EXTRACT_BYTE (Data:=LCD_AND_LAMP_BRIGHTNESS_SETTINGS,Pos:=0,Bits:=8);
+  minBrightnessLcd := DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out));
+  EXTRACT_BYTE (Data:=LCD_AND_LAMP_BRIGHTNESS_SETTINGS,Pos:=8,Bits:=8);
+  maxBrightnessLcd := DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out));
+  EXTRACT_BYTE (Data:=LCD_AND_LAMP_BRIGHTNESS_SETTINGS,Pos:=16,Bits:=8);
+  minBrightnessLamp := DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out));
+  EXTRACT_BYTE (Data:=LCD_AND_LAMP_BRIGHTNESS_SETTINGS,Pos:=24,Bits:=8);
+  maxBrightnessLamp := DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out));
+  minDimLcd := 100 - maxBrightnessLcd;
+  maxDimLcd := 100 - minBrightnessLcd;
+  minDimLamp := 100 - maxBrightnessLamp;
+  maxDimLamp := 100 - minBrightnessLamp;
+  EXTRACT_BYTE (Data:=BUZZER_FOR_SENSORS_SETTINGS,Pos:=0,Bits:=1);
+  ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_ALARM := INT_TO_BOOL(DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out)));
+  EXTRACT_BYTE (Data:=BUZZER_FOR_SENSORS_SETTINGS,Pos:=1,Bits:=1);
+  ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_FAULT := INT_TO_BOOL(DINT_TO_INT(DWORD_TO_DINT(EXTRACT_BYTE.Out)));
+    
+ END_IF
+  
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="HANDLE_STOPHORN" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_STOPHORN
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ previousState: BOOL := false;
+ newStopHorn: BOOL:=false;
+ board: INT;
+ cnt_ext_horn_ms: INT:=0;
+ 
+ SET_IOP_PROPERTY: SYSTEM_SET_IOP_PROPERTY;
+ GET_EXT_HORN_MS: HW_GET_AFAS_MINI_SWITCH_EXT_HORN;
+ RESET_EXT_HORN_MS: HW_RESET_AFAS_MINI_SWITCH_EXT_HORN;
+ END_VAR
+
+  // Detect new StopHorn pressed
+  IF (START_STOPHORN = true) AND (previousState = false) THEN
+    newStopHorn := true;
+  ELSE
+    newStopHorn := false;  
+  END_IF
+  previousState := START_STOPHORN;
+  
+  IF newStopHorn = true THEN // if pressed stopHorn
+    
+    // handle stopHorn for FireAlarms
+    IF (CURRENT_LOGIN_LEVEL = 2) // and we are in LEVEL2
+       OR (STOPHORN_FOR_FIREALARM = 1) THEN // or in LEVEL1 and STOPHORN_FIREALARM=LEVEL1+LEVEL2
+      BUZZER := false;
+      //HORN_OUTPUT := false;
+      pendingGlobalBuzzerOutput := false; // cancel the pending command of buzzer (if any)
+      FOR board := 0 TO 7 DO               
+        SET_IOP_PROPERTY (Board := board,IOP := 0,PrID := 173,PrValue := 0); // stop also all "active" sounder groups
+      END_FOR
+      SIREN_OUTPUT1 := false;
+      SIREN_OUTPUT2 := false; // ???
+      SIREN_OUTPUT3 := false;
+      SIREN_OUTPUT4 := false;
+      pendingGlobalSirenOutput := false; // cancel the pending command of SirenOutput (if any)
+      FIRE_ALARM_BUZZER := false;
+      FIRE_ALARM_BUZZER_ACK := true;
+      SENSOR_ALARM_BUZZER := false;
+      SENSOR_ALARM_BUZZER_ACK := true;
+      pendingGlobalFireRelay := false; // cancel the pending command of FireRelay (if any)
+    END_IF
+    // handle stopHorn for Faults
+    IF (CURRENT_LOGIN_LEVEL = 2) // and we are in LEVEL2
+       OR ((STOPHORN_FOR_FAULT = 1) AND (FIRE_ALARM_BUZZER = false)) THEN // or in LEVEL1 and STOPHORN_FAULT=LEVEL1+LEVEL2 and no firealarm beeping
+      BUZZER := false;
+      //HORN_OUTPUT := false;
+      pendingGlobalBuzzerOutput := false; // cancel the pending command of buzzer (if any)
+      SIREN_OUTPUT1 := false;
+      SIREN_OUTPUT2 := false; // ???
+      SIREN_OUTPUT3 := false;
+      SIREN_OUTPUT4 := false;
+      pendingGlobalSirenOutput := false; // cancel the pending command of SirenOutput (if any)
+      FAULT_BUZZER := false;
+      FAULT_BUZZER_ACK := true;
+      SENSOR_FAULT_BUZZER := false;
+      SENSOR_FAULT_BUZZER_ACK := true;
+    END_IF
+  ELSIF (STOPHORN_FOR_FAULT = 2) AND (FIRE_ALARM_BUZZER = false) AND (ANY_FAULT_ON = false) THEN // else if STOPHORN_FAULT=AUTOMATIC and no firealarm beeping and no fault active 
+    // automatic stopHorn for Faults    
+    BUZZER := false;
+    //HORN_OUTPUT := false;
+    pendingGlobalBuzzerOutput := false; // cancel the pending command of buzzer (if any)
+    SIREN_OUTPUT1 := false;
+    SIREN_OUTPUT2 := false; // ???
+    SIREN_OUTPUT3 := false;
+    SIREN_OUTPUT4 := false;
+    pendingGlobalSirenOutput := false; // cancel the pending command of SirenOutput (if any)
+    FAULT_BUZZER := false;
+    FAULT_BUZZER_ACK := true;
+    SENSOR_FAULT_BUZZER := false;
+    SENSOR_FAULT_BUZZER_ACK := true;
+  END_IF       
+         
+  //HANDLE mini switch horn
+    GET_EXT_HORN_MS();
+    IF GET_EXT_HORN_MS.IRET = 1 THEN
+      BUZZER:=TRUE;
+      cnt_ext_horn_ms:=cnt_ext_horn_ms+1;
+    ELSE
+      cnt_ext_horn_ms:=0;
+    END_IF
+    
+    IF cnt_ext_horn_ms > 20 THEN //after 2 seconds
+      RESET_EXT_HORN_MS();
+      cnt_ext_horn_ms:=0;
+    END_IF
+        
+         
+    BUZZER_ACTIVE := BUZZER;
+    
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_TOGGLE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_TOGGLE
+VAR_INPUT
+ start: BOOL;
+ delay: TIME;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+ io:BOOL; 
+END_VAR
+
+VAR
+ CT: TIME;
+ startedOnCT: TIME;
+ startedOffCT: TIME;
+ deltaCT: TIME;
+ startedOn: BOOL:=false;
+ startedOff: BOOL:=false;
+END_VAR
+
+  IF start=true THEN
+    CT:=CUR_TIME();
+    IF startedOn=true THEN
+      deltaCT:=CT-startedOnCT;
+      IF deltaCT >= delay THEN
+        // OFF half-cycle
+        startedOn:=false;
+        startedOff:=true;
+        startedOffCT:=CT;
+        io:=false;
+      END_IF
+    ELSIF startedOff=true THEN
+      deltaCT:=CT-startedOffCT;
+      IF deltaCT >= delay THEN
+        // ON half-cycle
+        startedOn:=true;
+        startedOff:=false;
+        startedOnCT:=CT;
+        io:=true;
+      END_IF
+    ELSE
+      // start a new cycle
+      startedOn:=true;
+      startedOnCT:=CUR_TIME();
+      io:=true;
+    END_IF
+  ELSE
+    startedOn:=false;
+    startedOff:=false;
+    io:=false;
+  END_IF
+
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="HANDLE_NEW_FIREALARM_AND_FAULT" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_NEW_FIREALARM_AND_FAULT
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ SET_IOP_PROPERTY: SYSTEM_SET_IOP_PROPERTY;
+ FIRE_LAMP_TOGGLE: SYSTEM_TOGGLE;
+ PRE_LAMP_TOGGLE: SYSTEM_TOGGLE;
+ FAULT_LAMP_TOGGLE: SYSTEM_TOGGLE;
+ BUZZER_TOGGLE: SYSTEM_TOGGLE;
+ //HORN_TOGGLE: SYSTEM_TOGGLE;
+ lastAnyNewSensorAlarmState : INT := 0;
+ lastAnyNewSensorFaultState : INT := 0;
+ lastAnyNewFireAlarmState : BOOL := false;
+ lastAnyNewPreAlarmState : BOOL := false;
+ lastAnyNewFaultState : BOOL := false;
+ preserveLcdDimming : INT := 0;
+ preserveButtonDimming : INT := 0;
+ restorePending : BOOL := false;
+ captureDimming : BOOL;
+ board: INT;
+ END_VAR
+
+ // handle new fire alarms
+ captureDimming := false;
+ IF ANY_NEW_FIREALARM = true AND lastAnyNewFireAlarmState = false THEN
+   // first coming to alarm state
+   captureDimming := true;
+   FIRE_ALARM_BUZZER_ACK := false;
+ END_IF
+ lastAnyNewFireAlarmState := ANY_NEW_FIREALARM;
+
+ IF ANY_NEW_SENSOR_IN_ALARM = 1 AND lastAnyNewSensorAlarmState = 0 THEN
+   // first coming to sensor alarm state
+   SENSOR_ALARM_BUZZER_ACK := false;
+ END_IF
+ lastAnyNewSensorAlarmState := ANY_NEW_SENSOR_IN_ALARM;
+
+ (*
+ IF ANY_NEW_PREALARM = true AND lastAnyNewPreAlarmState = false THEN
+   // first coming to prealarm state
+   captureDimming := true;
+ END_IF
+ lastAnyNewPreAlarmState := ANY_NEW_PREALARM;
+ *)
+ 
+ IF ANY_NEW_FAULT = true AND lastAnyNewFaultState = false THEN
+   // first coming to fault state
+   //captureDimming := true;
+   FAULT_BUZZER_ACK := false; 
+ END_IF
+ lastAnyNewFaultState := ANY_NEW_FAULT;
+ 
+ IF ANY_NEW_SENSOR_IN_FAULT = 1 AND lastAnyNewSensorFaultState = 0 THEN
+   // first coming to sensor fault
+   SENSOR_FAULT_BUZZER_ACK := false;
+ END_IF
+ lastAnyNewSensorFaultState := ANY_NEW_SENSOR_IN_FAULT;
+ 
+ IF captureDimming = true THEN
+   preserveLcdDimming := DIM_LCD;
+   preserveButtonDimming := DIM_BL;
+   restorePending := true;
+ END_IF
+    
+ IF ANY_NEW_FIREALARM = true THEN
+   // new fire alarm
+   DIM_LCD := minDimLcd;//0; // no dimming
+   DIM_BL := minDimLamp;//0;
+   FIRE_ALARM_BUZZER := true;
+   (* - they will be started later (default 120s) if the ACK or STOP HORN for fireAlarm is not pressed during that time
+   FIREALARM_RELAY1 := true;// fire alarm relay is off
+   FIREALARM_RELAY2 := true;// ??? fire alarm relay is off
+   FIREALARM_RELAY3 := true;// fire alarm relay is off
+   FIREALARM_RELAY4 := true;//
+   LAMP_FIRE_OUTPUT := true;   
+   *)
+   IF pendingGlobalFireRelay = false THEN
+     globalFireRelayStartTick := CUR_TIME();
+     pendingGlobalFireRelay := true; // set the pending command of FireRelay
+   END_IF   
+   FOR board := 0 TO 7 DO               
+     SET_IOP_PROPERTY (Board := board,IOP := 0,PrID := 174,PrValue := 1); // signal any new fire alarm in system to all IOBoards in order to start all sounder groups with "follow all zones" property
+   END_FOR
+ END_IF
+ IF ANY_NEW_MCP = true OR ANY_NEW_ALARM_IN_MACHINERY_AREA = 1 THEN // if any MCP was pressed,the fire relay should be switched on immediately (newMCP overrules newFirealarm)
+   FIREALARM_RELAY1 := true;
+   FIREALARM_RELAY2 := true;
+   FIREALARM_RELAY3 := true;
+   FIREALARM_RELAY4 := true;   
+   //LAMP_FIRE_OUTPUT := true;   
+   pendingGlobalFireRelay := false; // clear the pending command of FireRelay
+ END_IF
+ 
+ IF ANY_NEW_SENSOR_IN_ALARM = 1 THEN
+   // new sensor in alarm
+   SENSOR_ALARM_BUZZER := true;
+   //ACK_ANY_NEW_SENSOR_IN_ALARM := 1;
+ ELSE
+   //ACK_ANY_NEW_SENSOR_IN_ALARM := 0;
+ END_IF
+ 
+ IF ANY_NACK_FIREALARM = true THEN
+   // nack fire alarm
+   //FIRE_LAMP_TOGGLE(start:=ANY_NACK_FIREALARM,io:=LAMP_FIREALARM,delay:=t#500ms);
+   //LAMP_FIREALARM := FIRE_LAMP_TOGGLE.io;
+ END_IF
+ 
+ IF FIRE_ALARM_BUZZER = true THEN
+   BUZZER_TOGGLE(start:=FIRE_ALARM_BUZZER AND NOT FIRE_ALARM_BUZZER_ACK,io:=BUZZER,delay:=t#500ms);
+   BUZZER := BUZZER_TOGGLE.io;
+   //HORN_TOGGLE(start:=FIRE_ALARM_BUZZER AND NOT FIRE_ALARM_BUZZER_ACK,io:=HORN_OUTPUT,delay:=t#500ms);
+   //HORN_OUTPUT := HORN_TOGGLE.io;
+   pendingGlobalBuzzerOutput := false;
+   IF FIRE_ALARM_BUZZER_ACK = false THEN
+     IF ANY_NEW_MCP = true OR ANY_NEW_ALARM_IN_MACHINERY_AREA = 1 THEN
+       SIREN_OUTPUT1 := true;
+       SIREN_OUTPUT2 := true; // ???               
+       SIREN_OUTPUT3 := true;
+       SIREN_OUTPUT4 := true;
+       pendingGlobalSirenOutput := false;
+     ELSE // if ANY_NEW_FIREALARM except ANY_NEW_MCP
+       IF pendingGlobalSirenOutput = false THEN
+         globalSirenOutputStartTick := CUR_TIME();
+         pendingGlobalSirenOutput := true; // set the pending command of SirenOutput
+         extraSirenDelayTime := T#0s; // no extra powerup delay because is a firealarm
+       END_IF        
+     END_IF             
+   END_IF
+ ELSIF ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_ALARM AND SENSOR_ALARM_BUZZER = true THEN  
+   BUZZER_TOGGLE(start:=SENSOR_ALARM_BUZZER AND NOT SENSOR_ALARM_BUZZER_ACK,io:=BUZZER,delay:=t#1000ms);
+   BUZZER := BUZZER_TOGGLE.io;
+   pendingGlobalBuzzerOutput := false;
+ END_IF 
+
+ (*
+ IF ANY_NEW_PREALARM = true THEN
+   // new pre alarm
+   DIM_LCD := 0; // no dimming
+   DIM_BL := 0;
+ END_IF
+ IF ANY_NACK_PREALARM = true THEN
+   // nack pre alarm
+   PRE_LAMP_TOGGLE(start:=ANY_NACK_PREALARM,io:=LAMP_PREALARM,delay:=t#250ms);
+   LAMP_PREALARM := PRE_LAMP_TOGGLE.io;
+ END_IF
+ *)
+ 
+ // handle new faults
+ IF ANY_NEW_FAULT = true THEN
+   // new fault
+   //DIM_LCD := 0; // no dimming
+   //DIM_BL := 0;
+   FAIL_OUTPUT := true;
+   (*FAULT_LAMP_TOGGLE(start:=ANY_NACK_FAULT,io:=LAMP_7,delay:=t#250ms);
+   LAMP_7 := FAULT_LAMP_TOGGLE.io;*) // blinking FAULT_LED for new faults
+   //!!LAMP_GENERAL_FAULT := true; // FAULT_LED steady ON for new Faults
+   //!!LAMP_FAULT := true; // panel fault led
+   IF FAULT_BUZZER_ACK = false 
+      AND NOT (FIRE_ALARM_BUZZER AND NOT FIRE_ALARM_BUZZER_ACK)
+      AND NOT (SENSOR_ALARM_BUZZER AND NOT SENSOR_ALARM_BUZZER_ACK) THEN // if the fire alarm dosn't control the buzzer, the fault will control it
+     (* - they will be started later,after powerupDelay elapsed
+     BUZZER := true;
+     //HORN_OUTPUT := true;
+     *)
+     FAULT_BUZZER := true;
+     pendingGlobalBuzzerOutput := true;
+     IF SIGNALING_FAULT = 1 THEN // if signalingFaults=BUZZER+SIREN
+       (* - they will be started later (default 120s)
+       SIREN_OUTPUT1 := true;
+       SIREN_OUTPUT2 := true; // ???
+       SIREN_OUTPUT3 := true;
+       SIREN_OUTPUT4 := true;
+       *)
+       IF pendingGlobalSirenOutput = false THEN
+         globalSirenOutputStartTick := CUR_TIME();
+         pendingGlobalSirenOutput := true; // set the pending command of SirenOutput
+         extraSirenDelayTime := powerupRemainTime; // extra powerup delay if necessary
+       END_IF        
+     END_IF               
+   END_IF
+ END_IF
+ IF ANY_NEW_SENSOR_IN_FAULT = 1 THEN
+   // new sensor in sensfail
+   SENSOR_FAULT_BUZZER := true;
+   IF ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_FAULT
+      AND NOT FAULT_BUZZER 
+      AND NOT (FIRE_ALARM_BUZZER AND NOT FIRE_ALARM_BUZZER_ACK)
+      AND NOT (SENSOR_ALARM_BUZZER AND NOT SENSOR_ALARM_BUZZER_ACK) THEN // if the fire alarm dosn't control the buzzer, the fault will control it
+     (* - they will be started later,after powerupDelay elapsed
+     BUZZER := true; // only internal buzzer is switched on in case of new sensor in fault
+     *)
+     pendingGlobalBuzzerOutput := true;
+   END_IF
+ END_IF  
+ 
+ IF ANY_NACK_FIREALARM = false AND restorePending = true THEN
+   //IF DIM_LCD = 0 THEN // restore dimming only if it was not dimmed after the new fire alarm changed the backlight to "no dimming" 
+   IF DIM_LCD = minDimLcd THEN // restore dimming only if it was not dimmed after the new fire alarm changed the backlight to "no dimming" 
+     DIM_LCD := preserveLcdDimming;
+   END_IF
+   //IF DIM_BL = 0 THEN // restore dimming only if it was not dimmed after the new fire alarm changed the backlight to "no dimming"
+   IF DIM_BL = minDimLamp THEN // restore dimming only if it was not dimmed after the new fire alarm changed the backlight to "no dimming"
+     DIM_BL := preserveButtonDimming;
+   END_IF
+   restorePending := false;
+ END_IF
+  
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_EXTRACT_BIT" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_EXTRACT_BIT
+VAR_INPUT
+Data: DWORD;
+Pos: INT; 
+END_VAR
+VAR_OUTPUT
+Bit: BOOL;
+END_VAR
+
+VAR
+Local: DWORD;
+END_VAR
+
+  Local := SHR(Data,Pos);
+  Local := Local MOD DWORD#2;
+  IF Local = DWORD#0 THEN
+    Bit := false;
+  ELSE
+    Bit := true;
+  END_IF
+  
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="HANDLE_RESOUND" editor="PAL1131.ST"><![CDATA[PROGRAM HANDLE_RESOUND
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+    START_RESOUND : BOOL;
+ END_VAR
+ 
+ VAR
+ previousStateStopHorn: BOOL := false;
+ newResound: BOOL:=false;
+ CT: TIME;
+ resoundPressedTimeout: TIME:=t#0s;
+ resoundLastCT: TIME:=t#0s;
+ resoundTestOn: BOOL:=false;
+ //PB_RESOUND : BOOL;
+ board: INT;
+ SET_IOP_PROPERTY: SYSTEM_SET_IOP_PROPERTY;
+ BUZZER_TOGGLE: SYSTEM_TOGGLE;
+ //HORN_TOGGLE: SYSTEM_TOGGLE;
+ END_VAR
+ 
+// PB_RESOUND := PB12;
+ 
+  IF resoundTestOn=false
+     AND START_RESOUND=true
+     AND CURRENT_LOGIN_LEVEL=2
+     AND ANY_FIREALARM_ON THEN // if RESOUND button is pressed for more than 2s in LEVEL2 and we still have one firealarm ON,then resound
+     CT:=CUR_TIME();
+     resoundPressedTimeout:=resoundPressedTimeout+CT-resoundLastCT;
+     resoundLastCT:=CT;
+     IF resoundPressedTimeout>=t#2s THEN
+       resoundTestOn:=true;
+     END_IF
+  ELSE
+    resoundPressedTimeout:=t#0s;
+    resoundLastCT:=CUR_TIME();
+    IF resoundTestOn=true
+       AND previousStateStopHorn <> START_STOPHORN 
+       AND START_STOPHORN=true
+       AND CURRENT_LOGIN_LEVEL=2 THEN
+         resoundTestOn:=false; // stop the test next time when stopHorn is pressed
+    END_IF    
+  END_IF
+
+  // detect new StopHorn pressed
+  previousStateStopHorn := START_STOPHORN;
+  
+  IF resoundTestOn=true THEN
+    // handle ResoundTest
+    BUZZER_TOGGLE(start:=resoundTestOn,io:=BUZZER,delay:=t#500ms);
+    BUZZER := BUZZER_TOGGLE.io;
+    //HORN_TOGGLE(start:=resoundTestOn,io:=HORN_OUTPUT,delay:=t#500ms);
+    //HORN_OUTPUT := HORN_TOGGLE.io;
+    pendingGlobalBuzzerOutput := false;
+    SIREN_OUTPUT1 := true;
+    SIREN_OUTPUT2 := true; // ???               
+    SIREN_OUTPUT3 := true;
+    SIREN_OUTPUT4 := true;
+    pendingGlobalSirenOutput := false;
+    FOR board := 0 TO 7 DO               
+      SET_IOP_PROPERTY (Board := board,IOP := 0,PrID := 173,PrValue := 1); // resound also all "active" sounder groups
+    END_FOR
+    FIRE_ALARM_BUZZER := true;
+    FIRE_ALARM_BUZZER_ACK := false;
+  END_IF
+    
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_SET_IOP_VALUE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_SET_IOP_VALUE
+(*$HARDWARE_BODY_CALL ID:0015; Align:1 *)
+(*$CONST_INIT_INSTANCE*)
+(*COMMENT The block is implemented in C *)
+VAR_INPUT 
+Board: INT;
+IOP: INT;
+Value: DINT;
+END_VAR
+VAR_OUTPUT
+END_VAR
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_GET_IOP_VALUE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_GET_IOP_VALUE
+(*$HARDWARE_BODY_CALL ID:0014; Align:1 *)
+(*$CONST_INIT_INSTANCE*)
+(*COMMENT The block is implemented in C *)
+VAR_INPUT 
+Board: INT;
+IOP: INT;
+END_VAR
+VAR_OUTPUT
+Value: DINT;
+END_VAR
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="DETECT_NEW_ALARM" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK DETECT_NEW_ALARM
+VAR_INPUT
+ previousState: DWORD;
+ currentState: DWORD; 
+END_VAR
+VAR_OUTPUT
+ newAlarm: BOOL;
+END_VAR
+VAR
+ i : INT;
+ alarm: BOOL;
+ mask : DWORD;
+ changes : DWORD;
+END_VAR
+
+  alarm := false;
+  (*mask := DWORD#1;
+  FOR i := 1 TO 32 DO
+    IF ((previousState AND mask) = DWORD#0) AND ((currentState AND mask) <> DWORD#0) THEN
+      alarm := true; // new alarm detected
+      EXIT;
+    ELSE
+      mask := SHL (mask,1);
+    END_IF
+  END_FOR*)
+  changes := previousState XOR currentState;
+  IF ((changes AND currentState) <> DWORD#0) THEN
+    alarm := true;
+  END_IF
+  newAlarm := alarm;
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_COPY_BIT" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_COPY_BIT
+VAR_INPUT 
+Bit: BOOL;
+Pos: INT; 
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+DataIo: DWORD; 
+END_VAR
+VAR
+Mask: DWORD;
+END_VAR
+
+  Mask := DWORD#1;
+  Mask := SHL (Mask,Pos);
+  IF Bit=true THEN
+    DataIo := DataIo OR Mask;
+  ELSE
+    DataIo := DataIo AND (NOT Mask);
+  END_IF
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="DETECT_NEW_ALARM_AND_FAULTS" editor="PAL1131.ST"><![CDATA[PROGRAM DETECT_NEW_ALARM_AND_FAULTS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ EXTRACT_BIT: SYSTEM_EXTRACT_BIT;
+ COPY_BIT: SYSTEM_COPY_BIT;
+ COPY_BYTE: SYSTEM_COPY_BYTE;
+ NEW_ZONE_ALARM: DETECT_NEW_ALARM;
+ index: INT;
+ TEMP_INT: INT;
+ TEMP_DINT: DINT;
+ TEMP_DWORD: DWORD;
+ PREVIOUS_ZONE_MCPx: ARRAY[0..7] OF DWORD;
+ CURRENT_ZONE_MCPx:  ARRAY[0..7] OF DWORD;
+ newMCPx: BOOL;
+ PREVIOUS_ZONE_ALARMx: ARRAY[0..7] OF DWORD;
+ CURRENT_ZONE_ALARMx:  ARRAY[0..7] OF DWORD;
+ newAlarmx: BOOL;
+ PREVIOUS_ZONE_FAULTx: ARRAY[0..7] OF DWORD;
+ CURRENT_ZONE_FAULTx:  ARRAY[0..7] OF DWORD;
+ newFaultx: BOOL;
+ MAIN_SUPPLY_FAIL: BOOL;
+ BACKUP_SUPPLY_FAIL: BOOL;
+ SIREN_OUTPUT_FAIL: BOOL;
+ SIREN_LINE_FAIL: BOOL;
+ LOOP_SHORT_FAIL: BOOL;
+ LOOP_EARTH_FAIL: BOOL; 
+ SIREN_EARTH_FAIL: BOOL;
+ CAN_FAIL: BOOL;
+ ETHERNET_FAIL: BOOL;
+ GLOBAL_DRIFTING: BOOL; 
+ CURRENT_ZONE_FAULT: DWORD;
+ CURRENT_ZONE_PREALARM: DWORD;
+ CURRENT_ZONE_ALARM: DWORD; 
+ PREVIOUS_SYSTEM_FAULT: DWORD :=DWORD#0;
+ PREVIOUS_SYSTEM_FAULT2: DWORD :=DWORD#0;
+ CURRENT_SYSTEM_FAULT: DWORD;
+ CURRENT_SYSTEM_FAULT2: DWORD;
+ newSystemFault: BOOL;
+ firstTime: BOOL := TRUE;
+ alreadyWaited: BOOL := FALSE;
+ CT: TIME;
+ lastCT: TIME;
+ deltaCT: TIME;
+ END_VAR
+
+  CT := CUR_TIME();
+  IF firstTime = TRUE THEN
+    lastCT := CT;
+    FOR index := 0 TO 7 DO
+      PREVIOUS_ZONE_ALARMx[index] := DWORD#0;
+      PREVIOUS_ZONE_FAULTx[index] := DWORD#0;  
+    END_FOR
+    firstTime := FALSE;
+  END_IF
+  deltaCT := CT - lastCT;
+  IF (deltaCT <= t#1s) AND (alreadyWaited = FALSE) THEN
+    RETURN;
+  END_IF
+  alreadyWaited := TRUE;
+  (* - compiler uses a lot of RAM memory to implement this 
+  CURRENT_ZONE_PREALARMx :=   DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM1))
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM2))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM3))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM4))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM5))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM6))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM7))                             
+                           OR DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_PREALARM8));
+  *)
+  (*
+  // - optimized version
+  CURRENT_ZONE_PREALARMx := DWORD#0;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM1);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM2);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM3);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM4);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM5);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM6);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM7);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_PREALARM8);
+  TEMP_DWORD := DINT_TO_DWORD(TEMP_DINT);
+  CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR TEMP_DWORD;
+  //
+  *)
+  (*                              
+  CURRENT_ZONE_MCPx[0] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP1));
+  CURRENT_ZONE_MCPx[1] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP2));
+  CURRENT_ZONE_MCPx[2] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP3));
+  CURRENT_ZONE_MCPx[3] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP4));
+  CURRENT_ZONE_MCPx[4] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP5));
+  CURRENT_ZONE_MCPx[5] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP6));
+  CURRENT_ZONE_MCPx[6] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP7));
+  CURRENT_ZONE_MCPx[7] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_MCP8));
+  
+  CURRENT_ZONE_ALARMx[0] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM1));
+  CURRENT_ZONE_ALARMx[1] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM2));
+  CURRENT_ZONE_ALARMx[2] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM3));
+  CURRENT_ZONE_ALARMx[3] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM4));
+  CURRENT_ZONE_ALARMx[4] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM5));
+  CURRENT_ZONE_ALARMx[5] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM6));
+  CURRENT_ZONE_ALARMx[6] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM7));
+  CURRENT_ZONE_ALARMx[7] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_ALARM8));
+  
+  CURRENT_ZONE_FAULTx[0] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT1));
+  CURRENT_ZONE_FAULTx[1] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT2));
+  CURRENT_ZONE_FAULTx[2] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT3));
+  CURRENT_ZONE_FAULTx[3] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT4));
+  CURRENT_ZONE_FAULTx[4] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT5));
+  CURRENT_ZONE_FAULTx[5] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT6));
+  CURRENT_ZONE_FAULTx[6] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT7));
+  CURRENT_ZONE_FAULTx[7] := DINT_TO_DWORD(CAST_FINT_TO_DINT(ZONE_FAULT8));
+  *)
+  (*
+  // - optimized version
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP1);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[0] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP2);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[1] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP3);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[2] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP4);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[3] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP5);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[4] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP6);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[5] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP7);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[6] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_MCP8);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_MCPx[7] := TEMP_DWORD;   
+  
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM1);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[0] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM2);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[1] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM3);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[2] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM4);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[3] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM5);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[4] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM6);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[5] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM7);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[6] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARM8);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_ALARMx[7] := TEMP_DWORD;
+
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT1);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[0] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT2);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[1] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT3);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[2] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT4);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[3] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT5);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[4] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT6);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[5] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT7);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[6] := TEMP_DWORD; 
+  TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULT8);
+  TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+  CURRENT_ZONE_FAULTx[7] := TEMP_DWORD; 
+  *)
+  // Array usage
+  CURRENT_ZONE_PREALARMx := DWORD#0;
+  FOR index := 0 TO 7 DO
+    (*CURRENT_ZONE_PREALARMx :=  CURRENT_ZONE_PREALARMx
+                            OR WORD_TO_DWORD(ZONE_PREALARMS[index]);*)
+    CURRENT_ZONE_PREALARMx := CURRENT_ZONE_PREALARMx OR ZONE_PREALARMS[index];
+    //CURRENT_ZONE_ALARMx[index]    := WORD_TO_DWORD(ZONE_ALARMS[index]);     
+    TEMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARMS[index]);
+    TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+    CURRENT_ZONE_ALARMx[index]    := TEMP_DWORD AND DWORD#16#0000FFFF; 
+    CURRENT_ZONE_MCPx[index]    := WORD_TO_DWORD(ZONE_MCPS[index]); 
+    //CURRENT_ZONE_FAULTx[index]    := WORD_TO_DWORD(ZONE_FAULTS[index]);
+    TEMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULTS[index]);
+    TEMP_DWORD := DINT_TO_DWORD (TEMP_DINT);
+    CURRENT_ZONE_FAULTx[index]    := TEMP_DWORD AND DWORD#16#0000FFFF;
+  END_FOR; 
+
+  CURRENT_ZONE_FAULT := DWORD#0;
+  CURRENT_ZONE_ALARM := DWORD#0;
+  FOR index := 0 TO 7 DO
+    CURRENT_ZONE_FAULT := CURRENT_ZONE_FAULT OR CURRENT_ZONE_FAULTx[index];
+    CURRENT_ZONE_ALARM := CURRENT_ZONE_ALARM OR CURRENT_ZONE_ALARMx[index];
+  END_FOR
+  
+  CURRENT_ZONE_PREALARM := CURRENT_ZONE_PREALARMx AND DWORD#16#0000FFFF; // only first 16 bits contain zone_prealarm bits                          
+  
+  MAIN_SUPPLY_FAIL   := (MAIN_SUPPLY_FAILURE_MASK   > BYTE#0); 
+  BACKUP_SUPPLY_FAIL := (BACKUP_SUPPLY_FAILURE_MASK > BYTE#0);
+  SIREN_OUTPUT_FAIL  := (SIREN_OUTPUT_FAILURE_MASK  > BYTE#0);
+  SIREN_LINE_FAIL    := (SIREN_LINE_FAILURE_MASK    > BYTE#0);
+  LOOP_SHORT_FAIL    := (LOOP_SHORT_FAILURE_MASK    > BYTE#0); 
+  LOOP_EARTH_FAIL    := (LOOP_EARTH_FAILURE_MASK    > BYTE#0);
+  SIREN_EARTH_FAIL   := (SIREN_EARTH_FAILURE_MASK   > BYTE#0);
+  GLOBAL_DRIFTING    := (GLOBAL_DRIFTING_MASK       > BYTE#0);
+  ETHERNET_FAIL := ETHERNET_FAIL1 OR ETHERNET_FAIL2;                    
+
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=MAIN_SUPPLY_FAILURE_MASK,Pos:=0,Bits:=8);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=BACKUP_SUPPLY_FAILURE_MASK,Pos:=8,Bits:=8);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=SIREN_OUTPUT_FAILURE_MASK,Pos:=16,Bits:=4);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=SIREN_LINE_FAILURE_MASK,Pos:=20,Bits:=4);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT,Val:=LOOP_SHORT_FAILURE_MASK,Pos:=24,Bits:=8);
+  CURRENT_SYSTEM_FAULT:=COPY_BYTE.DataIo;
+
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT2,Val:=LOOP_EARTH_FAILURE_MASK,Pos:=0,Bits:=8);
+  CURRENT_SYSTEM_FAULT2:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT2,Val:=SIREN_EARTH_FAILURE_MASK,Pos:=8,Bits:=4);
+  CURRENT_SYSTEM_FAULT2:=COPY_BYTE.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT2,Val:=CAN_FAILURE_MASK,Pos:=12,Bits:=8);
+  CURRENT_SYSTEM_FAULT2:=COPY_BYTE.DataIo;
+  COPY_BIT (DataIo:=CURRENT_SYSTEM_FAULT2,Bit:=ETHERNET_FAIL1,Pos:=20);
+  CURRENT_SYSTEM_FAULT2:=COPY_BIT.DataIo;
+  COPY_BIT (DataIo:=CURRENT_SYSTEM_FAULT2,Bit:=ETHERNET_FAIL2,Pos:=21);
+  CURRENT_SYSTEM_FAULT2:=COPY_BIT.DataIo;
+  COPY_BIT (DataIo:=CURRENT_SYSTEM_FAULT2,Bit:=MASTER_SLAVE_ALARM,Pos:=22);
+  CURRENT_SYSTEM_FAULT2:=COPY_BIT.DataIo;
+  COPY_BYTE (DataIo:=CURRENT_SYSTEM_FAULT2,Val:=GLOBAL_DRIFTING_MASK,Pos:=23,Bits:=8);
+  CURRENT_SYSTEM_FAULT2:=COPY_BYTE.DataIo;
+    
+  // update FIREALARM,PREALARM and FAULT info
+  IF ((CURRENT_ZONE_FAULT OR CURRENT_SYSTEM_FAULT OR CURRENT_SYSTEM_FAULT2) <> DWORD#0) THEN
+    ANY_FAULT_ON := TRUE;
+  ELSE
+    ANY_FAULT_ON := FALSE;
+  END_IF
+  
+  IF (CURRENT_ZONE_PREALARM <> DWORD#0) THEN
+      ANY_PREALARM_ON := TRUE;
+  ELSE
+      ANY_PREALARM_ON := FALSE;
+  END_IF
+  
+  IF (CURRENT_ZONE_ALARM <> DWORD#0) THEN
+      ANY_FIREALARM_ON := TRUE;
+  ELSE
+      ANY_FIREALARM_ON := FALSE;
+  END_IF
+
+  NEW_ZONE_ALARM (previousState:=PREVIOUS_SYSTEM_FAULT,currentState:= CURRENT_SYSTEM_FAULT);
+  newSystemFault := NEW_ZONE_ALARM.newAlarm;
+  PREVIOUS_SYSTEM_FAULT := CURRENT_SYSTEM_FAULT;
+  NEW_ZONE_ALARM (previousState:=PREVIOUS_SYSTEM_FAULT2,currentState:= CURRENT_SYSTEM_FAULT2);
+  newSystemFault := newSystemFault OR NEW_ZONE_ALARM.newAlarm;
+  PREVIOUS_SYSTEM_FAULT2 := CURRENT_SYSTEM_FAULT2;
+
+  ANY_NEW_FAULT := newSystemFault;
+  ANY_NEW_FIREALARM := false;
+  ANY_NEW_MCP := false;
+  FOR index := 0 TO 7 DO
+    NEW_ZONE_ALARM (previousState:=PREVIOUS_ZONE_FAULTx[index],currentState:= CURRENT_ZONE_FAULTx[index]);
+    newFaultx := NEW_ZONE_ALARM.newAlarm;
+    ANY_NEW_FAULT := ANY_NEW_FAULT OR newFaultx;
+    PREVIOUS_ZONE_FAULTx[index] := CURRENT_ZONE_FAULTx[index];
+    
+    NEW_ZONE_ALARM (previousState:=PREVIOUS_ZONE_ALARMx[index],currentState:= CURRENT_ZONE_ALARMx[index]);
+    newAlarmx := NEW_ZONE_ALARM.newAlarm;
+    ANY_NEW_FIREALARM := ANY_NEW_FIREALARM OR newAlarmx;
+    PREVIOUS_ZONE_ALARMx[index] := CURRENT_ZONE_ALARMx[index];
+    
+    NEW_ZONE_ALARM (previousState:=PREVIOUS_ZONE_MCPx[index],currentState:= CURRENT_ZONE_MCPx[index]);
+    newMCPx := NEW_ZONE_ALARM.newAlarm;
+    ANY_NEW_MCP := ANY_NEW_MCP OR newMCPx;
+    PREVIOUS_ZONE_MCPx[index] := CURRENT_ZONE_MCPx[index];    
+  END_FOR
+    
+  IF ANY_NACK_FAULT = FALSE THEN
+    ANY_NACK_FAULT := ANY_NEW_FAULT;
+  END_IF
+      
+  IF ANY_NACK_FIREALARM = FALSE THEN
+    ANY_NACK_FIREALARM := ANY_NEW_FIREALARM;
+  END_IF
+
+  IF FIRE_ALARM_ACK = TRUE THEN  
+    ANY_NACK_FIREALARM := FALSE;
+    FIRE_ALARM_ACK := FALSE;
+  END_IF
+  IF FAULT_ACK = TRUE THEN
+    ANY_NACK_FAULT := FALSE;
+    FAULT_ACK := FALSE;
+  END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="RESYNC_SOUNDERS" editor="PAL1131.ST"><![CDATA[PROGRAM RESYNC_SOUNDERS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ GET_BOARD_STATE: SYSTEM_GET_BOARD_STATE;
+ SET_IOP_PROPERTY: SYSTEM_SET_IOP_PROPERTY;
+ EXTRACT_BIT: SYSTEM_EXTRACT_BIT;
+ globalSounderResyncNeeded: BOOL;
+ lastGlobalSounderResyncNeeded: BOOL := false;
+ newSounderResync: BOOL := false;
+ detectedBoard: BOOL;
+ board: INT;
+ CT: TIME;
+ lastCT: TIME:=t#0s;
+ deltaCT: TIME;
+ interval: TIME:=t#10m;
+ resyncRescheduled: BOOL:=false;
+ END_VAR
+
+ 
+ EXTRACT_BIT (Data:=CURRENT_ZONE_PREALARMx,Pos:=16);
+ globalSounderResyncNeeded := EXTRACT_BIT.Bit; 
+                                               
+ IF globalSounderResyncNeeded = true AND lastGlobalSounderResyncNeeded = false THEN
+   newSounderResync := true;
+ ELSE   
+   newSounderResync := false;
+ END_IF
+ lastGlobalSounderResyncNeeded := globalSounderResyncNeeded; 
+   
+ CT := CUR_TIME();
+ IF newSounderResync = true AND resyncRescheduled = false THEN
+   lastCT := CT;
+   resyncRescheduled := true;
+   interval := t#10s; // re-scheduled sync afters 10s
+ END_IF 
+ deltaCT := CT - lastCT;
+ IF deltaCT >= interval THEN // 10min elapsed
+   lastCT := CT;
+   IF resyncRescheduled = true THEN
+     resyncRescheduled := false;
+     interval := t#10s; // keep 10s interval for one more cycle for safety reason (to ensure that new firealarms recorded within 10s after first firealarm will also have sounders resync after 10s
+   ELSE
+     interval := t#10m; // restore default interval      
+   END_IF
+   FOR board := 0 TO 7 DO
+     GET_BOARD_STATE (Board := board,BoardType:= 10); // check if board is present and it is a FAS board  
+     detectedBoard := NOT GET_BOARD_STATE.state;
+     IF detectedBoard = true THEN
+       SET_IOP_PROPERTY (Board := board,IOP := 0,PrID := 168,PrValue := 0); // force resync sounders (PARAMETER_ID_APOLLO_RESYNC_SOUNDERS)
+     END_IF
+   END_FOR   
+ END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="CHECK_PENDING_FIRE_RELAY" editor="PAL1131.ST"><![CDATA[PROGRAM CHECK_PENDING_FIRE_RELAY
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ CT: TIME;
+ deltaCT: TIME;
+ delayInMSec: DINT;
+ END_VAR
+
+  CT := CUR_TIME();
+  IF pendingGlobalFireRelay = true THEN
+   deltaCT := CT - globalFireRelayStartTick;
+   delayInMSec := FIREALARM_DELAY * DINT#1000; // convert din sec->millisec and then convert to time 
+   IF deltaCT >= DINT_TO_TIME(delayInMSec) THEN // if period expired and fireAlarm was not ACK by pressing ACK or STOPHORN
+     // switch on fireRelays
+     FIREALARM_RELAY1 := true;
+     FIREALARM_RELAY2 := true;
+     FIREALARM_RELAY3 := true;
+     FIREALARM_RELAY4 := true;
+//     LAMP_FIRE_OUTPUT := true;   
+     pendingGlobalFireRelay := false;
+   END_IF
+ END_IF 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_COPY_BYTE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_COPY_BYTE
+VAR_INPUT 
+Val: BYTE;
+Pos: INT;
+Bits: INT; 
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+DataIo: DWORD; 
+END_VAR
+VAR
+temp_int: INT;
+temp_dint: DINT;
+temp_dword: DWORD;
+mask1 : DWORD;
+mask2 : DWORD;
+END_VAR
+
+  mask1 := DWORD#16#FFFFFFFF;
+  mask2 := DWORD#16#FFFFFFFF;    
+  mask1 := SHL (mask1,Bits);
+  mask1 := NOT mask1;   
+  mask2 := SHL (mask2,Bits);
+  mask2 := ROL (mask2,Pos);
+  temp_int := BYTE_TO_INT (Val);
+  temp_dint := INT_TO_DINT (temp_int);  
+  temp_dword := DINT_TO_DWORD(temp_dint);
+  temp_dword := temp_dword AND mask1;
+  temp_dword := SHL (temp_dword,Pos);  
+  DataIo := (DataIo AND mask2) OR temp_dword;
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="CHECK_PENDING_SIREN_OUTPUT" editor="PAL1131.ST"><![CDATA[PROGRAM CHECK_PENDING_SIREN_OUTPUT
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ CT: TIME;
+ deltaCT: TIME;
+ delayTime: TIME;
+ delayInMSec: DINT;
+ END_VAR
+
+  CT := CUR_TIME();
+  IF pendingGlobalSirenOutput = true THEN
+   deltaCT := CT - globalSirenOutputStartTick;
+   delayInMSec := SIREN_DELAY * DINT#1000; // Convert din sec->millisec and then convert to time 
+   delayTime := DINT_TO_TIME(delayInMSec) + extraSirenDelayTime;
+    
+   IF deltaCT >= delayTime THEN // If period expired
+     // Switch on SirenOutput
+     SIREN_OUTPUT1 := true;
+     SIREN_OUTPUT2 := true;          
+     SIREN_OUTPUT3 := true;
+     SIREN_OUTPUT4 := true;
+     pendingGlobalSirenOutput := false;
+   
+   END_IF
+ END_IF 
+  
+  IF pendingGlobalBuzzerOutput = true THEN
+     IF powerupDelayElapsed = true THEN
+        BUZZER := true;
+        pendingGlobalBuzzerOutput := false;
+     END_IF
+  END_IF 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_EXTRACT_BYTE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_EXTRACT_BYTE
+VAR_INPUT
+Data: FINT;
+Pos: INT;
+Bits: INT; 
+END_VAR
+VAR_OUTPUT
+Out: DWORD;
+END_VAR
+VAR
+temp_dint: DINT;
+temp_dword: DWORD;
+mask1 : DWORD;
+END_VAR
+
+  mask1 := DWORD#16#FFFFFFFF;
+  mask1 := SHL (mask1,Bits);
+  mask1 := NOT mask1;   
+  temp_dint := CAST_FINT_TO_DINT (Data);
+  temp_dword := DINT_TO_DWORD (temp_dint);
+  temp_dword := SHR(temp_dword,Pos);
+  temp_dword := temp_dword AND mask1;
+  Out := temp_dword;
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="LIFECHECK" editor="PAL1131.ST"><![CDATA[PROGRAM LIFECHECK
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+ CT: TIME;
+ deltaCT: TIME;
+ lastSendCT: TIME;
+ lastRcvCT: TIME;
+ oldLifecheckToRcv: INT;
+ END_VAR
+
+  CT := CUR_TIME();
+  deltaCT := CT - lastSendCT;
+  IF deltaCT > T#1s THEN
+    lastSendCT := CT;
+    lifecheckToSend := lifecheckToSend + 1; // roll-over at (65535+1)->65536->0
+  END_IF
+  
+  IF oldLifecheckToRcv <> lifecheckToRcv THEN
+    lastRcvCT := CT;
+    MASTER_SLAVE_ALARM := false; // alarm off
+  ELSE
+    deltaCT := CT - lastRcvCT;  
+    IF deltaCT > T#5s THEN
+    MASTER_SLAVE_ALARM := true; // alarm on
+    END_IF
+  END_IF
+  oldLifecheckToRcv := lifecheckToRcv;
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="FLASHER" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK FLASHER                                                                                                      
+(***************************************************************************************************************            
+flasher with settable pulse & duty cycle                                                                                    
+                                                                                                                            
+****************************************************************************************************************            
+SOURCE:            PCS_LIB                                                                                                  
+                                                                                                                            
+FUNCTION VERSION:  1                                                                                                        
+UPDATE:            library version creation                                                                                 
+***************************************************************************************************************)            
+                                                                                                                            
+VAR_INPUT                                                                                                                   
+   START : BOOL ;                                                                                                           
+   PULSE : FINT ; // PULSE TIME [MSEC]                                                                                      
+   CYCLE : FINT ; // CYCLE TIME [MSEC]                                                                                      
+   TSCAN : FINT ; // PROGRAM LOOP TIME [MSEC]                                                                               
+END_VAR                                                                                                                     
+VAR_OUTPUT                                                                                                                  
+   Q :    BOOL;                                                                                                             
+                                                                                                                            
+END_VAR                                                                                                                     
+VAR                                                                                                                         
+                                                                                                                            
+  ET: FINT;                                                                                                                 
+                                                                                                                            
+END_VAR                                                                                                                     
+                                                                                                                            
+                                                                                                                            
+// ##############################################                                                                           
+                                                                                                                            
+IF START THEN                                                                                                               
+   ET := ET + TSCAN ;                                                                                                       
+   IF ET>=CYCLE THEN                                                                                                        
+      ET:= FINT#0;                                                                                                          
+   END_IF                                                                                                                   
+   Q:=  ET<=PULSE ;                                                                                                         
+ELSE                                                                                                                        
+   ET:= FINT#0 ;                                                                                                            
+END_IF                                                                                                                      
+                                                                                                                            
+                                                                                                                            
+                                                                                                                            
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="GOBAL" editor="PAL1131.ST"><![CDATA[PROGRAM GOBAL
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ // TO-DO:
+ // Stand-a-lone functionallity
+ //     Changeable zone text on the panel
+ // 
+ // Testing functionallity    
+
+ VAR
+    FLASHER         : FLASHER;
+    GET_TFT_FLASH   : HW_GET_TFT_FLASH;
+    SET_TFT_FLASH   : HW_SET_TFT_FLASH;
+    TLOOP           : HW_TIMING;
+    
+    GET_TFT_UNACCEPT    : HW_GET_UNACCEPT;
+    GET_TFT_ALARM_PULSE : HW_GET_ALARM_PULSE_ON_NEXT;
+    
+    IFLASH          : INT;
+    IRETURN         : INT;
+    ALARM_FLASHER   : BOOL := FALSE;
+    
+    SET_PUBLIC_KEY       : HW_MENU_PUBLIC_KEY;
+    SET_TFT_FIRST        : HW_MENU_FIRST_PAGE;
+    SET_TFT_PW_CHANGE    : HW_MENU_PW_CHANGE;
+    SET_TFT_TB_MENUS     : HW_MENU_TOUCH_FUNCTION; 
+    
+    TON_ON      : TON ;
+    START_UP    : R_TRIG ;
+ END_VAR
+ 
+ VAR_GLOBAL RETAIN
+    (* PAGE NUMBERS AND FRAME NUMBERS / CONSTANTS*)
+    MAIN_PAGE_NR              : INT := 0;
+    ALARM_PAGE_NR             : INT := 1;
+    LOGIN_PAGE_NR             : INT := 2;
+    PARAMETER_PAGE_NR         : INT := 3;
+    LOOP_OVERVIEW_PAGE_NR     : INT := 6;
+    ZONE_OVERVIEW_PAGE_NR     : INT := 7;
+    ZONE_PAGE_NR              : INT := 4;
+    SENSOR_PAGE_NR            : INT := 5;
+    DIMMING_PAGE_NR           : INT := 8;
+    DISABLE_LIST_PAGE_NR      : INT := 9;
+    INHIBIT_LIST_PAGE_NR      : INT := 10;        
+    DRIFT_LIST_PAGE_NR        : INT := 11;
+    
+    TOP_BAR_HEALTY_NR : INT := 2;
+    TOP_BAR_ALARM_NR  : INT := 3;
+    
+    PREV_PAGE_NR      : INT := 0;
+    SELECT_LOOP_DRIFT : INT := 0;
+    
+    MAIN_STATUS_INDICATOR_NORMAL    : INT := 0;
+    MAIN_STATUS_INDICATOR_DISABLED  : INT := 1;
+    MAIN_STATUS_INDICATOR_TESTING   : INT := 2;
+    MAIN_STATUS_INDICATOR_FAULT     : INT := 3;
+    MAIN_STATUS_INDICATOR_FIRE_ALARM    : INT := 4;
+    MAIN_STATUS_INDICATOR_PRE_ALARM : INT := 5;
+    
+
+    (* TOUCH BUTTONS AND TRIGGERS*)                                             
+    TOUCH_ALARM_PAGE_TRIG : R_TRIG;                       
+    TOUCH_ALARM_PAGE : BOOL := FALSE;
+    
+    TOUCH_LOGIN_TRIG : R_TRIG;                       
+    TOUCH_LOGIN : BOOL := FALSE;
+
+    TOUCH_BOX_1 : BOOL := FALSE;
+    TOUCH_BOX_2 : BOOL := FALSE;
+    TOUCH_BOX_3 : BOOL := FALSE;
+    TOUCH_BOX_4 : BOOL := FALSE;
+    TOUCH_BOX_5 : BOOL := FALSE;
+    TOUCH_BOX_6 : BOOL := FALSE;
+    TOUCH_BOX_7 : BOOL := FALSE;
+    TOUCH_BOX_8 : BOOL := FALSE;
+    
+    (* Descriptions *)
+    TOP_BOX_1 : STRING[15] := 'Loop 0 Zone 01';
+    TOP_BOX_2 : STRING[15] := 'Loop 0 Zone 02';
+    TOP_BOX_3 : STRING[15] := 'Loop 0 Zone 03';
+    TOP_BOX_4 : STRING[15] := 'Loop 0 Zone 04';
+    TOP_BOX_5 : STRING[15] := 'Loop 0 Zone 05';
+    TOP_BOX_6 : STRING[15] := 'Loop 0 Zone 06';
+    TOP_BOX_7 : STRING[15] := 'Loop 0 Zone 07';
+    TOP_BOX_8 : STRING[15] := 'Loop 0 Zone 08';
+    
+    DESC_BOX_1 : STRING[30] := 'FIRE ALARM$R$LDesc-1';
+    DESC_BOX_2 : STRING[30] := 'Desc-3';
+    DESC_BOX_3 : STRING[30] := 'Desc-3';
+    DESC_BOX_4 : STRING[30] := 'Desc-4';
+    DESC_BOX_5 : STRING[30] := 'Desc-5';
+    DESC_BOX_6 : STRING[30] := 'Desc-6';
+    DESC_BOX_7 : STRING[30] := 'Desc-7';
+    DESC_BOX_8 : STRING[30] := 'Desc-8';
+    
+    (*HARDWARE BUTTON STATUS*)
+    G1131_HW_BT_STATUS_BUZZER   : INT := 0;
+    G1131_HW_BT_STATUS_ALARM    : INT := 0;
+    G1131_HW_BT_STATUS_LOGIN    : INT := 0;
+    G1131_HW_BT_STATUS_ACK      : INT := 0;
+    
+    
+    (*MISCELLANEOUS*)
+    ANY_ALARM   : BOOL := FALSE;
+    UNACC_ALARM : BOOL := FALSE;
+    
+    FLASH       : BOOL;
+    FLASH_SLOW  : BOOL;
+    LOOP_MSEC   : FINT;
+    
+    DIMMING     : FINT := FINT#50;
+    
+    POWER_UP    : BOOL ;             (* INIT PULSE AT POWER-UP *)
+    POWER_ON    : BOOL ;
+    RESET       : BOOL ;
+    START_TIMER_RESET_LOGIN : BOOL := TRUE;
+    ALM_GRP_1   : BOOL := TRUE;
+    ALM_GRP_2   : BOOL := TRUE;    
+    
+ END_VAR
+ 
+    // -------------------------------------------
+    // Cycle Time
+    TLOOP();                 
+    LOOP_MSEC := INT_TO_FINT(TLOOP.TIME_BETWEEN_CYCLES);
+  
+    // -------------------------------------------
+    // Power Up 
+    START_UP(CLK:= TRUE);
+    POWER_UP := START_UP.Q ;
+    TON_ON(IN:= TRUE, PT := T#5s ) ;
+    POWER_ON := TON_ON.Q ;
+    
+    // Init Once on PowerUp
+    IF POWER_UP THEN
+        SET_PUBLIC_KEY(IINPUT:=0);
+        SET_TFT_FIRST(IINPUT:=PAGE_NR_MENU);
+        SET_TFT_PW_CHANGE(IINPUT:=1);
+        SET_TFT_TB_MENUS(USE_TB_LOGIN:=TRUE,USE_TB_CHANGE_PWD:=TRUE,USE_TB_EDIT:=TRUE);
+    END_IF
+    
+    // -------------------------------------------
+    // Flasher
+    FLASHER(START:= TRUE , PULSE:= 500, CYCLE:= 3000 , TSCAN:= LOOP_MSEC);    
+     
+    GET_TFT_FLASH();
+    IFLASH := GET_TFT_FLASH.IRET;
+    IF IFLASH = 0 THEN
+        FLASH := FALSE;
+    ELSE
+        FLASH := TRUE;
+    END_IF
+    ALARM_FLASHER := FLASH;
+    
+    FLASH_SLOW := FLASHER.Q;
+    
+    SET_TFT_FLASH(IINPUT:=BOOL_TO_INT(ALARM_FLASHER));
+    
+    
+    // -------------------------------------------
+    //  Alarm States
+    
+    //UNACC_ALARM
+    GET_TFT_UNACCEPT(IRET=>IRETURN);
+    IF IRETURN = 1 THEN UNACC_ALARM := TRUE; ELSE UNACC_ALARM := FALSE; END_IF
+
+    //ANY_ALARM
+    GET_TFT_ALARM_PULSE(IRET=>IRETURN);  
+    IF IRETURN = 1 THEN ANY_ALARM := TRUE; ELSE ANY_ALARM := FALSE; END_IF                                                                                                         
+
+             
+    // ------------------------------------------
+    // Hardware button status (HW BT STATUS)
+   
+    // Buzzer Active 
+    IF (BUZZER = TRUE) THEN
+        G1131_HW_BT_STATUS_BUZZER := 1;
+    ELSE
+        G1131_HW_BT_STATUS_BUZZER := 0;
+    END_IF
+    
+    IF (ANY_ALARM = TRUE) THEN
+        G1131_HW_BT_STATUS_ALARM := 1;
+    ELSE
+        G1131_HW_BT_STATUS_ALARM := 0;
+    END_IF
+    
+    IF (UNACC_ALARM = TRUE) THEN
+        G1131_HW_BT_STATUS_ACK := 1;
+    ELSE
+        G1131_HW_BT_STATUS_ACK := 0;
+    END_IF    
+    IF (CURRENT_LOGIN_LEVEL = 2) THEN
+        G1131_HW_BT_STATUS_LOGIN := 1;
+        G1131_TBS_LOGIN_STATE := 1;
+    ELSE
+        G1131_HW_BT_STATUS_LOGIN := 0;
+        G1131_TBS_LOGIN_STATE := 0;
+    END_IF
+    
+  
+END_PROGRAM   ]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="MAIN_PAGE" editor="PAL1131.ST"><![CDATA[ PROGRAM MAIN_PAGE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+    THB_FRAME_STATE : INT := 2;
+    
+    G1131_TB_DISABLE_PAGE_STATE     : INT := 0;
+    G1131_TB_INHIBIT_PAGE_STATE     : INT := 0;                
+ END_VAR
+ 
+ VAR
+    HW_TRIG_1 : R_TRIG;
+    HW_TRIG_2 : R_TRIG;
+    HW_TRIG_3 : R_TRIG;
+    HW_TRIG_4 : R_TRIG;
+    HW_TRIG_5 : R_TRIG;
+    HW_TRIG_6 : R_TRIG;
+    
+    PULSE_TIME          : TIME := T#1s;
+    STOP_BUZZER_PULSE   : TP;               // Stop Buzzer Pulse
+    
+    GET_TFT_LOGIN_PULSE : HW_MENU_AFTER_LOGIN_PULSE;
+    LOGIN_PULSE_TRIGGER : R_TRIG;
+    
+    SET_IOP_PROPERTY : SYSTEM_SET_IOP_PROPERTY;
+    board : INT := 0;
+
+    TBS_TRIG_DISABLE_LIST_PAGE : R_TRIG;
+    TBS_TRIG_INHIBIT_LIST_PAGE : R_TRIG;
+    
+    GET_AFAS_VARS:    HW_GET_AFAS_VARS;
+    
+ END_VAR
+ 
+ // ----------------------------------------------------------------------------
+ // Run corresponding page code
+ 
+ IF PAGE_NUMBER = MAIN_PAGE_NR THEN
+ 
+    // -------------------------------------------------------------------------
+    // Top Healty Bar (THB)
+    
+    IF ANY_ALARM THEN
+        THB_FRAME_STATE := 3;
+    ELSE
+        THB_FRAME_STATE := 2;
+    END_IF
+ 
+    
+    // =========================================================================
+    // Hardware Buttons
+    
+    // HW Button 1: Home Page / General Page
+    HW_TRIG_1(CLK := HW_BUTTON_1);
+    IF (HW_TRIG_1.Q) THEN
+        PAGE_NUMBER := MAIN_PAGE_NR;
+    END_IF 
+    
+    // HW Button 2: Dimming
+    HW_TRIG_2(CLK := HW_BUTTON_2);
+    IF (HW_TRIG_2.Q) THEN
+        PAGE_NUMBER := DIMMING_PAGE_NR; 
+    END_IF   
+    
+    // HW Button 3: Login
+    HW_TRIG_3(CLK := HW_BUTTON_3);
+    IF (HW_TRIG_3.Q) THEN
+    
+        IF (CURRENT_LOGIN_LEVEL <> 2) THEN
+            MENU_LEVEL0 := FALSE;
+            MENU_LEVEL1 := TRUE;
+            MENU_LEVEL2 := FALSE;
+            
+            PAGE_NUMBER := LOGIN_PAGE_NR;
+        ELSE
+            CURRENT_LOGIN_LEVEL   := 1; 
+            START_TIMER_RESET_LOGIN:=TRUE; 
+        END_IF
+    END_IF
+    
+    // HW Button 4: Loop Overview
+    HW_TRIG_4(CLK := HW_BUTTON_4);
+    IF (HW_TRIG_4.Q) THEN
+        PAGE_NUMBER := LOOP_OVERVIEW_PAGE_NR;
+    END_IF
+    
+    // HW Button 5: Alarm List
+    HW_TRIG_5(CLK := HW_BUTTON_5);
+    IF (HW_TRIG_5.Q) THEN
+        PAGE_NUMBER := ALARM_PAGE_NR;      
+    END_IF
+    
+    // HW Button 6: Setup / Config
+    HW_TRIG_6(CLK := HW_BUTTON_6);
+    IF (HW_TRIG_6.Q) THEN
+        MENU_LEVEL0 := FALSE;
+        MENU_LEVEL1 := FALSE;
+        MENU_LEVEL2 := TRUE; 
+    
+        PAGE_NUMBER := LOGIN_PAGE_NR;
+    END_IF
+    
+    //Disable list button
+    TBS_TRIG_DISABLE_LIST_PAGE(CLK:=G1131_TBS_TOUCH_DISABLE_PAGE);
+    IF TBS_TRIG_DISABLE_LIST_PAGE.Q THEN
+      PAGE_NUMBER := DISABLE_LIST_PAGE_NR;
+    END_IF
+    
+    //inhibit list button
+    TBS_TRIG_INHIBIT_LIST_PAGE(CLK:=G1131_TBS_TOUCH_INHIBIT_PAGE);
+    IF TBS_TRIG_INHIBIT_LIST_PAGE.Q THEN
+      PAGE_NUMBER := INHIBIT_LIST_PAGE_NR;
+    END_IF    
+    
+    GET_AFAS_VARS(IINPUT:=0);
+    IF GET_AFAS_VARS.IRET > 0 THEN
+      G1131_TB_DISABLE_PAGE_STATE:=1;
+    ELSE
+      G1131_TB_DISABLE_PAGE_STATE:=0;    
+    END_IF   
+    
+    GET_AFAS_VARS(IINPUT:=1);
+    IF GET_AFAS_VARS.IRET > 0 THEN
+      G1131_TB_INHIBIT_PAGE_STATE:=1;
+    ELSE
+      G1131_TB_INHIBIT_PAGE_STATE:=0;    
+    END_IF   
+        
+END_IF
+                              
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="ALARM_PAGE" editor="PAL1131.ST"><![CDATA[PROGRAM ALARM_PAGE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+  VAR_GLOBAL
+  
+    AP_HW_BUTTON_1 : BOOL := FALSE;
+    AP_HW_BUTTON_2 : BOOL := FALSE;
+    AP_HW_BUTTON_3 : BOOL := FALSE;
+    AP_HW_BUTTON_4 : BOOL := FALSE;
+    AP_HW_BUTTON_5 : BOOL := FALSE;
+    AP_HW_BUTTON_6 : BOOL := FALSE;
+
+  END_VAR
+ 
+ VAR
+    PAGE_SHOWN : BOOL := FALSE;
+    
+    HW_TRIG_1 : R_TRIG;
+    HW_TRIG_2 : R_TRIG;
+    HW_TRIG_3 : R_TRIG;
+    HW_TRIG_4 : R_TRIG;
+    HW_TRIG_5 : R_TRIG;
+    HW_TRIG_6 : R_TRIG;
+    
+    PULSE_TIME : TIME := T#1s;
+    
+    ACKNOWLEDGE_PULSE   : TP;               // Acknowledge Pulse
+    STOP_BUZZER_PULSE   : TP;               // Stop Buzzer Pulse
+    SCROLL_UP           : HW_SCROLL_UP;     // Scroll Up
+    SCROLL_DOWN         : HW_SCROLL_DOWN;   // Scroll Down
+    ACCEPT              : HW_ACCEPT;  
+ END_VAR
+
+ // ---------------------------------------------------------------------------- 
+ // Run corresponding page code
+ 
+ IF PAGE_NUMBER = ALARM_PAGE_NR THEN
+    
+    // =========================================================================
+    // Hardware Buttons
+    
+    // HW Button 1: Home Page / General Page
+    HW_TRIG_1(CLK := AP_HW_BUTTON_1);
+    IF (HW_TRIG_1.Q) THEN
+        PAGE_NUMBER := MAIN_PAGE_NR;
+    END_IF 
+    
+    // HW Button 2: Scroll down
+    HW_TRIG_2(CLK := AP_HW_BUTTON_2);
+    IF (HW_TRIG_2.Q) THEN
+        SCROLL_DOWN();
+    END_IF   
+    
+    // HW Button 3: Scroll up
+    HW_TRIG_3(CLK := AP_HW_BUTTON_3);
+    IF (HW_TRIG_3.Q) THEN
+        SCROLL_UP();    
+    END_IF
+    
+    // HW Button 4: Acknowledge 
+    HW_TRIG_4(CLK := AP_HW_BUTTON_4);
+    ACKNOWLEDGE_PULSE(IN := HW_TRIG_4.Q, PT := PULSE_TIME);
+
+    IF CURRENT_LOGIN_LEVEL = 2 THEN
+      IF HW_TRIG_4.Q THEN
+        ACCEPT();    
+      END_IF
+    END_IF   
+    START_ACK := ACKNOWLEDGE_PULSE.Q; 
+    
+    // HW Button 5: Stop Buzzer OR Resound    
+    IF (BUZZER = TRUE) OR (FIRE_ALARM_BUZZER = TRUE)  THEN
+        HW_TRIG_5(CLK := AP_HW_BUTTON_5);
+        STOP_BUZZER_PULSE(IN := HW_TRIG_5.Q, PT := PULSE_TIME);
+        START_STOPHORN := STOP_BUZZER_PULSE.Q; 
+    ELSE
+        START_RESOUND := HW_BUTTON_5; // Conditions are checked in 'HANDLE_RESOUND'   
+    END_IF
+    
+    // HW Button 6: Login
+    HW_TRIG_6(CLK := AP_HW_BUTTON_6);
+    IF (HW_TRIG_6.Q) THEN
+        IF (CURRENT_LOGIN_LEVEL <> 2) THEN
+            MENU_LEVEL0 := FALSE;
+            MENU_LEVEL1 := TRUE;
+            MENU_LEVEL2 := FALSE;
+            
+            PAGE_NUMBER := LOGIN_PAGE_NR;
+        ELSE
+            CURRENT_LOGIN_LEVEL   := 1; 
+            START_TIMER_RESET_LOGIN:=TRUE;  
+        END_IF   
+    END_IF
+
+END_IF
+                              
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="MAIN_ZONE_VIEWER" editor="PAL1131.ST"><![CDATA[  PROGRAM MAIN_ZONE_VIEWER
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+
+ VAR_GLOBAL
+ 
+    // Status variables 
+    G1131_MZV_LOOP_0 : INT := 0;
+    G1131_MZV_LOOP_1 : INT := 0;
+    G1131_MZV_LOOP_2 : INT := 0;
+    G1131_MZV_LOOP_3 : INT := 0;
+
+    G1131_MZV_ZONE_0 : INT := 0;
+    G1131_MZV_ZONE_1 : INT := 0;
+    G1131_MZV_ZONE_2 : INT := 0;
+    G1131_MZV_ZONE_3 : INT := 0;    
+    
+    G1131_MZV_TOP_BOX_0 : INT := 0;
+    G1131_MZV_TOP_BOX_1 : INT := 0;
+    G1131_MZV_TOP_BOX_2 : INT := 0;
+    G1131_MZV_TOP_BOX_3 : INT := 0;
+    
+    G1131_MZV_DESC_BOX_0 : STRING[32];
+    G1131_MZV_DESC_BOX_1 : STRING[32];
+    G1131_MZV_DESC_BOX_2 : STRING[32];
+    G1131_MZV_DESC_BOX_3 : STRING[32]; 
+    
+    G1131_MZV_INDICATOR_0 : INT := 0;
+    G1131_MZV_INDICATOR_1 : INT := 0;
+    G1131_MZV_INDICATOR_2 : INT := 0;
+    G1131_MZV_INDICATOR_3 : INT := 0;
+    
+    G1131_MZV_INDICATOR_ARROW_LEFT  : INT := 0;
+    G1131_MZV_INDICATOR_ARROW_RIGHT : INT := 0;
+    
+    G1131_MZV_LEFT_STATE           : INT := 1;
+    G1131_MZV_LEFT_BORDER_WIDTH    : INT := 1;
+    G1131_MZV_LEFT_BORDER_LENGTH   : INT := 10;
+    
+    G1131_MZV_RIGHT_STATE           : INT := 1;
+    G1131_MZV_RIGHT_BORDER_WIDTH    : INT := 1;
+    G1131_MZV_RIGHT_BORDER_LENGTH   : INT := 10;      
+    
+    // Touch button
+    G1131_MZV_TOUCH_ARROW_LEFT  : BOOL := FALSE;
+    G1131_MZV_TOUCH_ARROW_RIGHT : BOOL := FALSE;
+    
+    G1131_MZV_TOUCH_DISABLE_0      : BOOL := FALSE;
+    G1131_MZV_TOUCH_DISABLE_1      : BOOL := FALSE;
+    G1131_MZV_TOUCH_DISABLE_2      : BOOL := FALSE;
+    G1131_MZV_TOUCH_DISABLE_3      : BOOL := FALSE;
+    
+    G1131_MVZ_STATUS_DISABLE_0  : INT := 0;
+    G1131_MVZ_STATUS_DISABLE_1  : INT := 0;
+    G1131_MVZ_STATUS_DISABLE_2  : INT := 0;
+    G1131_MVZ_STATUS_DISABLE_3  : INT := 0;
+    
+    // Desciption Strings
+    STARTUP             : BOOL := FALSE;
+    DESCRIPTION_STRINGS : ARRAY[0..127] OF STRING[32];
+    
+    // Enumeration 
+    MZV_INDICATOR_NORMAL        : INT := 0;
+    MZV_INDICATOR_DISABLED      : INT := 1;
+    MZV_INDICATOR_TESTING       : INT := 2;
+    MZV_INDICATOR_FAULT         : INT := 3;
+    MZV_INDICATOR_FIRE_ALARM    : INT := 4;
+    MZV_INDICATOR_PRE_ALARM     : INT := 5;
+    
+    MZV_ARROW_DISABLED  : INT := 0;
+    MZV_ARROW_NORMAL    : INT := 1;
+    MZV_ARROW_RED       : INT := 2;
+    MZV_ARROW_PURPLE    : INT := 3;
+    
+    IS_ZONE_DISABLED : ARRAY [0..127] OF BOOL;
+    
+    ZDP_LOOP_IT : INT := 0; 
+    
+ END_VAR
+
+ VAR
+    LOOP_IT     : INT := 0;
+    ZONE_IT     : INT := 0;
+    TMP_IT      : INT := 0;
+    TMP_PAGE_IT : INT := 0;
+
+    MZV_DWORD_CURRENT_FIRE_ALARM : ARRAY [0..7] OF DWORD;
+    MZV_DWORD_CURRENT_PRE_ALARM  : ARRAY [0..7] OF DWORD;
+    MZV_DWORD_CURRENT_FAULT      : ARRAY [0..7] OF DWORD;
+    
+    MZV_ZONES_CURRENTLY_SHOWN_ZONE      : ARRAY [0..16] OF INT;
+    MZV_ZONES_CURRENTLY_SHOWN_STATUS    : ARRAY [0..16] OF INT;
+    MZV_CURRENTLY_SHOWN_INDEX           : INT := 0;
+    MZV_PREVIOUS_SHOWN_INDEX            : INT := 0; 
+
+    MZV_LOOP_ARRAY          : ARRAY [0..3] OF INT;
+    MZV_ZONE_ARRAY          : ARRAY [0..3] OF INT;
+    MZV_TOP_BOX_ARRAY       : ARRAY [0..3] OF INT;
+    MZV_INDICATOR_ARRAY     : ARRAY [0..3] OF INT;
+    MZV_DISABLE_STATE_ARRAY : ARRAY [0..3] OF INT;
+    MZV_DESC_BOX_ARRAY      : ARRAY [0..3] OF STRING[32];
+    
+    EXTRACT_BIT : SYSTEM_EXTRACT_BIT;
+    
+    TRIG_DISABLE_0 : R_TRIG;
+    TRIG_DISABLE_1 : R_TRIG;
+    TRIG_DISABLE_2 : R_TRIG;
+    TRIG_DISABLE_3 : R_TRIG;
+    
+    MZV_TMP_DISABLE_LOOP : INT := 0;
+    MZV_TMP_DISABLE_ZONE : INT := 0;
+    
+
+    
+    MZV_TRIG_ARROW_LEFT     : R_TRIG;
+    MZV_TRIG_ARROW_RIGHT    : R_TRIG;
+    MZV_INTERNAL_PAGE_NR    : INT := 0;
+    
+    TMP_DINT            : DINT := 0;
+    TMP_BOOL_DISABLED   : BOOL := FALSE;
+    TMP_BOOL_FIRE_ALARM : BOOL := FALSE;
+    TMP_BOOL_PRE_ALARM  : BOOL := FALSE;
+    TMP_BOOL_FAULT      : BOOL := FALSE;
+    TMP_MAX_IT          : INT := 0;
+    
+    READ_DESCRIPTION : HW_READ_ZONE_DESC;
+    READ_ZONE :INT := 1; 
+    
+    FORCE_REDRAW : HW_FORCE_REDRAW_DISPLAY; // Workaround: Strings don't get updated when they change.
+    
+    SET_IOP_PROPERTY :  SYSTEM_SET_IOP_PROPERTY;
+    
+ END_VAR
+
+ // =============================================================================
+ // Main Zone Viewer (MZV)
+ 
+ // Get all description strings on startup  
+ // -------------------------------------------------------------------------
+ 
+ IF (STARTUP = FALSE) THEN
+   STARTUP := TRUE;
+ 
+  FOR ZONE_IT := 0 TO 127 BY 1 DO
+        READ_DESCRIPTION(iZoneNr:=ZONE_IT,iAlt:=0);
+        DESCRIPTION_STRINGS[ZONE_IT] := READ_DESCRIPTION.sText;    
+  END_FOR  
+ END_IF
+ 
+ // -------------------------------------------------------------------------
+ // Arrow buttons: Change internal MZV pages 
+ 
+ MZV_TRIG_ARROW_LEFT(CLK := G1131_MZV_TOUCH_ARROW_LEFT);
+ IF (MZV_TRIG_ARROW_LEFT.Q) THEN
+     
+     IF (MZV_INTERNAL_PAGE_NR <> 0) THEN
+             MZV_INTERNAL_PAGE_NR := MZV_INTERNAL_PAGE_NR - 4;
+     END_IF
+     
+     FORCE_REDRAW(IINPUT:=1); // Workaround: Strings don't get updated when they change.
+ END_IF
+ 
+ MZV_TRIG_ARROW_RIGHT(CLK := G1131_MZV_TOUCH_ARROW_RIGHT);
+ IF (MZV_TRIG_ARROW_RIGHT.Q) THEN
+     
+     IF (MZV_INTERNAL_PAGE_NR <> 12) THEN
+             MZV_INTERNAL_PAGE_NR := MZV_INTERNAL_PAGE_NR + 4;
+     END_IF
+     
+     FORCE_REDRAW(IINPUT:=1); // Workaround: Strings don't get updated when they change.
+ END_IF
+ 
+ // Prevent that on a page while there are no zones shown on this page 
+ WHILE MZV_INTERNAL_PAGE_NR >= MZV_CURRENTLY_SHOWN_INDEX AND
+       MZV_INTERNAL_PAGE_NR <> 0 DO
+        MZV_INTERNAL_PAGE_NR := MZV_INTERNAL_PAGE_NR - 4;
+         
+ END_WHILE
+
+ // -----------------------------------------------------------------------------
+ // Convert Input Arrays to DWORD Type
+
+ FOR LOOP_IT := 0 TO 7 BY 1 DO
+
+    TMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARMS[LOOP_IT]);
+    MZV_DWORD_CURRENT_FIRE_ALARM[LOOP_IT] := DINT_TO_DWORD(TMP_DINT) AND DWORD#16#0000FFFF;
+
+    MZV_DWORD_CURRENT_PRE_ALARM[LOOP_IT] := ZONE_PREALARMS[LOOP_IT] AND DWORD#16#0000FFFF;  
+
+    TMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULTS[LOOP_IT]);
+    MZV_DWORD_CURRENT_FAULT[LOOP_IT] := DINT_TO_DWORD(TMP_DINT) AND DWORD#16#0000FFFF;
+
+ END_FOR
+
+ // ----------------------------------------------------------------------------
+ // Check What Needs To Be Shown, this is the input for the MZV 
+ // Main Zone Viewer (MVZ) on the MAIN_PAGE
+ 
+ IF (PAGE_NUMBER = MAIN_PAGE_NR) THEN
+     MZV_CURRENTLY_SHOWN_INDEX := 0; // Reset on every loop 
+    
+     FOR LOOP_IT := 0 TO 7 BY 1 DO
+    
+        TMP_BOOL_DISABLED := FALSE;
+    
+        FOR ZONE_IT := 0 TO 15 BY 1 DO
+            IF (IS_ZONE_DISABLED[ZONE_IT + (LOOP_IT * 16)]) THEN
+                TMP_BOOL_DISABLED := TRUE;
+            END_IF
+        END_FOR
+        
+        IF (IS_LOOP_DISABLED[LOOP_IT] = TRUE) THEN
+            MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_DISABLED;
+            MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := 241 + LOOP_IT;
+            MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1; 
+    
+        ELSIF (MZV_DWORD_CURRENT_FIRE_ALARM[LOOP_IT] <> DWORD#16#0) OR
+              (MZV_DWORD_CURRENT_PRE_ALARM[LOOP_IT] <> DWORD#16#0) OR
+              (MZV_DWORD_CURRENT_FAULT[LOOP_IT] <> DWORD#16#0) OR
+              (TMP_BOOL_DISABLED = TRUE) THEN
+    
+            FOR ZONE_IT := 0 TO 15 BY 1 DO
+    
+                EXTRACT_BIT(Data := MZV_DWORD_CURRENT_FIRE_ALARM[LOOP_IT], Pos := ZONE_IT);
+                TMP_BOOL_FIRE_ALARM := EXTRACT_BIT.Bit;
+                EXTRACT_BIT(Data := MZV_DWORD_CURRENT_PRE_ALARM[LOOP_IT], Pos := ZONE_IT);
+                TMP_BOOL_PRE_ALARM := EXTRACT_BIT.Bit;
+                EXTRACT_BIT(Data := MZV_DWORD_CURRENT_FAULT[LOOP_IT], Pos := ZONE_IT);
+                TMP_BOOL_FAULT := EXTRACT_BIT.Bit;
+                
+                IF (IS_ZONE_DISABLED[ZONE_IT + (LOOP_IT * 16)]) THEN
+                    MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_DISABLED;
+                    MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := ZONE_IT + (LOOP_IT * 16);
+                    MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1;
+                ELSIF (TMP_BOOL_FIRE_ALARM) THEN
+                    MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_FIRE_ALARM;
+                    MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := ZONE_IT + (LOOP_IT * 16);
+                    MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1;
+                ELSIF (TMP_BOOL_PRE_ALARM) THEN
+                    MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_PRE_ALARM;
+                    MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := ZONE_IT + (LOOP_IT * 16);
+                    MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1;
+                ELSIF (TMP_BOOL_FAULT) THEN
+                    MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_FAULT;
+                    MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := ZONE_IT + (LOOP_IT * 16);
+                    MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1;
+                END_IF
+    
+            END_FOR
+        END_IF
+     END_FOR
+ END_IF
+ 
+ // ----------------------------------------------------------------------------
+ // Check What Needs To Be Shown, this is the input for the MZV 
+ // Main Zone Viewer (MVZ) on the ZONE_OVERVIEW_PAGE
+ 
+ IF (PAGE_NUMBER = ZONE_OVERVIEW_PAGE_NR) THEN
+     MZV_CURRENTLY_SHOWN_INDEX := 0;
+     
+     FOR ZONE_IT := 0 TO 15 BY 1 DO
+     
+        MZV_ZONES_CURRENTLY_SHOWN_ZONE[ZONE_IT] := ZONE_IT;
+        
+        EXTRACT_BIT(Data := MZV_DWORD_CURRENT_FIRE_ALARM[ZDP_LOOP_IT], Pos := ZONE_IT);
+        TMP_BOOL_FIRE_ALARM := EXTRACT_BIT.Bit;
+        EXTRACT_BIT(Data := MZV_DWORD_CURRENT_PRE_ALARM[ZDP_LOOP_IT], Pos := ZONE_IT);
+        TMP_BOOL_PRE_ALARM := EXTRACT_BIT.Bit;
+        EXTRACT_BIT(Data := MZV_DWORD_CURRENT_FAULT[ZDP_LOOP_IT], Pos := ZONE_IT);
+        TMP_BOOL_FAULT := EXTRACT_BIT.Bit;
+        
+        IF (IS_ZONE_DISABLED[ZONE_IT + (ZDP_LOOP_IT * 16)]) THEN
+            MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_DISABLED;
+            MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := ZONE_IT + (16 * ZDP_LOOP_IT);
+            MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1;
+        ELSIF (TMP_BOOL_FIRE_ALARM) THEN
+            MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_FIRE_ALARM;
+            MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := ZONE_IT + (16 * ZDP_LOOP_IT);
+            MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1;
+        ELSIF (TMP_BOOL_PRE_ALARM) THEN
+            MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_PRE_ALARM;
+            MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := ZONE_IT + (16 * ZDP_LOOP_IT);
+            MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1;
+        ELSIF (TMP_BOOL_FAULT) THEN
+            MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_FAULT;
+            MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := ZONE_IT + (16 * ZDP_LOOP_IT);
+            MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1;
+        ELSE
+            MZV_ZONES_CURRENTLY_SHOWN_STATUS[MZV_CURRENTLY_SHOWN_INDEX] := MZV_INDICATOR_NORMAL;
+            MZV_ZONES_CURRENTLY_SHOWN_ZONE[MZV_CURRENTLY_SHOWN_INDEX] := ZONE_IT + (16 * ZDP_LOOP_IT);
+            MZV_CURRENTLY_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX + 1; 
+        END_IF
+    
+     END_FOR
+ END_IF
+ 
+ // ----------------------------------------------------------------------------
+ // Extract Shown Data Array -> Show the data
+ 
+ FOR TMP_IT := 0 TO 3 BY 1 DO
+ 
+    TMP_PAGE_IT := MZV_INTERNAL_PAGE_NR + TMP_IT; 
+ 
+    IF (TMP_PAGE_IT + 1 <= MZV_CURRENTLY_SHOWN_INDEX) THEN    
+        // Fill top descriptions 'Loop XX Zone XX'
+        IF (MZV_ZONES_CURRENTLY_SHOWN_ZONE[TMP_PAGE_IT] >= 241) THEN // Loop is disabled
+            MZV_ZONE_ARRAY[TMP_IT] := 0;
+            MZV_LOOP_ARRAY[TMP_IT] := MZV_ZONES_CURRENTLY_SHOWN_ZONE[TMP_PAGE_IT] - 240; // 240 because loop counter starts with 0
+        ELSE
+            MZV_ZONE_ARRAY[TMP_IT] := MZV_ZONES_CURRENTLY_SHOWN_ZONE[TMP_PAGE_IT] + 1;
+            MZV_LOOP_ARRAY[TMP_IT] := (MZV_ZONES_CURRENTLY_SHOWN_ZONE[TMP_PAGE_IT] / 16) + 1;
+        END_IF
+        
+        IF (G1131_TBS_LOGIN_STATE = 1) THEN 
+            MZV_DISABLE_STATE_ARRAY[TMP_IT] := 1;
+        ELSE
+            MZV_DISABLE_STATE_ARRAY[TMP_IT] := 0;
+        END_IF
+        
+        IF (MZV_ZONES_CURRENTLY_SHOWN_ZONE[TMP_PAGE_IT] >= 241) THEN // Loop is disabled
+            MZV_DESC_BOX_ARRAY[TMP_IT] := ' ';
+        ELSE
+            MZV_DESC_BOX_ARRAY[TMP_IT] := DESCRIPTION_STRINGS[(MZV_ZONE_ARRAY[TMP_IT] - 1)];
+        END_IF
+        
+        
+        IF (MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_PAGE_IT] = MZV_INDICATOR_DISABLED) THEN
+            MZV_TOP_BOX_ARRAY[TMP_IT] := 0;
+            MZV_INDICATOR_ARRAY[TMP_IT] := MZV_INDICATOR_DISABLED;
+        ELSIF (MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_PAGE_IT] = MZV_INDICATOR_FIRE_ALARM) THEN
+            MZV_TOP_BOX_ARRAY[TMP_IT] := 2;
+            MZV_INDICATOR_ARRAY[TMP_IT] := MZV_INDICATOR_FIRE_ALARM;      
+        ELSIF (MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_PAGE_IT] = MZV_INDICATOR_PRE_ALARM) THEN
+            MZV_TOP_BOX_ARRAY[TMP_IT] := 2;
+            MZV_INDICATOR_ARRAY[TMP_IT] := MZV_INDICATOR_PRE_ALARM;            
+        ELSIF (MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_PAGE_IT] = MZV_INDICATOR_FAULT) THEN
+            MZV_TOP_BOX_ARRAY[TMP_IT] := 0;
+            MZV_INDICATOR_ARRAY[TMP_IT] := MZV_INDICATOR_FAULT;
+        ELSIF (MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_PAGE_IT] = MZV_INDICATOR_NORMAL) THEN
+            MZV_TOP_BOX_ARRAY[TMP_IT] := 0;
+            MZV_INDICATOR_ARRAY[TMP_IT] := MZV_INDICATOR_NORMAL;  
+        END_IF
+    ELSE
+        // Do not show this indicator
+        MZV_ZONE_ARRAY[TMP_IT] := 0;
+        MZV_LOOP_ARRAY[TMP_IT] := 0;
+        MZV_TOP_BOX_ARRAY[TMP_IT] := 0;
+        MZV_DESC_BOX_ARRAY[TMP_IT] := '...';
+        MZV_DISABLE_STATE_ARRAY[TMP_IT] := 0;
+        MZV_INDICATOR_ARRAY[TMP_IT] := MZV_INDICATOR_NORMAL;
+    END_IF    
+ END_FOR
+ 
+ 
+ // Workaround: Strings don't get updated when they change. Because of this state change it will.
+ IF MZV_PREVIOUS_SHOWN_INDEX <> MZV_CURRENTLY_SHOWN_INDEX THEN
+    FOR TMP_IT := 0 TO 3 BY 1 DO 
+        IF MZV_TOP_BOX_ARRAY[TMP_IT] = 0 THEN
+           MZV_TOP_BOX_ARRAY[TMP_IT] := MZV_TOP_BOX_ARRAY[TMP_IT] + 1;
+        ELSIF MZV_TOP_BOX_ARRAY[TMP_IT] = 1 THEN
+           MZV_TOP_BOX_ARRAY[TMP_IT] := 0;     
+        END_IF
+        
+        IF MZV_TOP_BOX_ARRAY[TMP_IT] = 2 THEN
+           MZV_TOP_BOX_ARRAY[TMP_IT] := MZV_TOP_BOX_ARRAY[TMP_IT] + 1;
+        ELSIF MZV_TOP_BOX_ARRAY[TMP_IT] >= 3 THEN
+           MZV_TOP_BOX_ARRAY[TMP_IT] := 2;     
+        END_IF
+
+    END_FOR
+ END_IF
+ 
+ MZV_PREVIOUS_SHOWN_INDEX := MZV_CURRENTLY_SHOWN_INDEX;
+ 
+ // -------------------------------------------------------------------------
+ // Arrow buttons: Only show when needed
+ 
+ G1131_MZV_LEFT_STATE           := 1;
+ G1131_MZV_LEFT_BORDER_WIDTH    := 1;
+ G1131_MZV_LEFT_BORDER_LENGTH   := 10;
+ G1131_MZV_INDICATOR_ARROW_LEFT := 0;
+ 
+ G1131_MZV_RIGHT_STATE           := 1;
+ G1131_MZV_RIGHT_BORDER_WIDTH    := 1;
+ G1131_MZV_RIGHT_BORDER_LENGTH   := 10;
+ G1131_MZV_INDICATOR_ARROW_RIGHT := 0;
+ 
+ FOR TMP_IT := 0 TO MZV_CURRENTLY_SHOWN_INDEX BY 1 DO
+    IF (TMP_IT < MZV_INTERNAL_PAGE_NR) THEN
+        // Left
+        IF G1131_MZV_LEFT_STATE < MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_IT] THEN
+            G1131_MZV_LEFT_STATE := MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_IT];
+            G1131_MZV_INDICATOR_ARROW_LEFT := MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_IT];
+        END_IF        
+    ELSIF (TMP_IT > MZV_INTERNAL_PAGE_NR) THEN
+        // Right
+        IF G1131_MZV_RIGHT_STATE < MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_IT] THEN
+            G1131_MZV_RIGHT_STATE := MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_IT];
+            G1131_MZV_INDICATOR_ARROW_RIGHT := MZV_ZONES_CURRENTLY_SHOWN_STATUS[TMP_IT];
+        END_IF 
+    END_IF
+ END_FOR
+ 
+ IF (MZV_INTERNAL_PAGE_NR = 0) THEN
+    G1131_MZV_LEFT_STATE := 0;
+    G1131_MZV_LEFT_BORDER_WIDTH := 0;
+    G1131_MZV_LEFT_BORDER_LENGTH := 0;
+    G1131_MZV_INDICATOR_ARROW_LEFT := MZV_INDICATOR_NORMAL; 
+ END_IF
+ 
+ IF (MZV_INTERNAL_PAGE_NR + 4 >= MZV_CURRENTLY_SHOWN_INDEX) THEN
+    G1131_MZV_RIGHT_STATE := 0;
+    G1131_MZV_RIGHT_BORDER_WIDTH := 0;
+    G1131_MZV_RIGHT_BORDER_LENGTH := 0;
+    G1131_MZV_INDICATOR_ARROW_RIGHT := MZV_INDICATOR_NORMAL;    
+ END_IF
+
+ // ----------------------------------------------------------------------------
+ // Extracted data to the coupled PAL1131G variables
+
+ G1131_MZV_LOOP_0 := MZV_LOOP_ARRAY[0];
+ G1131_MZV_LOOP_1 := MZV_LOOP_ARRAY[1];
+ G1131_MZV_LOOP_2 := MZV_LOOP_ARRAY[2];
+ G1131_MZV_LOOP_3 := MZV_LOOP_ARRAY[3];
+
+ G1131_MZV_ZONE_0 := MZV_ZONE_ARRAY[0];
+ G1131_MZV_ZONE_1 := MZV_ZONE_ARRAY[1];
+ G1131_MZV_ZONE_2 := MZV_ZONE_ARRAY[2];
+ G1131_MZV_ZONE_3 := MZV_ZONE_ARRAY[3];
+ 
+ G1131_MZV_TOP_BOX_0 := MZV_TOP_BOX_ARRAY[0];
+ G1131_MZV_TOP_BOX_1 := MZV_TOP_BOX_ARRAY[1];
+ G1131_MZV_TOP_BOX_2 := MZV_TOP_BOX_ARRAY[2];
+ G1131_MZV_TOP_BOX_3 := MZV_TOP_BOX_ARRAY[3];
+                            
+ G1131_MZV_DESC_BOX_0 := MZV_DESC_BOX_ARRAY[0];
+ G1131_MZV_DESC_BOX_1 := MZV_DESC_BOX_ARRAY[1];
+ G1131_MZV_DESC_BOX_2 := MZV_DESC_BOX_ARRAY[2];
+ G1131_MZV_DESC_BOX_3 := MZV_DESC_BOX_ARRAY[3];
+ 
+ G1131_MZV_INDICATOR_0 := MZV_INDICATOR_ARRAY[0];
+ G1131_MZV_INDICATOR_1 := MZV_INDICATOR_ARRAY[1];
+ G1131_MZV_INDICATOR_2 := MZV_INDICATOR_ARRAY[2];
+ G1131_MZV_INDICATOR_3 := MZV_INDICATOR_ARRAY[3];
+ 
+ G1131_MVZ_STATUS_DISABLE_0 := MZV_DISABLE_STATE_ARRAY[0];
+ G1131_MVZ_STATUS_DISABLE_1 := MZV_DISABLE_STATE_ARRAY[1];
+ G1131_MVZ_STATUS_DISABLE_2 := MZV_DISABLE_STATE_ARRAY[2];
+ G1131_MVZ_STATUS_DISABLE_3 := MZV_DISABLE_STATE_ARRAY[3];
+
+ // ----------------------------------------------------------------------------
+ // Handling of Disable buttons
+ 
+ TRIG_DISABLE_0(CLK := G1131_MZV_TOUCH_DISABLE_0 AND G1131_MVZ_STATUS_DISABLE_0 = 1);
+ IF (TRIG_DISABLE_0.Q) THEN
+    MZV_TMP_DISABLE_LOOP := G1131_MZV_LOOP_0 - 1;
+    MZV_TMP_DISABLE_ZONE := G1131_MZV_ZONE_0;
+ 
+    IF (MZV_TMP_DISABLE_LOOP >= 0 AND MZV_TMP_DISABLE_ZONE >= 1) THEN
+        IF (IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1]) THEN
+             SET_IOP_PROPERTY(Board := MZV_TMP_DISABLE_LOOP,IOP := 0,PrID := 163 ,PrValue := MZV_TMP_DISABLE_ZONE);
+             IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1] := FALSE;
+                 
+        ELSE
+             SET_IOP_PROPERTY(Board := MZV_TMP_DISABLE_LOOP,IOP := 0,PrID := 163 ,PrValue := (256 + MZV_TMP_DISABLE_ZONE));
+             IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1] := TRUE;
+                 
+        END_IF
+    END_IF
+ END_IF
+
+ TRIG_DISABLE_1(CLK := G1131_MZV_TOUCH_DISABLE_1 AND G1131_MVZ_STATUS_DISABLE_1 = 1);
+ IF (TRIG_DISABLE_1.Q) THEN
+    MZV_TMP_DISABLE_LOOP := G1131_MZV_LOOP_1 - 1;
+    MZV_TMP_DISABLE_ZONE := G1131_MZV_ZONE_1;
+    
+    IF (MZV_TMP_DISABLE_LOOP >= 0 AND MZV_TMP_DISABLE_ZONE >= 1) THEN
+        IF (IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1]) THEN
+             SET_IOP_PROPERTY(Board := MZV_TMP_DISABLE_LOOP,IOP := 0,PrID := 163 ,PrValue := MZV_TMP_DISABLE_ZONE);
+             IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1] := FALSE;
+                 
+        ELSE
+             SET_IOP_PROPERTY(Board := MZV_TMP_DISABLE_LOOP,IOP := 0,PrID := 163 ,PrValue := (256 + MZV_TMP_DISABLE_ZONE));
+             IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1] := TRUE;
+                 
+        END_IF
+    END_IF
+ END_IF
+
+ TRIG_DISABLE_2(CLK := G1131_MZV_TOUCH_DISABLE_2 AND G1131_MVZ_STATUS_DISABLE_2 = 1);
+ IF (TRIG_DISABLE_2.Q) THEN
+    MZV_TMP_DISABLE_LOOP := G1131_MZV_LOOP_2 - 1;
+    MZV_TMP_DISABLE_ZONE := G1131_MZV_ZONE_2;
+ 
+    IF (MZV_TMP_DISABLE_LOOP >= 0 AND MZV_TMP_DISABLE_ZONE >= 1) THEN
+        IF (IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1]) THEN
+             SET_IOP_PROPERTY(Board := MZV_TMP_DISABLE_LOOP,IOP := 0,PrID := 163 ,PrValue := MZV_TMP_DISABLE_ZONE);
+             IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1] := FALSE;
+                 
+        ELSE
+             SET_IOP_PROPERTY(Board := MZV_TMP_DISABLE_LOOP,IOP := 0,PrID := 163 ,PrValue := (256 + MZV_TMP_DISABLE_ZONE));
+             IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1] := TRUE;
+                 
+        END_IF
+     END_IF
+ END_IF
+
+ TRIG_DISABLE_3(CLK := G1131_MZV_TOUCH_DISABLE_3 AND G1131_MVZ_STATUS_DISABLE_3 = 1);
+ IF (TRIG_DISABLE_3.Q) THEN
+    MZV_TMP_DISABLE_LOOP := G1131_MZV_LOOP_3 - 1;
+    MZV_TMP_DISABLE_ZONE := G1131_MZV_ZONE_3;
+ 
+ 
+    IF (MZV_TMP_DISABLE_LOOP >= 0 AND MZV_TMP_DISABLE_ZONE >= 1) THEN
+        IF (IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1]) THEN
+             SET_IOP_PROPERTY(Board := MZV_TMP_DISABLE_LOOP,IOP := 0,PrID := 163 ,PrValue := MZV_TMP_DISABLE_ZONE);
+             IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1] := FALSE;
+                 
+        ELSE
+             SET_IOP_PROPERTY(Board := MZV_TMP_DISABLE_LOOP,IOP := 0,PrID := 163 ,PrValue := (256 + MZV_TMP_DISABLE_ZONE));
+             IS_ZONE_DISABLED[MZV_TMP_DISABLE_ZONE-1] := TRUE;
+                 
+        END_IF
+    END_IF
+ END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="HW_READ_ZONE_DESC" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK HW_READ_ZONE_DESC
+(*$HARDWARE_BODY_CALL ID:0080; Align:1*)
+(*$COMMENT HW_READ_ZONE_DESC*)
+
+VAR_INPUT 
+iZoneNr   (*$COMMENT 1..126*) :INT;
+iAlt      (*$COMMENT 0..1*)   :INT;
+END_VAR
+VAR_OUTPUT
+sText : STRING[32];
+END_VAR
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="TOP_BAR_STATUS" editor="PAL1131.ST"><![CDATA[PROGRAM TOP_BAR_STATUS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+    // Status
+    G1131_TBS_FIRE_ALARM_INDICATOR  : INT := 0;
+    G1131_TBS_DIAGNOSTIC_ALARM_PAGE : INT := 0;
+    G1131_TBS_LOGIN_STATE           : INT := 0;
+    
+    // Touch
+    G1131_TBS_TOUCH_ALARM_PAGE      : BOOL := FALSE;
+    G1131_TBS_TOUCH_LOGIN           : BOOL := FALSE;
+    G1131_TBS_TOUCH_DISABLE_PAGE    : BOOL := FALSE;
+    G1131_TBS_TOUCH_INHIBIT_PAGE    : BOOL := FALSE;
+    
+    G1131_HW_BUTTON_2_STATE         : INT := 0;
+ END_VAR
+ 
+ VAR
+    LOOP_IT     : INT   := 0;
+    TMP_DINT    : DINT  := 0;
+    TMP_DWORD   : DWORD := 0;
+    
+    TBS_TRIG_ALARM_PAGE : R_TRIG;
+    TBS_TRIG_LOGIN      : R_TRIG;
+    
+    //GET_TFT_LOGIN_PULSE : HW_MENU_AFTER_LOGIN_PULSE;
+    LOGIN_PULSE_TRIGGER : R_TRIG;
+ END_VAR
+ 
+ // ============================================================================
+ // Top Bar Status (TBS)
+ 
+ // ----------------------------------------------------------------------------
+ // Fire Alarm Status
+ 
+ G1131_TBS_FIRE_ALARM_INDICATOR := 0;
+ 
+ FOR LOOP_IT := 0 TO 7 BY 1 DO
+    TMP_DINT  := CAST_FINT_TO_DINT(ZONE_ALARMS[LOOP_IT]);
+    TMP_DWORD := DINT_TO_DWORD(TMP_DINT) AND DWORD#16#0000FFFF;
+    
+    IF (TMP_DWORD <> DWORD#16#0) THEN
+        G1131_TBS_FIRE_ALARM_INDICATOR := 1;
+    END_IF
+ END_FOR
+ 
+ 
+ // ----------------------------------------------------------------------------
+ // Login Logic
+ 
+ TBS_TRIG_LOGIN(CLK := G1131_TBS_TOUCH_LOGIN);
+ IF TBS_TRIG_LOGIN.Q THEN  
+    IF G1131_TBS_LOGIN_STATE = 0 THEN
+        MENU_LEVEL0 := FALSE;
+        MENU_LEVEL1 := TRUE;
+        MENU_LEVEL2 := FALSE;
+        
+        PAGE_NUMBER := LOGIN_PAGE_NR;
+    ELSE
+        CURRENT_LOGIN_LEVEL   := 1;
+        START_TIMER_RESET_LOGIN:=TRUE; 
+    END_IF 
+ END_IF
+  
+ // ----------------------------------------------------------------------------
+ // Alarm Page
+ 
+ TBS_TRIG_ALARM_PAGE(CLK:=G1131_TBS_TOUCH_ALARM_PAGE);
+ IF TBS_TRIG_ALARM_PAGE.Q THEN
+    PAGE_NUMBER := ALARM_PAGE_NR;
+ END_IF
+ 
+ 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PAGE_MENUS" editor="PAL1131.ST"><![CDATA[PROGRAM PAGE_MENUS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+    
+    // Numpad
+    G1131_NUMPAD_TOUCH_0    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_1    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_2    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_3    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_4    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_5    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_6    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_7    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_8    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_9    : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_MIN  : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_DOT  : BOOL := FALSE;
+    G1131_NUMPAD_TOUCH_DEL  : BOOL := FALSE;
+    
+    // HW Buttons
+    G1131_BUT_ID_1  : BOOL := FALSE;
+    G1131_BUT_ID_2  : BOOL := FALSE;
+    G1131_BUT_ID_3  : BOOL := FALSE;
+    G1131_BUT_ID_4  : BOOL := FALSE;
+    G1131_BUT_ID_5  : BOOL := FALSE;
+    G1131_BUT_ID_6  : BOOL := FALSE;
+    
+    START_LOGIN_LEVEL_0 : BOOL := FALSE;
+    START_LOGIN_LEVEL_1 : BOOL := FALSE;
+    START_LOGIN_LEVEL_2 : BOOL := FALSE;
+    
+ END_VAR
+ 
+ VAR
+    TB_MODE     : INT := 0;
+    HW_MODE     : INT := 0;
+    
+    TB_TRIGGER      : R_TRIG;
+    HW_TRIGGER      : R_TRIG;
+    
+    GET_TFT_PAGE  : HW_GET_TFT_PAGE; //FOR TT
+    ISUBPAGE : INT := 0;
+    
+    GET_TFT_LOGIN_PULSE : HW_MENU_AFTER_LOGIN_PULSE;
+    SET_TB_PRESS        : HW_MENU_TOUCH_BUTTON_PRESS;
+    SET_TFT_PAGE        : HW_SET_TFT_PAGE;
+
+    SHOWN : BOOL := FALSE;
+
+    BUT_ID          : HW_BUTTON_ID;
+ END_VAR
+ 
+ GET_TFT_PAGE();
+ ISUBPAGE := GET_TFT_PAGE.ISUB;
+    
+ SHOWN := PAGE_IN_MENU;  (* MENU PAGES ACTIVE *)
+ 
+ IF SHOWN THEN
+
+     // ------------------------------------------------------------------------
+     // Numpad Touch Handling
+     
+     TB_MODE := -1;
+
+     IF (G1131_NUMPAD_TOUCH_0) THEN
+         TB_MODE := 0;
+     ELSIF (G1131_NUMPAD_TOUCH_1) THEN
+         TB_MODE := 1;
+     ELSIF (G1131_NUMPAD_TOUCH_2) THEN
+         TB_MODE := 2;
+     ELSIF (G1131_NUMPAD_TOUCH_3) THEN
+         TB_MODE := 3;
+     ELSIF (G1131_NUMPAD_TOUCH_4) THEN
+         TB_MODE := 4;
+     ELSIF (G1131_NUMPAD_TOUCH_5) THEN
+         TB_MODE := 5;
+     ELSIF (G1131_NUMPAD_TOUCH_6) THEN
+         TB_MODE := 6;
+     ELSIF (G1131_NUMPAD_TOUCH_7) THEN
+         TB_MODE := 7;
+     ELSIF (G1131_NUMPAD_TOUCH_8) THEN
+         TB_MODE := 8;
+     ELSIF (G1131_NUMPAD_TOUCH_9) THEN
+         TB_MODE := 9;
+     ELSIF (G1131_NUMPAD_TOUCH_MIN) THEN
+         TB_MODE := 10;
+     ELSIF (G1131_NUMPAD_TOUCH_DOT) THEN
+         TB_MODE := 11; 
+     ELSIF (G1131_NUMPAD_TOUCH_DEL) THEN
+         TB_MODE := 12;
+     END_IF
+     
+     TB_TRIGGER(CLK:=(TB_MODE > -1));
+     IF (TB_TRIGGER.Q) THEN
+       SET_TB_PRESS(IINPUT:=TB_MODE); 
+     END_IF
+     
+     // ------------------------------------------------------------------------
+     // HW Touch Handeling
+     
+     HW_MODE := 0;
+     
+     IF (G1131_BUT_ID_1) THEN
+        HW_MODE := 1;
+     ELSIF (G1131_BUT_ID_2) THEN
+        HW_MODE := 2;
+     ELSIF (G1131_BUT_ID_3) THEN
+        HW_MODE := 3;
+     ELSIF (G1131_BUT_ID_4) THEN
+        HW_MODE := 4;
+     ELSIF (G1131_BUT_ID_5) THEN
+        HW_MODE := 5;
+     ELSIF (G1131_BUT_ID_6) THEN
+        HW_MODE := 6;
+     END_IF
+
+    HW_TRIGGER(CLK:=(HW_MODE > 0));
+    IF (HW_TRIGGER.Q) THEN
+        IF HW_MODE = 5 AND MENU_LEVEL1 THEN
+            BUT_ID(IINPUT := HW_MODE);
+            PAGE_NUMBER := MAIN_PAGE_NR; // Login but go to main page 
+            SET_TFT_PAGE(IINPUT := 0); // Must be here because implemented in the BUT_ID function
+        ELSE
+            BUT_ID(IINPUT := HW_MODE);
+        END_IF
+    END_IF
+    
+    // -------------------------------------------------------------------------
+    // Login Level
+    
+    GET_TFT_LOGIN_PULSE(ILEVEL:=0);
+    IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+        START_LOGIN_LEVEL_0:=TRUE;
+        START_LOGIN_LEVEL_1:=FALSE;
+        START_LOGIN_LEVEL_2:=FALSE;  
+    END_IF
+    
+    GET_TFT_LOGIN_PULSE(ILEVEL:=1); 
+    IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+        START_LOGIN_LEVEL_0:=FALSE;
+        START_LOGIN_LEVEL_1:=TRUE;
+        START_LOGIN_LEVEL_2:=FALSE;
+    END_IF
+    
+    GET_TFT_LOGIN_PULSE(ILEVEL:=2);
+    IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+        START_LOGIN_LEVEL_0:=FALSE;
+        START_LOGIN_LEVEL_1:=FALSE;
+        START_LOGIN_LEVEL_2:=TRUE;  
+    END_IF
+    
+     // ------------------------------------------------------------------------
+     // HW Button Handling
+    
+    IF G1131_BUT_ID_2 THEN
+        IF PAGE_NUMBER = PAGE_NR_MENU+1 THEN    
+            PAGE_CHANGE_PW := TRUE;
+        END_IF
+    END_IF
+    
+    IF G1131_BUT_ID_5 OR G1131_BUT_ID_6 THEN  
+        IF PAGE_NUMBER = PAGE_NR_MENU OR PAGE_NUMBER = PAGE_NR_MENU+1 THEN  
+            PAGE_CHANGE_PW := FALSE;
+        END_IF
+    END_IF
+
+    // Return to main
+    IF G1131_BUT_ID_6 THEN  
+        //IF PAGE_NUMBER = PAGE_NR_MENU+2 AND ISUBPAGE = 0 THEN  
+        IF PAGE_NUMBER = PAGE_NR_MENU AND ISUBPAGE = 0 THEN  
+            //PAGE_NUMBER := PAGE_NR_MENU;
+            PAGE_NUMBER :=  MAIN_PAGE_NR;
+        END_IF
+    END_IF
+
+ ELSE
+
+    IF START_LOGIN_LEVEL_1 THEN
+      CURRENT_LOGIN_LEVEL := 2;
+      PAGE_NUMBER := MAIN_PAGE_NR;
+      START_LOGIN_LEVEL_1:=FALSE;     
+    END_IF
+
+    IF START_LOGIN_LEVEL_2 THEN
+      START_LOGIN_LEVEL_2:=FALSE;     
+    END_IF
+
+    IF START_LOGIN_LEVEL_0 THEN
+      START_LOGIN_LEVEL_0:=FALSE;     
+    END_IF
+  
+ END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PAGE_NAVIGATION" editor="PAL1131.ST"><![CDATA[PROGRAM PAGE_NAVIGATION
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+
+   TO_MAIN1 : BOOL ;
+   TO_ALM   : BOOL ; 
+   TO_MAIN_TOV : R_TRIG ;
+   
+   LAST_PAGE   : INT ;
+   OLD_PAGE    : INT ;
+   
+   TO_PREV : R_TRIG;
+
+   GET_TFT_PAGE         : HW_GET_TFT_PAGE;
+   SET_TFT_PAGE         : HW_SET_TFT_PAGE;                 
+   IRETURN              : INT;
+   RESET_PG_MENUS       : INT; 
+   SET_PUBLIC_KEY_TWO   : HW_MENU_PUBLIC_KEY;
+   
+   
+ END_VAR
+ 
+ VAR_GLOBAL
+ 
+   (* TFT PAGE NUMBERS AS CONFIGURED IN GRAPHIC EDITOR  => EDIT WHEN ADDING/SORTING/DELETING FRAMES IN PAL1131G  !!! *)
+   PAGE_NR_MAIN1      : INT := 0 ;     
+   PAGE_NR_ALARM      : INT := 1 ;
+   PAGE_NR_MENU       : INT := 2 ;
+   
+
+   PAGE_IN_MENU       : BOOL := FALSE ;
+   PAGE_CHANGE_PK     : BOOL := FALSE ; 
+   PAGE_CHANGE_PW     : BOOL := FALSE ;  
+  
+    
+   PB_DUMMY           : BOOL ;
+   PB_PG_MAIN         : BOOL ;
+   PB_PG_SELECT       : BOOL ;    
+   PB_PG_ALARM        : BOOL ;              
+   PB_PG_MENU         : BOOL ;  
+   PB_PK_EXIT         : BOOL ;
+   PB_PG_PREVIOUS     : BOOL ;
+   PB_PG_PARAM0       : BOOL ;     
+   PB_PG_PARAM1       : BOOL ;    
+   PB_PG_PARAM2       : BOOL ; 
+   PB_PG_CHANGE_PK    : BOOL ;
+   PB_PG_DEPTH        : BOOL ;            
+   
+   PBSWAP_MENU_PG     : INT := 1 ;     
+   PBSWAP_PREV_PG     : INT := 1 ;         
+//PBSWAP FOR INDICATION   
+                   
+ END_VAR
+ 
+(* ########################################################################*)
+
+    // SELECT TFT PAGE
+    IRETURN := 0;
+    
+    GET_TFT_PAGE();
+    IRETURN := GET_TFT_PAGE.IRET;
+    
+    //RESET
+    IF PAGE_NUMBER >= PAGE_NR_MENU AND PAGE_NUMBER <= (PAGE_NR_MENU+2) THEN
+      RESET_PG_MENUS := RESET_PG_MENUS + 1;
+      IF RESET_PG_MENUS > 20 THEN
+        RESET_PG_MENUS := 20;       
+        IF IRETURN >= 0 AND IRETURN <= 1 THEN
+          PAGE_NUMBER := IRETURN;
+          RESET_PG_MENUS := 0;
+        END_IF 
+      END_IF
+    END_IF
+    
+    
+    IF IRETURN >= (PAGE_NR_MENU+1) AND IRETURN <= (PAGE_NR_MENU+2) THEN   
+      PAGE_NUMBER := IRETURN; 
+      IRETURN  := 1; //DO NOT CHANGE THE PAGE
+    ELSE
+      IRETURN := 0;
+    END_IF
+    
+    IF PAGE_CHANGE_PW THEN
+      IRETURN  := 1; //DO NOT CHANGE THE PAGE
+    END_IF
+    
+    IF IRETURN = 0 THEN  
+      SET_TFT_PAGE(IINPUT:=PAGE_NUMBER);
+    END_IF 
+    
+    
+    (* PAGE SELECTIONS *)
+    
+    IF PAGE_NUMBER<>OLD_PAGE THEN        // STORE PREVIOUS PAGE AT PAGE CHANGE
+      LAST_PAGE := OLD_PAGE ;
+      RESET_PG_MENUS := 0; //RESET 
+    END_IF
+    
+    OLD_PAGE := PAGE_NUMBER ;
+    TO_PREV(CLK:= PB_PG_PREVIOUS);
+    
+    IF TO_PREV.Q THEN       (* PREVIOUS PAGE *)
+      PAGE_NUMBER :=  LAST_PAGE ;
+    
+    ELSIF    PB_PG_MAIN OR TO_MAIN1 THEN    (* MAIN PAGE *)          
+      PAGE_NUMBER :=  PAGE_NR_MAIN1 ;
+     
+    ELSIF PB_PG_ALARM OR TO_ALM THEN    (* ALARM PAGE *) 
+      PAGE_NUMBER :=  PAGE_NR_ALARM ;
+      
+    ELSIF PB_PG_MENU AND (PBSWAP_MENU_PG>0)  THEN   // MENU PUBLIC KEY PAGE  
+      PAGE_NUMBER :=  PAGE_NR_MENU ;  
+    
+    ELSIF PAGE_CHANGE_PW THEN   //MENU CHANGE PWD     
+      PAGE_NUMBER :=  PAGE_NR_MENU ;
+    
+    ELSIF PB_PK_EXIT THEN
+      PAGE_NUMBER :=  PAGE_NR_MAIN1 ;
+    END_IF
+    
+    PAGE_IN_MENU := (PAGE_NUMBER >= PAGE_NR_MENU)  AND (PAGE_NUMBER <= PAGE_NR_MENU + 2); // MENUS
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="DISABLE_PAGE" editor="PAL1131.ST"><![CDATA[PROGRAM DISABLE_PAGE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+    G1131_TOUCH_EDIT_LOOP   : BOOL := FALSE;
+    G1131_TOUCH_CLEAR_LOOP  : BOOL := FALSE;
+    G1131_TOUCH_EDIT_ZONE   : BOOL := FALSE;
+    G1131_TOUCH_CLEAR_ZONE  : BOOL := FALSE; 
+    G1131_EDIT_STATUS       : INT := 0; // 0..1,
+
+    G1131_LOOP_VALUE       : INT := 1;
+    G1131_ZONE_VALUE    : INT := 1;
+
+ END_VAR
+     
+ VAR
+   EDIT_LOOP_TRIG       : R_TRIG;
+   CLEAR_LOOP_TRIG      : R_TRIG;
+   EDIT_ZONE_TRIG       : R_TRIG;
+   CLEAR_ZONE_TRIG      : R_TRIG;
+   
+   ENABLE_TRIG  : R_TRIG;
+   DISABLE_TRIG : R_TRIG;
+   
+   HW_TRIG_1    : R_TRIG;
+   HW_TRIG_2    : R_TRIG;
+   HW_TRIG_3    : R_TRIG;
+   HW_TRIG_4    : R_TRIG;
+   HW_TRIG_5    : R_TRIG;
+   HW_TRIG_6    : R_TRIG;
+   
+   PULSE_TIME          : TIME := T#1s;
+   STOP_BUZZER_PULSE   : TP;               // Stop Buzzer Pulse
+   
+   TB_MODE              : INT := -1;
+   TB_NUMPAD_TRIGGER    : R_TRIG;
+   
+   SET_IOP_PROPERTY :  SYSTEM_SET_IOP_PROPERTY;
+   
+ END_VAR
+
+ IF (PAGE_NUMBER = 5) THEN
+ 
+    STOP_BUZZER_PULSE(IN := HW_BUTTON_1, PT := PULSE_TIME); // Stop Buzzer
+    START_STOPHORN := STOP_BUZZER_PULSE.Q;
+    //STOP_BUZZER := STOP_BUZZER_PULSE.Q;  // TODO REMOVE
+ 
+    HW_TRIG_2(CLK := HW_BUTTON_2); // Enable Zone
+    IF (HW_TRIG_2.Q) THEN
+         SET_IOP_PROPERTY(Board := (G1131_LOOP_VALUE - 1),IOP := 0,PrID := 163 ,PrValue := (G1131_ZONE_VALUE * G1131_LOOP_VALUE));
+         IS_ZONE_DISABLED[G1131_ZONE_VALUE-1 * (16 * (G1131_LOOP_VALUE-1))] := FALSE;    
+    END_IF
+    
+    HW_TRIG_3(CLK := HW_BUTTON_3); // Disable Zone
+    IF (HW_TRIG_3.Q) THEN                                                                                          
+         SET_IOP_PROPERTY(Board := (G1131_LOOP_VALUE - 1),IOP := 0,PrID := 163 ,PrValue := (256 + (G1131_ZONE_VALUE * G1131_LOOP_VALUE)));
+         IS_ZONE_DISABLED[G1131_ZONE_VALUE-1 * (16 * (G1131_LOOP_VALUE-1))] := TRUE;
+    END_IF
+ 
+    HW_TRIG_6(CLK := HW_BUTTON_6); // General Page
+    IF (HW_TRIG_6.Q) THEN
+        PAGE_NUMBER := MAIN_PAGE_NR;
+    END_IF
+ 
+ 
+     // ----------------------------------------------------------------------------
+     // Typing
+     
+     EDIT_LOOP_TRIG(CLK := G1131_TOUCH_EDIT_LOOP);
+     IF (EDIT_LOOP_TRIG.Q) THEN
+        G1131_EDIT_STATUS := 0; // LOOP
+     END_IF
+     
+     CLEAR_LOOP_TRIG(CLK := G1131_TOUCH_CLEAR_LOOP);
+     IF (CLEAR_LOOP_TRIG.Q) THEN
+        G1131_LOOP_VALUE := 1;
+     END_IF
+    
+     EDIT_ZONE_TRIG(CLK := G1131_TOUCH_EDIT_ZONE);
+     IF (EDIT_ZONE_TRIG.Q) THEN
+        G1131_EDIT_STATUS := 1; // ZONE
+     END_IF
+     
+     CLEAR_ZONE_TRIG(CLK := G1131_TOUCH_CLEAR_ZONE);
+     IF (CLEAR_ZONE_TRIG.Q) THEN
+        G1131_ZONE_VALUE := 0;
+     END_IF
+ 
+ 
+     IF (G1131_NUMPAD_TOUCH_0) THEN
+         TB_MODE := 0;
+     ELSIF (G1131_NUMPAD_TOUCH_1) THEN
+         TB_MODE := 1;
+     ELSIF (G1131_NUMPAD_TOUCH_2) THEN
+         TB_MODE := 2;
+     ELSIF (G1131_NUMPAD_TOUCH_3) THEN
+         TB_MODE := 3;
+     ELSIF (G1131_NUMPAD_TOUCH_4) THEN
+         TB_MODE := 4;
+     ELSIF (G1131_NUMPAD_TOUCH_5) THEN
+         TB_MODE := 5;
+     ELSIF (G1131_NUMPAD_TOUCH_6) THEN
+         TB_MODE := 6;
+     ELSIF (G1131_NUMPAD_TOUCH_7) THEN
+         TB_MODE := 7;
+     ELSIF (G1131_NUMPAD_TOUCH_8) THEN
+         TB_MODE := 8;
+     ELSIF (G1131_NUMPAD_TOUCH_9) THEN
+         TB_MODE := 9;
+     ELSIF (G1131_NUMPAD_TOUCH_MIN) THEN
+         TB_MODE := 10;
+     ELSIF (G1131_NUMPAD_TOUCH_DOT) THEN
+         TB_MODE := 11; 
+     ELSIF (G1131_NUMPAD_TOUCH_DEL) THEN
+         TB_MODE := 12;
+     END_IF
+     
+    TB_NUMPAD_TRIGGER(CLK := (TB_MODE > -1));
+    IF (TB_NUMPAD_TRIGGER.Q) THEN
+
+        IF (TB_MODE >= 0 AND TB_MODE <= 9) THEN
+            IF (G1131_EDIT_STATUS = 0) THEN // LOOP                           
+                G1131_LOOP_VALUE := (G1131_LOOP_VALUE * 10) + (TB_MODE);      
+            ELSIF (G1131_EDIT_STATUS = 1) THEN // ADDRESS                     
+                G1131_ZONE_VALUE := (G1131_ZONE_VALUE * 10) + (TB_MODE);      
+            END_IF
+                                                                        
+        ELSIF (TB_MODE = 12) THEN
+            IF (G1131_EDIT_STATUS = 0) THEN // LOOP                           
+                G1131_LOOP_VALUE := G1131_LOOP_VALUE / 10;      
+            ELSIF (G1131_EDIT_STATUS = 1) THEN // ADDRESS                     
+                G1131_ZONE_VALUE := G1131_ZONE_VALUE / 10;      
+            END_IF
+                                                                  
+        END_IF
+        
+        IF G1131_LOOP_VALUE < 1 OR G1131_LOOP_VALUE > 8 THEN
+            G1131_LOOP_VALUE := 1; 
+        END_IF
+
+        IF G1131_ZONE_VALUE < 0 OR G1131_ZONE_VALUE > 16 THEN
+            G1131_ZONE_VALUE := 1; 
+        END_IF
+        
+
+    END_IF
+    
+    TB_MODE := -1;
+
+ END_IF
+ 
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="LOOP_OVERVIEW_PAGE" editor="PAL1131.ST"><![CDATA[PROGRAM LOOP_OVERVIEW_PAGE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+    G1131_LDP_TOUCH_DISABLE_0 : BOOL := FALSE;
+    G1131_LDP_TOUCH_DISABLE_1 : BOOL := FALSE;
+    G1131_LDP_TOUCH_DISABLE_2 : BOOL := FALSE;
+    G1131_LDP_TOUCH_DISABLE_3 : BOOL := FALSE;
+    
+    G1131_LDP_TOUCH_VIEW_ZONE_0 : BOOL := FALSE;
+    G1131_LDP_TOUCH_VIEW_ZONE_1 : BOOL := FALSE;
+    G1131_LDP_TOUCH_VIEW_ZONE_2 : BOOL := FALSE;
+    G1131_LDP_TOUCH_VIEW_ZONE_3 : BOOL := FALSE;
+    
+    G1131_LDP_TOUCH_ARROW_LEFT          : BOOL := FALSE;
+    G1131_LDP_STATE_ARROW_LEFT          : INT  := 1;
+    G1131_LDP_BORDER_WIDTH_ARROW_LEFT   : INT  := 1;
+    G1131_LDP_BORDER_LENGTH_ARROW_LEFT  : INT  := 10;
+    
+    G1131_LDP_TOUCH_ARROW_RIGHT          : BOOL := FALSE;
+    G1131_LDP_STATE_ARROW_RIGHT          : INT  := 1;
+    G1131_LDP_BORDER_WIDTH_ARROW_RIGHT   : INT  := 1;
+    G1131_LDP_BORDER_LENGTH_ARROW_RIGHT  : INT  := 10;
+    
+    G1131_LDP_CURRENT_LOOP_0 : INT := 0;
+    G1131_LDP_CURRENT_LOOP_1 : INT := 0;
+    G1131_LDP_CURRENT_LOOP_2 : INT := 0;
+    G1131_LDP_CURRENT_LOOP_3 : INT := 0;
+    
+    G1131_LDP_INDICATOR_LOOP_0 : INT := 0;
+    G1131_LDP_INDICATOR_LOOP_1 : INT := 0;
+    G1131_LDP_INDICATOR_LOOP_2 : INT := 0;
+    G1131_LDP_INDICATOR_LOOP_3 : INT := 0;
+    
+    LDP_CURRENT_PAGE_NUMBER : INT := 0; // Should be between 0 and 1
+    
+    IS_LOOP_DISABLED : ARRAY [0..7] OF BOOL;
+       
+    LOP_HW_BUTTON_1 : BOOL := FALSE;
+    LOP_HW_BUTTON_2 : BOOL := FALSE;
+    LOP_HW_BUTTON_3 : BOOL := FALSE;
+    LOP_HW_BUTTON_4 : BOOL := FALSE;
+    LOP_HW_BUTTON_5 : BOOL := FALSE;
+    LOP_HW_BUTTON_6 : BOOL := FALSE;       
+    
+    G1131_TBS_TOUCH_DRIFT_PAGE_0 : BOOL := FALSE;
+    G1131_TBS_TOUCH_DRIFT_PAGE_1 : BOOL := FALSE;    
+    G1131_TBS_TOUCH_DRIFT_PAGE_2 : BOOL := FALSE;
+    G1131_TBS_TOUCH_DRIFT_PAGE_3 : BOOL := FALSE;
+    
+    G1131_TB_DRIFT_PAGE_STATE_0  : INT := 0;
+    G1131_TB_DRIFT_PAGE_STATE_1  : INT := 0;
+    G1131_TB_DRIFT_PAGE_STATE_2  : INT := 0;
+    G1131_TB_DRIFT_PAGE_STATE_3  : INT := 0;        
+ END_VAR
+ 
+ VAR
+    HW_TRIG_1 : R_TRIG;
+    HW_TRIG_2 : R_TRIG;
+    HW_TRIG_3 : R_TRIG;
+    HW_TRIG_4 : R_TRIG;
+    HW_TRIG_5 : R_TRIG;
+    HW_TRIG_6 : R_TRIG;
+    
+    PULSE_TIME          : TIME := T#1s;
+    STOP_BUZZER_PULSE   : TP;               // Stop Buzzer Pulse
+ 
+    LDP_TRIG_ARROW_LEFT     : R_TRIG;
+    LDP_TRIG_ARROW_RIGHT    : R_TRIG;
+    
+    LDP_TOUCH_TRIG_DISABLE_0 : R_TRIG;
+    LDP_TOUCH_TRIG_DISABLE_1 : R_TRIG;
+    LDP_TOUCH_TRIG_DISABLE_2 : R_TRIG;
+    LDP_TOUCH_TRIG_DISABLE_3 : R_TRIG;
+    
+    LDP_TOUCH_TRIG_VIEW_ZONE_0 : R_TRIG;
+    LDP_TOUCH_TRIG_VIEW_ZONE_1 : R_TRIG;
+    LDP_TOUCH_TRIG_VIEW_ZONE_2 : R_TRIG;
+    LDP_TOUCH_TRIG_VIEW_ZONE_3 : R_TRIG;
+    
+    TMP_DINT : DINT := 0;
+    LOOP_IT  : INT  := 0;
+    
+    LDP_DWORD_CURRENT_FIRE_ALARM : ARRAY [0..7] OF DWORD;
+    LDP_DWORD_CURRENT_PRE_ALARM  : ARRAY [0..7] OF DWORD;
+    LDP_DWORD_CURRENT_FAULT      : ARRAY [0..7] OF DWORD;
+    
+    LDP_INDICATOR_ARRAY : ARRAY [0..3] OF INT;
+    
+    TBS_TRIG_DRIFT_LIST_PAGE_0 : R_TRIG;
+    TBS_TRIG_DRIFT_LIST_PAGE_1 : R_TRIG;
+    TBS_TRIG_DRIFT_LIST_PAGE_2 : R_TRIG;
+    TBS_TRIG_DRIFT_LIST_PAGE_3 : R_TRIG;
+    
+    GET_AFAS_VARS:    HW_GET_AFAS_VARS;    
+    
+    SET_IOP_PROPERTY :  SYSTEM_SET_IOP_PROPERTY; 
+    
+ END_VAR
+ 
+ // ----------------------------------------------------------------------------
+ // Run corresponding page code
+ 
+ IF PAGE_NUMBER = LOOP_OVERVIEW_PAGE_NR THEN
+    
+    // =========================================================================
+    // LOOP DISABLE PAGE (LDP)
+    
+    // =========================================================================
+    // Hardware Buttons
+    
+    // HW Button 1: Home Page / General Page
+    HW_TRIG_1(CLK := LOP_HW_BUTTON_1);
+    IF (HW_TRIG_1.Q) THEN
+        PAGE_NUMBER := MAIN_PAGE_NR;
+    END_IF 
+    
+    // HW Button 2: Dimming
+    HW_TRIG_2(CLK := LOP_HW_BUTTON_2);
+    IF (HW_TRIG_2.Q) THEN
+        PAGE_NUMBER := DIMMING_PAGE_NR; 
+    END_IF   
+    
+    // HW Button 3: Login
+    HW_TRIG_3(CLK := LOP_HW_BUTTON_3);
+    IF (HW_TRIG_3.Q) THEN
+    
+        IF (CURRENT_LOGIN_LEVEL <> 2) THEN
+            MENU_LEVEL0 := FALSE;
+            MENU_LEVEL1 := TRUE;
+            MENU_LEVEL2 := FALSE;
+            
+            PAGE_NUMBER := LOGIN_PAGE_NR;
+        ELSE
+            CURRENT_LOGIN_LEVEL   := 1;  
+            START_TIMER_RESET_LOGIN:=TRUE;   
+        END_IF
+    END_IF
+    
+    // HW Button 4: 
+    HW_TRIG_4(CLK := LOP_HW_BUTTON_4);
+    IF (HW_TRIG_4.Q) THEN
+        // Empty
+    END_IF
+    
+    // HW Button 5: Alarm List
+    HW_TRIG_5(CLK := LOP_HW_BUTTON_5);
+    IF (HW_TRIG_5.Q) THEN
+        PAGE_NUMBER := ALARM_PAGE_NR;      
+    END_IF
+    
+    // HW Button 6: Setup / Config
+    HW_TRIG_6(CLK := LOP_HW_BUTTON_6);
+    IF (HW_TRIG_6.Q) THEN
+        MENU_LEVEL0 := FALSE;
+        MENU_LEVEL1 := FALSE;
+        MENU_LEVEL2 := TRUE; 
+    
+        PAGE_NUMBER := LOGIN_PAGE_NR;
+    END_IF
+    
+    // -------------------------------------------------------------------------
+    // Switch pages (Right / Left)
+    
+    LDP_TRIG_ARROW_LEFT(CLK:=G1131_LDP_TOUCH_ARROW_LEFT);
+    IF (LDP_TRIG_ARROW_LEFT.Q) THEN
+       LDP_CURRENT_PAGE_NUMBER := 0; 
+    END_IF
+    
+    LDP_TRIG_ARROW_RIGHT(CLK:=G1131_LDP_TOUCH_ARROW_RIGHT);
+    IF (LDP_TRIG_ARROW_RIGHT.Q) THEN
+       LDP_CURRENT_PAGE_NUMBER := 1; 
+    END_IF
+    
+    IF (LDP_CURRENT_PAGE_NUMBER = 0) THEN
+        G1131_LDP_CURRENT_LOOP_0 := 1;
+        G1131_LDP_CURRENT_LOOP_1 := 2;
+        G1131_LDP_CURRENT_LOOP_2 := 3;
+        G1131_LDP_CURRENT_LOOP_3 := 4; 
+        
+        G1131_LDP_STATE_ARROW_LEFT          := 0;
+        G1131_LDP_BORDER_WIDTH_ARROW_LEFT   := 0;
+        G1131_LDP_BORDER_LENGTH_ARROW_LEFT  := 0;
+        G1131_LDP_STATE_ARROW_RIGHT         := 1;
+        G1131_LDP_BORDER_WIDTH_ARROW_RIGHT  := 1;
+        G1131_LDP_BORDER_LENGTH_ARROW_RIGHT := 10;
+          
+    ELSIF (LDP_CURRENT_PAGE_NUMBER = 1) THEN
+        G1131_LDP_CURRENT_LOOP_0 := 5;
+        G1131_LDP_CURRENT_LOOP_1 := 6;
+        G1131_LDP_CURRENT_LOOP_2 := 7;
+        G1131_LDP_CURRENT_LOOP_3 := 8;
+        
+        G1131_LDP_STATE_ARROW_LEFT          := 1;
+        G1131_LDP_BORDER_WIDTH_ARROW_LEFT   := 1;
+        G1131_LDP_BORDER_LENGTH_ARROW_LEFT  := 10; 
+        G1131_LDP_STATE_ARROW_RIGHT         := 0;
+        G1131_LDP_BORDER_WIDTH_ARROW_RIGHT  := 0;
+        G1131_LDP_BORDER_LENGTH_ARROW_RIGHT := 0;
+        
+    END_IF
+    
+    // -------------------------------------------------------------------------
+    // Loop indicators
+    
+    FOR LOOP_IT := 0 TO 7 BY 1 DO
+        TMP_DINT := CAST_FINT_TO_DINT(ZONE_ALARMS[LOOP_IT]);
+        LDP_DWORD_CURRENT_FIRE_ALARM[LOOP_IT] := DINT_TO_DWORD(TMP_DINT) AND DWORD#16#0000FFFF;
+    
+        LDP_DWORD_CURRENT_PRE_ALARM[LOOP_IT] := ZONE_PREALARMS[LOOP_IT] AND DWORD#16#0000FFFF;  
+    
+        TMP_DINT := CAST_FINT_TO_DINT(ZONE_FAULTS[LOOP_IT]);
+        LDP_DWORD_CURRENT_FAULT[LOOP_IT] := DINT_TO_DWORD(TMP_DINT) AND DWORD#16#0000FFFF;
+    END_FOR
+    
+    IF (LDP_CURRENT_PAGE_NUMBER = 0) THEN
+        FOR LOOP_IT := 0 TO 3 BY 1 DO
+            IF (IS_LOOP_DISABLED[LOOP_IT] = TRUE) THEN
+                LDP_INDICATOR_ARRAY[LOOP_IT] := MAIN_STATUS_INDICATOR_DISABLED;
+                
+            ELSIF (LDP_DWORD_CURRENT_PRE_ALARM[LOOP_IT] <> DWORD#16#0) THEN
+                LDP_INDICATOR_ARRAY[LOOP_IT] := MAIN_STATUS_INDICATOR_PRE_ALARM;
+                
+            ELSIF (LDP_DWORD_CURRENT_FIRE_ALARM[LOOP_IT] <> DWORD#16#0) THEN
+                LDP_INDICATOR_ARRAY[LOOP_IT] := MAIN_STATUS_INDICATOR_FIRE_ALARM;
+                
+            ELSIF (LDP_DWORD_CURRENT_FAULT[LOOP_IT] <> DWORD#16#0) THEN
+                LDP_INDICATOR_ARRAY[LOOP_IT] := MAIN_STATUS_INDICATOR_FAULT;
+                
+            ELSE
+                LDP_INDICATOR_ARRAY[LOOP_IT] := MAIN_STATUS_INDICATOR_NORMAL;
+                
+            END_IF
+        END_FOR
+    ELSIF (LDP_CURRENT_PAGE_NUMBER = 1) THEN
+        FOR LOOP_IT := 4 TO 7 BY 1 DO
+            IF (IS_LOOP_DISABLED[LOOP_IT] = TRUE) THEN
+                LDP_INDICATOR_ARRAY[LOOP_IT-4] := MAIN_STATUS_INDICATOR_DISABLED;
+                
+            ELSIF (LDP_DWORD_CURRENT_PRE_ALARM[LOOP_IT] <> DWORD#16#0) THEN
+                LDP_INDICATOR_ARRAY[LOOP_IT-4] := MAIN_STATUS_INDICATOR_PRE_ALARM;
+                
+            ELSIF (LDP_DWORD_CURRENT_FIRE_ALARM[LOOP_IT] <> DWORD#16#0) THEN
+                LDP_INDICATOR_ARRAY[LOOP_IT-4] := MAIN_STATUS_INDICATOR_FIRE_ALARM;
+                
+            ELSIF (LDP_DWORD_CURRENT_FAULT[LOOP_IT] <> DWORD#16#0) THEN
+                LDP_INDICATOR_ARRAY[LOOP_IT-4] := MAIN_STATUS_INDICATOR_FAULT;
+                
+            ELSE
+                LDP_INDICATOR_ARRAY[LOOP_IT-4] := MAIN_STATUS_INDICATOR_NORMAL;
+                
+            END_IF
+        END_FOR
+    END_IF
+    
+    G1131_LDP_INDICATOR_LOOP_0 := LDP_INDICATOR_ARRAY[0];
+    G1131_LDP_INDICATOR_LOOP_1 := LDP_INDICATOR_ARRAY[1];
+    G1131_LDP_INDICATOR_LOOP_2 := LDP_INDICATOR_ARRAY[2];
+    G1131_LDP_INDICATOR_LOOP_3 := LDP_INDICATOR_ARRAY[3];
+
+    // -------------------------------------------------------------------------
+    // Disable Buttons
+    
+    IF (LDP_CURRENT_PAGE_NUMBER = 0) THEN
+    
+        LDP_TOUCH_TRIG_DISABLE_0(CLK:=G1131_LDP_TOUCH_DISABLE_0);   // Loop 1
+        IF (LDP_TOUCH_TRIG_DISABLE_0.Q) THEN
+            IF (IS_LOOP_DISABLED[0] = TRUE) THEN
+                IS_LOOP_DISABLED[0] := FALSE;
+                SET_IOP_PROPERTY(Board := 0, IOP := 0, PrID := 162, PrValue := 0); // Enable Loop 1
+            ELSE
+                IS_LOOP_DISABLED[0] := TRUE; 
+                SET_IOP_PROPERTY(Board := 0, IOP := 0, PrID := 162, PrValue := 1); // Disable Loop 1
+            END_IF  
+        END_IF
+        
+        LDP_TOUCH_TRIG_DISABLE_1(CLK:=G1131_LDP_TOUCH_DISABLE_1);   // Loop 2
+        IF (LDP_TOUCH_TRIG_DISABLE_1.Q) THEN
+            IF (IS_LOOP_DISABLED[1] = TRUE) THEN
+                IS_LOOP_DISABLED[1] := FALSE;
+                SET_IOP_PROPERTY(Board := 1, IOP := 0, PrID := 162, PrValue := 0); // Enable Loop 2
+            ELSE                 
+                IS_LOOP_DISABLED[1] := TRUE;
+                SET_IOP_PROPERTY(Board := 1, IOP := 0, PrID := 162, PrValue := 1); // Disable Loop 2 
+            END_IF  
+        END_IF
+        
+        LDP_TOUCH_TRIG_DISABLE_2(CLK:=G1131_LDP_TOUCH_DISABLE_2);   // Loop 3
+        IF (LDP_TOUCH_TRIG_DISABLE_2.Q) THEN
+            IF (IS_LOOP_DISABLED[2] = TRUE) THEN
+                IS_LOOP_DISABLED[2] := FALSE;
+                SET_IOP_PROPERTY(Board := 2, IOP := 0, PrID := 162, PrValue := 0); // Enable Loop 3
+            ELSE
+                IS_LOOP_DISABLED[2] := TRUE;
+                SET_IOP_PROPERTY(Board := 2, IOP := 0, PrID := 162, PrValue := 1); // Disable Loop 3 
+            END_IF  
+        END_IF
+        
+        LDP_TOUCH_TRIG_DISABLE_3(CLK:=G1131_LDP_TOUCH_DISABLE_3);   // Loop 4
+        IF (LDP_TOUCH_TRIG_DISABLE_3.Q) THEN
+            IF (IS_LOOP_DISABLED[3] = TRUE) THEN
+                IS_LOOP_DISABLED[3] := FALSE;
+                SET_IOP_PROPERTY(Board := 3, IOP := 0, PrID := 162, PrValue := 0); // Enable Loop 4
+            ELSE
+                IS_LOOP_DISABLED[3] := TRUE;
+                SET_IOP_PROPERTY(Board := 3, IOP := 0, PrID := 162, PrValue := 1); // Disable Loop 4 
+            END_IF  
+        END_IF
+        
+    ELSIF (LDP_CURRENT_PAGE_NUMBER = 1) THEN
+    
+        LDP_TOUCH_TRIG_DISABLE_0(CLK:=G1131_LDP_TOUCH_DISABLE_0);   // Loop 5
+        IF (LDP_TOUCH_TRIG_DISABLE_0.Q) THEN
+            IF (IS_LOOP_DISABLED[4] = TRUE) THEN
+                IS_LOOP_DISABLED[4] := FALSE;
+                SET_IOP_PROPERTY(Board := 4, IOP := 0, PrID := 162, PrValue := 0); // Enable Loop 5
+            ELSE
+                IS_LOOP_DISABLED[4] := TRUE;
+                SET_IOP_PROPERTY(Board := 4, IOP := 0, PrID := 162, PrValue := 1); // Disable Loop 5 
+            END_IF  
+        END_IF
+        
+        LDP_TOUCH_TRIG_DISABLE_1(CLK:=G1131_LDP_TOUCH_DISABLE_1);   // Loop 6 
+        IF (LDP_TOUCH_TRIG_DISABLE_1.Q) THEN
+            IF (IS_LOOP_DISABLED[5] = TRUE) THEN
+                IS_LOOP_DISABLED[5] := FALSE;
+                SET_IOP_PROPERTY(Board := 5, IOP := 0, PrID := 162, PrValue := 0); // Enable Loop 6
+            ELSE                 
+                IS_LOOP_DISABLED[5] := TRUE;
+                SET_IOP_PROPERTY(Board := 5, IOP := 0, PrID := 162, PrValue := 1); // Disable Loop 6 
+            END_IF  
+        END_IF
+        
+        LDP_TOUCH_TRIG_DISABLE_2(CLK:=G1131_LDP_TOUCH_DISABLE_2);   // Loop 7
+        IF (LDP_TOUCH_TRIG_DISABLE_2.Q) THEN
+            IF (IS_LOOP_DISABLED[6] = TRUE) THEN
+                IS_LOOP_DISABLED[6] := FALSE;
+                SET_IOP_PROPERTY(Board := 6, IOP := 0, PrID := 162, PrValue := 0); // Enable Loop 7
+            ELSE
+                IS_LOOP_DISABLED[6] := TRUE;
+                SET_IOP_PROPERTY(Board := 6, IOP := 0, PrID := 162, PrValue := 1); // Disable Loop 7
+            END_IF  
+        END_IF
+        
+        LDP_TOUCH_TRIG_DISABLE_3(CLK:=G1131_LDP_TOUCH_DISABLE_3);   // Loop 8
+        IF (LDP_TOUCH_TRIG_DISABLE_3.Q) THEN
+            IF (IS_LOOP_DISABLED[7] = TRUE) THEN
+                IS_LOOP_DISABLED[7] := FALSE;
+                SET_IOP_PROPERTY(Board := 7, IOP := 0, PrID := 162, PrValue := 0); // Enable Loop 8
+            ELSE
+                IS_LOOP_DISABLED[7] := TRUE;
+                SET_IOP_PROPERTY(Board := 7, IOP := 0, PrID := 162, PrValue := 1); // Disable Loop 8 
+            END_IF  
+        END_IF
+    END_IF
+    
+    
+    // -------------------------------------------------------------------------
+    // View Zone Buttons
+    
+    IF (LDP_CURRENT_PAGE_NUMBER = 0) THEN
+    
+        LDP_TOUCH_TRIG_VIEW_ZONE_0(CLK:=G1131_LDP_TOUCH_VIEW_ZONE_0);  // Loop 1
+        IF (LDP_TOUCH_TRIG_VIEW_ZONE_0.Q) THEN
+            // Go to Zone Page of this loop
+            ZDP_LOOP_IT := 0; // Loop 1
+            PAGE_NUMBER := 7;
+        END_IF
+        
+        LDP_TOUCH_TRIG_VIEW_ZONE_1(CLK:=G1131_LDP_TOUCH_VIEW_ZONE_1);  // Loop 2
+        IF (LDP_TOUCH_TRIG_VIEW_ZONE_1.Q) THEN
+            // Go to Zone Page of this loop
+            ZDP_LOOP_IT := 1; // Loop 2
+            PAGE_NUMBER := 7;
+        END_IF
+        
+        LDP_TOUCH_TRIG_VIEW_ZONE_2(CLK:=G1131_LDP_TOUCH_VIEW_ZONE_2);  // Loop 3
+        IF (LDP_TOUCH_TRIG_VIEW_ZONE_2.Q) THEN
+            // Go to Zone Page of this loop
+            ZDP_LOOP_IT := 2; // Loop 3
+            PAGE_NUMBER := 7;
+        END_IF
+        
+        LDP_TOUCH_TRIG_VIEW_ZONE_3(CLK:=G1131_LDP_TOUCH_VIEW_ZONE_3);  // Loop 4
+        IF (LDP_TOUCH_TRIG_VIEW_ZONE_3.Q) THEN
+            // Go to Zone Page of this loop
+            ZDP_LOOP_IT := 3; // Loop 4
+            PAGE_NUMBER := 7;
+        END_IF
+    
+    ELSIF (LDP_CURRENT_PAGE_NUMBER = 1) THEN
+    
+        LDP_TOUCH_TRIG_VIEW_ZONE_0(CLK:=G1131_LDP_TOUCH_VIEW_ZONE_0);  // Loop 5
+        IF (LDP_TOUCH_TRIG_VIEW_ZONE_0.Q) THEN
+            // Go to Zone Page of this loop
+            ZDP_LOOP_IT := 4; // Loop 5
+            PAGE_NUMBER := 7;
+        END_IF
+        
+        LDP_TOUCH_TRIG_VIEW_ZONE_1(CLK:=G1131_LDP_TOUCH_VIEW_ZONE_1);  // Loop 6
+        IF (LDP_TOUCH_TRIG_VIEW_ZONE_1.Q) THEN
+            // Go to Zone Page of this loop
+            ZDP_LOOP_IT := 5; // Loop 6
+            PAGE_NUMBER := 7;
+        END_IF
+        
+        LDP_TOUCH_TRIG_VIEW_ZONE_2(CLK:=G1131_LDP_TOUCH_VIEW_ZONE_2);  // Loop 7
+        IF (LDP_TOUCH_TRIG_VIEW_ZONE_2.Q) THEN
+            // Go to Zone Page of this loop
+            ZDP_LOOP_IT := 6; // Loop 7
+            PAGE_NUMBER := 7;
+        END_IF
+        
+        LDP_TOUCH_TRIG_VIEW_ZONE_3(CLK:=G1131_LDP_TOUCH_VIEW_ZONE_3);  // Loop 8
+        IF (LDP_TOUCH_TRIG_VIEW_ZONE_3.Q) THEN
+            // Go to Zone Page of this loop
+            ZDP_LOOP_IT := 7; // Loop 8
+            PAGE_NUMBER := 7;
+        END_IF
+        
+    END_IF
+     
+    //DRIFT 
+    IF (LDP_CURRENT_PAGE_NUMBER = 0) THEN
+     
+        //Drift list button - LOOP 1
+        TBS_TRIG_DRIFT_LIST_PAGE_0(CLK:=G1131_TBS_TOUCH_DRIFT_PAGE_0);
+        IF TBS_TRIG_DRIFT_LIST_PAGE_0.Q THEN
+           PAGE_NUMBER := DRIFT_LIST_PAGE_NR;
+           GET_AFAS_VARS(IINPUT:=101);
+           SELECT_LOOP_DRIFT:=1;
+        END_IF
+        
+        GET_AFAS_VARS(IINPUT:=11);
+        IF GET_AFAS_VARS.IRET > 0 THEN
+          G1131_TB_DRIFT_PAGE_STATE_0:=1;
+        ELSE
+          G1131_TB_DRIFT_PAGE_STATE_0:=0;    
+        END_IF
+                
+        //Drift list button - LOOP 2
+        TBS_TRIG_DRIFT_LIST_PAGE_1(CLK:=G1131_TBS_TOUCH_DRIFT_PAGE_1);
+        IF TBS_TRIG_DRIFT_LIST_PAGE_1.Q THEN
+           PAGE_NUMBER := DRIFT_LIST_PAGE_NR;
+           GET_AFAS_VARS(IINPUT:=102);
+           SELECT_LOOP_DRIFT:=2;           
+        END_IF
+        
+        GET_AFAS_VARS(IINPUT:=12);
+        IF GET_AFAS_VARS.IRET > 0 THEN
+          G1131_TB_DRIFT_PAGE_STATE_1:=1;
+        ELSE
+          G1131_TB_DRIFT_PAGE_STATE_1:=0;    
+        END_IF   
+
+        //Drift list button - LOOP 3
+        TBS_TRIG_DRIFT_LIST_PAGE_2(CLK:=G1131_TBS_TOUCH_DRIFT_PAGE_2);
+        IF TBS_TRIG_DRIFT_LIST_PAGE_2.Q THEN
+           PAGE_NUMBER := DRIFT_LIST_PAGE_NR;
+           GET_AFAS_VARS(IINPUT:=103);
+           SELECT_LOOP_DRIFT:=3;
+        END_IF
+        
+        GET_AFAS_VARS(IINPUT:=13);
+        IF GET_AFAS_VARS.IRET > 0 THEN
+          G1131_TB_DRIFT_PAGE_STATE_2:=1;
+        ELSE
+          G1131_TB_DRIFT_PAGE_STATE_2:=0;    
+        END_IF   
+
+        //Drift list button - LOOP 4
+        TBS_TRIG_DRIFT_LIST_PAGE_3(CLK:=G1131_TBS_TOUCH_DRIFT_PAGE_3);
+        IF TBS_TRIG_DRIFT_LIST_PAGE_3.Q THEN
+           PAGE_NUMBER := DRIFT_LIST_PAGE_NR;
+           GET_AFAS_VARS(IINPUT:=104);
+           SELECT_LOOP_DRIFT:=4;
+        END_IF
+        
+        GET_AFAS_VARS(IINPUT:=14);
+        IF GET_AFAS_VARS.IRET > 0 THEN
+          G1131_TB_DRIFT_PAGE_STATE_3:=1;
+        ELSE
+          G1131_TB_DRIFT_PAGE_STATE_3:=0;    
+        END_IF   
+                       
+    ELSIF (LDP_CURRENT_PAGE_NUMBER = 1) THEN
+
+        //Drift list button - LOOP 5
+        TBS_TRIG_DRIFT_LIST_PAGE_0(CLK:=G1131_TBS_TOUCH_DRIFT_PAGE_0);
+        IF TBS_TRIG_DRIFT_LIST_PAGE_0.Q THEN
+           PAGE_NUMBER := DRIFT_LIST_PAGE_NR;
+           GET_AFAS_VARS(IINPUT:=105);
+           SELECT_LOOP_DRIFT:=5;
+        END_IF
+        
+        GET_AFAS_VARS(IINPUT:=15);
+        IF GET_AFAS_VARS.IRET > 0 THEN
+          G1131_TB_DRIFT_PAGE_STATE_0:=1;
+        ELSE
+          G1131_TB_DRIFT_PAGE_STATE_0:=0;    
+        END_IF
+                
+        //Drift list button - LOOP 6
+        TBS_TRIG_DRIFT_LIST_PAGE_1(CLK:=G1131_TBS_TOUCH_DRIFT_PAGE_1);
+        IF TBS_TRIG_DRIFT_LIST_PAGE_1.Q THEN
+           PAGE_NUMBER := DRIFT_LIST_PAGE_NR;
+           GET_AFAS_VARS(IINPUT:=106);
+           SELECT_LOOP_DRIFT:=6;
+        END_IF
+        
+        GET_AFAS_VARS(IINPUT:=16);
+        IF GET_AFAS_VARS.IRET > 0 THEN
+          G1131_TB_DRIFT_PAGE_STATE_1:=1;
+        ELSE
+          G1131_TB_DRIFT_PAGE_STATE_1:=0;    
+        END_IF   
+
+        //Drift list button - LOOP 7
+        TBS_TRIG_DRIFT_LIST_PAGE_2(CLK:=G1131_TBS_TOUCH_DRIFT_PAGE_2);
+        IF TBS_TRIG_DRIFT_LIST_PAGE_2.Q THEN
+           PAGE_NUMBER := DRIFT_LIST_PAGE_NR;
+           GET_AFAS_VARS(IINPUT:=107);
+           SELECT_LOOP_DRIFT:=7;
+        END_IF
+        
+        GET_AFAS_VARS(IINPUT:=17);
+        IF GET_AFAS_VARS.IRET > 0 THEN
+          G1131_TB_DRIFT_PAGE_STATE_2:=1;
+        ELSE
+          G1131_TB_DRIFT_PAGE_STATE_2:=0;    
+        END_IF   
+
+        //Drift list button - LOOP 8
+        TBS_TRIG_DRIFT_LIST_PAGE_3(CLK:=G1131_TBS_TOUCH_DRIFT_PAGE_3);
+        IF TBS_TRIG_DRIFT_LIST_PAGE_3.Q THEN
+           PAGE_NUMBER := DRIFT_LIST_PAGE_NR;
+           GET_AFAS_VARS(IINPUT:=108);
+           SELECT_LOOP_DRIFT:=8;
+        END_IF
+        
+        GET_AFAS_VARS(IINPUT:=18);
+        IF GET_AFAS_VARS.IRET > 0 THEN
+          G1131_TB_DRIFT_PAGE_STATE_3:=1;
+        ELSE
+          G1131_TB_DRIFT_PAGE_STATE_3:=0;    
+        END_IF      
+   
+    END_IF 
+     
+ END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="ZONE_OVERVIEW_PAGE" editor="PAL1131.ST"><![CDATA[PROGRAM ZONE_OVERVIEW_PAGE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL 
+    ZOP_HW_BUTTON_1 : BOOL := FALSE;
+    ZOP_HW_BUTTON_2 : BOOL := FALSE;
+    ZOP_HW_BUTTON_3 : BOOL := FALSE;
+    ZOP_HW_BUTTON_4 : BOOL := FALSE;
+    ZOP_HW_BUTTON_5 : BOOL := FALSE;
+    ZOP_HW_BUTTON_6 : BOOL := FALSE;
+ END_VAR
+ 
+ VAR
+    HW_TRIG_1 : R_TRIG;
+    HW_TRIG_2 : R_TRIG;
+    HW_TRIG_3 : R_TRIG;
+    HW_TRIG_4 : R_TRIG;
+    HW_TRIG_5 : R_TRIG;
+    HW_TRIG_6 : R_TRIG;
+
+    PULSE_TIME          : TIME := T#1s;
+    STOP_BUZZER_PULSE   : TP;               // Stop Buzzer Pulse
+
+ END_VAR
+
+ // ----------------------------------------------------------------------------
+ // Run corresponding page code
+
+ IF (PAGE_NUMBER = ZONE_OVERVIEW_PAGE_NR) THEN
+
+    // =========================================================================
+    // Hardware Buttons
+    
+    // HW Button 1: Home Page / Loop Overview Page
+    HW_TRIG_1(CLK := ZOP_HW_BUTTON_1);
+    IF (HW_TRIG_1.Q) THEN
+        PAGE_NUMBER := LOOP_OVERVIEW_PAGE_NR;
+    END_IF 
+    
+    // HW Button 2: Dimming
+    HW_TRIG_2(CLK := ZOP_HW_BUTTON_2);
+    IF (HW_TRIG_2.Q) THEN
+        PAGE_NUMBER := DIMMING_PAGE_NR; 
+    END_IF   
+    
+    // HW Button 3: Login
+    HW_TRIG_3(CLK := ZOP_HW_BUTTON_3);
+    IF (HW_TRIG_3.Q) THEN
+    
+        IF (CURRENT_LOGIN_LEVEL <> 2) THEN
+            MENU_LEVEL0 := FALSE;
+            MENU_LEVEL1 := TRUE;
+            MENU_LEVEL2 := FALSE;
+            
+            PAGE_NUMBER := LOGIN_PAGE_NR;
+        ELSE
+            CURRENT_LOGIN_LEVEL   := 1;   
+            START_TIMER_RESET_LOGIN:=TRUE;   
+        END_IF
+    END_IF
+    
+    // HW Button 4: 
+    HW_TRIG_4(CLK := ZOP_HW_BUTTON_4);
+    IF (HW_TRIG_4.Q) THEN
+        // Empty
+    END_IF
+    
+    // HW Button 5: Alarm List
+    HW_TRIG_5(CLK := ZOP_HW_BUTTON_5);
+    IF (HW_TRIG_5.Q) THEN
+        PAGE_NUMBER := ALARM_PAGE_NR;      
+    END_IF
+    
+    // HW Button 6: Setup / Config
+    HW_TRIG_6(CLK := ZOP_HW_BUTTON_6);
+    IF (HW_TRIG_6.Q) THEN 
+        MENU_LEVEL0 := FALSE;
+        MENU_LEVEL1 := FALSE;
+        MENU_LEVEL2 := TRUE; 
+    
+        PAGE_NUMBER := LOGIN_PAGE_NR;
+    END_IF
+    
+ END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="DIMMING_PAGE" editor="PAL1131.ST"><![CDATA[PROGRAM DIMMING_PAGE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+   VAR_GLOBAL
+  
+    DP_HW_BUTTON_1 : BOOL := FALSE;
+    DP_HW_BUTTON_2 : BOOL := FALSE;
+    DP_HW_BUTTON_3 : BOOL := FALSE;
+    DP_HW_BUTTON_4 : BOOL := FALSE;
+    DP_HW_BUTTON_5 : BOOL := FALSE;
+    DP_HW_BUTTON_6 : BOOL := FALSE;
+    
+  END_VAR
+
+ 
+ 
+ VAR
+    HW_TRIG_1 : R_TRIG;
+    HW_TRIG_2 : R_TRIG;
+    HW_TRIG_3 : R_TRIG;
+    HW_TRIG_4 : R_TRIG;
+    HW_TRIG_5 : R_TRIG;
+    HW_TRIG_6 : R_TRIG;
+    
+    //RESET_LOOP: HW_RESET_AFAS_LOOP; 
+    
+ END_VAR
+ 
+ // ----------------------------------------------------------------------------
+ // Dimming: Always run this dimming code 
+ 
+ IF (EXT_DIM <> TFT_DIM) THEN
+    DIMMING := FINT#100 - EXT_DIM;
+    
+    // Limit External Dimming
+    IF DIMMING < DIMMING_MIN THEN
+        DIMMING := DIMMING_MIN;
+    END_IF
+    
+    IF DIMMING > DIMMING_MAX THEN
+        DIMMING := DIMMING_MAX ;
+    END_IF
+    
+    // Write to dimming channels  
+    TFT_DIM := FINT#100 - DIMMING;
+    EXT_DIM := TFT_DIM;
+    
+ ELSE
+    // Write to dimming channels  
+    TFT_DIM := FINT#100 - DIMMING;
+    EXT_DIM := TFT_DIM;
+    
+ END_IF
+    
+ // ---------------------------------------------------------------------------- 
+ // Run corresponding page code
+ 
+ IF PAGE_NUMBER = DIMMING_PAGE_NR THEN
+ 
+    // -------------------------------------------------------------------------
+    // Top Healty Bar (THB)
+    
+    IF ANY_ALARM THEN
+        THB_FRAME_STATE := 3;
+    ELSE
+        THB_FRAME_STATE := 2;
+    END_IF
+ 
+    
+    // =========================================================================
+    // Hardware Buttons
+     
+    // HW Button 1: Home Page / General Page
+    HW_TRIG_1(CLK := DP_HW_BUTTON_1);
+    IF (HW_TRIG_1.Q) THEN
+        PAGE_NUMBER := MAIN_PAGE_NR;
+        //RESET_LOOP(IINPUT:=0);
+    END_IF 
+    
+    // HW Button 2: 
+    HW_TRIG_2(CLK := DP_HW_BUTTON_2);
+    IF (HW_TRIG_2.Q) THEN
+        // Empty
+    END_IF   
+    
+    // HW Button 3: Dimming up
+    HW_TRIG_3(CLK := DP_HW_BUTTON_3);
+    IF (HW_TRIG_3.Q) THEN
+        DIMMING := DIMMING + DIMMING_STEP;
+        
+        // Limit dimming
+        IF DIMMING > DIMMING_MAX THEN
+            DIMMING := DIMMING_MAX ;
+        END_IF
+    END_IF
+    
+    // HW Button 4: Dimming down
+    HW_TRIG_4(CLK := DP_HW_BUTTON_4);
+    IF (HW_TRIG_4.Q) THEN
+        DIMMING := DIMMING - DIMMING_STEP;
+        
+        // Limit dimming
+        IF DIMMING < DIMMING_MIN THEN
+            DIMMING := DIMMING_MIN ;
+        END_IF
+    END_IF
+    
+    // HW Button 5: Alarm List
+    HW_TRIG_5(CLK := DP_HW_BUTTON_5);
+    IF (HW_TRIG_5.Q) THEN
+        PAGE_NUMBER := ALARM_PAGE_NR;      
+    END_IF
+    
+    // HW Button 6: Setup / Config
+    HW_TRIG_6(CLK := DP_HW_BUTTON_6);
+    IF (HW_TRIG_6.Q) THEN
+        MENU_LEVEL0 := FALSE;
+        MENU_LEVEL1 := FALSE;
+        MENU_LEVEL2 := TRUE; 
+    
+        PAGE_NUMBER := LOGIN_PAGE_NR;
+    END_IF 
+    
+END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="RESET_LOGIN" editor="PAL1131.ST"><![CDATA[PROGRAM RESET_LOGIN
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR CONSTANT
+    LOGOUT_INTERVAL : TIME := T#30s;
+       
+ END_VAR
+ 
+ VAR
+    LAST_USED_TIME  : TIME := T#0s;
+    DELTA_TIME      : TIME := T#0s;
+    RESET_TIME      : BOOL := FALSE;    
+ END_VAR
+    
+ // ----------------------------------------------------------------------------
+ // Device will logout, after 30 seconds of inactivity
+    
+    
+IF CURRENT_LOGIN_LEVEL = 2 THEN  
+    
+  IF START_TIMER_RESET_LOGIN THEN
+    START_TIMER_RESET_LOGIN:=FALSE;
+    LAST_USED_TIME := CUR_TIME();
+  END_IF
+    
+  RESET_TIME := FALSE;    
+  //MAIN PAGE
+  IF (HW_BUTTON_1 OR HW_BUTTON_2 OR HW_BUTTON_3
+     OR HW_BUTTON_4 OR HW_BUTTON_5 OR HW_BUTTON_6) THEN
+       RESET_TIME:=TRUE;
+  END_IF
+  
+  //ALARM PAGE
+  IF (AP_HW_BUTTON_1 OR AP_HW_BUTTON_2 OR AP_HW_BUTTON_3
+     OR AP_HW_BUTTON_4 OR AP_HW_BUTTON_5 OR AP_HW_BUTTON_6) THEN
+       RESET_TIME:=TRUE;
+  END_IF
+  
+  //LOOP OVERVIEW PAGE
+  IF (LOP_HW_BUTTON_1 OR LOP_HW_BUTTON_2 OR LOP_HW_BUTTON_3
+     OR LOP_HW_BUTTON_4 OR LOP_HW_BUTTON_5 OR LOP_HW_BUTTON_6) THEN
+       RESET_TIME:=TRUE;
+  END_IF
+  
+  //ZONE OVERVIEW PAGE
+  IF (ZOP_HW_BUTTON_1 OR ZOP_HW_BUTTON_2 OR ZOP_HW_BUTTON_3
+     OR ZOP_HW_BUTTON_4 OR ZOP_HW_BUTTON_5 OR ZOP_HW_BUTTON_6) THEN
+       RESET_TIME:=TRUE;
+  END_IF
+  
+  //DIMMING PAGE
+  IF (DP_HW_BUTTON_1 OR DP_HW_BUTTON_2 OR DP_HW_BUTTON_3
+     OR DP_HW_BUTTON_4 OR DP_HW_BUTTON_5 OR DP_HW_BUTTON_6) THEN
+       RESET_TIME:=TRUE;
+  END_IF
+  
+  
+  IF (G1131_MZV_TOUCH_ARROW_LEFT OR G1131_MZV_TOUCH_ARROW_RIGHT OR
+     G1131_MZV_TOUCH_DISABLE_0 OR G1131_MZV_TOUCH_DISABLE_1 OR
+     G1131_MZV_TOUCH_DISABLE_2 OR G1131_MZV_TOUCH_DISABLE_3) THEN
+       RESET_TIME:=TRUE;   
+  END_IF
+   
+ 
+  IF RESET_TIME THEN 
+    LAST_USED_TIME := CUR_TIME();
+  END_IF
+    
+  DELTA_TIME := CUR_TIME() - LAST_USED_TIME;    
+  IF (DELTA_TIME > LOGOUT_INTERVAL) THEN
+    CURRENT_LOGIN_LEVEL:=1; 
+    START_TIMER_RESET_LOGIN:=TRUE;       
+  END_IF
+    
+END_IF
+ 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="DISABLE_LIST_PAGE" editor="PAL1131.ST"><![CDATA[PROGRAM DISABLE_LIST_PAGE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ 
+  VAR_GLOBAL
+  
+    DLP_HW_BUTTON_1 : BOOL := FALSE;
+    DLP_HW_BUTTON_2 : BOOL := FALSE;
+    DLP_HW_BUTTON_3 : BOOL := FALSE;
+    DLP_HW_BUTTON_4 : BOOL := FALSE;
+    DLP_HW_BUTTON_5 : BOOL := FALSE;
+    DLP_HW_BUTTON_6 : BOOL := FALSE;
+        
+  END_VAR
+ 
+ VAR
+    HW_TRIG_1 : R_TRIG;
+    UP       : HW_SCROLL_UP ;
+    DN       : HW_SCROLL_DOWN ;
+    PB_UP    : R_TRIG ;
+    PB_DN    : R_TRIG ;  
+ END_VAR
+ 
+ 
+ 
+ 
+  IF PAGE_NUMBER = DISABLE_LIST_PAGE_NR  THEN
+     
+    // =========================================================================
+    // Hardware Buttons
+     
+    // HW Button 1: Home Page / General Page
+    HW_TRIG_1(CLK := DLP_HW_BUTTON_1);
+    IF (HW_TRIG_1.Q) THEN
+        PAGE_NUMBER := MAIN_PAGE_NR;
+    END_IF 
+    
+   PB_UP(CLK:= DLP_HW_BUTTON_3 );
+   IF PB_UP.Q THEN UP();  END_IF    
+    
+   PB_DN(CLK:= DLP_HW_BUTTON_2 );
+   IF PB_DN.Q THEN DN();  END_IF        
+    
+  END_IF 
+
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="HW_GET_AFAS_VARS" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK HW_GET_AFAS_VARS
+(*$HARDWARE_BODY_CALL ID:006b; Align:2*)
+(*$COMMENT GET AFAS VARS*)
+
+VAR_INPUT 
+iInput : INT;
+END_VAR
+
+VAR_OUTPUT
+iRet : INT; 
+END_VAR
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="INHIBIT_LIST_PAGE" editor="PAL1131.ST"><![CDATA[PROGRAM INHIBIT_LIST_PAGE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+  
+    ILP_HW_BUTTON_1 : BOOL := FALSE;
+    ILP_HW_BUTTON_2 : BOOL := FALSE;
+    ILP_HW_BUTTON_3 : BOOL := FALSE;
+    ILP_HW_BUTTON_4 : BOOL := FALSE;
+    ILP_HW_BUTTON_5 : BOOL := FALSE;
+    ILP_HW_BUTTON_6 : BOOL := FALSE;
+        
+  END_VAR
+ 
+ VAR
+    HW_TRIG_1 : R_TRIG;
+    UP       : HW_SCROLL_UP ;
+    DN       : HW_SCROLL_DOWN ;
+    PB_UP    : R_TRIG ;
+    PB_DN    : R_TRIG ;  
+ END_VAR
+ 
+ 
+ 
+ 
+  IF PAGE_NUMBER = INHIBIT_LIST_PAGE_NR  THEN
+     
+    // =========================================================================
+    // Hardware Buttons
+     
+    // HW Button 1: Home Page / General Page
+    HW_TRIG_1(CLK := ILP_HW_BUTTON_1);
+    IF (HW_TRIG_1.Q) THEN
+        PAGE_NUMBER := MAIN_PAGE_NR;
+    END_IF 
+    
+   PB_UP(CLK:= ILP_HW_BUTTON_3 );
+   IF PB_UP.Q THEN UP();  END_IF    
+    
+   PB_DN(CLK:= ILP_HW_BUTTON_2 );
+   IF PB_DN.Q THEN DN();  END_IF  
+    
+  END_IF 
+
+  
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="HW_GET_AFAS_MINI_SWITCH_EXT_HORN" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK HW_GET_AFAS_MINI_SWITCH_EXT_HORN
+(*$HARDWARE_BODY_CALL ID:006c; Align:2*)
+(*$COMMENT GET AFAS MINI SWITCH EXT HORN*)
+VAR_OUTPUT
+iRet : INT; 
+END_VAR
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="HW_RESET_AFAS_MINI_SWITCH_EXT_HORN" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK HW_RESET_AFAS_MINI_SWITCH_EXT_HORN
+(*$HARDWARE_BODY_CALL ID:006d; Align:2*)
+(*$COMMENT RESET AFAS MINI SWITCH EXT HORN*)
+VAR_OUTPUT
+iRet : INT; 
+END_VAR
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="HW_RESET_AFAS_LOOP" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK HW_RESET_AFAS_LOOP
+(*$HARDWARE_BODY_CALL ID:006e; Align:2*)
+(*$COMMENT RESET AFAS LOOP*)
+VAR_INPUT
+iInput : INT; 
+END_VAR
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="DRIFT_LIST_PAGE" editor="PAL1131.ST"><![CDATA[PROGRAM DRIFT_LIST_PAGE
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+
+ 
+ VAR_GLOBAL
+  
+    DRP_HW_BUTTON_1 : BOOL := FALSE;
+    DRP_HW_BUTTON_2 : BOOL := FALSE;
+    DRP_HW_BUTTON_3 : BOOL := FALSE;
+    DRP_HW_BUTTON_4 : BOOL := FALSE;
+    DRP_HW_BUTTON_5 : BOOL := FALSE;
+    DRP_HW_BUTTON_6 : BOOL := FALSE;
+        
+  END_VAR
+ 
+ VAR
+    HW_TRIG_1 : R_TRIG;
+    UP       : HW_SCROLL_UP ;
+    DN       : HW_SCROLL_DOWN ;
+    PB_UP    : R_TRIG ;
+    PB_DN    : R_TRIG ;
+    PB_RAPID : R_TRIG ;  
+    FUNC_RAPID: HW_RAPID_COMP_LOOP;
+ END_VAR
+ 
+ 
+ 
+ 
+  IF PAGE_NUMBER = DRIFT_LIST_PAGE_NR  THEN
+     
+    // =========================================================================
+    // Hardware Buttons
+     
+    // HW Button 1: Home Page / General Page
+    HW_TRIG_1(CLK := DRP_HW_BUTTON_1);
+    IF (HW_TRIG_1.Q) THEN
+        PAGE_NUMBER := MAIN_PAGE_NR;
+    END_IF 
+    
+   PB_UP(CLK:= DRP_HW_BUTTON_3 );
+   IF PB_UP.Q THEN UP();  END_IF    
+    
+   PB_DN(CLK:= DRP_HW_BUTTON_2 );
+   IF PB_DN.Q THEN DN();  END_IF
+      
+   PB_RAPID(CLK:= DRP_HW_BUTTON_5 );
+   IF PB_RAPID.Q THEN 
+     IF SELECT_LOOP_DRIFT >= 1 AND SELECT_LOOP_DRIFT <= 8 THEN
+       FUNC_RAPID(IINPUT:=(SELECT_LOOP_DRIFT-1));
+       SELECT_LOOP_DRIFT:=0; //RESET
+     END_IF 
+   END_IF       
+    
+  END_IF 
+
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="HW_RAPID_COMP_LOOP" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK HW_RAPID_COMP_LOOP
+(*$HARDWARE_BODY_CALL ID:006f; Align:2*)
+(*$COMMENT RAPID COMP LOOP*)
+VAR_INPUT
+iInput : INT; 
+END_VAR
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="AUTODISCOVERYPENDING" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ AUTODISCOVERYPENDING  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BLOCK_HANDLE_LAMP_TEST" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ BLOCK_HANDLE_LAMP_TEST  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_BUZZER" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ FIRE_ALARM_BUZZER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_BUZZER_ACK" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ FIRE_ALARM_BUZZER_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAULT_BUZZER_ACK" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ FAULT_BUZZER_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ACK_MASTER" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ACK_MASTER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_FIREALARM_ON" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_FIREALARM_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_PREALARM_ON" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_PREALARM_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_FAULT_ON" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_FAULT_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NACK_FIREALARM" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_NACK_FIREALARM  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NACK_PREALARM" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_NACK_PREALARM  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NACK_FAULT" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_NACK_FAULT  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_ACK" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ FIRE_ALARM_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAULT_ACK" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ FAULT_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_FIREALARM" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_NEW_FIREALARM  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_FAULT" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_NEW_FAULT  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_PREALARM" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_NEW_PREALARM  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAULT_BUZZER" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ FAULT_BUZZER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_DISABLE_ON" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_DISABLE_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_TEST_ON" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_TEST_ON  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BOARD_NUMBER" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ BOARD_NUMBER (*$COMMENT max boards connected to AFAS*) : INT := 4;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CURRENT_ZONE_PREALARMX" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ CURRENT_ZONE_PREALARMX  : DWORD;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SENSOR_ALARM_BUZZER" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ SENSOR_ALARM_BUZZER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SENSOR_ALARM_BUZZER_ACK" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ SENSOR_ALARM_BUZZER_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PENDINGGLOBALFIRERELAY" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ PENDINGGLOBALFIRERELAY (*$COMMENT one per system*) : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GLOBALFIRERELAYSTARTTICK" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ GLOBALFIRERELAYSTARTTICK (*$COMMENT one per system*) : TIME;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_MCP" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ANY_NEW_MCP  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GLOBALSIRENOUTPUTSTARTTICK" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ GLOBALSIRENOUTPUTSTARTTICK (*$COMMENT one per system*) : TIME;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PENDINGGLOBALSIRENOUTPUT" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ PENDINGGLOBALSIRENOUTPUT (*$COMMENT one per system*) : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MINDIMLCD" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ MINDIMLCD  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAXDIMLCD" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ MAXDIMLCD  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MINDIMLAMP" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ MINDIMLAMP  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAXDIMLAMP" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ MAXDIMLAMP  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MINBRIGHTNESSLCD" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ MINBRIGHTNESSLCD  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAXBRIGHTNESSLCD" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ MAXBRIGHTNESSLCD  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MINBRIGHTNESSLAMP" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ MINBRIGHTNESSLAMP  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAXBRIGHTNESSLAMP" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ MAXBRIGHTNESSLAMP  : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_ALARM" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_ALARM (*$COMMENT in the future this can be configurable option*) : BOOL := TRUE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_FAULT" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ ENABLE_BUZZER_FOR_ANY_NEW_SENSOR_IN_FAULT (*$COMMENT in the future this can be configurable option*) : BOOL := TRUE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SENSOR_FAULT_BUZZER" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ SENSOR_FAULT_BUZZER  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SENSOR_FAULT_BUZZER_ACK" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ SENSOR_FAULT_BUZZER_ACK  : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="powerupDelayElapsed" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ powerupDelayElapsed (*$COMMENT one per system*) : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="powerupRemainTime" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ powerupRemainTime (*$COMMENT one per system*) : TIME;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="extraSirenDelayTime" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ extraSirenDelayTime (*$COMMENT one per system*) : TIME;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PENDINGGLOBALBUZZEROUTPUT" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ PENDINGGLOBALBUZZEROUTPUT (*$COMMENT one per system*) : BOOL := FALSE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="START_ACK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ START_ACK (*$COMMENT 41001 PUSHBUTTON - ACKN*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="START_STOPHORN" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ START_STOPHORN (*$COMMENT 41004 PUSHBUTTON - STOP HORN*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MASTER_SLAVE_ALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MASTER_SLAVE_ALARM (*$COMMENT 41019 SLAVE PANEL NOT PRESENT*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIM_LCD" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIM_LCD (*$COMMENT 41036 DIMMING - LCD BACK LIGHT*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIM_BL" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIM_BL (*$COMMENT 41037 DIMMING - BUTTON BACK LIGHT*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LIFECHECKTOSEND" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LIFECHECKTOSEND (*$COMMENT 41117 LIFECHECK TO SEND*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LIFECHECKTORCV" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LIFECHECKTORCV (*$COMMENT 42117 LIFECHECK TO SEND*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PAGE_NUMBER" flags="00004000" disabled="0"><![CDATA[VAR_GLOBAL 
+ PAGE_NUMBER : INT := 0;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TEST_FIRE_ALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ TEST_FIRE_ALARM (*$COMMENT 10023 TEST FIRE ALARM*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TEST_INT_VALUE" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ TEST_INT_VALUE (*$COMMENT 10024 TEST INT VALUE*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL3" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL3 (*$COMMENT 10035 MENU LEVEL 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUZZER" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUZZER (*$COMMENT 10022 BUZZER*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="HW_BUTTON_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ HW_BUTTON_1 (*$COMMENT 10001 HW_BUTTON_1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="HW_BUTTON_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ HW_BUTTON_2 (*$COMMENT 10002 HW_BUTTON_2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="HW_BUTTON_3" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ HW_BUTTON_3 (*$COMMENT 10003 HW_BUTTON_3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="HW_BUTTON_4" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ HW_BUTTON_4 (*$COMMENT 10004 HW_BUTTON_4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="HW_BUTTON_5" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ HW_BUTTON_5 (*$COMMENT 10005 HW_BUTTON_5*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="HW_BUTTON_6" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ HW_BUTTON_6 (*$COMMENT 10006 HW_BUTTON_6*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PROJECT_SW_VER" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PROJECT_SW_VER (*$COMMENT 10013 PROJECT SOFTWARE VERSION (R/O)*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MASTER_SW_VER" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MASTER_SW_VER (*$COMMENT 10014 MASTER SOFTWARE VERSION (R/O)*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PROJECT_NR" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PROJECT_NR (*$COMMENT 10015 PROJECT NUMBER*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="EXT_DIM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ EXT_DIM (*$COMMENT 10017 OUTPUT - PWM*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TFT_DIM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ TFT_DIM (*$COMMENT 10018 OUTPUT - DIMMING TFT BACKLIGHT*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUZZER_ACTIVE" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUZZER_ACTIVE (*$COMMENT 10022 BUZZER_ACTIVE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIMMING_STEP" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIMMING_STEP (*$COMMENT 10023 DIMMING_STEP*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIMMING_MAX" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIMMING_MAX (*$COMMENT 10024 DIMMING_MAX*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIMMING_MIN" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIMMING_MIN (*$COMMENT 10025 DIMMING_MIN*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="C027" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ C027 (*$COMMENT 10027 PASSWORD STORAGE LEVEL 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="C028" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ C028 (*$COMMENT 10028 PASSWORD STORAGE LEVEL 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="C029" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ C029 (*$COMMENT 10029 PASSWORD STORAGE LEVEL 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="C030" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ C030 (*$COMMENT 10030 SET TCU CLOCK DATE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="C031" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ C031 (*$COMMENT 10031 SET TCU CLOCK TIME*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="C032" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ C032 (*$COMMENT 10032 RESTART FWD DATA LOG (freezes few secs)*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL0" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL0 (*$COMMENT 10033 MENU LEVEL 0*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL1 (*$COMMENT 10034 MENU LEVEL 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL2 (*$COMMENT 10035 MENU LEVEL 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GLOBAL_DRIFTING_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GLOBAL_DRIFTING_MASK (*$COMMENT 10038 LOOP GLOBAL DRIFTING 1..8*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAIL_OUTPUT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FAIL_OUTPUT (*$COMMENT 10039 FAIL OUTPUT LCD PANEL*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_DISABLE_ON_ANY_TEST_ON" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ANY_DISABLE_ON_ANY_TEST_ON (*$COMMENT 10040 ANY DISABLE ON ANY TEST ON*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAIN_SUPPLY_FAILURE_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MAIN_SUPPLY_FAILURE_MASK (*$COMMENT 10041 MAIN SUPPLY FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BACKUP_SUPPLY_FAILURE_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BACKUP_SUPPLY_FAILURE_MASK (*$COMMENT 10042 BACKUP SUPPLY FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO1_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO1_1 (*$COMMENT 10043 DIGITAL OUTPUT RELAY 1.1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO1_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO1_2 (*$COMMENT 10044 DIGITAL OUTPUT RELAY 1.2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO2_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO2_1 (*$COMMENT 10045 DIGITAL OUTPUT RELAY 2.1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO2_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO2_2 (*$COMMENT 10046 DIGITAL OUTPUT RELAY 2.2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO3_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO3_1 (*$COMMENT 10047 DIGITAL OUTPUT RELAY 3.1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO3_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO3_2 (*$COMMENT 10048 DIGITAL OUTPUT RELAY 3.2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO4_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO4_1 (*$COMMENT 10049 DIGITAL OUTPUT RELAY 4.1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DO4_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DO4_2 (*$COMMENT 10050 DIGITAL OUTPUT RELAY 4.2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT1 (*$COMMENT 10051 SIREN OUTPUT 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT2 (*$COMMENT 10052 SIREN OUTPUT 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT3" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT3 (*$COMMENT 10053 SIREN OUTPUT 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT4" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT4 (*$COMMENT 10054 SIREN OUTPUT 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_RELAY1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_RELAY1 (*$COMMENT 10055 FIRE ALARM RELAY OUTPUT 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_RELAY2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_RELAY2 (*$COMMENT 10056 FIRE ALARM RELAY OUTPUT 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_RELAY3" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_RELAY3 (*$COMMENT 10057 FIRE ALARM RELAY OUTPUT 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_RELAY4" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_RELAY4 (*$COMMENT 10058 FIRE ALARM RELAY OUTPUT 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="START_AUTO_DISCOVERY" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ START_AUTO_DISCOVERY (*$COMMENT 10059 Start Auto Discovery*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DONE_AUTO_DISCOVERY" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DONE_AUTO_DISCOVERY (*$COMMENT 10060 Stop Auto Discovery*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SELECT_LOOP_AUTO_DISCOVERY" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SELECT_LOOP_AUTO_DISCOVERY (*$COMMENT 10061 Select Loop Nr Auto Discovery*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ERROR_CODE_AUTO_DISCOVERY" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ERROR_CODE_AUTO_DISCOVERY (*$COMMENT 10062 Error code Auto Discovery*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CURRENT_LOGIN_LEVEL" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CURRENT_LOGIN_LEVEL (*$COMMENT 10063 Current Login Level*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="STOPHORN_FOR_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ STOPHORN_FOR_FAULT (*$COMMENT 10064 Stop Horn for Faults*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ACK_FOR_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ACK_FOR_FAULT (*$COMMENT 10065 Ack for Faults*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="STOPHORN_FOR_FIREALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ STOPHORN_FOR_FIREALARM (*$COMMENT 10066 Stop Horn for Fire Alarms*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIGNALING_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIGNALING_FAULT (*$COMMENT 10067 Signaling Faults*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LOOP_EARTH_FAILURE_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LOOP_EARTH_FAILURE_MASK (*$COMMENT 10068 LOOP EARTH FAIL 1..8*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LOOP_SHORT_FAILURE_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LOOP_SHORT_FAILURE_MASK (*$COMMENT 10069 LOOP LINE FAIL 1..8*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_EARTH_FAILURE_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_EARTH_FAILURE_MASK (*$COMMENT 10070 SIREN EARTH FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_LINE_FAILURE_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_LINE_FAILURE_MASK (*$COMMENT 10071 SIREN LINE FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_OUTPUT_FAILURE_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_OUTPUT_FAILURE_MASK (*$COMMENT 10072 SIREN OUTPUT FAIL 1..4*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CAN_FAILURE_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CAN_FAILURE_MASK (*$COMMENT 10073 CANBUS FAILURE 1..8*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZONE_PREALARMS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ZONE_PREALARMS (*$COMMENT 10074 LOOP 1 Zone PreAlarm 1-16  (16 bits)*) : ARRAY[0..7] OF DWORD;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZONE_ALARMS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ZONE_ALARMS (*$COMMENT 10082 LOOP 1 Zone Alarm 1-16  (16 bits)*) : ARRAY[0..7] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZONE_MCPS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ZONE_MCPS (*$COMMENT 10090 LOOP 1 Zone MCP 1-16  (16 bits)*) : ARRAY[0..7] OF WORD;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ZONE_FAULTS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ZONE_FAULTS (*$COMMENT 10098 LOOP 1 Zone Fault 1-16  (16 bits)*) : ARRAY[0..7] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETHERNET_FAIL1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETHERNET_FAIL1 (*$COMMENT 10106 Ethernet Port A No Communication*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETHERNET_FAIL2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETHERNET_FAIL2 (*$COMMENT 10107 Ethernet Port B No Communication*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PARAMETER_HANDLING_AUTO_DISCOVERY" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PARAMETER_HANDLING_AUTO_DISCOVERY (*$COMMENT 10108 PARAMETER_HANDLING_AUTO_DISCOVERY*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_SENSOR_IN_ALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ANY_NEW_SENSOR_IN_ALARM (*$COMMENT 10109 ANY NEW SENSOR IN ALARM*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="USED_BOARD_MASK" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ USED_BOARD_MASK (*$COMMENT 10110 USED_BOARD 1..8*) : BYTE;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_DELAY" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_DELAY (*$COMMENT 10111 SIREN OUTPUT DELAY*) : DINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIREALARM_DELAY" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIREALARM_DELAY (*$COMMENT 10112 FIRE ALARM DELAY*) : DINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_ALARM_IN_MACHINERY_AREA" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ANY_NEW_ALARM_IN_MACHINERY_AREA (*$COMMENT 10113 ANY NEW ALARM IN MACHINERY AREA*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LCD_AND_LAMP_BRIGHTNESS_SETTINGS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LCD_AND_LAMP_BRIGHTNESS_SETTINGS (*$COMMENT 10114 LCD AND LAMP BRIGHTNESS SETTINGS*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ANY_NEW_SENSOR_IN_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ANY_NEW_SENSOR_IN_FAULT (*$COMMENT 10115 ANY NEW SENSOR IN FAULT*) : INT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUZZER_FOR_SENSORS_SETTINGS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUZZER_FOR_SENSORS_SETTINGS (*$COMMENT 10116 BUZZER FOR SENSORS SETTINGS*) : FINT;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK" loop_kind="0" interval="100"><![CDATA[INIT_FAS
+HANDLE_ACK
+READ_BOARD_DIAG
+HANDLE_STOPHORN
+HANDLE_NEW_FIREALARM_AND_FAULT
+DETECT_NEW_ALARM_AND_FAULTS
+RESYNC_SOUNDERS
+CHECK_PENDING_FIRE_RELAY
+CHECK_PENDING_SIREN_OUTPUT
+GOBAL
+MAIN_PAGE
+ALARM_PAGE
+MAIN_ZONE_VIEWER
+TOP_BAR_STATUS
+PAGE_MENUS
+PAGE_NAVIGATION
+DISABLE_PAGE
+LOOP_OVERVIEW_PAGE
+ZONE_OVERVIEW_PAGE
+HANDLE_RESOUND
+DIMMING_PAGE
+RESET_LOGIN
+DISABLE_LIST_PAGE
+INHIBIT_LIST_PAGE
+DRIFT_LIST_PAGE
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

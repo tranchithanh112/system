@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+		<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1200" DefaultValue="1080">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+					<Bindings>
+						<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+		</SelectFirstCoordBinding>
+	</Bindings>
+	<Children>
+		<Frame Width="1920" Height="1200" ShowBackground="False" Highlight_Button_NR="24" Page_Title="CHANNELS LIST" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame V2.prax"/>
+		<Panel Width="1685" Height="960" X="5" Y="50" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="BackgroundListLine01" FillColor="Transparent">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1685" TransitionTime="100">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1080" DefaultValue="960">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+							<Bindings>
+								<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstCoordBinding>
+			</Bindings>
+			<Children>
+				<ChannelListInputBox LockOverlayColor="Transparent" Width="150" Height="45" X="1345" Y="910" BorderColor="TextInfo" CornerRoundRadius="5" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" Text="000000">
+					<Bindings>
+						<SelectFirstCoordBinding TargetPropertyName="Y" SelectedValue0="1020" DefaultValue="910">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+									<Bindings>
+										<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstCoordBinding>
+					</Bindings>
+					<TextEnteredActions>
+						<AddChannelToChannelList ChannelNumber="0"/>
+					</TextEnteredActions>
+				</ChannelListInputBox>
+				<Button Width="140" Height="45" X="1500" Y="910" ClipToBounds="True" Text="CLEAR" BorderWidth="1" BorderColor="TextInfo" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N">
+					<Bindings>
+						<SelectFirstCoordBinding TargetPropertyName="Y" SelectedValue0="1020" DefaultValue="910">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+									<Bindings>
+										<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstCoordBinding>
+					</Bindings>
+					<ClickActions>
+						<ResetChannelList/>
+					</ClickActions>
+				</Button>
+				<ChannelList Width="1685" Height="905" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderWidth="0" BorderColor="Transparent" ColumnSepLinesVisible="False" FileName=".\Frames\Menus\AlarmContextMenu.prax">
+					<Bindings>
+						<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+						<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1685" TransitionTime="100">
+							<Bindings>
+								<VariableBinding TargetPropertyName="Activate">
+									<Variable>
+										<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+									</Variable>
+								</VariableBinding>
+							</Bindings>
+						</ValueTransitionBinding>
+						<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1005" DefaultValue="905">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+									<Bindings>
+										<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstCoordBinding>
+					</Bindings>
+				</ChannelList>
+				<Frame Width="50" Height="47.4999" X="1290" Y="910" Path=".\Frames\Menus\Button_Open_Numpad.prax">
+					<Bindings>
+						<SelectFirstCoordBinding TargetPropertyName="Y" SelectedValue0="1020" DefaultValue="910">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+									<Bindings>
+										<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstCoordBinding>
+					</Bindings>
+				</Frame>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1200" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1920" Height="70" BorderWidth="0" FillColor="DarkShadow"/>
+		<Rectangle Width="1920" Height="5" Y="65" BorderWidth="0" FillColor="DarkShadow"/>
+		<Rectangle Width="1920" Height="3" Y="66" BorderWidth="0" BorderColor="InactiveGrey" FillColor="InactiveGrey"/>
+		<Frame Width="1920" Height="80" Y="1120" Path=".\BottomAlarmLine.prax"/>
+		<Button LockOverlayVisible="False" LockOverlayColor="Transparent" Width="55" Height="55" X="1860" Y="5" Text="  " FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="NoAlarmGreen" Font="Segoe UI;10.0;N;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="OutlineColor" DefaultValue="Transparent"/>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue7="False" DefaultValue="True">
+					<Bindings>
+						<RetainValueBinding TargetPropertyName="ConditionValue7" RetainKey="VAR_LockShowMenuButton" RetainValueType="Bool"/>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+			<ClickActions>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_ShowSideMenu">
+					<RetainValue>
+						<BoolRetainValue Value="True"/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_LockShowMenuButton">
+					<RetainValue>
+						<BoolRetainValue Value="True"/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_LockHideMenuButton">
+					<RetainValue>
+						<BoolRetainValue/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+			</ClickActions>
+		</Button>
+		<Button LockOverlayVisible="False" LockOverlayColor="Transparent" Width="55" Height="55" X="1860" Y="5" Text="  " FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="AlarmRed" Font="Segoe UI;10.0;N;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="OutlineColor" DefaultValue="Transparent"/>
+				<SelectFirstBoolBinding TargetPropertyName="Visible">
+					<Bindings>
+						<RetainValueBinding TargetPropertyName="ConditionValue7" RetainKey="VAR_LockShowMenuButton" RetainValueType="Bool"/>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+			<ClickActions>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_ShowSideMenu">
+					<RetainValue>
+						<BoolRetainValue/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_LockShowMenuButton">
+					<RetainValue>
+						<BoolRetainValue/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_LockHideMenuButton">
+					<RetainValue>
+						<BoolRetainValue Value="True"/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="545" Height="1105" X="1375" Y="70" Highlight_Button_NR="0" M01.1_11="0" M01.1_27="0" M06.1_22="0" M06.1_23="0" M05.1_18="0" M05.1_19="0" M05.1_20="0" M05.1_21="0" M05.1_26="0" M03.1_13="0" M03.1_14="0" M03.1_15="0" M03.1_16="0" M03.1_28="0" Path=".\SideMenuVertical.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+				<ValueTransitionBinding TargetPropertyName="Visible" TransitionTime="250">
+					<Bindings>
+						<RetainValueBinding TargetPropertyName="Activate" RetainKey="VAR_ShowSideMenu" RetainValueType="Bool"/>
+					</Bindings>
+				</ValueTransitionBinding>
+				<FrameBinding TargetPropertyName="M06.1_22" ExportedPropertyName="M06.1_22"/>
+				<FrameBinding TargetPropertyName="M06.1_23" ExportedPropertyName="M06.1_23"/>
+				<FrameBinding TargetPropertyName="M05.1_18" ExportedPropertyName="M05.1_18"/>
+				<FrameBinding TargetPropertyName="M05.1_19" ExportedPropertyName="M05.1_19"/>
+				<FrameBinding TargetPropertyName="M05.1_20" ExportedPropertyName="M05.1_20"/>
+				<FrameBinding TargetPropertyName="M05.1_21" ExportedPropertyName="M05.1_21"/>
+				<FrameBinding TargetPropertyName="M03.1_13" ExportedPropertyName="M03.1_13"/>
+				<FrameBinding TargetPropertyName="M03.1_14" ExportedPropertyName="M03.1_14"/>
+				<FrameBinding TargetPropertyName="M03.1_15" ExportedPropertyName="M03.1_15"/>
+				<FrameBinding TargetPropertyName="M03.1_16" ExportedPropertyName="M03.1_16"/>
+				<FrameBinding TargetPropertyName="M05.1_26" ExportedPropertyName="M05.1_26"/>
+				<FrameBinding TargetPropertyName="M01.1_11" ExportedPropertyName="M01.1_11"/>
+				<FrameBinding TargetPropertyName="M01.1_27" ExportedPropertyName="M01.1_27"/>
+				<FrameBinding TargetPropertyName="M03.1_28" ExportedPropertyName="M03.1_28"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="400" Height="45" X="760" Y="12.5" BorderColor="Transparent" FillColor="MenuBackground" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="PATROL TIMER STATUS">
+			<Bindings>
+				<PatrolTimerStatusBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<PatrolTimerStatusToTextConvertParams TextWhenOff="PATROL TIMER: OFF" TextWhenAlarmPD="PATROL TIMER: ALARM">
+							<Bindings>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenWarning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" mm:ss WARNING" ConversionFormat="mm:ss"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenRunning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" MIN. RUNNING" ConversionFormat="mm"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+							</Bindings>
+						</PatrolTimerStatusToTextConvertParams>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+				<PatrolTimerStatusBinding TargetPropertyName="TextColor">
+					<ConvertParams>
+						<PatrolTimerStatusToColorConvertParams ColorWhenRunning="Barfill"/>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="515" Height="30" X="175" Y="20" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;28.0;N;N;N" Text="GENERAL INFO">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" DefaultValue="PAGE TITLE">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Page_Title"/>
+						<RetainValueBinding TargetPropertyName="SelectedValue0" RetainKey="VAR_PAGETITLE" RetainValueType="String">
+							<ConvertParams>
+								<StringToTranslatableStringConvertParams/>
+							</ConvertParams>
+						</RetainValueBinding>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="AutoShow_Page_Title"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<Button Width="410" Height="55" X="755" Y="7.5" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="10"/>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_ShowSideMenu">
+					<RetainValue>
+						<BoolRetainValue Value="True"/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+				<SetRetainValueClickAction RetainValueType="Bool" RetainKey="VAR_LockShowMenuButton">
+					<RetainValue>
+						<BoolRetainValue Value="True"/>
+					</RetainValue>
+				</SetRetainValueClickAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="45" Height="45" X="1865" Y="10" Path=".\Standard\Hamburger_button.prax" _Time="1000"/>
+		<Frame Width="154" Height="37.7408" X="1695" Y="15" Path=".\Frame_PRAXIS_LOGO.prax"/>
+		<Frame Width="181.364" Height="60" X="20" Y="5" Path=".\Logo\ASTILLEROS DE MALLORCA_2019.prax"/>
+		<Frame Width="244.828" Height="60" X="24" Y="1130" Path=".\Logo\LOGO_INSTEIMED S.A..prax"/>
+		<TextBox Width="130" Height="30" X="1255" Y="25" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;26.0;N;N;N" Text="00:00:00">
+			<Bindings>
+				<DateTimeBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<DateTimeToStringConvertParams/>
+					</ConvertParams>
+				</DateTimeBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="135" Height="30" X="1390" Y="25" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;26.0;N;N;N" Text="2020-01-01">
+			<Bindings>
+				<DateTimeBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<DateTimeToStringConvertParams Format="d.mm.yyyy"/>
+					</ConvertParams>
+				</DateTimeBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="31" Height="11" X="1225" Y="40" BorderColor="Transparent" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;12.0;N;N;N" Text="GMT">
+			<Bindings>
+				<MiscellaneousStringBinding TargetPropertyName="Text"/>
+			</Bindings>
+		</TextBox>
+		<Button Width="290" Height="30" X="1235" Y="25" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" FillPatternColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<GeneralCAMClientCommandsClickAction CAMClientCommandType="Toggle Date Time"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

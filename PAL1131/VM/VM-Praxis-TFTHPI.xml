@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PAL1131 version="1.0">
+  <VMSPEC>
+    <USER>
+      <title>Virtual Machine Specification for Praxis Automation Systems (ARM mode 32-bit)</title>
+      <version>2.12.0</version>
+      <extraver/>
+      <builddate>2020.08-08 01:18</builddate>
+      <exportdate>#now</exportdate>
+      <!-- Last function code: 1C38, and few other -->
+    </USER>
+    <HARDWARE>
+      <MaxCodeAddress>0x001FFFFF</MaxCodeAddress>
+      <MaxDataAddress>0x001FFFFF</MaxDataAddress>
+      <FlashSize>0x200</FlashSize>
+      <AddressSize>8</AddressSize>
+    </HARDWARE>
+    <!-- Since 2.6.0 -->
+    <INCLUDE>
+      <PRE order="0">VMCoreARM.xml</PRE>
+      <POST order="0">lreals.xml</POST>
+      <POST order="1">le-IF32ARM.xml</POST>
+      <!--POST order="2">flash.xml</POST-->
+      <POST order="3">fintARM.xml</POST>
+      <POST order="4">strings.xml</POST>
+    </INCLUDE>
+
+    <TYPES>
+      <!--deny-type name="STRING" /-->
+    </TYPES>
+    <COMPILER_SWITCH>
+      <CompilerFlags enable="0x00004000" />
+    </COMPILER_SWITCH>
+    <FUNCTIONS />
+    <SYSTEM>
+      <sysproc name="HWFBC4A" vmcode="1E13">
+        <args>
+          <arg no="0" name="selector" type=":imm.DWORD">
+            <comment>Type of function block</comment>
+          </arg>
+          <arg no="1" name="instance" type=":rdlabel">
+            <comment>Function block instance to work on it</comment>
+          </arg>
+        </args>
+        <comment>Hardware function block call (see initialization in HWFBI4A)</comment>
+      </sysproc>
+      <sysproc name="HWFBI4A" vmcode="1E14">
+        <args>
+          <arg no="0" name="selector" type=":imm.DWORD">
+            <comment>Type of function block</comment>
+          </arg>
+          <arg no="1" name="instance" type=":rdlabel">
+            <comment>Function block instance to work on it</comment>
+          </arg>
+        </args>
+        <comment>Initialize hardware function block (see calling in HWFBC4A)</comment>
+      </sysproc>
+    </SYSTEM>
+    <!-- Since 2.4.7 -->
+    <FUN_BLOCKS>
+      <funblock name="APON" flag="0">
+        <comment>Warm restart alarm</comment>
+        <vars>
+          <var_input name="R" type="BOOL">
+            <comment>Reset input</comment>
+          </var_input>
+          <var_output name="Q" type="BOOL">
+            <comment>Signal alarm</comment>
+          </var_output>
+          <var name="TMP" type="BOOL" flag="0" />
+          <var name="?F?NOT0001" type="BOOL" flag="2097152" />
+          <var name="?F?OR0002" type="BOOL" flag="2097152" />
+        </vars>
+        <init>
+          <![CDATA[:?$DEFAULT.APON?INIT 
+$VMSYS.MCD4A TMP, #/01000000, #/01FFFFFF
+$VMSYS.RETURN 
+]]>
+        </init>
+        <code>
+          <![CDATA[:?$DEFAULT.APON?CODE 
+$DEFAULT.NOT ?F?NOT0001, R
+$DEFAULT.OR ?F?OR0002, TMP, Q
+$DEFAULT.AND Q, ?F?NOT0001, ?F?OR0002
+$VMSYS.MCD4A TMP, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]>
+        </code>
+      </funblock>
+      <funblock name="ASTR" flag="0">
+        <comment>Cold start alarm</comment>
+        <vars>
+          <var_input name="R" type="BOOL" flag="0">
+            <comment>Reset input</comment>
+          </var_input>
+          <var_output name="Q" type="BOOL" flag="0">
+            <comment>Signal alarm</comment>
+          </var_output>
+          <var name="?L?CST0004" type="WORD" flag="1048576" />
+          <var name="?F?GET_STATUS_WORD10005" type="WORD" flag="2097152" />
+          <var name="?F?AND0006" type="WORD" flag="2097152" />
+          <var name="?F?$DEFAULT_EQ0007" type="BOOL" flag="2097152" />
+          <var name="?F?NOT0009" type="BOOL" flag="2097152" />
+        </vars>
+        <init>
+          <![CDATA[:?$DEFAULT.ASTR?INIT 
+$VMSYS.MCD4A ?L?CST0004, #/02000000, #/0400FFFF
+$VMSYS.RETURN 
+]]>
+        </init>
+        <code>
+          <![CDATA[:?$DEFAULT.ASTR?CODE 
+$DEFAULT.GET_STATUS_WORD1 ?F?GET_STATUS_WORD10005
+$DEFAULT.AND ?F?AND0006, ?F?GET_STATUS_WORD10005, ?L?CST0004
+$DEFAULT.EQ ?F?$DEFAULT_EQ0007, ?F?AND0006, ?L?CST0004
+$DEFAULT.OR Q, Q, ?F?$DEFAULT_EQ0007
+$DEFAULT.NOT ?F?NOT0009, R
+$DEFAULT.AND Q, Q, ?F?NOT0009
+$VMSYS.RETURN 
+]]>
+        </code>
+      </funblock>
+    </FUN_BLOCKS>
+    <INLINE>
+      <function name="FLASH_WRITE_LREAL" return="BOOL">
+        <args>
+          <arg no="0" name="VAR_LREAL" type="LREAL"/>
+        </args>
+        <comment>Writes LREAL variable to flash memory</comment>
+        <vars>
+        </vars>
+        <code>
+          <![CDATA[  $VMSYS.FLASH_WRITE_ANY/1D03 FLASH_WRITE_LREAL, VAR_LREAL, #/0800 ]]>
+        </code>
+      </function>
+      <function name="FLASH_READ_LREAL" return="BOOL">
+        <args>
+          <arg no="0" name="VAR_LREAL" type="LREAL"/>
+        </args>
+        <comment>Reads LREAL variable from flash memory</comment>
+        <vars>
+        </vars>
+        <code>
+          <![CDATA[  $VMSYS.FLASH_READ_ANY/1D04 FLASH_READ_LREAL, VAR_LREAL, #/0800 ]]>
+        </code>
+      </function>
+    </INLINE>
+  </VMSPEC>
+</PAL1131>

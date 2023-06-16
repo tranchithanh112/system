@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Ellipse BorderWidth="0" FillColor="LightingOff" CenterX="50" CenterY="50" RadiusX="50" RadiusY="50">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="LightingAmber" DefaultValue="LightingOff">
+					<Bindings>
+						<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="Light_color"/>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Light_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+	</Children>
+</RootElement>

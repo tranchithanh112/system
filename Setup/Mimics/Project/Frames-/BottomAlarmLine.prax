@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="80" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1890" Height="80" X="15" BorderWidth="0" FillColor="DarkShadow" CornerRoundRadius="5"/>
+		<AlarmList Width="1425" Height="60" X="235" Y="10" HeaderVisible="False" HeaderFillColor="WhiteBlack" HeaderTextColor="Background" HeaderFont="Praxis;22.0;B;N;N" FillColor="DarkShadow" AlternateFillColor="MidnightBlue" HighlightColor="Background" TextColor="InfoTextWhite" Font="Praxis;22.0;N;N;N" VertScrollBarSize="0" OutlineColor="Background" ColumnSepLinesVisible="False" ShowDate="True" ShowTime="True" ShowValue="True" ShowUnits="True" ShowLimits="True" ShowDT="True" ShowAlarmType="Unacknowledged">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<Button Width="70" Height="70" X="1675" Y="5" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<Frame Width="50" Height="50" X="10" Y="10" Path=".\Standard\ICON_Speaker.prax" HornChannel="0" HornOutput="1013" Color_line="InfoTextGrey">
+					<Bindings>
+						<RetainValueBinding TargetPropertyName="Color_line" RetainKey="VAR_Color_lines" RetainValueType="Bool">
+							<ConvertParams>
+								<BoolToColorConvertParams/>
+							</ConvertParams>
+						</RetainValueBinding>
+					</Bindings>
+				</Frame>
+			</Children>
+			<ClickActions>
+				<RequestStopHornClickAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="70" Height="70" X="1750" Y="5" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<Frame Width="50" Height="50" X="10" Y="10" Path=".\Standard\ICON_CheckSign.prax"/>
+			</Children>
+			<ClickActions>
+				<AcknowledgeAlarmListAlarmsClickAction AcknowledgeTarget="All AlarmLists"/>
+			</ClickActions>
+		</Button>
+		<Button Width="70" Height="70" X="1825" Y="5" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Praxis;18.0;B;N;N">
+			<Children>
+				<Frame Width="50" Height="50" X="10" Y="10" Path=".\Standard\ICON_OptionsGear.prax"/>
+			</Children>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="3" XOffset="1581" YOffset="-242.5" OpenAnimationDuration="0">
+					<Frame>
+						<FloatingFrame Width="260" Height="690" X="3311" Y="-547.5" SubMenu="False" Path=".\Standard\ToolsMenu.prax" MimicName=""/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

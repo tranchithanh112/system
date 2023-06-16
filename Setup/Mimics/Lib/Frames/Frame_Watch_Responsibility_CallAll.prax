@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement FlashState="Flashing" Flash="True" Width="760" Height="480" PermissionLevelRequested="2" TranslationTableFile="..\..\TranslationTableTemplate.xlsx">
+	<Bindings>
+		<ChannelAlarmBinding TargetPropertyName="Visible">
+			<Bindings>
+				<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Shown"/>
+			</Bindings>
+		</ChannelAlarmBinding>
+	</Bindings>
+	<Children>
+		<Panel Width="760" Height="440" GridSpacing="2" BorderWidth="0" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<FillBar FlashArea="FillAndOutLine" Width="738" Height="10" X="12" Y="430" FillDirection="RightToLeft" RangeEnd="30" LimitType="OnlyLow" FirstLimit="3" SecondLimit="3" LimitMarkerSize="15" Value="3" NormalColor="Blue" LineWidth="1">
+					<Bindings>
+						<PatrolTimerValueBinding TargetPropertyName="Value"/>
+						<PatrolTimerValueBinding TargetPropertyName="FirstLimit" TimerValueType="WarningLimit"/>
+						<PatrolTimerValueBinding TargetPropertyName="RangeEnd" TimerValueType="MaxValue"/>
+						<PatrolTimerStatusBinding TargetPropertyName="Visible">
+							<ConvertParams>
+								<PatrolTimerStatusToBoolConvertParams/>
+							</ConvertParams>
+						</PatrolTimerStatusBinding>
+						<PatrolTimerStatusBinding TargetPropertyName="Flash">
+							<ConvertParams>
+								<PatrolTimerStatusToBoolConvertParams StatusWhenRunning="False" StatusWhenWarning="False"/>
+							</ConvertParams>
+						</PatrolTimerStatusBinding>
+					</Bindings>
+				</FillBar>
+				<Polyline FillColor="Transparent">
+					<Points>
+						<Point Coord="0;0"/>
+						<Point Coord="0;450"/>
+						<Point Coord="240;450"/>
+						<Point Coord="280;480"/>
+						<Point Coord="480;480"/>
+						<Point Coord="520;450"/>
+						<Point Coord="760;450"/>
+						<Point Coord="760;0"/>
+					</Points>
+				</Polyline>
+				<Frame Width="300" Height="67" X="12" Y="10" Path=".\Frame EAS Button Reset GEA AndOr DeadMan.prax"/>
+				<Frame Width="300" Height="67" X="12" Y="84" Path=".\Frame EAS Button Attended.prax"/>
+				<Frame Width="300" Height="67" X="12" Y="158" Path=".\Frame EAS Button Unattended.prax"/>
+				<Frame Width="300" Height="67" X="12" Y="232" Path=".\Frame EAS Button AlongSide.prax"/>
+				<Frame Width="300" Height="67" X="12" Y="306" Path=".\Frame EAS Button Sailing.prax"/>
+				<Frame Width="315" Height="46" X="318" Y="10" CABINPANELNR="0" Path=".\Frame EAS Select Cabin.prax"/>
+				<Frame Width="315" Height="46" X="318" Y="56" CABINPANELNR="1" Path=".\Frame EAS Select Cabin.prax"/>
+				<Frame Width="315" Height="46" X="318" Y="102" CABINPANELNR="2" Path=".\Frame EAS Select Cabin.prax"/>
+				<Frame Width="315" Height="46" X="318" Y="148" CABINPANELNR="3" Path=".\Frame EAS Select Cabin.prax"/>
+				<Frame Width="315" Height="46" X="318" Y="194" CABINPANELNR="4" Path=".\Frame EAS Select Cabin.prax"/>
+				<Frame Width="315" Height="46" X="318" Y="240" CABINPANELNR="5" Path=".\Frame EAS Select Cabin.prax"/>
+				<Frame Width="315" Height="46" X="318" Y="286" CABINPANELNR="6" Path=".\Frame EAS Select Cabin.prax"/>
+				<Frame Width="315" Height="46" X="318" Y="332" CABINPANELNR="7" Path=".\Frame EAS Select Cabin.prax"/>
+				<Frame Width="400" Height="40" X="180" Y="376" Path=".\Frame PATROL Timer.prax"/>
+				<Frame Width="110" Height="40" X="640" Y="76" Path=".\Frame EAS Button Cabin CallAll.prax"/>
+				<TextBox Width="200" Height="40" X="280" Y="440" BorderWidth="0" FillColor="Transparent" LeftRightPadding="0" Font="Segoe UI-18.0-N-N-N" Text="WATCH RESPONSIBILITY"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

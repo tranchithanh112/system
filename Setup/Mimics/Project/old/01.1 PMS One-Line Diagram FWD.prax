@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Line Width="2" Color="Orange" X0="1730" Y0="175" X1="1730" Y1="345"/>
+		<Line Width="2" Color="Orange" X0="1620" Y0="210" X1="1620" Y1="345"/>
+		<Line Width="2" Color="Orange" X0="275" Y0="345" X1="275" Y1="210"/>
+		<Line Width="4" Color="Orange" X0="80" Y0="595" X1="895" Y1="595"/>
+		<TextBox Width="85" Height="20" X="40" Y="605" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;14.0;N;N;N" Text="660V MSB 1"/>
+		<TextBox Width="85" Height="20" X="1775" Y="605" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Praxis;14.0;N;N;N" Text="660V MSB 2"/>
+		<Line Width="4" Color="Orange" X0="1025" Y0="595" X1="1820" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="865" Y0="580" X1="865" Y1="700"/>
+		<Line Width="2" Color="Orange" X0="1055" Y0="570" X1="1055" Y1="700"/>
+		<Frame Width="120" Height="200" X="795" Y="610" RevertContainerRotation="True" RevertContainerScaling="True" ID="BT1" CB_Tripped="65049" CB_Sync="65080" CB_Offload="65081" CB_Closed="65188" CB_Interlock="65676" CMD_Close="65488" CMD_Open="65491" CMD_Reset="65496" CMD_Auto="65486" CMD_Manual="65489" Activity_Counter="65677" Manual="65029" Auto="65023" Alarm_Group_INT="79" Alarm_Group_UINT="79" Path=".\Frames\Frames_PMS\BUSTIE_Main_Window.prax"/>
+		<Frame Width="120" Height="200" X="985" Y="610" RevertContainerRotation="True" RevertContainerScaling="True" ID="BT2" CB_Tripped="66049" CB_Sync="66080" CB_Offload="66081" CB_Closed="66188" CB_Interlock="66676" CMD_Close="66488" CMD_Open="66491" CMD_Reset="66496" CMD_Auto="66486" CMD_Manual="66489" Activity_Counter="66677" Manual="66029" Auto="66023" Alarm_Group_INT="82" Alarm_Group_UINT="82" Path=".\Frames\Frames_PMS\BUSTIE_Main_Window.prax"/>
+		<Line Width="2" Color="Orange" X0="864" Y0="700" X1="1056" Y1="700"/>
+		<TextBox Width="105" Height="30" X="795" Y="885" BorderWidth="0" BorderColor="PageInfoLine" CornerRoundRadius="10" Font="Praxis;18.0;N;N;N" Text="Total SCC">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="65660">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix=" kA"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="65660">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Foreground"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="105" Height="30" X="1000" Y="885" BorderWidth="0" BorderColor="PageInfoLine" CornerRoundRadius="10" Font="Praxis;18.0;N;N;N" Text="Total SCC">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="66660">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1" Suffix=" kA"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="66660">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Foreground"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="105" Height="30" X="795" Y="855" BorderWidth="0" BorderColor="PageInfoLine" CornerRoundRadius="10" Font="Praxis;18.0;N;N;N" Text="Res Load">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="65661">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kW"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="105" Height="30" X="1000" Y="855" BorderWidth="0" BorderColor="PageInfoLine" CornerRoundRadius="10" Font="Praxis;18.0;N;N;N" Text="Res Load">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="66661">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kW"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Line X0="795" Y0="855" X1="1105" Y1="855"/>
+		<TextBox Width="80" Height="27" X="810" Y="916" BorderColor="PageInfoLine" FillColor="Barfill01" CornerRoundRadius="3" Font="Praxis;18.0;N;N;N" Text="Request">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="65671"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="27" X="1015" Y="916" BorderColor="PageInfoLine" FillColor="Barfill01" CornerRoundRadius="3" Font="Praxis;18.0;N;N;N" Text="Request">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="66671"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="20" X="1780" Y="625" BorderWidth="0" CornerRoundRadius="3" TextColor="Orange" Font="Praxis;14.0;N;N;N" Text="EARTH FAULT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="21109"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="70" Height="20" X="50" Y="630" BorderWidth="0" CornerRoundRadius="5" TextColor="Orange" Font="Praxis;14.0;N;N;N" Text="EARTH FAULT">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="12707"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="27" X="810" Y="948" BorderColor="PageInfoLine" FillColor="Barfill01" CornerRoundRadius="3" Font="Praxis;16.0;N;N;N" Text="Active">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="65669"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="27" X="1015" Y="948" BorderColor="PageInfoLine" FillColor="Barfill01" CornerRoundRadius="3" Font="Praxis;16.0;N;N;N" Text="Active">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="66669"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="20" X="825" Y="835" BorderWidth="0" FillColor="Transparent" Font="Praxis;14.0;N;N;N" Text="MSB 1"/>
+		<TextBox Width="50" Height="20" X="1025" Y="835" BorderWidth="0" FillColor="Transparent" Font="Praxis;14.0;N;N;N" Text="MSB 2"/>
+		<TextBox Height="30" X="900" Y="855" BorderWidth="0" FillColor="Transparent" Font="Praxis;16.0;N;N;N" Text="Reserved"/>
+		<TextBox Height="30" X="900" Y="885" BorderWidth="0" FillColor="Transparent" Font="Praxis;16.0;N;N;N" Text="Short Circuit"/>
+		<TextBox Height="30" X="900" Y="915" BorderWidth="0" FillColor="Transparent" Font="Praxis;16.0;N;N;N" Text="Standby"/>
+		<TextBox Height="30" X="900" Y="947" BorderWidth="0" FillColor="Transparent" Font="Praxis;16.0;N;N;N" Text="LowLoadStop"/>
+		<Line Width="4" Color="Orange" X0="230" Y0="210" X1="895" Y1="210"/>
+		<Line Width="2" Color="Orange" X0="165" Y0="595" X1="165" Y1="445"/>
+		<Line Width="2" Color="Orange" X0="275" Y0="595" X1="275" Y1="445"/>
+		<Line Width="2" Color="Orange" X0="385" Y0="495" X1="385" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="495" Y0="485" X1="495" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="605" Y0="395" X1="605" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="715" Y0="390" X1="715" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="1730" Y0="445" X1="1730" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="1205" Y0="405" X1="1205" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="1315" Y0="405" X1="1315" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="960" Y0="420" X1="960" Y1="505"/>
+		<Frame Width="60" Height="60" X="930" Y="435" Path=".\Frames\Frames_PMS\Icon_Star_Delta.prax"/>
+		<Frame Width="60" Height="60" X="1175" Y="435" Path=".\Frames\Frames_PMS\Icon_Star_Delta.prax"/>
+		<Frame Width="60" Height="60" X="1285" Y="435" Path=".\Frames\Frames_PMS\Icon_Freq_Converter.prax"/>
+		<Frame Width="60" Height="60" X="575" Y="435" Path=".\Frames\Frames_PMS\Icon_Freq_Converter.prax"/>
+		<Frame Width="60" Height="60" X="685" Y="435" Path=".\Frames\Frames_PMS\Icon_Star_Delta.prax"/>
+		<TextBox Width="180" Height="25" X="255" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;14.0;N;N;N" Text="440V SWITCH BOARD DIVING"/>
+		<TextBox Width="130" Height="25" X="140" Y="145" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;14.0;N;N;N" Text="440V SWITCH BOARD"/>
+		<TextBox Width="130" Height="25" X="1650" Y="145" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Praxis;14.0;N;N;N" Text="440V SWITCH BOARD"/>
+		<TextBox Width="180" Height="25" X="1455" Y="185" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Praxis;14.0;N;N;N" Text="440V SWITCH BOARD DIVING"/>
+		<Line Width="4" Color="Orange" X0="80" Y0="175" X1="895" Y1="175"/>
+		<Line Width="4" Color="Orange" X0="1025" Y0="175" X1="1820" Y1="175"/>
+		<Line Width="4" Color="Orange" X0="1025" Y0="210" X1="1670" Y1="210"/>
+		<Polyline Width="2" LineColor="Orange" FillColor="Transparent">
+			<Points>
+				<Point Coord="865;210"/>
+				<Point Coord="865;310"/>
+				<Point Coord="1055;310"/>
+				<Point Coord="1055;210"/>
+			</Points>
+		</Polyline>
+		<Polyline Width="2" LineColor="Orange" FillColor="Transparent">
+			<Points>
+				<Point Coord="865;595"/>
+				<Point Coord="865;505"/>
+				<Point Coord="1055;505"/>
+				<Point Coord="1055;595"/>
+			</Points>
+		</Polyline>
+		<Line Width="2" Color="Orange" X0="1620" Y0="445" X1="1620" Y1="595"/>
+		<Polyline Width="2" LineColor="Orange" FillColor="Transparent">
+			<Points>
+				<Point Coord="865;175"/>
+				<Point Coord="865;75"/>
+				<Point Coord="1055;75"/>
+				<Point Coord="1055;175"/>
+			</Points>
+		</Polyline>
+		<Frame Width="400" Height="80" X="355" Y="85" RevertContainerRotation="True" RevertContainerScaling="True" Bus_Load="61093" Bus_Capacity="61092" Bus_ID="PS 660V" Path=".\Frames\Frames_PMS\PMS_Bus_Info.prax"/>
+		<Frame Width="400" Height="80" X="1150" Y="85" RevertContainerRotation="True" RevertContainerScaling="True" Bus_Load="63093" Bus_Capacity="63092" Bus_ID="SB 660V" Path=".\Frames\Frames_PMS\PMS_Bus_Info.prax"/>
+		<Frame Width="75" Height="105" X="348" Y="395" Status="65637" CTRL_Blocked="False" Running="65102" Type="M" ID="Crane" Emcy_Stop="0" Shutdown="0" ID_="AHC" CTRL_Value="7" CTRL_Channel="65651" BUTTON01_Text="Start" BUTTON02_Text="Stop" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Motor.prax"/>
+		<Frame Width="75" Height="105" X="458" Y="395" Status="65636" CTRL_Blocked="False" Running="65101" Type="M" ID="Crane" Emcy_Stop="0" Shutdown="0" ID_="" CTRL_Value="6" CTRL_Channel="65651" BUTTON01_Text="Start" BUTTON02_Text="Stop" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Motor.prax"/>
+		<Frame Width="75" Height="105" X="568" Y="320" Status="65631" CTRL_Blocked="False" Running="65201" Type="M" ID="AZ" Emcy_Stop="65641" Shutdown="0" ID_="Thr1" CTRL_Value="1" CTRL_Channel="65651" BUTTON01_Text="Start" BUTTON02_Text="Stop" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Motor.prax"/>
+		<Frame Width="75" Height="105" X="678" Y="320" Status="65634" CTRL_Blocked="False" Running="65220" Type="M" ID="Bow" Emcy_Stop="65644" Shutdown="0" ID_="Thr3" CTRL_Value="4" CTRL_Channel="65651" BUTTON01_Text="Start" BUTTON02_Text="Stop" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Motor.prax"/>
+		<Frame Width="75" Height="105" X="923" Y="320" Status="0" CTRL_Blocked="True" Running="65222" Type="M" ID="Bow" Emcy_Stop="65645" Shutdown="0" ID_="Thr5" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Start" BUTTON02_Text="Stop" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Motor.prax"/>
+		<Frame Width="75" Height="105" X="1278" Y="320" Status="66631" CTRL_Blocked="False" Running="66201" Type="M" ID="AZ" Emcy_Stop="66641" Shutdown="0" ID_="Thr2" CTRL_Value="1" CTRL_Channel="66651" BUTTON01_Text="Start" BUTTON02_Text="Stop" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Motor.prax"/>
+		<Frame Width="75" Height="105" X="1168" Y="320" Status="66634" CTRL_Blocked="False" Running="66220" Type="M" ID="Bow" Emcy_Stop="66644" Shutdown="0" ID_="Thr4" CTRL_Value="4" CTRL_Channel="66651" BUTTON01_Text="Start" BUTTON02_Text="Stop" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Motor.prax"/>
+		<Frame Width="75" X="1692" Y="345" Status="66632" CTRL_Blocked="False" ID="Trafo2" CTRL_Value="2" CTRL_Channel="66651" BUTTON01_Text="Close CB&apos;s" BUTTON02_Text="Open CB&apos;s" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Trafo.prax"/>
+		<Frame Width="75" X="1582" Y="345" Status="66633" CTRL_Blocked="False" ID="Trafo4" CTRL_Value="3" CTRL_Channel="66651" BUTTON01_Text="Close CB&apos;s" BUTTON02_Text="Open CB&apos;s" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Trafo.prax"/>
+		<Frame Width="80" Height="80" X="815" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="65635" CTRL_Blocked="False" CB_Offload="False" CB_Sync="False" CB_Tripped="12313" CB_Closed="65221" CB_Interlock="66221" ID="Bow Thr5" CTRL_Value="5" CTRL_Channel="65651" BUTTON01_Text="Start PS" BUTTON02_Text="Stop PS" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="PS" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="1005" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="66635" CTRL_Blocked="False" CB_Offload="False" CB_Sync="False" CB_Tripped="21104" CB_Closed="66221" CB_Interlock="65221" ID="Bow Thr5" CTRL_Value="5" CTRL_Channel="66651" BUTTON01_Text="Start SB" BUTTON02_Text="Stop SB" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="SB" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="665" Y="505" RevertContainerRotation="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="65219" CB_Interlock="12314" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="555" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="12315" CB_Closed="65202" CB_Interlock="0" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="445" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="12311" CB_Closed="65101" CB_Interlock="65117" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="335" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="65102" CB_Interlock="0" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="225" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="11127" CB_Closed="65205" CB_Interlock="65217" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="115" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="12309" CB_Closed="65203" CB_Interlock="65214" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="225" Y="220" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="65206" CB_Interlock="65217" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="1155" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="21121" CB_Closed="66219" CB_Interlock="0" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="1265" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="21102" CB_Closed="66202" CB_Interlock="0" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="1570" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="21121" CB_Closed="66205" CB_Interlock="66217" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="1680" Y="505" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="21107" CB_Closed="66203" CB_Interlock="66214" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="1570" Y="220" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="66206" CB_Interlock="66217" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="1680" Y="220" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="66204" CB_Interlock="66214" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="815" Y="220" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="66207" CB_Interlock="0" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="1005" Y="220" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="66207" CB_Interlock="0" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="815" Y="85" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="65207" CB_Interlock="0" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="80" Height="80" X="1005" Y="85" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="65207" CB_Interlock="0" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<Frame Width="230" Height="80" X="545" Y="225" Path=".\Frames\Frames_PMS\PMS_Sequence.prax"/>
+		<Button Width="120" Height="40" X="1155" Y="225" Text="DPS CTRL" FillColor="Transparent" FillColorActionRunning="IndicationLineTransparent" Font="Praxis;18.0;N;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="65666">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="IndicationLineTransparent"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="65666" SetValueType="Toggle Digital"/>
+				<SetChannelValueClickAction ChannelNumber="66666" SetValueType="Toggle Digital"/>
+			</ClickActions>
+		</Button>
+		<TextBox Visible="False" Width="80" Height="30" X="125" Y="460" BorderColor="PageInfoLine" CornerRoundRadius="3" Font="Praxis;18.0;N;N;N" Text="Load">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11401">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kVAr"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="65203"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Width="80" Height="30" X="235" Y="460" BorderColor="PageInfoLine" CornerRoundRadius="3" Font="Praxis;18.0;N;N;N" Text="Load">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="65205"/>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11407">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kVAr"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<Button Width="120" Height="40" X="1405" Y="535" Text="Trend View" FillColor="Transparent" FillColorActionRunning="IndicationLineTransparent" Font="Praxis;18.0;N;N;N">
+			<ClickActions>
+				<NavigateToAddressUserAction NavFrameName="NAV_FRAME" Address=".\03.1 PMS Trending.prax"/>
+				<SetVariableValueClickAction>
+					<Variable>
+						<StringVariable Name="Top_Page_Title" IsLocal="False" DefaultValue="GENERAL INFO"/>
+					</Variable>
+					<VariableSetter>
+						<StringVariableSetter Value="PMS TRENDING"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+				<SetVariableValueClickAction>
+					<Variable>
+						<FloatVariable Name="Navframe_Index" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<FloatVariableSetter Value="1"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="240" Height="390" X="155" Y="610" RevertContainerRotation="True" RevertContainerScaling="True" Gen_KWp="61071" Gen_KVARp="61072" Engine_Ready="61112" Manual="61029" Auto="61023" CB_Tripped="61049" Synchonizing="61080" Offloading="61081" CB_Closed="61188" CMD_Auto="61486" CMD_Manual="61489" CMD_Start="61487" CMD_Stop="61490" CMD_Close="61488" CMD_Open="61491" CMD_Reset="61496" Pre_Alarm="61101" Short_Circuit="61267" Shutdown="61249" Reverse_Power="61264" ActuatorFail="61258" Gen_Volts="61184" Gen_KW="61045" Gen_Hz="61185" Gen_Amps="61199" Gen_KVAR="61047" ID="DG1" Lubricate="61120" Engine_Remote="61114" Cooldown_Time="61097" Starting="61079" Synchronizing="61080" Stopping="61084" First_To_Start="61076" First_To_Stop="61088" Running="61083" Load_SP_KW="61479" Load_SP_KVAr="61478" I_L1="61142" I_L2="61143" I_L3="61144" KW_L1="61150" KW_L2="61151" KW_L3="61152" KVAR_L1="61153" KVAR_L2="61154" KVAR_L3="61155" Alarm_Group_INT="71" Alarm_Group_UINT="71" Path=".\Frames\Frames_PMS\PMS_DG_Main_Window.prax" Engine_Local="0"/>
+		<Frame Width="240" Height="390" X="480" Y="610" RevertContainerRotation="True" RevertContainerScaling="True" Gen_KWp="62071" Gen_KVARp="62072" Engine_Ready="61112" Manual="62029" Auto="62023" CB_Tripped="62049" Synchonizing="62080" Offloading="62081" CB_Closed="62188" CMD_Auto="62486" CMD_Manual="62489" CMD_Start="62487" CMD_Stop="62490" CMD_Close="62488" CMD_Open="62491" CMD_Reset="62496" Pre_Alarm="62101" Short_Circuit="62267" Shutdown="62249" Reverse_Power="62264" ActuatorFail="61258" Gen_Volts="62184" Gen_KW="62045" Gen_Hz="62185" Gen_Amps="62199" Gen_KVAR="62047" ID="DG2" Lubricate="62120" Engine_Remote="62114" Cooldown_Time="62097" Starting="62079" Synchronizing="62080" Stopping="62084" First_To_Start="62076" First_To_Stop="62088" Running="62083" Load_SP_KW="62479" Load_SP_KVAr="62478" I_L1="62142" I_L2="62143" I_L3="62144" KW_L1="62150" KW_L2="62151" KW_L3="62152" KVAR_L1="62153" KVAR_L2="62154" KVAR_L3="62155" Alarm_Group_INT="73" Alarm_Group_UINT="73" Path=".\Frames\Frames_PMS\PMS_DG_Main_Window.prax" Engine_Local="0"/>
+		<Frame Width="240" Height="390" X="1180" Y="610" RevertContainerRotation="True" RevertContainerScaling="True" Gen_KWp="63071" Gen_KVARp="63072" Engine_Ready="61112" Manual="63029" Auto="63023" CB_Tripped="63049" Synchonizing="63080" Offloading="63081" CB_Closed="63188" CMD_Auto="63486" CMD_Manual="63489" CMD_Start="63487" CMD_Stop="63490" CMD_Close="63488" CMD_Open="63491" CMD_Reset="63496" Pre_Alarm="63101" Short_Circuit="63267" Shutdown="63249" Reverse_Power="63264" ActuatorFail="61258" Gen_Volts="63184" Gen_KW="63045" Gen_Hz="63185" Gen_Amps="63199" Gen_KVAR="63047" ID="DG3" Lubricate="63120" Engine_Remote="63114" Cooldown_Time="63097" Starting="63079" Synchronizing="63080" Stopping="63084" First_To_Start="63076" First_To_Stop="63088" Running="63083" Load_SP_KW="63479" Load_SP_KVAr="63478" I_L1="63142" I_L2="63143" I_L3="63144" KW_L1="63150" KW_L2="63151" KW_L3="63152" KVAR_L1="63153" KVAR_L2="63154" KVAR_L3="63155" Alarm_Group_INT="75" Alarm_Group_UINT="75" Path=".\Frames\Frames_PMS\PMS_DG_Main_Window.prax" Engine_Local="0"/>
+		<Frame Width="240" Height="390" X="1505" Y="610" RevertContainerRotation="True" RevertContainerScaling="True" Gen_KWp="64071" Gen_KVARp="64072" Engine_Ready="61112" Manual="64029" Auto="64023" CB_Tripped="64049" Synchonizing="64080" Offloading="64081" CB_Closed="64188" CMD_Auto="64486" CMD_Manual="64489" CMD_Start="64487" CMD_Stop="64490" CMD_Close="64488" CMD_Open="64491" CMD_Reset="64496" Pre_Alarm="64101" Short_Circuit="64267" Shutdown="64249" Reverse_Power="64264" ActuatorFail="61258" Gen_Volts="64184" Gen_KW="64045" Gen_Hz="64185" Gen_Amps="64199" Gen_KVAR="64047" ID="DG4" Lubricate="64120" Engine_Remote="64114" Cooldown_Time="64097" Starting="64079" Synchronizing="64080" Stopping="64084" First_To_Start="64076" First_To_Stop="64088" Running="64083" Load_SP_KW="64479" Load_SP_KVAr="64478" I_L1="64142" I_L2="64143" I_L3="64144" KW_L1="64150" KW_L2="64151" KW_L3="64152" KVAR_L1="64153" KVAR_L2="64154" KVAR_L3="64155" Alarm_Group_INT="77" Alarm_Group_UINT="77" Path=".\Frames\Frames_PMS\PMS_DG_Main_Window.prax" Engine_Local="0"/>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<Line Width="2" Color="Orange" X0="370" Y0="615" X1="370" Y1="595"/>
+		<Frame Width="75" X="127" Y="345" Status="65632" CTRL_Blocked="False" ID="Trafo1" CTRL_Value="2" CTRL_Channel="65651" BUTTON01_Text="CLOSE CB&apos;S" BUTTON02_Text="OPEN CB&apos;S" BUTTON03_Text="RESET" BUTTON04_Text="CANCEL" Path=".\Frames\Frames_PMS\Consumer_CTRL_Trafo.prax"/>
+		<Frame Width="75" X="237" Y="345" Status="65633" CTRL_Blocked="False" ID="Trafo3" CTRL_Value="3" CTRL_Channel="65651" BUTTON01_Text="Close CB&apos;s" BUTTON02_Text="Open CB&apos;s" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" Path=".\Frames\Frames_PMS\Consumer_CTRL_Trafo.prax"/>
+		<Line Width="2" Color="Orange" X0="165" Y0="345" X1="165" Y1="175"/>
+		<Frame Width="80" Height="80" X="115" Y="220" RevertContainerRotation="True" RevertContainerScaling="True" Status="0" CTRL_Blocked="True" CB_Offload="False" CB_Sync="False" CB_Tripped="0" CB_Closed="65204" CB_Interlock="65214" ID="Breaker" CTRL_Value="0" CTRL_Channel="0" BUTTON01_Text="Close" BUTTON02_Text="Open" BUTTON03_Text="Reset" BUTTON04_Text="Cancel" ID_="Thruster1" Path=".\Frames\Frames_PMS\Consumer_CTRL_CB.prax"/>
+		<TextBox Width="80" Height="25" X="125" Y="305" BorderColor="StatusInactive" CornerRoundRadius="2" TextColor="Orange" Font="Praxis;14.0;N;N;N" Text="EarthFault">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="12308"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="25" X="235" Y="305" BorderColor="StatusInactive" CornerRoundRadius="2" TextColor="Orange" Font="Praxis;14.0;N;N;N" Text="EarthFault">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="11126"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="25" X="1580" Y="305" BorderColor="StatusInactive" CornerRoundRadius="2" TextColor="Orange" Font="Praxis;14.0;N;N;N" Text="EarthFault">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="21120"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="80" Height="25" X="1690" Y="305" BorderColor="StatusInactive" CornerRoundRadius="2" TextColor="Orange" Font="Praxis;14.0;N;N;N" Text="EarthFault">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="21107"/>
+			</Bindings>
+		</TextBox>
+		<Line Width="2" Color="Orange" X0="695" Y0="615" X1="695" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="1395" Y0="615" X1="1395" Y1="595"/>
+		<Line Width="2" Color="Orange" X0="1720" Y0="615" X1="1720" Y1="595"/>
+		<TextBox Visible="False" Width="80" Height="30" X="1580" Y="460" BorderColor="PageInfoLine" CornerRoundRadius="3" Font="Praxis;18.0;N;N;N" Text="Load">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21407">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kVAr"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="66205"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Width="80" Height="30" X="1690" Y="460" BorderColor="PageInfoLine" CornerRoundRadius="3" Font="Praxis;18.0;N;N;N" Text="Load">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="21401">
+					<ConvertParams>
+						<FloatToStringConvertParams Suffix=" kVAr"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="66203"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="130" Height="80" X="375" Y="230" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="130" Height="80" X="370" Y="225" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<TextBox Width="110" Height="25" X="380" Y="225" BorderWidth="0" FillColor="Transparent" Font="Praxis;16.0;N;N;N" Text="LowLoadStop"/>
+		<Rectangle Width="45" Height="40" X="440" Y="255" BorderColor="ButtonOutline" CornerRoundRadius="5"/>
+		<Button Width="45" Height="40" X="440" Y="255" Text="On" FillColor="Transparent" Font="Praxis;18.0;N;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="65668">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="Comment"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="65651" Value="-2"/>
+				<SetChannelValueClickAction ChannelNumber="66651" Value="-2"/>
+			</ClickActions>
+		</Button>
+		<Rectangle Width="45" Height="40" X="385" Y="255" BorderColor="ButtonOutline" CornerRoundRadius="5"/>
+		<Button Width="45" Height="40" X="385" Y="255" Text="Off" FillColor="Transparent" FillColorActionRunning="IndicationLineTransparent" Font="Praxis;18.0;N;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="65668" InvertCondition="True">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="IndicationLineTransparent"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="65651" Value="-1"/>
+				<SetChannelValueClickAction ChannelNumber="66651" Value="-1"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

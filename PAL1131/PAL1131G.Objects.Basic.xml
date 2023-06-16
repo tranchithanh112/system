@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Library Name="PAL1131G.Objects.Basic" Wrapper="PAL1131G.Objects.Basic.Managed.dll" Identifier="0x0000" Version="0">
+  <Object Name="BarGraph" FunctionName="DrawBarGraph" Width="20" Height="100" Identifier="0x01" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="minValue" Name="Minimum Range" Type="float" Default="0" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Name="Maximum Range" Type="float" Default="100" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="50" Description="Value between minimum and maximum" />
+        <Parameter Variable="invalid" Name="Invalid" Type="bool" Default="false" Description="Set when value becomes invalid" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Variable="alignment" Name="Alignment" Type="int" Default="0" Description="Bottom to top (0), top to bottom (1), left to right (2), right to left (3)" />
+        <Parameter Variable="indicatorsNumber" Name="Indicators Number" Type="int" Default="5" Description="Number of indication segments" />
+        <Parameter Variable="indicatorsColor" Name="Indicator Color" Type="color" Default="86" Description="Indicator color" />
+        <Parameter Variable="deadbandColor" Name="Deadband Color" Type="color" Default="215" Description="Deadband color" />
+        <Parameter Variable="deadbandRange" Name="Deadband Bar Range" Type="range" Default="0;5" Description="Deadband bar range" />
+        <Parameter Variable="negativeColor" Name="Negative Bar Color" Type="color" Default="180" Description="Negative bar color" />
+        <Parameter Variable="negativeRange" Name="Negative Bar Range" Type="range" Default="5;50" Description="Negative bar range" />
+        <Parameter Variable="positiveColor" Name="Positive Bar Color" Type="color" Default="102" Description="Positive bar color" />
+        <Parameter Variable="positiveRange" Name="Positive Bar Range" Type="range" Default="50;100" Description="Positive bar range" />
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="Background color" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Image" FunctionName="DrawImage" Width="100" Height="100" Identifier="0x03" IsUpdatable="False">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="image" Name="Image" Type="image" Default="" Description="Image" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Image Part" FunctionName="DrawImagePart" Width="100" Height="100" Identifier="0x04" IsUpdatable="False">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="image" Name="Image" Type="image" Default="" Description="Image" />
+        <Parameter Variable="partX" Name="Part X coordinate" Type="int" Default="0" Description="" />
+        <Parameter Variable="partY" Name="Part Y coordinate" Type="int" Default="0" Description="" />
+        <Parameter Variable="partWidth" Name="Part Width" Type="int" Default="100" Description="" />
+        <Parameter Variable="partHeight" Name="Part Height" Type="int" Default="100" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Text Box" FunctionName="DrawTextBox" Width="100" Height="30" Identifier="0x05" IsUpdatable="False">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="text" Name="Text" Type="text" Default="..." Description="Displayed text" />
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-10" Description="" />
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="horizontalAlignment" Name="Horizontal Alignment" Type="int" Default="0" Description="Left (0), center (1), right (2)" />
+        <Parameter Variable="verticalAlignment" Name="Vertical Alignment" Type="int" Default="0" Description="Top (0), middle (1), bottom (2)" />
+      </Group>
+      <Group Name="Box">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="0" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Process Value" FunctionName="DrawProcessValue" Width="100" Height="30" Identifier="0x06" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="minValue" Bindable="false" Name="Minimum Range" Type="float" Default="0" Description="Minimum range in units" />
+        <Parameter Variable="maxValue" Bindable="false" Name="Maximum Range" Type="float" Default="100" Description="Maximum range in units" />
+        <Parameter Variable="currentValue" Name="Current Value" Type="float" Default="50" Description="Value between minimum and maximum" />
+        <Parameter Variable="babs" Name="Absolute Value" Type="bool" Default="false" Description="Show absolute current value" />
+        <Parameter Variable="invalid" Name="Invalid" Type="bool" Default="false" Description="Set when value becomes invalid" />
+      </Group>
+      <Group Name="Design">
+        <Parameter Variable="decimals" Bindable="false" Name="Decimals" Type="int" Default="1" Description="Number of decimals" />
+        <Parameter Variable="defaultColor" Bindable="false" Name="Default Color" Type="color" Default="215" Description="Default color" />
+        <Parameter Variable="lowColor" Bindable="false" Name="Low Color" Type="color" Default="30" Description="Low color" />
+        <Parameter Variable="lowRange" Bindable="false" Name="Low Range" Type="range" Default="0;30" Description="Low range" />
+        <Parameter Variable="normalColor" Bindable="false" Name="Normal Color" Type="color" Default="17" Description="Normal color" />
+        <Parameter Variable="normalRange" Bindable="false" Name="Normal Range" Type="range" Default="30;60" Description="Normal range" />
+        <Parameter Variable="highColor" Bindable="false" Name="High Color" Type="color" Default="186" Description="High color" />
+        <Parameter Variable="highRange" Bindable="false" Name="High Range" Type="range" Default="60;100" Description="High range" />
+        <Parameter Variable="invalidColor" Bindable="false" Name="Invalid Color" Type="color" Default="148" Description="Invalid Color" />
+        <Parameter Variable="fontIndex" Bindable="false" Name="Font Size" Type="font" Default="Arial-10" Description="Font size" />
+        <Parameter Variable="horizontalAlignment" Bindable="false" Name="Horizontal Alignment" Type="int" Default="0" Description="Left (0), center (1), right (2)" />
+        <Parameter Variable="verticalAlignment" Bindable="false" Name="Vertical Alignment" Type="int" Default="0" Description="Top (0), middle (1), bottom (2)" />
+      </Group>
+      <Group Name="Box">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderWidth" Bindable="false" Name="Border Width" Type="int" Default="0" Description="" />
+        <Parameter Variable="borderColor" Bindable="false" Name="Border Color" Type="color" Default="0" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Counter Value" FunctionName="DrawCounterValue" Width="100" Height="30" Identifier="0x07" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="currentValue" Name="Current Value" Type="int" Default="50" Description="" />
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="Arial-10" Description="" />
+        <Parameter Variable="horizontalAlignment" Name="Horizontal Alignment" Type="int" Default="0" Description="Left (0), center (1), right (2)" />
+        <Parameter Variable="verticalAlignment" Name="Vertical Alignment" Type="int" Default="0" Description="Top (0), middle (1), bottom (2)" />
+        <Parameter Variable="textFormat" Name="Text format" Type="text" Default="%08d" Description="" />
+      </Group>
+      <Group Name="Box">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="0" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Line" FunctionName="DrawLine" Width="10" Height="50" Identifier="0x0E" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="lineColor" Name="Line Color" Type="color" Default="215" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Box" FunctionName="DrawBox" Width="100" Height="100" Identifier="0x0F" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="1" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+<!--  
+<Object Name="Rounded Box" FunctionName="DrawRoundedBox" Width="100" Height="100" Identifier="0x10" IsUpdatable="False">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="boxColor" Name="Box Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="2" Description="" />
+        <Parameter Variable="cornerRadius" Name="Corner radius" Type="int" Default="10" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+
+  <Object Name="Touchable Box" FunctionName="DrawTouchableBox" Width="100" Height="100" Identifier="0x0A" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="Box color" />
+        <Parameter Variable="backgroundColorTouched" Name="Touched Color" Type="color" Default="0" Description="Box color when the box is in touched state" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="1" Description="" />
+        <Parameter Variable="isTouched" Name="Touched" Type="bool" Default="false" Description="" />
+        <Parameter Variable="TouchedX" Name="Touched X" Type="int" Default="0" Description="" />
+        <Parameter Variable="TouchedY" Name="Touched Y" Type="int" Default="0" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Circle" FunctionName="DrawCircle" Width="100" Height="100" Identifier="0x0B" IsUpdatable="True">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="fillColor" Name="Fill Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="2" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+  <Object Name="Bindable Text Box" FunctionName="DrawBindableTextBox" Width="100" Height="30" Identifier="0x0C" IsUpdatable="False">
+    <Parameters>
+      <Group Name="Basic">
+        <Parameter Variable="textIndex" Name="Text Index" Type="color" Default="0" Description="" />
+        <Parameter Variable="fontIndex" Name="Font" Type="font" Default="16x32" Description="" />
+        <Parameter Variable="textColor" Name="Text Color" Type="color" Default="215" Description="" />
+        <Parameter Variable="horizontalAlignment" Name="Horizontal Alignment" Type="int" Default="0" Description="Left (0), center (1), right (2)" />
+        <Parameter Variable="verticalAlignment" Name="Vertical Alignment" Type="int" Default="0" Description="Top (0), middle (1), bottom (2)" />
+      </Group>
+      <Group Name="Text (part I)">
+        <Parameter Variable="text0" Name="Text (index = 0)" Type="text" Default="..." Description="Text (index = 0)" />
+        <Parameter Variable="text1" Name="Text (index = 1)" Type="text" Default="..." Description="Text (index = 1)" />
+        <Parameter Variable="text2" Name="Text (index = 2)" Type="text" Default="..." Description="Text (index = 2)" />
+        <Parameter Variable="text3" Name="Text (index = 3)" Type="text" Default="..." Description="Text (index = 3)" />
+        <Parameter Variable="text4" Name="Text (index = 4)" Type="text" Default="..." Description="Text (index = 4)" />
+        <Parameter Variable="text5" Name="Text (index = 5)" Type="text" Default="..." Description="Text (index = 5)" />
+        <Parameter Variable="text6" Name="Text (index = 6)" Type="text" Default="..." Description="Text (index = 6)" />
+        <Parameter Variable="text7" Name="Text (index = 7)" Type="text" Default="..." Description="Text (index = 7)" />
+        <Parameter Variable="text8" Name="Text (index = 8)" Type="text" Default="..." Description="Text (index = 8)" />
+        <Parameter Variable="text9" Name="Text (index = 9)" Type="text" Default="..." Description="Text (index = 9)" />
+      </Group>
+      <Group Name="Text (part II)">
+        <Parameter Variable="text10" Name="Text (index = 10)" Type="text" Default="..." Description="Text (index = 10)" />
+        <Parameter Variable="text11" Name="Text (index = 11)" Type="text" Default="..." Description="Text (index = 11)" />
+        <Parameter Variable="text12" Name="Text (index = 12)" Type="text" Default="..." Description="Text (index = 12)" />
+        <Parameter Variable="text13" Name="Text (index = 13)" Type="text" Default="..." Description="Text (index = 13)" />
+        <Parameter Variable="text14" Name="Text (index = 14)" Type="text" Default="..." Description="Text (index = 14)" />
+        <Parameter Variable="text15" Name="Text (index = 15)" Type="text" Default="..." Description="Text (index = 15)" />
+        <Parameter Variable="text16" Name="Text (index = 16)" Type="text" Default="..." Description="Text (index = 16)" />
+        <Parameter Variable="text17" Name="Text (index = 17)" Type="text" Default="..." Description="Text (index = 17)" />
+        <Parameter Variable="text18" Name="Text (index = 18)" Type="text" Default="..." Description="Text (index = 18)" />
+        <Parameter Variable="text19" Name="Text (index = 19)" Type="text" Default="..." Description="Text (index = 19)" />
+      </Group>
+      <Group Name="Text (part III)">
+        <Parameter Variable="text20" Name="Text (index = 20)" Type="text" Default="..." Description="Text (index = 20)" />
+        <Parameter Variable="text21" Name="Text (index = 21)" Type="text" Default="..." Description="Text (index = 21)" />
+        <Parameter Variable="text22" Name="Text (index = 22)" Type="text" Default="..." Description="Text (index = 22)" />
+        <Parameter Variable="text23" Name="Text (index = 23)" Type="text" Default="..." Description="Text (index = 23)" />
+        <Parameter Variable="text24" Name="Text (index = 24)" Type="text" Default="..." Description="Text (index = 24)" />
+        <Parameter Variable="text25" Name="Text (index = 25)" Type="text" Default="..." Description="Text (index = 25)" />
+        <Parameter Variable="text26" Name="Text (index = 26)" Type="text" Default="..." Description="Text (index = 26)" />
+        <Parameter Variable="text27" Name="Text (index = 27)" Type="text" Default="..." Description="Text (index = 27)" />
+        <Parameter Variable="text28" Name="Text (index = 28)" Type="text" Default="..." Description="Text (index = 28)" />
+        <Parameter Variable="text29" Name="Text (index = 29)" Type="text" Default="..." Description="Text (index = 29)" />
+      </Group>
+      <Group Name="Box">
+        <Parameter Variable="backgroundColor" Name="Background Color" Type="color" Default="0" Description="" />
+        <Parameter Variable="borderWidth" Name="Border Width" Type="int" Default="0" Description="" />
+        <Parameter Variable="borderColor" Name="Border Color" Type="color" Default="0" Description="" />
+      </Group>
+    </Parameters>
+  </Object>
+-->
+</Library>

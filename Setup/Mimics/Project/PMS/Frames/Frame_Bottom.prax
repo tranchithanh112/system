@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1680" GridSpacing="5" ColorTableFile="..\Color_Table.colortable">
+	<Children>
+		<Rectangle Width="1680" BorderWidth="3" BorderStyle="Raised" BorderColor="PanelFaceBorder" FillColor="PanelFace"/>
+		<AlarmList Width="1075" Height="90" X="175" Y="5" HeaderFillColor="PanelFace" HeaderTextColor="Black" HeaderFont="Segoe UI-16.0-B-N-N" FillColor="PanelFace" TextColor="Black" Font="Segoe UI-16.0-N-N-N" ShowValue="True"/>
+		<Button Width="120" Height="70" X="1260" Y="15" Text="Ack" Font="Segoe UI-18.0-B-N-N">
+			<ClickActions>
+				<AcknowledgeAlarmListAlarmsClickAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="120" Height="70" X="25" Y="15" GridSpacing="5" Text="" Font="Segoe UI-18.0-B-N-N">
+			<Children>
+				<TextBox Width="90" Height="30" X="15" Y="5" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI-18.0-B-N-N" Text="Alarm"/>
+				<TextBox Width="90" Height="30" X="15" Y="30" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI-18.0-B-N-N" Text="Page"/>
+			</Children>
+			<ClickActions>
+				<ShowAlarmPageClickAction/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="145" Height="40" X="1530" Y="10" HorzAlignment="Right" Font="Segoe UI-18.0-N-N-N" Text="Time">
+			<Bindings>
+				<DateTimeBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<DateTimeToStringConvertParams/>
+					</ConvertParams>
+				</DateTimeBinding>
+			</Bindings>
+		</TextBox>
+		<Bitmap Width="32" Height="32" X="1535" Y="15" FilePath="D:\Software\System\Setup\Mimics\Icons\clock-icon.png"/>
+		<TextBox Width="145" Height="40" X="1530" Y="50" HorzAlignment="Right" Font="Segoe UI-18.0-N-N-N" Text="Date">
+			<Bindings>
+				<DateTimeBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<DateTimeToStringConvertParams Format="d.mm.yyyy"/>
+					</ConvertParams>
+				</DateTimeBinding>
+			</Bindings>
+		</TextBox>
+		<Bitmap Width="27" Height="32" X="1535" Y="55" FilePath="D:\Software\System\Setup\Mimics\Icons\calendar-icon.png"/>
+		<Button Width="120" Height="70" X="1395" Y="15" GridSpacing="5" Text="Stop Horn" Font="Segoe UI-18.0-B-N-N">
+			<Children>
+				<Rectangle Width="140" Height="90" X="-10" Y="-10" FillColor="Transparent" FillPattern="DescendingDiagonalStripes"/>
+			</Children>
+		</Button>
+	</Children>
+</RootElement>

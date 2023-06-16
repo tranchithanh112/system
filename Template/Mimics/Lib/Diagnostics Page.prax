@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+		<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1200" DefaultValue="1080">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.01">
+					<Bindings>
+						<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+		</SelectFirstCoordBinding>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1200" ShowBackground="False" Highlight_Button_NR="20" Page_Title="SYSTEM DIAGNOSTICS" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame V2.prax"/>
+		<NavFrame Width="1695" Height="935" Y="105" OriginOffsetX="0" OriginOffsetY="0" ClipToBounds="True">
+			<Bindings>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1920" ActivateValue="1695" TransitionTime="100">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="Height" DefaultValue="1080" ActivateValue="935" TransitionTime="100">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="Y" DefaultValue="50" ActivateValue="105" TransitionTime="100">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\Diagnostics - NavFrame 01.prax"/>
+				<Address Value=".\Diagnostics - NavFrame 02.prax"/>
+			</AddressList>
+		</NavFrame>
+		<Panel Width="1690" Height="25" Y="985" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" FillColor="Transparent">
+			<Bindings>
+				<SelectFirstCoordBinding TargetPropertyName="Y" SelectedValue0="1095" DefaultValue="985">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+							<Bindings>
+								<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstCoordBinding>
+			</Bindings>
+			<Children>
+				<Button Width="115" Height="25" X="1380" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;22.0;N;N;N">
+					<Children>
+						<Polyline Width="2" FillColor="Transparent">
+							<Points>
+								<Point Coord="90;5"/>
+								<Point Coord="100;12.5"/>
+								<Point Coord="90;20"/>
+							</Points>
+						</Polyline>
+						<TextBox Width="75" Height="15" X="10" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Praxis;16.0;N;N;N" Text="NEXT"/>
+					</Children>
+					<ClickActions>
+						<NavigateToNextUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="115" Height="25" X="235" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;22.0;N;N;N">
+					<Children>
+						<Polyline Width="2" FillColor="Transparent">
+							<Points>
+								<Point Coord="20;5"/>
+								<Point Coord="10;12.5"/>
+								<Point Coord="20;20"/>
+							</Points>
+						</Polyline>
+						<TextBox Width="75" Height="15" X="25" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;16.0;N;N;N" Text="PREVIOUS"/>
+					</Children>
+					<ClickActions>
+						<NavigateToPreviousUserAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="545" Height="1060" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="260" Height="1050" X="280" Y="5" BorderWidth="0" BorderStyle="Flat" BorderColor="DarkShadow" FillColor="MenuBackground" CornerRoundRadius="10">
+			<Children>
+				<Rectangle Width="250" Height="60" X="5" Y="985" BorderWidth="0" FillColor="DarkShadow" CornerRoundRadius="5"/>
+				<Frame Width="270" Height="85" X="-5" Y="-5" Highlight_Button_NR="0" Button_NR="21" ButtonText="MAIN ENGINE" HasSubMenu="True" OpenMimicNumber="21" SetPageTitle="MAIN ENGINE" Text_SB1="OVERVIEW" Text_SB2="BARGRAPH" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="ME OVERVIEW" SetPageTitle_SB2="ME BARGRAPH" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="2" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+				<Button Width="240" Height="45" X="10" Y="880" ClipToBounds="True" Text="     ALARMS" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="4" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstColorBinding TargetPropertyName="OutlineColor" SelectedValue0="InfoTextWhite" DefaultValue="Transparent">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="4" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<ClickActions>
+						<SelectPageClickAction/>
+					</ClickActions>
+				</Button>
+				<Frame Width="270" Height="85" X="-5" Y="215" Highlight_Button_NR="0" Button_NR="25" ButtonText="COOLING WATER" HasSubMenu="True" OpenMimicNumber="25" SetPageTitle="COOLING WATER" Text_SB1="HTFW COOLING" Text_SB2="LTFW COOLING" Text_SB3="SW COOLING" Text_SB4="BOILER FW" Text_SB5="ECR FW SERVICE" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="HTFW COOLING" SetPageTitle_SB2="LTFW COOLING" SetPageTitle_SB3="SW COOLING" SetPageTitle_SB4="BOILER FEED WATER" SetPageTitle_SB5="ECR FW SERVICE" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="5" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-5" Y="160" Highlight_Button_NR="0" Button_NR="24" ButtonText="LUB OIL" HasSubMenu="True" OpenMimicNumber="24" SetPageTitle="LUB OIL" Text_SB1="LUB OIL SERVICE" Text_SB2="LUB OIL TRANSFER" Text_SB3="LUB OIL PURIFYING" Text_SB4="LUB OIL STERNTUBE" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="LUB OIL SERVICE" SetPageTitle_SB2="LUB OIL TRANSFER" SetPageTitle_SB3="LUB OIL PURIFYING" SetPageTitle_SB4="LUB OIL STERNTUBE" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="4" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-5" Y="50" Highlight_Button_NR="0" Button_NR="22" ButtonText="GENERATORS" HasSubMenu="False" OpenMimicNumber="22" SetPageTitle="GENERATORS" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="0" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-5" Y="100" Highlight_Button_NR="0" Button_NR="23" ButtonText="FUEL OIL" HasSubMenu="True" OpenMimicNumber="23" SetPageTitle="FUEL OIL" Text_SB1="M/E FO SERVICE" Text_SB2="G/E FO SERVICE" Text_SB3="FO TRANSFER" Text_SB4="FO PURIFYING" Text_SB5="BOILER FO SERVICE" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="M/E FO SERVICE" SetPageTitle_SB2="G/E FO SERVICE" SetPageTitle_SB3="FO TRANSFER" SetPageTitle_SB4="FO PURIFYING" SetPageTitle_SB5="BOILER FO SERVICE" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="5" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+				<Button Width="240" Height="45" X="10" Y="830" ClipToBounds="True" Text="     GROUPS" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="3" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstColorBinding TargetPropertyName="OutlineColor" SelectedValue0="InfoTextWhite" DefaultValue="Transparent">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="3" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<ClickActions>
+						<SelectPageClickAction Page="GroupOverviewPage"/>
+						<SetRetainValueClickAction RetainValueType="String" RetainKey="VAR_PAGETITLE">
+							<RetainValue>
+								<StringRetainValue Value="GROUPS OVERVIEW"/>
+							</RetainValue>
+						</SetRetainValueClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="780" ClipToBounds="True" Text="     MIMICS" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="2" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstColorBinding TargetPropertyName="OutlineColor" SelectedValue0="InfoTextWhite" DefaultValue="Transparent">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="2" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<ClickActions>
+						<SelectPageClickAction Page="MimicOverviewPage"/>
+						<SetVariableValueClickAction>
+							<Variable>
+								<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True" DefaultValue="GENERAL INFO"/>
+							</Variable>
+							<VariableSetter>
+								<StringVariableSetter Value="MIMICS OVERVIEW"/>
+							</VariableSetter>
+						</SetVariableValueClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="730" ClipToBounds="True" Text="     SYSTEM DIAG" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="OutlineColor" SelectedValue0="InfoTextWhite" DefaultValue="Transparent">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="20" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="20" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<ClickActions>
+						<SelectPageClickAction Page="DiagnosticPage"/>
+						<SetVariableValueClickAction>
+							<Variable>
+								<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True" DefaultValue="GENERAL INFO"/>
+							</Variable>
+							<VariableSetter>
+								<StringVariableSetter Value="SYSTEM DIAGNOSTICS"/>
+							</VariableSetter>
+						</SetVariableValueClickAction>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="10" Y="930" ClipToBounds="True" Text="     CHANNELS" FillColor="Transparent" OutlineColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="InfoTextWhite" DefaultValue="InfoTextGrey">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="5" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<SelectFirstColorBinding TargetPropertyName="OutlineColor" SelectedValue0="InfoTextWhite" DefaultValue="Transparent">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="5" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<ClickActions>
+						<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="5" XOffset="-254" YOffset="-110.5" OpenAnimationDuration="0" CloseOnDeselect="True">
+							<Frame>
+								<FloatingFrame Width="260" Height="290" X="26" Y="702" SubMenu="False" Path=".\SettingsMenu.prax" Total_SBs="0" SetPageTitle_SB8="(Value)" SetPageTitle_SB2="(Value)" SetPageTitle_SB1="(Value)" SetPageTitle_SB10="(Value)" OpenMimicNumber="0" SetPageTitle_SB6="(Value)" Text_SB7="SUB BUTTON 07" SetPageTitle_SB5="(Value)" SetPageTitle_SB4="(Value)" Text_SB4="SUB BUTTON 04" Text_SB1="SUB BUTTON 00" SetPageTitle_SB3="(Value)" SetPageTitle_SB9="(Value)" Text_SB2="SUB BUTTON 01" Text_SB8="SUB BUTTON 08" Text_SB6="SUB BUTTON 06" Text_SB10="SUB BUTTON 10" SetPageTitle_SB7="(Value)" Text_SB5="SUB BUTTON 05" Text_SB3="SUB BUTTON 02" Text_SB9="SUB BUTTON 09"/>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Button Width="230" Height="60" X="15" Y="985" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Praxis;18.0;B;N;N">
+					<Children>
+						<Frame Width="40" Height="40" X="185" Y="10" Path="..\Icons\Options_Gear_Icon.prax"/>
+					</Children>
+					<ClickActions>
+						<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="3" XOffset="-269" YOffset="-306" OpenAnimationDuration="0">
+							<Frame>
+								<FloatingFrame Width="260" Height="690" X="6" Y="249" SubMenu="False" Path=".\ToolsMenu.prax" MimicName=""/>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<TextBox Width="235" Height="35" X="10" Y="1000" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="InfoTextGrey" Font="Praxis;22.0;N;N;N" Text="     SETTINGS"/>
+				<Frame Width="270" Height="85" X="-5" Y="270" Highlight_Button_NR="0" Button_NR="26" ButtonText="COMPRESSED AIR" HasSubMenu="False" OpenMimicNumber="26" SetPageTitle="COMPRESSED AIR" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="0" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-5" Y="325" Highlight_Button_NR="0" Button_NR="27" ButtonText="BILGE AND FI-FI" HasSubMenu="True" OpenMimicNumber="27" SetPageTitle="BILGE AND FI-FI" Text_SB1="E/R BILGE" Text_SB2="SHIP&apos;S BILGE" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="E/R BILGE" SetPageTitle_SB2="SHIP&apos;S BILGE" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="2" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-5" Y="380" Highlight_Button_NR="0" Button_NR="28" ButtonText="BALLAST" HasSubMenu="True" OpenMimicNumber="28" SetPageTitle="BALLAST" Text_SB1="SHIP&apos;S BALLAST" Text_SB2="BWTS" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="SHIP&apos;S BALLAST" SetPageTitle_SB2="BWTS" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="2" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-5" Y="435" Highlight_Button_NR="0" Button_NR="29" ButtonText="ELECTRICAL" HasSubMenu="True" OpenMimicNumber="29" SetPageTitle="ELECTRICAL" Text_SB1="ELECTRICAL" Text_SB2="PMS ONE LINE" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="ELECTRICAL" SetPageTitle_SB2="PMS ONE LINE" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="2" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-5" Y="490" Highlight_Button_NR="0" Button_NR="30" ButtonText="SCR" HasSubMenu="False" OpenMimicNumber="30" SetPageTitle="SCR" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Total_SBs="0" Path=".\SideButton.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+					</Bindings>
+				</Frame>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

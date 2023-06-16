@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1055.42" Height="2500" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Frame Width="985" Height="985" X="35" Y="155" DialColor="BackgroundConning" CentralDigitsColor="IndicationLine" DialValue1_CH="0" DialValue_MAX="0" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" MultiplyingFactor="0.01" Decimals_Outside="0" Units="RPM" Description="ME PS" Multiplier_Tag="x100" Path="..\Gauges\Gauge_6_Divisors_RPM.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="ENGINE_RPM_CH"/>
+				<FrameBinding TargetPropertyName="Description" ExportedPropertyName="ENGINE_NAME"/>
+				<FrameBinding TargetPropertyName="DialValue_MAX" ExportedPropertyName="Dial_RPM_Value_MAX"/>
+			</Bindings>
+		</Frame>
+		<TextBox Visible="False" Width="170" Height="30" X="15" Y="865" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="LOAD"/>
+		<TextBox Visible="False" Width="170" Height="55" X="15" Y="810" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;52.0;N;N;N" Text="9999">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="LOAD_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="1005" Height="30" X="25" Y="2370" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="ABOVE WATER EXHAUST VALVE - STATUS N/A">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ABOVE WATER EXHAUST VALVE - OPEN" SelectedValue1="ABOVE WATER EXHAUST VALVE - CLOSED" DefaultValue="ABOVE WATER EXHAUST VALVE - STATUS N/A">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AboveExhaustValveOpen_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AboveExhaustValveClosed_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" DefaultValue="Orange">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AboveExhaustValveOpen_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AboveExhaustValveClosed_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<Panel Width="1025" Height="620" X="15" Y="1719" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="1025" Height="30" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="GEARBOX"/>
+				<Frame Width="420" Height="420" X="45" Y="-30" DialColor="BackgroundGauge" CentralDigitsColor="TextInfoHeader" DialValue1_CH="0" DialValue_MAX="120" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" MultiplyingFactor="0" Decimals_Outside="0" MultiFactorVisible="False" x10="x10" Units="°C" Description="OIL" Path="..\Gauges\Gauge_6_Divisors.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="GearBoxOil_Temp"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="420" Height="420" X="565" Y="-20" DialColor="BackgroundGauge" CentralDigitsColor="TextInfoHeader" DialValue1_CH="0" DialValue_MAX="30" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" MultiplyingFactor="1" Decimals_Outside="0" MultiFactorVisible="False" x10="x10" Units="bar" Description="CONTROL" Path="..\Gauges\Gauge_6_Divisors.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="GearBoxControl_Press"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="420" Height="420" X="45" Y="270" DialColor="BackgroundGauge" CentralDigitsColor="TextInfoHeader" DialValue1_CH="0" DialValue_MAX="10" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" MultiplyingFactor="1" Decimals_Outside="0" MultiFactorVisible="False" x10="x10" Units="bar" Description="LUBE" Path="..\Gauges\Gauge_6_Divisors.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="GearBoxLube_Press"/>
+					</Bindings>
+				</Frame>
+				<TextBox Width="90" Height="25" X="470" Y="390" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;24.0;N;N;N" Text="PRESS"/>
+				<TextBox Width="90" Height="25" X="730" Y="105" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;24.0;N;N;N" Text="PRESS"/>
+				<Frame Width="420" Height="420" X="565" Y="270" DialColor="BackgroundGauge" CentralDigitsColor="TextInfoHeader" DialValue1_CH="0" DialValue_MAX="120" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" MultiplyingFactor="1" Decimals_Outside="0" MultiFactorVisible="False" x10="x10" Units="°C" Description="BEARING" Path="..\Gauges\Gauge_6_Divisors.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="GearBoxThBearingTemp"/>
+					</Bindings>
+				</Frame>
+				<TextBox Width="90" Height="25" X="730" Y="395" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;24.0;N;N;N" Text="THRUST"/>
+			</Children>
+		</Panel>
+		<Panel Width="510" Height="325" X="15" Y="1020" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<Frame Width="420" Height="420" X="45" Y="-30" DialColor="BackgroundGauge" CentralDigitsColor="TextInfoHeader" DialValue1_CH="0" DialValue_MAX="10" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" MultiplyingFactor="1" Decimals_Outside="0" Units="bar" Description="OIL" MultiFactorVisible="False" Path="..\Gauges\Gauge_5_Divisors.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="Oil_Pressure"/>
+					</Bindings>
+				</Frame>
+			</Children>
+		</Panel>
+		<TextBox Width="170" Height="30" X="445" Y="970" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="SHAFT"/>
+		<Panel Width="1025" Height="325" X="15" Y="1370" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="1025" Height="30" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="WATER"/>
+				<Frame Width="420" Height="420" X="45" Y="-30" DialColor="BackgroundGauge" CentralDigitsColor="TextInfoHeader" DialValue1_CH="0" DialValue_MAX="120" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" MultiplyingFactor="0" Decimals_Outside="0" MultiFactorVisible="False" x10="x10" Units="°C" Description="COOLING" Path="..\Gauges\Gauge_6_Divisors.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="WaterCool_Temp"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="420" Height="420" X="565" Y="-30" DialColor="BackgroundGauge" CentralDigitsColor="TextInfoHeader" DialValue1_CH="0" DialValue_MAX="4" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" MultiplyingFactor="1" Decimals_Outside="0" MultiFactorVisible="False" x10="x10" Units="bar" Description="RAW" Path="..\Gauges\Gauge_6_Divisors.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="WaterRaw_Press"/>
+					</Bindings>
+				</Frame>
+			</Children>
+		</Panel>
+		<Panel Width="505" Height="325" X="535" Y="1020" ClipToBounds="True" BorderWidth="2" BorderStyle="Flat" BorderColor="StatusInactive" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<Frame Width="420" Height="420" X="45" Y="-30" DialColor="BackgroundGauge" CentralDigitsColor="TextInfoHeader" DialValue1_CH="0" DialValue_MAX="10" Smoothness="1000" DialBarColor="Barfill01" Filling="True" Pointer="False" MultiplyingFactor="0" Decimals_Outside="0" MultiFactorVisible="False" x10="x10" Units="bar" Description="FUEL" Path="..\Gauges\Gauge_6_Divisors.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DialValue1_CH" ExportedPropertyName="Fuel_Pressure"/>
+					</Bindings>
+				</Frame>
+				<TextBox Width="170" Height="55" X="170" Y="235" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorOrange" Font="Saira;36.0;N;N;N" Text="9999">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="FuelConsumption"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="205" Height="30" X="155" Y="280" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;24.0;N;N;N" Text="ltr/h"/>
+			</Children>
+		</Panel>
+		<Rectangle Width="1055" Height="2" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Rectangle Width="1052.99" Height="1.97523" X="2.01086" Y="2" BorderWidth="0" BorderColor="StatusInactive" FillColor="StatusInactive"/>
+		<Rectangle Width="1055" Height="2" Y="2497" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Rectangle Width="1054" Height="2" X="1" Y="2498" BorderWidth="0" BorderColor="StatusInactive" FillColor="StatusInactive"/>
+		<Rectangle Width="2" Height="2498" X="1053" Y="2" BorderWidth="0" BorderColor="StatusInactive" FillColor="StatusInactive"/>
+		<Rectangle Width="1.82288" Height="2493" X="1051" Y="4" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Rectangle Width="2" Height="2497" X="1" Y="2" BorderWidth="0" BorderColor="StatusInactive" FillColor="StatusInactive"/>
+		<Rectangle Width="2" Height="2497" Y="2" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<TextBox Width="170" Height="55" X="445" Y="915" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;52.0;N;N;N" Text="9999">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="SHAFT_CH"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="1005" Height="30" X="25" Y="2425" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="UNDER WATER EXHAUST VALVE - STATUS N/A">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="UNDER WATER EXHAUST VALVE - OPEN" SelectedValue1="UNDER WATER EXHAUST VALVE - CLOSED" DefaultValue="UNDER WATER EXHAUST VALVE - STATUS N/A">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="UnderExhaustValveOpen_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="UnderExhaustValveClosed_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" DefaultValue="Orange">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="UnderExhaustValveOpen_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="UnderExhaustValveClosed_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="500" Height="30" X="25" Y="55" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;54.0;N;N;N" Text="NOT RUNNING">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="RUNNING" DefaultValue="NOT RUNNING">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineRunning_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineRunning_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="500" Height="30" X="530" Y="55" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;54.0;N;N;N" Text="NO ALARM">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ALARM" DefaultValue="NO ALARM">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineAlarm_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineAlarm_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="485" Height="30" X="285" Y="135" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="REDUCTION NOT EXPECTED">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineReduction_CH"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineReduction_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="REDUCTION EXPECTED" DefaultValue="REDUCTION NOT EXPECTED">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineReduction_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="485" Height="30" X="285" Y="205" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;36.0;N;N;N" Text="SHUTDOWN NOT EXPECTED">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SHUTDOWN EXPECTED" DefaultValue="SHUTDOWN NOT EXPECTED">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineShutdown_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="StatusInactive">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineShutdown_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelValueBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EngineShutdown_CH"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

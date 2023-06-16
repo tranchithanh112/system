@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Children>
+		<TextBox Width="165" Height="40" X="1345" Y="85" BorderWidth="0" FillColor="Transparent" FillPatternColor="TextInfoHeader" CornerRoundRadius="10" VertAlignment="Top" TextColor="TextInfoHeader" Font="Praxis;26.0;B;N;N" Text="Thruster 5"/>
+		<Panel Width="200" Height="290" X="380" Y="255" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Foreground" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="175" Height="30" X="10" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Control System"/>
+				<TextBox Width="180" Height="30" X="10" Y="45" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Fail">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="31206">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<Line Color="TextInfoHeader" X0="10" Y0="40" X1="190" Y1="40"/>
+				<TextBox Width="175" Height="30" X="10" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Hydraulic Unit"/>
+				<TextBox Width="180" Height="30" X="10" Y="75" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Load Control Fail">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="31205">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="150" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Oil Pressure">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11109">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="180" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Oil Level/Press H.Tank">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11108">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="250" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Water Leak Alarm">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11110">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="210" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Seal Leak Head Tank">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11325">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<Line Color="TextInfoHeader" X0="10" Y0="145" X1="190" Y1="145"/>
+			</Children>
+		</Panel>
+		<TextBox Width="165" Height="40" X="50" Y="85" BorderWidth="0" FillColor="Transparent" FillPatternColor="TextInfoHeader" CornerRoundRadius="10" VertAlignment="Top" TextColor="TextInfoHeader" Font="Praxis;26.0;B;N;N" Text="Thruster 3"/>
+		<TextBox Width="165" Height="40" X="720" Y="85" BorderWidth="0" FillColor="Transparent" FillPatternColor="TextInfoHeader" CornerRoundRadius="10" VertAlignment="Top" TextColor="TextInfoHeader" Font="Praxis;26.0;B;N;N" Text="Thruster 4"/>
+		<Panel Width="200" Height="290" X="1010" Y="255" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Foreground" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="180" Height="30" X="10" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Control System"/>
+				<TextBox Width="180" Height="30" X="10" Y="45" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Fail">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="31208">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<Line Color="TextInfoHeader" X0="10" Y0="40" X1="190" Y1="40"/>
+				<TextBox Width="175" Height="30" X="10" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Hydraulic Unit"/>
+				<TextBox Width="180" Height="30" X="10" Y="75" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Load Control Fail">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="31207">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="150" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Oil Pressure">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="21215">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="180" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Oil Level/Press H.Tank">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="21214">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="250" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Water Leak Alarm">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="21216">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="210" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Seal Leak Head Tank">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="21217">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<Line Color="TextInfoHeader" X0="10" Y0="145" X1="190" Y1="145"/>
+			</Children>
+		</Panel>
+		<Panel Width="200" Height="290" X="1640" Y="255" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Foreground" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="175" Height="30" X="10" Y="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Control System"/>
+				<TextBox Width="180" Height="35" X="10" Y="45" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Fail">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="31210">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<Line Color="TextInfoHeader" X0="10" Y0="40" X1="190" Y1="40"/>
+				<TextBox Width="175" Height="30" X="10" Y="115" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Hydraulic Unit"/>
+				<TextBox Width="180" Height="30" X="10" Y="75" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Load Control Fail">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="31210">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="150" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Oil Pressure">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11112">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="180" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Oil Level/Press H.Tank">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11111">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="250" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Water Leak Alarm">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11113">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="180" Height="30" X="10" Y="210" BorderWidth="0" HorzAlignment="Left" TextColor="StatusInactive" Font="Praxis;18.0;N;N;N" Text="Seal Leak Head Tank">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="11324">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="StatusInactive"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<Line Color="TextInfoHeader" X0="10" Y0="145" X1="190" Y1="145"/>
+			</Children>
+		</Panel>
+		<Panel Width="335" Height="375" X="35" Y="255" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Foreground" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="150" Height="30" X="30" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Winding Temp"/>
+				<Frame Width="45" Height="300" X="35" Y="65" Temp="11608" RangeHigh="160" RangeLow="0" Color="Barfill01" ID="U" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<Frame Width="45" Height="300" X="85" Y="65" Temp="11609" RangeHigh="160" RangeLow="0" Color="Barfill01" ID="V" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<Frame Width="45" Height="300" X="135" Y="65" Temp="11610" RangeHigh="160" RangeLow="0" Color="Barfill01" ID="W" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<TextBox Width="125" Height="30" X="200" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Bearing Temp"/>
+				<Frame Width="45" Height="300" X="265" Y="65" Temp="11612" RangeHigh="120" RangeLow="0" Color="Barfill01" ID="NDE" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<Frame Width="45" Height="300" X="215" Y="65" Temp="11611" RangeHigh="120" RangeLow="0" Color="Barfill01" ID="DE" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<TextBox Width="30" Height="30" X="185" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;B;N;N" Text="120"/>
+				<TextBox Width="35" Height="30" X="5" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;B;N;N" Text="160"/>
+			</Children>
+		</Panel>
+		<Panel Width="335" Height="375" X="665" Y="255" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Foreground" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="150" Height="30" X="30" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Winding Temp"/>
+				<Frame Width="45" Height="300" X="35" Y="65" Temp="21608" RangeHigh="160" RangeLow="0" Color="Barfill01" ID="U" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<Frame Width="45" Height="300" X="85" Y="65" Temp="21609" RangeHigh="160" RangeLow="0" Color="Barfill01" ID="V" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<Frame Width="45" Height="300" X="135" Y="65" Temp="21610" RangeHigh="160" RangeLow="0" Color="Barfill01" ID="W" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<TextBox Width="125" Height="30" X="205" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Bearing Temp"/>
+				<Frame Width="45" Height="300" X="270" Y="65" Temp="21612" RangeHigh="120" RangeLow="0" Color="Barfill01" ID="NDE" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<Frame Width="45" Height="300" X="220" Y="65" Temp="21611" RangeHigh="120" RangeLow="0" Color="Barfill01" ID="DE" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<TextBox Width="30" Height="30" X="190" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;B;N;N" Text="120"/>
+				<TextBox Width="35" Height="30" X="5" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;B;N;N" Text="160"/>
+			</Children>
+		</Panel>
+		<Panel Width="335" Height="375" X="1295" Y="255" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Foreground" FillColor="Background" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="150" Height="30" X="35" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Winding Temp"/>
+				<Frame Width="45" Height="300" X="40" Y="65" Temp="11613" RangeHigh="160" RangeLow="0" Color="Barfill01" ID="U" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<Frame Width="45" Height="300" X="90" Y="65" Temp="11614" RangeHigh="160" RangeLow="0" Color="Barfill01" ID="V" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<Frame Width="45" Height="300" X="140" Y="65" Temp="11615" RangeHigh="160" RangeLow="0" Color="Barfill01" ID="W" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<TextBox Width="125" Height="30" X="205" Y="10" BorderWidth="0" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Bearing Temp"/>
+				<Frame Width="45" Height="300" X="270" Y="65" Temp="11617" RangeHigh="120" RangeLow="0" Color="Barfill01" ID="NDE" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<Frame Width="45" Height="300" X="220" Y="65" Temp="11616" RangeHigh="120" RangeLow="0" Color="Barfill01" ID="DE" Path=".\Frames\Frames_Propulsion\Frame_Tempbar_High.prax" Value="0"/>
+				<TextBox Width="30" Height="30" X="190" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;B;N;N" Text="120"/>
+				<TextBox Width="35" Height="30" X="10" Y="75" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;B;N;N" Text="160"/>
+			</Children>
+		</Panel>
+		<Frame Width="595" Height="380" X="35" Y="630" DurationShown="300" DurationStored="3000" Trend_Range_Low="0" Trend_Range_High="160" Trend_LineWith="1" Channel1="11608" Title1="U" Channel2="11609" Title2="V" Channel3="11610" Title3="W" Channel4="11611" Title4="DE" Channel5="11612" Title5="NDE" Path=".\Frames\Frame_Trend\Frame_Trend_3WIND_2BEAR.prax"/>
+		<Frame Width="595" Height="380" X="665" Y="630" DurationShown="300" DurationStored="3000" Trend_Range_Low="0" Trend_Range_High="160" Trend_LineWith="1" Channel1="21608" Title1="U" Channel2="21609" Title2="V" Channel3="21610" Title3="W" Channel4="21611" Title4="DE" Channel5="21612" Title5="NDE" Path=".\Frames\Frame_Trend\Frame_Trend_3WIND_2BEAR.prax"/>
+		<Frame Width="595" Height="380" X="1295" Y="630" DurationShown="300" DurationStored="3000" Trend_Range_Low="0" Trend_Range_High="160" Trend_LineWith="1" Channel1="11613" Title1="U" Channel2="11614" Title2="V" Channel3="11615" Title3="W" Channel4="11616" Title4="DE" Channel5="11617" Title5="NDE" Path=".\Frames\Frame_Trend\Frame_Trend_3WIND_2BEAR.prax"/>
+		<Ellipse BorderColor="WhiteBlack" CenterX="300" CenterY="205" RadiusX="40" RadiusY="40"/>
+		<Frame Width="60" Height="60" X="270" Y="175" RotationChan="0" Path=".\Frames\Icons\Icon_Prop.prax" FLASHING="False" FLASHING_COLOUR="KeyboardInputBackground" VISIBLE="True"/>
+		<Line Width="3" X0="300" Y0="145" X1="300" Y1="165"/>
+		<Ellipse BorderColor="WhiteBlack" CenterX="935" CenterY="205" RadiusX="40" RadiusY="40"/>
+		<Line Width="3" X0="935" Y0="145" X1="935" Y1="165"/>
+		<Line Width="3" X0="1565" Y0="145" X1="1565" Y1="165"/>
+		<Ellipse BorderColor="WhiteBlack" CenterX="1565" CenterY="205" RadiusX="40" RadiusY="40"/>
+		<Frame Width="60" Height="60" X="905" Y="175" RotationChan="0" Path=".\Frames\Icons\Icon_Prop.prax" FLASHING_COLOUR="KeyboardInputBackground" FLASHING="False" VISIBLE="True"/>
+		<Frame Width="60" Height="60" X="1535" Y="175" RotationChan="0" Path=".\Frames\Icons\Icon_Prop.prax" FLASHING="False" FLASHING_COLOUR="KeyboardInputBackground" VISIBLE="True"/>
+		<Ellipse BorderColor="WhiteBlack" CenterX="300" CenterY="115" RadiusX="-30" RadiusY="-30" ArcEnd="-360" ArcLength="-360">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="65220">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background" ColorWhenTrue="NoAlarmGreen"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox Width="60" Height="60" X="270" Y="85" BorderWidth="0" FillColor="Transparent" Font="Praxis;36.0;B;N;N" Text="M">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="65220">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="Black"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Ellipse CenterX="935" CenterY="115" RadiusX="-30" RadiusY="-30" ArcEnd="-360" ArcLength="-360">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="66220">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background" ColorWhenTrue="NoAlarmGreen"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox Width="60" Height="60" X="905" Y="85" BorderWidth="0" FillColor="Transparent" Font="Praxis;36.0;B;N;N" Text="M">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="66220">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="Black"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Ellipse CenterX="1565" CenterY="115" RadiusX="-30" RadiusY="-30" ArcEnd="-360" ArcLength="-360">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="65222">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background" ColorWhenTrue="NoAlarmGreen"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox Width="60" Height="60" X="1535" Y="85" BorderWidth="0" FillColor="Transparent" Font="Praxis;36.0;B;N;N" Text="M">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor" ChannelNumber="65222">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="Black"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+	</Children>
+</RootElement>

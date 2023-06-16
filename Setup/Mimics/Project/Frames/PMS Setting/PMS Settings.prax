@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1680" Height="890" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<NavFrame LockOverlayColor="IndicationLineTransparent" Width="1680" Height="890" NavFrameName="NAVFRAME_PMS_Settings" ClipToBounds="True">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="UserActionsLocked" CompareTolerance="0">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\Mimic PMS MENU 1.prax"/>
+				<Address Value=".\Mimic PMS MENU 2.prax"/>
+				<Address Value=".\Mimic PMS MENU 3.prax"/>
+				<Address Value=".\Mimic PMS MENU 4.prax"/>
+				<Address Value=".\Mimic PMS MENU 5.prax"/>
+			</AddressList>
+		</NavFrame>
+		<Button Width="50" Height="30" X="585" Y="10" Text="" FillColor="Transparent" TextColor="ButtonOutline" Font="Praxis;26.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="IndicatorBlueTrans" DefaultValue="ButtonFill">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="Mimics"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Children>
+				<TextBox Width="50" Height="25" BorderWidth="0" LinePosition="Centered" BorderColor="InactiveGrey" FillColor="Transparent" TextColor="ButtonOutline" LeftRightPadding="10" Font="Praxis;28.0;B;N;N" Text="&lt;"/>
+			</Children>
+			<ClickActions>
+				<NavigateToPreviousUserAction NavFrameName="NAVFRAME_PMS_Settings"/>
+			</ClickActions>
+		</Button>
+		<Button Width="50" Height="30" X="645" Y="10" Text="" FillColor="Transparent" TextColor="ButtonOutline" Font="Praxis;26.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="ButtonFillActionRunning" DefaultValue="ButtonFill">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="Mimics"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<ClickActions>
+				<NavigateToNextUserAction NavFrameName="NAVFRAME_PMS_Settings"/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="50" Height="25" X="645" Y="10" BorderWidth="0" LinePosition="Centered" BorderColor="InactiveGrey" FillColor="Transparent" TextColor="ButtonOutline" LeftRightPadding="10" Font="Praxis;28.0;B;N;N" Text=">"/>
+	</Children>
+</RootElement>

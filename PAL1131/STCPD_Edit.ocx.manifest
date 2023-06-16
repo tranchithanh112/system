@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1"
+  manifestVersion="1.0">
+
+  <assemblyIdentity
+     type="win32"
+     name="STCPD_Edit.ocx"
+     version="0.7.0.0" />
+
+  <file name = "STCPD_Edit.ocx">
+
+    <comClass
+        clsid="{E920F4E8-4FB9-4355-AA0F-21C64F5384D5}"
+        threadingModel = "Apartment" />
+
+    <typelib tlbid="{7006466C-8247-4E6C-BE6E-FC0FEA110483}"
+           version="0.7" helpdir=""/>
+
+  </file>
+
+  <comInterfaceExternalProxyStub
+      name="ISTCPD_Editor"
+      iid="{FFD550BB-85C9-45C6-9925-88D819EF523B}"
+      proxyStubClsid32="{00020424-0000-0000-C000-000000000046}"
+      baseInterface="{00000000-0000-0000-C000-000000000046}"
+      tlbid = "{7006466C-8247-4E6C-BE6E-FC0FEA110483}" />
+
+  <comInterfaceExternalProxyStub
+      name="ISTCPD_EditorEvents"
+      iid="{76629B13-8766-4AEE-9DC8-85BD44CFA458}"
+      proxyStubClsid32="{00020424-0000-0000-C000-000000000046}"
+      baseInterface="{00000000-0000-0000-C000-000000000046}"
+      tlbid = "{7006466C-8247-4E6C-BE6E-FC0FEA110483}" />
+  
+</assembly>

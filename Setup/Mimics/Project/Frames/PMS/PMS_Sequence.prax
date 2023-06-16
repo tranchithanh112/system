@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="180" Height="95" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="175" Height="90" X="5" Y="5" BorderColor="BackgroundShadow" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="175" Height="90" BorderColor="StatusInactive" CornerRoundRadius="5"/>
+		<Rectangle Width="40" Height="40" X="60" Y="40" BorderWidth="0" CornerRoundRadius="5"/>
+		<Button Width="40" Height="40" X="60" Y="40" Text="X" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61089">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" XOffset="1" YOffset="-169.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="150" Height="225" X="6" Y="-222" ID="Gen 1" SET_1ST="61492" SET_2ND="61493" Path=".\PopUp_Sequnce.prax" SEQ_Channel="61527" Sequence_CMD="61527"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="40" Height="20" X="60" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="1"/>
+		<TextBox Width="40" Height="20" X="120" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="2"/>
+		<TextBox Width="40" Height="20" X="10" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="GEN"/>
+		<TextBox Width="40" Height="40" X="10" Y="40" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="SEQ"/>
+		<Rectangle Width="40" Height="40" X="120" Y="40" BorderWidth="0" CornerRoundRadius="5"/>
+		<Line Color="TextInfo" X0="10" Y0="30" X1="165" Y1="30"/>
+		<Button Width="40" Height="40" X="120" Y="40" Text="X" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62089">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" YOffset="-174.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="150" Height="225" X="65" Y="-227" ID="Gen 2" SET_1ST="62492" SET_2ND="62493" Path=".\PopUp_Sequnce.prax" SEQ_Channel="61527" Sequence_CMD="62527"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

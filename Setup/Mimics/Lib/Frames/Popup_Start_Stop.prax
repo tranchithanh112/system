@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="75" Height="125" GridSpacing="5">
+	<Children>
+		<Panel Width="75" Height="125" GridSpacing="5" BorderWidth="2">
+			<Children>
+				<Button Width="65" Height="30" X="5" Y="25" Text="Start" Font="Segoe UI-14.0-N-N-N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Start_Ch"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="30" X="5" Y="55" Text="Stop" Font="Segoe UI-14.0-N-N-N">
+					<ClickActions>
+						<SetChannelValueClickAction ChannelNumber="0" Value="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Stop_Ch"/>
+							</Bindings>
+						</SetChannelValueClickAction>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="65" Height="30" X="5" Y="90" Text="Cancel" Font="Segoe UI-14.0-N-N-N">
+					<ClickActions>
+						<CloseFrameUserAction/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="75" Height="20" BorderWidth="0" FillColor="Transparent" Font="Segoe UI-14.0-N-N-N">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Frame_Text"/>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

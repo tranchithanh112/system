@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="110" Height="110" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Ellipse BorderWidth="0" BorderColor="TextInfo" LinePosition="Centered" CenterX="55" CenterY="52.705" RadiusX="30" RadiusY="30" ArcBegin="90" ArcEnd="450">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue7="TextActive" DefaultValue="Transparent">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Running_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Failure_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Failure_CH_"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Ellipse>
+		<Ellipse BorderWidth="1.5" BorderColor="TextInfoHeader" LinePosition="Centered" FillColor="Transparent" CenterX="55" CenterY="52.705" RadiusX="30" RadiusY="30" ArcBegin="-35" ArcEnd="270" ArcLength="305"/>
+		<Polyline Width="1.5" LineColor="TextInfoHeader" FillColor="Background">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue7="TextActive" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Running_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Failure_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Failure_CH_"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="81;40"/>
+				<Point Coord="109;35"/>
+				<Point Coord="109;35"/>
+				<Point Coord="109;35"/>
+				<Point Coord="109;35"/>
+				<Point Coord="109;23"/>
+				<Point Coord="105;23"/>
+				<Point Coord="105;23"/>
+				<Point Coord="105;23"/>
+				<Point Coord="54.8;22.705"/>
+			</Points>
+		</Polyline>
+		<Frame Width="70" Height="70" X="20" Y="17.705" Path="..\Pumps\PUMP_BLADE.prax"/>
+	</Children>
+</RootElement>

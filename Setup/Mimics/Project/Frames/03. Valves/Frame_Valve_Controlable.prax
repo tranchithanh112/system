@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="60" Height="60" GridSpacing="10" ColorTableFile="..\..\Standard.colortable" PraxGraphVersion="1.0">
+	<Children>
+		<Polyline FlashColor="ButtonOutline" Width="2" LineColor="White" ClosedOutline="True" FillColor="Green">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Green" SelectedValue2="Gray" DefaultValue="OldAlarm">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Failure_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Close_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="40;0"/>
+				<Point Coord="7.62939e-06;-5.72205e-06"/>
+				<Point Coord="20;30"/>
+				<Point Coord="40;60"/>
+				<Point Coord="-3.8147e-06;60"/>
+			</Points>
+		</Polyline>
+		<Line Width="2" Color="White" X0="20" Y0="30" X1="50" Y1="30"/>
+		<Line Width="2" Color="White" X0="50" Y0="15" X1="50" Y1="45"/>
+		<Rectangle Width="80" Height="80" X="-10" Y="-10" BorderWidth="2" BorderColor="Green" FillColor="Transparent" CornerRoundRadius="5"/>
+	</Children>
+</RootElement>

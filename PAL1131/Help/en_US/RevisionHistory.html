@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>CPDev 1.0 Revision history</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+<style type="text/css">
+	body		{ font: small verdana, arial, sans-serif; color: black; background-color: white }
+	a:link		{ color: #264b99; background-color: white }
+	a:visited	{ color: #5e85d7; background-color: white }
+	a:active	{ color: #7799dd; background-color: white }
+	tt		{ font: small "courier new", monospace }
+	li		{ margin-top: 0.15em; margin-bottom: 0.15em }
+	div.bluehead	{ text-align: center; color: white; background-color: #264b99; padding: 5px; font-weight: bold }
+	.head1		{ font-size: xx-large }
+	.head2		{ font-size: large }
+	.ver		{ font-size: large; font-weight: bold }
+	.date		{ font-size: x-small; font-weight: bold }
+</style>
+</head>
+<body>
+<div class="bluehead"><span class="head1">CPDev - 1.0</span><br /><span class="head2">Revision history</span></div>
+<p>Copyright &copy; 2007-2010 Department of Computer and Control Engineering - Rzeszow University of Technology.
+</p>
+<p><span class="ver">1.0.2.30</span>&nbsp;<span class="date">(2010-11-18A)</span></p>
+<ul><li>Improved filter error in case opening global variable editor with empty variable list.</li>
+<li>Added new functions for managing date and time: <tt>SET_YEAR</tt>, <tt>SET_MONTH</tt>, <tt>SET_DAY</tt>, <tt>SET_HOUR</tt>, <tt>SET_MINUTE</tt>, <tt>SET_SECOND</tt>, <tt>SET_HUNDSEC</tt>, <tt>DATE_TIME_TO_DATE</tt>.</li>
+<li>Improved type <tt>DATE</tt> handling in CPSim.</li>
+</ul>
+<p><span class="ver">1.0.2.29</span>&nbsp;<span class="date">(2010-11-16B)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.24</tt> version:<ul>
+<li>Added <tt>(*$HIDDEN*)</tt> directive for hidding global variables in compilation report. It can be applied like <tt>RETAIN</tt> or <tt>CONSTANT</tt> modifiers.</li></ul></li>
+<li>Added columns for global variable editor: Initial value and comment.</li>
+<li>Added buttons for moving (ordering) variables in global variable editor.</li>
+<li>Added fast seeking to variable in global variable editor by name.</li>
+<li>Added checking for empty directory before saving project. It can be disabled by setting <tt>CheckForEmptyDirWhenSaving</tt> configuration option to <tt>False</tt> value.</li>
+</ul>
+<p><span class="ver">1.0.2.28</span>&nbsp;<span class="date">(2010-11-04B)</span></p>
+<ul><li>Firmware SMC has been updated to <tt>1.38</tt> version and CPCon to <tt>1.1.38</tt> version.</ul>
+<p><span class="ver">1.0.2.27</span>&nbsp;<span class="date">(2010-10-06A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.23</tt> version:<ul>
+<li>Added new flag for compiler which enables different interpretation of global variables like in IEC 61131-3 standard. It influcences on <tt>VAR CONSTANT</tt> delared locally (now with this flag it should be declared following: <tt>VAR_GLOBAL CONSTANT</tt>, otherwise constants will not be visilbe everywhere as global).</li>
+<li>Fixed situations when global constant value was hidded by <tt>(*$AUTO*)</tt> directive.</li>
+<li>Added <tt>END_FOR</tt> checking before end of POU code.</li></ul>
+<li>Added option in configuration window to enable <tt>VAR_GLOBAL</tt> processing in accordance to IEC 61131-3 standard.</li>
+<li>Added sorting in context menu for global variables tree (alphabetically ascending/descending), and restoring declaration (natural) order.</li>
+<li>Fixed <tt>ABS</tt> and <tt>NE</tt> functions with <tt>FINT</tt> type.
+</ul>
+<p><span class="ver">1.0.2.26</span>&nbsp;<span class="date">(2010-09-08A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.22</tt> version:<ul>
+<li>Fixed bug with removing function block body when <tt>CONST_INIT_INSTANCE</tt> directive was present.</li>
+<li>Problem with misplaced nested types when source code is invalid has been localized. Temporary solution adds prefix "!Check code {typ}" for short name.</ul></li>
+<li>New function block for SM3 control published as <tt>COM_SM3</tt>. Previous <tt>COM_SM3</tt> have changed name to <tt>COM_SM3_SIMPLE</tt>.</li>
+<li>New context menu cut / copy / paste in STColorable editor.</li>
+<li>Changed comments in IEC_61131 library and Basic_blocks library to English.</li>
+</ul>
+<p><span class="ver">1.0.2.25</span>&nbsp;<span class="date">(2010-07-21B)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.20</tt> version:<ul>
+<li>Modified tasks structure for multitasking virtual machines,</li>
+<li>Added index value checking in arrays when indexer declared as constant,</li>
+<li>Changed missing semicolor warning to error.</li></ul></li>
+<li>Added separate context menu for global variables.</li>
+<li>Added new keyoboard shortcut <tt>Ctrl</tt> + <tt>Del</tt> for removing all messages in bottom list.</li>
+<li>Added two options for name searching - selecting variable in object tree and using context menu, or via menu 'Project | Tools | Localize identifier' and giving the identificator name. Localized references are presented in bottom message list. Double click on them opens editor and moves the cursor to the begin of the identifier. Choosing global variable and using context menu skips itself declaration in references list.</li>
+<li>Updated compiler to <tt>0.4.11.21</tt> version:<ul>
+<li>New directive <tt>NO_ALIGN_VAR</tt> for disabling alingment of local variables in funtion block. Before it was implicated by existment of all following directives: <tt>CONST_INIT_INSTANCE</tt>, <tt>PLACE_INSTANCES_IN_DCP</tt>, <tt>EMPTY_BODY_CALL</tt>.</li></ul>
+</ul>
+<p><span class="ver">1.0.2.24</span>&nbsp;<span class="date">(2010-06-23A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.19</tt> version:<ul>
+<li>Improved compiler hang when compiling expressions that contains boolean operators with invalid operands.</li>
+</ul></ul>
+<p><span class="ver">1.0.2.23</span>&nbsp;<span class="date">(2010-06-16A)</span></p>
+<ul><li>Fixed not displayed comments for single variables in project report window.</li></ul>
+<p><span class="ver">1.0.2.22</span>&nbsp;<span class="date">(2010-06-14A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.18</tt> version:<ul>
+<li>Added array indexer optimalization, if it is variable and when array index begins from zero.</li>
+</ul>
+<li>Added new options for column displaying in project report: full name and variable comment.</li>
+<li>Switching options for column displaying in project report has influence on it appearment in it printing or exporting.</li>
+</ul>
+<p><span class="ver">1.0.2.21</span>&nbsp;<span class="date">(2010-05-31C)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.17</tt> version:<ul>
+<li>Added <tt>FORCE_DEFAULT</tt> directiwe after <tt>else</tt> keyword for correct identification default case in <tt>CASE</tt> instruction,</li>
+<li>Removed warning notification when global arrays were passed as funtion block input parameters,</li>
+<li>Removed unhandled exception when compiling unterminated string.</li></ul></li>
+<li>Fixed exception when importing unknown item into project tree.</li>
+<li>Fixed missing handler for <tt>Font</tt> button on editor options window.</li>
+<li>Fixed English verision of CPSim.</li>
+</ul>
+<p><span class="ver">1.0.2.20</span>&nbsp;<span class="date">(2010-05-31C)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.16</tt> version:<ul>
+<li>Fixed function that checks if string could be as an identifier,</li>
+<li>Fixed linker bug that doesn't allow to use user function in other user function.</li>
+</ul>
+<li>Fixed bug that allows to make new global variable starting with '<tt>?</tt>' character.</li>
+<li>Added tabular layout for import/eksport library window.</li>
+<li>Added possibility to define tab width (with spaces) in ST Colorable editor.</li>
+<li>Added button that allows to configure advanced options in ST editor.</li>
+<li>Added options in configuration to easily replace default compiler for environment.</li>
+</ul>
+<p><span class="ver">1.0.2.19</span>&nbsp;<span class="date">(2010-05-17A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.15</tt> version:<ul>
+<li>Fixed bug with skipped offsets when exporting in-line function to library,</li>
+<li>Added virtualization for a few methods allowing to replace their behaviour with compilers and generators of other producers.</li></ul>
+<li>Removed polish diacritic characters from identificator names in source code.</li>
+</ul>
+<p><span class="ver">1.0.2.18</span>&nbsp;<span class="date">(2010-05-11B)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.13</tt> version:
+<ul><li>Fixed invalid processing of nested arrays and structures,</li>
+<li>Added <tt>COMMENT</tt> directive for commenting array types,</li>
+<li>Removed disadvantage with array initialization gerater than 255 bytes,</li>
+<li>Added <tt>ANSI</tt> directive before string literal for replacing characters into ANSI codes separated by commas (useful in array of integer initialization),</li>
+<li>Removed bug for invalid hex codes in string literals,</li>
+<li>Added <tt>STRDISP</tt> directive for array declarationn, that will allow displaying array of byte as string.</li></ul>
+<li>Fixed bug with wrong disabled OK button in global variable window.</li>
+<li>Fixed bug when pasting non-XML string from clipboard into tree window.</li>
+<li>Updated compiler to <tt>0.4.11.14</tt> version:
+<ul><li>New type <tt>FINT</tt> only for Praxis distribution.</li></ul>
+<li>New parameter in CPDev configuration <tt>Debug_DisplayStartedProcess</tt>, that displays in bottom message list newly created child process.</li>
+<li>Text from bottom message list now can be copied into clipboard with context menu.</li>
+<li>Removed bug that does not allow to remove POU object from context menu belongs to the top of POU tree.</li>
+<li>Added 'Cancel' buttom in firmware update window.</li>
+</ul>
+<p><span class="ver">1.0.2.17</span>&nbsp;<span class="date">(2010-04-28B)</span></p>
+<ul><li>Fixed bug with not defined editor for new objects.</li>
+<li>Changed title page for SMC English help.</li>
+</ul>
+<p><span class="ver">1.0.2.16</span>&nbsp;<span class="date">(2010-04-26A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.12</tt> version:
+<ul><li>Fixed exception when empty <tt>VAR</tt> ... <tt>END_VAR</tt> in function blocks has occured at begining of file.</li></ul></li>
+<li>Added comments for objects in POU tree when loading from library.</li>
+<li>Fixed minor bugs in case non-standard behaviour in single colourable editor.</li>
+<li>Changed visualization of global window for SMC communication configuration.</li>
+<li>Bootloader introduced for SMC.</li>
+</ul>
+<p><span class="ver">1.0.2.15</span>&nbsp;<span class="date">(2010-03-29A)</span></p>
+<ul><li>Updated manual instruction in Polish.</li>
+<li>Updated CPSim.</li>
+<li>Updated CPCon.</li></ul>
+<p><span class="ver">1.0.2.14</span>&nbsp;<span class="date">(2010-03-11A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.11</tt> version:
+<ul><li>Corected bug with "Identifier expected" in types declaration.</li></ul></li></ul>
+<p><span class="ver">1.0.2.13</span>&nbsp;<span class="date">(2010-02-01A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.8</tt> version:
+<ul><li>New instruction <tt>TASKSETUP</tt> for FPGA configuration,</li>
+<li>Initializing global variables makes <tt>TASKSETUP</tt> call for FPGA.</li>
+</ul>
+<li>Updated ActiveX control for ST syntax highlighting (version 0.5, expanded interface).</li>
+<li>Version number is now automatically displayed in About window.</li>
+<li>Compilation report contains information about data/memory space in use.</li>
+<li>Updated compiler to <tt>0.4.11.9</tt> version:
+<ul><li>Added storing of main LCF file describing VM.</li>
+<li>Changed emiting LCF file in dcp from optional to "always enabled".</li>
+<li>Improved error reporting in case calling <i>in-line</i> function without storing result.</li></ul></li>
+<li>New type for argument/value ('<tt>l</tt>' - means <tt>long</tt> (Int64)) in settings.</li>
+<li>Updated compiler to <tt>0.4.11.10</tt> version:
+<ul><li>Corrected bug with variable initializing for variables on 2<sup>nd</sup> level for FPGA distribution.</li>
+<li>Corrected bug with multiple type declaration in <tt>TYPE ... END_TYPE</tt> section.</li>
+<li>Added dependency for libraries in case exporting libraries.</li>
+<li>Added dependency checking for libraries, all missed dependent libraries are reported as warnings.</li></ul></li>
+</ul>
+<p><span class="ver">1.0.2.12</span>&nbsp;<span class="date">(2009-12-21A)</span></p>
+<ul>
+<li>Removed needless warning occured in case opening project without global variables.</li>
+<li>Added automatic removing compiler information from message list when closing project.</li>
+<li>Added option for automatic scrolling in message list when new message is reported.</li>
+<li>Removed outputs <tt>C</tt> in function blocks which handles flash memory.</li>
+</ul>
+<p><span class="ver">1.0.2.11</span>&nbsp;<span class="date">(2009-12-14B)</span></p>
+<ul>
+<li>Added splash screen for CPDev.</li>
+<li>Added handling of unhandled exceptions for CPSim.</li>
+<li>Improved global variables with array types handling in CPDev IDE.</li>
+<li>Added placement test in compilation report available for SMC and Intouch.</li>
+<li>Small bugfix with selection of first free address in global variable list editor.</li>
+</ul>
+<p><span class="ver">1.0.2.10</span>&nbsp;<span class="date">(2009-11-24A)</span></p>
+<ul>
+<li>Added function blocks <tt>ACOM</tt> and <tt>COM_TIMEOUT</tt> for SMC.</li>
+<li>Added <i>in-line</i> function <tt>REAL_TO_DINT</tt> as macro for existing <tt>TRUNC</tt> function.</li>
+<li>Changed organization of dependent files in CPSim and <tt>CPTarget</tt> class.</li>
+</ul>
+<p><span class="ver">1.0.2.9</span>&nbsp;<span class="date">(2009-11-18A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.7</tt> version:
+<ul><li>New directive <tt>PLACE_UID_VAR</tt> for hardware function blocks in FPGA configuration,</li>
+<li>Field size in <tt>PLACE_UID_VAR</tt> directive depends from attribute <tt>align</tt> in <tt>HARDWARE_BODY_CALL</tt> directive; following values means: <i>1</i> -> <tt>BYTE</tt>; <i>otherwise</i> -> <tt>WORD</tt>,</li>
+<li>Fixed detecting of communication blocks in allocation of local variables, also fixed mistake in local variable allocation for function blocks with <tt>CONST_INIT_INSTANCE</tt> directive,</li>
+<li>Fixed error in object map when using function blocks which uses other function blocks.</li>
+</ul>
+<li>Added new compiler option in IDE that enables local variables view in CPSim.</li>
+<li>Fixed empty type list in new global variable window when using new project for first time.</li>
+<li>Fixed visible types in list when creating new function.</li>
+<li>New parameter in Shared Configuration <tt>CPDev.Run.ConfigurerArguments</tt> allows to change default parameters of configurer (<tt>{0}</tt> is replaced with current language code; <tt>{1}</tt> is replaced with *.dcp file name).</li>
+</ul>
+<p><span class="ver">1.0.2.8</span>&nbsp;<span class="date">(2009-11-05B)</span></p>
+<ul><li>Fixed Virtual Machine bug with <tt>SEL</tt> function.</li>
+<li>Improved <i>commisioning</i> mode in CPSim with more than 250 variables.</li>
+</ul>
+<p><span class="ver">1.0.2.7</span>&nbsp;<span class="date">(2009-10-26A)</span></p>
+<ul><li>Updated compiler to <tt>0.4.11.6</tt> version:
+<ul><li>Fixed error for generating code in access to arrays with base size equal to 1, 2, 4 or 8 for FPGA platform,</li>
+<li>Improved access to global constants,</li>
+<li>Added entries in *.dcp file for variables with type: array or structure,</li>
+<li>Added modifier '<tt>%D</tt>' for placing structures and arrays in global memory,</li>
+<li>Changed aligning for begin of global variables with structural type to 4,</li>
+<li>Set aliging for begin of global variable with array typ to 4,</li>
+<li>Added posibility to ommit global arrays in <tt>VAR_EXTERNAL</tt> declarations.</li>
+</ul>
+<li>Added feature to download more than 250 variables with <tt>CPInspect</tt>.</li>
+</ul>
+<p><span class="ver">1.0.2.6</span>&nbsp;<span class="date">(2009-10-14C)</span></p>
+<ul><li>Improved commit speed with large amount of global variables in global list editor.</li>
+<li>Added new function blocks and functions working with FLASH memory.</li>
+<li>Updated compiler to <tt>0.4.11.5</tt> version:<ul>
+<li>Added capability to insert standard function into LCF file,</li>
+<li>Corrected troubles with non-standard function blocks in Fenixile object map.</li>
+</ul>
+</ul>
+<p><span class="ver">1.0.2.5</span>&nbsp;<span class="date">(2009-10-05A)</span></p>
+<ul><li>Improved loading project speed with large amount of global variables.</li>
+<li>Updated English documentation.</li>
+<li>Added quantity limits for number of displayed global variables in 'remove' context menu.</li>
+</ul>
+<p><span class="ver">1.0.2.4</span>&nbsp;<span class="date">(2009-09-24A)</span></p>
+<ul>
+<li>New command line argument <tt>--execute-script</tt> for moving command line arguments into file.</li>
+<li>New conversion form: <ul>
+<li><tt>p</tt> - <tt>--set-conf</tt> unfolds argument from application variable, (<tt>--get-conf</tt> folds path to application variable),</li>
+<li><tt>F</tt> - like '<tt>f</tt>' (float) but decimal separator is always dot '<tt>.</tt>',</li>
+<li><tt>D</tt> - like '<tt>d</tt>' (double) but decimal separator is always dot '<tt>.</tt>'.</li>
+</ul></li>
+<li>Changing focus of editing window also changes the active project.</li>
+</ul>
+<p><span class="ver">1.0.2.3</span>&nbsp;<span class="date">(2009-09-17A)</span></p>
+<ul>
+<li>Fixed troubles with compilation error in IDE that always appear.</li>
+<li>Updated CPCon to <tt>1.1.0.14</tt> version.
+<li>Current firmware for SMC <tt>2.6.0-2</tt>.</li>
+</ul>
+<p><span class="ver">1.0.2.2</span>&nbsp;<span class="date">(2009-09-10A)</span></p>
+<ul>
+<li>Updated compiler to <tt>0.4.11.3</tt> version:
+<ul><li>Number of input parameters is checked when using multi argument functions.</li></ul>
+<li>Unhandled compiler exceptions are now handled and displayed in message list.</li>
+<li>Updated CPCon to <tt>1.1.0.12</tt> version.
+<li>Added new global user setting <tt>CPDev.ST.EnableBackgroundCompilation</tt> that enables or disables compilation of project in background for code editors.</li>
+</ul>
+<p>
+<span class="ver">1.0.2.1</span>&nbsp;<span class="date">(2009-08-07A)</span></p>
+<ul><li>Fixed to small field for label in property function block window.</li>
+<li>Updated compiler to <tt>0.4.11.1</tt> version:
+<ul><li>Changed tokenizer to mark keywords being operators after '<tt>(</tt>' as keywords.</li></ul>
+<li>Updated library for help system to use page number from destination element if page number was ommited index element.
+<li>Added english files to help system.</li>
+<li>Updated compiler to <tt>0.4.11.2</tt> version:
+<ul><li>Changed tokenizer to mark keywords being operators after keywords as keywords,</li>
+<li>Added modification of generated instructions for FPGA platform,</li>
+<li>Changed order of initialization variables for input parameters being constant arguments.</li></ul>
+<li>Fixed english texts in windows.</li>
+<li>Changed order of displayed available languages.</li>
+</ul>
+<p>
+<span class="ver">1.0.2.0</span>&nbsp;<span class="date">(2009-08-03A)</span></p>
+<ul>
+<li>Updated compiler to <tt>0.4.11.0</tt> version:
+<ul><li>New features of communication function blocks <tt>COM_SM</tt><i>x</i> - they can be called many times with the same device number and <tt>timeOut</tt>,</li>
+<li>Added functionality to define hardware function blocks in C source code,</li>
+<li>Fixed problems with array and struct import from library,</li>
+<li>Added feature to enumerate function block instances used in project.</li>
+</ul></li>
+<li>New menu item in 'Project|Tools' displays command line for STComp05 external compiler with current compiler settings, for simply use with batches (<tt>*.bat</tt> files) or other tools i.e. CstEd.</li>
+<li>Added new functions with conversion and comparision of <tt>REAL</tt>/<tt>LREAL</tt> types.</li>
+</ul>
+<p><span class="ver">1.0.1.14</span>&nbsp;<span class="date">(2009-07-23A)</span></p>
+<ul>
+<li>Fixed application crash while closing STColorized editing window with displayed Find/Replace dialog.</li>
+<li>Removed experimental directives <tt>ALIGNED</tt> from structs and arrays.</li>
+<li>Updated compiler to <tt>0.4.10.32</tt> version:
+<ul><li>Fixed bug with initialization of <tt>REAL</tt> types arrays,</li>
+<li>Fixed generating bad <tt>*.dcp</tt> file in case polish language compiler used,</li>
+<li>Added saving base type of arrays into <tt>*.dcp</tt> file,</li>
+<li>Added width constratins for column width of VMASM code in <tt>*.dcp</tt> file,</li>
+<li>Added more rules for constant implication in initializing expressions of variables,</li>
+<li>Chaned initializaton system of arrays and structs.</li>
+<li>Added chain for reading LCF file with entities <tt>INCLUDE</tt>, <tt>PRE</tt> and <tt>POST</tt>. File names are relative to folder with current reading LCF.</li>
+</ul>
+<li>Removed SMC library, its function blocks <tt>APON</tt> and <tt>ASTR</tt> moved to LCF file <tt>VM-SMC.xml</tt>.
+<li>Updated compiler to <tt>0.4.10.34</tt> version:
+<ul><li>Fixed bug with initialization of <tt>VAR_OUTPUT</tt> variables without non default initial value,</li>
+<li>Added export of structs into libraries, but import not yet ready.</li>
+</ul>
+</ul><p><span class="ver">1.0.1.13</span>&nbsp;<span class="date">(2009-06-29A)</span></p>
+<ul>
+<li>Upgraded startup configuration system.</li>
+<li>Added new elements while saving project: LCF file with application variables and environment variables. The variables are used when restoring file from disk.</li>
+<li>Added new elements while saving project: Library references with application variables and environment variables. The variables are used when restoring file from disk.</li>
+<li>Compiler updated to version <tt>0.4.10.28</tt>:
+<ul><li>Added handling declaration of named struct types, and able to use it with local variables,</li>
+<li>Added experimental directive <tt>ALIGNED</tt> for aligning local variables in struct.</li></ul>
+<li>Fixed STCPD_Edit.ocx control to correctly insert code template with keyboard.</li>
+<li>Fixed bug with <tt>--help</tt> command.</li>
+</ul>
+</body>
+</html>

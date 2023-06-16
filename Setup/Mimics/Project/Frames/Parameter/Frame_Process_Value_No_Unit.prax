@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement FlashArea="TextOnly" Width="55" Height="25" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="55" Height="25" BorderColor="StatusInactive" FillColor="BackgroundConning"/>
+		<TextBox FlashArea="TextOnly" Width="55" Height="25" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" LeftRightPadding="5" Font="Praxis;16.0;N;N;N" Text="000.0">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="OldAlarm" SelectedValue2="Orange" DefaultValue="TextInfoHeader">
+					<Bindings>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelAlarmNotAckBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Num"/>
+							</Bindings>
+						</ChannelAlarmNotAckBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

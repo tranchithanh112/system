@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="140" Height="215" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="140" Height="215" BorderColor="White" FillColor="GaugeBackground" CornerRoundRadius="10"/>
+		<TextBox Width="130" Height="25" X="5" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Segoe UI;16.0;N;N;N" Text="Sequence">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="ID"/>
+			</Bindings>
+		</TextBox>
+		<Button Width="130" Height="35" X="5" Y="35" RoundRadius="10" Text="1" FillColor="Background" OutlineColor="White" TextColor="White" Font="Segoe UI;16.0;N;N;N">
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Sequence_CMD"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="5" Y="75" RoundRadius="10" Text="2" FillColor="Background" OutlineColor="White" TextColor="White" Font="Segoe UI;16.0;N;N;N">
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="2">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Sequence_CMD"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="5" Y="175" RoundRadius="10" Text="Cancel" FillColor="Background" OutlineColor="White" TextColor="White" Font="Segoe UI;16.0;N;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="130" Height="35" X="5" Y="115" RoundRadius="10" Text="3" FillColor="Background" OutlineColor="White" TextColor="White" Font="Segoe UI;16.0;N;N;N">
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" Value="3">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Sequence_CMD"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

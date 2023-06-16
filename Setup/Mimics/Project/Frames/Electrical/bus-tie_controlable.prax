@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="150" OnScreenNumpadFramePath=".\Frames_Misc\Popup_Numpad.prax" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Line Width="2" Color="Green" X0="75" Y0="30" X1="75" Y1="115">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="cb_closed_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Line Width="2" Color="PageInfoLineShaded" X0="35" Y0="35" X1="75" Y1="115">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="cb_closed_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Ellipse BorderWidth="0" BorderColor="KeyboardInputBackground" FillColor="KeyboardInputBackground" CenterX="75" CenterY="115" RadiusX="6" RadiusY="6"/>
+		<TextBox FlashFast="True" FlashArea="TextOnly" Width="135" Height="40" X="-75" Y="150" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="ColorTrendLine06" Font="Praxis;30.0;N;N;N" Text="AUTO">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="left_alligned_auto_mamual"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="auto_manual_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="PageInfoLineShaded" ColorWhenTrue="ColorTrendLine06"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="auto_manual_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToStringConvertParams TextWhenFalse="MANUAL" TextWhenTrue="AUTO"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Line Width="2" Color="PageInfoLineShaded" X0="75" Y0="30" X1="75" Y1="35">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="cb_closed_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Button Width="150" Height="150" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="auto_manual_Ch"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Children>
+				<TextBox Width="150" Height="35" Y="55" BorderColor="PageInfoLineShaded" CornerRoundRadius="10" TextColor="White" Font="Praxis;26.0;N;N;N" Text="Interlock">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="interlock_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<OpenFrameUserAction XOffset="84" YOffset="128.5">
+					<Frame>
+						<FloatingFrame Width="150" Height="165" X="84" Y="121" Path="..\..\Elements\PopUp_CMD_Box\01_PopUp_CMD_2Buttons_SV.prax" Button1_Value="1" CMD_Channel_2="0" CMD_Channel="0" Button1_Text="Close" CMD_Channel_1="10101" Button2_Value="2" Button2_Text="Open">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CMD_Channel" ExportedPropertyName="CMD_close_Ch"/>
+								<FrameBinding TargetPropertyName="CMD_Channel_1" ExportedPropertyName="CMD_cb_close_Ch"/>
+								<FrameBinding TargetPropertyName="CMD_Channel_2" ExportedPropertyName="CMD_cb_open_Ch"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox FlashFast="True" FlashArea="TextOnly" Width="135" Height="40" X="90" Y="150" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="ColorTrendLine06" Font="Praxis;30.0;N;N;N" Text="AUTO">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="right_alligned_auto_mamual"/>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="auto_manual_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="PageInfoLineShaded" ColorWhenTrue="ColorTrendLine06"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="auto_manual_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToStringConvertParams TextWhenFalse="MANUAL" TextWhenTrue="AUTO"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

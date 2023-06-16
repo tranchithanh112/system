@@ -1,0 +1,583 @@
+﻿<!DOCTYPE HTML PUBLIC " -//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<STYLE TYPE="text/css">
+ <!-- 
+
+BODY { background: #FFFFFF; text: #000000; font-family: 'Courier New'; font-size: small;}
+TH { background: #FFFFFF; text: #000000; font-family: 'Verdana'; font-size: 12px;} 
+TABLE { border-width:1px; border-style:None; border-collapse:collapse; border-top: 1px; border-top-style: solid; border-bottom: 1px; border-bottom-style: solid; border-left: 1px; border-left-style: solid; border-right: 1px; border-right-style: solid;}
+.nor {	background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; font-size: x-small;}
+.ident { background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; }
+.keyw { background-color: #FFFFFF; color: Blue; font-family: 'Courier New'; font: bold;}
+.oper { background-color: #FFFFFF; color: #000000; font-family: 'Verdana'; font-size: x-small;}
+.argum { background-color: #FFFFFF; color: #000000; font-family: 'Courier New'; font-size: x-small;}
+.argt { background-color: Yellow; color: DarkBlue; font-family: 'Courier New'; font-size: x-small;}
+.errpos { background-color: Black; color: Red; font-family: 'Courier New'; font-size: x-small;}
+.good { background-color: Blue; color: #C0C0C0; font-family: 'Courier New'; font-size: x-small;}
+.comment {	background-color: #FFFFFF; color: black; font-family: 'Times New Roman';  font-size: x-small; }
+.typconst { background-color: #C0C0C0; color: DarkGreen; font-family: 'Courier New'; font-size: x-small;} 
+.nums { background-color: #FFFFFF; color: #00AFAF; font-family: 'Courier New'; font-size: x-small;}
+.strs { background-color: #FFFF00; color: DarkGreen; font-family: 'Courier New'; font-size: x-small;}
+.typef { background-color: #FFFFFF; color: Blue; font-family: 'Courier New'; }
+.argcommentname { background-color: #C0C0C0; color: Blue; font-family: 'Courier New'; font-size: x-small; padding-left: 5px; padding-right: 5px;}
+.argcommentdesc { background-color: #FFFFFF; color: DarkBlue; font-family: 'Times New Roman'; font-size: x-small;}
+--> 
+ </STYLE> 
+ </head><body bgcolor="#FFFFFF">
+<h3 align="center">Core Virtual Machine Functions</h3><div align="right" class="ident">Version: <span class="keyw">2.6.1</span> from date <span class="keyw">2009.10-16 20:36</span></div>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Extended types</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Type</th><th>Implementation</th><th>Details</th><th>Comment</th></tr>
+<tr><td>USINT</td><td><span class="oper">alias</span></td><td>BYTE</td><td><span class="comment">Type USINT (for compability with IEC standard is alias for BYTE)</span></td></tr>
+<tr><td>UINT</td><td><span class="oper">alias</span></td><td>WORD</td><td><span class="comment">Type UINT (for compability with IEC standard is alias for WORD)</span></td></tr>
+<tr><td>UDINT</td><td><span class="oper">alias</span></td><td>DWORD</td><td><span class="comment">Type UDINT (for compability with IEC standard is alias for DWORD)</span></td></tr>
+<tr><td>ULINT</td><td><span class="oper">alias</span></td><td>LWORD</td><td><span class="comment">Type ULINT (for compability with IEC standard is alias for LWORD)</span></td></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Removed elementary types</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>No</th><th>Type</th><th>Comment</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Dependent files</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Type</th><th>Order</th><th>Name</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Implemented function</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Code</th><th>Name:Type</th><th>Arguments</th><th>Description</th></tr>
+<tr><td>01*1</td><td>ADD:<span class="typef">SINT</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Adds two or more SINT operands</span></td></tr><tr><td>01*2</td><td>ADD:<span class="typef">INT</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Adds two or more INT operands</span></td></tr><tr><td>01*3</td><td>ADD:<span class="typef">DINT</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Adds two or more DINT operands</span></td></tr><tr><td>01*5</td><td>ADD:<span class="typef">BYTE</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Adds two or more BYTE operands</span></td></tr><tr><td>01*6</td><td>ADD:<span class="typef">WORD</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Adds two or more WORD operands</span></td></tr><tr><td>01*7</td><td>ADD:<span class="typef">DWORD</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Adds two or more DWORD operands</span></td></tr><tr><td>01*9</td><td>ADD:<span class="typef">REAL</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Adds two or more REAL operands</span></td></tr><tr><td>0201</td><td>SUB:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">SINT</span><br>
+<b>1</b> subtrahend:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>0202</td><td>SUB:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">INT</span><br>
+<b>1</b> subtrahend:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>0203</td><td>SUB:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">DINT</span><br>
+<b>1</b> subtrahend:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>0205</td><td>SUB:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">BYTE</span><br>
+<b>1</b> subtrahend:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>0206</td><td>SUB:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">WORD</span><br>
+<b>1</b> subtrahend:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>0207</td><td>SUB:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">DWORD</span><br>
+<b>1</b> subtrahend:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>0209</td><td>SUB:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">REAL</span><br>
+<b>1</b> subtrahend:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>020B</td><td>SUB:<span class="typef">TIME</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">TIME</span><br>
+<b>1</b> subtrahend:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>03*1</td><td>MUL:<span class="typef">SINT</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Multiplies two or more SINT factors</span></td></tr><tr><td>03*2</td><td>MUL:<span class="typef">INT</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Multiplies two or more INT factors</span></td></tr><tr><td>03*3</td><td>MUL:<span class="typef">DINT</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Multiplies two or more DINT factors</span></td></tr><tr><td>03*5</td><td>MUL:<span class="typef">BYTE</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Multiplies two or more BYTE factors</span></td></tr><tr><td>03*6</td><td>MUL:<span class="typef">WORD</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Multiplies two or more WORD factors</span></td></tr><tr><td>03*7</td><td>MUL:<span class="typef">DWORD</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Multiplies two or more DWORD factors</span></td></tr><tr><td>03*9</td><td>MUL:<span class="typef">REAL</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Multiplies two or more REAL factors</span></td></tr><tr><td>0401</td><td>DIV:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">SINT</span><br>
+<b>1</b> divisor:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0402</td><td>DIV:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">INT</span><br>
+<b>1</b> divisor:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0403</td><td>DIV:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">DINT</span><br>
+<b>1</b> divisor:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0405</td><td>DIV:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">BYTE</span><br>
+<b>1</b> divisor:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0406</td><td>DIV:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">WORD</span><br>
+<b>1</b> divisor:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0407</td><td>DIV:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">DWORD</span><br>
+<b>1</b> divisor:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0409</td><td>DIV:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">REAL</span><br>
+<b>1</b> divisor:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0411</td><td>MOD:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">SINT</span><br>
+<b>1</b> divisor:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Remainder of division dividend by divisor</span></td></tr><tr><td>0412</td><td>MOD:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">INT</span><br>
+<b>1</b> divisor:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Remainder of division dividend by divisor</span></td></tr><tr><td>0413</td><td>MOD:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">DINT</span><br>
+<b>1</b> divisor:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Remainder of division dividend by divisor</span></td></tr><tr><td>0415</td><td>MOD:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">BYTE</span><br>
+<b>1</b> divisor:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Remainder of division dividend by divisor</span></td></tr><tr><td>0416</td><td>MOD:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">WORD</span><br>
+<b>1</b> divisor:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Remainder of division dividend by divisor</span></td></tr><tr><td>0417</td><td>MOD:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">DWORD</span><br>
+<b>1</b> divisor:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Remainder of division dividend by divisor</span></td></tr><tr><td>0501</td><td>NEG:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Changes sign of the signed value</span></td></tr><tr><td>0502</td><td>NEG:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Changes sign of the signed value</span></td></tr><tr><td>0503</td><td>NEG:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Changes sign of the signed value</span></td></tr><tr><td>0507</td><td>NEG:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Changes sign of the signed value</span></td></tr><tr><td>0510</td><td>NOT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Binary negation</span></td></tr><tr><td>0511</td><td>NOT:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Bitwise negation of unsigned value</span></td></tr><tr><td>0512</td><td>NOT:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Bitwise negation of unsigned value</span></td></tr><tr><td>0513</td><td>NOT:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Bitwise negation of unsigned value</span></td></tr><tr><td>0601</td><td>EXPT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> X:<span class="typef">SINT</span><br>
+<b>1</b> Y:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Returns X raised to the specified power (Y)</span></td></tr><tr><td>0602</td><td>EXPT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> X:<span class="typef">INT</span><br>
+<b>1</b> Y:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Returns X raised to the specified power (Y)</span></td></tr><tr><td>0603</td><td>EXPT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> X:<span class="typef">DINT</span><br>
+<b>1</b> Y:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Returns X raised to the specified power (Y)</span></td></tr><tr><td>0604</td><td>EXPT:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> X:<span class="typef">REAL</span><br>
+<b>1</b> Y:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Returns X raised to the specified power (Y)</span></td></tr><tr><td>0605</td><td>EXPT:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> X:<span class="typef">REAL</span><br>
+<b>1</b> Y:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Returns X raised to the specified power (Y)</span></td></tr><tr><td>0606</td><td>EXPT:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> X:<span class="typef">REAL</span><br>
+<b>1</b> Y:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Returns X raised to the specified power (Y)</span></td></tr><tr><td>0607</td><td>EXPT:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> X:<span class="typef">REAL</span><br>
+<b>1</b> Y:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Returns X raised to the specified power (Y)</span></td></tr><tr><td>0611</td><td>ABS:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>0612</td><td>ABS:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>0613</td><td>ABS:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>0615</td><td>ABS:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>0616</td><td>ABS:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>0617</td><td>ABS:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>0619</td><td>ABS:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>0620</td><td>SQRT:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> R:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Returns the square root of a specified number</span></td></tr><tr><td>0622</td><td>LN:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> R:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Returns the natural (base e) logarithm of a specified number</span></td></tr><tr><td>0624</td><td>LOG:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> R:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Returns the base 10 logarithm of a specified number</span></td></tr><tr><td>0626</td><td>EXP:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> Y:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Returns e raised to the specified power (Y)</span></td></tr><tr><td>0628</td><td>SIN:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> A:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">A</span><span class="argcommentdesc">&nbsp;- An angle, measured in radians</span></div>Returns the sine of the specified angle</span></td></tr><tr><td>062A</td><td>COS:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> A:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">A</span><span class="argcommentdesc">&nbsp;- An angle, measured in radians</span></div>Returns the cosine of the specified angle</span></td></tr><tr><td>062C</td><td>TAN:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> A:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">A</span><span class="argcommentdesc">&nbsp;- An angle, measured in radians</span></div>Returns the tangent of the specified angle</span></td></tr><tr><td>062E</td><td>ASIN:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> R:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">R</span><span class="argcommentdesc">&nbsp;- A number representing a sine, where -1 <= R <= 1</span></div>Returns the angle PHI (measured in radians, such that -PI/2 <= PHI <= PI/2) whose sine is the specified number.</span></td></tr><tr><td>0630</td><td>ACOS:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> R:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">R</span><span class="argcommentdesc">&nbsp;- A number representing a sine, where -1 <= R <= 1</span></div>Returns the angle PHI (measured in radians, such that 0 <= PHI <= PI) whose cosine is the specified number.</span></td></tr><tr><td>0632</td><td>ATAN:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> R:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment"><div align="left"><span class="argcommentname">R</span><span class="argcommentdesc">&nbsp;- A number representing a tangent</span></div>Returns the angle PHI (measured in radians, such that -PI/2 <= PHI <= PI/2) whose tangent is the specified number.</span></td></tr><tr><td>0634</td><td>TRUNC:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> R:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Calculates the integral part of REAL number as DINT value</span></td></tr><tr><td>0636</td><td>ROUND:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> R:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Rounds a value to the nearest integer</span></td></tr><tr><td>08*0</td><td>AND:<span class="typef">BOOL</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Binary AND of BOOL operands</span></td></tr><tr><td>08*1</td><td>AND:<span class="typef">BYTE</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Bitwise AND of BYTE operands</span></td></tr><tr><td>08*2</td><td>AND:<span class="typef">WORD</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Bitwise AND of WORD operands</span></td></tr><tr><td>08*3</td><td>AND:<span class="typef">DWORD</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Bitwise AND of DWORD operands</span></td></tr><tr><td>09*0</td><td>OR:<span class="typef">BOOL</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Binary OR of BOOL operands</span></td></tr><tr><td>09*1</td><td>OR:<span class="typef">BYTE</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Bitwise OR of BYTE operands</span></td></tr><tr><td>09*2</td><td>OR:<span class="typef">WORD</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Bitwise OR of WORD operands</span></td></tr><tr><td>09*3</td><td>OR:<span class="typef">DWORD</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Bitwise OR of DWORD operands</span></td></tr><tr><td>0A*0</td><td>XOR:<span class="typef">BOOL</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Binary XOR of BOOL operands</span></td></tr><tr><td>0A*1</td><td>XOR:<span class="typef">BYTE</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Bitwise XOR of BYTE operands</span></td></tr><tr><td>0A*2</td><td>XOR:<span class="typef">WORD</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Bitwise XOR of WORD operands</span></td></tr><tr><td>0A*4</td><td>XOR:<span class="typef">DWORD</span></td><td><span class="argum"><b>*</b> arg0:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Bitwise XOR of DWORD operands</span></td></tr><tr><td>0B01</td><td>SHL:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">BYTE</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Shifts first argument left by the number of bits specified by second argument</span></td></tr><tr><td>0B02</td><td>SHL:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">WORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Shifts first argument left by the number of bits specified by second argument</span></td></tr><tr><td>0B03</td><td>SHL:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">DWORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Shifts first argument left by the number of bits specified by second argument</span></td></tr><tr><td>0B11</td><td>SHR:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">BYTE</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Shifts first argument right by the number of bits specified by second argument</span></td></tr><tr><td>0B12</td><td>SHR:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">WORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Shifts first argument left by the number of bits specified by second argument</span></td></tr><tr><td>0B13</td><td>SHR:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">DWORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Shifts first argument left by the number of bits specified by second argument</span></td></tr><tr><td>0B21</td><td>ROL:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">BYTE</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Rotate the input values to the left to the most significant bit (MSB) by a specified number of bit positions</span></td></tr><tr><td>0B22</td><td>ROL:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">WORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Rotate the input values to the left to the most significant bit (MSB) by a specified number of bit positions</span></td></tr><tr><td>0B23</td><td>ROL:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">DWORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Rotate the input values to the left to the most significant bit (MSB) by a specified number of bit positions</span></td></tr><tr><td>0B31</td><td>ROR:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">BYTE</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Rotate the input values to the right to the least significant bit (LSB) by a specified number of bit positions</span></td></tr><tr><td>0B32</td><td>ROR:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">WORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Rotate the input values to the right to the least significant bit (LSB) by a specified number of bit positions</span></td></tr><tr><td>0B33</td><td>ROR:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">DWORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Rotate the input values to the right to the least significant bit (LSB) by a specified number of bit positions</span></td></tr><tr><td>0C00</td><td>SEL:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">BOOL</span><br>
+<b>2</b> case_true:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C01</td><td>SEL:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">SINT</span><br>
+<b>2</b> case_true:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C02</td><td>SEL:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">INT</span><br>
+<b>2</b> case_true:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C03</td><td>SEL:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">DINT</span><br>
+<b>2</b> case_true:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C05</td><td>SEL:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">BYTE</span><br>
+<b>2</b> case_true:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C06</td><td>SEL:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">WORD</span><br>
+<b>2</b> case_true:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C07</td><td>SEL:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">DWORD</span><br>
+<b>2</b> case_true:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C09</td><td>SEL:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">REAL</span><br>
+<b>2</b> case_true:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C0B</td><td>SEL:<span class="typef">TIME</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">TIME</span><br>
+<b>2</b> case_true:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C0C</td><td>SEL:<span class="typef">DATE</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">DATE</span><br>
+<b>2</b> case_true:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C0D</td><td>SEL:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">TIME_OF_DAY</span><br>
+<b>2</b> case_true:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C0E</td><td>SEL:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">DATE_AND_TIME</span><br>
+<b>2</b> case_true:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0D00</td><td>LIMIT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> value:<span class="typef">BOOL</span><br>
+<b>1</b> min:<span class="typef">BOOL</span><br>
+<b>2</b> max:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D01</td><td>LIMIT:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> value:<span class="typef">SINT</span><br>
+<b>1</b> min:<span class="typef">SINT</span><br>
+<b>2</b> max:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D02</td><td>LIMIT:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> value:<span class="typef">INT</span><br>
+<b>1</b> min:<span class="typef">INT</span><br>
+<b>2</b> max:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D03</td><td>LIMIT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> value:<span class="typef">DINT</span><br>
+<b>1</b> min:<span class="typef">DINT</span><br>
+<b>2</b> max:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D05</td><td>LIMIT:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> value:<span class="typef">BYTE</span><br>
+<b>1</b> min:<span class="typef">BYTE</span><br>
+<b>2</b> max:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D06</td><td>LIMIT:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> value:<span class="typef">WORD</span><br>
+<b>1</b> min:<span class="typef">WORD</span><br>
+<b>2</b> max:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D07</td><td>LIMIT:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> value:<span class="typef">DWORD</span><br>
+<b>1</b> min:<span class="typef">DWORD</span><br>
+<b>2</b> max:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D09</td><td>LIMIT:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> value:<span class="typef">REAL</span><br>
+<b>1</b> min:<span class="typef">REAL</span><br>
+<b>2</b> max:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D0B</td><td>LIMIT:<span class="typef">TIME</span></td><td><span class="argum"><b>0</b> value:<span class="typef">TIME</span><br>
+<b>1</b> min:<span class="typef">TIME</span><br>
+<b>2</b> max:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D0C</td><td>LIMIT:<span class="typef">DATE</span></td><td><span class="argum"><b>0</b> value:<span class="typef">DATE</span><br>
+<b>1</b> min:<span class="typef">DATE</span><br>
+<b>2</b> max:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D0D</td><td>LIMIT:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> value:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> min:<span class="typef">TIME_OF_DAY</span><br>
+<b>2</b> max:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D0E</td><td>LIMIT:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> value:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> min:<span class="typef">DATE_AND_TIME</span><br>
+<b>2</b> max:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0E00</td><td>MAX:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BOOL</span><br>
+<b>1</b> in1:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E01</td><td>MAX:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">SINT</span><br>
+<b>1</b> in1:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E02</td><td>MAX:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>1</b> in1:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E03</td><td>MAX:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DINT</span><br>
+<b>1</b> in1:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E05</td><td>MAX:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BYTE</span><br>
+<b>1</b> in1:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E06</td><td>MAX:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">WORD</span><br>
+<b>1</b> in1:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E07</td><td>MAX:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DWORD</span><br>
+<b>1</b> in1:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E09</td><td>MAX:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">REAL</span><br>
+<b>1</b> in1:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E0B</td><td>MAX:<span class="typef">TIME</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME</span><br>
+<b>1</b> in1:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E0C</td><td>MAX:<span class="typef">DATE</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE</span><br>
+<b>1</b> in1:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E0D</td><td>MAX:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> in1:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E0E</td><td>MAX:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> in1:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0F00</td><td>MIN:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BOOL</span><br>
+<b>1</b> in1:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F01</td><td>MIN:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">SINT</span><br>
+<b>1</b> in1:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F02</td><td>MIN:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>1</b> in1:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F03</td><td>MIN:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DINT</span><br>
+<b>1</b> in1:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F05</td><td>MIN:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BYTE</span><br>
+<b>1</b> in1:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F06</td><td>MIN:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">WORD</span><br>
+<b>1</b> in1:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F07</td><td>MIN:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DWORD</span><br>
+<b>1</b> in1:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F09</td><td>MIN:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">REAL</span><br>
+<b>1</b> in1:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F0B</td><td>MIN:<span class="typef">TIME</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME</span><br>
+<b>1</b> in1:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F0C</td><td>MIN:<span class="typef">DATE</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE</span><br>
+<b>1</b> in1:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F0D</td><td>MIN:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> in1:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F0E</td><td>MIN:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> in1:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>1000</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BOOL</span><br>
+<b>1</b> in1:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1001</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">SINT</span><br>
+<b>1</b> in1:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1002</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>1</b> in1:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1003</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DINT</span><br>
+<b>1</b> in1:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1005</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BYTE</span><br>
+<b>1</b> in1:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1006</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">WORD</span><br>
+<b>1</b> in1:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1007</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DWORD</span><br>
+<b>1</b> in1:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1009</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">REAL</span><br>
+<b>1</b> in1:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>100B</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME</span><br>
+<b>1</b> in1:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>100C</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE</span><br>
+<b>1</b> in1:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>100D</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> in1:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>100E</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> in1:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1100</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BOOL</span><br>
+<b>1</b> in1:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1101</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">SINT</span><br>
+<b>1</b> in1:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1102</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>1</b> in1:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1103</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DINT</span><br>
+<b>1</b> in1:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1105</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BYTE</span><br>
+<b>1</b> in1:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1106</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">WORD</span><br>
+<b>1</b> in1:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1107</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DWORD</span><br>
+<b>1</b> in1:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1109</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">REAL</span><br>
+<b>1</b> in1:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>110B</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME</span><br>
+<b>1</b> in1:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>110C</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE</span><br>
+<b>1</b> in1:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>110D</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> in1:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>110E</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> in1:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1200</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BOOL</span><br>
+<b>1</b> in1:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1201</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">SINT</span><br>
+<b>1</b> in1:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1202</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>1</b> in1:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1203</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DINT</span><br>
+<b>1</b> in1:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1205</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BYTE</span><br>
+<b>1</b> in1:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1206</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">WORD</span><br>
+<b>1</b> in1:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1207</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DWORD</span><br>
+<b>1</b> in1:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1209</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">REAL</span><br>
+<b>1</b> in1:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>120B</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME</span><br>
+<b>1</b> in1:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>120C</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE</span><br>
+<b>1</b> in1:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>120D</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> in1:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>120E</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> in1:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1300</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BOOL</span><br>
+<b>1</b> in1:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1301</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">SINT</span><br>
+<b>1</b> in1:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1302</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>1</b> in1:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1303</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DINT</span><br>
+<b>1</b> in1:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1305</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BYTE</span><br>
+<b>1</b> in1:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1306</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">WORD</span><br>
+<b>1</b> in1:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1307</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DWORD</span><br>
+<b>1</b> in1:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1309</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">REAL</span><br>
+<b>1</b> in1:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>130B</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME</span><br>
+<b>1</b> in1:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>130C</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE</span><br>
+<b>1</b> in1:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>130D</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> in1:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>130E</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> in1:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1400</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BOOL</span><br>
+<b>1</b> in1:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1401</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">SINT</span><br>
+<b>1</b> in1:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1402</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>1</b> in1:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1403</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DINT</span><br>
+<b>1</b> in1:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1405</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BYTE</span><br>
+<b>1</b> in1:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1406</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">WORD</span><br>
+<b>1</b> in1:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1407</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DWORD</span><br>
+<b>1</b> in1:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1409</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">REAL</span><br>
+<b>1</b> in1:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>140B</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME</span><br>
+<b>1</b> in1:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>140C</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE</span><br>
+<b>1</b> in1:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>140D</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> in1:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>140E</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> in1:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1500</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BOOL</span><br>
+<b>1</b> in1:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>1501</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">SINT</span><br>
+<b>1</b> in1:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>1502</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>1</b> in1:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>1503</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DINT</span><br>
+<b>1</b> in1:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>1505</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">BYTE</span><br>
+<b>1</b> in1:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>1506</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">WORD</span><br>
+<b>1</b> in1:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>1507</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DWORD</span><br>
+<b>1</b> in1:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>1509</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">REAL</span><br>
+<b>1</b> in1:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>150B</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME</span><br>
+<b>1</b> in1:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>150C</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE</span><br>
+<b>1</b> in1:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>150D</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">TIME_OF_DAY</span><br>
+<b>1</b> in1:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>150E</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">DATE_AND_TIME</span><br>
+<b>1</b> in1:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>16*0</td><td>MUX:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">BOOL</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*1</td><td>MUX:<span class="typef">SINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">SINT</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*2</td><td>MUX:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*3</td><td>MUX:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*5</td><td>MUX:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*6</td><td>MUX:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*7</td><td>MUX:<span class="typef">DWORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">DWORD</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*9</td><td>MUX:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*B</td><td>MUX:<span class="typef">TIME</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*C</td><td>MUX:<span class="typef">DATE</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*D</td><td>MUX:<span class="typef">TIME_OF_DAY</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">TIME_OF_DAY</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*E</td><td>MUX:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>1900</td><td>INT_TO_REAL:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Converts INT value to REAL value</span></td></tr><tr><td>1901</td><td>DINT_TO_REAL:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Converts DINT value to REAL value</span></td></tr><tr><td>1902</td><td>TIME_TO_DINT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Returns number represented by TIME</span></td></tr><tr><td>1903</td><td>DINT_TO_TIME:<span class="typef">TIME</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">DINT</span><br>
+</span></td><td><span class="comment">Returns TIME represented by number</span></td></tr><tr><td>1904</td><td>TIME_TO_REAL:<span class="typef">REAL</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Returns REAL number represented by TIME. Superposition of conversions TIME->DINT->REAL</span></td></tr><tr><td>1905</td><td>REAL_TO_TIME:<span class="typef">TIME</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Returns TIME represented by REAL number. Superposition of conversions REAL->DINT->TIME</span></td></tr><tr><td>1906</td><td>BCD_TO_INT:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">BYTE</span><br>
+</span></td><td><span class="comment">Converts BCD stored at BYTE to INT value</span></td></tr><tr><td>1907</td><td>BCD_TO_INT:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">WORD</span><br>
+</span></td><td><span class="comment">Converts BCD stored at WORD to INT value</span></td></tr><tr><td>1908</td><td>INT_TO_BYTE_BCD:<span class="typef">BYTE</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Converts INT value to BCD stored at BYTE</span></td></tr><tr><td>1909</td><td>INT_TO_WORD_BCD:<span class="typef">WORD</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Converts INT value to BCD stored at WORD</span></td></tr><tr><td>190A</td><td>REAL_TO_INT:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">REAL</span><br>
+</span></td><td><span class="comment">Converts REAL to INT value with truncation</span></td></tr><tr><td>190B</td><td>INT_TO_BOOL:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Converts INT to BOOL value</span></td></tr><tr><td>190C</td><td>INT_TO_DINT:<span class="typef">DINT</span></td><td><span class="argum"><b>0</b> INP:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Converts INT to DINT value</span></td></tr><tr><td>1C17</td><td>CUR_TIME:<span class="typef">TIME</span></td><td><span class="argum">&nbsp;</span></td><td><span class="comment">Returns current system time</span></td></tr><tr><td>1C20</td><td>READ_RTC:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum">&nbsp;</span></td><td><span class="comment">Returns current date and time from RTC clock</span></td></tr><tr><td>1C21</td><td>WRITE_RTC:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> TIME_TO_SAVE:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Sets the RTC clock. Returns clock update status.</span></td></tr><tr><td>1C30</td><td>GET_TST:<span class="typef">DATE_AND_TIME</span></td><td><span class="argum">&nbsp;</span></td><td><span class="comment">Returns task cycle start time.</span></td></tr><tr><td>1C22</td><td>RANDOML:<span class="typef">REAL</span></td><td><span class="argum">&nbsp;</span></td><td><span class="comment">Returns random value with linear probability with range 0 to 1</span></td></tr><tr><td>1C2F</td><td>GET_STATUS_WORD1:<span class="typef">WORD</span></td><td><span class="argum">&nbsp;</span></td><td><span class="comment">
+          Returns value of status word 1. Meaning of the bitwise mask: <br>
+          16#01 - Last cycle execution with overrun. <br>
+          16#02 - Access to array index was over bounds. <br>
+          16#04 - If set then its mean initial (cold) statup (1). If reset (0) then normal execution. <br>
+          16#08 - If set then its mean first startup after uploading xcp code.
+        </span></td></tr><tr><td>1C32</td><td>GET_VMACH_VERSION:<span class="typef">WORD</span></td><td><span class="argum">&nbsp;</span></td><td><span class="comment">Returns current virtual machine number in nibble Little Endian order (ie. 2.5.6.7 as 0x6725).</span></td></tr><tr><td>1C31</td><td>TASK_CYCLE:<span class="typef">TIME</span></td><td><span class="argum">&nbsp;</span></td><td><span class="comment">Task interval of current task</span></td></tr><tr><td>01*4</td><td>ADD:<span class="typef">LINT</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Adds two or more LINT operands</span></td></tr><tr><td>01*8</td><td>ADD:<span class="typef">LWORD</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Adds two or more LWORD operands</span></td></tr><tr><td>01*B</td><td>ADD:<span class="typef">TIME</span></td><td><span class="argum"><b>*</b> summand0:<span class="typef">TIME</span><br>
+</span></td><td><span class="comment">Adds two or more TIME operands</span></td></tr><tr><td>0204</td><td>SUB:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">LINT</span><br>
+<b>1</b> subtrahend:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>0208</td><td>SUB:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> minuend:<span class="typef">LWORD</span><br>
+<b>1</b> subtrahend:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Calculates subtract between first and second argument</span></td></tr><tr><td>03*4</td><td>MUL:<span class="typef">LINT</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Multiplies two or more LINT factors</span></td></tr><tr><td>03*8</td><td>MUL:<span class="typef">LWORD</span></td><td><span class="argum"><b>*</b> factor0:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Multiplies two or more LWORD factors</span></td></tr><tr><td>0404</td><td>DIV:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">LINT</span><br>
+<b>1</b> divisor:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0408</td><td>DIV:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">LWORD</span><br>
+<b>1</b> divisor:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Divides dividend by divisor</span></td></tr><tr><td>0414</td><td>MOD:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">LINT</span><br>
+<b>1</b> divisor:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Remainder of division dividend by divisor</span></td></tr><tr><td>0418</td><td>MOD:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> dividend:<span class="typef">LWORD</span><br>
+<b>1</b> divisor:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Remainder of division dividend by divisor</span></td></tr><tr><td>0504</td><td>NEG:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Changes sign of the signed value</span></td></tr><tr><td>0514</td><td>NOT:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Bitwise negation of unsigned value</span></td></tr><tr><td>0614</td><td>ABS:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>0618</td><td>ABS:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Returns the absolute value of a specified number</span></td></tr><tr><td>08*4</td><td>AND:<span class="typef">LWORD</span></td><td><span class="argum"><b>*</b> in0:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Bitwise AND of LWORD operands</span></td></tr><tr><td>09*4</td><td>OR:<span class="typef">LWORD</span></td><td><span class="argum"><b>*</b> in0:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Bitwise OR of LWORD operands</span></td></tr><tr><td>0A*5</td><td>XOR:<span class="typef">LWORD</span></td><td><span class="argum"><b>*</b> in0:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Bitwise XOR of LWORD operands</span></td></tr><tr><td>0B04</td><td>SHL:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">LWORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Shifts first argument left by the number of bits specified by second argument</span></td></tr><tr><td>0B14</td><td>SHR:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">LWORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Shifts first argument left by the number of bits specified by second argument</span></td></tr><tr><td>0B24</td><td>ROL:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">LWORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Rotate the input values to the left to the most significant bit (MSB) by a specified number of bit positions</span></td></tr><tr><td>0B34</td><td>ROR:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> arg:<span class="typef">LWORD</span><br>
+<b>1</b> num:<span class="typef">INT</span><br>
+</span></td><td><span class="comment">Rotate the input values to the right to the least significant bit (LSB) by a specified number of bit positions</span></td></tr><tr><td>0C04</td><td>SEL:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">LINT</span><br>
+<b>2</b> case_true:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0C08</td><td>SEL:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> selector:<span class="typef">BOOL</span><br>
+<b>1</b> case_false:<span class="typef">LWORD</span><br>
+<b>2</b> case_true:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Selects one of two arguments</span></td></tr><tr><td>0D04</td><td>LIMIT:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> value:<span class="typef">LINT</span><br>
+<b>1</b> min:<span class="typef">LINT</span><br>
+<b>2</b> max:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0D08</td><td>LIMIT:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> value:<span class="typef">LWORD</span><br>
+<b>1</b> min:<span class="typef">LWORD</span><br>
+<b>2</b> max:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Limits the value between two bounds</span></td></tr><tr><td>0E04</td><td>MAX:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+<b>1</b> in1:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0E08</td><td>MAX:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+<b>1</b> in1:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Selects maximum between two values</span></td></tr><tr><td>0F04</td><td>MIN:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+<b>1</b> in1:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>0F08</td><td>MIN:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+<b>1</b> in1:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Selects minimum between two values</span></td></tr><tr><td>1004</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+<b>1</b> in1:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1008</td><td>GT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+<b>1</b> in1:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater than second</span></td></tr><tr><td>1104</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+<b>1</b> in1:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1108</td><td>GE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+<b>1</b> in1:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is grater or equal than second</span></td></tr><tr><td>1204</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+<b>1</b> in1:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1208</td><td>EQ:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+<b>1</b> in1:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is equal to second</span></td></tr><tr><td>1304</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+<b>1</b> in1:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1308</td><td>LE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+<b>1</b> in1:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is less or equal than second</span></td></tr><tr><td>1404</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+<b>1</b> in1:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1408</td><td>LT:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+<b>1</b> in1:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is less than second</span></td></tr><tr><td>1504</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LINT</span><br>
+<b>1</b> in1:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>1508</td><td>NE:<span class="typef">BOOL</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">LWORD</span><br>
+<b>1</b> in1:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Checks if first argument is not equal to second</span></td></tr><tr><td>16*4</td><td>MUX:<span class="typef">LINT</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">LINT</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>16*8</td><td>MUX:<span class="typef">LWORD</span></td><td><span class="argum"><b>0</b> in0:<span class="typef">INT</span><br>
+<b>*</b> in1:<span class="typef">LWORD</span><br>
+</span></td><td><span class="comment">Selects one of the values</span></td></tr><tr><td>0640</td><td>GET_DAYOFWEEK:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATE:<span class="typef">DATE</span><br>
+</span></td><td><span class="comment">Returns day of week with DATE argument. 0 - Sunday, 1 - Monday, 2 - Tuesday, 3 - Wednesday, 4 - Thursday, 5 - Friday, 6 - Saturday.</span></td></tr><tr><td>0641</td><td>GET_DAYOFWEEK:<span class="typef">INT</span></td><td><span class="argum"><b>0</b> PDATETIME:<span class="typef">DATE_AND_TIME</span><br>
+</span></td><td><span class="comment">Returns day of week with DATE_AND_TIME argument. 0 - Sunday, 1 - Monday, 2 - Tuesday, 3 - Wednesday, 4 - Thursday, 5 - Friday, 6 - Saturday.</span></td></tr></table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Specific <i>in-line</i> functions</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Name:Type</th><th>Arguments</th><th>Description</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="center" class="typconst">Specific function blocks</div>
+<div align="center" class="nor">&nbsp;</div><table align="center" width="100%" border="1" border="1" cellspacing="0" cellpadding="0" rules="all" bordercolor="#404040">
+<tr><th>Name</th><th>Input parameters</th><th>Output parameters</th><th>Description</th></tr>
+</table>
+<div align="center" class="nor">&nbsp;</div><div align="center" class="nor">&nbsp;</div><div align="right" class="ident">Export date: <span class="keyw">2010.11-18 17:04:40</span></div>
+</body>
+</html>

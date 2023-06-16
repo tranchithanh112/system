@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="400" Height="400" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Rectangle Width="22" Height="175" X="70" Y="115" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<FillBar Width="22" Height="175" X="70" Y="115" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<FrameBinding TargetPropertyName="Value" ExportedPropertyName="TEST"/>
+			</Bindings>
+		</FillBar>
+		<Polyline LineColor="Gray" FillColor="Transparent">
+			<Points>
+				<Point Coord="50;125"/>
+				<Point Coord="50;290"/>
+				<Point Coord="345;290"/>
+			</Points>
+		</Polyline>
+		<Line Color="Gray" X0="355" Y0="290" X1="345" Y1="290" P0CapStyle="Arrow" P0CapSize="6"/>
+		<Line Color="Gray" X0="50" Y0="115" X1="50" Y1="125" P0CapStyle="Arrow" P0CapSize="6"/>
+		<TextBox Width="40" Height="20" X="360" Y="280" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="CYL"/>
+		<TextBox Width="20" Height="20" X="350" Y="90" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="LightingWhite" Font="Praxis;18.0;N;N;N" Text="°C">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Unit"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="20" X="70" Y="295" BorderColor="Transparent" FillColor="Transparent" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="01"/>
+		<TextBox Width="22" Height="20" X="120" Y="295" BorderColor="Transparent" FillColor="Transparent" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="02"/>
+		<TextBox Width="22" Height="20" X="170" Y="295" BorderColor="Transparent" FillColor="Transparent" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="03"/>
+		<TextBox Width="22" Height="20" X="215" Y="295" BorderColor="Transparent" FillColor="Transparent" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="04"/>
+		<TextBox Width="22" Height="20" X="265" Y="295" BorderColor="Transparent" FillColor="Transparent" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="05"/>
+		<TextBox Width="22" Height="20" X="315" Y="295" BorderColor="Transparent" FillColor="Transparent" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="06"/>
+		<Line Color="Gray" X0="45" Y0="255" X1="50" Y1="255"/>
+		<Line Color="Gray" X0="45" Y0="220" X1="50" Y1="220"/>
+		<Line Color="Gray" X0="45" Y0="185" X1="50" Y1="185"/>
+		<Line Color="Gray" X0="45" Y0="150" X1="50" Y1="150"/>
+		<TextBox Width="55" Height="20" X="175" Y="60" BorderColor="Transparent" FillColor="Transparent" TextColor="Orange" Font="Praxis;18.0;N;N;N" Text="M/E CYL VALVE 1 EXH.GAS TEMP ">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Name_Ch"/>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Title_Color"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="280" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="0">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="22" Height="175" X="120" Y="115" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="170" Y="115" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="215" Y="115" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="265" Y="115" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<Rectangle Width="22" Height="175" X="315" Y="115" BorderWidth="0" FillColor="BackgroundConning" CornerRoundRadius="2"/>
+		<TextBox Width="22" Height="20" X="70" Y="90" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TEST_TEXT"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="245" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="100">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.2">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="210" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="200">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.4">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="175" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="300">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.6">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="140" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="400">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" A="0.8">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="20" Y="105" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="LightingWhite" Font="Praxis;17.0;N;N;N" Text="500">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text">
+					<Bindings>
+						<UnitConversionBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Max"/>
+								<UnitConversionBinding TargetPropertyName="B" A="-1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="X" ExportedPropertyName="Range_Min"/>
+									</Bindings>
+								</UnitConversionBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="22" Height="20" X="120" Y="90" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TEST_TEXT"/>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="22" Height="175" X="120" Y="115" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<FrameBinding TargetPropertyName="Value" ExportedPropertyName="TEST"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="22" Height="20" X="170" Y="90" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TEST_TEXT"/>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="22" Height="175" X="170" Y="115" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<FrameBinding TargetPropertyName="Value" ExportedPropertyName="TEST"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="22" Height="20" X="215" Y="90" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TEST_TEXT"/>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="22" Height="175" X="215" Y="115" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<FrameBinding TargetPropertyName="Value" ExportedPropertyName="TEST"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="22" Height="20" X="265" Y="90" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TEST_TEXT"/>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="22" Height="175" X="265" Y="115" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<FrameBinding TargetPropertyName="Value" ExportedPropertyName="TEST"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="22" Height="20" X="315" Y="90" BorderColor="Transparent" FillColor="Transparent" TextColor="TextActive" Font="Praxis;18.0;N;N;N" Text="20.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="Value_Color"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TEST_TEXT"/>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="22" Height="175" X="315" Y="115" FillDirection="BottomToTop" RangeEnd="600" LimitType="HighAndVeryHigh" FirstLimit="490" SecondLimit="550" LimitMarkerType="None" LimitMarkerSize="4" UseBeginValue="True" Value="100" NormalColor="Barfill01" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="2">
+			<Bindings>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_Color"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_Min"/>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_Max"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_Type"/>
+				<FrameBinding TargetPropertyName="FirstLimit" ExportedPropertyName="First_Limit"/>
+				<FrameBinding TargetPropertyName="SecondLimit" ExportedPropertyName="Second_Limit"/>
+				<FrameBinding TargetPropertyName="Value" ExportedPropertyName="TEST"/>
+			</Bindings>
+		</FillBar>
+	</Children>
+</RootElement>

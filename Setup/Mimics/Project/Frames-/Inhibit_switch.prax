@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="40" GridSpacing="10" PraxGraphVersion="1.0" ColorTableFile="..\..\..\..\..\SystemNP21-088\Setup\Mimics- - Copy\Project\Standard.colortable">
+	<Children>
+		<Panel Width="150" Height="60" Y="-10" GridSpacing="1" ClipToBounds="True" BorderWidth="0" FillColor="Transparent">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Inhibit_CH"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Children>
+				<TextBox Width="150" Height="40" Y="10" BorderWidth="0" BorderColor="Transparent" FillColor="InfoTextGrey" CornerRoundRadius="20" HorzAlignment="Right" TextColor="Background" LeftRightPadding="10" Font="Praxis;18.0;B;N;N" Text="VALVE TAG"/>
+				<Bezier LineColor="InfoTextGrey" FillColor="Transparent">
+					<Points>
+						<Point Coord="16;26"/>
+						<Point Coord="15;26"/>
+						<Point Coord="12;26"/>
+						<Point Coord="12;28"/>
+						<Point Coord="12;30"/>
+						<Point Coord="12;32"/>
+						<Point Coord="16;34"/>
+					</Points>
+				</Bezier>
+				<TextBox Width="36" Height="36" X="2" Y="12" BorderWidth="0" CornerRoundRadius="20" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N" Text="OFF"/>
+			</Children>
+		</Panel>
+		<Panel Width="150" Height="60" Y="-10" GridSpacing="1" ClipToBounds="True" BorderWidth="0" FillColor="Transparent">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Inhibit_CH"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Children>
+				<TextBox Width="150" Height="40" Y="10" BorderWidth="0" BorderColor="InfoTextGrey" FillColor="ConningBackground" CornerRoundRadius="20" HorzAlignment="Left" TextColor="InfoTextGrey" LeftRightPadding="10" Font="Praxis;18.0;B;N;N" Text="VALVE TAG"/>
+				<TextBox Width="36" Height="36" X="112" Y="12" BorderWidth="0" FillColor="InfoTextGrey" CornerRoundRadius="20" TextColor="Background" Font="Praxis;18.0;B;N;N" Text="ON"/>
+			</Children>
+		</Panel>
+		<Button Width="150" Height="40" ClipToBounds="True" Text="" FillColor="Transparent" OutlineColor="Transparent" Font="Praxis;18.0;B;N;N" BorderColor="Transparent">
+			<ClickActions>
+				<SetChannelValueClickAction ChannelNumber="0" SetValueType="Toggle Digital">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Inhibit_CH"/>
+					</Bindings>
+				</SetChannelValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

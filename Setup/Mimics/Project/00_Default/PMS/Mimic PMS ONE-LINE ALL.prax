@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" GridSpacing="2" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="1920" Height="1080" BorderWidth="1" BorderStyle="Flat" BorderColor="PanelFaceBorder" FillColor="Transparent">
+			<Children>
+				<Frame Width="195" Height="25" X="535" Y="700" Alarm_Ch="61286" Warning_Ch="0" Status_Ch="0" Box_Width="150" _Text="BLACKOUT" Box_Height="40" Path=".\Frames\Frame_Alarm_Warning_Status.prax"/>
+				<Frame Width="150" Height="250" X="240" Y="50" Not_Present="0" Base_Channel="61000" Header="DG1" Din_Harbour_Mode="0" Path=".\Frames\Frame_PMS_DG.prax" Ch_Manual="0" Cmd_Close="0" Channel_Running="61083" Pre-alarm="0" Ch_Auto="0" Channel_Sync="0" Cmd_Manual="0" Shutdown="0" Stby-2nd="0" Cmd_Start="0" Stby-1st="0" Channel_KWp="0" Ch_Sequence="0" CB-Trip="0" Channel_KW="0" Channel_Hz="0" Cmd_Reset="0" Channel_Unload="0" Channel_Volts="0" Cmd_Stop="0" Channel_Amps="0" Fail="0" Cmd_Auto="0" CTRL_Frame_Visible="0" Cool_Down="0" Channel_CB="0" Channel_kVArp="0" Stop-1st="0" Cmd_Open="0" Channel_KVAR="0"/>
+				<Frame Width="140" Height="130" X="90" Y="165" Not_Present="0" Base_Channel="61000" Header="BT1" Path=".\Frames\Frame_ABT.prax" Stby-2nd="0" Stop-1st="0" Cmd_Manual="0" Stby-1st="0" Ch_Auto="0" Cmd_Auto="0" CTRL_Frame_Visible="0" Channel_Unload="0" Cmd_Reset="0" Ch_Manual="0" Cmd_Open="0" Shutdown="0" Channel_CB="0" Cmd_Close="0" CB-Trip="0" Fail="0" Pre-alarm="0" Channel_Sync="0"/>
+				<Frame Width="150" Height="250" X="240" Y="345" Not_Present="0" Base_Channel="62000" Header="DG2" Din_Harbour_Mode="0" Path=".\Frames\Frame_PMS_DG.prax" Cmd_Reset="0" Cmd_Start="0" Cmd_Open="0" Fail="0" Channel_Amps="0" Channel_KWp="0" Shutdown="0" Stop-1st="0" Stby-1st="0" Ch_Auto="0" Channel_Sync="0" Channel_KW="0" CTRL_Frame_Visible="0" Channel_kVArp="0" Ch_Manual="0" Cool_Down="0" Channel_KVAR="0" CB-Trip="0" Channel_Running="61083" Cmd_Close="0" Channel_CB="0" Stby-2nd="0" Cmd_Stop="0" Pre-alarm="0" Ch_Sequence="0" Channel_Unload="0" Cmd_Manual="0" Channel_Hz="0" Channel_Volts="0" Cmd_Auto="0"/>
+				<Frame Width="140" Height="130" X="90" Y="460" Not_Present="0" Base_Channel="62000" Header="BT2" Path=".\Frames\Frame_ABT.prax" Stop-1st="0" Stby-1st="0" Channel_Sync="0" Shutdown="0" Channel_CB="0" Cmd_Open="0" Cmd_Manual="0" CB-Trip="0" Cmd_Close="0" Cmd_Auto="0" Ch_Auto="0" CTRL_Frame_Visible="0" Pre-alarm="0" Stby-2nd="0" Fail="0" Channel_Unload="0" Ch_Manual="0" Cmd_Reset="0"/>
+				<Button Width="55" Height="55" X="1850" Y="15" ClipToBounds="True" Text=" " Font="Segoe UI;18.0;B;N;N">
+					<Children>
+						<Frame Width="40" Height="40" X="7.3869" Y="7.38695" Path="..\menu\icons\Icon_Settings.prax"/>
+					</Children>
+					<ClickActions>
+						<OpenMimicByNumberClickAction MimicNamePD="61"/>
+					</ClickActions>
+				</Button>
+				<Frame Width="150" Height="250" X="240" Y="645" Not_Present="0" Base_Channel="63000" Header="DG3" Din_Harbour_Mode="0" Path=".\Frames\Frame_PMS_DG.prax" Channel_KW="0" Channel_KWp="0" Channel_CB="0" Stby-1st="0" CB-Trip="0" Cmd_Manual="0" Cmd_Reset="0" Channel_Sync="0" Ch_Auto="0" Fail="0" Channel_Running="61083" Stop-1st="0" Stby-2nd="0" Cmd_Auto="0" Cool_Down="0" Pre-alarm="0" Cmd_Close="0" Ch_Sequence="0" Channel_Hz="0" Ch_Manual="0" Channel_KVAR="0" Cmd_Open="0" Channel_kVArp="0" CTRL_Frame_Visible="0" Channel_Amps="0" Cmd_Stop="0" Channel_Volts="0" Cmd_Start="0" Shutdown="0" Channel_Unload="0"/>
+				<Frame Width="140" Height="130" X="90" Y="760" Not_Present="0" Base_Channel="63000" Header="BT3" Path=".\Frames\Frame_ABT.prax" Fail="0" Ch_Auto="0" Cmd_Reset="0" Cmd_Close="0" Cmd_Manual="0" Channel_CB="0" CTRL_Frame_Visible="0" Shutdown="0" Stop-1st="0" Pre-alarm="0" CB-Trip="0" Channel_Sync="0" Ch_Manual="0" Cmd_Open="0" Stby-2nd="0" Channel_Unload="0" Cmd_Auto="0" Stby-1st="0"/>
+				<Rectangle Width="575" Height="5" X="535" Y="685" FillColor="NoAlarmGreen">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="62286">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenTrue="Background"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</Rectangle>
+				<TextBox Width="55" Height="20" X="575" Y="660" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;12.0;N;N;N" Text="50 Hz">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61187">
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="1" Suffix=" Hz"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="45" Height="20" X="530" Y="660" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;12.0;N;N;N" Text="690 V">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61186">
+							<ConvertParams>
+								<FloatToStringConvertParams Suffix=" V"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<Frame Width="50" Height="50" X="1055" Y="625" Channel_CB="61207" Path=".\Frames\Frame_CB_2.prax"/>
+				<TextBox Height="25" X="530" Y="635" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;16.0;B;N;N" Text="MSB FWD"/>
+				<Line X0="1090" Y0="615" X1="1180" Y1="615"/>
+				<Line X0="1089.95" Y0="629.522" X1="1090" Y1="615"/>
+				<Line X0="1090" Y0="685" X1="1090" Y1="670"/>
+				<Line X0="1180" Y0="685" X1="1180.05" Y1="615.478"/>
+				<Rectangle Width="575" Height="5" X="1160" Y="685" FillColor="NoAlarmGreen">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="62286">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenTrue="Background"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</Rectangle>
+				<Frame Width="200" Height="338" X="705" Y="330" Not_Present="0" Base_Channel="61000" Header="DG1" Din_Harbour_Mode="0" Path=".\Frames\Frame_PMS_DG.prax" Stby-2nd="0" Channel_Sync="0" Ch_Auto="0" Channel_KWp="0" Channel_KW="0" Cmd_Auto="0" Stop-1st="0" Channel_Volts="0" CTRL_Frame_Visible="0" Ch_Sequence="0" Channel_Running="61083" Channel_KVAR="0" CB-Trip="0" Cmd_Start="0" Cmd_Stop="0" Channel_Hz="0" Pre-alarm="0" Fail="0" Shutdown="0" Stby-1st="0" Cmd_Close="0" Channel_CB="0" Cmd_Open="0" Channel_kVArp="0" Cool_Down="0" Cmd_Manual="0" Cmd_Reset="0" Channel_Amps="0" Channel_Unload="0" Ch_Manual="0"/>
+				<Frame Width="200" Height="338" X="1295" Y="330" Not_Present="0" Base_Channel="62000" Header="DG2" Din_Harbour_Mode="0" Path=".\Frames\Frame_PMS_DG.prax" Channel_Amps="0" Stop-1st="0" Stby-1st="0" CB-Trip="0" Cmd_Manual="0" Stby-2nd="0" Shutdown="0" Channel_Sync="0" CTRL_Frame_Visible="0" Channel_kVArp="0" Cool_Down="0" Cmd_Auto="0" Channel_CB="0" Channel_Unload="0" Cmd_Start="0" Fail="0" Pre-alarm="0" Cmd_Reset="0" Cmd_Stop="0" Ch_Sequence="0" Channel_Running="61083" Channel_KWp="0" Ch_Manual="0" Channel_Volts="0" Cmd_Close="0" Channel_Hz="0" Cmd_Open="0" Ch_Auto="0" Channel_KW="0" Channel_KVAR="0"/>
+				<Frame Width="200" Height="200" X="705" Y="705" Base_Channel="61000" Path=".\Frames\Frame_PMS_Phase_Angle.prax" _phase_pos="61176" _phase_neg="61175" _delay="61162" _gen_period="61160"/>
+				<Frame Width="200" Height="200" X="1295" Y="705" Base_Channel="62000" Path=".\Frames\Frame_PMS_Phase_Angle.prax" _phase_pos="61176" _delay="61162" _phase_neg="61175" _gen_period="61160"/>
+				<TextBox Height="25" X="755" Y="905" BorderWidth="0" FillColor="Transparent" TextColor="KeyboardInputBackground" Font="Segoe UI;16.0;B;I;N" Text="Only Visible during synchronizing "/>
+				<TextBox Height="25" X="1345" Y="905" BorderWidth="0" FillColor="Transparent" TextColor="KeyboardInputBackground" Font="Segoe UI;16.0;B;I;N" Text="Only Visible during synchronizing"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

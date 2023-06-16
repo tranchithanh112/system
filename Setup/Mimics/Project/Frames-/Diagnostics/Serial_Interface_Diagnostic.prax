@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="140" GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="132" Height="50" BorderColor="Black" FillColor="Black"/>
+		<Rectangle Width="85" Height="45" X="29" Y="4" BorderColor="PanelFaceBorder" FillColor="InfoTextGrey">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Gray"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="5" Height="5.14899" X="117" Y="15" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<Rectangle Width="9" Height="48" Y="2" BorderColor="Comment" FillColor="Comment"/>
+		<Rectangle Width="4" Height="4" X="2" Y="7" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="4" Height="4" X="2" Y="12" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="4" Height="4" X="2" Y="22" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="4" Height="4" X="2" Y="17" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="4" Height="4" X="2" Y="42" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="4" Height="4" X="2" Y="37" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="4" Height="4" X="2" Y="32" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="4" Height="4" X="2" Y="27" BorderWidth="0" BorderColor="Background" FillColor="InactivePanelFace" CornerRoundRadius="3"/>
+		<Rectangle Width="7" Height="44" X="12" Y="4" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="5" Height="5.14899" X="21" Y="6" BorderWidth="0" BorderColor="Background" FillColor="Comment" CornerRoundRadius="3"/>
+		<Rectangle Width="5" Height="5.14899" X="21" Y="16" BorderWidth="0" BorderColor="Background" FillColor="AlarmRed" CornerRoundRadius="3"/>
+		<TextBox Width="80" Height="29" X="31" Y="10" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;28.0;N;N;N" Text="XL011">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Number"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="8" Height="20" X="123" Y="4" BorderWidth="0.4" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="8" Height="20" X="123" Y="27" BorderWidth="0.4" BorderColor="PanelFaceBorder" FillColor="Black" CornerRoundRadius="1"/>
+	</Children>
+</RootElement>

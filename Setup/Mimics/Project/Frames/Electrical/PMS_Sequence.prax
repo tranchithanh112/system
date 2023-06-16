@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="230" Height="70" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="230" Height="70" BorderColor="White" FillColor="GaugeBackground" CornerRoundRadius="10"/>
+		<Button Width="40" Height="40" X="55" Y="25" Text="X" FillColor="Transparent" OutlineColor="White" TextColor="White" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61089">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" XOffset="-6" YOffset="-158.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="150" Height="225" X="-6" Y="-226" ID="Gen 1" Sequence_CMD="61527" Path=".\PopUp_Sequnce.prax" SEQ_Channel="61527"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="40" Height="20" X="55" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Segoe UI;18.0;N;N;N" Text="1"/>
+		<TextBox Width="40" Height="20" X="115" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Segoe UI;18.0;N;N;N" Text="2"/>
+		<TextBox Width="40" Height="20" X="170" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Segoe UI;18.0;N;N;N" Text="3"/>
+		<TextBox Width="40" Height="20" X="5" BorderWidth="0" FillColor="Transparent" TextColor="White" Font="Segoe UI;18.0;N;N;N" Text="GEN"/>
+		<TextBox Width="40" Height="40" X="5" Y="25" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="5" TextColor="White" Font="Segoe UI;18.0;N;N;N" Text="SEQ"/>
+		<Line Color="White" X0="5" Y0="20" X1="225" Y1="20"/>
+		<Button Width="40" Height="40" X="115" Y="25" Text="X" FillColor="Transparent" OutlineColor="White" TextColor="White" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62089">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" XOffset="-1" YOffset="-157.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="150" Height="225" X="59" Y="-225" ID="Gen 2" Sequence_CMD="62527" Path=".\PopUp_Sequnce.prax" SEQ_Channel="61527"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<Button Width="40" Height="40" X="170" Y="25" Text="X" FillColor="Transparent" OutlineColor="White" TextColor="White" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="63089">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="30" XOffset="-1" YOffset="-157.5" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="150" Height="225" X="114" Y="-225" ID="Gen 3" Sequence_CMD="63527" Path=".\PopUp_Sequnce.prax" SEQ_Channel="61527"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

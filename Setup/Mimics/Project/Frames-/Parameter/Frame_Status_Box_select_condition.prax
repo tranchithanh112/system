@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Height="30" GridSpacing="10" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Height="30" BorderWidth="0" BorderColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="RUNNING">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_1"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_2"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="Text_when_channel_1"/>
+						<FrameBinding TargetPropertyName="SelectedValue1" ExportedPropertyName="Text_when_channel_2"/>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Text_default"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="ActiveText" SelectedValue1="ActiveText" DefaultValue="InfoTextGrey">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_1"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_2"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

@@ -1,0 +1,2171 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <LIBRARY name="Basic_blocks" crypt="" version="196864">
+    <LIB_HDR>
+      <COMP_VER>00041109</COMP_VER>
+      <CAPABILITIES>
+        <CAPABILITY code="0" />
+        <CAPABILITY code="4000" />
+      </CAPABILITIES>
+      <LIB_INFO>
+        <COPYRIGHT><![CDATA[Katedra Informatyki i Automatyki / Politechnika Rzeszowska]]></COPYRIGHT>
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="27" milisec="880" />
+        <MENU_PATH>Basic/Simple</MENU_PATH>
+        <CONTENT>
+          <ITEM name="RND" type="FUN" ret_type="$DEFAULT.REAL">
+            <PAR kind="INPUT" name="Fo" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Distribution type]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Random number]]></COMMENT>
+          </ITEM>
+          <ITEM name="AMEM" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="TRG" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Trigger]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Analog memory]]></COMMENT>
+          </ITEM>
+          <ITEM name="ASWI" type="FBLK">
+            <PAR kind="INPUT" name="IN1" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input 1]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="IN2" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input 2]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="S" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Input selection]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Analog switch]]></COMMENT>
+          </ITEM>
+          <ITEM name="BMEM" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="TRG" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Trigger]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Binary memory]]></COMMENT>
+          </ITEM>
+          <ITEM name="BSWI" type="FBLK">
+            <PAR kind="INPUT" name="IN1" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Input 1]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="IN2" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Input 2]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="S" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Input selection]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Binary switch]]></COMMENT>
+          </ITEM>
+          <ITEM name="COMP" type="FBLK">
+            <PAR kind="INPUT" name="IN1" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input 1]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="IN2" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input 2]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="H" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Hysteresis]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Analog comparator with hysteresis]]></COMMENT>
+          </ITEM>
+          <ITEM name="DEBA" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="DB" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Dead-band]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Dead-band]]></COMMENT>
+          </ITEM>
+          <ITEM name="DELS" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Delay by one step (cycle)]]></COMMENT>
+          </ITEM>
+          <ITEM name="DFF" type="FBLK">
+            <PAR kind="INPUT" name="D" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[D input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="CLK" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Clock]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="NQ" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Negated output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[D flip-flop]]></COMMENT>
+          </ITEM>
+          <ITEM name="DIFR" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="T" type="$DEFAULT.TIME">
+              <COMMENT><![CDATA[Time constant]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Lead filter (differentiation)]]></COMMENT>
+          </ITEM>
+          <ITEM name="DIVI" type="FBLK">
+            <PAR kind="INPUT" name="IN1" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Dividend]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="IN2" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Divisor]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="LM" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Limit of IN2 before 0]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Division with limited divisor]]></COMMENT>
+          </ITEM>
+          <ITEM name="FILT" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="T" type="$DEFAULT.TIME">
+              <COMMENT><![CDATA[Time constant]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Lag filter]]></COMMENT>
+          </ITEM>
+          <ITEM name="GENR" type="FBLK">
+            <PAR kind="INPUT" name="IN1" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Input 1]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="IN2" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Input 2]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Alarm generator]]></COMMENT>
+          </ITEM>
+          <ITEM name="JKFF" type="FBLK">
+            <PAR kind="INPUT" name="J" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[J input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="CLK" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Clock]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="K" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[K input]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="NQ" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Negated output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[JK flip-flop]]></COMMENT>
+          </ITEM>
+          <ITEM name="LIMT" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="MN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Minimum]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="MX" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Maximum]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Limiter]]></COMMENT>
+          </ITEM>
+          <ITEM name="MAT" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Maximum in time]]></COMMENT>
+          </ITEM>
+          <ITEM name="MIT" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Minimum in time]]></COMMENT>
+          </ITEM>
+          <ITEM name="PDUR" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.TIME">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Pulse duration]]></COMMENT>
+          </ITEM>
+          <ITEM name="RAND" type="FBLK">
+            <PAR kind="INPUT" name="S" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Normal/rectangular distribution ]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="IN1" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Average value / low limit]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="IN2" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Standard deviation / upper limit]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Random]]></COMMENT>
+          </ITEM>
+          <ITEM name="RSFF" type="FBLK">
+            <PAR kind="INPUT" name="S" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Set]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R1" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset (dominant) ]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="NQ" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Negated output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[RS flip-flop]]></COMMENT>
+          </ITEM>
+          <ITEM name="SQR" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="LM" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Limit]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="OUT" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Square root with linear initial part]]></COMMENT>
+          </ITEM>
+          <ITEM name="SRFF" type="FBLK">
+            <PAR kind="INPUT" name="S1" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Set (dominant)]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="NQ" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Negated output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[SR flip-flop]]></COMMENT>
+          </ITEM>
+          <ITEM name="TFF" type="FBLK">
+            <PAR kind="INPUT" name="T" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[T input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="CLK" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Clock]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="NQ" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Negated output]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[T flip-flop]]></COMMENT>
+          </ITEM>
+          <ITEM name="TOTI" type="FBLK">
+            <PAR kind="INPUT" name="IN" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Input]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="R" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Reset]]></COMMENT>
+            </PAR>
+            <PAR kind="INPUT" name="DL" type="$DEFAULT.REAL">
+              <COMMENT><![CDATA[Time interval]]></COMMENT>
+            </PAR>
+            <PAR kind="OUTPUT" name="Q" type="$DEFAULT.BOOL">
+              <COMMENT><![CDATA[Output ]]></COMMENT>
+            </PAR>
+            <COMMENT><![CDATA[Totalizer]]></COMMENT>
+          </ITEM>
+        </CONTENT>
+      </LIB_INFO>
+      <DEPENDENCIES />
+    </LIB_HDR>
+    <LIB_BODY>
+      <FUNCTIONS>
+        <FUNCTION name="RND" cap="0">
+          <VAR_INPUT name="Fo" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_MEM name="RND" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="I" type="$DEFAULT.INT" visibility="00400000" />
+          <VAR_MEM name="X" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="SUMA" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?FOR_INC0007" type="$DEFAULT.INT" visibility="00100004" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST000A" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?RANDOML000D" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0011" type="$DEFAULT.REAL" visibility="00100000" />
+          <CODE><![CDATA[:?Basic_blocks.RND?CODE 
+$VMSYS.MCD RND, #/04, #/00000000
+$VMSYS.MCD I, #/02, #/0000
+$VMSYS.MCD X, #/04, #/00000000
+$VMSYS.MCD SUMA, #/04, #/00000000
+$VMSYS.MCD ?FOR_INC0007, #/02, #/0100
+$VMSYS.MCD ?L?CST000A, #/02, #/0C00
+$VMSYS.MCD ?L?CST0011, #/04, #/0000C040
+$VMSYS.JZ Fo, :?Basic_blocks.RNDIF?B0002
+$DEFAULT.RANDOML RND
+$VMSYS.JMP :?Basic_blocks.RNDIF?E0005
+:?Basic_blocks.RNDIF?B0002 
+$VMSYS.MCD SUMA, #/04, #/00000000
+$VMSYS.MCD I, #/02, #/0100
+:?Basic_blocks.RNDFOR?C0008 
+$DEFAULT.LE ?IF?CTL, I, ?L?CST000A
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.RNDFOR?L0009
+$DEFAULT.RANDOML ?F?RANDOML000D
+$DEFAULT.ADD SUMA, SUMA, ?F?RANDOML000D
+$VMSYS.NOP 
+$DEFAULT.ADD I, I, ?FOR_INC0007
+$VMSYS.JMP :?Basic_blocks.RNDFOR?C0008
+:?Basic_blocks.RNDFOR?L0009 
+$DEFAULT.SUB RND, SUMA, ?L?CST0011
+:?Basic_blocks.RNDIF?E0005 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+        <FUNCTION name="RND" cap="4000">
+          <VAR_INPUT name="Fo" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_MEM name="RND" type="$DEFAULT.REAL" visibility="00000000" />
+          <VAR_MEM name="I" type="$DEFAULT.INT" visibility="00400000" />
+          <VAR_MEM name="X" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="SUMA" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?FOR_INC0007" type="$DEFAULT.INT" visibility="00100004" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST000A" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?F?RANDOML000D" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0011" type="$DEFAULT.REAL" visibility="00100000" />
+          <CODE><![CDATA[:?Basic_blocks.RND?CODE 
+$VMSYS.MCD4A RND, #/04000000, #/00000000
+$VMSYS.MCD4A I, #/02000000, #/0000FFFF
+$VMSYS.MCD4A X, #/04000000, #/00000000
+$VMSYS.MCD4A SUMA, #/04000000, #/00000000
+$VMSYS.MCD4A ?FOR_INC0007, #/02000000, #/0100FFFF
+$VMSYS.MCD4A ?L?CST000A, #/02000000, #/0C00FFFF
+$VMSYS.MCD4A ?L?CST0011, #/04000000, #/0000C040
+$VMSYS.JZ Fo, :?Basic_blocks.RNDIF?B0002
+$DEFAULT.RANDOML RND
+$VMSYS.JMP :?Basic_blocks.RNDIF?E0005
+:?Basic_blocks.RNDIF?B0002 
+$VMSYS.MCD4A SUMA, #/04000000, #/00000000
+$VMSYS.MCD4A I, #/02000000, #/0100FFFF
+:?Basic_blocks.RNDFOR?C0008 
+$DEFAULT.LE ?IF?CTL, I, ?L?CST000A
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.RNDFOR?L0009
+$DEFAULT.RANDOML ?F?RANDOML000D
+$DEFAULT.ADD SUMA, SUMA, ?F?RANDOML000D
+$VMSYS.NOP 
+$DEFAULT.ADD I, I, ?FOR_INC0007
+$VMSYS.JMP :?Basic_blocks.RNDFOR?C0008
+:?Basic_blocks.RNDFOR?L0009 
+$DEFAULT.SUB RND, SUMA, ?L?CST0011
+:?Basic_blocks.RNDIF?E0005 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION>
+      </FUNCTIONS>
+      <FUNCTION_BLOCKS>
+        <FUNCTION_BLOCK name="AMEM" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="TRG" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="TRGp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0015" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.AMEM?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD TRGp, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.AMEM?CODE 
+$VMSYS.JZ TRG, :?Basic_blocks.AMEM?AND0014
+$DEFAULT.NOT ?LR?ANDA0015, TRGp
+$VMSYS.JZ ?LR?ANDA0015, :?Basic_blocks.AMEM?AND0014
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.AMEM?EAND0018
+:?Basic_blocks.AMEM?AND0014 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?Basic_blocks.AMEM?EAND0018 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.AMEMIF?B0013
+$VMSYS.MEMCP OUT, IN, #/0400
+:?Basic_blocks.AMEMIF?B0013 
+$VMSYS.MEMCP TRGp, TRG, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="ASWI" flags="0" cap="0">
+          <VAR_INPUT name="IN1" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <INIT><![CDATA[:?Basic_blocks.ASWI?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.ASWI?CODE 
+$VMSYS.JZ S, :?Basic_blocks.ASWIIF?B001C
+$VMSYS.MEMCP OUT, IN2, #/0400
+$VMSYS.JMP :?Basic_blocks.ASWIIF?E001E
+:?Basic_blocks.ASWIIF?B001C 
+$VMSYS.MEMCP OUT, IN1, #/0400
+:?Basic_blocks.ASWIIF?E001E 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="BMEM" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="TRG" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="TRGp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0022" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.BMEM?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD TRGp, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.BMEM?CODE 
+$VMSYS.JZ TRG, :?Basic_blocks.BMEM?AND0021
+$DEFAULT.NOT ?LR?ANDA0022, TRGp
+$VMSYS.JZ ?LR?ANDA0022, :?Basic_blocks.BMEM?AND0021
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.BMEM?EAND0025
+:?Basic_blocks.BMEM?AND0021 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?Basic_blocks.BMEM?EAND0025 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.BMEMIF?B0020
+$VMSYS.MEMCP Q, IN, #/0100
+:?Basic_blocks.BMEMIF?B0020 
+$VMSYS.MEMCP TRGp, TRG, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="BSWI" flags="0" cap="0">
+          <VAR_INPUT name="IN1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <INIT><![CDATA[:?Basic_blocks.BSWI?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.BSWI?CODE 
+$VMSYS.JZ S, :?Basic_blocks.BSWIIF?B0029
+$VMSYS.MEMCP Q, IN2, #/0100
+$VMSYS.JMP :?Basic_blocks.BSWIIF?E002B
+:?Basic_blocks.BSWIIF?B0029 
+$VMSYS.MEMCP Q, IN1, #/0100
+:?Basic_blocks.BSWIIF?E002B 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="COMP" flags="0" cap="0">
+          <VAR_INPUT name="IN1" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="H" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST002E" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB002F" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV0030" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0035" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0036" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0037" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV0038" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.COMP?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD ?L?CST002E, #/04, #/00000040
+$VMSYS.MCD ?L?CST0035, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.COMP?CODE 
+$DEFAULT.SUB ?F?$DEFAULT_SUB002F, IN1, IN2
+$DEFAULT.DIV ?F?$DEFAULT_DIV0030, H, ?L?CST002E
+$DEFAULT.GT ?IF?CTL, ?F?$DEFAULT_SUB002F, ?F?$DEFAULT_DIV0030
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.COMPIF?B002D
+$VMSYS.MCD Q, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.COMPIF?E0033
+:?Basic_blocks.COMPIF?B002D 
+$DEFAULT.SUB ?F?$DEFAULT_SUB0036, ?L?CST0035, H
+$DEFAULT.SUB ?F?$DEFAULT_SUB0037, IN1, IN2
+$DEFAULT.DIV ?F?$DEFAULT_DIV0038, ?F?$DEFAULT_SUB0036, ?L?CST002E
+$DEFAULT.LT ?IF?CTL, ?F?$DEFAULT_SUB0037, ?F?$DEFAULT_DIV0038
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.COMPIF?B0034
+$VMSYS.MCD Q, #/01, #/00
+:?Basic_blocks.COMPIF?B0034 
+:?Basic_blocks.COMPIF?E0033 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DEBA" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="DB" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST003C" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0041" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.DEBA?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD ?L?CST003C, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DEBA?CODE 
+$DEFAULT.LE ?IF?CTL, DB, ?L?CST003C
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DEBAIF?B003B
+$VMSYS.MEMCP OUT, IN, #/0400
+$VMSYS.JMP :?Basic_blocks.DEBAIF?E003F
+:?Basic_blocks.DEBAIF?B003B 
+$DEFAULT.SUB ?F?$DEFAULT_SUB0041, ?L?CST003C, DB
+$DEFAULT.LT ?IF?CTL, IN, ?F?$DEFAULT_SUB0041
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DEBAIF?B0040
+$DEFAULT.ADD OUT, IN, DB
+$VMSYS.JMP :?Basic_blocks.DEBAIF?E0045
+:?Basic_blocks.DEBAIF?B0040 
+$DEFAULT.GT ?IF?CTL, IN, DB
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DEBAIF?B0046
+$DEFAULT.SUB OUT, IN, DB
+$VMSYS.JMP :?Basic_blocks.DEBAIF?E004A
+:?Basic_blocks.DEBAIF?B0046 
+$VMSYS.MCD OUT, #/04, #/00000000
+:?Basic_blocks.DEBAIF?E004A 
+:?Basic_blocks.DEBAIF?E0045 
+:?Basic_blocks.DEBAIF?E003F 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DELS" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="M" type="$DEFAULT.BOOL" visibility="00400000" />
+          <INIT><![CDATA[:?Basic_blocks.DELS?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD M, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DELS?CODE 
+$VMSYS.MEMCP Q, M, #/0100
+$VMSYS.MEMCP M, IN, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DFF" flags="0" cap="0">
+          <VAR_INPUT name="D" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0050" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.DFF?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD NQ, #/01, #/00
+$VMSYS.MCD CLKp, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DFF?CODE 
+$VMSYS.JZ CLK, :?Basic_blocks.DFF?AND004F
+$DEFAULT.NOT ?LR?ANDA0050, CLKp
+$VMSYS.JZ ?LR?ANDA0050, :?Basic_blocks.DFF?AND004F
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.DFF?EAND0053
+:?Basic_blocks.DFF?AND004F 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?Basic_blocks.DFF?EAND0053 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DFFIF?B004E
+$VMSYS.MEMCP Q, D, #/0100
+:?Basic_blocks.DFFIF?B004E 
+$VMSYS.JZ R, :?Basic_blocks.DFFIF?B0056
+$VMSYS.MCD Q, #/01, #/00
+:?Basic_blocks.DFFIF?B0056 
+$DEFAULT.NOT NQ, Q
+$VMSYS.MEMCP CLKp, CLK, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DIFR" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="T" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="pTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="INp" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="cTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="tmp" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?F?CUR_TIME005C" type="$DEFAULT.TIME" visibility="00200000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0061" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?TIME_TO_DINT0062" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL0063" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL0064" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0067" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0068" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0069" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_ADD006A" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.DIFR?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD pTime, #/04, #/00000000
+$VMSYS.MCD INp, #/04, #/00000000
+$VMSYS.MCD cTime, #/04, #/00000000
+$VMSYS.MCD tmp, #/04, #/00000000
+$VMSYS.MCD ?L?CST0067, #/04, #/0000803F
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DIFR?CODE 
+$DEFAULT.CUR_TIME ?F?CUR_TIME005C
+$DEFAULT.TIME_TO_DINT cTime, ?F?CUR_TIME005C
+$DEFAULT.NOT ?IF?CTL, R
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIFRIF?B005E
+$DEFAULT.SUB ?F?$DEFAULT_SUB0061, cTime, pTime
+$DEFAULT.TIME_TO_DINT ?F?TIME_TO_DINT0062, T
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL0063, ?F?$DEFAULT_SUB0061
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL0064, ?F?TIME_TO_DINT0062
+$DEFAULT.DIV tmp, ?F?DINT_TO_REAL0063, ?F?DINT_TO_REAL0064
+$DEFAULT.SUB ?F?$DEFAULT_SUB0068, ?L?CST0067, tmp
+$DEFAULT.MUL ?F?$DEFAULT_MUL0069, ?F?$DEFAULT_SUB0068, OUT
+$DEFAULT.ADD ?F?$DEFAULT_ADD006A, ?F?$DEFAULT_MUL0069, IN
+$DEFAULT.SUB OUT, ?F?$DEFAULT_ADD006A, INp
+$VMSYS.JMP :?Basic_blocks.DIFRIF?E006C
+:?Basic_blocks.DIFRIF?B005E 
+$VMSYS.MEMCP OUT, IN, #/0400
+:?Basic_blocks.DIFRIF?E006C 
+$VMSYS.MEMCP INp, IN, #/0400
+$VMSYS.MEMCP pTime, cTime, #/0400
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DIVI" flags="0" cap="0">
+          <VAR_INPUT name="IN1" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="LM" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0077" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?LR?ANDA0074" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA0076" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA007D" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA007F" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR0072" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR007B" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA008C" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA008E" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA0094" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA0096" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR008A" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR0092" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00A1" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00A3" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.DIVI?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD ?L?CST0077, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DIVI?CODE 
+$DEFAULT.GT ?LR?ANDA0074, IN2, LM
+$VMSYS.JZ ?LR?ANDA0074, :?Basic_blocks.DIVI?AND0073
+$DEFAULT.GE ?LR?ANDA0076, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA0076, :?Basic_blocks.DIVI?AND0073
+$VMSYS.MCD ?LR?OR0072, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND007A
+:?Basic_blocks.DIVI?AND0073 
+$VMSYS.MCD ?LR?OR0072, #/01, #/00
+:?Basic_blocks.DIVI?EAND007A 
+$VMSYS.JNZ ?LR?OR0072, :?Basic_blocks.DIVI?OR0071
+$DEFAULT.LT ?LR?ANDA007D, IN2, LM
+$VMSYS.JZ ?LR?ANDA007D, :?Basic_blocks.DIVI?AND007C
+$DEFAULT.LE ?LR?ANDA007F, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA007F, :?Basic_blocks.DIVI?AND007C
+$VMSYS.MCD ?LR?OR007B, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND0082
+:?Basic_blocks.DIVI?AND007C 
+$VMSYS.MCD ?LR?OR007B, #/01, #/00
+:?Basic_blocks.DIVI?EAND0082 
+$VMSYS.JNZ ?LR?OR007B, :?Basic_blocks.DIVI?OR0071
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+$VMSYS.JMP :?Basic_blocks.DIVI?EOR0084
+:?Basic_blocks.DIVI?OR0071 
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+:?Basic_blocks.DIVI?EOR0084 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B0070
+$DEFAULT.DIV OUT, IN1, IN2
+$VMSYS.JMP :?Basic_blocks.DIVIIF?E0087
+:?Basic_blocks.DIVIIF?B0070 
+$DEFAULT.LE ?LR?ANDA008C, IN2, LM
+$VMSYS.JZ ?LR?ANDA008C, :?Basic_blocks.DIVI?AND008B
+$DEFAULT.GT ?LR?ANDA008E, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA008E, :?Basic_blocks.DIVI?AND008B
+$VMSYS.MCD ?LR?OR008A, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND0091
+:?Basic_blocks.DIVI?AND008B 
+$VMSYS.MCD ?LR?OR008A, #/01, #/00
+:?Basic_blocks.DIVI?EAND0091 
+$VMSYS.JNZ ?LR?OR008A, :?Basic_blocks.DIVI?OR0089
+$DEFAULT.GE ?LR?ANDA0094, IN2, LM
+$VMSYS.JZ ?LR?ANDA0094, :?Basic_blocks.DIVI?AND0093
+$DEFAULT.LT ?LR?ANDA0096, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA0096, :?Basic_blocks.DIVI?AND0093
+$VMSYS.MCD ?LR?OR0092, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND0099
+:?Basic_blocks.DIVI?AND0093 
+$VMSYS.MCD ?LR?OR0092, #/01, #/00
+:?Basic_blocks.DIVI?EAND0099 
+$VMSYS.JNZ ?LR?OR0092, :?Basic_blocks.DIVI?OR0089
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+$VMSYS.JMP :?Basic_blocks.DIVI?EOR009B
+:?Basic_blocks.DIVI?OR0089 
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+:?Basic_blocks.DIVI?EOR009B 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B0088
+$DEFAULT.DIV OUT, IN1, LM
+$VMSYS.JMP :?Basic_blocks.DIVIIF?E009E
+:?Basic_blocks.DIVIIF?B0088 
+$DEFAULT.EQ ?LR?ANDA00A1, IN2, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA00A1, :?Basic_blocks.DIVI?AND00A0
+$DEFAULT.EQ ?LR?ANDA00A3, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA00A3, :?Basic_blocks.DIVI?AND00A0
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND00A6
+:?Basic_blocks.DIVI?AND00A0 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?Basic_blocks.DIVI?EAND00A6 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B009F
+$DEFAULT.EQ ?IF?CTL, IN1, ?L?CST0077
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B00A7
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.JMP :?Basic_blocks.DIVIIF?E00AA
+:?Basic_blocks.DIVIIF?B00A7 
+$DEFAULT.GT ?IF?CTL, IN1, ?L?CST0077
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B00AB
+$VMSYS.MCD OUT, #/04, #/9976967E
+$VMSYS.JMP :?Basic_blocks.DIVIIF?E00AE
+:?Basic_blocks.DIVIIF?B00AB 
+$VMSYS.MCD OUT, #/04, #/997696FE
+:?Basic_blocks.DIVIIF?E00AE 
+:?Basic_blocks.DIVIIF?E00AA 
+:?Basic_blocks.DIVIIF?B009F 
+:?Basic_blocks.DIVIIF?E009E 
+:?Basic_blocks.DIVIIF?E0087 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="FILT" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="T" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="pTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="INp" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="cTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="tmp" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?F?CUR_TIME00B1" type="$DEFAULT.TIME" visibility="00200000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST00B6" type="$DEFAULT.TIME" visibility="00100000" />
+          <VAR_MEM name="?LR?OR00B5" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB00BD" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?TIME_TO_DINT00BE" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL00BF" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL00C0" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST00C3" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB00C4" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL00C5" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL00C6" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.FILT?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD pTime, #/04, #/00000000
+$VMSYS.MCD INp, #/04, #/00000000
+$VMSYS.MCD cTime, #/04, #/00000000
+$VMSYS.MCD tmp, #/04, #/00000000
+$VMSYS.MCD ?L?CST00B6, #/04, #/E8030000
+$VMSYS.MCD ?L?CST00C3, #/04, #/0000803F
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.FILT?CODE 
+$DEFAULT.CUR_TIME ?F?CUR_TIME00B1
+$DEFAULT.TIME_TO_DINT cTime, ?F?CUR_TIME00B1
+$VMSYS.JNZ R, :?Basic_blocks.FILT?OR00B4
+$DEFAULT.LT ?LR?OR00B5, T, ?L?CST00B6
+$VMSYS.JNZ ?LR?OR00B5, :?Basic_blocks.FILT?OR00B4
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+$VMSYS.JMP :?Basic_blocks.FILT?EOR00B9
+:?Basic_blocks.FILT?OR00B4 
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+:?Basic_blocks.FILT?EOR00B9 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.FILTIF?B00B3
+$VMSYS.MEMCP OUT, IN, #/0400
+$VMSYS.JMP :?Basic_blocks.FILTIF?E00BB
+:?Basic_blocks.FILTIF?B00B3 
+$DEFAULT.SUB ?F?$DEFAULT_SUB00BD, cTime, pTime
+$DEFAULT.TIME_TO_DINT ?F?TIME_TO_DINT00BE, T
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL00BF, ?F?$DEFAULT_SUB00BD
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL00C0, ?F?TIME_TO_DINT00BE
+$DEFAULT.DIV tmp, ?F?DINT_TO_REAL00BF, ?F?DINT_TO_REAL00C0
+$DEFAULT.SUB ?F?$DEFAULT_SUB00C4, ?L?CST00C3, tmp
+$DEFAULT.MUL ?F?$DEFAULT_MUL00C5, ?F?$DEFAULT_SUB00C4, OUT
+$DEFAULT.MUL ?F?$DEFAULT_MUL00C6, tmp, INp
+$DEFAULT.ADD OUT, ?F?$DEFAULT_MUL00C5, ?F?$DEFAULT_MUL00C6
+:?Basic_blocks.FILTIF?E00BB 
+$VMSYS.MEMCP INp, IN, #/0400
+$VMSYS.MEMCP pTime, cTime, #/0400
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="GENR" flags="0" cap="0">
+          <VAR_INPUT name="IN1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="F" type="$DEFAULT.INT" visibility="00400000" />
+          <VAR_MEM name="M" type="$DEFAULT.INT" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST00D3" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?L?CST00D6" type="$DEFAULT.INT" visibility="00100000" />
+          <INIT><![CDATA[:?Basic_blocks.GENR?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD F, #/02, #/0000
+$VMSYS.MCD M, #/02, #/0000
+$VMSYS.MCD ?L?CST00D3, #/02, #/0200
+$VMSYS.MCD ?L?CST00D6, #/02, #/0100
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.GENR?CODE 
+$DEFAULT.NOT ?IF?CTL, R
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.GENRIF?B00CA
+$VMSYS.MCD F, #/02, #/0000
+$VMSYS.JZ IN1, :?Basic_blocks.GENRIF?B00CE
+$VMSYS.MCD F, #/02, #/0100
+:?Basic_blocks.GENRIF?B00CE 
+$VMSYS.JZ IN2, :?Basic_blocks.GENRIF?B00D1
+$DEFAULT.ADD F, F, ?L?CST00D3
+:?Basic_blocks.GENRIF?B00D1 
+$DEFAULT.ADD M, M, ?L?CST00D6
+$DEFAULT.GT ?IF?CTL, M, F
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.GENRIF?B00D8
+$VMSYS.MCD M, #/02, #/0000
+$DEFAULT.NOT Q, Q
+:?Basic_blocks.GENRIF?B00D8 
+$VMSYS.JMP :?Basic_blocks.GENRIF?E00DD
+:?Basic_blocks.GENRIF?B00CA 
+$VMSYS.MCD Q, #/01, #/00
+:?Basic_blocks.GENRIF?E00DD 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="JKFF" flags="0" cap="0">
+          <VAR_INPUT name="J" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="K" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA00E1" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.JKFF?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD NQ, #/01, #/00
+$VMSYS.MCD CLKp, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.JKFF?CODE 
+$VMSYS.JZ CLK, :?Basic_blocks.JKFF?AND00E0
+$DEFAULT.NOT ?LR?ANDA00E1, CLKp
+$VMSYS.JZ ?LR?ANDA00E1, :?Basic_blocks.JKFF?AND00E0
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.JKFF?EAND00E4
+:?Basic_blocks.JKFF?AND00E0 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?Basic_blocks.JKFF?EAND00E4 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.JKFFIF?B00DF
+$VMSYS.JZ J, :?Basic_blocks.JKFFIF?B00E6
+$DEFAULT.NOT ?IF?CTL, K
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.JKFFIF?B00E7
+$VMSYS.MCD Q, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.JKFFIF?E00EA
+:?Basic_blocks.JKFFIF?B00E7 
+$DEFAULT.NOT Q, Q
+:?Basic_blocks.JKFFIF?E00EA 
+$VMSYS.JMP :?Basic_blocks.JKFFIF?E00ED
+:?Basic_blocks.JKFFIF?B00E6 
+$VMSYS.JZ K, :?Basic_blocks.JKFFIF?B00EF
+$VMSYS.MCD Q, #/01, #/00
+:?Basic_blocks.JKFFIF?B00EF 
+:?Basic_blocks.JKFFIF?E00ED 
+:?Basic_blocks.JKFFIF?B00DF 
+$DEFAULT.NOT NQ, Q
+$VMSYS.MEMCP CLKp, CLK, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="LIMT" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="MN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="MX" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <INIT><![CDATA[:?Basic_blocks.LIMT?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.LIMT?CODE 
+$DEFAULT.LT ?IF?CTL, IN, MN
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.LIMTIF?B00F4
+$VMSYS.MEMCP OUT, MN, #/0400
+$VMSYS.JMP :?Basic_blocks.LIMTIF?E00F7
+:?Basic_blocks.LIMTIF?B00F4 
+$DEFAULT.GT ?IF?CTL, IN, MX
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.LIMTIF?B00F8
+$VMSYS.MEMCP OUT, MX, #/0400
+$VMSYS.JMP :?Basic_blocks.LIMTIF?E00FB
+:?Basic_blocks.LIMTIF?B00F8 
+$VMSYS.MEMCP OUT, IN, #/0400
+:?Basic_blocks.LIMTIF?E00FB 
+:?Basic_blocks.LIMTIF?E00F7 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="MAT" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="M" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <INIT><![CDATA[:?Basic_blocks.MAT?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD M, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.MAT?CODE 
+$DEFAULT.GT ?IF?CTL, IN, M
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.MATIF?B00FD
+$VMSYS.MEMCP M, IN, #/0400
+:?Basic_blocks.MATIF?B00FD 
+$VMSYS.JZ R, :?Basic_blocks.MATIF?B0101
+$VMSYS.MEMCP M, IN, #/0400
+:?Basic_blocks.MATIF?B0101 
+$VMSYS.MEMCP OUT, M, #/0400
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="MIT" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="M" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <INIT><![CDATA[:?Basic_blocks.MIT?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD M, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.MIT?CODE 
+$DEFAULT.LT ?IF?CTL, IN, M
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.MITIF?B0104
+$VMSYS.MEMCP M, IN, #/0400
+:?Basic_blocks.MITIF?B0104 
+$VMSYS.JZ R, :?Basic_blocks.MITIF?B0108
+$VMSYS.MEMCP M, IN, #/0400
+:?Basic_blocks.MITIF?B0108 
+$VMSYS.MEMCP OUT, M, #/0400
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="PDUR" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.TIME" visibility="00000020" />
+          <VAR_MEM name="INp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="sTime" type="$DEFAULT.TIME" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?F?cur_TIME0116" type="$DEFAULT.TIME" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.PDUR?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD INp, #/01, #/00
+$VMSYS.MCD sTime, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.PDUR?CODE 
+$VMSYS.JZ R, :?Basic_blocks.PDURIF?B010C
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.JMP :?Basic_blocks.PDURIF?E010E
+:?Basic_blocks.PDURIF?B010C 
+$VMSYS.JZ IN, :?Basic_blocks.PDURIF?B0110
+$DEFAULT.NOT ?IF?CTL, INp
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.PDURIF?B0111
+$DEFAULT.CUR_TIME sTime
+:?Basic_blocks.PDURIF?B0111 
+$DEFAULT.CUR_TIME ?F?cur_TIME0116
+$DEFAULT.SUB OUT, ?F?cur_TIME0116, sTime
+:?Basic_blocks.PDURIF?B0110 
+:?Basic_blocks.PDURIF?E010E 
+$VMSYS.MEMCP INp, IN, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="RAND" flags="0" cap="0">
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="IN1" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST011E" type="$DEFAULT.BOOL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB011F" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?LCALL?Basic_blocks_RND" type="Basic_blocks.RND" visibility="00000000" />
+          <VAR_MEM name="?U?RND0120" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0121" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0127" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?L?CST012A" type="$DEFAULT.BOOL" visibility="00100000" />
+          <VAR_MEM name="?U?RND012B" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL012C" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.RAND?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD ?L?CST011E, #/01, #/01
+$VMSYS.MCD ?L?CST0127, #/04, #/00000000
+$VMSYS.MCD ?L?CST012A, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.RAND?CODE 
+$VMSYS.JZ S, :?Basic_blocks.RANDIF?B011A
+$DEFAULT.GT ?IF?CTL, IN2, IN1
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.RANDIF?B011B
+$DEFAULT.SUB ?F?$DEFAULT_SUB011F, IN2, IN1
+$VMSYS.MEMCP ?LCALL?Basic_blocks_RND.Fo, ?L?CST011E, #/0100
+$VMSYS.CALF ?LCALL?Basic_blocks_RND, :?Basic_blocks.RND?CODE
+$VMSYS.MEMCP ?U?RND0120, ?LCALL?Basic_blocks_RND.RND, #/0400
+$DEFAULT.MUL ?F?$DEFAULT_MUL0121, ?F?$DEFAULT_SUB011F, ?U?RND0120
+$DEFAULT.ADD OUT, ?F?$DEFAULT_MUL0121, IN1
+$VMSYS.JMP :?Basic_blocks.RANDIF?E0123
+:?Basic_blocks.RANDIF?B011B 
+$VMSYS.MCD OUT, #/04, #/00000000
+:?Basic_blocks.RANDIF?E0123 
+$VMSYS.JMP :?Basic_blocks.RANDIF?E0125
+:?Basic_blocks.RANDIF?B011A 
+$DEFAULT.GT ?IF?CTL, IN2, ?L?CST0127
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.RANDIF?B0126
+$VMSYS.MEMCP ?LCALL?Basic_blocks_RND.Fo, ?L?CST012A, #/0100
+$VMSYS.CALF ?LCALL?Basic_blocks_RND, :?Basic_blocks.RND?CODE
+$VMSYS.MEMCP ?U?RND012B, ?LCALL?Basic_blocks_RND.RND, #/0400
+$DEFAULT.MUL ?F?$DEFAULT_MUL012C, IN2, ?U?RND012B
+$DEFAULT.ADD OUT, ?F?$DEFAULT_MUL012C, IN1
+$VMSYS.JMP :?Basic_blocks.RANDIF?E012E
+:?Basic_blocks.RANDIF?B0126 
+$VMSYS.MEMCP OUT, IN1, #/0400
+:?Basic_blocks.RANDIF?E012E 
+:?Basic_blocks.RANDIF?E0125 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="RSFF" flags="0" cap="0">
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?LR?ANDA0132" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA0134" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.RSFF?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD NQ, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.RSFF?CODE 
+$DEFAULT.NOT ?LR?ANDA0132, R1
+$VMSYS.JZ ?LR?ANDA0132, :?Basic_blocks.RSFF?AND0131
+$DEFAULT.OR ?LR?ANDA0134, Q, S
+$VMSYS.JZ ?LR?ANDA0134, :?Basic_blocks.RSFF?AND0131
+$VMSYS.MCD Q, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.RSFF?EAND0137
+:?Basic_blocks.RSFF?AND0131 
+$VMSYS.MCD Q, #/01, #/00
+:?Basic_blocks.RSFF?EAND0137 
+$DEFAULT.NOT NQ, Q
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SQR" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="LM" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST013B" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?SQRT0143" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.SQR?INIT 
+$VMSYS.MCD OUT, #/04, #/00000000
+$VMSYS.MCD ?L?CST013B, #/04, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.SQR?CODE 
+$DEFAULT.GE ?IF?CTL, IN, ?L?CST013B
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.SQRIF?B013A
+$DEFAULT.GE ?IF?CTL, IN, LM
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.SQRIF?B013D
+$DEFAULT.SQRT OUT, IN
+$VMSYS.JMP :?Basic_blocks.SQRIF?E0141
+:?Basic_blocks.SQRIF?B013D 
+$DEFAULT.SQRT ?F?SQRT0143, LM
+$DEFAULT.DIV OUT, IN, ?F?SQRT0143
+:?Basic_blocks.SQRIF?E0141 
+$VMSYS.NOP 
+$VMSYS.JMP :?Basic_blocks.SQRIF?E0145
+:?Basic_blocks.SQRIF?B013A 
+$VMSYS.MCD OUT, #/04, #/00000000
+:?Basic_blocks.SQRIF?E0145 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SRFF" flags="0" cap="0">
+          <VAR_INPUT name="S1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?LR?ANDA014B" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR0149" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.SRFF?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD NQ, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.SRFF?CODE 
+$VMSYS.JNZ S1, :?Basic_blocks.SRFF?OR0148
+$DEFAULT.NOT ?LR?ANDA014B, R
+$VMSYS.JZ ?LR?ANDA014B, :?Basic_blocks.SRFF?AND014A
+$VMSYS.JZ Q, :?Basic_blocks.SRFF?AND014A
+$VMSYS.MCD ?LR?OR0149, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.SRFF?EAND014E
+:?Basic_blocks.SRFF?AND014A 
+$VMSYS.MCD ?LR?OR0149, #/01, #/00
+:?Basic_blocks.SRFF?EAND014E 
+$VMSYS.JNZ ?LR?OR0149, :?Basic_blocks.SRFF?OR0148
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.JMP :?Basic_blocks.SRFF?EOR0150
+:?Basic_blocks.SRFF?OR0148 
+$VMSYS.MCD Q, #/01, #/01
+:?Basic_blocks.SRFF?EOR0150 
+$DEFAULT.NOT NQ, Q
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TFF" flags="0" cap="0">
+          <VAR_INPUT name="T" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="M" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0155" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.TFF?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD NQ, #/01, #/00
+$VMSYS.MCD CLKp, #/01, #/00
+$VMSYS.MCD M, #/01, #/00
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.TFF?CODE 
+$VMSYS.JZ CLK, :?Basic_blocks.TFF?AND0154
+$DEFAULT.NOT ?LR?ANDA0155, CLKp
+$VMSYS.JZ ?LR?ANDA0155, :?Basic_blocks.TFF?AND0154
+$VMSYS.MCD ?IF?CTL, #/01, #/01
+$VMSYS.JMP :?Basic_blocks.TFF?EAND0158
+:?Basic_blocks.TFF?AND0154 
+$VMSYS.MCD ?IF?CTL, #/01, #/00
+:?Basic_blocks.TFF?EAND0158 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.TFFIF?B0153
+$VMSYS.JZ T, :?Basic_blocks.TFFIF?B015A
+$DEFAULT.NOT M, M
+:?Basic_blocks.TFFIF?B015A 
+:?Basic_blocks.TFFIF?B0153 
+$VMSYS.JZ R, :?Basic_blocks.TFFIF?B015E
+$VMSYS.MCD M, #/01, #/00
+:?Basic_blocks.TFFIF?B015E 
+$VMSYS.MEMCP Q, M, #/0100
+$DEFAULT.NOT NQ, Q
+$VMSYS.MEMCP CLKp, CLK, #/0100
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TOTI" flags="0" cap="0">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="DL" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="cTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="pTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="Sum" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?F?CUR_TIME0165" type="$DEFAULT.TIME" visibility="00200000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST016A" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB016B" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL016C" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL016D" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL016E" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.TOTI?INIT 
+$VMSYS.MCD Q, #/01, #/00
+$VMSYS.MCD cTime, #/04, #/00000000
+$VMSYS.MCD pTime, #/04, #/00000000
+$VMSYS.MCD Sum, #/04, #/00000000
+$VMSYS.MCD ?L?CST016A, #/04, #/6F12833A
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.TOTI?CODE 
+$DEFAULT.CUR_TIME ?F?CUR_TIME0165
+$DEFAULT.TIME_TO_DINT cTime, ?F?CUR_TIME0165
+$DEFAULT.NOT ?IF?CTL, R
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.TOTIIF?B0167
+$DEFAULT.SUB ?F?$DEFAULT_SUB016B, cTime, pTime
+$DEFAULT.MUL ?F?$DEFAULT_MUL016C, IN, ?L?CST016A
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL016D, ?F?$DEFAULT_SUB016B
+$DEFAULT.MUL ?F?$DEFAULT_MUL016E, ?F?$DEFAULT_MUL016C, ?F?DINT_TO_REAL016D
+$DEFAULT.ADD Sum, Sum, ?F?$DEFAULT_MUL016E
+$DEFAULT.GE ?IF?CTL, Sum, DL
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.TOTIIF?B0170
+$VMSYS.MCD Q, #/01, #/01
+$DEFAULT.SUB Sum, Sum, DL
+$VMSYS.JMP :?Basic_blocks.TOTIIF?E0175
+:?Basic_blocks.TOTIIF?B0170 
+$VMSYS.MCD Q, #/01, #/00
+:?Basic_blocks.TOTIIF?E0175 
+$VMSYS.JMP :?Basic_blocks.TOTIIF?E0177
+:?Basic_blocks.TOTIIF?B0167 
+$VMSYS.MCD Sum, #/04, #/00000000
+$VMSYS.MCD Q, #/01, #/00
+:?Basic_blocks.TOTIIF?E0177 
+$VMSYS.MEMCP pTime, cTime, #/0400
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="AMEM" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="TRG" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="TRGp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0015" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.AMEM?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A TRGp, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.AMEM?CODE 
+$VMSYS.JZ TRG, :?Basic_blocks.AMEM?AND0014
+$DEFAULT.NOT ?LR?ANDA0015, TRGp
+$VMSYS.JZ ?LR?ANDA0015, :?Basic_blocks.AMEM?AND0014
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.AMEM?EAND0018
+:?Basic_blocks.AMEM?AND0014 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?Basic_blocks.AMEM?EAND0018 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.AMEMIF?B0013
+$VMSYS.MEMCP4A OUT, IN, #/04000000
+:?Basic_blocks.AMEMIF?B0013 
+$VMSYS.MEMCP4A TRGp, TRG, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="ASWI" flags="0" cap="4000">
+          <VAR_INPUT name="IN1" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <INIT><![CDATA[:?Basic_blocks.ASWI?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.ASWI?CODE 
+$VMSYS.JZ S, :?Basic_blocks.ASWIIF?B001C
+$VMSYS.MEMCP4A OUT, IN2, #/04000000
+$VMSYS.JMP :?Basic_blocks.ASWIIF?E001E
+:?Basic_blocks.ASWIIF?B001C 
+$VMSYS.MEMCP4A OUT, IN1, #/04000000
+:?Basic_blocks.ASWIIF?E001E 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="BMEM" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="TRG" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="TRGp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0022" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.BMEM?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A TRGp, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.BMEM?CODE 
+$VMSYS.JZ TRG, :?Basic_blocks.BMEM?AND0021
+$DEFAULT.NOT ?LR?ANDA0022, TRGp
+$VMSYS.JZ ?LR?ANDA0022, :?Basic_blocks.BMEM?AND0021
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.BMEM?EAND0025
+:?Basic_blocks.BMEM?AND0021 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?Basic_blocks.BMEM?EAND0025 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.BMEMIF?B0020
+$VMSYS.MEMCP4A Q, IN, #/01000000
+:?Basic_blocks.BMEMIF?B0020 
+$VMSYS.MEMCP4A TRGp, TRG, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="BSWI" flags="0" cap="4000">
+          <VAR_INPUT name="IN1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <INIT><![CDATA[:?Basic_blocks.BSWI?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.BSWI?CODE 
+$VMSYS.JZ S, :?Basic_blocks.BSWIIF?B0029
+$VMSYS.MEMCP4A Q, IN2, #/01000000
+$VMSYS.JMP :?Basic_blocks.BSWIIF?E002B
+:?Basic_blocks.BSWIIF?B0029 
+$VMSYS.MEMCP4A Q, IN1, #/01000000
+:?Basic_blocks.BSWIIF?E002B 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="COMP" flags="0" cap="4000">
+          <VAR_INPUT name="IN1" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="H" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST002E" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB002F" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV0030" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0035" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0036" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0037" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_DIV0038" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.COMP?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A ?L?CST002E, #/04000000, #/00000040
+$VMSYS.MCD4A ?L?CST0035, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.COMP?CODE 
+$DEFAULT.SUB ?F?$DEFAULT_SUB002F, IN1, IN2
+$DEFAULT.DIV ?F?$DEFAULT_DIV0030, H, ?L?CST002E
+$DEFAULT.GT ?IF?CTL, ?F?$DEFAULT_SUB002F, ?F?$DEFAULT_DIV0030
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.COMPIF?B002D
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.COMPIF?E0033
+:?Basic_blocks.COMPIF?B002D 
+$DEFAULT.SUB ?F?$DEFAULT_SUB0036, ?L?CST0035, H
+$DEFAULT.SUB ?F?$DEFAULT_SUB0037, IN1, IN2
+$DEFAULT.DIV ?F?$DEFAULT_DIV0038, ?F?$DEFAULT_SUB0036, ?L?CST002E
+$DEFAULT.LT ?IF?CTL, ?F?$DEFAULT_SUB0037, ?F?$DEFAULT_DIV0038
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.COMPIF?B0034
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?Basic_blocks.COMPIF?B0034 
+:?Basic_blocks.COMPIF?E0033 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DEBA" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="DB" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST003C" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0041" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.DEBA?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST003C, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DEBA?CODE 
+$DEFAULT.LE ?IF?CTL, DB, ?L?CST003C
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DEBAIF?B003B
+$VMSYS.MEMCP4A OUT, IN, #/04000000
+$VMSYS.JMP :?Basic_blocks.DEBAIF?E003F
+:?Basic_blocks.DEBAIF?B003B 
+$DEFAULT.SUB ?F?$DEFAULT_SUB0041, ?L?CST003C, DB
+$DEFAULT.LT ?IF?CTL, IN, ?F?$DEFAULT_SUB0041
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DEBAIF?B0040
+$DEFAULT.ADD OUT, IN, DB
+$VMSYS.JMP :?Basic_blocks.DEBAIF?E0045
+:?Basic_blocks.DEBAIF?B0040 
+$DEFAULT.GT ?IF?CTL, IN, DB
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DEBAIF?B0046
+$DEFAULT.SUB OUT, IN, DB
+$VMSYS.JMP :?Basic_blocks.DEBAIF?E004A
+:?Basic_blocks.DEBAIF?B0046 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+:?Basic_blocks.DEBAIF?E004A 
+:?Basic_blocks.DEBAIF?E0045 
+:?Basic_blocks.DEBAIF?E003F 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DELS" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="M" type="$DEFAULT.BOOL" visibility="00400000" />
+          <INIT><![CDATA[:?Basic_blocks.DELS?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A M, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DELS?CODE 
+$VMSYS.MEMCP4A Q, M, #/01000000
+$VMSYS.MEMCP4A M, IN, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DFF" flags="0" cap="4000">
+          <VAR_INPUT name="D" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0050" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.DFF?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A NQ, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A CLKp, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DFF?CODE 
+$VMSYS.JZ CLK, :?Basic_blocks.DFF?AND004F
+$DEFAULT.NOT ?LR?ANDA0050, CLKp
+$VMSYS.JZ ?LR?ANDA0050, :?Basic_blocks.DFF?AND004F
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.DFF?EAND0053
+:?Basic_blocks.DFF?AND004F 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?Basic_blocks.DFF?EAND0053 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DFFIF?B004E
+$VMSYS.MEMCP4A Q, D, #/01000000
+:?Basic_blocks.DFFIF?B004E 
+$VMSYS.JZ R, :?Basic_blocks.DFFIF?B0056
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?Basic_blocks.DFFIF?B0056 
+$DEFAULT.NOT NQ, Q
+$VMSYS.MEMCP4A CLKp, CLK, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DIFR" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="T" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="pTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="INp" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="cTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="tmp" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?F?CUR_TIME005C" type="$DEFAULT.TIME" visibility="00200000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0061" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?TIME_TO_DINT0062" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL0063" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL0064" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0067" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB0068" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0069" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_ADD006A" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.DIFR?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A pTime, #/04000000, #/00000000
+$VMSYS.MCD4A INp, #/04000000, #/00000000
+$VMSYS.MCD4A cTime, #/04000000, #/00000000
+$VMSYS.MCD4A tmp, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0067, #/04000000, #/0000803F
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DIFR?CODE 
+$DEFAULT.CUR_TIME ?F?CUR_TIME005C
+$DEFAULT.TIME_TO_DINT cTime, ?F?CUR_TIME005C
+$DEFAULT.NOT ?IF?CTL, R
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIFRIF?B005E
+$DEFAULT.SUB ?F?$DEFAULT_SUB0061, cTime, pTime
+$DEFAULT.TIME_TO_DINT ?F?TIME_TO_DINT0062, T
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL0063, ?F?$DEFAULT_SUB0061
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL0064, ?F?TIME_TO_DINT0062
+$DEFAULT.DIV tmp, ?F?DINT_TO_REAL0063, ?F?DINT_TO_REAL0064
+$DEFAULT.SUB ?F?$DEFAULT_SUB0068, ?L?CST0067, tmp
+$DEFAULT.MUL ?F?$DEFAULT_MUL0069, ?F?$DEFAULT_SUB0068, OUT
+$DEFAULT.ADD ?F?$DEFAULT_ADD006A, ?F?$DEFAULT_MUL0069, IN
+$DEFAULT.SUB OUT, ?F?$DEFAULT_ADD006A, INp
+$VMSYS.JMP :?Basic_blocks.DIFRIF?E006C
+:?Basic_blocks.DIFRIF?B005E 
+$VMSYS.MEMCP4A OUT, IN, #/04000000
+:?Basic_blocks.DIFRIF?E006C 
+$VMSYS.MEMCP4A INp, IN, #/04000000
+$VMSYS.MEMCP4A pTime, cTime, #/04000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="DIVI" flags="0" cap="4000">
+          <VAR_INPUT name="IN1" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="LM" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST0077" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?LR?ANDA0074" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA0076" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA007D" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA007F" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR0072" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR007B" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA008C" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA008E" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA0094" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA0096" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR008A" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR0092" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00A1" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA00A3" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.DIVI?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST0077, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.DIVI?CODE 
+$DEFAULT.GT ?LR?ANDA0074, IN2, LM
+$VMSYS.JZ ?LR?ANDA0074, :?Basic_blocks.DIVI?AND0073
+$DEFAULT.GE ?LR?ANDA0076, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA0076, :?Basic_blocks.DIVI?AND0073
+$VMSYS.MCD4A ?LR?OR0072, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND007A
+:?Basic_blocks.DIVI?AND0073 
+$VMSYS.MCD4A ?LR?OR0072, #/01000000, #/00FFFFFF
+:?Basic_blocks.DIVI?EAND007A 
+$VMSYS.JNZ ?LR?OR0072, :?Basic_blocks.DIVI?OR0071
+$DEFAULT.LT ?LR?ANDA007D, IN2, LM
+$VMSYS.JZ ?LR?ANDA007D, :?Basic_blocks.DIVI?AND007C
+$DEFAULT.LE ?LR?ANDA007F, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA007F, :?Basic_blocks.DIVI?AND007C
+$VMSYS.MCD4A ?LR?OR007B, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND0082
+:?Basic_blocks.DIVI?AND007C 
+$VMSYS.MCD4A ?LR?OR007B, #/01000000, #/00FFFFFF
+:?Basic_blocks.DIVI?EAND0082 
+$VMSYS.JNZ ?LR?OR007B, :?Basic_blocks.DIVI?OR0071
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+$VMSYS.JMP :?Basic_blocks.DIVI?EOR0084
+:?Basic_blocks.DIVI?OR0071 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+:?Basic_blocks.DIVI?EOR0084 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B0070
+$DEFAULT.DIV OUT, IN1, IN2
+$VMSYS.JMP :?Basic_blocks.DIVIIF?E0087
+:?Basic_blocks.DIVIIF?B0070 
+$DEFAULT.LE ?LR?ANDA008C, IN2, LM
+$VMSYS.JZ ?LR?ANDA008C, :?Basic_blocks.DIVI?AND008B
+$DEFAULT.GT ?LR?ANDA008E, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA008E, :?Basic_blocks.DIVI?AND008B
+$VMSYS.MCD4A ?LR?OR008A, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND0091
+:?Basic_blocks.DIVI?AND008B 
+$VMSYS.MCD4A ?LR?OR008A, #/01000000, #/00FFFFFF
+:?Basic_blocks.DIVI?EAND0091 
+$VMSYS.JNZ ?LR?OR008A, :?Basic_blocks.DIVI?OR0089
+$DEFAULT.GE ?LR?ANDA0094, IN2, LM
+$VMSYS.JZ ?LR?ANDA0094, :?Basic_blocks.DIVI?AND0093
+$DEFAULT.LT ?LR?ANDA0096, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA0096, :?Basic_blocks.DIVI?AND0093
+$VMSYS.MCD4A ?LR?OR0092, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND0099
+:?Basic_blocks.DIVI?AND0093 
+$VMSYS.MCD4A ?LR?OR0092, #/01000000, #/00FFFFFF
+:?Basic_blocks.DIVI?EAND0099 
+$VMSYS.JNZ ?LR?OR0092, :?Basic_blocks.DIVI?OR0089
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+$VMSYS.JMP :?Basic_blocks.DIVI?EOR009B
+:?Basic_blocks.DIVI?OR0089 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+:?Basic_blocks.DIVI?EOR009B 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B0088
+$DEFAULT.DIV OUT, IN1, LM
+$VMSYS.JMP :?Basic_blocks.DIVIIF?E009E
+:?Basic_blocks.DIVIIF?B0088 
+$DEFAULT.EQ ?LR?ANDA00A1, IN2, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA00A1, :?Basic_blocks.DIVI?AND00A0
+$DEFAULT.EQ ?LR?ANDA00A3, LM, ?L?CST0077
+$VMSYS.JZ ?LR?ANDA00A3, :?Basic_blocks.DIVI?AND00A0
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.DIVI?EAND00A6
+:?Basic_blocks.DIVI?AND00A0 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?Basic_blocks.DIVI?EAND00A6 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B009F
+$DEFAULT.EQ ?IF?CTL, IN1, ?L?CST0077
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B00A7
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.JMP :?Basic_blocks.DIVIIF?E00AA
+:?Basic_blocks.DIVIIF?B00A7 
+$DEFAULT.GT ?IF?CTL, IN1, ?L?CST0077
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.DIVIIF?B00AB
+$VMSYS.MCD4A OUT, #/04000000, #/9976967E
+$VMSYS.JMP :?Basic_blocks.DIVIIF?E00AE
+:?Basic_blocks.DIVIIF?B00AB 
+$VMSYS.MCD4A OUT, #/04000000, #/997696FE
+:?Basic_blocks.DIVIIF?E00AE 
+:?Basic_blocks.DIVIIF?E00AA 
+:?Basic_blocks.DIVIIF?B009F 
+:?Basic_blocks.DIVIIF?E009E 
+:?Basic_blocks.DIVIIF?E0087 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="FILT" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="T" type="$DEFAULT.TIME" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="pTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="INp" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="cTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="tmp" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?F?CUR_TIME00B1" type="$DEFAULT.TIME" visibility="00200000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST00B6" type="$DEFAULT.TIME" visibility="00100000" />
+          <VAR_MEM name="?LR?OR00B5" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB00BD" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?TIME_TO_DINT00BE" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL00BF" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL00C0" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST00C3" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB00C4" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL00C5" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL00C6" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.FILT?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A pTime, #/04000000, #/00000000
+$VMSYS.MCD4A INp, #/04000000, #/00000000
+$VMSYS.MCD4A cTime, #/04000000, #/00000000
+$VMSYS.MCD4A tmp, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST00B6, #/04000000, #/E8030000
+$VMSYS.MCD4A ?L?CST00C3, #/04000000, #/0000803F
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.FILT?CODE 
+$DEFAULT.CUR_TIME ?F?CUR_TIME00B1
+$DEFAULT.TIME_TO_DINT cTime, ?F?CUR_TIME00B1
+$VMSYS.JNZ R, :?Basic_blocks.FILT?OR00B4
+$DEFAULT.LT ?LR?OR00B5, T, ?L?CST00B6
+$VMSYS.JNZ ?LR?OR00B5, :?Basic_blocks.FILT?OR00B4
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+$VMSYS.JMP :?Basic_blocks.FILT?EOR00B9
+:?Basic_blocks.FILT?OR00B4 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+:?Basic_blocks.FILT?EOR00B9 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.FILTIF?B00B3
+$VMSYS.MEMCP4A OUT, IN, #/04000000
+$VMSYS.JMP :?Basic_blocks.FILTIF?E00BB
+:?Basic_blocks.FILTIF?B00B3 
+$DEFAULT.SUB ?F?$DEFAULT_SUB00BD, cTime, pTime
+$DEFAULT.TIME_TO_DINT ?F?TIME_TO_DINT00BE, T
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL00BF, ?F?$DEFAULT_SUB00BD
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL00C0, ?F?TIME_TO_DINT00BE
+$DEFAULT.DIV tmp, ?F?DINT_TO_REAL00BF, ?F?DINT_TO_REAL00C0
+$DEFAULT.SUB ?F?$DEFAULT_SUB00C4, ?L?CST00C3, tmp
+$DEFAULT.MUL ?F?$DEFAULT_MUL00C5, ?F?$DEFAULT_SUB00C4, OUT
+$DEFAULT.MUL ?F?$DEFAULT_MUL00C6, tmp, INp
+$DEFAULT.ADD OUT, ?F?$DEFAULT_MUL00C5, ?F?$DEFAULT_MUL00C6
+:?Basic_blocks.FILTIF?E00BB 
+$VMSYS.MEMCP4A INp, IN, #/04000000
+$VMSYS.MEMCP4A pTime, cTime, #/04000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="GENR" flags="0" cap="4000">
+          <VAR_INPUT name="IN1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="F" type="$DEFAULT.INT" visibility="00400000" />
+          <VAR_MEM name="M" type="$DEFAULT.INT" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST00D3" type="$DEFAULT.INT" visibility="00100000" />
+          <VAR_MEM name="?L?CST00D6" type="$DEFAULT.INT" visibility="00100000" />
+          <INIT><![CDATA[:?Basic_blocks.GENR?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A F, #/02000000, #/0000FFFF
+$VMSYS.MCD4A M, #/02000000, #/0000FFFF
+$VMSYS.MCD4A ?L?CST00D3, #/02000000, #/0200FFFF
+$VMSYS.MCD4A ?L?CST00D6, #/02000000, #/0100FFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.GENR?CODE 
+$DEFAULT.NOT ?IF?CTL, R
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.GENRIF?B00CA
+$VMSYS.MCD4A F, #/02000000, #/0000FFFF
+$VMSYS.JZ IN1, :?Basic_blocks.GENRIF?B00CE
+$VMSYS.MCD4A F, #/02000000, #/0100FFFF
+:?Basic_blocks.GENRIF?B00CE 
+$VMSYS.JZ IN2, :?Basic_blocks.GENRIF?B00D1
+$DEFAULT.ADD F, F, ?L?CST00D3
+:?Basic_blocks.GENRIF?B00D1 
+$DEFAULT.ADD M, M, ?L?CST00D6
+$DEFAULT.GT ?IF?CTL, M, F
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.GENRIF?B00D8
+$VMSYS.MCD4A M, #/02000000, #/0000FFFF
+$DEFAULT.NOT Q, Q
+:?Basic_blocks.GENRIF?B00D8 
+$VMSYS.JMP :?Basic_blocks.GENRIF?E00DD
+:?Basic_blocks.GENRIF?B00CA 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?Basic_blocks.GENRIF?E00DD 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="JKFF" flags="0" cap="4000">
+          <VAR_INPUT name="J" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="K" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA00E1" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.JKFF?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A NQ, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A CLKp, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.JKFF?CODE 
+$VMSYS.JZ CLK, :?Basic_blocks.JKFF?AND00E0
+$DEFAULT.NOT ?LR?ANDA00E1, CLKp
+$VMSYS.JZ ?LR?ANDA00E1, :?Basic_blocks.JKFF?AND00E0
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.JKFF?EAND00E4
+:?Basic_blocks.JKFF?AND00E0 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?Basic_blocks.JKFF?EAND00E4 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.JKFFIF?B00DF
+$VMSYS.JZ J, :?Basic_blocks.JKFFIF?B00E6
+$DEFAULT.NOT ?IF?CTL, K
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.JKFFIF?B00E7
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.JKFFIF?E00EA
+:?Basic_blocks.JKFFIF?B00E7 
+$DEFAULT.NOT Q, Q
+:?Basic_blocks.JKFFIF?E00EA 
+$VMSYS.JMP :?Basic_blocks.JKFFIF?E00ED
+:?Basic_blocks.JKFFIF?B00E6 
+$VMSYS.JZ K, :?Basic_blocks.JKFFIF?B00EF
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?Basic_blocks.JKFFIF?B00EF 
+:?Basic_blocks.JKFFIF?E00ED 
+:?Basic_blocks.JKFFIF?B00DF 
+$DEFAULT.NOT NQ, Q
+$VMSYS.MEMCP4A CLKp, CLK, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="LIMT" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="MN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="MX" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <INIT><![CDATA[:?Basic_blocks.LIMT?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.LIMT?CODE 
+$DEFAULT.LT ?IF?CTL, IN, MN
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.LIMTIF?B00F4
+$VMSYS.MEMCP4A OUT, MN, #/04000000
+$VMSYS.JMP :?Basic_blocks.LIMTIF?E00F7
+:?Basic_blocks.LIMTIF?B00F4 
+$DEFAULT.GT ?IF?CTL, IN, MX
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.LIMTIF?B00F8
+$VMSYS.MEMCP4A OUT, MX, #/04000000
+$VMSYS.JMP :?Basic_blocks.LIMTIF?E00FB
+:?Basic_blocks.LIMTIF?B00F8 
+$VMSYS.MEMCP4A OUT, IN, #/04000000
+:?Basic_blocks.LIMTIF?E00FB 
+:?Basic_blocks.LIMTIF?E00F7 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="MAT" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="M" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <INIT><![CDATA[:?Basic_blocks.MAT?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A M, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.MAT?CODE 
+$DEFAULT.GT ?IF?CTL, IN, M
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.MATIF?B00FD
+$VMSYS.MEMCP4A M, IN, #/04000000
+:?Basic_blocks.MATIF?B00FD 
+$VMSYS.JZ R, :?Basic_blocks.MATIF?B0101
+$VMSYS.MEMCP4A M, IN, #/04000000
+:?Basic_blocks.MATIF?B0101 
+$VMSYS.MEMCP4A OUT, M, #/04000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="MIT" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="M" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <INIT><![CDATA[:?Basic_blocks.MIT?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A M, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.MIT?CODE 
+$DEFAULT.LT ?IF?CTL, IN, M
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.MITIF?B0104
+$VMSYS.MEMCP4A M, IN, #/04000000
+:?Basic_blocks.MITIF?B0104 
+$VMSYS.JZ R, :?Basic_blocks.MITIF?B0108
+$VMSYS.MEMCP4A M, IN, #/04000000
+:?Basic_blocks.MITIF?B0108 
+$VMSYS.MEMCP4A OUT, M, #/04000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="PDUR" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.TIME" visibility="00000020" />
+          <VAR_MEM name="INp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="sTime" type="$DEFAULT.TIME" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?F?cur_TIME0116" type="$DEFAULT.TIME" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.PDUR?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A INp, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A sTime, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.PDUR?CODE 
+$VMSYS.JZ R, :?Basic_blocks.PDURIF?B010C
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.JMP :?Basic_blocks.PDURIF?E010E
+:?Basic_blocks.PDURIF?B010C 
+$VMSYS.JZ IN, :?Basic_blocks.PDURIF?B0110
+$DEFAULT.NOT ?IF?CTL, INp
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.PDURIF?B0111
+$DEFAULT.CUR_TIME sTime
+:?Basic_blocks.PDURIF?B0111 
+$DEFAULT.CUR_TIME ?F?cur_TIME0116
+$DEFAULT.SUB OUT, ?F?cur_TIME0116, sTime
+:?Basic_blocks.PDURIF?B0110 
+:?Basic_blocks.PDURIF?E010E 
+$VMSYS.MEMCP4A INp, IN, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="RAND" flags="0" cap="4000">
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="IN1" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="IN2" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST011E" type="$DEFAULT.BOOL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB011F" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?LCALL?Basic_blocks_RND" type="Basic_blocks.RND" visibility="00000000" />
+          <VAR_MEM name="?U?RND0120" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL0121" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?L?CST0127" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?L?CST012A" type="$DEFAULT.BOOL" visibility="00100000" />
+          <VAR_MEM name="?U?RND012B" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL012C" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.RAND?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST011E, #/01000000, #/01FFFFFF
+$VMSYS.MCD4A ?L?CST0127, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST012A, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.RAND?CODE 
+$VMSYS.JZ S, :?Basic_blocks.RANDIF?B011A
+$DEFAULT.GT ?IF?CTL, IN2, IN1
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.RANDIF?B011B
+$DEFAULT.SUB ?F?$DEFAULT_SUB011F, IN2, IN1
+$VMSYS.MEMCP4A ?LCALL?Basic_blocks_RND.Fo, ?L?CST011E, #/01000000
+$VMSYS.CALF ?LCALL?Basic_blocks_RND, :?Basic_blocks.RND?CODE
+$VMSYS.MEMCP4A ?U?RND0120, ?LCALL?Basic_blocks_RND.RND, #/04000000
+$DEFAULT.MUL ?F?$DEFAULT_MUL0121, ?F?$DEFAULT_SUB011F, ?U?RND0120
+$DEFAULT.ADD OUT, ?F?$DEFAULT_MUL0121, IN1
+$VMSYS.JMP :?Basic_blocks.RANDIF?E0123
+:?Basic_blocks.RANDIF?B011B 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+:?Basic_blocks.RANDIF?E0123 
+$VMSYS.JMP :?Basic_blocks.RANDIF?E0125
+:?Basic_blocks.RANDIF?B011A 
+$DEFAULT.GT ?IF?CTL, IN2, ?L?CST0127
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.RANDIF?B0126
+$VMSYS.MEMCP4A ?LCALL?Basic_blocks_RND.Fo, ?L?CST012A, #/01000000
+$VMSYS.CALF ?LCALL?Basic_blocks_RND, :?Basic_blocks.RND?CODE
+$VMSYS.MEMCP4A ?U?RND012B, ?LCALL?Basic_blocks_RND.RND, #/04000000
+$DEFAULT.MUL ?F?$DEFAULT_MUL012C, IN2, ?U?RND012B
+$DEFAULT.ADD OUT, ?F?$DEFAULT_MUL012C, IN1
+$VMSYS.JMP :?Basic_blocks.RANDIF?E012E
+:?Basic_blocks.RANDIF?B0126 
+$VMSYS.MEMCP4A OUT, IN1, #/04000000
+:?Basic_blocks.RANDIF?E012E 
+:?Basic_blocks.RANDIF?E0125 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="RSFF" flags="0" cap="4000">
+          <VAR_INPUT name="S" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?LR?ANDA0132" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?ANDA0134" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.RSFF?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A NQ, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.RSFF?CODE 
+$DEFAULT.NOT ?LR?ANDA0132, R1
+$VMSYS.JZ ?LR?ANDA0132, :?Basic_blocks.RSFF?AND0131
+$DEFAULT.OR ?LR?ANDA0134, Q, S
+$VMSYS.JZ ?LR?ANDA0134, :?Basic_blocks.RSFF?AND0131
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.RSFF?EAND0137
+:?Basic_blocks.RSFF?AND0131 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?Basic_blocks.RSFF?EAND0137 
+$DEFAULT.NOT NQ, Q
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SQR" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="LM" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="OUT" type="$DEFAULT.REAL" visibility="00000020" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST013B" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?SQRT0143" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.SQR?INIT 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST013B, #/04000000, #/00000000
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.SQR?CODE 
+$DEFAULT.GE ?IF?CTL, IN, ?L?CST013B
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.SQRIF?B013A
+$DEFAULT.GE ?IF?CTL, IN, LM
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.SQRIF?B013D
+$DEFAULT.SQRT OUT, IN
+$VMSYS.JMP :?Basic_blocks.SQRIF?E0141
+:?Basic_blocks.SQRIF?B013D 
+$DEFAULT.SQRT ?F?SQRT0143, LM
+$DEFAULT.DIV OUT, IN, ?F?SQRT0143
+:?Basic_blocks.SQRIF?E0141 
+$VMSYS.NOP 
+$VMSYS.JMP :?Basic_blocks.SQRIF?E0145
+:?Basic_blocks.SQRIF?B013A 
+$VMSYS.MCD4A OUT, #/04000000, #/00000000
+:?Basic_blocks.SQRIF?E0145 
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="SRFF" flags="0" cap="4000">
+          <VAR_INPUT name="S1" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="?LR?ANDA014B" type="$DEFAULT.BOOL" visibility="00200000" />
+          <VAR_MEM name="?LR?OR0149" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.SRFF?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A NQ, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.SRFF?CODE 
+$VMSYS.JNZ S1, :?Basic_blocks.SRFF?OR0148
+$DEFAULT.NOT ?LR?ANDA014B, R
+$VMSYS.JZ ?LR?ANDA014B, :?Basic_blocks.SRFF?AND014A
+$VMSYS.JZ Q, :?Basic_blocks.SRFF?AND014A
+$VMSYS.MCD4A ?LR?OR0149, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.SRFF?EAND014E
+:?Basic_blocks.SRFF?AND014A 
+$VMSYS.MCD4A ?LR?OR0149, #/01000000, #/00FFFFFF
+:?Basic_blocks.SRFF?EAND014E 
+$VMSYS.JNZ ?LR?OR0149, :?Basic_blocks.SRFF?OR0148
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.JMP :?Basic_blocks.SRFF?EOR0150
+:?Basic_blocks.SRFF?OR0148 
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+:?Basic_blocks.SRFF?EOR0150 
+$DEFAULT.NOT NQ, Q
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TFF" flags="0" cap="4000">
+          <VAR_INPUT name="T" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="CLK" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_OUTPUT name="NQ" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="CLKp" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="M" type="$DEFAULT.BOOL" visibility="00400000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?LR?ANDA0155" type="$DEFAULT.BOOL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.TFF?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A NQ, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A CLKp, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A M, #/01000000, #/00FFFFFF
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.TFF?CODE 
+$VMSYS.JZ CLK, :?Basic_blocks.TFF?AND0154
+$DEFAULT.NOT ?LR?ANDA0155, CLKp
+$VMSYS.JZ ?LR?ANDA0155, :?Basic_blocks.TFF?AND0154
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/01FFFFFF
+$VMSYS.JMP :?Basic_blocks.TFF?EAND0158
+:?Basic_blocks.TFF?AND0154 
+$VMSYS.MCD4A ?IF?CTL, #/01000000, #/00FFFFFF
+:?Basic_blocks.TFF?EAND0158 
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.TFFIF?B0153
+$VMSYS.JZ T, :?Basic_blocks.TFFIF?B015A
+$DEFAULT.NOT M, M
+:?Basic_blocks.TFFIF?B015A 
+:?Basic_blocks.TFFIF?B0153 
+$VMSYS.JZ R, :?Basic_blocks.TFFIF?B015E
+$VMSYS.MCD4A M, #/01000000, #/00FFFFFF
+:?Basic_blocks.TFFIF?B015E 
+$VMSYS.MEMCP4A Q, M, #/01000000
+$DEFAULT.NOT NQ, Q
+$VMSYS.MEMCP4A CLKp, CLK, #/01000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="TOTI" flags="0" cap="4000">
+          <VAR_INPUT name="IN" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_INPUT name="R" type="$DEFAULT.BOOL" visibility="00000010" />
+          <VAR_INPUT name="DL" type="$DEFAULT.REAL" visibility="00000010" />
+          <VAR_OUTPUT name="Q" type="$DEFAULT.BOOL" visibility="00000020" />
+          <VAR_MEM name="cTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="pTime" type="$DEFAULT.DINT" visibility="00400000" />
+          <VAR_MEM name="Sum" type="$DEFAULT.REAL" visibility="00400000" />
+          <VAR_MEM name="?F?CUR_TIME0165" type="$DEFAULT.TIME" visibility="00200000" />
+          <VAR_MEM name="?IF?CTL" type="$DEFAULT.BOOL" visibility="00000000" />
+          <VAR_MEM name="?L?CST016A" type="$DEFAULT.REAL" visibility="00100000" />
+          <VAR_MEM name="?F?$DEFAULT_SUB016B" type="$DEFAULT.DINT" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL016C" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?DINT_TO_REAL016D" type="$DEFAULT.REAL" visibility="00200000" />
+          <VAR_MEM name="?F?$DEFAULT_MUL016E" type="$DEFAULT.REAL" visibility="00200000" />
+          <INIT><![CDATA[:?Basic_blocks.TOTI?INIT 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+$VMSYS.MCD4A cTime, #/04000000, #/00000000
+$VMSYS.MCD4A pTime, #/04000000, #/00000000
+$VMSYS.MCD4A Sum, #/04000000, #/00000000
+$VMSYS.MCD4A ?L?CST016A, #/04000000, #/6F12833A
+$VMSYS.RETURN 
+]]></INIT>
+          <CODE><![CDATA[:?Basic_blocks.TOTI?CODE 
+$DEFAULT.CUR_TIME ?F?CUR_TIME0165
+$DEFAULT.TIME_TO_DINT cTime, ?F?CUR_TIME0165
+$DEFAULT.NOT ?IF?CTL, R
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.TOTIIF?B0167
+$DEFAULT.SUB ?F?$DEFAULT_SUB016B, cTime, pTime
+$DEFAULT.MUL ?F?$DEFAULT_MUL016C, IN, ?L?CST016A
+$DEFAULT.DINT_TO_REAL ?F?DINT_TO_REAL016D, ?F?$DEFAULT_SUB016B
+$DEFAULT.MUL ?F?$DEFAULT_MUL016E, ?F?$DEFAULT_MUL016C, ?F?DINT_TO_REAL016D
+$DEFAULT.ADD Sum, Sum, ?F?$DEFAULT_MUL016E
+$DEFAULT.GE ?IF?CTL, Sum, DL
+$VMSYS.JZ ?IF?CTL, :?Basic_blocks.TOTIIF?B0170
+$VMSYS.MCD4A Q, #/01000000, #/01FFFFFF
+$DEFAULT.SUB Sum, Sum, DL
+$VMSYS.JMP :?Basic_blocks.TOTIIF?E0175
+:?Basic_blocks.TOTIIF?B0170 
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?Basic_blocks.TOTIIF?E0175 
+$VMSYS.JMP :?Basic_blocks.TOTIIF?E0177
+:?Basic_blocks.TOTIIF?B0167 
+$VMSYS.MCD4A Sum, #/04000000, #/00000000
+$VMSYS.MCD4A Q, #/01000000, #/00FFFFFF
+:?Basic_blocks.TOTIIF?E0177 
+$VMSYS.MEMCP4A pTime, cTime, #/04000000
+$VMSYS.RETURN 
+]]></CODE>
+        </FUNCTION_BLOCK>
+      </FUNCTION_BLOCKS>
+    </LIB_BODY>
+  </LIBRARY>
+</PAL1131>

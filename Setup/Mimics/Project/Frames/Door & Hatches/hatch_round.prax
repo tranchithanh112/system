@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement GridSpacing="1" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Ellipse BorderWidth="2" BorderColor="TextInfo" FillColor="AlarmRed" CenterX="50" CenterY="50" RadiusX="50" RadiusY="50">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Open_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+		<Ellipse BorderWidth="2" BorderColor="TextInfo" FillColor="Transparent" LightingStyle="Radial" CenterX="50" CenterY="50" RadiusX="22" RadiusY="22"/>
+		<Ellipse BorderWidth="2" BorderColor="TextInfo" FillColor="Transparent" LightingStyle="Radial" CenterX="50" CenterY="50" RadiusX="6" RadiusY="6"/>
+		<Line Width="3" Color="TextInfo" X0="50" Y0="45" X1="50" Y1="29"/>
+		<Line Width="3" Color="TextInfo" X0="32" Y0="61" X1="46" Y1="53"/>
+		<Line Width="3" Color="TextInfo" X0="54" Y0="53" X1="67.9642" Y1="61.0623"/>
+	</Children>
+</RootElement>

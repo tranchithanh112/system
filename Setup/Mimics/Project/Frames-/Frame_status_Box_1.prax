@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="400" Height="400" GridSpacing="1" ColorTableFile="..\Standard.colortable">
+	<Children>
+		<TabPanel Width="402" Height="402" X="-1" Y="-1" HeaderVisible="False" SelectedPageIndex="4">
+			<Bindings>
+				<SelectFirstInt32Binding TargetPropertyName="SelectedPageIndex" SelectedValue1="1" SelectedValue2="2" SelectedValue3="3" DefaultValue="4">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="status_1_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="status_2_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="status_3_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="status_4_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstInt32Binding>
+			</Bindings>
+			<Children>
+				<TabPage GridSpacing="1" PageName="status_1">
+					<Children>
+						<TextBox FlashFast="True" Width="400" Height="40" X="1" Y="1" BorderColor="InfoTextGrey" FillColor="Comment" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N" Text="ESD ZONE 1 - BOW THRUSTER VENTILATION">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Width" ExportedPropertyName="width_txt"/>
+								<FrameBinding TargetPropertyName="Text" ExportedPropertyName="status_1_txt"/>
+								<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="status_1_color"/>
+							</Bindings>
+						</TextBox>
+					</Children>
+				</TabPage>
+				<TabPage GridSpacing="1" PageName="status_2">
+					<Children>
+						<TextBox FlashFast="True" Width="400" Height="40" X="1" Y="1" BorderColor="InfoTextGrey" FillColor="Comment" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N" Text="ESD ZONE 1 - BOW THRUSTER VENTILATION">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Width" ExportedPropertyName="width_txt"/>
+								<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="status_2_color"/>
+								<FrameBinding TargetPropertyName="Text" ExportedPropertyName="status_2_txt"/>
+							</Bindings>
+						</TextBox>
+					</Children>
+				</TabPage>
+				<TabPage GridSpacing="1" PageName="status_3">
+					<Children>
+						<TextBox FlashFast="True" Width="400" Height="40" X="1" Y="1" BorderColor="InfoTextGrey" FillColor="Comment" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N" Text="ESD ZONE 1 - BOW THRUSTER VENTILATION">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Width" ExportedPropertyName="width_txt"/>
+								<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="status_3_color"/>
+								<FrameBinding TargetPropertyName="Text" ExportedPropertyName="status_3_txt"/>
+							</Bindings>
+						</TextBox>
+					</Children>
+				</TabPage>
+				<TabPage GridSpacing="1" PageName="status_4">
+					<Children>
+						<TextBox FlashFast="True" Width="400" Height="40" X="1" Y="1" BorderColor="InfoTextGrey" FillColor="Comment" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N" Text="ESD ZONE 1 - BOW THRUSTER VENTILATION">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Width" ExportedPropertyName="width_txt"/>
+								<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="status_4_color"/>
+								<FrameBinding TargetPropertyName="Text" ExportedPropertyName="status_4_txt"/>
+							</Bindings>
+						</TextBox>
+					</Children>
+				</TabPage>
+				<TabPage GridSpacing="1" PageName="default">
+					<Children>
+						<TextBox FlashFast="True" Width="400" Height="40" X="1" Y="1" BorderColor="InfoTextGrey" FillColor="Comment" CornerRoundRadius="5" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N" Text="ESD ZONE 1 - BOW THRUSTER VENTILATION">
+							<Bindings>
+								<FrameBinding TargetPropertyName="Width" ExportedPropertyName="width_txt"/>
+								<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="default_color"/>
+								<FrameBinding TargetPropertyName="Text" ExportedPropertyName="default_txt"/>
+							</Bindings>
+						</TextBox>
+					</Children>
+				</TabPage>
+			</Children>
+		</TabPanel>
+	</Children>
+</RootElement>

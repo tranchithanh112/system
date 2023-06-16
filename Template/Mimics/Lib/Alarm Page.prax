@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+		<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1200" DefaultValue="1080">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+					<Bindings>
+						<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+					</Bindings>
+				</ValueCompareBinding>
+			</Bindings>
+		</SelectFirstCoordBinding>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1200" ShowBackground="False" Highlight_Button_NR="23" Page_Title="ALARMS - CURRENT STATUS" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame V2.prax"/>
+		<TextBox Width="175" Height="30" X="745" Y="75" BorderWidth="0" FillColor="AlarmRed" TextColor="AlwaysWhite" Font="Praxis;22.0;B;N;N" Text="99999 Alarm(s)">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<UInt32ToStringConvertParams Suffix=" Alarm(s)"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+				<AlarmCountBinding TargetPropertyName="FillColor">
+					<ConvertParams>
+						<UInt32ToColorConvertParams ColorWhenZero="Gray"/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+		</TextBox>
+		<AlarmList Width="1685" Height="960" X="5" Y="50" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" BorderColor="Transparent" FileName=".\Frames\Menus\AlarmContextMenu.prax" ShowTag="False" ShowDate="True" ShowTime="True" ShowReportType="True" ShowValue="True" ShowUnits="True" ShowLimits="True" ShowDT="True">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1685" TransitionTime="100">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+				<SelectFirstCoordBinding TargetPropertyName="Height" SelectedValue0="1080" DefaultValue="960">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.001">
+							<Bindings>
+								<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstCoordBinding>
+			</Bindings>
+		</AlarmList>
+	</Children>
+</RootElement>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="60" Height="60" GridSpacing="1">
+	<Children>
+		<Rectangle FlashState="Flashing" Flash="True" FlashArea="OutlineOnly" FlashColor="NoAlarmGreen" Width="60" Height="60" BorderWidth="2" FillPatternColor="PageInfoLine">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FlashColor" SelectedValue0="NoAlarmGreen" SelectedValue1="NoAlarmGreen" DefaultValue="ButtonFill">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="CB_Offload"/>
+						<FrameBinding TargetPropertyName="ConditionValue1" ExportedPropertyName="CB_Sync"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstFlashStateBinding TargetPropertyName="FlashState">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="CB_Offload"/>
+						<FrameBinding TargetPropertyName="ConditionValue1" ExportedPropertyName="CB_Sync"/>
+					</Bindings>
+				</SelectFirstFlashStateBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="BorderColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Tripped"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="10" Height="50" X="35" Y="5" BorderWidth="0" FillColor="Green">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="8" Height="36" X="10" Y="12" FillColor="White" FillPatternColor="White">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="8" Height="8" X="36" Y="5"/>
+		<Rectangle Width="8" Height="8" X="36" Y="47"/>
+		<Rectangle Width="8" Height="36" X="36" Y="12" FillColor="NoAlarmGreen">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+		<TextBox Visible="False" Width="60" Height="20" Y="20" Font="Segoe UI;12.0;N;N;N" Text="LOCKED">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Locked"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+		<Line Width="2" X0="40" Y0="55" X1="40" Y1="58"/>
+		<Line Width="2" X0="40" Y0="2" X1="40" Y1="5"/>
+	</Children>
+</RootElement>

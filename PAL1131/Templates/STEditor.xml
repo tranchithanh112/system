@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CPDEV>
+  <ST_TEMPLATES>
+    <ITEM>
+      <SHORT_KEY>arr</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template ARRAY declaration</LCID>
+        <LCID value="0x0415" default="0">Deklaracja tablicy</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE>
+        <![CDATA[ARRAY [0..|] of ;]]>
+      </CODE>
+    </ITEM>        
+    <ITEM>
+      <SHORT_KEY>ces</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template CASE instruction (without ELSE)</LCID>
+        <LCID value="0x0415" default="0">Szablon instrukcji CASE (bez ELSE)</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE>
+        <![CDATA[CASE | OF
+ : ;
+ : ;
+END_CASE
+]]>
+      </CODE>
+    </ITEM>    
+    <ITEM>
+      <SHORT_KEY>cee</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template CASE instruction</LCID>
+        <LCID value="0x0415" default="0">Szablon instrukcji CASE</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE>
+        <![CDATA[CASE | OF
+ : ;
+ : ;
+ELSE
+ _;
+END_CASE
+]]>
+      </CODE>
+    </ITEM>        
+    <ITEM>
+      <SHORT_KEY>forb</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template FOR instruction (without BY)</LCID>
+        <LCID value="0x0415" default="0">Szablon instrukcji FOR (bez BY)</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE>
+        <![CDATA[FOR | :=  TO  DO 
+END_FOR]]>
+      </CODE>
+    </ITEM>    
+    <ITEM>
+      <SHORT_KEY>forc</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template FOR instruction</LCID>
+        <LCID value="0x0415" default="0">Szablon instrukcji FOR</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE>
+        <![CDATA[FOR | :=  TO  BY  DO 
+END_FOR]]>
+      </CODE>
+    </ITEM>    
+    <ITEM>
+      <SHORT_KEY>ift</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template IF (without ELSE)</LCID>
+        <LCID value="0x0415" default="0">Szablon instrukcji IF (bez ELSE)</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE><![CDATA[IF | THEN
+END_IF]]>
+      </CODE>
+    </ITEM>    
+    <ITEM>
+      <SHORT_KEY>ife</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template IF with ELSE</LCID>
+        <LCID value="0x0415" default="0">Szablon instrukcji IF z ELSE</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE><![CDATA[IF | THEN
+ELSE
+END_IF]]>
+      </CODE>
+    </ITEM>    
+    <ITEM>
+      <SHORT_KEY>rep</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template REPEAT</LCID>
+        <LCID value="0x0415" default="0">Szablon instrukcji REPEAT</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE><![CDATA[REPEAT 
+|
+UNTIL
+END_REPEAT]]>
+      </CODE>
+    </ITEM>            
+    <ITEM>
+      <SHORT_KEY>whi</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template WHILE</LCID>
+        <LCID value="0x0415" default="0">Szablon instrukcji WHILE</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE><![CDATA[WHILE | DO
+END_WHILE]]>
+      </CODE>
+    </ITEM>        
+    <ITEM>
+      <SHORT_KEY>vari</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template variable I:INT</LCID>
+        <LCID value="0x0415" default="0">Szablon zmiennej I:INT</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE><![CDATA[VAR
+I : INT;
+END_VAR
+|]]>
+      </CODE>
+    </ITEM>    
+    <ITEM>
+      <SHORT_KEY>strd</SHORT_KEY>
+      <NAME>
+        <LCID value="0x0409" default="1">Template for empty struct</LCID>
+        <LCID value="0x0415" default="0">Szablon dla pustej struktury</LCID>
+      </NAME>
+      <CURSOR_POS>|</CURSOR_POS>
+      <CODE><![CDATA[TYPE | : STRUCT
+FIELD1 : (*TYPE*);
+END_STRUCT;
+END_TYPE
+]]>
+      </CODE>
+    </ITEM>    
+  </ST_TEMPLATES>
+</CPDEV>

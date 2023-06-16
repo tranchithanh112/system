@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PAL1131 version="1.0">
+  <VMSPEC>
+    <USER>
+      <title>FINT support for Praxis Automation Systems</title>
+      <version>2.6.6</version>
+      <extraver/>
+      <builddate>2012.08-09 22:22</builddate>
+      <exportdate>#now</exportdate>
+    </USER>
+    <TYPES>
+      <special-type name="FINT" method="1">
+        <!-- Changing the name or flags method will not do any affecion. Prevoius line is only a switch that enables that feature hardly coded in compiler -->
+        <comment>Special type that implements float-point value with fixed decimal point</comment>
+      </special-type>
+    </TYPES>
+    <FUNCTIONS>
+      <function name="ADD" vmcode="1D10" return="FINT">
+        <args>
+          <arg no="0" name="summand0" type="FINT"/>
+          <arg no="1" name="summand1" type="FINT"/>
+        </args>
+        <comment>Adds two FINT operands</comment>
+      </function>
+      <function name="SUB" vmcode="1D11" return="FINT">
+        <args>
+          <arg no="0" name="minuend" type="FINT"/>
+          <arg no="1" name="subtrahend" type="FINT"/>
+        </args>
+        <comment>Subtracts FINT operands</comment>
+      </function>
+      <function name="MUL" vmcode="1D12" return="FINT">
+        <args>
+          <arg no="0" name="factor0" type="FINT"/>
+          <arg no="1" name="factor1" type="FINT"/>
+        </args>
+        <comment>Multiplies two FINT factors</comment>
+      </function>
+      <function name="DIV" vmcode="1D13" return="FINT">
+        <args>
+          <arg no="0" name="dividend" type="FINT"/>
+          <arg no="1" name="divisor" type="FINT"/>
+        </args>
+        <comment>Divides dividend by divisor</comment>
+      </function>
+      <function name="NEG" vmcode="1D14" return="FINT">
+        <args>
+          <arg no="0" name="INP" type="FINT"/>
+        </args>
+        <comment>Changes sign of the signed value</comment>
+      </function>
+      <function name="ABS" vmcode="1D15" return="FINT">
+        <args>
+          <arg no="0" name="INP" type="FINT"/>
+        </args>
+        <comment>Returns the absolute value of a specified number</comment>
+      </function>
+      <function name="GT" vmcode="1D16" return="BOOL">
+        <args>
+          <arg no="0" type="FINT"/>
+          <arg no="1" type="FINT"/>
+        </args>
+        <comment>Checks if first argument is grater than second</comment>
+      </function>
+      <function name="GE" vmcode="1D17" return="BOOL">
+        <args>
+          <arg no="0" type="FINT"/>
+          <arg no="1" type="FINT"/>
+        </args>
+        <comment>Checks if first argument is grater or equal than second</comment>
+      </function>
+      <function name="EQ" vmcode="1D18" return="BOOL">
+        <args>
+          <arg no="0" type="FINT"/>
+          <arg no="1" type="FINT"/>
+        </args>
+        <comment>Checks if first argument is equal to second</comment>
+      </function>
+      <function name="LE" vmcode="1D19" return="BOOL">
+        <args>
+          <arg no="0" type="FINT"/>
+          <arg no="1" type="FINT"/>
+        </args>
+        <comment>Checks if first argument is less or equal than second</comment>
+      </function>
+      <function name="LT" vmcode="1D1A" return="BOOL">
+        <args>
+          <arg no="0" type="FINT"/>
+          <arg no="1" type="FINT"/>
+        </args>
+        <comment>Checks if first argument is less than second</comment>
+      </function>
+      <function name="NE" vmcode="1D1B" return="BOOL">
+        <args>
+          <arg no="0" type="FINT"/>
+          <arg no="1" type="FINT"/>
+        </args>
+        <comment>Checks if first argument is not equal to second</comment>
+      </function>
+      <function name="FINT_TO_DINT" vmcode="1D1C" return="DINT">
+        <args>
+          <arg no="0" name="val" type="FINT"/>
+        </args>
+        <comment>Converts FINT value to DINT by truncation</comment>
+      </function>
+      <function name="DINT_TO_FINT" vmcode="1D1D" return="FINT">
+        <args>
+          <arg no="0" name="val" type="DINT"/>
+        </args>
+        <comment>Converts DINT value to FINT by multiplying it with 1000</comment>
+      </function>
+      <function name="REAL_TO_FINT" vmcode="1D1E" return="FINT">
+        <args>
+          <arg no="0" name="val" type="REAL"/>
+        </args>
+        <comment>Converts REAL value to FINT by multiplying it with 1000</comment>
+      </function>
+      <function name="FINT_TO_REAL" vmcode="1D1F" return="REAL">
+        <args>
+          <arg no="0" name="val" type="FINT"/>
+        </args>
+        <comment>Converts FINT value to REAL value</comment>
+      </function>
+      <function name="SQRT" vmcode="1D20" return="FINT">
+        <args>
+          <arg no="0" name="val" type="FINT"/>
+        </args>
+        <comment>Returns the square root of a specified number</comment>
+      </function>
+      <function name="SIN" vmcode="1D21" return="FINT">
+        <args>
+          <arg no="0" name="val" type="FINT">
+            <comment>An angle, measured in radians</comment>
+          </arg>
+        </args>
+        <comment>Returns the sine of the specified angle</comment>
+      </function>
+      <function name="COS" vmcode="1D22" return="FINT">
+        <args>
+          <arg no="0" name="val" type="FINT">
+            <comment>An angle, measured in radians</comment>
+          </arg>
+        </args>
+        <comment>Returns the cosine of the specified angle</comment>
+      </function>
+      <function name="TAN" vmcode="1D23" return="FINT">
+        <args>
+          <arg no="0" name="val" type="FINT">
+            <comment>An angle, measured in radians</comment>
+          </arg>
+        </args>
+        <comment>Returns the tangent of the specified angle</comment>
+      </function>
+      <!-- since 2.6.4 -->
+      <function name="SHL" vmcode="0B03" return="FINT">
+        <args>
+          <arg no="0" name="arg" type="FINT"/>
+          <arg no="1" name="num" type="INT"/>
+        </args>
+        <comment>Shifts first argument left by the number of bits specified by second argument</comment>
+      </function>
+      <function name="SHR" vmcode="0B13" return="FINT">
+        <args>
+          <arg no="0" name="arg" type="FINT"/>
+          <arg no="1" name="num" type="INT"/>
+        </args>
+        <comment>Shifts first argument right by the number of bits specified by second argument</comment>
+      </function>
+      <function name="AND" vmcode="08*3" return="FINT">
+        <args>
+          <arg no="*" name="arg*" type="FINT"/>
+        </args>
+        <comment>Bitwise AND of FINT operands</comment>
+        <group>
+          <item value="2" mask="0"/>
+        </group>
+      </function>
+      <function name="OR" vmcode="09*3" return="FINT">
+        <args>
+          <arg no="*" name="arg*" type="FINT"/>
+        </args>
+        <comment>Bitwise OR of FINT operands</comment>
+        <group>
+          <item value="2" mask="0"/>
+        </group>
+      </function>      
+      <function name="XOR" vmcode="0A*4" return="FINT">
+        <args>
+          <arg no="*" name="arg*" type="FINT"/>
+        </args>
+        <comment>Bitwise XOR of FINT operands</comment>
+        <group>
+          <item value="2" mask="0"/>
+        </group>
+      </function>
+      <function name="MAX" vmcode="0E03" return="FINT">
+        <args>
+          <arg no="0" type="FINT"/>
+          <arg no="1" type="FINT"/>
+        </args>
+        <comment>Selects maximum between two values (based on DINT)</comment>
+        <group>
+          <item value="7" mask="0"/>
+        </group>
+      </function>
+      <function name="MIN" vmcode="0F03" return="FINT">
+        <args>
+          <arg no="0" type="FINT"/>
+          <arg no="1" type="FINT"/>
+        </args>
+        <comment>Selects minimum between two values (based on DINT)</comment>
+        <group>
+          <item value="7" mask="0"/>
+        </group>
+      </function>
+    </FUNCTIONS>
+    <INLINE>
+      <function name="CAST_FINT_TO_DINT" return="DINT">
+        <args>
+          <arg no="0" name="source" type="FINT"/>
+        </args>
+        <comment>Returns casted FINT value to DINT value without affection</comment>
+        <vars></vars>
+        <code>
+          <![CDATA[$VMSYS.MEMCP CAST_FINT_TO_DINT, source, #/0400]]>
+        </code>
+      </function>
+      <function name="CAST_DINT_TO_FINT" return="FINT">
+        <args>
+          <arg no="0" name="source" type="DINT"/>
+        </args>
+        <comment>Returns casted DINT value to FINT value without affection</comment>
+        <vars></vars>
+        <code>
+          <![CDATA[$VMSYS.MEMCP CAST_DINT_TO_FINT, source, #/0400]]>
+        </code>
+      </function>
+      <function name="TEST_FINT" return="BOOL">
+        <args>
+          <arg no="0" name="VALUE" type="FINT"/>
+          <arg no="1" name="MASK" type="FINT"/>
+        </args>
+        <comment>Checks if two FINT values have at least one common bit</comment>
+        <vars>
+          <var name="_ZERO" type="FINT"/>
+          <var name="_RES" type="FINT"/>
+        </vars>
+        <code>
+          <![CDATA[
+          $VMSYS.MCD        _ZERO, #/04, #/000000
+          $DEFAULT.AND/0823 _RES, VALUE, MASK
+          $DEFAULT.EQ/1D18  TEST_FINT, _RES, _ZERO
+          ]]>
+        </code>
+      </function>
+      <!--function name="SEL" return="FINT">
+        <args>
+          <arg no="0" name="selector" type="BOOL"/>
+          <arg no="1" name="case_false" type="FINT"/>
+          <arg no="2" name="case_true" type="FINT"/>
+        </args>        
+        <comment>Selects one of two arguments</comment>
+        <vars></vars>
+        <code>
+          <![CDATA[$DEFAULT.SEL/0C03 SEL, selector, case_false, case_true]]>
+        </code>
+      </function-->
+    </INLINE>
+    <CONVERSIONS>
+      <conv from="FINT" to="REAL" method="single">
+        <funcall param="FINT">FINT_TO_REAL</funcall>
+      </conv>
+      <conv from="INT" to="FINT" method="multiple">
+        <funcall param="INT">INT_TO_DINT</funcall>
+        <funcall param="DINT">DINT_TO_FINT</funcall>
+      </conv>
+    </CONVERSIONS>
+  </VMSPEC>
+</PAL1131>

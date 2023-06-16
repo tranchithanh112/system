@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="210" GridSpacing="1" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<FillBar Width="42" Height="150" X="4" Y="20" FillDirection="BottomToTop" RangeBegin="-50" RangeEnd="50" LimitType="None" FirstLimit="0" SecondLimit="0" UseBeginValue="True" Value="10">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="BeginValue">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="LIMITS"/>
+				<UnitConversionBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FrameBinding TargetPropertyName="B" ExportedPropertyName="DEV_LIMIT"/>
+					</Bindings>
+				</UnitConversionBinding>
+				<UnitConversionBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<UnitConversionBinding TargetPropertyName="B" X="25" A="-1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="DEV_LIMIT"/>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+				</UnitConversionBinding>
+				<UnitConversionBinding TargetPropertyName="RangeEnd" B="50">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FrameBinding TargetPropertyName="B" ExportedPropertyName="DEVIATION"/>
+					</Bindings>
+				</UnitConversionBinding>
+				<UnitConversionBinding TargetPropertyName="RangeBegin">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<UnitConversionBinding TargetPropertyName="B" X="50" A="-1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="DEVIATION"/>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+				</UnitConversionBinding>
+				<FrameBinding TargetPropertyName="LimitMarkerSize" ExportedPropertyName="MARKER_SIZE"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNEL"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="BAR_COLOR"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Visible="False" Width="35" Height="20" X="3" BorderWidth="0" Font="Segoe UI;12.0;B;N;N">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" B="50">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="1150">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<FrameBinding TargetPropertyName="B" ExportedPropertyName="DEVIATION"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="BAR_LIMIT"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Width="35" Height="20" X="3" Y="170" BorderWidth="0" Font="Segoe UI;12.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="BAR_LIMIT"/>
+				<UnitConversionBinding TargetPropertyName="Text" B="-50">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="1150">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<UnitConversionBinding TargetPropertyName="B" X="50" A="-1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="X" ExportedPropertyName="DEVIATION"/>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="35" Height="20" X="3" Y="190" BorderWidth="0" Font="Segoe UI;12.0;B;N;N">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text" X="20">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="B" ChannelNumber="1118">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNEL"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<UnitConversionBinding TargetPropertyName="X" A="-1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="X" ChannelNumber="1150">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="AVERAGE"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</UnitConversionBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+				<SelectFirstCoordBinding TargetPropertyName="Y" SelectedValue0="190" DefaultValue="170">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="BAR_LIMIT"/>
+					</Bindings>
+				</SelectFirstCoordBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Width="15" Height="20" X="32" BorderWidth="0" Font="Segoe UI;12.0;B;N;N" Text="°C">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="BAR_LIMIT"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="UNIT"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Visible="False" Width="15" Height="20" X="32" Y="170" BorderWidth="0" Font="Segoe UI;12.0;B;N;N" Text="°C">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="BAR_LIMIT"/>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="UNIT"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="15" Height="20" X="32" Y="190" BorderWidth="0" Font="Segoe UI;12.0;B;N;N" Text="°C">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="UNIT"/>
+				<SelectFirstCoordBinding TargetPropertyName="Y" SelectedValue0="190" DefaultValue="170">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="BAR_LIMIT"/>
+					</Bindings>
+				</SelectFirstCoordBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

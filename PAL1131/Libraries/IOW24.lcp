@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <LIBRARY name="IOW24" crypt="" version="131072">
+    <LIB_HDR>
+      <COMP_VER>00041109</COMP_VER>
+      <CAPABILITIES>
+        <CAPABILITY code="0" />
+        <CAPABILITY code="4000" />
+      </CAPABILITIES>
+      <LIB_INFO>
+        <COPYRIGHT><![CDATA[Praxis Automation Technology]]></COPYRIGHT>
+        <CREATED year="2020" month="10" day="5" hour="13" minutes="27" seconds="28" milisec="221" />
+        <MENU_PATH>IOW24</MENU_PATH>
+        <CONTENT>
+          <ITEM name="IOWARRIOR24_RAW" type="FBLK">
+            <PAR kind="INPUT" name="OUTPUTS_STATE" type="$DEFAULT.WORD" />
+            <PAR kind="OUTPUT" name="ERROR" type="$DEFAULT.WORD" />
+            <COMMENT><![CDATA[IO Warrior Number as a INT]]></COMMENT>
+          </ITEM>
+        </CONTENT>
+      </LIB_INFO>
+      <DEPENDENCIES />
+    </LIB_HDR>
+    <LIB_BODY>
+      <FUNCTION_BLOCKS>
+        <FUNCTION_BLOCK name="IOWARRIOR24_RAW" flags="64" cap="0">
+          <VAR_INPUT name="OUTPUTS_STATE" type="$DEFAULT.WORD" visibility="00000010" />
+          <VAR_OUTPUT name="ERROR" type="$DEFAULT.WORD" visibility="00000020" />
+          <HARDWARE id="0050" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?IOW24.IOWARRIOR24_RAW?INIT 
+$VMSYS.MCD ERROR, #/02, #/0000
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+        <FUNCTION_BLOCK name="IOWARRIOR24_RAW" flags="64" cap="4000">
+          <VAR_INPUT name="OUTPUTS_STATE" type="$DEFAULT.WORD" visibility="00000010" />
+          <VAR_OUTPUT name="ERROR" type="$DEFAULT.WORD" visibility="00000020" />
+          <HARDWARE id="0050" align="2" extra="0" total="0" />
+          <INIT><![CDATA[:?IOW24.IOWARRIOR24_RAW?INIT 
+$VMSYS.MCD4A ERROR, #/02000000, #/0000FFFF
+$VMSYS.RETURN 
+]]></INIT>
+        </FUNCTION_BLOCK>
+      </FUNCTION_BLOCKS>
+    </LIB_BODY>
+  </LIBRARY>
+</PAL1131>

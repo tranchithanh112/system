@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" GridSpacing="1">
+	<Children>
+		<Rectangle Width="150" FillColor="Black"/>
+		<Rectangle Width="110" Height="80" X="20" Y="9">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Not_Present_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="20" Height="10" X="11" Y="26" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="11" Y="38" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="11" Y="50" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="11" Y="62" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="11" Y="74" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="11" Y="14" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="120" Y="14" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="120" Y="26" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="120" Y="38" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="120" Y="51" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="120" Y="63" FillColor="Transparent"/>
+		<Rectangle Width="20" Height="10" X="120" Y="75" FillColor="Transparent"/>
+		<Ellipse Center="56;35" Radius="18;18"/>
+		<Line X0="55" Y0="35" X1="64" Y1="24"/>
+		<Line X0="96" Y0="33" X1="105" Y1="22"/>
+		<Ellipse Center="97;35" Radius="18;18"/>
+		<Line X0="97" Y0="35" X1="90" Y1="25"/>
+		<Rectangle Width="75" Height="16" X="37" Y="65"/>
+	</Children>
+</RootElement>

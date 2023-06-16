@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="Wedrujaca_jedynka">
+    <POU>
+      <ITEM type="PRG" name="Glowny"><![CDATA[PROGRAM Glowny
+VAR
+    Licznik: INT := 0;              (* Wybór aktywnego wyjścia       *)
+    sTime: TIME := t#0s;            (* Czas początkowy cyklu         *)
+END_VAR
+
+VAR_EXTERNAL
+    OUT0 : BOOL;
+    OUT1 : BOOL;
+    OUT2 : BOOL;
+    OUT3 : BOOL;
+END_VAR
+
+IF Licznik = 0 THEN                 (* Pierwszy cykl obliczeniowy    *)
+    sTime := CUR_TIME();            (* Zapamiętaj czas systemowy     *)
+    Licznik := 1;                   (* Aktywacja wyjścia             *)
+END_IF
+IF CUR_TIME()-sTime >= t#2s THEN    (* Jeśli upłynął zadany czas     *)
+    sTime := CUR_TIME();            (* Czas początkowy               *)
+    IF Licznik < 8 THEN             (* Jeśli nie czwarty bit         *)
+        Licznik := Licznik * 2;     (*   to ustaw następny           *)
+    ELSE                            (* W przeciwnym wypadku          *)
+        Licznik := 1;               (*   ustaw najmłodszy bit        *)
+    END_IF
+END_IF
+
+IF Licznik = 1 THEN                 (* Jeśli ustawiony pierwszy bit  *)
+    OUT0 := TRUE;                   (*   to ustaw pierwsze wyjście   *)
+ELSE                                (* W przeciwnym wypadku          *)
+    OUT0 := FALSE;                  (*   wyzeruj pierwsze wyjście    *)
+END_IF
+IF Licznik = 2 THEN                 (* Jeśli ustawiony drugi bit     *)
+    OUT1 := TRUE;                   (*   to ustaw drugie wyjście     *)
+ELSE                                (* W przeciwnym wypadku          *)
+    OUT1 := FALSE;                  (*   wyzeruj drugie wyjście      *)
+END_IF
+IF Licznik = 4 THEN                 (* Jeśli ustawiony trzeci bit    *)
+    OUT2 := TRUE;                   (*   to ustaw trzecie wyjście    *)
+ELSE                                (* W przeciwnym wypadku          *)
+    OUT2 := FALSE;                  (*   wyzeruj trzecie wyjście     *)
+END_IF
+IF Licznik = 8 THEN                 (* Jeśli ustawiony czwarty bit   *)
+    OUT3 := TRUE;                   (*   to ustaw czwarte wyjście    *)
+ELSE                                (* W przeciwnym wypadku          *)
+    OUT3 := FALSE;                  (*   wyzeruj czwarte wyjście     *)
+END_IF
+
+END_PROGRAM]]></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="OUT0" flags="00000000"><![CDATA[VAR_GLOBAL 
+OUT0 AT %0000 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="OUT1" flags="00000000"><![CDATA[VAR_GLOBAL 
+OUT1 AT %0001 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="OUT2" flags="00000000"><![CDATA[VAR_GLOBAL 
+OUT2 AT %0002 : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="OUT3" flags="00000000"><![CDATA[VAR_GLOBAL 
+OUT3 AT %0003 : BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="Task0001"><![CDATA[Glowny
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

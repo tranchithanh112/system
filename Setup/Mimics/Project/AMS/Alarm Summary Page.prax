@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1200" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<SelectFirstFloatBinding TargetPropertyName="SelectedThemeTest" DefaultValue="0">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="101">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="102">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="111">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="112">
+					<Bindings>
+						<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+					</Bindings>
+				</ValueCompareBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue0">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue1">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_SERVER2"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue2">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT1"/>
+					</Bindings>
+				</ChannelValueBinding>
+				<ChannelValueBinding TargetPropertyName="SelectedValue3">
+					<Bindings>
+						<NameLookupBinding TargetPropertyName="ChannelNumber" Name="THEME_CLIENT2"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</SelectFirstFloatBinding>
+	</Bindings>
+	<Children>
+		<Frame LockOverlayVisible="False" Width="1920" Height="1200" Highlight_Button_NR="23" Page_Title="ALARM PAGE - Summary" MultiplePages="False" Path="..\Frames\Menus\CommonMenuFrame_1920x1200.prax" AutoShow_Page_Title="False" ShowBackground="True"/>
+		<AlarmHistoryList Width="1635" Height="1010" X="5" Y="75" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;22.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" BorderColor="Transparent" ShowTag="False" ChannelFilter="" GroupFilter="">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+				<SelectFirstBoolBinding TargetPropertyName="ShowReportType" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<VariableBinding TargetPropertyName="ConditionValue0">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1910" ActivateValue="1640" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</AlarmHistoryList>
+		<Button Width="190" Height="35" X="15" Y="1090" ClipToBounds="True" Text="&lt; PREVIOUS DAY" FillColor="Transparent" BorderColor="BackgroundShadow" Font="Praxis;22.0;N;N;N">
+			<ClickActions>
+				<AlarmHistoryUserAction ActionType="PreviousDay AlarmHistory"/>
+			</ClickActions>
+		</Button>
+		<Button Width="190" Height="35" X="1450" Y="1090" ClipToBounds="True" Text="NEXT DAY  >" FillColor="Transparent" BorderColor="Transparent" Font="Praxis;22.0;N;N;N">
+			<ClickActions>
+				<AlarmHistoryUserAction/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

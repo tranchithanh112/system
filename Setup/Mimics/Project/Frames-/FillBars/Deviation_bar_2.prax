@@ -1,0 +1,2100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="730" Height="340" GridSpacing="10" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="730" Height="340" BorderWidth="0" FillColor="ConningBackground" CornerRoundRadius="10"/>
+		<Rectangle Width="40" Height="160" X="560" Y="40" BorderWidth="2" BorderColor="Background" BorderStyle="Sunken" LinePosition="Centered" FillColor="GaugeBackground">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Tank_color"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="40" Height="160" X="470" Y="40" BorderWidth="2" BorderColor="Background" BorderStyle="Sunken" LinePosition="Centered" FillColor="GaugeBackground">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Tank_color"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="40" Height="160" X="380" Y="40" BorderWidth="2" BorderColor="Background" BorderStyle="Sunken" LinePosition="Centered" FillColor="GaugeBackground">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Tank_color"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="40" Height="160" X="290" Y="40" BorderWidth="2" BorderColor="Background" BorderStyle="Sunken" LinePosition="Centered" FillColor="GaugeBackground">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Tank_color"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="40" Height="160" X="200" Y="40" BorderWidth="2" BorderColor="Background" BorderStyle="Sunken" LinePosition="Centered" FillColor="GaugeBackground">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Tank_color"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="40" Height="160" X="110" Y="40" BorderWidth="2" BorderColor="Background" BorderStyle="Sunken" LinePosition="Centered" FillColor="GaugeBackground">
+			<Bindings>
+				<FrameBinding TargetPropertyName="BorderColor" ExportedPropertyName="Tank_color"/>
+			</Bindings>
+		</Rectangle>
+		<Line Width="0.5" Color="InfoTextGrey" LineStyle="Dashed" X0="80" Y0="40" X1="650" Y1="40"/>
+		<Line Width="0.5" Color="InfoTextGrey" LineStyle="Dashed" X0="80" Y0="120" X1="650" Y1="120"/>
+		<Line Width="0.5" Color="White" LineStyle="Dashed" X0="80" Y0="80" X1="650" Y1="80"/>
+		<Line Width="0.5" Color="InfoTextGrey" LineStyle="Dashed" X0="80" Y0="160" X1="650" Y1="160"/>
+		<TextBox Width="170" Height="20" X="300" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;22.0;B;N;N" Text="CYLINDER EXHAUST GAS TEMPERATURE">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="20" X="100" Y="20" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="1"/>
+		<TextBox Width="60" Height="20" X="190" Y="20" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="2"/>
+		<TextBox Width="60" Height="20" X="280" Y="20" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="3"/>
+		<TextBox Width="60" Height="20" X="370" Y="20" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="4"/>
+		<TextBox Width="60" Height="20" X="460" Y="20" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="5"/>
+		<TextBox Width="60" Height="20" X="550" Y="20" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="6"/>
+		<TextBox Width="60" Height="20" X="660" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;18.0;N;N;N" Text="Average">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Average_visible"/>
+				<RangeFormulaBinding TargetPropertyName="Y" InRangeBegin="0" InRangeEnd="800" OutRangeBegin="190" OutRangeEnd="30">
+					<Bindings>
+						<FrameBinding TargetPropertyName="InRangeBegin" ExportedPropertyName="Range_begin"/>
+						<FrameBinding TargetPropertyName="InRangeEnd" ExportedPropertyName="Range_end"/>
+						<FilteredValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Average_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="70" Height="20" X="10" Y="30" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="800">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="4" InRangeBegin="0" InRangeEnd="4">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_begin"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_end"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<Line Width="2" Color="InfoTextGrey" X0="80" Y0="20" X1="80" Y1="200" P0CapStyle="Arrow"/>
+		<TextBox Width="60" Height="20" X="50" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="70" Height="20" X="10" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="600">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="3" InRangeBegin="0" InRangeEnd="4">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_begin"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_end"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="70" Height="20" X="10" Y="110" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="400">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="2" InRangeBegin="0" InRangeEnd="4">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_begin"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_end"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="70" Height="20" X="10" Y="150" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="200">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" Value="1" InRangeBegin="0" InRangeEnd="4">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_begin"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_end"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="70" Height="20" X="10" Y="190" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="0">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Text" InRangeBegin="0" InRangeEnd="4">
+					<Bindings>
+						<FrameBinding TargetPropertyName="OutRangeBegin" ExportedPropertyName="Range_begin"/>
+						<FrameBinding TargetPropertyName="OutRangeEnd" ExportedPropertyName="Range_end"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<Line Width="3" Color="Green" X0="90" Y0="80" X1="650" Y1="80">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Average_visible"/>
+				<RangeFormulaBinding TargetPropertyName="Y0" InRangeBegin="0" InRangeEnd="800" OutRangeBegin="200" OutRangeEnd="40">
+					<Bindings>
+						<FrameBinding TargetPropertyName="InRangeEnd" ExportedPropertyName="Range_end"/>
+						<FrameBinding TargetPropertyName="InRangeBegin" ExportedPropertyName="Range_begin"/>
+						<FilteredValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Average_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+				<RangeFormulaBinding TargetPropertyName="Y1" InRangeBegin="0" InRangeEnd="800" OutRangeBegin="200" OutRangeEnd="40">
+					<Bindings>
+						<FrameBinding TargetPropertyName="InRangeEnd" ExportedPropertyName="Range_end"/>
+						<FrameBinding TargetPropertyName="InRangeBegin" ExportedPropertyName="Range_begin"/>
+						<FilteredValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Average_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</Line>
+		<TextBox Width="50" Height="30" X="40" Y="280" BorderWidth="0" BorderColor="InfoTextGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="Dev.">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_visible"/>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="40" Height="160" X="110" Y="40" FillDirection="BottomToTop" RangeEnd="800" LimitType="HighAndVeryHigh" FirstLimit="300" SecondLimit="500" LimitMarkerSize="0" Value="200" NormalColor="Barfill" LimitLowColor="Orange" LineWidth="0" BorderColor="InfoTextGrey" RoundingRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_end"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_begin"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_type"/>
+				<ChannelSecondLimitBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<FilteredValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredValueBinding>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_color"/>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="50" Height="30" X="40" Y="210" BorderWidth="0" BorderColor="InfoTextGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="InfoTextGrey" Font="Praxis;18.0;N;N;N" Text="Temp."/>
+		<Line Width="2" Color="InfoTextGrey" X0="80" Y0="200" X1="640" Y1="200" P1CapStyle="Arrow"/>
+		<TextBox Width="50" Height="30" X="40" Y="240" BorderWidth="0" BorderColor="InfoTextGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="Orange" Font="Praxis;18.0;N;N;N" Text="Temp. SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Slowdown_visible"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="50" Height="30" X="40" Y="310" BorderWidth="0" BorderColor="InfoTextGrey" FillColor="Transparent" HorzAlignment="Right" TextColor="Orange" Font="Praxis;18.0;N;N;N" Text="Dev. SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_slowdown_visible"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="20" X="660" Y="90" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;18.0;N;N;N" Text="123.1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Average_visible"/>
+				<FilteredValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Average_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</FilteredValueBinding>
+				<RangeFormulaBinding TargetPropertyName="Y" InRangeBegin="0" InRangeEnd="800" OutRangeBegin="210" OutRangeEnd="50">
+					<Bindings>
+						<FrameBinding TargetPropertyName="InRangeBegin" ExportedPropertyName="Range_begin"/>
+						<FrameBinding TargetPropertyName="InRangeEnd" ExportedPropertyName="Range_end"/>
+						<FilteredValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Average_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</FilteredValueBinding>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="100" Y="280" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="100" Y="210" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="100" Y="310" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_slowdown_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="100" Y="240" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Slowdown_visible"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="190" Y="210" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="280" Y="210" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="370" Y="210" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="460" Y="210" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="550" Y="210" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="190" Y="240" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Slowdown_visible"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="280" Y="240" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Slowdown_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="370" Y="240" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Slowdown_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="460" Y="240" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Slowdown_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="550" Y="240" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Slowdown_visible"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="Foreground" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="190" Y="280" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="370" Y="280" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_visible"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="280" Y="280" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_visible"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="550" Y="280" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="460" Y="280" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" LeftRightPadding="5" Font="Praxis;18.0;B;N;N" Text="000.0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="MissingColor" SelectedValue1="Foreground" SelectedValue2="Orange" SelectedValue3="OldAlarm" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue3">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="----" SelectedValue1="----">
+					<Bindings>
+						<ChannelNotAvailableBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelNotAvailableBinding>
+						<ChannelSensFailBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSensFailBinding>
+						<ChannelSpecialHasValueBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialHasValueBinding>
+						<ChannelSpecialValueBinding TargetPropertyName="SelectedValue2">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelSpecialValueBinding>
+						<ChannelValueBinding TargetPropertyName="DefaultValue">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+							<ConvertParams>
+								<FloatToStringConvertParams DecimalPlaces="3">
+									<Bindings>
+										<ChannelNrDecimalsBinding TargetPropertyName="DecimalPlaces">
+											<Bindings>
+												<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+													<Bindings>
+														<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+													</Bindings>
+												</ChannelOffsetBinding>
+											</Bindings>
+										</ChannelNrDecimalsBinding>
+									</Bindings>
+								</FloatToStringConvertParams>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="190" Y="310" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_slowdown_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="370" Y="310" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_slowdown_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="280" Y="310" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_slowdown_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="550" Y="310" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_slowdown_visible"/>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="60" Height="30" X="460" Y="310" BorderWidth="0" BorderColor="Transparent" TextColor="ActiveText" Font="Praxis;18.0;B;N;N" Text="SLD">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Deviation_slowdown_visible"/>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="NoAlarmGreen" SelectedValue1="Orange" DefaultValue="ActiveText">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SLD" DefaultValue="NOR">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+				<ChannelAlarmNotAckBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_dev_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelAlarmNotAckBinding>
+			</Bindings>
+		</TextBox>
+		<FillBar Width="40" Height="160" X="200" Y="40" FillDirection="BottomToTop" RangeEnd="800" LimitType="HighAndVeryHigh" FirstLimit="300" SecondLimit="500" LimitMarkerSize="0" Value="200" NormalColor="Barfill" LimitLowColor="Orange" LineWidth="0" BorderColor="InfoTextGrey" RoundingRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_end"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_begin"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_type"/>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_color"/>
+				<ChannelSecondLimitBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<FilteredValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="40" Height="160" X="380" Y="40" FillDirection="BottomToTop" RangeEnd="800" LimitType="HighAndVeryHigh" FirstLimit="300" SecondLimit="500" LimitMarkerSize="0" Value="200" NormalColor="Barfill" LimitLowColor="Orange" LineWidth="0" BorderColor="InfoTextGrey" RoundingRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_end"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_begin"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_type"/>
+				<ChannelSecondLimitBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_color"/>
+				<FilteredValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="40" Height="160" X="290" Y="40" FillDirection="BottomToTop" RangeEnd="800" LimitType="HighAndVeryHigh" FirstLimit="300" SecondLimit="500" LimitMarkerSize="0" Value="200" NormalColor="Barfill" LimitLowColor="Orange" LineWidth="0" BorderColor="InfoTextGrey" RoundingRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_end"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_begin"/>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_color"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_type"/>
+				<ChannelSecondLimitBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<FilteredValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="40" Height="160" X="560" Y="40" FillDirection="BottomToTop" RangeEnd="800" LimitType="HighAndVeryHigh" FirstLimit="300" SecondLimit="500" LimitMarkerSize="0" Value="200" NormalColor="Barfill" LimitLowColor="Orange" LineWidth="0" BorderColor="InfoTextGrey" RoundingRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_end"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_begin"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_type"/>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_color"/>
+				<ChannelSecondLimitBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<FilteredValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</FillBar>
+		<FillBar Width="40" Height="160" X="470" Y="40" FillDirection="BottomToTop" RangeEnd="800" LimitType="HighAndVeryHigh" FirstLimit="300" SecondLimit="500" LimitMarkerSize="0" Value="200" NormalColor="Barfill" LimitLowColor="Orange" LineWidth="0" BorderColor="InfoTextGrey" RoundingRadius="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="Range_end"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="Range_begin"/>
+				<FrameBinding TargetPropertyName="LimitType" ExportedPropertyName="Limit_type"/>
+				<FrameBinding TargetPropertyName="NormalColor" ExportedPropertyName="Bar_color"/>
+				<ChannelSecondLimitBinding TargetPropertyName="FirstLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_SLD_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<FilteredValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</FillBar>
+		<Rectangle Visible="False" Width="40" Height="160" X="110" Y="40" FillColor="Transparent" FillPattern="AscendingDiagonalStripes">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Visible="False" Width="40" Height="160" X="200" Y="40" FillColor="Transparent" FillPattern="AscendingDiagonalStripes">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Visible="False" Width="40" Height="160" X="290" Y="40" FillColor="Transparent" FillPattern="AscendingDiagonalStripes">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Visible="False" Width="40" Height="160" X="380" Y="40" FillColor="Transparent" FillPattern="AscendingDiagonalStripes">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Visible="False" Width="40" Height="160" X="470" Y="40" FillColor="Transparent" FillPattern="AscendingDiagonalStripes">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Visible="False" Width="40" Height="160" X="560" Y="40" FillColor="Transparent" FillPattern="AscendingDiagonalStripes">
+			<Bindings>
+				<ChannelSensFailBinding TargetPropertyName="Visible">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="Cyl_1_value_CH"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+				</ChannelSensFailBinding>
+			</Bindings>
+		</Rectangle>
+	</Children>
+</RootElement>

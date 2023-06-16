@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="150" GridSpacing="2" PraxGraphVersion="1.0">
+	<Children>
+		<Rectangle Width="150" Height="48" BorderColor="Black" FillColor="Black" CornerRoundRadius="5"/>
+		<Rectangle Width="116" Height="40" X="16" Y="4" BorderColor="PanelFaceBorder" FillColor="PanelFaceBorder" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue2="Orange" DefaultValue="PanelFaceBorder">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Board_Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="EarthFault"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="XP_Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="112" Height="36" X="18" Y="6" BorderColor="Transparent" FillColor="Transparent" TextColor="Black" Font="Praxis;36.0;N;N;N" Text="DI">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Board_Type"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="8" Height="40" X="136" Y="4" BorderWidth="2" BorderColor="PageInfoLine" FillColor="Black" CornerRoundRadius="1"/>
+		<Rectangle Width="8" Height="40" X="4" Y="4" BorderWidth="2" BorderColor="PageInfoLine" FillColor="Black" CornerRoundRadius="1"/>
+	</Children>
+</RootElement>

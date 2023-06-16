@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="40" Height="50" GridSpacing="5">
+	<Children>
+		<Polyline ClosedOutline="True" FillColor="InactivePanelFace">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue0="Comment" SelectedValue1="Background" SelectedValue2="Yellow" SelectedValue3="Yellow" DefaultValue="PanelFace">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="4">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="3">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Status"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="5;5"/>
+				<Point Coord="35;5"/>
+				<Point Coord="5;45"/>
+				<Point Coord="35;45"/>
+			</Points>
+		</Polyline>
+		<Polyline ClosedOutline="True" FillColor="Black">
+			<Points>
+				<Point Coord="20;25"/>
+				<Point Coord="35;45"/>
+				<Point Coord="5;45"/>
+			</Points>
+		</Polyline>
+	</Children>
+</RootElement>

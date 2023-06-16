@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="150" Height="132" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="150" Height="70" FillColor="Black"/>
+		<Polyline ClosedOutline="True" FillColor="Background">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Not_Present_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+			<Points>
+				<Point Coord="23;39"/>
+				<Point Coord="36;39"/>
+				<Point Coord="36;17"/>
+				<Point Coord="111;17"/>
+				<Point Coord="111;39"/>
+				<Point Coord="124;39"/>
+				<Point Coord="124;43"/>
+				<Point Coord="23;43"/>
+				<Point Coord="23;39"/>
+			</Points>
+		</Polyline>
+	</Children>
+</RootElement>

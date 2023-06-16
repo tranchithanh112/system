@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="70" Height="30">
+	<Children>
+		<Rectangle FlashFast="True" Width="50" Height="30" X="20" BorderColor="PageInfoLine" FillColor="White" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Flash">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="101723"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="101717"/>
+					</Bindings>
+				</SelectFirstBoolBinding>
+				<SelectFirstColorBinding TargetPropertyName="FlashColor" SelectedValue1="Orange" DefaultValue="White">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="101723"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="101717"/>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="50" Height="30" X="20" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;16.0;N;N;N" Text="180.5°">
+			<Bindings>
+				<UnitConversionBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="X" ChannelNumber="102003"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<Polyline LineColor="PageInfoLine" FillColor="Comment">
+			<Points>
+				<Point Coord="15;5"/>
+				<Point Coord="0;15"/>
+				<Point Coord="15;25"/>
+				<Point Coord="15;5"/>
+			</Points>
+		</Polyline>
+	</Children>
+</RootElement>

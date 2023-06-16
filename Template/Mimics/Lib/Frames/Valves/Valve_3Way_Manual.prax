@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="50" Height="50" GridSpacing="1" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Panel Width="50" Height="50" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Rotation" ExportedPropertyName="Rotation_"/>
+			</Bindings>
+			<Children>
+				<Polyline Width="2" ClosedOutline="True" FillColor="Foreground">
+					<Points>
+						<Point Coord="37;10"/>
+						<Point Coord="13;10"/>
+						<Point Coord="25;30"/>
+					</Points>
+				</Polyline>
+				<Polyline Width="2" ClosedOutline="True" FillColor="Foreground">
+					<Points>
+						<Point Coord="5;18"/>
+						<Point Coord="5;43"/>
+						<Point Coord="45;18"/>
+						<Point Coord="45;43"/>
+					</Points>
+				</Polyline>
+				<Polyline Width="2" ClosedOutline="True" FillColor="Gray">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Feedback_"/>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Gray" SelectedValue2="Green" DefaultValue="Yellow">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Closed"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Open_Closed"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Vavle_Open"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="5;18"/>
+						<Point Coord="5;43"/>
+						<Point Coord="45;18"/>
+						<Point Coord="45;43"/>
+					</Points>
+				</Polyline>
+				<Polyline Width="2" ClosedOutline="True" FillColor="Gray">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Feedback_"/>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Gray" SelectedValue2="Green" DefaultValue="Yellow">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Closed"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Valve_Open_Closed"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Vavle_Open"/>
+									</Bindings>
+								</ChannelCurrentAlarmBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="37;10"/>
+						<Point Coord="13;10"/>
+						<Point Coord="25;30"/>
+					</Points>
+				</Polyline>
+			</Children>
+		</Panel>
+		<TextBox Width="50" Height="14" Y="-15" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;14.0;N;N;N" Text="">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG_Top"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="36" Height="14" X="50" Y="16" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Segoe UI;14.0;N;N;N" Text="">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="TAG_Right"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

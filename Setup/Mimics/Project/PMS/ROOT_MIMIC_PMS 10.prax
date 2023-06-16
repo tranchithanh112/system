@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="800" GridSpacing="5" ColorTableFile="..\Color_Table.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Button FlashArea="OutlineOnly" Width="1920" Height="80" X="15" Y="1005" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<AlarmCountBinding TargetPropertyName="Flash" AlarmAcknowledgedFilter="UnAcknowledgedAlarms">
+					<ConvertParams>
+						<UInt32ToBoolConvertParams/>
+					</ConvertParams>
+				</AlarmCountBinding>
+			</Bindings>
+			<ClickActions>
+				<ShowAlarmPageClickAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="1000" Height="50" X="127" Y="19" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<NavigateToIndexUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="1000" Height="50" X="125" Y="20" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" OutlineColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<ClickActions>
+				<NavigateToIndexUserAction/>
+			</ClickActions>
+		</Button>
+		<Frame Width="1280" Height="115" Mimic_Title="POWER MANANGEMENT SYSTEM" Path="..\Frames\Frame_Top_Buttons_10.prax"/>
+		<Panel Width="1280" Height="686" Y="115" ClipToBounds="True" FillColor="Transparent">
+			<Children>
+				<Frame Width="1280" Height="80" Y="605" Shown_Pick_Action="0" Path="..\Frames\Frame_Alarm_Line_10.prax"/>
+				<NavFrame Width="1280" Height="605">
+					<AddressList>
+						<Address Value=".\PMS ONE-LINE 10.prax"/>
+						<Address Value=".\PMS MENU 1- (1) 10.prax"/>
+						<Address Value=".\PMS MENU 1- (2) 10.prax"/>
+						<Address Value=".\PMS MENU 2 -  (1) 10.prax"/>
+						<Address Value=".\PMS MENU 3 -  (1) 10.prax"/>
+						<Address Value=".\PMS MENU 4 -  (1) 10.prax"/>
+						<Address Value=".\PMS MENU 5 -  (1) 10.prax"/>
+						<Address Value=".\PMS MENU 6 -  (1) 10.prax"/>
+						<Address Value=".\PMS MENU 7 -  (1) 10.prax"/>
+						<Address Value=".\PMS MENU 8 -  (1) 10.prax"/>
+						<Address Value=".\PMS MENU 9 -  (1) 10.prax"/>
+					</AddressList>
+				</NavFrame>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

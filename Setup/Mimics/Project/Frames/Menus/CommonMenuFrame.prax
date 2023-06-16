@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1920" Height="1010" Y="70" BorderWidth="0" FillColor="BackgroundConning" LightingStyle="LinearGradient">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBackground"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="1920" Height="70" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Frame Width="154" Height="37.7408" X="1695" Y="15" Path="..\Logos\Frame_PRAXIS_LOGO.prax"/>
+		<Rectangle Width="1920" Height="5" Y="65" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Rectangle Width="1920" Height="3" Y="66" BorderWidth="0" BorderColor="StatusInactive" FillColor="StatusInactive"/>
+		<Button Width="350" Height="55" X="1250" Y="5" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" FillPatternColor="Transparent" BorderColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<TextBox Width="31" Height="11" X="25" Y="35" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;12.0;N;N;N" Text="GMT">
+					<Bindings>
+						<MiscellaneousStringBinding TargetPropertyName="Text"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="130" Height="30" X="55" Y="20" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="00:00:00">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="135" Height="30" X="190" Y="20" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;26.0;N;N;N" Text="2020-01-01">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams Format="d.mm.yyyy"/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<GeneralCAMClientCommandsClickAction CAMClientCommandType="Toggle Date Time"/>
+			</ClickActions>
+		</Button>
+		<Button LockOverlayVisible="False" LockOverlayColor="Transparent" Width="55" Height="55" X="1860" Y="5" Text="  " FillColor="Transparent" FillColorActionRunning="Transparent" BorderColor="NoAlarmGreen" Font="Segoe UI;10.0;N;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent"/>
+			</Bindings>
+			<ClickActions>
+				<SetVariableValueClickAction>
+					<Variable>
+						<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<BoolVariableSetter SetValueType="Toggle"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="545" Height="940" X="1375" Y="70" Highlight_Button_NR="0" Bt_01_isVisible="True" Bt01_Text="PMS ONE LINE" Bt01_opensMimic="20" Bt01_hasSubMenu="True" Bt01_totalSubButtons="2" Bt01_setPageTitle="" Bt01_SB01_Text="PMS ONE LINE" Bt01_SB01_setPageTitle="PMS ONE LINE" Bt01_SB02_Text="PMS TRENDING" Bt01_SB02_setPageTitle="PMS TRENDING" Bt01_SB03_Text="" Bt01_SB03_setPageTitle="" Bt01_SB04_Text="" Bt01_SB04_setPageTitle="" Bt01_SB05_Text="" Bt01_SB05_setPageTitle="" Bt01_SB06_Text="" Bt01_SB06_setPageTitle="" Bt01_SB07_Text="" Bt01_SB07_setPageTitle="" Bt01_SB08_Text="" Bt01_SB08_setPageTitle="" Bt01_SB09_Text="" Bt01_SB09_setPageTitle="" Bt01_SB10_Text="" Bt01_SB10_setPageTitle="" Bt_02_isVisible="True" Bt02_Text="PROPULSION" Bt02_opensMimic="21" Bt02_hasSubMenu="True" Bt02_totalSubButtons="2" Bt02_setPageTitle="" Bt02_SB01_Text="PROPULSION" Bt02_SB01_setPageTitle="PROPULSION" Bt02_SB02_Text="THRUSTERS" Bt02_SB02_setPageTitle="THRUSTERS" Bt02_SB03_Text="" Bt02_SB03_setPageTitle="" Bt02_SB04_Text="" Bt02_SB04_setPageTitle="" Bt02_SB05_Text="" Bt02_SB05_setPageTitle="" Bt02_SB06_Text="" Bt02_SB06_setPageTitle="" Bt02_SB07_Text="" Bt02_SB07_setPageTitle="" Bt02_SB08_Text="" Bt02_SB08_setPageTitle="" Bt02_SB09_Text="" Bt02_SB09_setPageTitle="" Bt02_SB10_Text="" Bt02_SB10_setPageTitle="" Bt_03_isVisible="True" Bt03_Text="GENERATORS" Bt03_opensMimic="22" Bt03_hasSubMenu="True" Bt03_totalSubButtons="2" Bt03_setPageTitle="" Bt03_SB01_Text="GENERATORS" Bt03_SB01_setPageTitle="GENERATORS" Bt03_SB02_Text="EMER&apos;CY/HARB" Bt03_SB02_setPageTitle="EMER&apos;CY HARBOUR GEN-SET" Bt03_SB03_Text="" Bt03_SB03_setPageTitle="" Bt03_SB04_Text="" Bt03_SB04_setPageTitle="" Bt03_SB05_Text="" Bt03_SB05_setPageTitle="" Bt03_SB06_Text="" Bt03_SB06_setPageTitle="" Bt03_SB07_Text="" Bt03_SB07_setPageTitle="" Bt03_SB08_Text="" Bt03_SB08_setPageTitle="" Bt03_SB09_Text="" Bt03_SB09_setPageTitle="" Bt03_SB10_Text="" Bt03_SB10_setPageTitle="" Bt_04_isVisible="True" Bt04_Text="ENGINES" Bt04_opensMimic="23" Bt04_hasSubMenu="True" Bt04_totalSubButtons="8" Bt04_setPageTitle="" Bt04_SB01_Text="ENGINE NO.1" Bt04_SB01_setPageTitle="ENGINE NO.1" Bt04_SB02_Text="ENGINE NO.2" Bt04_SB02_setPageTitle="ENGINE NO.2" Bt04_SB03_Text="ENGINE NO.3" Bt04_SB03_setPageTitle="ENGINE NO.3" Bt04_SB04_Text="ENGINE NO.4" Bt04_SB04_setPageTitle="ENGINE NO.4" Bt04_SB05_Text="ENGINE 1-2 EXH" Bt04_SB05_setPageTitle="ENGINE 1-2 EXH" Bt04_SB06_Text="ENGINE 3-4 EXH" Bt04_SB06_setPageTitle="ENGINE 3-4 EXH" Bt04_SB07_Text="ENGINE 1-2 BEAR" Bt04_SB07_setPageTitle="ENGINE 3-3 BEAR" Bt04_SB08_Text="" Bt04_SB08_setPageTitle="" Bt04_SB09_Text="" Bt04_SB09_setPageTitle="" Bt04_SB010_Text="" Bt04_SB10_setPageTitle="" Bt_05_isVisible="True" Bt05_Text="TANKS SYSTEM" Bt05_opensMimic="24" Bt05_hasSubMenu="False" Bt05_totalSubButtons="3" Bt05_setPageTitle="" Bt05_SB01_Text="FUEL TANKS" Bt05_SB01_setPageTitle="FUEL TANKS" Bt05_SB02_Text="BALLAST TANKS" Bt05_SB02_setPageTitle="BALLAST TANKS" Bt05_SB03_Text="POTABLE WATER TANKS" Bt05_SB03_setPageTitle="POTABLE WATER TANKS" Bt05_SB04_Text="" Bt05_SB04_setPageTitle="" Bt05_SB05_Text="" Bt05_SB05_setPageTitle="" Bt05_SB06_Text="" Bt05_SB06_setPageTitle="" Bt05_SB07_Text="" Bt05_SB07_setPageTitle="" Bt05_SB08_Text="" Bt05_SB08_setPageTitle="" Bt05_SB09_Text="" Bt05_SB09_setPageTitle="" Bt05_SB010_Text="" Bt05_SB10_setPageTitle="" Bt_06_isVisible="True" Bt06_Text="BALLAST SYSTEM" Bt06_opensMimic="25" Bt06_hasSubMenu="False" Bt06_totalSubButtons="0" Bt06_setPageTitle="" Bt06_SB01_Text="" Bt06_SB01_setPageTitle="" Bt06_SB02_Text="" Bt06_SB02_setPageTitle="" Bt06_SB03_Text="" Bt06_SB03_setPageTitle="" Bt06_SB04_Text="" Bt06_SB04_setPageTitle="" Bt06_SB05_Text="" Bt06_SB05_setPageTitle="" Bt06_SB06_Text="" Bt06_SB06_setPageTitle="" Bt06_SB07_Text="" Bt06_SB07_setPageTitle="" Bt06_SB08_Text="" Bt06_SB08_setPageTitle="" Bt06_SB09_Text="" Bt06_SB09_setPageTitle="" Bt06_SB10_Text="" Bt06_SB10_setPageTitle="" Bt_07_isVisible="True" Bt07_Text="BILGE SYSTEM" Bt07_opensMimic="26" Bt07_hasSubMenu="False" Bt07_totalSubButtons="0" Bt07_setPageTitle="BILGE SYSTEM" Bt07_SB01_Text="" Bt07_SB01_setPageTitle="" Bt07_SB02_Text="" Bt07_SB02_setPageTitle="" Bt07_SB03_Text="" Bt07_SB03_setPageTitle="" Bt07_SB04_Text="" Bt07_SB04_setPageTitle="" Bt07_SB05_Text="" Bt07_SB05_setPageTitle="" Bt07_SB06_Text="" Bt07_SB06_setPageTitle="" Bt07_SB07_Text="" Bt07_SB07_setPageTitle="" Bt07_SB08_Text="" Bt07_SB08_setPageTitle="" Bt07_SB09_Text="" Bt07_SB09_setPageTitle="" Bt07_SB10_Text="" Bt07_SB10_setPageTitle="" Bt_08_isVisible="True" Bt08_Text="FUEL TRANSFER" Bt08_opensMimic="27" Bt08_hasSubMenu="False" Bt08_totalSubButtons="0" Bt08_setPageTitle="FUEL TRANSFER SYSTEM" Bt08_SB01_Text="" Bt08_SB01_setPageTitle="" Bt08_SB02_Text="" Bt08_SB02_setPageTitle="" Bt08_SB03_Text="" Bt08_SB03_setPageTitle="" Bt08_SB04_Text="" Bt08_SB04_setPageTitle="" Bt08_SB05_Text="" Bt08_SB05_setPageTitle="" Bt08_SB06_Text="" Bt08_SB06_setPageTitle="" Bt08_SB07_Text="" Bt08_SB07_setPageTitle="" Bt08_SB08_Text="" Bt08_SB08_setPageTitle="" Bt08_SB09_Text="" Bt08_SB09_setPageTitle="" Bt08_SB10_Text="" Bt08_SB10_setPageTitle="" Bt_09_isVisible="False" Bt09_Text="" Bt09_opensMimic="99" Bt09_hasSubMenu="False" Bt09_totalSubButtons="0" Bt09_setPageTitle="" Bt09_SB01_Text="" Bt09_SB01_setPageTitle="" Bt09_SB02_Text="" Bt09_SB02_setPageTitle="" Bt09_SB03_Text="" Bt09_SB03_setPageTitle="" Bt09_SB04_Text="" Bt09_SB04_setPageTitle="" Bt09_SB05_Text="" Bt09_SB05_setPageTitle="" Bt09_SB06_Text="" Bt09_SB06_setPageTitle="" Bt09_SB07_Text="" Bt09_SB07_setPageTitle="" Bt09_SB08_Text="" Bt09_SB08_setPageTitle="" Bt09_SB09_Text="" Bt09_SB09_setPageTitle="" Bt09_SB10_Text="" Bt09_SB10_setPageTitle="" Bt_10_isVisible="False" Bt10_Text="" Bt10_opensMimic="99" Bt10_hasSubMenu="False" Bt10_totalSubButtons="0" Bt10_setPageTitle="" Bt10_SB01_Text="" Bt10_SB02_Text="" Bt10_SB02_setPageTitle="" Bt10_SB03_Text="" Bt10_SB03_setPageTitle="" Bt10_SB04_Text="" Bt10_SB04_setPageTitle="" Bt10_SB05_Text="" Bt10_SB05_setPageTitle="" Bt10_SB06_Text="" Bt10_SB06_setPageTitle="" Bt10_SB07_Text="" Bt10_SB07_setPageTitle="" Bt10_SB08_Text="" Bt10_SB08_setPageTitle="" Bt10_SB09_Text="" Bt10_SB09_setPageTitle="" Bt10_SB10_Text="" Bt10_SB10_setPageTitle="" Path=".\SideMenuVertical_16.9_V2.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+				<ValueTransitionBinding TargetPropertyName="Visible" Activate="True" TransitionTime="250">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</Frame>
+		<TextBox Width="400" Height="45" X="710" Y="10" BorderColor="Transparent" FillColor="BackgroundMenu" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="PATROL TIMER STATUS">
+			<Bindings>
+				<PatrolTimerStatusBinding TargetPropertyName="Text">
+					<ConvertParams>
+						<PatrolTimerStatusToTextConvertParams TextWhenOff="PATROL TIMER: OFF" TextWhenAlarmPD="PATROL TIMER: ALARM">
+							<Bindings>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenWarning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" mm:ss WARNING" ConversionFormat="mm:ss"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+								<PatrolTimerValueBinding TargetPropertyName="TextWhenRunning">
+									<ConvertParams>
+										<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" MIN. RUNNING" ConversionFormat="mm"/>
+									</ConvertParams>
+								</PatrolTimerValueBinding>
+							</Bindings>
+						</PatrolTimerStatusToTextConvertParams>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+				<PatrolTimerStatusBinding TargetPropertyName="TextColor">
+					<ConvertParams>
+						<PatrolTimerStatusToColorConvertParams ColorWhenRunning="Barfill01"/>
+					</ConvertParams>
+				</PatrolTimerStatusBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="515" Height="30" X="20" Y="20" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;28.0;N;N;N" Text="GENERAL INFO">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="ELECTRIC" DefaultValue="PAGE TITLE">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Page_Title"/>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="MultiplePages"/>
+						<VariableBinding TargetPropertyName="SelectedValue0">
+							<ConvertParams>
+								<StringToTranslatableStringConvertParams/>
+							</ConvertParams>
+							<Variable>
+								<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<Button Width="410" Height="55" X="705" Y="5" ClipToBounds="True" Text="" FillColor="Transparent" BorderColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="9"/>
+			</ClickActions>
+		</Button>
+		<Frame Width="1920" Height="60" Y="1015" HornOutput_CH1="61040" HornOutput_CH2="0" HornOutput_CH3="0" Path=".\BottomAlarmLine.prax"/>
+		<Frame Width="45" Height="45" X="1865" Y="10" Path=".\Hamburger_button.prax"/>
+	</Children>
+</RootElement>

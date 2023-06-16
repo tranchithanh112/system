@@ -1,0 +1,1882 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="XP42">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <SUBJECT><![CDATA[]]></SUBJECT>
+      <CREATED year="2010" month="11" day="2" hour="17" minutes="30" seconds="32" milisec="115" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="00000340" />
+      <II value="00000038" />
+      <PAL1131G used="1" />
+      <LC year="2019" month="8" day="21" hour="15" minutes="49" seconds="51" milisec="982" />
+      <LCF>
+        <ABSOLUTE>D:\Software\System\PAL1131\VM\VM-Praxis-TFT57.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis-TFT57.xml</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\VM\VM-Praxis-TFT57.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.0</CREATOR>
+      <LASTSAVEDWITH>1.1.5.2</LASTSAVEDWITH>
+      <HCPFlags enabled="0" />
+      <OverrideDefaultPaths enabled="0" />
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="D:\Software\System\PAL1131\Libraries\IEC 61131-3.lcp">
+        <CREATED year="2018" month="10" day="3" hour="14" minutes="5" seconds="7" milisec="324" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\Libraries\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+      <PKG name="PRAXIS_HW" version="131072" filename="D:\Software\System\PAL1131\Libraries\Praxis_HW.lcp">
+        <CREATED year="2018" month="10" day="3" hour="14" minutes="5" seconds="8" milisec="146" />
+        <APPVARS>$LibDir\Praxis_HW.lcp</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\Libraries\Praxis_HW.lcp</ENVVARS>
+        <IMP name="HW_LOAD" type="FBLK" />
+        <IMP name="HW_XP" type="FBLK" />
+        <IMP name="HW_TIMING" type="FBLK" />
+        <IMP name="HW_VERSIONS" type="FBLK" />
+        <IMP name="HW_SCROLL_UP" type="FBLK" />
+        <IMP name="HW_SCROLL_DOWN" type="FBLK" />
+        <IMP name="HW_ACCEPT" type="FBLK" />
+        <IMP name="HW_BUTTON_ID" type="FBLK" />
+        <IMP name="HW_TOUCH_GET_THR" type="FBLK" />
+        <IMP name="HW_TOUCH_SET_THR" type="FBLK" />
+        <IMP name="HW_SET_ALT_LANG" type="FBLK" />
+        <IMP name="HW_GET_ALT_LANG" type="FBLK" />
+        <IMP name="HW_GET_ALARM_PULSE_ON_NEXT" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_ALM" type="FBLK" />
+        <IMP name="HW_SET_TFT_PAGE" type="FBLK" />
+        <IMP name="HW_GET_TFT_PAGE" type="FBLK" />
+        <IMP name="HW_SET_TFT_FLASH" type="FBLK" />
+        <IMP name="HW_DETACH_ELVR" type="FBLK" />
+        <IMP name="HW_GETSTATUS_ELVR" type="FBLK" />
+        <IMP name="HW_GETSTATUS_IOW24" type="FBLK" />
+        <IMP name="HW_SPEED_ELVR" type="FBLK" />
+        <IMP name="HW_STEER_ELVR" type="FBLK" />
+        <IMP name="HW_MENU_PUBLIC_KEY" type="FBLK" />
+        <IMP name="HW_MENU_FIRST_PAGE" type="FBLK" />
+        <IMP name="HW_MENU_AFTER_LOGIN_PULSE" type="FBLK" />
+        <IMP name="HW_MENU_PW_CHANGE" type="FBLK" />
+        <IMP name="HW_GET_TFT_FLASH" type="FBLK" />
+        <IMP name="HW_SET_RD_ACTIVE" type="FBLK" />
+        <IMP name="HW_SET_WOODS_JIS" type="FBLK" />
+        <IMP name="RETAIN_TO_FACTORY" type="FBLK" />
+        <IMP name="FACTORY_TO_RETAIN" type="FBLK" />
+        <IMP name="HW_GET_ALARM_PULSE_ON_NEXT_V02" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_V02" type="FBLK" />
+        <IMP name="HW_GET_UNACCEPT_ALM_V02" type="FBLK" />
+        <IMP name="HW_SET_TFT_ALM_SUM_DAY_WEEK_MON" type="FBLK" />
+        <IMP name="SET_ORIENTATION" type="FBLK" />
+        <IMP name="HW_SET_RD_COMPORT" type="FBLK" />
+        <IMP name="LONG_FOLLOWUP" type="FBLK" />
+        <IMP name="HW_MENU_TOUCH_FUNCTION" type="FBLK" />
+        <IMP name="HW_MENU_TOUCH_BUTTON_PRESS" type="FBLK" />
+        <IMP name="HW_GET_EAS_RESET_SIGNAL" type="FBLK" />
+        <IMP name="HW_SET_TFT_GROUP_NR_PAGE" type="FBLK" />
+        <IMP name="HW_ORD_PRN_SET_ON_OFF" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PERIODIC_PRINT" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PERIODIC_HOURS" type="FBLK" />
+        <IMP name="HW_ORD_PRN_PRINT_STATUS" type="FBLK" />
+        <IMP name="HW_SHOW_MENU_SET_DATE" type="FBLK" />
+        <IMP name="HW_SHOW_MENU_SET_TIME" type="FBLK" />
+        <IMP name="HW_FORCE_REDRAW_DISPLAY" type="FBLK" />
+        <IMP name="HW_ORD_PRN_GET_STATUS_INFO" type="FBLK" />
+        <IMP name="HW_TFT_EAS_SEND_STOP_HORN" type="FBLK" />
+        <IMP name="HW_TFT_EAS_SEND_ACK" type="FBLK" />
+      </PKG>
+      <PKG name="Praxis_FUNC" version="131072" filename="D:\Software\System\PAL1131\Libraries\Praxis_FUNC.lcp">
+        <CREATED year="2018" month="10" day="3" hour="14" minutes="5" seconds="9" milisec="107" />
+        <APPVARS>$LibDir\Praxis_FUNC.lcp</APPVARS>
+        <ENVVARS>D:\Software\System\PAL1131\Libraries\Praxis_FUNC.lcp</ENVVARS>
+        <IMP name="FINT_TO_TIME" type="FUN" />
+        <IMP name="TIME_TO_FINT" type="FUN" />
+        <IMP name="FINT_TO_INT" type="FUN" />
+        <IMP name="INT_TO_FINT" type="FUN" />
+        <IMP name="DIV0" type="FUN" />
+        <IMP name="ABS_FINT" type="FUN" />
+        <IMP name="SQRT_FINT" type="FUN" />
+        <IMP name="HZ_TO_RPM" type="FUN" />
+        <IMP name="MAX_FINT" type="FUN" />
+        <IMP name="MIN_FINT" type="FUN" />
+        <IMP name="ANGLE180" type="FUN" />
+        <IMP name="ANGLE360" type="FUN" />
+        <IMP name="ATAN2" type="FUN" />
+        <IMP name="DEG_TO_RAD" type="FUN" />
+        <IMP name="RAD_TO_DEG" type="FUN" />
+        <IMP name="SET_BIT" type="FUN" />
+        <IMP name="GET_BIT" type="FUN" />
+        <IMP name="RESET_BIT" type="FUN" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="ST" disabled="0" type="PRG" name="INTERNAL_GLOBALS" editor="PAL1131.ST"><![CDATA[PROGRAM INTERNAL_GLOBALS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ // !!!!!!!!!!!!!!!!!!!!!!!!!!!! APPLICATION NOTES !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ // ----------------------------------------------------------------------------
+ //
+ // Before delivering the program two parts of the program needs to be changed
+ // 
+ // The number of the CFAS IOM need to be defined. 
+ //         Search 'NR_OF_CFAS_IOM'
+ // 
+ // The zone text need to be changed to the project specifics.
+ // If another block of zone text is needed for a 3th CFAS IOM. you can add it.
+ // No other changes are needed, the program is modular.
+ //
+ //         Search 'PRE-DEFINED TEXT'
+ // 
+ // Both variable and array are in 'MAIN_SCREEN' POU
+ //
+ // ----------------------------------------------------------------------------
+ 
+ // -------------------------- APPLICATION REVISIONS --------------------------- 
+ // ----------------------------------------------------------------------------
+ // 
+ // USE FOLLOWING APPLICATION REVISION NUMBER TEMPLATE :                                
+ // *****   YYXXXS.SSX   *******    
+ // WHERE:  YYXXX       = PROJECT SPECIAL FOR PROJECT NPYY-XXX   
+ //              S.SS   = STANDARD EAS APPLICATION NUMBER        
+ //                  X  = SPECIAL                                
+ //
+ // ---------------------------------------------------------------------------- 
+ // REVISION :    1.002               
+ // DATE     :    2019, AUG-19     
+ // AUTHOR   :    CS / DO                 
+ // ADDED    :    - Added support for 2x IOM
+ //               - Did some code clean up
+ // UPDATED POU:  ALL  
+ // TESTED WITH:  Release: 2019-05-01 (6.0.1.9) Update 00  
+ //
+ // SOFTWARE NR VARIABLES ARE SET IN THE STARTUP CODE OF THE MAIN_SCREEN        
+ // ---------------------------------------------------------------------------- 
+
+
+ // ============================================================================
+ // GLOBAL CONSTANTS
+ 
+ VAR_GLOBAL CONSTANT
+    //--------------------------------------------------------------------------
+    // PAGE NUMBERS CONSTANTS
+    
+    PAGE_NR_MAIN            : INT := 0;
+    PAGE_NR_ALARM           : INT := 1; 
+    PAGE_NR_LOGIN           : INT := 2; 
+    PAGE_NR_DIMMING         : INT := 5;
+    
+ END_VAR
+ 
+ 
+ // ============================================================================
+ // GLOBAL VARIABLES
+ 
+ VAR_GLOBAL   
+    
+    TOUCH_BUTTON_1 : BOOL := 0;
+    TOUCH_BUTTON_2 : BOOL := 0;
+    TOUCH_BUTTON_3 : BOOL := 0;
+    TOUCH_BUTTON_4 : BOOL := 0;
+    TOUCH_BUTTON_5 : BOOL := 0;
+    TOUCH_BUTTON_6 : BOOL := 0;
+     
+    TOP_BAR_STATE : INT := 1; 
+     
+    //FLASHER
+    FLASH       : BOOL;
+    FLASH_SLOW  : BOOL;
+    FLASH_RET   : BOOL;
+    NEW_ALARM   : BOOL;     // 1-SCAN PULSE
+    
+    LOOP_MSEC   : FINT ;          
+    POWER_UP    : BOOL ;    // INIT PULSE AT POWER-UP
+    POWER_ON    : BOOL ;
+    RESET       : BOOL ;
+    
+    START_LOGIN_LEVEL_0 : BOOL;
+    START_LOGIN_LEVEL_1 : BOOL;  
+     
+    TB_0   : BOOL;
+    TB_1   : BOOL;
+    TB_2   : BOOL;
+    TB_3   : BOOL;
+    TB_4   : BOOL;
+    TB_5   : BOOL;
+    TB_6   : BOOL;
+    TB_7   : BOOL;
+    TB_8   : BOOL;
+    TB_9   : BOOL;
+    TB_DOT : BOOL;
+    TB_DEL : BOOL;
+    TB_MIN : BOOL;          
+
+    UNACC_ALARM : BOOL ;
+    UNACC_ALARM_INT : INT;
+    ANY_ALARM : BOOL ; 
+    
+    DIMMING : FINT;
+    
+    G1131_BUZZER_STATE     : INT := 0;
+    G1131_SECURITY_LVL_INT : INT := 0;
+    PAGE : INT := 0;
+     
+ END_VAR
+ 
+ 
+ // ============================================================================
+ // LOCAL VARIABLES
+ 
+ VAR
+
+ END_VAR
+ 
+ 
+ // ============================================================================
+ // PROGRAM
+ 
+ UNACC_ALARM_INT := BOOL_TO_INT(UNACC_ALARM);
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="MAIN_SCREEN" editor="PAL1131.ST"><![CDATA[PROGRAM MAIN_SCREEN
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ // ============================================================================
+ // GLOBAL CONSTANTS
+ 
+ VAR_GLOBAL CONSTANT
+
+    // -------------------------------------------------------------------------
+    // NUMBER OF IOM INSTALLED
+
+    // This variable should define how many CFAS IOM are in the system.
+    NR_OF_CFAS_IOM  : INT := 1;    
+    
+    // -------------------------------------------------------------------------
+    // STRING LENGHTS
+    
+    LEGNTH_TOP_TEXT     : INT := 20;
+    LEGNTH_ZONE_TEXT    : INT := 30; 
+ 
+    NR_OF_CFAS_IOM_DEF  : INT := 2; //at least two for default texts    
+ 
+ END_VAR
+
+ // ============================================================================
+ // GLOBAL VARIABLES
+ 
+ VAR_GLOBAL
+    // -------------------------------------------------------------------------
+    // USER DEFINED TEXT
+    
+    TOP_TEXT_1 : ARRAY [1..NR_OF_CFAS_IOM_DEF] OF STRING[LEGNTH_TOP_TEXT];
+    TOP_TEXT_2 : ARRAY [1..NR_OF_CFAS_IOM_DEF] OF STRING[LEGNTH_TOP_TEXT];
+    TOP_TEXT_3 : ARRAY [1..NR_OF_CFAS_IOM_DEF] OF STRING[LEGNTH_TOP_TEXT];
+    TOP_TEXT_4 : ARRAY [1..NR_OF_CFAS_IOM_DEF] OF STRING[LEGNTH_TOP_TEXT]; 
+    
+    ZONE_TEXT_1 : ARRAY [1..NR_OF_CFAS_IOM_DEF] OF STRING[LEGNTH_ZONE_TEXT];
+    ZONE_TEXT_2 : ARRAY [1..NR_OF_CFAS_IOM_DEF] OF STRING[LEGNTH_ZONE_TEXT];
+    ZONE_TEXT_3 : ARRAY [1..NR_OF_CFAS_IOM_DEF] OF STRING[LEGNTH_ZONE_TEXT];
+    ZONE_TEXT_4 : ARRAY [1..NR_OF_CFAS_IOM_DEF] OF STRING[LEGNTH_ZONE_TEXT];
+ 
+    // -------------------------------------------------------------------------
+    // VALUES COMING FROM THE IO MODULES
+    
+     
+    SECURITY_LVL_GLB : BOOL := FALSE;
+      
+    // -------------------------------------------------------------------------
+    // PAL1131G VALUES
+    
+    G1131_STATUS_GENERAL_FIRE : INT;
+    
+    G1131_TOUCH_STOP_BUZZER : BOOL;
+    G1131_TOUCH_ALARM_PAGE  : BOOL;
+    
+    G1131_TOP_TEXT_1 : STRING[LEGNTH_TOP_TEXT];
+    G1131_TOP_TEXT_2 : STRING[LEGNTH_TOP_TEXT];
+    G1131_TOP_TEXT_3 : STRING[LEGNTH_TOP_TEXT];
+    G1131_TOP_TEXT_4 : STRING[LEGNTH_TOP_TEXT];
+
+    G1131_ZONE_TEXT_1 : STRING[LEGNTH_ZONE_TEXT];
+    G1131_ZONE_TEXT_2 : STRING[LEGNTH_ZONE_TEXT];
+    G1131_ZONE_TEXT_3 : STRING[LEGNTH_ZONE_TEXT];
+    G1131_ZONE_TEXT_4 : STRING[LEGNTH_ZONE_TEXT];
+    
+    G1131_STATUS_FIRE_ALARM_1 : INT;
+    G1131_STATUS_FIRE_ALARM_2 : INT;
+    G1131_STATUS_FIRE_ALARM_3 : INT;
+    G1131_STATUS_FIRE_ALARM_4 : INT;
+
+    G1131_TOUCH_DISABLE_1 : BOOL;
+    G1131_TOUCH_DISABLE_2 : BOOL;
+    G1131_TOUCH_DISABLE_3 : BOOL;
+    G1131_TOUCH_DISABLE_4 : BOOL;    
+
+    G1131_STATUS_DISABLE_1 : INT;
+    G1131_STATUS_DISABLE_2 : INT;
+    G1131_STATUS_DISABLE_3 : INT;
+    G1131_STATUS_DISABLE_4 : INT;
+    
+    G1131_LINE_FAULT_1 : INT;
+    G1131_LINE_FAULT_2 : INT;
+    G1131_LINE_FAULT_3 : INT;
+    G1131_LINE_FAULT_4 : INT;
+    
+    G1131_TOUCH_MODULE_LEFT  : BOOL;
+    G1131_TOUCH_MODULE_RIGHT : BOOL;
+    
+    G1131_STATUS_MODULE_LEFT    : INT;
+    G1131_STATUS_MODULE_RIGHT   : INT;
+    
+    G1131_STATUS_MODULE_LEFT_BOOL  : BOOL;
+    G1131_STATUS_MODULE_RIGHT_BOOL : BOOL;
+    
+    G1131_STATUS_PASS_LOCKED : INT;
+    G1131_STATUS_RESET_PANEL : INT;
+    
+    G1131_STATUS_ALARM_LIST      : INT;
+    G1131_STATUS_ALARM_LIST_BOOL : BOOL;
+    
+    G1131_STATUS_BUZZER           : INT;
+    G1131_STATUS_STOP_BUZZER      : INT;
+    G1131_STATUS_STOP_BUZZER_BOOL : BOOL;
+    
+    G1131_STATUS_SECURITY_LVL_GLB : INT;    
+ 
+ END_VAR
+ 
+ // ============================================================================
+ // LOCAL VARIABLES
+ 
+ VAR
+    IT : INT := 0;
+     
+    CURRENT_CFAS_IOM : INT := 1;
+    
+    G1131_TRIG_TOUCH_ALARM_PAGE     : R_TRIG;
+    
+    G1131_TRIG_TOUCH_DISABLE_1 : R_TRIG; 
+    G1131_TRIG_TOUCH_DISABLE_2 : R_TRIG;
+    G1131_TRIG_TOUCH_DISABLE_3 : R_TRIG;
+    G1131_TRIG_TOUCH_DISABLE_4 : R_TRIG;
+
+    G1131_TRIG_TOUCH_MODULE_LEFT    : R_TRIG;    
+    G1131_TRIG_TOUCH_MODULE_RIGHT   : R_TRIG;
+    
+    G1131_TRIG_TOUCH_LOW_1 : R_TRIG;
+    G1131_TRIG_TOUCH_LOW_2 : R_TRIG;
+    G1131_TRIG_TOUCH_LOW_3 : R_TRIG;
+    G1131_TRIG_TOUCH_LOW_4 : R_TRIG;
+    G1131_TRIG_TOUCH_LOW_5 : R_TRIG;
+    G1131_TRIG_TOUCH_LOW_6 : R_TRIG;
+    
+    LOGIN_LVL_1_SUCCES_TRIG : R_TRIG;
+     
+    PULSE_TIME : TIME := T#1s;
+    G1131_PANEL_RESET_TOUCH_PULSE : TP;
+    G1131_STOP_BUZZER_TOUCH_PULSE : TP;
+    
+    SET_TFT_PAGE : HW_SET_TFT_PAGE;
+    
+    REDRAW_DISPLAY : HW_FORCE_REDRAW_DISPLAY; // DEBUG REMOVE
+    PREVIOUS_IOM : INT; // DEBUG REMOVE
+
+    P_H2                 : F_TRIG;
+ END_VAR
+
+ // ============================================================================ 
+ // INITALIZATION (PRE-DEFINED TEXT)
+ 
+// HORN 2 OFF
+P_H2(CLK:= WH_HORN2);
+
+IF P_H2.Q THEN BUZZER:=FALSE; END_IF
+ 
+ IF POWER_UP THEN
+     MASTER_SW_VER  := FINT#1.002;
+     PROJECT_SW_VER := FINT#0.002;
+     PROJECT_NR     := FINT#0.000;
+ 
+     TOP_TEXT_1[1] := 'Module 1 Zone 1'; 
+     TOP_TEXT_2[1] := 'Module 1 Zone 2'; 
+     TOP_TEXT_3[1] := 'Module 1 Zone 3'; 
+     TOP_TEXT_4[1] := 'Module 1 Zone 4'; 
+    
+     TOP_TEXT_1[2] := 'Module 2 Zone 1';
+     TOP_TEXT_2[2] := 'Module 2 Zone 2';
+     TOP_TEXT_3[2] := 'Module 2 Zone 3';
+     TOP_TEXT_4[2] := 'Module 2 Zone 4';
+     
+     ZONE_TEXT_1[1] := 'FIRE ALARM$R$NM1 Z1'; 
+     ZONE_TEXT_2[1] := 'FIRE ALARM$R$NM1 Z2'; 
+     ZONE_TEXT_3[1] := 'FIRE ALARM$R$NM1 Z3'; 
+     ZONE_TEXT_4[1] := 'FIRE ALARM$R$NM1 Z4'; 
+    
+     ZONE_TEXT_1[2] := 'FIRE ALARM$R$NM2 Z1';
+     ZONE_TEXT_2[2] := 'FIRE ALARM$R$NM2 Z2';
+     ZONE_TEXT_3[2] := 'FIRE ALARM$R$NM2 Z3';
+     ZONE_TEXT_4[2] := 'FIRE ALARM$R$NM2 Z4';
+     
+ END_IF
+ 
+ // ============================================================================
+ // UPDATE SHARED VARIABLES
+ 
+ // ----------------------------------------------------------------------------
+ // Login Level 1 Succesfull -> Update SECURITY_LVL_GLB
+ 
+ LOGIN_LVL_1_SUCCES_TRIG(CLK := START_LOGIN_LEVEL_1);
+ IF LOGIN_LVL_1_SUCCES_TRIG.Q THEN
+    SECURITY_LVL_GLB := TRUE;
+
+    SET_TFT_PAGE(iInput := PAGE_NR_MAIN); // Firmware need to know the page change 
+ END_IF
+    
+ // ----------------------------------------------------------------------------
+ // Reset Panel Status
+ 
+ IF SECURITY_LVL_GLB = TRUE THEN
+    G1131_STATUS_RESET_PANEL := 1;
+    
+ ELSIF CFG_RESET_FAULT[1] > 1 THEN   // TODO: This is only the first io module
+    // Reset Panel Allowed in Lvl 1 or is automatic
+    G1131_STATUS_RESET_PANEL := 1;  
+ ELSE
+    G1131_STATUS_RESET_PANEL := 0;        
+ END_IF
+ 
+ // ----------------------------------------------------------------------------
+ // Password Login
+ 
+ IF SECURITY_LVL_GLB = TRUE THEN
+    G1131_STATUS_PASS_LOCKED := 1;
+ ELSE
+    G1131_STATUS_PASS_LOCKED := 0;
+ END_IF
+ 
+ // ----------------------------------------------------------------------------
+ // Update Security Levels on CFAS IOMs
+ 
+ FOR IT := 1 TO NR_OF_CFAS_IOM DO
+    SECURITY_LVL_IOM[IT] := SECURITY_LVL_GLB;
+ END_FOR
+ 
+ // ----------------------------------------------------------------------------
+ // Summarize GENERAL_FIRE_ALARM[] to G1131_STATUS_GENERAL_FIRE variable 
+ 
+ FOR IT := 1 TO NR_OF_CFAS_IOM DO
+    IF IT = 1 THEN
+        G1131_STATUS_GENERAL_FIRE := BOOL_TO_INT(GENERAL_FIRE_ALARM[IT]);
+    ELSE
+        IF G1131_STATUS_GENERAL_FIRE = 1 THEN
+            EXIT;
+        ELSE
+            G1131_STATUS_GENERAL_FIRE := G1131_STATUS_GENERAL_FIRE + BOOL_TO_INT(GENERAL_FIRE_ALARM[IT]);
+        END_IF     
+    END_IF
+ END_FOR
+ 
+ // ----------------------------------------------------------------------------
+ // Update Top Bar
+ 
+ IF ANY_ALARM OR UNACC_ALARM THEN
+    TOP_BAR_STATE := 2;
+ ELSE
+    TOP_BAR_STATE := 1;
+ END_IF
+ 
+ // -------------------------------------------------------------------------
+ // UPDATE G1131 STATUS VARIABLES
+
+ G1131_STATUS_ALARM_LIST := BOOL_TO_INT(ANY_ALARM OR UNACC_ALARM);
+ G1131_STATUS_ALARM_LIST_BOOL := ANY_ALARM OR UNACC_ALARM;
+
+ G1131_STATUS_STOP_BUZZER := BOOL_TO_INT(ANY_ALARM OR UNACC_ALARM);
+ G1131_STATUS_STOP_BUZZER_BOOL := ANY_ALARM OR UNACC_ALARM;
+ 
+ G1131_STATUS_BUZZER            := BOOL_TO_INT(BUZZER);
+ G1131_STATUS_SECURITY_LVL_GLB  := BOOL_TO_INT(SECURITY_LVL_GLB);
+ 
+ // ============================================================================
+ // PROGRAM
+ 
+ IF (PAGE = PAGE_NR_MAIN OR PAGE = PAGE_NR_DIMMING) THEN
+    
+    // -------------------------------------------------------------------------
+    // BUTTON HANDLING: TOP BUTTONS (Stop Buzzer & Alarm Page)
+    
+    // Stop Buzzer logic
+    G1131_STOP_BUZZER_TOUCH_PULSE(IN := G1131_TOUCH_STOP_BUZZER, PT := PULSE_TIME);    
+    FOR IT := 1 to NR_OF_CFAS_IOM DO
+        REQUEST_STOP_HORN[IT] :=  G1131_STOP_BUZZER_TOUCH_PULSE.Q;    
+    END_FOR 
+    IF (G1131_STOP_BUZZER_TOUCH_PULSE.Q) THEN
+        BUZZER := FALSE;
+        
+        // Reset new alarms
+        NEW_FAULT_ALARM := FALSE;
+        NEW_FIRE_ALARM  := FALSE;
+    END_IF
+   
+    // Go to Alarm Page
+    G1131_TRIG_TOUCH_ALARM_PAGE(CLK:=G1131_TOUCH_ALARM_PAGE);
+    IF G1131_TRIG_TOUCH_ALARM_PAGE.Q AND ANY_ALARM THEN
+        PAGE := PAGE_NR_ALARM;
+    END_IF
+    
+    // -------------------------------------------------------------------------
+    // BUTTON HANDLING: DISABLE
+    
+    G1131_TRIG_TOUCH_DISABLE_1(CLK:=G1131_TOUCH_DISABLE_1);
+    IF G1131_TRIG_TOUCH_DISABLE_1.Q AND SECURITY_LVL_IOM[CURRENT_CFAS_IOM] THEN
+        IF DISABLED_ZONE_1[CURRENT_CFAS_IOM] THEN
+            DISABLE_ZONE_1[CURRENT_CFAS_IOM] := FALSE;
+        ELSE
+            DISABLE_ZONE_1[CURRENT_CFAS_IOM] := TRUE;           
+        END_IF
+    END_IF
+
+    G1131_TRIG_TOUCH_DISABLE_2(CLK:=G1131_TOUCH_DISABLE_2);
+    IF G1131_TRIG_TOUCH_DISABLE_2.Q AND SECURITY_LVL_IOM[CURRENT_CFAS_IOM] THEN
+        IF DISABLED_ZONE_2[CURRENT_CFAS_IOM] THEN
+            DISABLE_ZONE_2[CURRENT_CFAS_IOM] := FALSE;
+        ELSE
+            DISABLE_ZONE_2[CURRENT_CFAS_IOM] := TRUE;           
+        END_IF
+    END_IF
+
+    G1131_TRIG_TOUCH_DISABLE_3(CLK:=G1131_TOUCH_DISABLE_3);
+    IF G1131_TRIG_TOUCH_DISABLE_3.Q AND SECURITY_LVL_IOM[CURRENT_CFAS_IOM] THEN
+        IF DISABLED_ZONE_3[CURRENT_CFAS_IOM] THEN
+            DISABLE_ZONE_3[CURRENT_CFAS_IOM] := FALSE;
+        ELSE
+            DISABLE_ZONE_3[CURRENT_CFAS_IOM] := TRUE;           
+        END_IF
+    END_IF
+
+    G1131_TRIG_TOUCH_DISABLE_4(CLK:=G1131_TOUCH_DISABLE_4);
+    IF G1131_TRIG_TOUCH_DISABLE_4.Q AND SECURITY_LVL_IOM[CURRENT_CFAS_IOM] THEN
+        IF DISABLED_ZONE_4[CURRENT_CFAS_IOM] THEN
+            DISABLE_ZONE_4[CURRENT_CFAS_IOM] := FALSE;
+        ELSE
+            DISABLE_ZONE_4[CURRENT_CFAS_IOM] := TRUE;           
+        END_IF
+    END_IF
+    
+    
+    // -------------------------------------------------------------------------
+    // BUTTON HANDLING: MODULE SWITCH
+    
+    G1131_TRIG_TOUCH_MODULE_LEFT(CLK:=G1131_TOUCH_MODULE_LEFT);
+    IF G1131_TRIG_TOUCH_MODULE_LEFT.Q THEN
+        IF CURRENT_CFAS_IOM > 1 THEN
+            CURRENT_CFAS_IOM := CURRENT_CFAS_IOM - 1;
+            
+            // Changing a text will not be rendered, old text will stay in its place
+            // Redrawing the whole screen will solve this issue. Can be removed when bug is fixed.
+            REDRAW_DISPLAY(iInput:=1);
+        END_IF        
+    END_IF
+    
+    IF CURRENT_CFAS_IOM > 1 THEN
+        G1131_STATUS_MODULE_LEFT        := 0;
+        G1131_STATUS_MODULE_LEFT_BOOL   := TRUE;
+    ELSE
+        G1131_STATUS_MODULE_LEFT        := 1;
+        G1131_STATUS_MODULE_LEFT_BOOL   := FALSE;
+    END_IF
+
+    G1131_TRIG_TOUCH_MODULE_RIGHT(CLK:=G1131_TOUCH_MODULE_RIGHT);
+    IF G1131_TRIG_TOUCH_MODULE_RIGHT.Q THEN
+        IF CURRENT_CFAS_IOM < NR_OF_CFAS_IOM THEN
+            CURRENT_CFAS_IOM := CURRENT_CFAS_IOM + 1;
+            
+            // Changing a text will not be rendered, old text will stay in its place
+            // Redrawing the whole screen will solve this issue. Can be removed when bug is fixed.
+            REDRAW_DISPLAY(iInput:=1);
+        END_IF
+    END_IF
+    
+    IF CURRENT_CFAS_IOM < NR_OF_CFAS_IOM THEN
+        G1131_STATUS_MODULE_RIGHT       := 0;
+        G1131_STATUS_MODULE_RIGHT_BOOL  := TRUE;
+    ELSE
+        G1131_STATUS_MODULE_RIGHT       := 1;
+        G1131_STATUS_MODULE_RIGHT_BOOL  := FALSE; 
+    END_IF
+    
+    
+    // -------------------------------------------------------------------------
+    // BUTTON HANDLING: LOWER BUTTONS
+    
+    G1131_TRIG_TOUCH_LOW_1(CLK:=TOUCH_BUTTON_1); // Switch Main / Dimming
+    IF G1131_TRIG_TOUCH_LOW_1.Q THEN
+        IF PAGE = PAGE_NR_MAIN THEN
+            PAGE := PAGE_NR_DIMMING;
+            
+        ELSIF PAGE = PAGE_NR_DIMMING THEN
+            PAGE := PAGE_NR_MAIN;
+             
+        END_IF
+    END_IF
+    
+    // TOUCH BUTTON 2
+    IF PAGE = PAGE_NR_MAIN THEN
+        // MAIN PAGE -> Not Implemented
+        
+    ELSIF PAGE = PAGE_NR_DIMMING THEN
+    
+        // DIMMING PAGE -> Increase Dimming
+        G1131_TRIG_TOUCH_LOW_2(CLK:=TOUCH_BUTTON_2);
+        IF G1131_TRIG_TOUCH_LOW_2.Q THEN
+            DIMMING := DIMMING - DIMMING_STEP;
+        END_IF
+        
+    END_IF
+    
+    // TOUCH BUTTON 3
+    IF PAGE = PAGE_NR_MAIN THEN
+        
+        // MAIN PAGE -> Reset Panel
+        G1131_PANEL_RESET_TOUCH_PULSE(IN := TOUCH_BUTTON_3, PT := PULSE_TIME);
+        FOR IT := 1 to NR_OF_CFAS_IOM DO
+            REQUEST_PANEL_RESET[IT] := G1131_PANEL_RESET_TOUCH_PULSE.Q AND INT_TO_BOOL(G1131_STATUS_RESET_PANEL);
+        END_FOR
+        
+    ELSIF PAGE = PAGE_NR_DIMMING THEN
+    
+        // DIMMING PAGE -> Descrease Dimming
+        G1131_TRIG_TOUCH_LOW_3(CLK:=TOUCH_BUTTON_3);
+        IF G1131_TRIG_TOUCH_LOW_3.Q THEN
+            DIMMING := DIMMING + DIMMING_STEP;
+        END_IF
+        
+    END_IF
+    
+    // TOUCH BUTTON 4
+    IF PAGE = PAGE_NR_MAIN THEN
+    
+        // MAIN PAGE -> Login page (Elevated)
+        G1131_TRIG_TOUCH_LOW_4(CLK:=TOUCH_BUTTON_4);
+        IF G1131_TRIG_TOUCH_LOW_4.Q THEN
+        
+        IF NOT SECURITY_LVL_GLB THEN
+        
+            MENU_LEVEL0 := FALSE;
+            MENU_LEVEL1 := TRUE;
+            MENU_LEVEL2 := FALSE;
+
+            PAGE := PAGE_NR_LOGIN;                                                                                                                                                               
+        ELSE
+            SECURITY_LVL_GLB := FALSE;
+        END_IF
+        
+    END_IF
+    ELSIF PAGE = PAGE_NR_DIMMING THEN
+        // DIMMING PAGE -> Not Implemented
+        
+    END_IF
+
+    G1131_TRIG_TOUCH_LOW_5(CLK:=TOUCH_BUTTON_5); // Go to Alarm Page
+    IF G1131_TRIG_TOUCH_LOW_5.Q THEN
+        PAGE := PAGE_NR_ALARM;
+    END_IF
+    
+    G1131_TRIG_TOUCH_LOW_6(CLK:=TOUCH_BUTTON_6); // Go to Login Page (Config)
+    IF G1131_TRIG_TOUCH_LOW_6.Q THEN
+        MENU_LEVEL0 := FALSE;
+        MENU_LEVEL1 := FALSE;
+        MENU_LEVEL2 := TRUE;
+
+        PAGE := PAGE_NR_LOGIN;  
+    END_IF
+    
+    // -------------------------------------------------------------------------
+    // CONVERT SELECTED IOM TO G1131 
+    
+    G1131_LINE_FAULT_1 := BOOL_TO_INT(LINE_FAULT_ZONE_1[CURRENT_CFAS_IOM]);
+    G1131_LINE_FAULT_2 := BOOL_TO_INT(LINE_FAULT_ZONE_2[CURRENT_CFAS_IOM]);
+    G1131_LINE_FAULT_3 := BOOL_TO_INT(LINE_FAULT_ZONE_3[CURRENT_CFAS_IOM]);
+    G1131_LINE_FAULT_4 := BOOL_TO_INT(LINE_FAULT_ZONE_4[CURRENT_CFAS_IOM]);
+    
+    G1131_STATUS_FIRE_ALARM_1 := BOOL_TO_INT(FIRE_ALARM_ZONE_1[CURRENT_CFAS_IOM]);
+    G1131_STATUS_FIRE_ALARM_2 := BOOL_TO_INT(FIRE_ALARM_ZONE_2[CURRENT_CFAS_IOM]);
+    G1131_STATUS_FIRE_ALARM_3 := BOOL_TO_INT(FIRE_ALARM_ZONE_3[CURRENT_CFAS_IOM]);
+    G1131_STATUS_FIRE_ALARM_4 := BOOL_TO_INT(FIRE_ALARM_ZONE_4[CURRENT_CFAS_IOM]);
+    
+    IF SECURITY_LVL_IOM[CURRENT_CFAS_IOM] THEN
+        G1131_STATUS_DISABLE_1 := BOOL_TO_INT(DISABLED_ZONE_1[CURRENT_CFAS_IOM]) + 2;
+        G1131_STATUS_DISABLE_2 := BOOL_TO_INT(DISABLED_ZONE_2[CURRENT_CFAS_IOM]) + 2;
+        G1131_STATUS_DISABLE_3 := BOOL_TO_INT(DISABLED_ZONE_3[CURRENT_CFAS_IOM]) + 2;
+        G1131_STATUS_DISABLE_4 := BOOL_TO_INT(DISABLED_ZONE_4[CURRENT_CFAS_IOM]) + 2;
+    ELSE
+        G1131_STATUS_DISABLE_1 := BOOL_TO_INT(DISABLED_ZONE_1[CURRENT_CFAS_IOM]);
+        G1131_STATUS_DISABLE_2 := BOOL_TO_INT(DISABLED_ZONE_2[CURRENT_CFAS_IOM]);
+        G1131_STATUS_DISABLE_3 := BOOL_TO_INT(DISABLED_ZONE_3[CURRENT_CFAS_IOM]);
+        G1131_STATUS_DISABLE_4 := BOOL_TO_INT(DISABLED_ZONE_4[CURRENT_CFAS_IOM]);
+    END_IF
+    
+    G1131_TOP_TEXT_1 := TOP_TEXT_1[CURRENT_CFAS_IOM];
+    G1131_TOP_TEXT_2 := TOP_TEXT_2[CURRENT_CFAS_IOM];
+    G1131_TOP_TEXT_3 := TOP_TEXT_3[CURRENT_CFAS_IOM];
+    G1131_TOP_TEXT_4 := TOP_TEXT_4[CURRENT_CFAS_IOM];
+
+    G1131_ZONE_TEXT_1 := ZONE_TEXT_1[CURRENT_CFAS_IOM];
+    G1131_ZONE_TEXT_2 := ZONE_TEXT_2[CURRENT_CFAS_IOM];
+    G1131_ZONE_TEXT_3 := ZONE_TEXT_3[CURRENT_CFAS_IOM];
+    G1131_ZONE_TEXT_4 := ZONE_TEXT_4[CURRENT_CFAS_IOM];
+    
+
+    
+    // DEBUG BUG: TEXT DOES NOT CHANGE / GET NOT REDRAWN IF IT CHANGES
+    //IF PREVIOUS_IOM <> CURRENT_CFAS_IOM THEN
+    //    REDRAW_DISPLAY(iInput:=1);
+    //ELSE
+    //    REDRAW_DISPLAY(iInput:=0);
+    //END_IF
+    
+    //PREVIOUS_IOM := CURRENT_CFAS_IOM;
+
+ END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="SYSTEM" editor="PAL1131.ST"><![CDATA[PROGRAM SYSTEM
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+  
+    FLASH_S     : FLASHER ;     
+      
+    TON_ON      : TON ;
+    //LAST_CONT   : INT;
+    TLOOP       : HW_TIMING  ;    
+    START_UP    : R_TRIG ;
+     
+    IFLASH      : INT ;      
+    IRETURN     : INT ;
+ 
+    SET_TFT_FLASH        : HW_SET_TFT_FLASH;
+    SET_PUBLIC_KEY       : HW_MENU_PUBLIC_KEY;
+    SET_TFT_FIRST        : HW_MENU_FIRST_PAGE;
+    SET_TFT_PW_CHANGE    : HW_MENU_PW_CHANGE;     
+    
+    GET_TFT_ALARM_PULSE  : HW_GET_ALARM_PULSE_ON_NEXT;
+    GET_TFT_UNACCEPT     : HW_GET_UNACCEPT;  
+    GET_TFT_FLASH        : HW_GET_TFT_FLASH; 
+    SET_TFT_TB_MENUS     : HW_MENU_TOUCH_FUNCTION;
+        
+    ALARM_FLASHER        : BOOL ;
+    
+    LAST_USED   : TIME;
+    DELTA_TIME  : TIME;
+ END_VAR
+ 
+ 
+     // Scan Time
+    TLOOP();                 
+    LOOP_MSEC := INT_TO_FINT(TLOOP.TIME_BETWEEN_CYCLES) ;   // MSEC PREVIOUS LOOP  
+    
+    // Power Up 
+    START_UP(CLK:= TRUE);
+    POWER_UP := START_UP.Q ;
+    TON_ON(IN:= TRUE, PT := T#5s ) ;
+    POWER_ON := TON_ON.Q ;
+    
+    IF POWER_UP THEN          // INIT ONCE WITH POWER UP 
+       
+       SET_PUBLIC_KEY(IINPUT:=0);
+       SET_TFT_FIRST(IINPUT:=PAGE_NR_MENU);
+       SET_TFT_PW_CHANGE(IINPUT:=1);
+       
+       SET_TFT_TB_MENUS(USE_TB_LOGIN:=TRUE,USE_TB_CHANGE_PWD:=TRUE,USE_TB_EDIT:=TRUE);
+       
+    END_IF
+    
+    // Flasher
+    FLASH_S( START:= TRUE , PULSE:= 500, CYCLE:= 3000 , TSCAN:= LOOP_MSEC ) ;    // TAKE-OVER 
+    
+    
+    GET_TFT_FLASH();
+    IFLASH := GET_TFT_FLASH.IRET;
+    IF IFLASH = 0 THEN
+      FLASH := FALSE;
+    ELSE
+      FLASH := TRUE;
+    END_IF
+    ALARM_FLASHER := FLASH;
+    
+    FLASH_SLOW :=  FLASH_S.Q ;
+    
+    // Unacknowledged Alarms
+    GET_TFT_UNACCEPT(IRET=>IRETURN);
+    IF IRETURN = 1 THEN 
+        UNACC_ALARM := TRUE; 
+    ELSE 
+        UNACC_ALARM:= FALSE; 
+    END_IF
+    
+    // Any Alarm
+    GET_TFT_ALARM_PULSE(IRET=>IRETURN);
+    IF IRETURN = 1 THEN 
+        ANY_ALARM := TRUE; 
+    ELSE 
+        ANY_ALARM := FALSE; 
+    END_IF
+    
+    // ALARM_FLASHER
+    SET_TFT_FLASH(IINPUT:=BOOL_TO_INT(ALARM_FLASHER));
+    
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PAGE_NAVIGATION" editor="PAL1131.ST"><![CDATA[PROGRAM PAGE_NAVIGATION
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+
+   TO_MAIN1 : BOOL ;
+   TO_ALM   : BOOL ; 
+   TO_MAIN_TOV : R_TRIG ;
+   
+   LAST_PAGE   : INT ;
+   OLD_PAGE    : INT ;
+   
+   TO_PREV : R_TRIG;
+
+   GET_TFT_PAGE         : HW_GET_TFT_PAGE;
+   SET_TFT_PAGE         : HW_SET_TFT_PAGE;                 
+   IRETURN              : INT;
+   RESET_PG_MENUS       : INT; 
+   SET_PUBLIC_KEY_TWO   : HW_MENU_PUBLIC_KEY;
+   
+   
+ END_VAR
+ 
+ VAR_GLOBAL
+ 
+   (* TFT PAGE NUMBERS AS CONFIGURED IN GRAPHIC EDITOR  => EDIT WHEN ADDING/SORTING/DELETING FRAMES IN PAL1131G  !!! *)
+   //PAGE_NR_MAIN1      : INT := 0 ;     
+   //PAGE_NR_ALARM      : INT := 1 ;
+   PAGE_NR_MENU       : INT := 2 ;
+   
+
+   PAGE_IN_MENU       : BOOL := FALSE ;
+   PAGE_CHANGE_PK     : BOOL := FALSE ; 
+   PAGE_CHANGE_PW     : BOOL := FALSE ;  
+  
+    
+   PB_DUMMY           : BOOL ;
+   PB_PG_MAIN         : BOOL ;
+   PB_PG_SELECT       : BOOL ;    
+   PB_PG_ALARM        : BOOL ;              
+   PB_PG_MENU         : BOOL ;  
+   PB_PK_EXIT         : BOOL ;
+   PB_PG_PREVIOUS     : BOOL ;
+   PB_PG_PARAM0       : BOOL ;     
+   PB_PG_PARAM1       : BOOL ;    
+   PB_PG_PARAM2       : BOOL ; 
+   PB_PG_CHANGE_PK    : BOOL ;
+   PB_PG_DEPTH        : BOOL ;            
+   
+   PBSWAP_MENU_PG     : INT := 1 ;     
+   PBSWAP_PREV_PG     : INT := 1 ;         
+//PBSWAP FOR INDICATION   
+                   
+ END_VAR
+ 
+(* ########################################################################*)
+
+    // SELECT TFT PAGE
+    IRETURN := 0;
+    
+    GET_TFT_PAGE();
+    IRETURN := GET_TFT_PAGE.IRET;
+    
+    //RESET
+    IF PAGE >= PAGE_NR_MENU AND PAGE <= (PAGE_NR_MENU+2) THEN
+      RESET_PG_MENUS := RESET_PG_MENUS + 1;
+      IF RESET_PG_MENUS > 20 THEN
+        RESET_PG_MENUS := 20;       
+        IF IRETURN >= 0 AND IRETURN <= 1 THEN
+          PAGE := IRETURN;
+          RESET_PG_MENUS := 0;
+        END_IF 
+      END_IF
+    END_IF
+    
+    
+    IF IRETURN >= (PAGE_NR_MENU+1) AND IRETURN <= (PAGE_NR_MENU+2) THEN   
+      PAGE := IRETURN; 
+      IRETURN  := 1; //DO NOT CHANGE THE PAGE
+    ELSE
+      IRETURN := 0;
+    END_IF
+    
+    IF PAGE_CHANGE_PW THEN
+      IRETURN  := 1; //DO NOT CHANGE THE PAGE
+    END_IF
+    
+    IF IRETURN = 0 THEN  
+      SET_TFT_PAGE(IINPUT:=PAGE);
+    END_IF 
+    
+    
+    (* PAGE SELECTIONS *)
+    
+    IF PAGE<>OLD_PAGE THEN        // STORE PREVIOUS PAGE AT PAGE CHANGE
+      LAST_PAGE := OLD_PAGE ;
+      RESET_PG_MENUS := 0; //RESET 
+    END_IF
+    
+    OLD_PAGE := PAGE ;
+    TO_PREV(CLK:= PB_PG_PREVIOUS);
+    
+    IF TO_PREV.Q THEN       (* PREVIOUS PAGE *)
+      PAGE :=  LAST_PAGE ;
+    
+    ELSIF    PB_PG_MAIN OR TO_MAIN1 THEN    (* MAIN PAGE *)          
+      PAGE :=  PAGE_NR_MAIN ;
+     
+    ELSIF PB_PG_ALARM OR TO_ALM THEN    (* ALARM PAGE *) 
+      PAGE :=  PAGE_NR_ALARM ;
+      
+    ELSIF PB_PG_MENU AND (PBSWAP_MENU_PG>0)  THEN   // MENU PUBLIC KEY PAGE  
+      PAGE :=  PAGE_NR_MENU ;  
+    
+    ELSIF PAGE_CHANGE_PW THEN   //MENU CHANGE PWD     
+      PAGE :=  PAGE_NR_MENU ;
+    
+    ELSIF PB_PK_EXIT THEN
+      PAGE :=  PAGE_NR_MAIN ;
+    END_IF
+    
+    PAGE_IN_MENU := (PAGE >= PAGE_NR_MENU)  AND (PAGE <= PAGE_NR_MENU + 2); // MENUS
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PAGE_MENUS" editor="PAL1131.ST"><![CDATA[PROGRAM PAGE_MENUS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+   SHOWN     : BOOL;
+   MODE      : INT;
+   TBMODE    : INT;
+   BUT_ID    : HW_BUTTON_ID;
+   TRIGGER   : R_TRIG;
+   TBTRIGGER   : R_TRIG;
+   
+   A1: INT ;
+   B1: INT ;
+   
+   GET_TFT_PAGE_2  : HW_GET_TFT_PAGE; //FOR TT
+   ISUBPAGE        : INT :=0;    //FOR TT    
+
+   ILEVEL0              : INT;
+   ILEVEL1              : INT;
+   ILEVEL2              : INT;    
+   GET_TFT_LOGIN_PULSE  : HW_MENU_AFTER_LOGIN_PULSE;     
+   SET_TB_PRESS         : HW_MENU_TOUCH_BUTTON_PRESS; 
+   
+   TEST_TRIG : R_TRIG;
+   SET_TFT_PAGE :   HW_SET_TFT_PAGE;
+
+ END_VAR
+
+ VAR_GLOBAL
+ 
+   BUT_ID_1        : BOOL;
+   BUT_ID_2        : BOOL;
+   BUT_ID_3        : BOOL;
+   BUT_ID_4        : BOOL;
+   BUT_ID_5        : BOOL;
+   BUT_ID_6        : BOOL;
+ 
+ END_VAR
+
+
+(******************************************************************************)
+ 
+GET_TFT_PAGE_2();
+ISUBPAGE := GET_TFT_PAGE_2.ISUB;
+
+SHOWN := PAGE_IN_MENU;  (* MENU PAGES ACTIVE *)
+
+MODE := 0;      // MENU FIRMWARE INTERFACE
+TBMODE := -1;
+
+IF SHOWN THEN  
+
+    IF TB_0 THEN
+      TBMODE := 0;
+    ELSIF TB_1 THEN
+      TBMODE := 1;
+    ELSIF TB_2 THEN
+      TBMODE := 2;
+    ELSIF TB_3 THEN
+      TBMODE := 3;
+    ELSIF TB_4 THEN
+      TBMODE := 4;
+    ELSIF TB_5 THEN
+      TBMODE := 5;
+    ELSIF TB_6 THEN
+      TBMODE := 6;
+    ELSIF TB_7 THEN
+      TBMODE := 7;
+    ELSIF TB_8 THEN
+      TBMODE := 8;
+    ELSIF TB_9 THEN
+      TBMODE := 9;
+    ELSIF TB_DOT THEN
+      TBMODE := 11;
+    ELSIF TB_DEL THEN
+      TBMODE := 12;
+    ELSIF TB_MIN THEN
+      TBMODE := 10;
+    END_IF   
+        
+  TBTRIGGER(CLK:= (TBMODE > -1));
+  IF TBTRIGGER.Q THEN
+    SET_TB_PRESS(IINPUT:=TBMODE);
+  END_IF 
+          
+  IF BUT_ID_1 THEN
+    MODE := 1;
+  ELSIF BUT_ID_2 THEN
+    MODE := 2;   
+  ELSIF BUT_ID_3 THEN
+    MODE := 3;     
+  ELSIF BUT_ID_4 THEN
+    MODE := 4;     
+  ELSIF BUT_ID_5 THEN
+    MODE := 5;     
+  ELSIF BUT_ID_6 THEN
+    MODE := 6;     
+  END_IF  
+ 
+  TRIGGER(CLK:= (MODE > 0));
+  IF TRIGGER.Q THEN
+    IF MODE = 5 AND MENU_LEVEL1 THEN
+        BUT_ID(IINPUT:=MODE);
+        SET_TFT_PAGE(iInput := 0); // Must be here because implemented in the BUT_ID function
+    ELSE
+        BUT_ID(IINPUT:=MODE);
+    END_IF
+  
+    //BUT_ID(IINPUT:=MODE);
+  END_IF 
+  
+  GET_TFT_LOGIN_PULSE(ILEVEL:=0);
+  IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+    START_LOGIN_LEVEL_0:=TRUE;
+    START_LOGIN_LEVEL_1:=FALSE;
+    //START_LOGIN_LEVEL_2:=FALSE;  
+  END_IF
+  
+  GET_TFT_LOGIN_PULSE(ILEVEL:=1); 
+  IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+    START_LOGIN_LEVEL_0:=FALSE;
+    START_LOGIN_LEVEL_1:=TRUE;
+    //START_LOGIN_LEVEL_2:=FALSE;  
+  END_IF
+    
+(*
+  //RETURN TO PUBLIC KEY PAGE
+  IF BUT_ID_5 THEN
+    IF PAGE_CHANGE_PK THEN
+      PAGE :=  PAGE_NR_MENU;
+      PAGE_CHANGE_PK := FALSE;
+    END_IF
+  END_IF
+*)
+
+  IF BUT_ID_2 THEN
+    IF PAGE = PAGE_NR_MENU+1 THEN    
+      PAGE_CHANGE_PW := TRUE;
+    END_IF
+  END_IF
+    
+  IF BUT_ID_5 OR BUT_ID_6 THEN  
+    IF PAGE = PAGE_NR_MENU OR PAGE = PAGE_NR_MENU+1 THEN  
+      PAGE_CHANGE_PW := FALSE;
+    END_IF
+  END_IF
+
+  //RETURN TO MAIN 
+  
+  IF BUT_ID_6 THEN  
+    IF PAGE = PAGE_NR_MENU+2 AND ISUBPAGE = 0 THEN  
+      PAGE := PAGE_NR_MENU;
+    END_IF
+  END_IF
+
+  // MENU LOGIN REGISTRATION
+(*  
+  GET_TFT_LOGIN_PULSE(ILEVEL:=0);
+  IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+    START_LOGIN_LEVEL_0:=TRUE;
+    START_LOGIN_LEVEL_1:=FALSE;
+    START_LOGIN_LEVEL_2:=FALSE;  
+  END_IF
+  
+  GET_TFT_LOGIN_PULSE(ILEVEL:=1); 
+  IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+    START_LOGIN_LEVEL_0:=FALSE;
+    START_LOGIN_LEVEL_1:=TRUE;
+    START_LOGIN_LEVEL_2:=FALSE;  
+  END_IF
+  
+  GET_TFT_LOGIN_PULSE(ILEVEL:=2);   
+  IF GET_TFT_LOGIN_PULSE.IRET > 0 THEN
+    START_LOGIN_LEVEL_0:=FALSE;
+    START_LOGIN_LEVEL_1:=FALSE;
+    START_LOGIN_LEVEL_2:=TRUE;  
+  END_IF
+*) 
+
+
+    
+ELSIF POWER_UP THEN
+  BUT_ID_1 := FALSE;
+  BUT_ID_2 := FALSE;
+  BUT_ID_3 := FALSE;
+  BUT_ID_4 := FALSE;
+  BUT_ID_5 := FALSE;
+  BUT_ID_6 := FALSE;
+    //TOUCH BUTTONS  
+    TB_0   := FALSE;
+    TB_1   := FALSE;
+    TB_2   := FALSE;
+    TB_3   := FALSE;
+    TB_4   := FALSE;
+    TB_5   := FALSE;
+    TB_6   := FALSE;
+    TB_7   := FALSE;
+    TB_8   := FALSE;
+    TB_9   := FALSE;
+    TB_DOT := FALSE;
+    TB_DEL := FALSE;
+    TB_MIN := FALSE;        
+ELSE
+
+ START_LOGIN_LEVEL_0 := FALSE;
+ START_LOGIN_LEVEL_1 := FALSE;
+
+// START_LOGIN_LEVEL_0:=FALSE;
+// START_LOGIN_LEVEL_1:=FALSE;
+// START_LOGIN_LEVEL_2:=FALSE; 
+  
+END_IF
+  
+      
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="FLASHER" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK FLASHER
+(***************************************************************************************************************
+flasher with settable pulse & duty cycle
+
+****************************************************************************************************************
+SOURCE:            PCS_LIB
+
+FUNCTION VERSION:  1
+UPDATE:            library version creation
+***************************************************************************************************************)
+
+VAR_INPUT                                                                                                                       
+   START : BOOL ;
+   PULSE : FINT ; // PULSE TIME [MSEC] 
+   CYCLE : FINT ; // CYCLE TIME [MSEC] 
+   TSCAN : FINT ; // PROGRAM LOOP TIME [MSEC] 
+END_VAR
+VAR_OUTPUT
+   Q :    BOOL;
+
+END_VAR
+VAR
+ 
+  ET: FINT;
+  
+END_VAR  
+
+
+// ##############################################
+
+IF START THEN
+   ET := ET + TSCAN ;
+   IF ET>=CYCLE THEN
+      ET:= FINT#0;
+   END_IF
+   Q:=  ET<=PULSE ;   
+ELSE
+   ET:= FINT#0 ;
+END_IF
+
+   
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PAGE_ALARM" editor="PAL1131.ST"><![CDATA[PROGRAM PAGE_ALARM
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ // ============================================================================
+ // LOCAL VARIABLES
+ 
+ VAR
+    IT : INT := 1;
+ 
+    PULSE_TIME : TIME := T#1s;
+    
+    G1131_TRIG_TOUCH_LOW_1          : R_TRIG;
+    G1131_RESOUND_SIREN_TOUCH_PULSE : TP;
+    G1131_PANEL_RESET_TOUCH_PULSE   : TP;
+    G1131_TRIG_TOUCH_LOW_4          : R_TRIG;
+    G1131_STOP_BUZZER_TOUCH_PULSE   : TP;
+    G1131_TRIG_TOUCH_LOW_6          : R_TRIG;
+    
+    ACCEPT : HW_ACCEPT;
+ END_VAR
+ 
+ // ============================================================================
+ // PROGRAM
+
+ IF PAGE = PAGE_NR_ALARM THEN
+ 
+    // -------------------------------------------------------------------------
+    // BUTTON HANDLING: LOWER BUTTONS
+ 
+    // Go to main screen
+    G1131_TRIG_TOUCH_LOW_1(CLK:=TOUCH_BUTTON_1);
+    IF G1131_TRIG_TOUCH_LOW_1.Q THEN
+        PAGE := PAGE_NR_MAIN;
+    END_IF
+ 
+    // Pulse to resound the siren
+    G1131_RESOUND_SIREN_TOUCH_PULSE(IN := TOUCH_BUTTON_2, PT := PULSE_TIME);
+    FOR IT := 1 TO NR_OF_CFAS_IOM DO
+        REQUEST_RETRIGGER_SIREN[IT] := G1131_RESOUND_SIREN_TOUCH_PULSE.Q AND SECURITY_LVL_GLB;
+    END_FOR
+    
+     // Pulse to stop reset the panel
+    G1131_PANEL_RESET_TOUCH_PULSE(IN := TOUCH_BUTTON_3, PT := PULSE_TIME);
+    FOR IT := 1 TO NR_OF_CFAS_IOM DO
+        REQUEST_PANEL_RESET[IT] := G1131_PANEL_RESET_TOUCH_PULSE.Q AND INT_TO_BOOL(G1131_STATUS_RESET_PANEL);
+    END_FOR
+    
+    G1131_TRIG_TOUCH_LOW_4(CLK:=TOUCH_BUTTON_4);
+    IF G1131_TRIG_TOUCH_LOW_4.Q THEN
+        ACCEPT(); // IS THIS ACCEPT GLOBAL? 
+    END_IF
+    
+    // Pulse to stop the buzzer
+    G1131_STOP_BUZZER_TOUCH_PULSE(IN := TOUCH_BUTTON_5, PT := PULSE_TIME);
+    FOR IT := 1 TO NR_OF_CFAS_IOM DO
+        REQUEST_STOP_HORN[IT] :=  G1131_STOP_BUZZER_TOUCH_PULSE.Q;    
+    END_FOR
+    IF (G1131_STOP_BUZZER_TOUCH_PULSE.Q) THEN
+        BUZZER := FALSE;
+        
+        // Reset new alarms
+        NEW_FAULT_ALARM := FALSE;
+        NEW_FIRE_ALARM  := FALSE;
+    END_IF
+    
+    // Go to login screen (Elevation)
+    G1131_TRIG_TOUCH_LOW_6(CLK := TOUCH_BUTTON_6);
+    IF G1131_TRIG_TOUCH_LOW_6.Q THEN
+        IF NOT SECURITY_LVL_GLB THEN
+        
+            MENU_LEVEL0 := FALSE;
+            MENU_LEVEL1 := TRUE;
+            MENU_LEVEL2 := FALSE;
+
+            PAGE := PAGE_NR_LOGIN;                                                                                                                                                               
+        ELSE
+            SECURITY_LVL_GLB := FALSE;
+        END_IF
+    END_IF 
+    
+ END_IF 
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="PAGE_DIMMING" editor="PAL1131.ST"><![CDATA[PROGRAM PAGE_DIMMING
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+    IT : INT := 1; 
+     
+    PULSE_TIME : TIME := T#1s;
+    G1131_STOP_BUZZER_TOUCH_PULSE   : TP;
+    G1131_TRIG_TOUCH_ALARM_PAGE     : R_TRIG;
+
+    G1131_TRIG_TOUCH_LOW_1  : R_TRIG;
+    G1131_TRIG_TOUCH_LOW_3  : R_TRIG;
+    G1131_TRIG_TOUCH_LOW_4  : R_TRIG;
+    G1131_TRIG_TOUCH_LOW_5  : R_TRIG;
+    G1131_TRIG_TOUCH_LOW_6  : R_TRIG;
+    
+    DIM_OPERATED : BOOL ;
+    
+  DIMVAL                : FINT;
+  DIM_PANEL             : BOOL;
+  DIM_INS               : BOOL;
+  OLD_DIM_PANEL_LEVEL   : FINT;
+  OLD_DIMMING           : FINT;
+
+ END_VAR
+ 
+ IF POWER_UP = TRUE THEN
+    DIMMING := FINT#100;
+    TFT_DIM := FINT#100 - DIMMING;
+    EXT_DIM := TFT_DIM;
+ END_IF
+ 
+ // ============================================================================
+ // PROGRAM
+
+  DIM_INS             := (DIM_INS OR (OLD_DIM_PANEL_LEVEL <> PANEL_DIMMING_LEVEL)) AND NOT (PANEL_DIMMING_LEVEL = FINT#0) AND NOT (OLD_DIMMING <> DIMMING);
+  DIM_PANEL           := NOT DIM_INS;
+  OLD_DIM_PANEL_LEVEL := PANEL_DIMMING_LEVEL;
+  OLD_DIMMING         := DIMMING;
+  
+ IF PAGE = PAGE_NR_DIMMING THEN
+
+    // -------------------------------------------------------------------------
+    // BUTTON HANDLING: TOP BUTTONS (Stop Buzzer & Alarm Page)
+    
+    // Stop Buzzer logic
+    G1131_STOP_BUZZER_TOUCH_PULSE(IN := G1131_TOUCH_STOP_BUZZER, PT := PULSE_TIME);    
+    FOR IT := 1 to NR_OF_CFAS_IOM DO
+        REQUEST_STOP_HORN[IT] :=  G1131_STOP_BUZZER_TOUCH_PULSE.Q;    
+    END_FOR 
+    IF (G1131_STOP_BUZZER_TOUCH_PULSE.Q) THEN
+        BUZZER := FALSE;
+        
+        // Reset new alarms
+        NEW_FAULT_ALARM := FALSE;
+        NEW_FIRE_ALARM  := FALSE;
+    END_IF
+   
+    // Go to Alarm Page
+    G1131_TRIG_TOUCH_ALARM_PAGE(CLK:=G1131_TOUCH_ALARM_PAGE);
+    IF G1131_TRIG_TOUCH_ALARM_PAGE.Q AND ANY_ALARM THEN
+        PAGE := PAGE_NR_ALARM;
+    END_IF
+    
+    // -------------------------------------------------------------------------
+    // BUTTON HANDLING: LOWER BUTTONS
+    
+    // Handeling of the lower buttons happen in the MAIN_SCREEN POU
+    // This is because this screen is partially shared
+    
+    
+    // -------------------------------------------------------------------------    
+    /// LIMIT DIMMING MIN / MAX
+    
+    IF DIMMING < DIM_MIN_VALUE THEN
+        DIMMING := DIM_MIN_VALUE ;
+    END_IF
+    
+    IF DIMMING > DIM_MAX_VALUE THEN
+        DIMMING := DIM_MAX_VALUE ;
+    END_IF
+
+END_IF
+
+IF DIM_INS THEN DIMVAL := FINT#100 - PANEL_DIMMING_LEVEL; ELSE DIMVAL := DIMMING; END_IF 
+
+IF GENERAL_FIRE_ALARM[1] THEN DIMVAL := FINT#100; END_IF
+
+    TFT_DIM := FINT#100 - DIMVAL;
+    EXT_DIM := DIMVAL;
+
+ // ----------------------------------------------------------------------------
+ // Dimming: Always run this dimming code 
+ 
+(*
+ IF (EXT_DIM <> TFT_DIM) THEN
+    DIMMING := FINT#100 - EXT_DIM;
+    
+    // Limit External Dimming
+    IF DIMMING < DIM_MIN_VALUE THEN
+        DIMMING := DIM_MIN_VALUE;
+    END_IF
+    
+    IF DIMMING > DIM_MAX_VALUE THEN
+        DIMMING := DIM_MAX_VALUE;
+    END_IF
+    
+    // Write to dimming channels  
+    TFT_DIM := FINT#100 - DIMMING;
+    EXT_DIM := TFT_DIM;
+    
+ ELSE
+    // Write to dimming channels  
+    TFT_DIM := FINT#100 - DIMMING;
+    EXT_DIM := TFT_DIM;
+    
+ END_IF
+*)
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="FBLK" name="SYSTEM_TOGGLE" editor="PAL1131.ST"><![CDATA[FUNCTION_BLOCK SYSTEM_TOGGLE
+VAR_INPUT
+ start: BOOL;
+ delay: TIME;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+ io:BOOL; 
+END_VAR
+
+VAR
+ CT: TIME;
+ startedOnCT: TIME;
+ startedOffCT: TIME;
+ deltaCT: TIME;
+ startedOn: BOOL:=false;
+ startedOff: BOOL:=false;
+END_VAR
+
+  IF start=true THEN
+    CT:=CUR_TIME();
+    IF startedOn=true THEN
+      deltaCT:=CT-startedOnCT;
+      IF deltaCT >= delay THEN
+        // OFF half-cycle
+        startedOn:=false;
+        startedOff:=true;
+        startedOffCT:=CT;
+        io:=false;
+      END_IF
+    ELSIF startedOff=true THEN
+      deltaCT:=CT-startedOffCT;
+      IF deltaCT >= delay THEN
+        // ON half-cycle
+        startedOn:=true;
+        startedOff:=false;
+        startedOnCT:=CT;
+        io:=true;
+      END_IF
+    ELSE
+      // start a new cycle
+      startedOn:=true;
+      startedOnCT:=CUR_TIME();
+      io:=true;
+    END_IF
+  ELSE
+    startedOn:=false;
+    startedOff:=false;
+    io:=false;
+  END_IF
+
+
+END_FUNCTION_BLOCK]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="CHECK_NEW_ALARMS" editor="PAL1131.ST"><![CDATA[PROGRAM CHECK_NEW_ALARMS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR CONSTANT
+    INDEX_ALARM_FAULT : INT := 11;
+    INDEX_ALARM_FIRE  : INT := 4;
+    
+ END_VAR
+ 
+ VAR_GLOBAL
+    // These values will be set in this program, but will be reset els where
+    NEW_FAULT_ALARM : BOOL := FALSE;
+    NEW_FIRE_ALARM  : BOOL := FALSE;
+    
+ END_VAR
+ 
+ VAR
+    IT1 : INT := 0;
+    IT2 : INT := 0;
+
+    CURR_ALARM_FAULT_ARRAY : ARRAY [1..NR_OF_CFAS_IOM] OF ARRAY [0 .. INDEX_ALARM_FAULT] OF BOOL;
+    PREV_ALARM_FAULT_ARRAY : ARRAY [1..NR_OF_CFAS_IOM] OF ARRAY [0 .. INDEX_ALARM_FAULT] OF BOOL;
+    CURR_ALARM_FIRE_ARRAY  : ARRAY [1..NR_OF_CFAS_IOM] OF ARRAY [0 .. INDEX_ALARM_FIRE] OF BOOL;
+    PREV_ALARM_FIRE_ARRAY  : ARRAY [1..NR_OF_CFAS_IOM] OF ARRAY [0 .. INDEX_ALARM_FIRE] OF BOOL;
+    
+ END_VAR
+ 
+    // -------------------------------------------------------------------------
+    // Check new General Alarm has happend
+ 
+    //TODO: FIX
+    FOR IT1 := 1 TO NR_OF_CFAS_IOM DO
+        CURR_ALARM_FAULT_ARRAY[IT1][0]  := GENERAL_FAULT[IT1];
+        CURR_ALARM_FAULT_ARRAY[IT1][1]  := LINE_FAULT_ZONE_1[IT1];
+        CURR_ALARM_FAULT_ARRAY[IT1][2]  := LINE_FAULT_ZONE_2[IT1];
+        CURR_ALARM_FAULT_ARRAY[IT1][3]  := LINE_FAULT_ZONE_3[IT1];
+        CURR_ALARM_FAULT_ARRAY[IT1][4]  := LINE_FAULT_ZONE_4[IT1];
+        CURR_ALARM_FAULT_ARRAY[IT1][5]  := BACKUP_SUPPLY_FAULT[IT1];
+        CURR_ALARM_FAULT_ARRAY[IT1][6]  := MAIN_SUPPLY_FAULT[IT1];
+        CURR_ALARM_FAULT_ARRAY[IT1][7]  := SIREN_LINE_FAULT[IT1];
+        CURR_ALARM_FAULT_ARRAY[IT1][8]  := EARTH_FAULT[IT1];
+        CURR_ALARM_FAULT_ARRAY[IT1][9]  := SIREN_ON[IT1];       
+        CURR_ALARM_FAULT_ARRAY[IT1][10] := ANY_ALARM; // Will always sound when on alarms on alarm page  
+    END_FOR
+    
+    FOR IT1 := 1 TO NR_OF_CFAS_IOM DO
+        FOR IT2 := 0 TO INDEX_ALARM_FAULT BY 1 DO
+            IF PREV_ALARM_FAULT_ARRAY[IT1][IT2] < CURR_ALARM_FAULT_ARRAY[IT1][IT2] THEN
+                NEW_FAULT_ALARM := TRUE;
+            END_IF
+        END_FOR
+    END_FOR
+    
+    PREV_ALARM_FAULT_ARRAY := CURR_ALARM_FAULT_ARRAY;
+    
+    // -------------------------------------------------------------------------
+    // Check new Fire Alarm has happend
+    
+    FOR IT1 := 1 TO NR_OF_CFAS_IOM DO
+        CURR_ALARM_FIRE_ARRAY[IT1][0] := GENERAL_FIRE_ALARM[IT1];
+        CURR_ALARM_FIRE_ARRAY[IT1][1] := FIRE_ALARM_ZONE_1[IT1];
+        CURR_ALARM_FIRE_ARRAY[IT1][2] := FIRE_ALARM_ZONE_2[IT1];
+        CURR_ALARM_FIRE_ARRAY[IT1][3] := FIRE_ALARM_ZONE_3[IT1];
+        CURR_ALARM_FIRE_ARRAY[IT1][4] := FIRE_ALARM_ZONE_4[IT1];
+    END_FOR
+
+    FOR IT1 := 1 TO NR_OF_CFAS_IOM DO    
+        FOR IT2 := 0 TO INDEX_ALARM_FIRE BY 1 DO
+            IF PREV_ALARM_FIRE_ARRAY[IT1][IT2] < CURR_ALARM_FIRE_ARRAY[IT1][IT2] THEN
+                NEW_FIRE_ALARM := TRUE;
+            END_IF
+        END_FOR
+    END_FOR
+    
+    PREV_ALARM_FIRE_ARRAY := CURR_ALARM_FIRE_ARRAY;
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="CHECK_BUZZER" editor="PAL1131.ST"><![CDATA[PROGRAM CHECK_BUZZER
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+    PULSE_TIME           : TIME := T#10s;
+    GENERAL_FIRE_PULSE   : TP;
+    GENERAL_FAULT_TRIG   : R_TRIG;
+    
+    BUZZER_TOGGLE        : SYSTEM_TOGGLE;
+    
+ END_VAR
+  
+ // -------------------------------------------------------------------------
+ // GENERAL FIRE ALARM -> TOGGLE BUZZER (2HZ) + FULL BRIGHTNESS
+    
+ IF (NEW_FIRE_ALARM) THEN
+ 
+    GENERAL_FIRE_PULSE(IN := NEW_FIRE_ALARM, PT := PULSE_TIME);
+    IF (GENERAL_FIRE_PULSE.Q) THEN
+        DIMMING := FINT#100; // set brightness 100%
+    END_IF
+    
+    BUZZER_TOGGLE(start := NEW_FIRE_ALARM, io := BUZZER, delay := t#500ms);
+    BUZZER := BUZZER_TOGGLE.io;
+    
+ ELSE
+     // -------------------------------------------------------------------------
+     // GENERAL FAULT ALARM -> CONTINEUS BUZZER
+     
+     GENERAL_FAULT_TRIG(CLK := NEW_FAULT_ALARM);
+     IF (GENERAL_FAULT_TRIG.Q) THEN
+        BUZZER := TRUE; 
+     END_IF
+ END_IF   
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="CHECK_AUTO_LOGOUT" editor="PAL1131.ST"><![CDATA[PROGRAM CHECK_AUTO_LOGOUT
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR CONSTANT
+    LOGOUT_INTERVAL : TIME := T#5m;
+       
+ END_VAR
+ 
+ VAR
+    LAST_USED_TIME  : TIME := T#0s;
+    DELTA_TIME      : TIME := T#0s;
+ END_VAR
+    
+ // ----------------------------------------------------------------------------
+ // Device will logout, after 5 minutes of inactivity
+    
+ IF (TOUCH_BUTTON_1 OR TOUCH_BUTTON_2 OR TOUCH_BUTTON_3 
+      OR TOUCH_BUTTON_4 OR TOUCH_BUTTON_5 OR TOUCH_BUTTON_6) THEN
+    
+    LAST_USED_TIME := CUR_TIME();
+    
+ ELSE
+    DELTA_TIME := CUR_TIME() - LAST_USED_TIME;
+    IF (DELTA_TIME > LOGOUT_INTERVAL) THEN
+        SECURITY_LVL_GLB := FALSE;
+        
+    END_IF
+ END_IF
+ 
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="CHECK_ETHERNET_STATUS" editor="PAL1131.ST"><![CDATA[PROGRAM CHECK_ETHERNET_STATUS
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR
+
+ END_VAR
+
+ // ----------------------------------------------------------------------------
+ // Check if the ethernet is healthy
+ 
+ IF (NO_COM_ETH_A_ENABLED) THEN
+    ETH_A_FAIL_ALARM := ETH_A_FAIL_STATUS;
+ ELSE
+    ETH_A_FAIL_ALARM := FALSE;
+ END_IF
+
+ IF (NO_COM_ETH_B_ENABLED) THEN
+    ETH_B_FAIL_ALARM := ETH_B_FAIL_STATUS;
+ ELSE
+    ETH_B_FAIL_ALARM := FALSE;
+ END_IF
+
+ IF (NO_COM_ETH_C_ENABLED) THEN
+    ETH_C_FAIL_ALARM := ETH_C_FAIL_STATUS;
+ ELSE
+    ETH_C_FAIL_ALARM := FALSE;
+ END_IF
+
+ IF (NO_COM_ETH_D_ENABLED) THEN
+    ETH_D_FAIL_ALARM := ETH_D_FAIL_STATUS;
+ ELSE
+    ETH_D_FAIL_ALARM := FALSE;
+ END_IF
+
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="BUTTON_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_1 (*$COMMENT 42001 BUTTON 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_2 (*$COMMENT 42002 BUTTON 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_3" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_3 (*$COMMENT 42003 BUTTON 3*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_4" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_4 (*$COMMENT 42004 BUTTON 4*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_5" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_5 (*$COMMENT 42005 BUTTON 5*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUTTON_6" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUTTON_6 (*$COMMENT 42006 BUTTON 6*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ACKNOWLEDGE" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ACKNOWLEDGE (*$COMMENT 42009 ACKNOWLEDGE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIMMING_STEP" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIMMING_STEP (*$COMMENT 42010 DIMMING_STEP*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="EXT_DIM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ EXT_DIM (*$COMMENT 42017 OUTPUT - PWM*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="TFT_DIM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ TFT_DIM (*$COMMENT 42018 OUTPUT - DIMMING TFT BACKLIGHT*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIM_MIN_VALUE" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIM_MIN_VALUE (*$COMMENT 42021 DIMMING MIN VALUE*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DIM_MAX_VALUE" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DIM_MAX_VALUE (*$COMMENT 42022 DIMMING MAX VALUE*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_A_FAIL_STATUS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_A_FAIL_STATUS (*$COMMENT 42024 ETHERNET PORT A NO COMMUNICATION*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_B_FAIL_STATUS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_B_FAIL_STATUS (*$COMMENT 42025 ETHERNET PORT B NO COMMUNICATION*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_C_FAIL_STATUS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_C_FAIL_STATUS (*$COMMENT 42026 ETHERNET PORT C NO COMMUNICATION*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_D_FAIL_STATUS" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_D_FAIL_STATUS (*$COMMENT 42027 ETHERNET PORT D NO COMMUNICATION*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NO_COM_ETH_A_ENABLED" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NO_COM_ETH_A_ENABLED (*$COMMENT 42028 CFG LINK ALARM A ENABLE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NO_COM_ETH_B_ENABLED" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NO_COM_ETH_B_ENABLED (*$COMMENT 42029 CFG LINK ALARM B ENABLE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NO_COM_ETH_C_ENABLED" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NO_COM_ETH_C_ENABLED (*$COMMENT 42030 CFG LINK ALARM C ENABLE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="NO_COM_ETH_D_ENABLED" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ NO_COM_ETH_D_ENABLED (*$COMMENT 42031 CFG LINK ALARM D ENABLE*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_A_FAIL_ALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_A_FAIL_ALARM (*$COMMENT 42032 NO COMMUNICATION ALARM ETHERNET A*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_B_FAIL_ALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_B_FAIL_ALARM (*$COMMENT 42033 NO COMMUNICATION ALARM ETHERNET B*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_C_FAIL_ALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_C_FAIL_ALARM (*$COMMENT 42034 NO COMMUNICATION ALARM ETHERNET C*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="ETH_D_FAIL_ALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ ETH_D_FAIL_ALARM (*$COMMENT 42035 NO COMMUNICATION ALARM ETHERNET D*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BUZZER" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BUZZER (*$COMMENT 42037 BUZZER*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PROJECT_SW_VER" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PROJECT_SW_VER (*$COMMENT 42050 PROJECT SOFTWARE VERSION (R/O)*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MASTER_SW_VER" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MASTER_SW_VER (*$COMMENT 42051 MASTER SOFTWARE VERSION (R/O)*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PROJECT_NR" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PROJECT_NR (*$COMMENT 42052 PROJECT NUMBER*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="PANEL_DIMMING_LEVEL" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ PANEL_DIMMING_LEVEL (*$COMMENT 42057 PANEL DIMMING LEVEL*) : FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL0" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL0 (*$COMMENT 42094 MENU LEVEL 0*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL1 (*$COMMENT 42095 MENU LEVEL 1*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MENU_LEVEL2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MENU_LEVEL2 (*$COMMENT 42096 MENU LEVEL 2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="WH_HORN2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ WH_HORN2 (*$COMMENT 42099 WH - HORN2*) : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="REQUEST_PANEL_RESET" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ REQUEST_PANEL_RESET (*$COMMENT 42101 REQUEST FIREALARMS AND FAULTS RESET*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="REQUEST_STOP_HORN" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ REQUEST_STOP_HORN (*$COMMENT 42102 REQUEST STOP HORN*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="REQUEST_RETRIGGER_SIREN" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ REQUEST_RETRIGGER_SIREN (*$COMMENT 42103 RETRIGGER HORN*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DISABLE_ZONE_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DISABLE_ZONE_1 (*$COMMENT 42104 DISABLE ZONE 1*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DISABLE_ZONE_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DISABLE_ZONE_2 (*$COMMENT 42105 DISABLE ZONE 2*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DISABLE_ZONE_3" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DISABLE_ZONE_3 (*$COMMENT 42106 DISABLE ZONE 3*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DISABLE_ZONE_4" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DISABLE_ZONE_4 (*$COMMENT 42107 DISABLE ZONE 4*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SECURITY_LVL_IOM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SECURITY_LVL_IOM (*$COMMENT 42108 SELECT CURRENT SECURITY LEVEL*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CFG_SIGNALING_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CFG_SIGNALING_FAULT (*$COMMENT 42109 CFG SIGNALING FAULT*) : ARRAY[1..3] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CFG_STOP_HORN_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CFG_STOP_HORN_FAULT (*$COMMENT 42110 CFG STOPHORN FAULT*) : ARRAY[1..3] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CFG_RESET_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CFG_RESET_FAULT (*$COMMENT 42111 CFG RESET FAULT*) : ARRAY[1..3] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CFG_STOP_HORN_FIRE_ALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CFG_STOP_HORN_FIRE_ALARM (*$COMMENT 42112 CFG STOPHORN FIREALARM*) : ARRAY[1..3] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CFG_FIREALARM_RELAY_TIMEOUT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CFG_FIREALARM_RELAY_TIMEOUT (*$COMMENT 42113 CFG FIREALARM RELAY TIMEOUT*) : ARRAY[1..3] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="CFG_SIREN_OUTPUT_DELAY" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ CFG_SIREN_OUTPUT_DELAY (*$COMMENT 42114 CFG SIREN OUTPUT DELAY*) : ARRAY[1..3] OF FINT;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GENERAL_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GENERAL_FAULT (*$COMMENT 42125 GENERAL FAULT*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LINE_FAULT_ZONE_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LINE_FAULT_ZONE_1 (*$COMMENT 42126 ZONE 1 LINE FAULT*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LINE_FAULT_ZONE_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LINE_FAULT_ZONE_2 (*$COMMENT 42127 ZONE 2 LINE FAULT*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LINE_FAULT_ZONE_3" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LINE_FAULT_ZONE_3 (*$COMMENT 42128 ZONE 3 LINE FAULT*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="LINE_FAULT_ZONE_4" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ LINE_FAULT_ZONE_4 (*$COMMENT 42129 ZONE 4 LINE FAULT*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_LINE_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_LINE_FAULT (*$COMMENT 42130 SIREN LINE FAULT*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="EARTH_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ EARTH_FAULT (*$COMMENT 42131 EARTH FAULT*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="MAIN_SUPPLY_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ MAIN_SUPPLY_FAULT (*$COMMENT 42132 MAIN SUPPLY FAULT*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="BACKUP_SUPPLY_FAULT" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ BACKUP_SUPPLY_FAULT (*$COMMENT 42133 BACKUP SUPPLY FAULT*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="GENERAL_FIRE_ALARM" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ GENERAL_FIRE_ALARM (*$COMMENT 42134 GENERAL FIREALARM*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_ZONE_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIRE_ALARM_ZONE_1 (*$COMMENT 42135 ZONE 1 FIREALARM*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_ZONE_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIRE_ALARM_ZONE_2 (*$COMMENT 42136 ZONE 2 FIREALARM*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_ZONE_3" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIRE_ALARM_ZONE_3 (*$COMMENT 42137 ZONE 3 FIREALARM*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_ALARM_ZONE_4" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIRE_ALARM_ZONE_4 (*$COMMENT 42138 ZONE 4 FIREALARM*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DISABLED_ZONE_1" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DISABLED_ZONE_1 (*$COMMENT 42143 ZONE 1 DISABLED*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DISABLED_ZONE_2" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DISABLED_ZONE_2 (*$COMMENT 42144 ZONE 2 DISABLED*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DISABLED_ZONE_3" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DISABLED_ZONE_3 (*$COMMENT 42145 ZONE 3 DISABLED*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="DISABLED_ZONE_4" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ DISABLED_ZONE_4 (*$COMMENT 42146 ZONE 4 DISABLED*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="SIREN_ON" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ SIREN_ON (*$COMMENT 42147 SIREN ON STATE*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FIRE_RELAY_ON" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FIRE_RELAY_ON (*$COMMENT 42148 FIRERELAY ON STATE*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAULT_RELAY_ON" flags="00804000" disabled="0"><![CDATA[VAR_GLOBAL (*$CHANNEL*) 
+ FAULT_RELAY_ON (*$COMMENT 42149 FAULTRELAY ON STATE*) : ARRAY[1..3] OF BOOL;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK" loop_kind="0" interval="100"><![CDATA[INTERNAL_GLOBALS
+MAIN_SCREEN
+SYSTEM
+PAGE_NAVIGATION
+PAGE_MENUS
+PAGE_ALARM
+PAGE_DIMMING
+CHECK_NEW_ALARMS
+CHECK_BUZZER
+CHECK_AUTO_LOGOUT
+CHECK_ETHERNET_STATUS
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

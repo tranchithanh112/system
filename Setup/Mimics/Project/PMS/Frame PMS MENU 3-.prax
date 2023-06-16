@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1800" Height="900" GridSpacing="5" OnScreenNumpadFramePath=".\Frames_Pickactions\Frame_Numpad.prax" ColorTableFile=".\Color_Table.colortable">
+	<Children>
+		<Rectangle Width="1910" Height="410" X="20" Y="1680" BorderWidth="0">
+			<Bindings>
+				<RangeFormulaBinding TargetPropertyName="Y" InRangeBegin="0" InRangeEnd="5" OutRangeBegin="602" OutRangeEnd="1002">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="95040"/>
+					</Bindings>
+				</RangeFormulaBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="1660" Height="20" Y="620" FillColor="Gray"/>
+		<Rectangle Width="1660" Height="20" Y="280" FillColor="Gray"/>
+		<Rectangle Width="1660" Height="20" Y="20" FillColor="Yellow"/>
+		<Rectangle Width="1660" Height="20" Y="40" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" Y="20" FillColor="Transparent" HorzAlignment="Left" TextColor="Black" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="4."/>
+		<TextBox Width="50" Height="20" Y="40" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="4.1"/>
+		<TextBox Width="50" Height="20" BorderColor="PanelFace" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="NO."/>
+		<TextBox Width="340" Height="20" X="50" BorderColor="PanelFace" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="DESCRIPTION"/>
+		<TextBox Width="340" Height="20" X="50" Y="60" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="MAXIMUM START PULSE"/>
+		<TextBox Width="70" Height="20" X="390" Y="60" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="340" Height="20" X="50" Y="40" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="ENGINE START"/>
+		<TextBox Width="340" Height="20" X="50" Y="20" FillColor="Transparent" HorzAlignment="Left" TextColor="Black" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="S T A R T     /    S T O P"/>
+		<TextBox Width="340" Height="20" X="50" Y="80" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="LOW VOLTAGE ABNORMAL"/>
+		<TextBox Width="340" Height="20" X="50" Y="120" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="PRE-LUBRICATION TIME"/>
+		<TextBox Width="70" Height="20" X="390" Y="80" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="#"/>
+		<TextBox Width="70" Height="20" X="390" Y="120" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="340" Height="20" X="50" Y="100" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="RE-START DELAY"/>
+		<TextBox Width="70" Height="20" X="390" Y="100" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<Rectangle Width="1660" Height="20" Y="140" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" Y="60" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" Y="80" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" Y="100" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".3"/>
+		<TextBox Width="50" Height="20" Y="120" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".4"/>
+		<TextBox Width="70" Height="20" X="390" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="EU"/>
+		<TextBox Width="80" Height="20" X="460" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP61"/>
+		<TextBox Width="80" Height="20" X="540" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP62"/>
+		<TextBox Width="80" Height="20" X="620" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP63"/>
+		<TextBox Width="80" Height="20" X="700" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP64"/>
+		<TextBox Width="80" Height="20" X="780" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP65"/>
+		<TextBox Width="80" Height="20" X="860" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP66"/>
+		<TextBox Width="80" Height="20" X="940" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP67"/>
+		<TextBox Width="80" Height="20" X="1020" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP68"/>
+		<TextBox Width="80" Height="20" X="1100" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP69"/>
+		<TextBox Width="80" Height="20" X="1180" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP70"/>
+		<TextBox Width="80" Height="20" X="1260" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP71"/>
+		<TextBox Width="80" Height="20" X="1340" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP72"/>
+		<TextBox Width="80" Height="20" X="1420" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP73"/>
+		<TextBox Width="80" Height="20" X="1500" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP74"/>
+		<TextBox Width="80" Height="20" X="1580" BorderColor="PanelFace" FillColor="Transparent" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="XP75"/>
+		<TextBox Width="50" Height="20" Y="140" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="4.2"/>
+		<TextBox Width="340" Height="20" X="50" Y="160" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="STOP PULSE TIME"/>
+		<TextBox Width="70" Height="20" X="390" Y="160" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="340" Height="20" X="50" Y="140" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="ENGINE STOP"/>
+		<TextBox Width="340" Height="20" X="50" Y="180" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="ENGINE COOLDOWN TIME"/>
+		<TextBox Width="70" Height="20" X="390" Y="180" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="340" Height="20" X="50" Y="200" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="COOLDOWN WITH PRE-ALARM"/>
+		<TextBox Width="70" Height="20" X="390" Y="200" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="Y/N"/>
+		<TextBox Width="50" Height="20" Y="160" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" Y="180" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" Y="200" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".3"/>
+		<Rectangle Width="1660" Height="20" Y="220" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" Y="220" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="4.3"/>
+		<TextBox Width="340" Height="20" X="50" Y="240" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="VOLTAGE ENERGIZED LEVEL"/>
+		<TextBox Width="70" Height="20" X="390" Y="240" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="%"/>
+		<TextBox Width="340" Height="20" X="50" Y="220" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="GEN. ENERGIZED DETECT"/>
+		<TextBox Width="340" Height="20" X="50" Y="260" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="ENERGIZED DETECT DELAY"/>
+		<TextBox Width="70" Height="20" X="390" Y="260" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="50" Height="20" Y="240" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" Y="260" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" Y="280" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="4.4"/>
+		<TextBox Width="340" Height="20" X="50" Y="300" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="READY TO START OFF DELAY ( When starting)"/>
+		<TextBox Width="70" Height="20" X="390" Y="300" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="340" Height="20" X="50" Y="280" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="GEN. ENERGIZED DETECT"/>
+		<TextBox Width="50" Height="20" Y="300" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<Rectangle Width="1660" Height="20" Y="340" FillColor="Yellow"/>
+		<Rectangle Width="1660" Height="20" Y="360" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" Y="340" FillColor="Transparent" HorzAlignment="Left" TextColor="Black" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="5."/>
+		<TextBox Width="50" Height="20" Y="360" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="5.1"/>
+		<TextBox Width="340" Height="20" X="50" Y="360" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="SYNCHRONIZER / CB CLOSE"/>
+		<TextBox Width="340" Height="20" X="50" Y="340" FillColor="Transparent" HorzAlignment="Left" TextColor="Black" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="C B   O P E N  /  C L O S E"/>
+		<TextBox Width="340" Height="20" X="50" Y="380" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="DELTA VOLTAGE"/>
+		<TextBox Width="70" Height="20" X="390" Y="380" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="%"/>
+		<TextBox Width="340" Height="20" X="50" Y="400" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="DELTA FREQUENCY - NEGATIVE"/>
+		<TextBox Width="340" Height="20" X="50" Y="440" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="DELTA PHASE ANGLE - NEGATIVE"/>
+		<TextBox Width="70" Height="20" X="390" Y="400" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="%"/>
+		<TextBox Width="70" Height="20" X="390" Y="440" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="°"/>
+		<TextBox Width="340" Height="20" X="50" Y="420" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="DELTA FREQUENCY - POSITIVE"/>
+		<TextBox Width="70" Height="20" X="390" Y="420" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="%"/>
+		<TextBox Width="50" Height="20" Y="380" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" Y="400" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" Y="420" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".3"/>
+		<TextBox Width="50" Height="20" Y="440" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".4"/>
+		<TextBox Width="340" Height="20" X="50" Y="460" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="DELTA PHASE ANGLE - POSITIVE"/>
+		<TextBox Width="70" Height="20" X="390" Y="460" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="°"/>
+		<TextBox Width="340" Height="20" X="50" Y="480" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="CB CLOSE PULSE TIME"/>
+		<TextBox Width="340" Height="20" X="50" Y="520" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="IO-BOARD TEST MODE (0=OFF,1=NO CB,2=CB)"/>
+		<TextBox Width="70" Height="20" X="390" Y="480" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="70" Height="20" X="390" Y="520" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="#"/>
+		<TextBox Width="340" Height="20" X="50" Y="500" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="MAXIMUM SYNC TIME"/>
+		<TextBox Width="70" Height="20" X="390" Y="500" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="50" Height="20" Y="460" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".5"/>
+		<TextBox Width="50" Height="20" Y="480" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".6"/>
+		<TextBox Width="50" Height="20" Y="500" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".7"/>
+		<TextBox Width="50" Height="20" Y="520" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".8"/>
+		<Rectangle Width="1660" Height="20" Y="540" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" Y="540" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="5.2"/>
+		<TextBox Width="340" Height="20" X="50" Y="560" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="CB OPEN PULSE TIME"/>
+		<TextBox Width="70" Height="20" X="390" Y="560" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="340" Height="20" X="50" Y="540" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="OFFLOAD / CB OPEN"/>
+		<TextBox Width="340" Height="20" X="50" Y="580" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="LOW LOAD LIMIT TO OPEN CB"/>
+		<TextBox Width="70" Height="20" X="390" Y="580" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="%"/>
+		<TextBox Width="340" Height="20" X="50" Y="600" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="MAX OFFLOAD (PARALLEL) TIME"/>
+		<TextBox Width="70" Height="20" X="390" Y="600" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="sec"/>
+		<TextBox Width="50" Height="20" Y="560" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" Y="580" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" Y="600" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".3"/>
+		<TextBox Width="50" Height="20" Y="620" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="5.3"/>
+		<TextBox Width="340" Height="20" X="50" Y="640" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="WITH OFFLOAD FAIL"/>
+		<TextBox Width="70" Height="20" X="390" Y="640" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="Y/N"/>
+		<TextBox Width="340" Height="20" X="50" Y="620" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="DISCONNECT OPTIONS"/>
+		<TextBox Width="340" Height="20" X="50" Y="660" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="AFTER ENGINE PRE-ALARM SUBST."/>
+		<TextBox Width="70" Height="20" X="390" Y="660" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="Y/N"/>
+		<TextBox Width="340" Height="20" X="50" Y="680" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="AFTER BUS ALARM SUBST."/>
+		<TextBox Width="70" Height="20" X="390" Y="680" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="Y/N"/>
+		<TextBox Width="50" Height="20" Y="640" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" Y="660" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" Y="680" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".3"/>
+		<Rectangle Width="1660" Height="20" Y="700" FillColor="Gray"/>
+		<TextBox Width="50" Height="20" Y="700" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="5.3"/>
+		<TextBox Width="340" Height="20" X="50" Y="720" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="CH22 USE AS SYNC-CHECK BACKUP"/>
+		<TextBox Width="70" Height="20" X="390" Y="720" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="Y/N"/>
+		<TextBox Width="340" Height="20" X="50" Y="700" FillColor="Transparent" HorzAlignment="Left" TextColor="Yellow" LeftRightPadding="10" Font="Segoe UI;14.0;B;N;N" Text="SYNC-CHECK BACKUP RELAY"/>
+		<TextBox Width="340" Height="20" X="50" Y="740" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="CH22 DELTA PHASE ANGLE"/>
+		<TextBox Width="70" Height="20" X="390" Y="740" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="°"/>
+		<TextBox Width="340" Height="20" X="50" Y="760" FillColor="Transparent" HorzAlignment="Left" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="CH22 DELTA FREQUENCY"/>
+		<TextBox Width="70" Height="20" X="390" Y="760" FillColor="Transparent" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text="%"/>
+		<TextBox Width="50" Height="20" Y="720" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".1"/>
+		<TextBox Width="50" Height="20" Y="740" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".2"/>
+		<TextBox Width="50" Height="20" Y="760" FillColor="Transparent" HorzAlignment="Right" LeftRightPadding="10" Font="Segoe UI;14.0;N;N;N" Text=".3"/>
+		<Frame Width="80" Height="20" X="460" Y="60" VAL="61369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="460" Y="80" VAL="61370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="460" Y="100" VAL="61371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="460" Y="120" VAL="61372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="460" Y="160" VAL="61374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="460" Y="180" VAL="61375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="460" Y="200" VAL="61376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="460" Y="240" VAL="61378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="460" Y="260" VAL="61379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="460" Y="300" VAL="61373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="460" Y="380" VAL="61381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="460" Y="400" VAL="61382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="460" Y="420" VAL="61383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="460" Y="440" VAL="61175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="460" Y="460" VAL="61176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="460" Y="480" VAL="61386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="460" Y="500" VAL="61387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="460" Y="520" VAL="61177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="460" Y="560" VAL="61389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="460" Y="580" VAL="61390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="460" Y="600" VAL="61391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="460" Y="640" VAL="61393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="460" Y="660" VAL="61394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="460" Y="680" VAL="61395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="460" Y="720" VAL="61393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="460" Y="740" VAL="61394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="460" Y="760" VAL="61395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="540" Y="60" VAL="62369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="540" Y="80" VAL="62370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="540" Y="100" VAL="62371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="540" Y="120" VAL="62372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="540" Y="160" VAL="62374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="540" Y="180" VAL="62375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="540" Y="200" VAL="62376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="540" Y="240" VAL="62378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="540" Y="260" VAL="62379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="540" Y="300" VAL="62373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="540" Y="380" VAL="62381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="540" Y="400" VAL="62382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="540" Y="420" VAL="62383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="540" Y="440" VAL="62175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="540" Y="460" VAL="62176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="540" Y="480" VAL="62386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="540" Y="500" VAL="62387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="540" Y="520" VAL="62177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="540" Y="560" VAL="62389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="540" Y="580" VAL="62390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="540" Y="600" VAL="62391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="540" Y="640" VAL="62393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="540" Y="660" VAL="62394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="540" Y="680" VAL="62395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="540" Y="720" VAL="62393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="540" Y="740" VAL="62394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="540" Y="760" VAL="62395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="60" VAL="63369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="620" Y="80" VAL="63370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="100" VAL="63371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="620" Y="120" VAL="63372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="160" VAL="63374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="620" Y="180" VAL="63375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="200" VAL="63376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="240" VAL="63378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="620" Y="260" VAL="63379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="300" VAL="63373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="620" Y="380" VAL="63381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="400" VAL="63382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="620" Y="420" VAL="63383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="620" Y="440" VAL="63175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="460" VAL="63176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="620" Y="480" VAL="63386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="620" Y="500" VAL="63387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="620" Y="520" VAL="63177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="560" VAL="63389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="620" Y="580" VAL="63390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="620" Y="600" VAL="63391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="640" VAL="63393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="620" Y="660" VAL="63394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="620" Y="680" VAL="63395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="620" Y="720" VAL="63393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="620" Y="740" VAL="63394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="620" Y="760" VAL="63395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="60" VAL="64369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="700" Y="80" VAL="64370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="100" VAL="64371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="700" Y="120" VAL="64372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="700" Y="160" VAL="64374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="700" Y="180" VAL="64375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="700" Y="200" VAL="64376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="700" Y="240" VAL="64378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="260" VAL="64379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="700" Y="300" VAL="64373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="380" VAL="64381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="700" Y="400" VAL="64382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="700" Y="420" VAL="64383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="700" Y="440" VAL="64175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="700" Y="460" VAL="64176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="480" VAL="64386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="500" VAL="64387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="520" VAL="64177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="700" Y="560" VAL="64389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="580" VAL="64390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="600" VAL="64391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="700" Y="640" VAL="64393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="660" VAL="64394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="700" Y="680" VAL="64395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="720" VAL="64393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="700" Y="740" VAL="64394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="700" Y="760" VAL="64395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="60" VAL="65369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="80" VAL="65370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="100" VAL="65371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="780" Y="120" VAL="65372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="780" Y="160" VAL="65374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="780" Y="180" VAL="65375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="780" Y="200" VAL="65376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="240" VAL="65378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="780" Y="260" VAL="65379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="780" Y="300" VAL="65373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="380" VAL="65381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="780" Y="400" VAL="65382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="780" Y="420" VAL="65383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="780" Y="440" VAL="65175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="780" Y="460" VAL="65176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="780" Y="480" VAL="65386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="780" Y="500" VAL="65387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="780" Y="520" VAL="65177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="560" VAL="65389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="580" VAL="65390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="600" VAL="65391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="640" VAL="65393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="780" Y="660" VAL="65394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="780" Y="680" VAL="65395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="780" Y="720" VAL="65393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="780" Y="740" VAL="65394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="780" Y="760" VAL="65395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="860" Y="60" VAL="66369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="860" Y="80" VAL="66370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="860" Y="100" VAL="66371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="860" Y="120" VAL="66372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="860" Y="160" VAL="66374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="860" Y="180" VAL="66375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="860" Y="200" VAL="66376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="240" VAL="66378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="260" VAL="66379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="860" Y="300" VAL="66373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="860" Y="380" VAL="66381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="400" VAL="66382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="860" Y="420" VAL="66383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="440" VAL="66175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="460" VAL="66176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="860" Y="480" VAL="66386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="500" VAL="66387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="860" Y="520" VAL="66177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="560" VAL="66389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="860" Y="580" VAL="66390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="860" Y="600" VAL="66391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="640" VAL="66393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="860" Y="660" VAL="66394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="680" VAL="66395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="860" Y="720" VAL="66393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="860" Y="740" VAL="66394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="860" Y="760" VAL="66395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="60" VAL="67369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="80" VAL="67370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="940" Y="100" VAL="67371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="940" Y="120" VAL="67372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="940" Y="160" VAL="67374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="180" VAL="67375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="200" VAL="67376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="940" Y="240" VAL="67378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="940" Y="260" VAL="67379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="300" VAL="67373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="380" VAL="67381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="940" Y="400" VAL="67382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="940" Y="420" VAL="67383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="440" VAL="67175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="460" VAL="67176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="940" Y="480" VAL="67386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="500" VAL="67387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="520" VAL="67177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="940" Y="560" VAL="67389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="940" Y="580" VAL="67390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="940" Y="600" VAL="67391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="940" Y="640" VAL="67393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="940" Y="660" VAL="67394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="940" Y="680" VAL="67395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="940" Y="720" VAL="67393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="940" Y="740" VAL="67394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="940" Y="760" VAL="67395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1020" Y="60" VAL="68369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1020" Y="80" VAL="68370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="100" VAL="68371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1020" Y="120" VAL="68372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="160" VAL="68374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1020" Y="180" VAL="68375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1020" Y="200" VAL="68376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1020" Y="240" VAL="68378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="260" VAL="68379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1020" Y="300" VAL="68373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="380" VAL="68381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="400" VAL="68382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="420" VAL="68383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="440" VAL="68175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="460" VAL="68176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="480" VAL="68386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="500" VAL="68387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1020" Y="520" VAL="68177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1020" Y="560" VAL="68389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1020" Y="580" VAL="68390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="600" VAL="68391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1020" Y="640" VAL="68393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1020" Y="660" VAL="68394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1020" Y="680" VAL="68395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1020" Y="720" VAL="68393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1020" Y="740" VAL="68394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1020" Y="760" VAL="68395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1100" Y="60" VAL="69369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="80" VAL="69370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="100" VAL="69371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="120" VAL="69372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="160" VAL="69374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="180" VAL="69375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="200" VAL="69376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1100" Y="240" VAL="69378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1100" Y="260" VAL="69379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="300" VAL="69373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="380" VAL="69381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="400" VAL="69382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1100" Y="420" VAL="69383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1100" Y="440" VAL="69175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1100" Y="460" VAL="69176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1100" Y="480" VAL="69386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1100" Y="500" VAL="69387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1100" Y="520" VAL="69177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1100" Y="560" VAL="69389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1100" Y="580" VAL="69390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="600" VAL="69391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1100" Y="640" VAL="69393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="660" VAL="69394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="680" VAL="69395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="720" VAL="69393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1100" Y="740" VAL="69394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1100" Y="760" VAL="69395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1180" Y="60" VAL="70369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="80" VAL="70370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1180" Y="100" VAL="70371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1180" Y="120" VAL="70372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1180" Y="160" VAL="70374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1180" Y="180" VAL="70375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="200" VAL="70376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="240" VAL="70378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1180" Y="260" VAL="70379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="300" VAL="70373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1180" Y="380" VAL="70381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="400" VAL="70382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="420" VAL="70383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1180" Y="440" VAL="70175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1180" Y="460" VAL="70176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="480" VAL="70386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1180" Y="500" VAL="70387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="520" VAL="70177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1180" Y="560" VAL="70389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="580" VAL="70390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="600" VAL="70391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1180" Y="640" VAL="70393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="660" VAL="70394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1180" Y="680" VAL="70395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="720" VAL="70393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1180" Y="740" VAL="70394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1180" Y="760" VAL="70395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="60" VAL="71369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="80" VAL="71370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1260" Y="100" VAL="71371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1260" Y="120" VAL="71372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="160" VAL="71374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="180" VAL="71375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="200" VAL="71376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="240" VAL="71378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="260" VAL="71379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1260" Y="300" VAL="71373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1260" Y="380" VAL="71381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="400" VAL="71382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="420" VAL="71383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1260" Y="440" VAL="71175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="460" VAL="71176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="480" VAL="71386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="500" VAL="71387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="520" VAL="71177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="560" VAL="71389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="580" VAL="71390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="600" VAL="71391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="640" VAL="71393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1260" Y="660" VAL="71394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="680" VAL="71395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1260" Y="720" VAL="71393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1260" Y="740" VAL="71394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1260" Y="760" VAL="71395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="60" VAL="72369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1340" Y="80" VAL="72370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="100" VAL="72371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="120" VAL="72372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1340" Y="160" VAL="72374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1340" Y="180" VAL="72375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1340" Y="200" VAL="72376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1340" Y="240" VAL="72378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="260" VAL="72379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="300" VAL="72373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1340" Y="380" VAL="72381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1340" Y="400" VAL="72382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="420" VAL="72383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1340" Y="440" VAL="72175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="460" VAL="72176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="480" VAL="72386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1340" Y="500" VAL="72387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1340" Y="520" VAL="72177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="560" VAL="72389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1340" Y="580" VAL="72390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1340" Y="600" VAL="72391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="640" VAL="72393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1340" Y="660" VAL="72394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1340" Y="680" VAL="72395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="720" VAL="72393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1340" Y="740" VAL="72394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1340" Y="760" VAL="72395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="60" VAL="73369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="80" VAL="73370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="100" VAL="73371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="120" VAL="73372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="160" VAL="73374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1420" Y="180" VAL="73375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="200" VAL="73376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="240" VAL="73378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="260" VAL="73379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="300" VAL="73373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="380" VAL="73381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="400" VAL="73382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1420" Y="420" VAL="73383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1420" Y="440" VAL="73175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="460" VAL="73176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="480" VAL="73386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="500" VAL="73387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="520" VAL="73177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="560" VAL="73389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="580" VAL="73390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="600" VAL="73391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1420" Y="640" VAL="73393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1420" Y="660" VAL="73394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="680" VAL="73395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1420" Y="720" VAL="73393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1420" Y="740" VAL="73394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1420" Y="760" VAL="73395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="60" VAL="74369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1500" Y="80" VAL="74370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="100" VAL="74371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="120" VAL="74372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="160" VAL="74374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="180" VAL="74375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="200" VAL="74376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="240" VAL="74378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1500" Y="260" VAL="74379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1500" Y="300" VAL="74373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1500" Y="380" VAL="74381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1500" Y="400" VAL="74382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="420" VAL="74383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="440" VAL="74175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="460" VAL="74176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="480" VAL="74386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1500" Y="500" VAL="74387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="520" VAL="74177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="560" VAL="74389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" VAL1="61336" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="580" VAL="74390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="600" VAL="74391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC1="1" DEC2="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1500" Y="640" VAL="74393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="660" VAL="74394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1500" Y="680" VAL="74395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1500" Y="720" VAL="74393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" DEC2="1" VAL1="61336" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="740" VAL="74394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL2="61337" DEC2="1" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1500" Y="760" VAL="74395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - TRANS.prax" VAL1="61336" DEC2="1" VAL2="61337" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="60" VAL="75369" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1580" Y="80" VAL="75370" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="100" VAL="75371" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1580" Y="120" VAL="75372" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="160" VAL="75374" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="180" VAL="75375" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1580" Y="200" VAL="75376" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1580" Y="240" VAL="75378" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="260" VAL="75379" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1580" Y="300" VAL="75373" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" DEC1="1" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1580" Y="380" VAL="75381" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1580" Y="400" VAL="75382" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1580" Y="420" VAL="75383" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" DEC1="1" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="440" VAL="75175" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1580" Y="460" VAL="75176" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="480" VAL="75386" DEC="2" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL1="61336" DEC2="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1580" Y="500" VAL="75387" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" VAL2="61337" VAL1="61336" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="520" VAL="75177" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="560" VAL="75389" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC1="1" VAL2="61337" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="580" VAL="75390" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL2="61337" VAL1="61336" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="600" VAL="75391" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1580" Y="640" VAL="75393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC1="1" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="660" VAL="75394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" VAL2="61337" DEC2="1" DEC1="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="680" VAL="75395" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" VAL1="61336" DEC2="1" DEC1="1" VAL2="61337"/>
+		<Frame Width="80" Height="20" X="1580" Y="720" VAL="75393" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" VAL2="61337" VAL1="61336" DEC2="1"/>
+		<Frame Width="80" Height="20" X="1580" Y="740" VAL="75394" DEC="0" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC1="1" DEC2="1" VAL2="61337" VAL1="61336"/>
+		<Frame Width="80" Height="20" X="1580" Y="760" VAL="75395" DEC="1" Path=".\Frames\PMS SIM PARAMETER - GREY.prax" DEC2="1" DEC1="1" VAL1="61336" VAL2="61337"/>
+	</Children>
+</RootElement>

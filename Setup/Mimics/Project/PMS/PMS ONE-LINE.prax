@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="605" GridSpacing="1" ColorTableFile=".\Color_Table.colortable">
+	<Children>
+		<Panel Width="110" Height="405" X="-1642" Y="376" GridSpacing="1" BorderColor="Blue" FillColor="Black" LightingStyle="Vertical">
+			<Children>
+				<Panel Height="50" X="5" Y="182" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61184">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="V"/>
+					</Children>
+				</Panel>
+				<Button Width="102" Height="50" X="4" Y="66" GridSpacing="2" Text="Normal" FillColor="Black" OutlineColor="Foreground" Font="Segoe UI;18.0;B;N;N">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Text" ChannelNumber="61200">
+							<ConvertParams>
+								<BoolToStringConvertParams TextWhenFalse="Normal" TextWhenTrue="Alarm"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61200">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="Black"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+					<Children>
+						<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+							<Points>
+								<Point Coord="86;6"/>
+								<Point Coord="90;12"/>
+								<Point Coord="94;6"/>
+							</Points>
+						</Polyline>
+					</Children>
+					<ClickActions>
+						<OpenFrameUserAction AutoCloseTimeout="10" XOffset="173.5" YOffset="28">
+							<Frame>
+								<FloatingFrame Width="215" Height="300" X="636" Y="154" Mimic_Reset="61494" Path="..\Frames_Pickactions\Frame_PMS_Alarms_Reset.prax" Mimic_Manual="61489" STOP_CHANNEL="0" Title="529-E001" START_CH="0" Mimic_Auto="61486">
+									<Bindings>
+										<SelectFirstBoolBinding TargetPropertyName="UserActionsLocked">
+											<Bindings>
+												<ValueCompareBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+													</Bindings>
+												</ValueCompareBinding>
+												<ChannelValueBinding TargetPropertyName="SelectedValue0" ChannelNumber="100213"/>
+												<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+													<Bindings>
+														<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100215"/>
+													</Bindings>
+												</ValueCompareBinding>
+												<ChannelValueBinding TargetPropertyName="SelectedValue1" ChannelNumber="100214"/>
+											</Bindings>
+										</SelectFirstBoolBinding>
+									</Bindings>
+								</FloatingFrame>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Panel Height="50" X="5" Y="236" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61199">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="A"/>
+					</Children>
+				</Panel>
+				<Panel Height="50" X="5" Y="344" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="20" X="15" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="1.00">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61198">
+									<ConvertParams>
+										<FloatToStringConvertParams DecimalPlaces="2"/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="P.F."/>
+					</Children>
+				</Panel>
+				<Panel Height="50" X="5" Y="290" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="65" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="55.12">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61185">
+									<ConvertParams>
+										<FloatToStringConvertParams DecimalPlaces="2"/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="Hz"/>
+					</Children>
+				</Panel>
+				<Button Visible="False" Height="50" X="5" Y="12" GridSpacing="2" Text="SWBD" FillColor="InactivePanelFace" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61113"/>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Green" SelectedValue2="ColorTrendLine10" DefaultValue="InactivePanelFace">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1" ChannelNumber="61007"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="61008"/>
+								<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0" ChannelNumber="61113" InvertCondition="True"/>
+							</Bindings>
+						</SelectFirstColorBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Text" ChannelNumber="61113">
+							<ConvertParams>
+								<BoolToStringConvertParams TextWhenFalse="SWBD" TextWhenTrue=""/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+					<Children>
+						<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+							<Points>
+								<Point Coord="86;6"/>
+								<Point Coord="90;12"/>
+								<Point Coord="94;6"/>
+							</Points>
+						</Polyline>
+						<TextBox Visible="False" Width="90" Height="28" X="4" Y="12" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;B;N;N" Text="Auto">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61007"/>
+							</Bindings>
+						</TextBox>
+						<TextBox Visible="False" Width="90" Height="28" X="4" Y="12" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;B;N;N" Text="Manual">
+							<Bindings>
+								<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61008"/>
+							</Bindings>
+						</TextBox>
+					</Children>
+					<ClickActions>
+						<OpenFrameUserAction AutoCloseTimeout="10" XOffset="169.5" YOffset="6">
+							<Frame>
+								<FloatingFrame Width="215" Height="290" X="631" Y="83" Mimic_Auto="61486" Mimic_Manual="61489" Path="..\Frames_Pickactions\Frame_Auto_Manual.prax" STOP_CHANNEL="0" START_CH="0" Title="529-E001">
+									<Bindings>
+										<SelectFirstBoolBinding TargetPropertyName="UserActionsLocked">
+											<Bindings>
+												<ValueCompareBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+													</Bindings>
+												</ValueCompareBinding>
+												<ChannelValueBinding TargetPropertyName="SelectedValue0" ChannelNumber="100213"/>
+												<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+													<Bindings>
+														<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100215"/>
+													</Bindings>
+												</ValueCompareBinding>
+												<ChannelValueBinding TargetPropertyName="SelectedValue1" ChannelNumber="100214"/>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="61113" InvertCondition="True"/>
+											</Bindings>
+										</SelectFirstBoolBinding>
+									</Bindings>
+								</FloatingFrame>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Panel Height="50" X="5" Y="128" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="25" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61047">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="65" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="kVAr"/>
+					</Children>
+				</Panel>
+			</Children>
+		</Panel>
+		<Panel Width="340" Height="405" X="-1982" Y="376" GridSpacing="2" BorderColor="Blue" FillColor="Black" FillPatternColor="Comment" LightingStyle="Horizontal">
+			<Children>
+				<Rectangle Width="4" Height="4" X="170" Y="356" FillColor="Transparent"/>
+				<Rectangle Width="4" Height="4" X="170" Y="386" FillColor="Transparent"/>
+				<Rectangle FlashArea="OutlineOnly" Width="40" Height="40" X="152" Y="352" FillColor="Transparent">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="FlashColor" ChannelNumber="61049">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="InactivePanelFace"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Flash" ChannelNumber="61049"/>
+					</Bindings>
+				</Rectangle>
+				<Rectangle Width="4" Height="26" X="170" Y="360" FillColor="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Visible" ChannelNumber="61188"/>
+					</Bindings>
+				</Rectangle>
+				<Polyline FlashState="Flashing" Flash="True" Width="2" FillColor="Transparent">
+					<Bindings>
+						<ChannelAlarmBinding TargetPropertyName="LineColor" ChannelNumber="61083">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="AlarmRed" ColorWhenTrue="Green"/>
+							</ConvertParams>
+						</ChannelAlarmBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="172;318"/>
+						<Point Coord="172;356"/>
+						<Point Coord="172;356"/>
+						<Point Coord="172;356"/>
+						<Point Coord="172;356"/>
+					</Points>
+				</Polyline>
+				<Rectangle Width="4" Height="26" X="158" Y="360" FillColor="Transparent"/>
+				<Rectangle Width="8" Height="30" X="156" Y="358" BorderColor="PanelFace" FillColor="PanelFace">
+					<Bindings>
+						<ChannelAlarmBinding TargetPropertyName="Visible" ChannelNumber="61188"/>
+					</Bindings>
+				</Rectangle>
+				<Panel Width="136" Height="30" X="104" Y="92" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="45" Height="20" X="55" Y="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61045">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="35" Height="30" X="100" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="KW"/>
+					</Children>
+				</Panel>
+				<Button Width="40" Height="40" X="152" Y="352" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenFrameUserAction AutoCloseTimeout="10" XOffset="131.5">
+							<Frame>
+								<FloatingFrame Width="215" Height="290" X="371" Y="412" Mimic_Open="61491" Mimic_Close="61488" Path="..\Frames_Pickactions\Frame_Open_Close.prax" Mimic_Connect="61488" START_CH="0" Mimic_Disconnect="61491" Mimic_Auto="61488" Mimic_Manual="61491" STOP_CHANNEL="0" OPEN_CHANNEL="0" CLOSE_CHANNEL="0" Title="529-E001">
+									<Bindings>
+										<SelectFirstBoolBinding TargetPropertyName="UserActionsLocked">
+											<Bindings>
+												<ValueCompareBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+													</Bindings>
+												</ValueCompareBinding>
+												<ChannelValueBinding TargetPropertyName="SelectedValue0" ChannelNumber="100213"/>
+												<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+													<Bindings>
+														<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100215"/>
+													</Bindings>
+												</ValueCompareBinding>
+												<ChannelValueBinding TargetPropertyName="SelectedValue1" ChannelNumber="100214"/>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="61113" InvertCondition="True"/>
+											</Bindings>
+										</SelectFirstBoolBinding>
+									</Bindings>
+								</FloatingFrame>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Line Width="2" X0="172" Y0="390" X1="172" Y1="493"/>
+				<FillBar Width="40" Height="300" X="58" Y="90" FillDirection="BottomToTop" RangeEnd="120" LimitType="OnlyHigh" SecondLimit="100" Value="150" NormalColor="Green" LimitLowColor="Green" FillColor="Black" Clamping="False">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="61071"/>
+					</Bindings>
+				</FillBar>
+				<TextBox Width="20" Height="10" X="9" Y="186" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="80%"/>
+				<Line Width="0.5" X0="54" Y0="141.5" X1="100" Y1="141.5"/>
+				<TextBox Width="25" Height="10" X="4" Y="135" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="100%"/>
+				<TextBox Width="25" Height="10" X="8" Y="235" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="60%"/>
+				<TextBox Width="25" Height="10" X="8" Y="283" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="40%"/>
+				<Line Width="0.5" X0="51" Y0="389" X1="96" Y1="389"/>
+				<TextBox Width="15" Height="10" X="14" Y="384" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="0%"/>
+				<Line Width="0.5" X0="51" Y0="191" X1="97" Y1="191"/>
+				<Line Width="0.5" X0="51" Y0="240" X1="97" Y1="240"/>
+				<Line Width="0.5" X0="50" Y0="289" X1="96" Y1="289"/>
+				<Line Width="0.5" X0="51" Y0="339" X1="97" Y1="339"/>
+				<TextBox Width="25" Height="10" X="8" Y="333" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="20%"/>
+				<Line Width="0.5" X0="48" Y0="92" X1="96" Y1="92"/>
+				<TextBox Width="25" Height="10" X="4" Y="86" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="120%"/>
+				<TextBox Width="40" Height="20" X="30" Y="58" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="KW"/>
+				<FillBar Width="40" Height="300" X="246" Y="90" FillDirection="BottomToTop" RangeEnd="120" LimitType="None" SecondLimit="100" Value="120" NormalColor="Blue" LimitLowColor="Blue" FillColor="Black" Clamping="False">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value" ChannelNumber="61075"/>
+						<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Tank_Perc"/>
+							</Bindings>
+						</ChannelSecondLimitBinding>
+					</Bindings>
+				</FillBar>
+				<TextBox Width="20" Height="10" X="298" Y="186" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="80%"/>
+				<Line Width="0.5" X0="246" Y0="141" X1="292" Y1="141"/>
+				<TextBox Width="25" Height="10" X="298" Y="135" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="100%"/>
+				<TextBox Width="25" Height="10" X="298" Y="235" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="60%"/>
+				<TextBox Width="25" Height="10" X="298" Y="283" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="40%"/>
+				<Line Width="0.5" X0="246" Y0="389" X1="291" Y1="389"/>
+				<TextBox Width="19" Height="10" X="298" Y="383" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="0%"/>
+				<Line Width="0.5" X0="246" Y0="191" X1="292" Y1="191"/>
+				<Line Width="0.5" X0="246" Y0="240" X1="292" Y1="240"/>
+				<Line Width="0.5" X0="245" Y0="289" X1="291" Y1="289"/>
+				<Line Width="0.5" X0="246" Y0="339" X1="292" Y1="339"/>
+				<TextBox Width="25" Height="10" X="298" Y="333" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="20%"/>
+				<Line Width="0.5" X0="248" Y0="92" X1="296" Y1="92"/>
+				<TextBox Width="25" Height="10" X="298" Y="86" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Left" Font="Arial;14.0;N;N;N" Text="120%"/>
+				<TextBox Width="40" Height="20" X="272" Y="60" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="AMP"/>
+				<TextBox Width="38" Height="20" X="150" Y="12" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;36.0;B;N;U" Text="DG #1"/>
+				<Button Width="138" Height="92" X="102" Y="230" GridSpacing="2" RoundRadius="0" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<Children>
+						<Frame Width="7" Height="94" X="2" Y="2" Width="7" Path="..\Frames\Icons\Icon_engine.prax" RUNNING="0" running="61083"/>
+						<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+							<Points>
+								<Point Coord="126;6"/>
+								<Point Coord="130;12"/>
+								<Point Coord="134;6"/>
+							</Points>
+						</Polyline>
+						<TextBox Width="78" Height="35" X="26" Y="34" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;26.0;B;N;N" Text="DG #1"/>
+					</Children>
+					<ClickActions>
+						<OpenFrameUserAction AutoCloseTimeout="10" XOffset="258.5" YOffset="7">
+							<Frame>
+								<FloatingFrame Width="215" Height="290" X="486" Y="323" Mimic_Start="61487" Title="DG PS" Mimic_Stop="61490" Path="..\Frames_Pickactions\Run Stop\1. Root_Frame_Run-Stop.prax" STOP_CHANNEL="61490" Mimic_Manual="61490" START_CH="0" Mimic_Auto="61487" RUN_CHANNEL="61487">
+									<Bindings>
+										<SelectFirstBoolBinding TargetPropertyName="UserActionsLocked">
+											<Bindings>
+												<ChannelValueBinding TargetPropertyName="SelectedValue0" ChannelNumber="100213"/>
+												<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="2">
+													<Bindings>
+														<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="100215"/>
+													</Bindings>
+												</ValueCompareBinding>
+												<ChannelValueBinding TargetPropertyName="SelectedValue1" ChannelNumber="100214"/>
+												<ValueCompareBinding TargetPropertyName="ConditionValue0">
+													<Bindings>
+														<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+													</Bindings>
+												</ValueCompareBinding>
+												<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue2" ChannelNumber="61113" InvertCondition="True"/>
+											</Bindings>
+										</SelectFirstBoolBinding>
+									</Bindings>
+								</FloatingFrame>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+					<Points>
+						<Point Coord="180;356"/>
+						<Point Coord="184;362"/>
+						<Point Coord="188;356"/>
+					</Points>
+				</Polyline>
+				<Panel Width="136" Height="30" X="104" Y="198" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="85" Height="20" Y="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="80000">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61552">
+									<ConvertParams>
+										<FloatToStringConvertParams DecimalPlaces="3"/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="15" Height="30" X="100" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="MWh"/>
+					</Children>
+				</Panel>
+				<Frame Width="156" Height="30" X="92" Y="44" Path="E:\J-10350 NEW\Software\System\Setup\Mimics\Lib\Frames\Frame_PMS_Statuses.prax" Synchronizing_Ch="61080" Offloading_Ch="61081" Stopping="61084" Starting_Ch="61079" Tab_value="0" Cooling_down_Ch="61082">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Tab_value" ChannelNumber="61098"/>
+					</Bindings>
+				</Frame>
+				<TextBox Visible="False" Width="136" Height="30" X="104" Y="124" FillColor="Yellow" CornerRoundRadius="5" Font="Segoe UI;22.0;B;N;N" Text="1st Standby" FillStyle="HorizontalLighting">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61009"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Text" ChannelNumber="61009">
+							<ConvertParams>
+								<BoolToStringConvertParams TextWhenTrue="1st Standby"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</TextBox>
+				<Panel Width="136" Height="30" X="104" Y="166" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="85" Height="20" Y="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="80000">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61551">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="15" Height="30" X="115" BorderColor="Transparent" FillColor="Transparent" Font="Arial;22.0;N;N;N" Text="h"/>
+					</Children>
+				</Panel>
+			</Children>
+		</Panel>
+		<Panel Width="110" Height="205" X="-2092" Y="376" GridSpacing="1" BorderColor="Blue" FillColor="Black" LightingStyle="Vertical">
+			<Children>
+				<Panel Height="50" X="5" Y="37" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61142">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L1"/>
+					</Children>
+				</Panel>
+				<Panel Height="50" X="5" Y="91" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61143">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L2"/>
+					</Children>
+				</Panel>
+				<Panel Height="50" X="5" Y="145" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61144">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L3"/>
+					</Children>
+				</Panel>
+				<TextBox Width="105" Height="20" X="2" Y="9" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="Current"/>
+			</Children>
+		</Panel>
+		<Panel Width="110" Height="200" X="-2092" Y="581" GridSpacing="1" BorderColor="Blue" FillColor="Black" LightingStyle="Vertical">
+			<Children>
+				<TextBox Width="105" Height="20" X="1" Y="7" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;N;N;N" Text="Voltage"/>
+				<Panel Height="50" X="5" Y="33" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="450">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61139">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L1"/>
+					</Children>
+				</Panel>
+				<Panel Height="50" X="5" Y="87" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61140">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L2"/>
+					</Children>
+				</Panel>
+				<Panel Height="50" X="5" Y="141" GridSpacing="5" BorderWidth="1" BorderStyle="Flat" BorderColor="Foreground" FillColor="Black" LightingStyle="Horizontal" CornerRoundRadius="5">
+					<Children>
+						<TextBox Width="55" Height="20" X="5" Y="15" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" Font="Arial;24.0;B;N;N" Text="800">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61141">
+									<ConvertParams>
+										<FloatToStringConvertParams/>
+									</ConvertParams>
+								</ChannelValueBinding>
+							</Bindings>
+						</TextBox>
+						<TextBox Width="30" Height="25" X="70" Y="15" BorderColor="Transparent" FillColor="Transparent" Font="Arial;18.0;N;N;N" Text="L3"/>
+					</Children>
+				</Panel>
+			</Children>
+		</Panel>
+		<Trending Width="1280" Height="140" Y="464" DurationShown="300" VerticalLineInterval="60">
+			<Runs>
+				<TrendingRun Title="DG1 %" LineWidth="1" BottomValue="-10" ChannelNumber="61071"/>
+				<TrendingRun Title="DG2 %" LineColor="AlarmRed" LineWidth="1" BottomValue="-10" ChannelNumber="62071"/>
+			</Runs>
+		</Trending>
+		<Button Width="127" Height="50" X="2142" Y="-174" GridSpacing="2" Text="" FillColor="Transparent" OutlineColor="OldAlarm" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<ValueCompareBinding TargetPropertyName="FillColor" CompareTolerance="1">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="95239"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="OldAlarm"/>
+					</ConvertParams>
+				</ValueCompareBinding>
+			</Bindings>
+			<Children>
+				<Polyline LineColor="Transparent" ClosedOutline="True" FillColor="Foreground">
+					<Points>
+						<Point Coord="112;4"/>
+						<Point Coord="117.197;14.2803"/>
+						<Point Coord="121.953;3.96918"/>
+					</Points>
+				</Polyline>
+				<TextBox Width="98" Height="26" X="16" Y="2" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;B;N;N" Text="GENERATOR ">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="TextColor" CompareTolerance="1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="95239"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="Foreground" ColorWhenTrue="Background"/>
+							</ConvertParams>
+						</ValueCompareBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="98" Height="26" X="18" Y="22" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;B;N;N" Text="SOUND ">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="Text" CompareTolerance="1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="95239"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToStringConvertParams TextWhenFalse="SOUND ON" TextWhenTrue="SOUND OFF"/>
+							</ConvertParams>
+						</ValueCompareBinding>
+						<ValueCompareBinding TargetPropertyName="TextColor" CompareTolerance="1">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="FirstValue" ChannelNumber="95239"/>
+							</Bindings>
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="Foreground" ColorWhenTrue="Background"/>
+							</ConvertParams>
+						</ValueCompareBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="5" XOffset="4.5" YOffset="133">
+					<Frame>
+						<FloatingFrame Width="150" Height="200" X="2135" Y="-116" Path="..\Frames_Pickactions\Frame_Inhibit_Tank_OnOff.prax" Inhibit_On="95239" Text="Sound Inhibit"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<Panel Width="320" Height="240" X="986" Y="-380" GridSpacing="1" ClipToBounds="True">
+			<Children>
+				<Rectangle FlashArea="OutlineOnly" Width="51" Height="51" X="98" Y="78" FillColor="Transparent">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="FlashColor" ChannelNumber="61049">
+							<ConvertParams>
+								<BoolToColorConvertParams ColorWhenFalse="InactivePanelFace"/>
+							</ConvertParams>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Flash" ChannelNumber="61049"/>
+					</Bindings>
+				</Rectangle>
+			</Children>
+		</Panel>
+		<Rectangle Width="502" Height="8" X="-1962" Y="124" FillColor="NoAlarmGreen">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61286">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenTrue="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="1178" Height="8" X="-1314" Y="124" FillColor="NoAlarmGreen">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="62286">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenTrue="Background"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="10" Height="10" X="-1358" Y="76" BorderWidth="2" FillColor="Transparent"/>
+		<Rectangle Width="60" Height="8" X="-1418" Y="62" BorderWidth="2" FillColor="Transparent">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61103" InvertCondition="True"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="10" Height="10" X="-1428" Y="76" BorderWidth="2" FillColor="Transparent"/>
+		<Rectangle Width="60" Height="10" X="-1418" Y="76" BorderWidth="2" FillColor="Green">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible" ChannelNumber="61103"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="156" Height="68" X="-1464" Y="42" BorderStyle="Dashed" FillColor="Transparent"/>
+		<Line X0="-1504" Y0="124" X1="-1504" Y1="82"/>
+		<Line X0="-1504.5" Y0="82" X1="-1428" Y1="82"/>
+		<Line X0="-1272" Y0="82" X1="-1348.5" Y1="82"/>
+		<Line X0="-1272.5" Y0="124" X1="-1272.5" Y1="82"/>
+		<TextBox Width="130" Height="15" X="-1454" Y="20" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="BUS TIE"/>
+		<Frame Width="350" Height="320" X="201" Y="78" RUNNING="61083" kVAR_PERC="61075" KW_PERC="61071" GEN_No="DG #1" MM_START="61487" MM_STOP="61490" CB_STATUS="61188" Current_L1="61142" Current_L2="61143" Current_L3="61144" Voltage_L1="61139" Voltage_L2="61140" Voltage_L3="61141" Low_Load_Activated="61483" Low_Load_Active="61521" Low_Load_DeActive="61521" Idle_Run_Activated="61484" Idle_Run_Active="61523" Idle_Run_DeActive="61523" Run_Hours="61551" Initial_Run_Hrs="61033" MW_per_hour="61552" Initial_MWh="61034" FIRST_STBY="61009" KW_Value="61045" ALARM_CH="61200" RESET="61494" kVAR_VALUE="61047" VOLTAGE="61184" AMPERE="61199" FREQUENCY="61185" POWER_FACTOR="61198" SWBD_PMS="61113" AUTO="61023" MANUAL="61029" MM_AUTO="61486" MM_MANUAL="61489" STARTING="61079" STOPPING="61084" SYNCHRONIZING="61080" COOL_DOWN="61082" OFFLOADING="61081" TIMER="61097" Path=".\Frames\Frame_NEW_PMS_DG.prax" MIMIC_OPEN="61491" MIMIC_CLOSE="61488" GEN_STATUSES="61098" MM_ACB_CONNECT="61488" MM_ACB_DISCONNECT="61491"/>
+		<TextBox Width="130" Height="15" X="22" Y="404" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="BUS A VOLTAGE"/>
+		<TextBox Width="66" Height="15" X="210" Y="404" BorderWidth="0" FillColor="Transparent" TextColor="OldAlarm" Font="Segoe UI;22.0;B;N;N" Text="415">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61186">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="46" Height="15" X="254" Y="404" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="V"/>
+		<TextBox Width="130" Height="15" X="38" Y="434" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="BUS A FREQUENCY"/>
+		<TextBox Width="66" Height="15" X="204" Y="434" BorderWidth="0" FillColor="Transparent" TextColor="OldAlarm" Font="Segoe UI;22.0;B;N;N" Text="51.12">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61187">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="46" Height="15" X="260" Y="434" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="Hz"/>
+		<Frame Width="1280" Height="70" Path="..\FRAME_10INCH\FRAME\TOP_NEXT_PREV_BUTTON.prax"/>
+		<Panel Width="1280" Height="605" GridSpacing="1" FillColor="Transparent" ClipToBounds="True">
+			<Children>
+				<Line X0="794.676" Y0="368.064" X1="794.676" Y1="426.064"/>
+				<TextBox Width="176" Height="40" X="960" Y="20" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;B;N;N" Text="Page 1 of 11"/>
+				<Button Width="32" Height="33" X="359" Y="333" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenFrameUserAction AutoCloseTimeout="10" XOffset="67" YOffset="11">
+							<Frame>
+								<FloatingFrame Height="125" X="392" Y="298" Mimic_Open="61491" Mimic_Close="61488" Path="..\Frames_Pickactions\Frame_Open_Close.prax" START_CH="0" Title="529-E001" STOP_CHANNEL="0" CLOSE_CHANNEL="0" OPEN_CHANNEL="0" Mimic_Connect="61488" Mimic_Auto="61488" Mimic_Manual="61491" Mimic_Disconnect="61491">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Mimic_Auto" ExportedPropertyName="MM_ACB_CONNECT"/>
+										<FrameBinding TargetPropertyName="Mimic_Manual" ExportedPropertyName="MM_ACB_DISCONNECT"/>
+									</Bindings>
+								</FloatingFrame>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Button Width="32" Height="33" X="778" Y="335" Text="" FillColor="Transparent" OutlineColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+					<ClickActions>
+						<OpenFrameUserAction AutoCloseTimeout="10" XOffset="67" YOffset="5">
+							<Frame>
+								<FloatingFrame Height="125" X="811" Y="294" Mimic_Open="62491" Mimic_Close="62488" Path="..\Frames_Pickactions\Frame_Open_Close.prax" Title="529-E001" Mimic_Manual="61491" CLOSE_CHANNEL="0" Mimic_Connect="61488" STOP_CHANNEL="0" Mimic_Auto="61488" START_CH="0" OPEN_CHANNEL="0" Mimic_Disconnect="61491">
+									<Bindings>
+										<FrameBinding TargetPropertyName="Mimic_Auto" ExportedPropertyName="MM_ACB_CONNECT"/>
+										<FrameBinding TargetPropertyName="Mimic_Manual" ExportedPropertyName="MM_ACB_DISCONNECT"/>
+									</Bindings>
+								</FloatingFrame>
+							</Frame>
+						</OpenFrameUserAction>
+					</ClickActions>
+				</Button>
+				<Frame Width="350" Height="320" X="620" Y="80" RUNNING="62083" kVAR_PERC="62075" KW_PERC="62071" GEN_No="DG #2" MM_START="62487" MM_STOP="62490" CB_STATUS="62188" Current_L1="62142" Current_L2="62143" Current_L3="62144" Voltage_L1="62139" Voltage_L2="62140" Voltage_L3="62141" Low_Load_Activated="62483" Low_Load_Active="62521" Low_Load_DeActive="62521" Idle_Run_Activated="62484" Idle_Run_Active="62523" Idle_Run_DeActive="62523" Run_Hours="62551" Initial_Run_Hrs="62033" MW_per_hour="62552" Initial_MWh="62034" FIRST_STBY="62009" KW_Value="62045" ALARM_CH="62200" RESET="62494" kVAR_VALUE="62047" VOLTAGE="62184" AMPERE="62199" FREQUENCY="62185" POWER_FACTOR="62198" SWBD_PMS="62113" AUTO="62023" MANUAL="62029" MM_AUTO="62486" MM_MANUAL="62489" STARTING="62079" STOPPING="62084" SYNCHRONIZING="62080" COOL_DOWN="62082" OFFLOADING="62081" TIMER="62097" Path=".\Frames\Frame_NEW_PMS_DG.prax" MIMIC_OPEN="61491" MIMIC_CLOSE="61488" MM_ACB_DISCONNECT="62491" MM_ACB_CONNECT="62488" GEN_STATUSES="62098"/>
+				<Rectangle Width="214" Height="70" X="850" Y="344" LightingStyle="Horizontal"/>
+				<Rectangle Width="214" Height="55" X="850" Y="359" LightingStyle="Horizontal"/>
+				<Rectangle Width="138" Height="55" X="926" Y="359" LightingStyle="Horizontal"/>
+				<TextBox Width="130" Height="15" X="930" Y="364" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;12.0;B;N;N" Text="BUS LOAD INSTALLED"/>
+				<TextBox Width="130" Height="15" X="930" Y="379" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;12.0;B;N;N" Text="BUS LOAD USED"/>
+				<TextBox Width="130" Height="15" X="930" Y="394" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;12.0;B;N;N" Text="BUS LOAD AVAILABLE"/>
+				<TextBox Width="60" Height="10" X="928" Y="346" BorderWidth="0" Font="Segoe UI;12.0;B;N;N" Text="MSB POWER"/>
+				<TextBox Width="65" Height="15" X="855" Y="364" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Segoe UI;12.0;B;N;N" Text="KW">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61092">
+							<ConvertParams>
+								<FloatToStringConvertParams Suffix=" KW"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="65" Height="15" X="855" Y="379" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Segoe UI;12.0;B;N;N" Text="KW">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61093">
+							<ConvertParams>
+								<FloatToStringConvertParams Suffix=" KW"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="65" Height="15" X="855" Y="394" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Segoe UI;12.0;B;N;N" Text="KW">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="61098">
+							<ConvertParams>
+								<FloatToStringConvertParams Suffix=" KW"/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<Rectangle Width="8" Height="60" X="1141" Y="318" BorderWidth="2" FillColor="Transparent">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61105" InvertCondition="True"/>
+					</Bindings>
+				</Rectangle>
+				<Rectangle Width="10" Height="10" X="1155" Y="308" BorderWidth="2" FillColor="Transparent"/>
+				<Rectangle Width="10" Height="60" X="1155" Y="318" BorderWidth="2" FillColor="Green">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="Visible" ChannelNumber="61105"/>
+					</Bindings>
+				</Rectangle>
+				<Rectangle Width="57" Height="88" X="1126.58" Y="303.76" BorderStyle="Dashed" FillColor="Transparent"/>
+				<Line X0="1159.58" Y0="266.5" X1="1159.58" Y1="308.5"/>
+				<Line X0="1160.58" Y0="427.76" X1="1160.58" Y1="386.76"/>
+				<Rectangle Width="10" Height="10" X="1155" Y="377.76" BorderWidth="2" FillColor="Transparent"/>
+				<Ellipse BorderWidth="3" CenterX="1159" CenterY="240" RadiusX="27" RadiusY="27"/>
+				<TextBox Width="33" Height="26" X="1143" Y="225" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;48.0;B;N;N" Text="S"/>
+			</Children>
+		</Panel>
+		<Line X0="376" Y0="366" X1="376" Y1="424"/>
+		<Rectangle Visible="False" Width="60" Height="8" X="1460" Y="109" BorderWidth="2" FillColor="Transparent"/>
+		<Rectangle Width="614" Height="8" X="1572" Y="171" FillColor="NoAlarmGreen">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="62286">
+					<ConvertParams>
+						<BoolToColorConvertParams/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="10" Height="10" X="1520" Y="123" BorderWidth="2" FillColor="Transparent"/>
+		<Rectangle Width="60" Height="10" X="1460" Y="123" BorderWidth="2" FillColor="Green"/>
+		<Rectangle Width="156" Height="68" X="1414" Y="89" BorderStyle="Dashed" FillColor="Transparent"/>
+		<Line X0="1606" Y0="129" X1="1529.5" Y1="129"/>
+		<Line X0="1605.5" Y0="171" X1="1605.5" Y1="129"/>
+		<Line X0="1374" Y0="171" X1="1374" Y1="129"/>
+		<Line X0="1373.5" Y0="129" X1="1460" Y1="129"/>
+		<TextBox Width="130" Height="15" X="1756" Y="98" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="BUS B VOLTAGE"/>
+		<TextBox Width="66" Height="15" X="1900" Y="98" BorderWidth="0" FillColor="Transparent" TextColor="OldAlarm" Font="Segoe UI;22.0;B;N;N" Text="415">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62186">
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="46" Height="15" X="1958" Y="98" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="V"/>
+		<TextBox Width="46" Height="15" X="1962" Y="130" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="Hz"/>
+		<TextBox Width="66" Height="15" X="1892" Y="130" BorderWidth="0" FillColor="Transparent" TextColor="OldAlarm" Font="Segoe UI;22.0;B;N;N" Text="51.12">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="62187">
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="2"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="130" Height="15" X="1726" Y="130" BorderWidth="0" FillColor="Transparent" Font="Segoe UI;22.0;B;N;N" Text="BUS B FREQUENCY"/>
+		<Rectangle Width="1195" Height="8" X="6" Y="424" FillColor="NoAlarmGreen">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="FillColor" ChannelNumber="61286">
+					<ConvertParams>
+						<BoolToColorConvertParams/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Rectangle>
+	</Children>
+</RootElement>

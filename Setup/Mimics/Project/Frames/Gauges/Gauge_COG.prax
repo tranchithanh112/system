@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="800" Height="800" ClipToBounds="True" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="150" Y="150" DialColor="BackgroundConning" IndicatorLinesColor="TextActive" FullDial="True" Path=".\Frame_GAUGE_points_8_Div_360.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+				<FrameBinding TargetPropertyName="IndicatorLinesColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="40" Height="25" X="670" Y="387" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Praxis;48.0;N;N;N" Text="90">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="TextDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="380" Y="685" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;48.0;N;N;N" Text="180">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="TextDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="595" Y="600" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Praxis;48.0;N;N;N" Text="135">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="TextDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="590" Y="180" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Praxis;48.0;N;N;N" Text="45">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="TextDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="380" Y="95" BorderWidth="0" FillColor="Transparent" TextColor="TextActive" Font="Praxis;48.0;N;N;N" Text="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="TextDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="170" Y="180" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;48.0;N;N;N" Text="315">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="TextDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="90" Y="388" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;48.0;N;N;N" Text="270">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="TextDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="160" Y="595" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Praxis;48.0;N;N;N" Text="225">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="TextDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Frame Width="370" Height="370" X="215" Y="215" Rotation="60" Vessel_Color="Background" Outline_Color="Cyan" Line_Visible="False" Path=".\Frame_Vessel.prax">
+			<Bindings>
+				<FilteredAngleBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COG"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredAngleBinding>
+			</Bindings>
+		</Frame>
+		<Ellipse BorderWidth="5" BorderColor="BackgroundShadow" LinePosition="Centered" FillColor="BackgroundShadow" CenterX="400" CenterY="400" RadiusX="225" RadiusY="225" ArcBegin="270" ArcEnd="315" ArcLength="45">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Filling"/>
+				<FilteredValueBinding TargetPropertyName="ArcLength">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="COG"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</Ellipse>
+		<TextBox Width="40" Height="25" X="380" Y="185" BorderWidth="0" FillColor="Transparent" TextColor="LightingAmber" Font="Praxis;44.0;N;N;N" Text="N"/>
+		<TextBox Width="40" Height="25" X="380" Y="585" BorderWidth="0" FillColor="Transparent" TextColor="LightingAmber" Font="Praxis;44.0;N;N;N" Text="S"/>
+		<TextBox Width="40" Height="30" X="180" Y="385" BorderWidth="0" FillColor="Transparent" TextColor="LightingAmber" Font="Praxis;44.0;N;N;N" Text="W"/>
+		<TextBox Width="40" Height="30" X="580" Y="385" BorderWidth="0" FillColor="Transparent" TextColor="LightingAmber" Font="Praxis;44.0;N;N;N" Text="E"/>
+		<Line Color="LightingAmber" LineStyle="Dashed" X0="400" Y0="170" X1="400" Y1="630"/>
+		<Line Color="LightingAmber" LineStyle="Dashed" X0="630" Y0="400" X1="170" Y1="400"/>
+	</Children>
+</RootElement>

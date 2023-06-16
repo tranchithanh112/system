@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="130" Height="195" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="130" Height="195" BorderWidth="2" BorderColor="BackgroundShadow" FillColor="BackgroundMenu" CornerRoundRadius="5"/>
+		<Button Width="90" Height="25" X="20" Y="65" ClipToBounds="True" Text="RESET" FillColorActionRunning="IndicationLineTransparent" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Reset_M_Ch"/>
+					</Bindings>
+				</PulseChannelClickAction>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="90" Height="25" X="20" Y="110" ClipToBounds="True" Text="CLOSE" FillColorActionRunning="IndicationLineTransparent" Font="Praxis;16.0;N;N;N">
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<TextBox Width="130" Height="30" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Pump">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Top"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="130" Height="30" Y="20" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;16.0;N;N;N" Text="Pump">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text_Bottom"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="1024" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<NavFrame Width="1280" Height="910" Y="50" OriginOffsetX="0" OriginOffsetY="0" ClipToBounds="True">
+			<AddressList>
+				<Address Value=".\Diagnostics - NavFrame 01.prax"/>
+				<Address Value=".\Diagnostics - NavFrame 02.prax"/>
+			</AddressList>
+		</NavFrame>
+		<Panel Width="1050" Height="25" X="5" Y="935" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" FillColor="Transparent">
+			<Children>
+				<Button Width="115" Height="25" X="930" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;22.0;N;N;N">
+					<Children>
+						<Polyline Width="2" FillColor="Transparent">
+							<Points>
+								<Point Coord="90;5"/>
+								<Point Coord="100;12.5"/>
+								<Point Coord="90;20"/>
+							</Points>
+						</Polyline>
+						<TextBox Width="75" Height="15" X="10" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" Font="Praxis;16.0;N;N;N" Text="NEXT"/>
+					</Children>
+					<ClickActions>
+						<NavigateToNextUserAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="115" Height="25" X="170" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;22.0;N;N;N">
+					<Children>
+						<Polyline Width="2" FillColor="Transparent">
+							<Points>
+								<Point Coord="20;5"/>
+								<Point Coord="10;12.5"/>
+								<Point Coord="20;20"/>
+							</Points>
+						</Polyline>
+						<TextBox Width="75" Height="15" X="25" Y="5" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" Font="Praxis;16.0;N;N;N" Text="PREVIOUS"/>
+					</Children>
+					<ClickActions>
+						<NavigateToPreviousUserAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+		<Frame LockOverlayVisible="False" Width="1280" Height="1024" ShowBackground="False" Highlight_Button_NR="20" Page_Title="SYSTEM DIAGNOSTICS" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame 1280x1024.prax"/>
+	</Children>
+</RootElement>

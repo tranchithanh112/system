@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="705" Height="1015" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="105" Y="200" DialColor="GaugeBackground" IndicatorLinesColor="IndicatorBlue" FullDial="True" Path=".\Frame_GAUGE_points.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="FullDial" ExportedPropertyName="FullDial"/>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+			</Bindings>
+		</Frame>
+		<Panel Width="480" Height="480" X="115" Y="210" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+			<Bindings>
+				<FilteredValueBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TransitionTime" ExportedPropertyName="Smoothness"/>
+						<RangeFormulaBinding TargetPropertyName="Value" OutRangeBegin="45" OutRangeEnd="315">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+								<ChannelRangeLowBinding TargetPropertyName="InRangeBegin">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelRangeLowBinding>
+								<ChannelRangeHighBinding TargetPropertyName="InRangeEnd">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelRangeHighBinding>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+			<Children>
+				<Polyline Width="2" LineColor="DarkShadow" ClosedOutline="True" FillColor="InfoTextWhite">
+					<Points>
+						<Point Coord="225;15"/>
+						<Point Coord="240;80"/>
+						<Point Coord="255;15"/>
+					</Points>
+				</Polyline>
+			</Children>
+		</Panel>
+		<TextBox Width="40" Height="25" X="335" Y="155" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Saira;36.0;N;N;N" Text="0"/>
+		<TextBox Width="40" Height="25" X="335" Y="715" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Saira;36.0;N;N;N" Text="180"/>
+		<TextBox Width="40" Height="25" X="550" Y="635" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Saira;36.0;N;N;N" Text="135"/>
+		<TextBox Width="40" Height="25" X="620" Y="435" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Saira;36.0;N;N;N" Text="90"/>
+		<TextBox Width="40" Height="25" X="535" Y="245" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Saira;36.0;N;N;N" Text="45"/>
+		<TextBox Width="40" Height="25" X="120" Y="245" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Saira;36.0;N;N;N" Text="-45"/>
+		<TextBox Width="40" Height="25" X="45" Y="435" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Saira;36.0;N;N;N" Text="-90"/>
+		<TextBox Width="40" Height="25" X="120" Y="635" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorBlue" Font="Saira;36.0;N;N;N" Text="-135"/>
+		<Bezier Width="3" LineColor="IndicatorBlue" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBoat"/>
+			</Bindings>
+			<Points>
+				<Point Coord="355;300"/>
+				<Point Coord="300;395"/>
+				<Point Coord="300;460"/>
+				<Point Coord="320;600"/>
+			</Points>
+		</Bezier>
+		<Bezier Width="3" LineColor="IndicatorBlue" FillColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBoat"/>
+			</Bindings>
+			<Points>
+				<Point Coord="355;300"/>
+				<Point Coord="410;395"/>
+				<Point Coord="410;460"/>
+				<Point Coord="390;600"/>
+			</Points>
+		</Bezier>
+		<Line Width="3" Color="IndicatorBlue" X0="320" Y0="600" X1="390" Y1="600">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBoat"/>
+			</Bindings>
+		</Line>
+		<TextBox Width="285" Height="75" X="45" Y="830" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;94.0;N;N;N" Text="18.2"/>
+		<TextBox Width="280" Height="75" X="50" Y="895" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;36.0;N;N;N" Text="SPEED kn"/>
+		<TextBox Width="285" Height="75" X="380" Y="830" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextWhite" Font="Praxis;94.0;N;N;N" Text="93°"/>
+		<TextBox Width="280" Height="75" X="380" Y="895" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;36.0;N;N;N" Text="DIRECTION"/>
+		<Panel Width="705" Height="5" ClipToBounds="True" BorderWidth="2" BorderStyle="Sunken" BorderColor="DarkShadow" FillColor="DarkShadow" LightingStyle="Horizontal"/>
+		<Panel Width="5" Height="1015" X="700" ClipToBounds="True" BorderWidth="2" BorderStyle="Sunken" BorderColor="DarkShadow" FillColor="Background" LightingStyle="Vertical"/>
+		<Panel Width="5" Height="1015" ClipToBounds="True" BorderWidth="2" BorderStyle="Sunken" BorderColor="DarkShadow" FillColor="Background" LightingStyle="Vertical"/>
+		<Panel Width="705" Height="5" Y="1010" ClipToBounds="True" BorderWidth="2" BorderStyle="Sunken" BorderColor="DarkShadow" FillColor="DarkShadow" LightingStyle="Horizontal"/>
+		<TextBox Width="695" Height="75" X="5" Y="35" BorderWidth="0" FillColor="Transparent" TextColor="InfoTextGrey" Font="Praxis;48.0;N;N;N" Text="WIND RELATIVE">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

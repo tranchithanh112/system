@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="125" Height="180" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="125" Height="180" BorderWidth="0" BorderColor="TextInfo" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+		<Rectangle Width="115" Height="170" X="5" Y="5" BorderWidth="0" BorderColor="TextInfo" FillColor="BackgroundGauge" CornerRoundRadius="5"/>
+		<Button Width="105" Height="45" X="10" Y="125" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" Font="Segoe UI;14.0;B;N;N">
+			<Children>
+				<TextBox Width="95" Height="35" X="5" Y="5" BorderWidth="0" BorderColor="AlarmRed" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="CANCEL"/>
+			</Children>
+			<ClickActions>
+				<CloseFrameUserAction/>
+			</ClickActions>
+		</Button>
+		<Button Width="105" Height="45" X="10" Y="10" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<Children>
+				<TextBox Width="95" Height="35" X="5" Y="5" BorderWidth="0" BorderColor="AlarmRed" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="START"/>
+			</Children>
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CommandStart_CH"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+		<Button Width="105" Height="45" X="10" Y="60" ClipToBounds="True" Text="" FillColor="Transparent" FillColorActionRunning="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<Children>
+				<TextBox Width="95" Height="35" X="5" Y="5" BorderWidth="0" BorderColor="AlarmRed" FillColor="Transparent" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" Text="STOP"/>
+			</Children>
+			<ClickActions>
+				<PulseChannelClickAction>
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CommandStop_CH"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

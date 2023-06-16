@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="80" Height="80" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Button UserActionsLocked="True" LockOverlayVisible="False" LockOverlayColor="Transparent" Width="80" Height="80" GridSpacing="1" Text="" FillColor="Transparent" FillColorActionRunning="IndicationLineTransparent" BorderColor="Transparent" TextColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<FrameBinding TargetPropertyName="UserActionsLocked" ExportedPropertyName="CTRL_Blocked"/>
+			</Bindings>
+			<ClickActions>
+				<OpenFrameUserAction AutoCloseTimeout="30" XOffset="1" YOffset="-175" CloseOnDeselect="True">
+					<Frame>
+						<FloatingFrame Width="150" Height="270" X="-34" Y="-270" Cmd_Auto="0" Cmd_Manual="0" Cmd_Close="0" Cmd_Open="0" Cmd_Reset="0" ID="CB" Path=".\PopUp_CMD_BT_Control.prax" BUTTON04_Text="Cancel" BUTTON02_Text="Open CB" BUTTON01_Text="Close CB" CMD_Start="0" BUTTON03_Text="Reset" CMD_Stop="0" CMD_Reset="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ID" ExportedPropertyName="ID"/>
+								<FrameBinding TargetPropertyName="CMD_Start" ExportedPropertyName="CMD_Close"/>
+								<FrameBinding TargetPropertyName="CMD_Stop" ExportedPropertyName="CMD_Open"/>
+								<FrameBinding TargetPropertyName="CMD_Reset" ExportedPropertyName="CMD_Reset"/>
+								<FrameBinding TargetPropertyName="BUTTON01_Text" ExportedPropertyName="BUTTON01_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON02_Text" ExportedPropertyName="BUTTON02_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON03_Text" ExportedPropertyName="BUTTON03_Text"/>
+								<FrameBinding TargetPropertyName="BUTTON04_Text" ExportedPropertyName="BUTTON04_Text"/>
+								<FrameBinding TargetPropertyName="Cmd_Auto" ExportedPropertyName="CMD_Auto"/>
+								<FrameBinding TargetPropertyName="Cmd_Manual" ExportedPropertyName="CMD_Manual"/>
+								<FrameBinding TargetPropertyName="Cmd_Close" ExportedPropertyName="CMD_Close"/>
+								<FrameBinding TargetPropertyName="Cmd_Open" ExportedPropertyName="CMD_Open"/>
+								<FrameBinding TargetPropertyName="Cmd_Reset" ExportedPropertyName="CMD_Reset"/>
+							</Bindings>
+						</FloatingFrame>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<Rectangle FlashFast="True" FlashArea="OutlineOnly" FlashColor="Green" Width="60" Height="60" X="10" Y="10" BorderWidth="2" BorderColor="Transparent" FillPatternColor="PageInfoLine">
+			<Bindings>
+				<SelectFirstFlashStateBinding TargetPropertyName="FlashState">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Sync"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Offload"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstFlashStateBinding>
+				<SelectFirstColorBinding TargetPropertyName="FlashColor" SelectedValue0="LightingAmber" SelectedValue1="White" DefaultValue="ButtonFill">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Sync"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Offload"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Tripped"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="8" Height="34" X="20" Y="23" BorderColor="TextInfo" FillPatternColor="White">
+			<Bindings>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="8" Height="34" X="46" Y="23" BorderColor="TextInfo" FillColor="Green">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Closed"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</Rectangle>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="50" Y0="65" X1="50" Y1="68"/>
+		<Line Width="2" Color="ColorVerticalTrendLines" X0="50" Y0="12" X1="50" Y1="15"/>
+		<Rectangle Width="8" Height="8" X="46" Y="57" BorderColor="TextInfo"/>
+		<Rectangle Width="8" Height="8" X="46" Y="15" BorderColor="TextInfo"/>
+		<TextBox Visible="False" Width="80" Height="20" Y="29" BorderColor="PageInfoLine" TextColor="TextInfo" Font="Segoe UI;14.0;N;N;N" Text="INTERLOCK">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CB_Interlock"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

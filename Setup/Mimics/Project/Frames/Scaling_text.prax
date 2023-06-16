@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="400" Height="400" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="400" ActivateValue="466.87" TransitionTime="250">
+			<Bindings>
+				<VariableBinding TargetPropertyName="Activate">
+					<Variable>
+						<BoolVariable Name="Show_Side_Menu"/>
+					</Variable>
+				</VariableBinding>
+			</Bindings>
+		</ValueTransitionBinding>
+		<ValueTransitionBinding TargetPropertyName="Height" DefaultValue="400" ActivateValue="466.87" TransitionTime="250">
+			<Bindings>
+				<VariableBinding TargetPropertyName="Activate">
+					<Variable>
+						<BoolVariable Name="Show_Side_Menu"/>
+					</Variable>
+				</VariableBinding>
+			</Bindings>
+		</ValueTransitionBinding>
+	</Bindings>
+	<Children>
+		<TextBox Width="170" Height="40" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" VertAlignment="Bottom" Font="Praxis;24.0;N;N;N" Text="FUEL TRANSFER SYSTEM">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Text"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

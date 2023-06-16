@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="545" Height="910" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Panel Width="225" Height="910" X="320" BorderWidth="0" BorderStyle="Flat" BorderColor="ColorTrendBorderLine" FillColor="BackgroundMenu">
+			<Children>
+				<Panel Width="240" Height="330" Y="585" ClipToBounds="True" BorderWidth="0" BorderStyle="Flat" FillColor="Transparent">
+					<Children>
+						<Button Width="215" Height="45" X="5" Y="10" ClipToBounds="True" Text="      DIAGNOSTICS" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" HorzAlignment="Left">
+							<Bindings>
+								<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextInfoHeader" DefaultValue="TextInfo">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="20" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+								<SelectFirstColorBinding TargetPropertyName="BorderColor" SelectedValue0="TextInfoHeader" DefaultValue="Transparent">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="20" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+							</Bindings>
+							<ClickActions>
+								<SelectPageClickAction Page="DiagnosticPage"/>
+								<SetVariableValueClickAction>
+									<Variable>
+										<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True" DefaultValue="GENERAL INFO"/>
+									</Variable>
+									<VariableSetter>
+										<StringVariableSetter Value="SYSTEM DIAGNOSTICS"/>
+									</VariableSetter>
+								</SetVariableValueClickAction>
+								<SetVariableValueClickAction>
+									<Variable>
+										<BoolVariable Name="Show_Side_Menu"/>
+									</Variable>
+									<VariableSetter>
+										<BoolVariableSetter/>
+									</VariableSetter>
+								</SetVariableValueClickAction>
+							</ClickActions>
+						</Button>
+						<Button Width="215" Height="45" X="5" Y="60" ClipToBounds="True" Text="      MIMICS" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" HorzAlignment="Left">
+							<Bindings>
+								<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextInfoHeader" DefaultValue="TextInfo">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="21" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+								<SelectFirstColorBinding TargetPropertyName="BorderColor" SelectedValue0="TextInfoHeader" DefaultValue="Transparent">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="21" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+							</Bindings>
+							<ClickActions>
+								<SelectPageClickAction Page="MimicOverviewPage"/>
+								<SetVariableValueClickAction>
+									<Variable>
+										<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True" DefaultValue="GENERAL INFO"/>
+									</Variable>
+									<VariableSetter>
+										<StringVariableSetter Value="MIMICS OVERVIEW"/>
+									</VariableSetter>
+								</SetVariableValueClickAction>
+								<SetVariableValueClickAction>
+									<Variable>
+										<BoolVariable Name="Show_Side_Menu"/>
+									</Variable>
+									<VariableSetter>
+										<BoolVariableSetter/>
+									</VariableSetter>
+								</SetVariableValueClickAction>
+							</ClickActions>
+						</Button>
+						<Button Width="210" Height="45" X="10" Y="110" ClipToBounds="True" Text="     GROUPS" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" HorzAlignment="Left">
+							<Bindings>
+								<SelectFirstColorBinding TargetPropertyName="BorderColor" SelectedValue0="TextInfoHeader" DefaultValue="Transparent">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="22" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+								<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextInfoHeader" DefaultValue="TextInfo">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="22" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+							</Bindings>
+							<ClickActions>
+								<SelectPageClickAction Page="GroupOverviewPage"/>
+								<SetVariableValueClickAction>
+									<Variable>
+										<StringVariable Name="Top_Page_Title" IsLocal="False" DefaultValue="GENERAL INFO"/>
+									</Variable>
+									<VariableSetter>
+										<StringVariableSetter Value="GROUPS OVERVIEW"/>
+									</VariableSetter>
+								</SetVariableValueClickAction>
+								<SetVariableValueClickAction>
+									<Variable>
+										<BoolVariable Name="Show_Side_Menu"/>
+									</Variable>
+									<VariableSetter>
+										<BoolVariableSetter/>
+									</VariableSetter>
+								</SetVariableValueClickAction>
+							</ClickActions>
+						</Button>
+						<Button Width="210" Height="45" X="10" Y="160" ClipToBounds="True" Text="     ALARMS" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" HorzAlignment="Left">
+							<Bindings>
+								<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextInfoHeader" DefaultValue="TextInfo">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="23" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+								<SelectFirstColorBinding TargetPropertyName="BorderColor" SelectedValue0="TextInfoHeader" DefaultValue="Transparent">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="23" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+							</Bindings>
+							<ClickActions>
+								<SelectPageClickAction/>
+								<SetVariableValueClickAction>
+									<Variable>
+										<BoolVariable Name="Show_Side_Menu"/>
+									</Variable>
+									<VariableSetter>
+										<BoolVariableSetter/>
+									</VariableSetter>
+								</SetVariableValueClickAction>
+							</ClickActions>
+						</Button>
+						<Button Width="210" Height="45" X="10" Y="210" ClipToBounds="True" Text="     CHANNELS" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" HorzAlignment="Left">
+							<Bindings>
+								<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextInfoHeader" DefaultValue="TextInfo">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="24" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+								<SelectFirstColorBinding TargetPropertyName="BorderColor" SelectedValue0="TextInfoHeader" DefaultValue="Transparent">
+									<Bindings>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="24" CompareTolerance="0.1">
+											<Bindings>
+												<FrameBinding TargetPropertyName="FirstValue" ExportedPropertyName="Highlight_Button_NR"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstColorBinding>
+							</Bindings>
+							<ClickActions>
+								<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="5" XOffset="-240" YOffset="-121.5" OpenAnimationDuration="0" CloseOnDeselect="True">
+									<Frame>
+										<FloatingFrame Width="260" Height="290" X="65" Y="551" Path=".\ChannelsMenu 1280x1024.prax"/>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+						<TextBox Width="25" Height="45" X="10" Y="210" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="&lt;"/>
+						<Button Width="250" Height="60" X="-5" Y="260" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Praxis;18.0;B;N;N">
+							<Children>
+								<Rectangle Width="205" Height="50" X="15" Y="5" BorderWidth="0" FillColor="BackgroundShadow" CornerRoundRadius="5"/>
+								<Frame Width="30" Height="30" X="180" Y="15" Path="..\Icons\Options_Gear_Icon.prax"/>
+								<TextBox Width="210" Height="35" X="15" Y="15" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="     SETTINGS"/>
+								<TextBox Width="25" Height="50" X="15" Y="5" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="&lt;"/>
+							</Children>
+							<ClickActions>
+								<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="10" XOffset="-247" YOffset="-438" OpenAnimationDuration="0" CloseOnDeselect="True">
+									<Frame>
+										<FloatingFrame Width="260" Height="930" X="63" Y="17" Path=".\SettingsMenu_V3.prax"/>
+									</Frame>
+								</OpenFrameUserAction>
+							</ClickActions>
+						</Button>
+					</Children>
+				</Panel>
+				<Frame Width="270" Height="85" X="-10" Y="-5" Highlight_Button_NR="0" Button_NR="1" ButtonText="BUTTON 01" Total_SBs="10" OpenMimicNumber="20" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_01_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt01_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt01_opensMimic"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt01_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt01_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt01_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt01_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt01_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt01_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt01_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt01_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt01_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt01_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt01_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt01_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt01_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt01_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt01_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt01_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt01_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt01_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt01_SB10_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt01_SB10_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt01_totalSubButtons"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-10" Y="50" Highlight_Button_NR="0" Button_NR="2" ButtonText="BUTTON 02" Total_SBs="10" OpenMimicNumber="21" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_02_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt02_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt02_opensMimic"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt02_totalSubButtons"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt02_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt02_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt02_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt02_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt02_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt02_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt02_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt02_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt02_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt02_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt02_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt02_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt02_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt02_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt02_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt02_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt02_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt02_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt02_SB10_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt02_SB10_setPageTitle"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-10" Y="105" Highlight_Button_NR="0" Button_NR="3" ButtonText="BUTTON 03" Total_SBs="10" OpenMimicNumber="22" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_03_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt03_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt03_opensMimic"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt03_totalSubButtons"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt03_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt03_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt03_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt03_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt03_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt03_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt03_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt03_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt03_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt03_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt03_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt03_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt03_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt03_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt03_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt03_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt03_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt03_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt03_SB10_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt03_SB10_setPageTitle"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-10" Y="160" Highlight_Button_NR="0" Button_NR="4" ButtonText="BUTTON 04" Total_SBs="10" OpenMimicNumber="23" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_04_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt04_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt04_opensMimic"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt04_totalSubButtons"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt04_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt04_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt04_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt04_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt04_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt04_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt04_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt04_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt04_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt04_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt04_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt04_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt04_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt04_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt04_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt04_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt04_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt04_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt04_SB010_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt04_SB10_setPageTitle"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-10" Y="215" Highlight_Button_NR="0" Button_NR="5" ButtonText="BUTTON 05" Total_SBs="10" OpenMimicNumber="24" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_05_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt05_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt05_opensMimic"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt05_totalSubButtons"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt05_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt05_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt05_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt05_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt05_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt05_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt05_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt05_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt05_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt05_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt05_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt05_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt05_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt05_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt05_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt05_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt05_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt05_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt05_SB010_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt05_SB10_setPageTitle"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-10" Y="270" Highlight_Button_NR="0" Button_NR="6" ButtonText="BUTTON 06" Total_SBs="10" OpenMimicNumber="25" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_06_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt06_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt06_opensMimic"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt06_totalSubButtons"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt06_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt06_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt06_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt06_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt06_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt06_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt06_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt06_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt06_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt06_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt06_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt06_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt06_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt06_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt06_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt06_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt06_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt06_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt06_SB10_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt06_SB10_setPageTitle"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-10" Y="325" Highlight_Button_NR="0" Button_NR="7" ButtonText="BUTTON 07" Total_SBs="10" OpenMimicNumber="26" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_07_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt07_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt07_opensMimic"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt07_totalSubButtons"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt07_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt07_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt07_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt07_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt07_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt07_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt07_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt07_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt07_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt07_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt07_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt07_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt07_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt07_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt07_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt07_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt07_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt07_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt07_SB10_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt07_SB10_setPageTitle"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-10" Y="380" Highlight_Button_NR="0" Button_NR="8" ButtonText="BUTTON 08" Total_SBs="10" OpenMimicNumber="27" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_08_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt08_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt08_opensMimic"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt08_totalSubButtons"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt08_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt08_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt08_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt08_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt08_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt08_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt08_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt08_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt08_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt08_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt08_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt08_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt08_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt08_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt08_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt08_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt08_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt08_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt08_SB10_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt08_SB10_setPageTitle"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-10" Y="435" Highlight_Button_NR="0" Button_NR="9" ButtonText="BUTTON 09" Total_SBs="10" OpenMimicNumber="28" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_09_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt09_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt09_opensMimic"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt09_totalSubButtons"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt09_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt09_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt09_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt09_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt09_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt09_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt09_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt09_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt09_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt09_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt09_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt09_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt09_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt09_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt09_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt09_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt09_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt09_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt09_SB10_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt09_SB10_setPageTitle"/>
+					</Bindings>
+				</Frame>
+				<Frame Width="270" Height="85" X="-10" Y="490" Highlight_Button_NR="0" Button_NR="10" ButtonText="BUTTON 10" Total_SBs="10" OpenMimicNumber="29" SetPageTitle="" Text_SB1="" Text_SB2="" Text_SB3="" Text_SB4="" Text_SB5="" Text_SB6="" Text_SB7="" Text_SB8="" Text_SB9="" Text_SB10="" SetPageTitle_SB1="" SetPageTitle_SB2="" SetPageTitle_SB3="" SetPageTitle_SB4="" SetPageTitle_SB5="" SetPageTitle_SB6="" SetPageTitle_SB7="" SetPageTitle_SB8="" SetPageTitle_SB9="" SetPageTitle_SB10="" Path=".\SideButton 1280x1024.prax">
+					<Bindings>
+						<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+						<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Bt_10_isVisible"/>
+						<FrameBinding TargetPropertyName="ButtonText" ExportedPropertyName="Bt10_Text"/>
+						<FrameBinding TargetPropertyName="OpenMimicNumber" ExportedPropertyName="Bt10_opensMimic"/>
+						<FrameBinding TargetPropertyName="Total_SBs" ExportedPropertyName="Bt10_totalSubButtons"/>
+						<FrameBinding TargetPropertyName="SetPageTitle" ExportedPropertyName="Bt10_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB1" ExportedPropertyName="Bt10_SB01_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB1" ExportedPropertyName="Bt09_SB01_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB2" ExportedPropertyName="Bt10_SB02_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB2" ExportedPropertyName="Bt10_SB02_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB3" ExportedPropertyName="Bt10_SB03_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB3" ExportedPropertyName="Bt10_SB03_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB4" ExportedPropertyName="Bt10_SB04_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB4" ExportedPropertyName="Bt10_SB04_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB5" ExportedPropertyName="Bt10_SB05_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB5" ExportedPropertyName="Bt10_SB05_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB6" ExportedPropertyName="Bt10_SB06_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB6" ExportedPropertyName="Bt10_SB06_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB7" ExportedPropertyName="Bt10_SB07_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB7" ExportedPropertyName="Bt10_SB07_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB8" ExportedPropertyName="Bt10_SB08_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB8" ExportedPropertyName="Bt10_SB08_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB9" ExportedPropertyName="Bt10_SB09_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB9" ExportedPropertyName="Bt10_SB09_setPageTitle"/>
+						<FrameBinding TargetPropertyName="Text_SB10" ExportedPropertyName="Bt10_SB10_Text"/>
+						<FrameBinding TargetPropertyName="SetPageTitle_SB10" ExportedPropertyName="Bt10_SB10_setPageTitle"/>
+					</Bindings>
+				</Frame>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

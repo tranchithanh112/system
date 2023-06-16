@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="240" Height="45" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle FlashSteadyOn="True" Width="240" Height="45" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="FillColor" ButtonType="SetUnattended">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="Transparent" ColorWhenTrue="BackgroundConning"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+		</Rectangle>
+		<Button Width="240" Height="45" Text="UnAttended" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="Flash" ButtonType="UnattRequestPending"/>
+				<EASButtonStatusBinding TargetPropertyName="TextColor" ButtonType="SetUnattended">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="TextActive"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+			<ClickActions>
+				<EASCommandClickAction EASCommands="Set UnAttended"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

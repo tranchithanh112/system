@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="240" Height="160" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="240" Height="145" BorderWidth="0" BorderColor="Background" FillColor="Gray" CornerRoundRadius="5"/>
+		<Rectangle Width="234" Height="137" X="3" Y="3" BorderWidth="2" BorderColor="PanelFaceBorder" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="Comment" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Fail_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Active_Ch"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</Rectangle>
+		<TextBox Width="120" Height="40" X="62" Y="37" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" TextColor="BlackWhite" Font="Praxis;28.0;B;N;N" Text="SERVER_1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="PC_Name"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="120" Height="40" X="62" Y="73" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" TextColor="BlackWhite" Font="Praxis;28.0;B;N;N" Text="SERVER_1">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="PC_Name2"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

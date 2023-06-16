@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="60" Height="60" GridSpacing="2" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="60" Height="60" BorderWidth="2" BorderColor="TextInfo" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;40.0;B;N;N" Text="A">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" DefaultValue="Background">
+					<Bindings>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Port_Fail"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Port_Fail1"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="PORT"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

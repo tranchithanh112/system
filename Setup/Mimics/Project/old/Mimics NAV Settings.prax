@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1680" Height="1050" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Frame Width="1680" Height="1050" Highlight_Button_NR="0" Page_Title="NAVIGATION LIGHT SETTINGS" AutoShow_Page_Title="False" Path=".\Frames\CommonMenuFrame.prax" Hightlight_Sub_Button_NR_51="0" Hightlight_Sub_Button_NR_42="0" Hightlight_Sub_Button_NR_33="0" Hightlight_Sub_Button_NR_32="0" Hightlight_Sub_Button_NR_31="0" Hightlight_Sub_Button_NR_52="0" Hightlight_Sub_Button_NR_53="0" Hightlight_Sub_Button_NR_41="0" Hightlight_Sub_Button_NR_43="0"/>
+		<NavFrame Width="1440" Height="780" Y="65" OriginOffsetX="0" OriginOffsetY="0" NavFrameName="Navigation Light Settings" ClipToBounds="True">
+			<Bindings>
+				<RetainValueBinding TargetPropertyName="NavFrameCurrentAddress" RetainKey="VAR_NAVFRAME_INDEX" RetainValueType="Float"/>
+				<ValueTransitionBinding TargetPropertyName="Width" DefaultValue="1680" ActivateValue="1440" TransitionTime="250">
+					<Bindings>
+						<RetainValueBinding TargetPropertyName="Activate" RetainKey="VAR_ShowSideMenu" RetainValueType="Bool"/>
+					</Bindings>
+				</ValueTransitionBinding>
+				<ValueTransitionBinding TargetPropertyName="Height" DefaultValue="910" ActivateValue="780" TransitionTime="250">
+					<Bindings>
+						<RetainValueBinding TargetPropertyName="Activate" RetainKey="VAR_ShowSideMenu" RetainValueType="Bool"/>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+			<AddressList>
+				<Address Value=".\NAV Settings Frame.prax"/>
+			</AddressList>
+		</NavFrame>
+	</Children>
+</RootElement>

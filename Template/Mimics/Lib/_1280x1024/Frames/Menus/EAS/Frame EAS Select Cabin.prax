@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="486" Height="45" GridSpacing="2" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<Panel Width="486" Height="45" BorderWidth="0" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="Visible" ButtonType="IsCabinnrValid">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+				</EASButtonStatusBinding>
+			</Bindings>
+			<Children>
+				<Rectangle FlashColor="Orange" Width="380" Height="45" X="5" FillColor="Transparent" CornerRoundRadius="5">
+					<Bindings>
+						<EASButtonStatusBinding TargetPropertyName="Flash" ButtonType="OndutyAlarmPending">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+							</Bindings>
+						</EASButtonStatusBinding>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="ActiveEASButton" SelectedValue2="Transparent" DefaultValue="Transparent">
+							<Bindings>
+								<EASButtonStatusBinding TargetPropertyName="ConditionValue0" ButtonType="IsCabinnrFailure">
+									<Bindings>
+										<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+									</Bindings>
+								</EASButtonStatusBinding>
+								<EASButtonStatusBinding TargetPropertyName="ConditionValue1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+									</Bindings>
+								</EASButtonStatusBinding>
+								<EASButtonStatusBinding TargetPropertyName="ConditionValue2" ButtonType="OndutyAlarmPending">
+									<Bindings>
+										<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+									</Bindings>
+								</EASButtonStatusBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</Rectangle>
+			</Children>
+		</Panel>
+		<Rectangle Width="93" Height="45" X="390" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="ActiveEASButton" DefaultValue="Transparent">
+					<Bindings>
+						<EASButtonStatusBinding TargetPropertyName="ConditionValue0" ButtonType="IsCabinnrFailure">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+							</Bindings>
+						</EASButtonStatusBinding>
+						<EASButtonStatusBinding TargetPropertyName="ConditionValue1" ButtonType="Call">
+							<Bindings>
+								<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+							</Bindings>
+						</EASButtonStatusBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<EASButtonStatusBinding TargetPropertyName="Visible" ButtonType="IsCabinnrValid">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+				</EASButtonStatusBinding>
+			</Bindings>
+		</Rectangle>
+		<Button Width="95" Height="45" X="389" GridSpacing="2" Text="Call" BorderColor="Transparent" FillColor="Transparent" FillColorActionRunning="Transparent" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="Visible" ButtonType="IsCabinnrValid">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+				</EASButtonStatusBinding>
+			</Bindings>
+			<ClickActions>
+				<EASCallCabinPanelCA>
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+				</EASCallCabinPanelCA>
+			</ClickActions>
+		</Button>
+		<Button FlashColor="Orange" Width="378" Height="45" X="6" GridSpacing="2" Text="Select" BorderColor="Transparent" FillColor="Transparent" FillColorActionRunning="Transparent" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N">
+			<Bindings>
+				<EASCabinDescriptionBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+				</EASCabinDescriptionBinding>
+				<EASButtonStatusBinding TargetPropertyName="Visible" ButtonType="IsCabinnrValid">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+				</EASButtonStatusBinding>
+				<EASButtonStatusBinding TargetPropertyName="TextColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="TextInfo" ColorWhenTrue="TextActive"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+			<ClickActions>
+				<EASSelectCabinPanelCA>
+					<Bindings>
+						<FrameBinding TargetPropertyName="CabinPanelNumber" ExportedPropertyName="CABINPANELNR"/>
+					</Bindings>
+				</EASSelectCabinPanelCA>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

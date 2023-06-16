@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<Panel Width="830" Height="540" X="130" Y="60" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="315" Height="30" X="15" Y="20" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Exhaust Gas Cylinder Temp Engine 1"/>
+				<Line Color="TextInfoHeader" X0="15" Y0="50" X1="330" Y1="50"/>
+				<TextBox Width="60" Height="30" X="15" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="1"/>
+				<TextBox Width="60" Height="30" X="90" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="2"/>
+				<TextBox Width="60" Height="30" X="165" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="3"/>
+				<TextBox Width="60" Height="30" X="240" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="4"/>
+				<TextBox Width="60" Height="30" X="315" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="5"/>
+				<TextBox Width="60" Height="30" X="390" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="6"/>
+				<TextBox Width="60" Height="30" X="465" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="7"/>
+				<TextBox Width="60" Height="30" X="540" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="8"/>
+				<TextBox Width="65" Height="30" X="615" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="9"/>
+				<TextBox Width="50" Height="30" X="685" Y="425" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="400">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11851">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<Frame Width="30" Height="140" X="15" Y="385" ValueCh="11871" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="45" Y="385" ValueCh="11872" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="90" Y="385" ValueCh="11873" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="120" Y="385" ValueCh="11874" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="165" Y="385" ValueCh="11875" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="195" Y="385" ValueCh="11876" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="240" Y="385" ValueCh="11877" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="270" Y="385" ValueCh="11878" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="315" Y="385" ValueCh="11879" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="345" Y="385" ValueCh="11880" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="390" Y="385" ValueCh="11881" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="420" Y="385" ValueCh="11882" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="465" Y="385" ValueCh="11883" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="495" Y="385" ValueCh="11884" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="540" Y="385" ValueCh="11885" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="570" Y="385" ValueCh="11886" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="615" Y="385" ValueCh="11887" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="645" Y="385" ValueCh="11888" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="230" X="15" Y="100" ValueCh="11721" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="45" Y="100" ValueCh="11722" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="90" Y="100" ValueCh="11723" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="120" Y="100" ValueCh="11724" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="165" Y="100" ValueCh="11725" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="195" Y="100" ValueCh="11726" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="240" Y="100" ValueCh="11727" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="270" Y="100" ValueCh="11728" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="315" Y="100" ValueCh="11729" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="345" Y="100" ValueCh="11730" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="390" Y="100" ValueCh="11731" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="420" Y="100" ValueCh="11732" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="465" Y="100" ValueCh="11733" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="495" Y="100" ValueCh="11734" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="540" Y="100" ValueCh="11735" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="570" Y="100" ValueCh="11736" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="615" Y="100" ValueCh="11737" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="645" Y="100" ValueCh="11738" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<TextBox Width="95" Height="30" X="15" Y="345" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Deviation"/>
+				<TextBox Width="55" Height="30" X="685" Y="370" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="+100 °C"/>
+				<TextBox Width="55" Height="30" X="685" Y="480" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="-100 °C"/>
+				<TextBox Width="55" Height="30" X="685" Y="285" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="100 °C"/>
+				<TextBox Width="55" Height="30" X="685" Y="85" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="600 °C"/>
+				<TextBox Width="85" Height="30" X="735" Y="425" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="Average"/>
+			</Children>
+		</Panel>
+		<Frame Width="830" Height="380" X="100" Y="615" DurationShown="300" DurationStored="300" Trend_Range_Low="100" Trend_Range_High="600" Trend_LineWith="1" Channel1="11721" Title1="1" Channel2="11723" Title2="2" Channel3="11725" Title3="3" Channel4="11727" Title4="4" Channel5="11729" Title5="5" Channel6="11731" Title6="6" Channel7="11733" Title7="7" Channel8="11735" Title8="8" Channel9="11737" Title9="9" Path=".\Frames\Frame_Trend\Frame_Trend_9x.prax"/>
+		<Frame Width="830" Height="380" X="1025" Y="615" DurationShown="900" DurationStored="900" Trend_Range_Low="100" Trend_Range_High="600" Trend_LineWith="1" Channel1="12721" Title1="1" Channel2="12723" Title2="2" Channel3="12725" Title3="3" Channel4="12727" Title4="4" Channel5="12729" Title5="5" Channel6="12731" Title6="6" Channel7="12733" Title7="7" Channel8="12735" Title8="8" Channel9="12737" Title9="9" Path=".\Frames\Frame_Trend\Frame_Trend_9x.prax"/>
+		<Panel Width="830" Height="540" X="1055" Y="60" RevertContainerRotation="True" RevertContainerScaling="True" BorderWidth="0" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="10">
+			<Children>
+				<TextBox Width="315" Height="30" X="15" Y="20" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Exhaust Gas Cylinder Temp Engine 2"/>
+				<Line Color="TextInfoHeader" X0="15" Y0="50" X1="330" Y1="50"/>
+				<TextBox Width="60" Height="30" X="15" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="1"/>
+				<TextBox Width="60" Height="30" X="90" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="2"/>
+				<TextBox Width="60" Height="30" X="165" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="3"/>
+				<TextBox Width="60" Height="30" X="240" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="4"/>
+				<TextBox Width="60" Height="30" X="315" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="5"/>
+				<TextBox Width="60" Height="30" X="390" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="6"/>
+				<TextBox Width="60" Height="30" X="465" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="7"/>
+				<TextBox Width="60" Height="30" X="540" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="8"/>
+				<TextBox Width="65" Height="30" X="615" Y="70" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="9"/>
+				<TextBox Width="50" Height="30" X="685" Y="425" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="400">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Text" ChannelNumber="11851">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ChannelValueBinding>
+					</Bindings>
+				</TextBox>
+				<Frame Width="30" Height="140" X="15" Y="385" ValueCh="12871" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="45" Y="385" ValueCh="12872" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="90" Y="385" ValueCh="12873" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="120" Y="385" ValueCh="12874" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="165" Y="385" ValueCh="12875" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="195" Y="385" ValueCh="12876" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="240" Y="385" ValueCh="12877" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="270" Y="385" ValueCh="12878" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="315" Y="385" ValueCh="12879" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="345" Y="385" ValueCh="12880" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="390" Y="385" ValueCh="12881" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="420" Y="385" ValueCh="12882" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="465" Y="385" ValueCh="12883" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="495" Y="385" ValueCh="12884" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="540" Y="385" ValueCh="12885" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="570" Y="385" ValueCh="12886" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="615" Y="385" ValueCh="12887" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="140" X="645" Y="385" ValueCh="12888" Path=".\Frames\Frames_Misc\Frame_Tempbar_meandeviation.prax"/>
+				<Frame Width="30" Height="230" X="15" Y="100" ValueCh="12721" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="45" Y="100" ValueCh="12722" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="90" Y="100" ValueCh="12723" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="120" Y="100" ValueCh="12724" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="165" Y="100" ValueCh="12725" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="195" Y="100" ValueCh="12726" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="240" Y="100" ValueCh="12727" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="270" Y="100" ValueCh="12728" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="315" Y="100" ValueCh="12729" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="345" Y="100" ValueCh="12730" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="390" Y="100" ValueCh="12731" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="420" Y="100" ValueCh="12732" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="465" Y="100" ValueCh="12733" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="495" Y="100" ValueCh="12734" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="540" Y="100" ValueCh="12735" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="570" Y="100" ValueCh="12736" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" HighAlarmLimit="450" RangeHighCh="0"/>
+				<Frame Width="30" Height="230" X="615" Y="100" ValueCh="12737" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<Frame Width="30" Height="230" X="645" Y="100" ValueCh="12738" RangeEnd="600" RangeBegin="100" Path=".\Frames\Frames_Misc\Frame_Tempbar_Exhaust.prax" RangeHighCh="0" HighAlarmLimit="450"/>
+				<TextBox Width="95" Height="30" X="15" Y="345" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;18.0;B;N;N" Text="Deviation"/>
+				<TextBox Width="55" Height="30" X="685" Y="370" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="+100 °C"/>
+				<TextBox Width="55" Height="30" X="685" Y="480" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="-100 °C"/>
+				<TextBox Width="55" Height="30" X="685" Y="285" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="100 °C"/>
+				<TextBox Width="55" Height="30" X="685" Y="85" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;14.0;N;N;N" Text="600 °C"/>
+				<TextBox Width="85" Height="30" X="735" Y="425" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;B;N;N" Text="Average"/>
+			</Children>
+		</Panel>
+		<TextBox Visible="False" Width="1920" Height="70" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+		<TextBox Visible="False" Width="1920" Height="65" Y="1015" BorderWidth="0" FillColor="AlarmRed" FillPattern="AscendingDiagonalStripes" TextColor="Transparent" Font="Praxis;48.0;B;N;N" Text="RESERVED AREA"/>
+	</Children>
+</RootElement>

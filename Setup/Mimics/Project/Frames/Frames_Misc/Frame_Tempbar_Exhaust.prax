@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="40" Height="300" GridSpacing="1" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<FillBar Width="22" Height="265" X="9" FillDirection="BottomToTop" RangeBegin="100" RangeEnd="600" LimitType="OnlyHigh" FirstLimit="0" SecondLimit="450" LimitMarkerType="None" Value="0" NormalColor="Barfill01" BorderWidth="1" BorderColor="Gray" CornerRoundRadius="3">
+			<Bindings>
+				<ChannelSecondLimitBinding TargetPropertyName="SecondLimit">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ValueCh"/>
+					</Bindings>
+				</ChannelSecondLimitBinding>
+				<FrameBinding TargetPropertyName="RangeEnd" ExportedPropertyName="RangeEnd"/>
+				<FrameBinding TargetPropertyName="RangeBegin" ExportedPropertyName="RangeBegin"/>
+				<ChannelValueBinding TargetPropertyName="Value">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ValueCh"/>
+					</Bindings>
+				</ChannelValueBinding>
+			</Bindings>
+		</FillBar>
+		<TextBox Width="40" Height="30" Y="270" BorderWidth="0" FillColor="Transparent" TextColor="Barfill01" Font="Praxis;20.0;N;N;N" Text="0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ValueCh"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

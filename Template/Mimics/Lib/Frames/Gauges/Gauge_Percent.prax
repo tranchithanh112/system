@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="725" Height="725" ClipToBounds="True" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="115" Y="115" DialColor="BackgroundConning" IndicatorLinesColor="TextActive" Path=".\Frame_GAUGE_points_5_division.prax" FullDial="False">
+			<Bindings>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+				<FrameBinding TargetPropertyName="IndicatorLinesColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</Frame>
+		<Ellipse BorderWidth="5" BorderColor="BackgroundShadow" LinePosition="Centered" FillColor="Barfill01" CenterX="365" CenterY="365" RadiusX="225" RadiusY="225" ArcBegin="135" ArcEnd="315" ArcLength="180">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Filling"/>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" DefaultValue="Barfill01">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="CentralDigitsColor"/>
+						<ChannelCurrentAlarmBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+							</Bindings>
+						</ChannelCurrentAlarmBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<FilteredValueBinding TargetPropertyName="ArcLength">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TransitionTime" ExportedPropertyName="Smoothness"/>
+						<RangeFormulaBinding TargetPropertyName="Value" InRangeBegin="0" OutRangeBegin="0" OutRangeEnd="270">
+							<Bindings>
+								<RangeFormulaBinding TargetPropertyName="Value" OutRangeBegin="0">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="Value">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<ChannelRangeLowBinding TargetPropertyName="InRangeBegin">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+											</Bindings>
+										</ChannelRangeLowBinding>
+										<ChannelRangeHighBinding TargetPropertyName="InRangeEnd">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+											</Bindings>
+										</ChannelRangeHighBinding>
+									</Bindings>
+								</RangeFormulaBinding>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</Ellipse>
+		<Panel Width="480" Height="480" X="125" Y="125" Rotation="45" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Pointer"/>
+				<FilteredValueBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TransitionTime" ExportedPropertyName="Smoothness"/>
+						<RangeFormulaBinding TargetPropertyName="Value" InRangeBegin="0" OutRangeBegin="45" OutRangeEnd="315">
+							<Bindings>
+								<FrameBinding TargetPropertyName="InRangeEnd" ExportedPropertyName="DialValue_MAX"/>
+								<SelectFirstFloatBinding TargetPropertyName="Value">
+									<Bindings>
+										<ChannelValueBinding TargetPropertyName="DefaultValue">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+											</Bindings>
+										</ChannelValueBinding>
+										<FrameBinding TargetPropertyName="SelectedValue0" ExportedPropertyName="DialValue_MAX"/>
+										<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareOperator=">" CompareTolerance="0.1">
+											<Bindings>
+												<ChannelValueBinding TargetPropertyName="FirstValue">
+													<Bindings>
+														<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+													</Bindings>
+												</ChannelValueBinding>
+												<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="DialValue_MAX"/>
+											</Bindings>
+										</ValueCompareBinding>
+									</Bindings>
+								</SelectFirstFloatBinding>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+			<Children>
+				<Line Width="3" Color="TextInfoHeader" X0="240" Y0="240" X1="240" Y1="455">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible"/>
+					</Bindings>
+				</Line>
+				<Polyline Width="2" LineColor="BackgroundShadow" ClosedOutline="True" FillColor="IndicationLine">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="FillColor" DefaultValue="IndicationLine">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareOperator=">" CompareTolerance="0.1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="SecondValue" ExportedPropertyName="DialValue_MAX"/>
+										<ChannelValueBinding TargetPropertyName="FirstValue">
+											<Bindings>
+												<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+											</Bindings>
+										</ChannelValueBinding>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+					<Points>
+						<Point Coord="225;425"/>
+						<Point Coord="240;460"/>
+						<Point Coord="255;425"/>
+					</Points>
+				</Polyline>
+			</Children>
+		</Panel>
+		<Panel Width="480" Height="480" X="125" Y="125" Rotation="50" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+			<Bindings>
+				<FilteredValueBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TransitionTime" ExportedPropertyName="Smoothness"/>
+						<RangeFormulaBinding TargetPropertyName="Value" InRangeBegin="0" OutRangeBegin="45" OutRangeEnd="315">
+							<Bindings>
+								<ChannelFirstLimitBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelFirstLimitBinding>
+								<FrameBinding TargetPropertyName="InRangeEnd" ExportedPropertyName="DialValue_MAX"/>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelRangeLowBinding TargetPropertyName="SecondValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelRangeLowBinding>
+								<ChannelFirstLimitBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelFirstLimitBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+			<Children>
+				<Line Width="5" Color="AlarmSetpoint" X0="240" Y0="240" X1="240" Y1="470"/>
+			</Children>
+		</Panel>
+		<Panel Width="480" Height="480" X="125" Y="125" Rotation="60" BorderWidth="1" BorderStyle="Flat" BorderColor="Transparent" FillColor="Transparent" FillPatternColor="Transparent">
+			<Bindings>
+				<FilteredValueBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TransitionTime" ExportedPropertyName="Smoothness"/>
+						<RangeFormulaBinding TargetPropertyName="Value" InRangeBegin="0" OutRangeBegin="45" OutRangeEnd="315">
+							<Bindings>
+								<ChannelSecondLimitBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelSecondLimitBinding>
+								<FrameBinding TargetPropertyName="InRangeEnd" ExportedPropertyName="DialValue_MAX"/>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+				<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+					<Bindings>
+						<ValueCompareBinding TargetPropertyName="ConditionValue0" CompareTolerance="0.1">
+							<Bindings>
+								<ChannelRangeHighBinding TargetPropertyName="SecondValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelRangeHighBinding>
+								<ChannelSecondLimitBinding TargetPropertyName="FirstValue">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+									</Bindings>
+								</ChannelSecondLimitBinding>
+							</Bindings>
+						</ValueCompareBinding>
+					</Bindings>
+				</SelectFirstBoolBinding>
+			</Bindings>
+			<Children>
+				<Line Width="5" Color="AlarmSetpoint" X0="240" Y0="240" X1="240" Y1="470"/>
+			</Children>
+		</Panel>
+		<TextBox Width="40" Height="25" X="625" Y="310" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Saira;36.0;N;N;N" Text="80">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Polyline LineColor="Background" FillColor="Background">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="Full"/>
+			</Bindings>
+			<Points>
+				<Point Coord="620;635"/>
+				<Point Coord="120;635"/>
+				<Point Coord="245;500"/>
+				<Point Coord="480;500"/>
+			</Points>
+		</Polyline>
+		<TextBox Width="40" Height="25" X="145" Y="550" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Saira;36.0;N;N;N" Text="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="550" Y="550" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Saira;36.0;N;N;N" Text="100">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<UnitConversionBinding TargetPropertyName="Text" A="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="X" ExportedPropertyName="DialValue_MAX"/>
+						<FrameBinding TargetPropertyName="A" ExportedPropertyName="MultiplyingFactor"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</UnitConversionBinding>
+			</Bindings>
+		</TextBox>
+		<Ellipse BorderWidth="3" BorderColor="Background" BorderStyle="Raised" LinePosition="Outside" CenterX="365" CenterY="365" RadiusX="180" RadiusY="180" ArcBegin="540" ArcEnd="900"/>
+		<TextBox Width="40" Height="25" X="480" Y="110" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Saira;36.0;N;N;N" Text="60">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="205" Y="110" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Saira;36.0;N;N;N" Text="40">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="65" Y="310" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="TextActive" Font="Saira;36.0;N;N;N" Text="20">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="500" Height="25" X="115" Y="425" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;36.0;N;N;N" Text="%"/>
+		<TextBox Width="500" Height="39" X="115" Y="350" BorderWidth="0" LinePosition="Centered" FillColor="Transparent" TextColor="TextInfoHeader" Font="Praxis;90.0;N;N;N" Text="9999">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+				<RangeFormulaBinding TargetPropertyName="Text" OutRangeBegin="0">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="Value">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelRangeLowBinding TargetPropertyName="InRangeBegin">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+							</Bindings>
+						</ChannelRangeLowBinding>
+						<ChannelRangeHighBinding TargetPropertyName="InRangeEnd">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="DialValue1_CH"/>
+							</Bindings>
+						</ChannelRangeHighBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams/>
+					</ConvertParams>
+				</RangeFormulaBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="500" Height="25" X="115" Y="270" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Saira;52.0;N;N;N" Text="ME PS">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Description"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

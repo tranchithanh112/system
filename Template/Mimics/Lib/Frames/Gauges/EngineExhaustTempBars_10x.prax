@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="835" Height="355" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Frame Width="55" Height="290" X="5" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="_Channel" ExportedPropertyName="ExhaustTemp_01"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="65" Height="30" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ExhaustTemp_HI_01"/>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ExhaustTemp_LO_01"/>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<Frame Width="55" Height="290" X="90" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="_Channel" ChannelOffset="1">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<TextBox Width="65" Height="30" X="85" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_HI_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="1">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_LO_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" X="85" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<Frame Width="55" Height="290" X="175" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="_Channel" ChannelOffset="2">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="55" Height="290" X="260" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="_Channel" ChannelOffset="3">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="55" Height="290" X="345" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="_Channel" ChannelOffset="4">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="55" Height="290" X="430" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="_Channel" ChannelOffset="5">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="55" Height="290" X="515" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="_Channel" ChannelOffset="6">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="55" Height="290" X="600" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="_Channel" ChannelOffset="7">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="55" Height="290" X="685" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="_Channel" ChannelOffset="8">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<Frame Width="55" Height="290" X="770" Y="5" _Channel="0" Path="..\FillBars\Bar_vertical.prax">
+			<Bindings>
+				<ChannelOffsetBinding TargetPropertyName="_Channel" ChannelOffset="9">
+					<Bindings>
+						<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+					</Bindings>
+				</ChannelOffsetBinding>
+			</Bindings>
+		</Frame>
+		<TextBox Width="65" Height="30" X="170" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_HI_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="2">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_LO_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" X="170" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="65" Height="30" X="255" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_HI_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="3">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_LO_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" X="255" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="65" Height="30" X="340" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_HI_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="4">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_LO_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" X="340" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="65" Height="30" X="425" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_HI_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="5">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_LO_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" X="425" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="65" Height="30" X="510" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="6">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="6">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_HI_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="6">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_LO_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" X="510" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="65" Height="30" X="595" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_HI_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="7">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_LO_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="7">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" X="595" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="65" Height="30" X="680" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="8">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="8">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_HI_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="8">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_LO_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" X="680" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+		<TextBox Width="65" Height="30" X="765" Y="300" BorderWidth="0" FillColor="Transparent" TextColor="Green" Font="Praxis;22.0;N;N;N" Text="100.0">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="TextColor" DefaultValue="Green">
+					<Bindings>
+						<ChannelValueBinding TargetPropertyName="ConditionValue0">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="9">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_HI_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+						<ChannelValueBinding TargetPropertyName="ConditionValue1">
+							<Bindings>
+								<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="9">
+									<Bindings>
+										<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_LO_01"/>
+									</Bindings>
+								</ChannelOffsetBinding>
+							</Bindings>
+						</ChannelValueBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+				<ChannelValueBinding TargetPropertyName="Text">
+					<Bindings>
+						<ChannelOffsetBinding TargetPropertyName="ChannelNumber" ChannelOffset="9">
+							<Bindings>
+								<FrameBinding TargetPropertyName="BaseChannel" ExportedPropertyName="ExhaustTemp_01"/>
+							</Bindings>
+						</ChannelOffsetBinding>
+					</Bindings>
+					<ConvertParams>
+						<FloatToStringConvertParams DecimalPlaces="1"/>
+					</ConvertParams>
+				</ChannelValueBinding>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="65" Height="20" X="765" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="°C"/>
+	</Children>
+</RootElement>

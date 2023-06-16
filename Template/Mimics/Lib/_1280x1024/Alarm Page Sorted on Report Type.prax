@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="1024" PraxGraphVersion="1.0" ColorTableFile="..\Standard.colortable">
+	<Bindings>
+		<DimmingValueBinding TargetPropertyName="SelectedThemeTest"/>
+	</Bindings>
+	<Children>
+		<AlarmList Width="1270" Height="40" X="5" Y="50" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;20.0;B;N;N" FillColor="Transparent" AlternateFillColor="PageInfoLineShaded" HighlightColor="White" TextColor="BlackWhite" Font="Praxis;20.0;N;N;N" BorderWidth="0" ColumnSepLinesVisible="False" ShowChannel="True"/>
+		<AlarmList Width="1270" Height="115" X="5" Y="115" HeaderVisible="False" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderWidth="0" BorderColor="Transparent" FileName=".\Frames\Menus\AlarmContextMenu.prax" ShowChannel="True" ShowAlarmType="Emergency">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<TextBox Width="1270" Height="25" X="5" Y="85" BorderWidth="0" BorderColor="Transparent" FillColor="BackgroundListLine01" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" Text="EMERGENCY ALARMS"/>
+		<TextBox Width="1270" Height="25" X="5" Y="235" BorderWidth="0" BorderColor="Transparent" FillColor="BackgroundListLine01" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" Text="ALARMS"/>
+		<TextBox Width="1270" Height="25" X="5" Y="585" BorderWidth="0" BorderColor="Transparent" FillColor="BackgroundListLine01" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" Text="WARNINGS"/>
+		<TextBox Width="1270" Height="25" X="5" Y="785" BorderWidth="0" BorderColor="Transparent" FillColor="BackgroundListLine01" TextColor="TextInfoHeader" Font="Praxis;20.0;N;N;N" Text="CAUTIONS"/>
+		<AlarmList Width="1270" Height="315" X="5" Y="265" HeaderVisible="False" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderWidth="0" BorderColor="Transparent" FileName=".\Frames\Menus\AlarmContextMenu.prax" ShowChannel="True" ShowAlarmType="Alarm">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<AlarmList Width="1270" Height="165" X="5" Y="615" HeaderVisible="False" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderWidth="0" BorderColor="Transparent" FileName=".\Frames\Menus\AlarmContextMenu.prax" ShowChannel="True" ShowAlarmType="Warning">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<AlarmList Width="1270" Height="155" X="5" Y="815" HeaderVisible="False" HeaderFillColor="BackgroundListLine01" HeaderTextColor="TextInfoHeader" HeaderFont="Praxis;18.0;B;N;N" FillColor="StatusInactive" AlternateFillColor="BackgroundListLine02" HighlightColor="IndicationLine" TextColor="TextInfoHeader" Font="Praxis;18.0;N;N;N" BorderWidth="0" BorderColor="Transparent" FileName=".\Frames\Menus\AlarmContextMenu.prax" ShowChannel="True" ShowAlarmType="Caution">
+			<Bindings>
+				<AllowanceCheckBinding TargetPropertyName="AllowContextMenu" AllowWhat="Mouse Menu Allowed"/>
+			</Bindings>
+		</AlarmList>
+		<Frame LockOverlayVisible="False" Width="1280" Height="1024" ShowBackground="False" Highlight_Button_NR="23" Page_Title="ALARMS - SORTED BY REPORT TYPE" MultiplePages="False" Path=".\Frames\Menus\CommonMenuFrame 1280x1024.prax"/>
+	</Children>
+</RootElement>

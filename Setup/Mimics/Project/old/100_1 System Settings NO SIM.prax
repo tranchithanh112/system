@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1920" Height="1080" PraxGraphVersion="1.0" ColorTableFile=".\Standard.colortable">
+	<Children>
+		<Panel Width="350" Height="480" X="40" Y="135" ClipToBounds="True" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundMenu" FillColor="BackgroundShadow">
+			<Children>
+				<Button Width="320" Height="45" X="15" Y="300" ClipToBounds="True" Text="TOGGLE SERVER" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="Toggle Server"/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="160" Height="30" X="15" Y="90" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;26.0;N;N;N" Text="STATION ID:"/>
+				<TextBox Width="150" Height="30" X="15" Y="125" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="IndicatorOrange" Font="Praxis;24.0;N;N;N" Text="STATION ID">
+					<Bindings>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="SERVER 1" SelectedValue1="SERVER 2" SelectedValue2="CLIENT 1" SelectedValue3="CLIENT 2">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="101">
+									<Bindings>
+										<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+									</Bindings>
+								</ValueCompareBinding>
+								<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="102">
+									<Bindings>
+										<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+									</Bindings>
+								</ValueCompareBinding>
+								<ValueCompareBinding TargetPropertyName="ConditionValue2" SecondValue="111">
+									<Bindings>
+										<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+									</Bindings>
+								</ValueCompareBinding>
+								<ValueCompareBinding TargetPropertyName="ConditionValue3" SecondValue="112">
+									<Bindings>
+										<CAMClientApplicationNumberBinding TargetPropertyName="FirstValue"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="160" Height="30" X="15" Y="210" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Praxis;24.0;N;N;N" Text="SERVER 1">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" DefaultValue="StatusInactive">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="SERVER_1_ACTIVE"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="160" Height="30" X="15" Y="175" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;26.0;N;N;N" Text="ACTIVE SERVER:"/>
+				<TextBox Width="160" Height="30" X="15" Y="245" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextActive" Font="Praxis;24.0;N;N;N" Text="SERVER 2">
+					<Bindings>
+						<SelectFirstColorBinding TargetPropertyName="TextColor" SelectedValue0="TextActive" DefaultValue="StatusInactive">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="ConditionValue0">
+									<Bindings>
+										<NameLookupBinding TargetPropertyName="ChannelNumber" Name="SERVER_2_ACTIVE"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</SelectFirstColorBinding>
+					</Bindings>
+				</TextBox>
+				<Button Width="320" Height="45" X="15" Y="355" ClipToBounds="True" Text="CONNECT TO SERVER 1" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="Connect To Server 1"/>
+					</ClickActions>
+				</Button>
+				<Button Width="320" Height="45" X="15" Y="410" ClipToBounds="True" Text="CONNECT TO SERVER 2" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="Connect To Server 2"/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="320" Height="30" X="15" Y="25" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="NETWORK"/>
+			</Children>
+		</Panel>
+		<Panel Width="350" Height="480" X="410" Y="135" ClipToBounds="True" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundMenu" FillColor="BackgroundShadow">
+			<Children>
+				<Button Width="320" Height="45" X="15" Y="91" ClipToBounds="True" Text="TOGGLE LANGUAGE" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction/>
+					</ClickActions>
+				</Button>
+				<Button Width="320" Height="45" X="15" Y="155" ClipToBounds="True" Text="ENGLISH" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="English Language"/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="320" Height="30" X="15" Y="25" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="LANGUAGE"/>
+				<Button Width="320" Height="45" X="15" Y="225" ClipToBounds="True" Text="ALTERNATIVE LANGUAGE" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="Alt Language"/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+		<Panel Width="350" Height="480" X="780" Y="135" ClipToBounds="True" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundMenu" FillColor="BackgroundShadow">
+			<Children>
+				<Button Width="320" Height="45" X="15" Y="91" ClipToBounds="True" Text="TOGGLE DATE / TIME" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="Toggle Date Time"/>
+					</ClickActions>
+				</Button>
+				<Button Width="320" Height="45" X="15" Y="155" ClipToBounds="True" Text="LOCAL DATE / TIME" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="Local Date Time"/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="320" Height="30" X="15" Y="25" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="TIME"/>
+				<Button Width="320" Height="45" X="15" Y="225" ClipToBounds="True" Text="GMT DATE / TIME" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="GMT Date Time"/>
+					</ClickActions>
+				</Button>
+				<Button Width="320" Height="45" X="15" Y="295" ClipToBounds="True" Text="SET DATE / TIME" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;24.0;N;N;N" HorzAlignment="Left">
+					<Bindings>
+						<SelectFirstBoolBinding TargetPropertyName="Visible" SelectedValue0="False" DefaultValue="True">
+							<Bindings>
+								<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="SubMenu"/>
+							</Bindings>
+						</SelectFirstBoolBinding>
+					</Bindings>
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="Set Date Time"/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+		<Panel Width="350" Height="480" X="1150" Y="135" ClipToBounds="True" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundMenu" FillColor="BackgroundShadow">
+			<Children>
+				<TextBox Width="320" Height="30" X="15" Y="25" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="THEME"/>
+				<Button Width="240" Height="45" X="15" Y="155" ClipToBounds="True" Text="LIGHT" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<ClickActions>
+						<SetDimmingThemeClickAction Theme="DawnTheme"/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="15" Y="225" ClipToBounds="True" Text="HIGH CONTRAST" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<ClickActions>
+						<SetDimmingThemeClickAction Theme="DuskTheme"/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="15" Y="90" ClipToBounds="True" Text="DARK" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<ClickActions>
+						<SetDimmingThemeClickAction/>
+					</ClickActions>
+				</Button>
+			</Children>
+		</Panel>
+		<Panel Width="350" Height="480" X="1520" Y="135" ClipToBounds="True" BorderWidth="2" BorderStyle="Sunken" BorderColor="BackgroundMenu" FillColor="BackgroundShadow">
+			<Children>
+				<Button Width="240" Height="45" X="15" Y="91" ClipToBounds="True" Text="VIRTUAL KEYBOARD" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<ClickActions>
+						<ExecuteShellCommandUserAction File="OpenOSK.lnk" Parameters="" WorkingDir="D:\Software\System\Scripts\OSK"/>
+					</ClickActions>
+				</Button>
+				<Button Width="240" Height="45" X="15" Y="155" ClipToBounds="True" Text="EXIT CAMCLIENT" FillColor="Transparent" BorderColor="Transparent" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" HorzAlignment="Left">
+					<ClickActions>
+						<GeneralCAMClientCommandsClickAction CAMClientCommandType="Exit CAMClient"/>
+					</ClickActions>
+				</Button>
+				<TextBox Width="320" Height="30" X="15" Y="25" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="TOOLS"/>
+				<TextBox Width="320" Height="30" X="15" Y="230" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;28.0;N;N;N" Text="SCREEN"/>
+				<TextBox Width="160" Height="30" X="15" Y="295" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;26.0;N;N;N" Text="RESOLUTION:"/>
+				<TextBox Width="65" Height="30" X="15" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorOrange" Font="Praxis;24.0;N;N;N" Text="x">
+					<Bindings>
+						<ScreenResolutionBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ScreenResolutionBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="20" Height="30" X="80" Y="330" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="IndicatorOrange" Font="Praxis;24.0;N;N;N" Text="X"/>
+				<TextBox Width="65" Height="30" X="100" Y="330" BorderWidth="0" FillColor="Transparent" TextColor="IndicatorOrange" Font="Praxis;24.0;N;N;N" Text="y">
+					<Bindings>
+						<ScreenResolutionBinding TargetPropertyName="Text" ReturnType="Y Resolution">
+							<ConvertParams>
+								<FloatToStringConvertParams/>
+							</ConvertParams>
+						</ScreenResolutionBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="160" Height="30" X="15" Y="380" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;26.0;N;N;N" Text="ASPECT RATIO:"/>
+				<TextBox Width="65" Height="30" X="15" Y="415" BorderWidth="0" FillColor="Transparent" HorzAlignment="Right" TextColor="IndicatorOrange" Font="Praxis;24.0;N;N;N" Text="x">
+					<Bindings>
+						<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="16:10" SelectedValue1="16:9" DefaultValue="---">
+							<Bindings>
+								<ValueCompareBinding TargetPropertyName="ConditionValue1" SecondValue="1.778" CompareTolerance="0.02">
+									<Bindings>
+										<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+									</Bindings>
+								</ValueCompareBinding>
+								<ValueCompareBinding TargetPropertyName="ConditionValue0" SecondValue="1.6" CompareTolerance="0.02">
+									<Bindings>
+										<ScreenResolutionBinding TargetPropertyName="FirstValue" ReturnType="Aspect Ratio"/>
+									</Bindings>
+								</ValueCompareBinding>
+							</Bindings>
+						</SelectFirstTextBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

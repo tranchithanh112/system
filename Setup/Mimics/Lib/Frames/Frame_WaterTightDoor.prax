@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="36" Height="50" GridSpacing="2">
+	<Children>
+		<Line Width="5" X0="4" Y0="0" X1="4" Y1="50" Color="InactivePanelFace"/>
+		<Line Width="5" X0="4" Y0="0" X1="4" Y1="50" Color="NoAlarmGreen">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Door_Closed"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Line Width="5" X0="2" Y0="0" X1="34.1394" Y1="38.3022" Color="AlarmRed">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Door_Closed"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Line>
+		<Ellipse CenterX="0" CenterY="0" RadiusX="50" RadiusY="50" ArcBegin="50" ArcEnd="90" ArcLength="40" ArcCloseStyle="Chord" BorderWidth="2" BorderColor="AlarmRed" FillColor="Transparent">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Visible" InvertCondition="True">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Door_Closed"/>
+					</Bindings>
+				</ChannelCurrentAlarmBinding>
+			</Bindings>
+		</Ellipse>
+	</Children>
+</RootElement>

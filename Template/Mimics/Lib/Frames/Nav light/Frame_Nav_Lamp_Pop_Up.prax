@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="130" Height="165" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="130" Height="165" BorderWidth="3" BorderColor="BackgroundShadow" FillColor="BackgroundMenu" CornerRoundRadius="5"/>
+		<TextBox Width="110" Height="30" X="10" Y="35" BorderColor="Transparent" FillColor="Transparent" TextColor="PageInfoLine" Font="Praxis;16.0;B;N;N" Text="Light">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title_2"/>
+			</Bindings>
+		</TextBox>
+		<Button Width="110" Height="35" X="10" Y="85" ClipToBounds="True" Text="ON/OFF" FillColor="Transparent" FillColorActionRunning="KeyboardInputBackground" OutlineColor="Gray" Font="Praxis;18.0;B;N;N">
+			<ClickActions>
+				<PulseChannelClickAction PulseLength="500">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Ch_MIMIC"/>
+					</Bindings>
+				</PulseChannelClickAction>
+			</ClickActions>
+		</Button>
+		<TextBox Width="110" Height="30" X="10" Y="10" BorderColor="Transparent" FillColor="Transparent" TextColor="PageInfoLine" Font="Praxis;16.0;B;N;N" Text="Light">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="Title_1"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

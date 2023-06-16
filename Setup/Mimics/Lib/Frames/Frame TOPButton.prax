@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="180" Height="40">
+	<Children>
+		<Button Width="180" Height="40" Font="Segoe UI-18.0-B-N-N">
+			<Bindings>
+				<TOPButtonDescriptionBinding TargetPropertyName="Text" TOPButtonNumber="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="TOPButtonNumber" ExportedPropertyName="TOPBUTTONNR"/>
+					</Bindings>
+				</TOPButtonDescriptionBinding>
+				<SelectFirstFlashStateBinding TargetPropertyName="FlashState">
+					<Bindings>
+						<TOPButtonStatusBinding TargetPropertyName="ConditionValue0" TOPButtonNumber="0" ButtonType="New Alarm Status">
+							<Bindings>
+								<FrameBinding TargetPropertyName="TOPButtonNumber" ExportedPropertyName="TOPBUTTONNR"/>
+							</Bindings>
+						</TOPButtonStatusBinding>
+					</Bindings>
+				</SelectFirstFlashStateBinding>
+				<SelectFirstColorBinding TargetPropertyName="FillColor" SelectedValue1="ActiveEASButton" DefaultValue="ButtonFill">
+					<Bindings>
+						<TOPButtonStatusBinding TargetPropertyName="ConditionValue0" TOPButtonNumber="0">
+							<Bindings>
+								<FrameBinding TargetPropertyName="TOPButtonNumber" ExportedPropertyName="TOPBUTTONNR"/>
+							</Bindings>
+						</TOPButtonStatusBinding>
+						<TOPButtonStatusBinding TargetPropertyName="ConditionValue1" TOPButtonNumber="0" ButtonType="EAS Status">
+							<Bindings>
+								<FrameBinding TargetPropertyName="TOPButtonNumber" ExportedPropertyName="TOPBUTTONNR"/>
+							</Bindings>
+						</TOPButtonStatusBinding>
+					</Bindings>
+				</SelectFirstColorBinding>
+			</Bindings>
+			<ClickActions>
+				<HandleTOPButtonPressedCA>
+					<Bindings>
+						<FrameBinding TargetPropertyName="TOPButtonNumber" ExportedPropertyName="TOPBUTTONNR"/>
+					</Bindings>
+				</HandleTOPButtonPressedCA>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

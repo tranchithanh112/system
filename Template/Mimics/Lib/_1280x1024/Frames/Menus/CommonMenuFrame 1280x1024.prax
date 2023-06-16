@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="1280" Height="1024" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Rectangle Width="1280" Height="975" Y="50" BorderWidth="0" FillColor="BackgroundConning" LightingStyle="LinearGradient">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Visible" ExportedPropertyName="ShowBackground"/>
+			</Bindings>
+		</Rectangle>
+		<Rectangle Width="1280" Height="50" BorderWidth="0" FillColor="BackgroundShadow"/>
+		<Frame Width="108" Height="26.4676" X="1124" Y="9" Path="..\Logos\Frame_PRAXIS_LOGO.prax"/>
+		<Rectangle Width="1280" Height="3" Y="45" BorderWidth="0" BorderColor="StatusInactive" FillColor="StatusInactive"/>
+		<Button Width="270" Height="30" X="850" Y="5" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" FillColorActionRunning="Transparent" FillPatternColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Children>
+				<TextBox Width="31" Height="21" X="95" Y="10" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;10.0;N;N;N" Text="GMT">
+					<Bindings>
+						<MiscellaneousStringBinding TargetPropertyName="Text"/>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="95" Height="25" X="5" Y="5" BorderColor="Transparent" FillColor="Transparent" HorzAlignment="Right" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="00:00:00">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+				<TextBox Width="125" Height="25" X="140" Y="5" BorderColor="Transparent" FillColor="Transparent" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="2020-01-01">
+					<Bindings>
+						<DateTimeBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<DateTimeToStringConvertParams Format="d.mm.yyyy"/>
+							</ConvertParams>
+						</DateTimeBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<GeneralCAMClientCommandsClickAction CAMClientCommandType="Toggle Date Time"/>
+			</ClickActions>
+		</Button>
+		<Button LockOverlayVisible="False" LockOverlayColor="Transparent" Width="50" Height="30" X="1230" Y="5" Text=" " BorderColor="NoAlarmGreen" FillColor="Transparent" FillColorActionRunning="Transparent" Font="Segoe UI;10.0;N;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent"/>
+			</Bindings>
+			<Children>
+				<Frame Width="30" Height="30" X="10" Path=".\Hamburger_button.prax"/>
+			</Children>
+			<ClickActions>
+				<SetVariableValueClickAction>
+					<Variable>
+						<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<BoolVariableSetter SetValueType="Toggle"/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="545" Height="910" X="735" Y="50" Highlight_Button_NR="0" Bt_01_isVisible="True" Bt01_Text="BUTTON 01 (EDIT)" Bt01_opensMimic="1" Bt01_setPageTitle="SET PAGE TITLE HERE FROM BUTTON 01" Bt01_SB01_Text="TEMPLATE" Bt01_SB01_setPageTitle="SET PAGE TITLE HERE FROM BUTTON 01" Bt01_SB02_Text="TEST SCREEN" Bt01_SB02_setPageTitle="" Bt01_SB03_Text="" Bt01_SB03_setPageTitle="" Bt01_SB04_Text="" Bt01_SB04_setPageTitle="" Bt01_SB05_Text="" Bt01_SB05_setPageTitle="" Bt01_SB06_Text="" Bt01_SB06_setPageTitle="" Bt01_SB07_Text="" Bt01_SB07_setPageTitle="" Bt01_SB08_Text="" Bt01_SB08_setPageTitle="" Bt01_SB09_Text="" Bt01_SB09_setPageTitle="" Bt01_SB10_Text="" Bt01_SB10_setPageTitle="" Bt01_totalSubButtons="2" Bt_02_isVisible="True" Bt02_Text="BUTTON 02 (EDIT)" Bt02_opensMimic="0" Bt02_totalSubButtons="0" Bt02_setPageTitle="" Bt02_SB01_Text="" Bt02_SB01_setPageTitle="" Bt02_SB02_Text="" Bt02_SB02_setPageTitle="" Bt02_SB03_Text="" Bt02_SB03_setPageTitle="" Bt02_SB04_Text="" Bt02_SB04_setPageTitle="" Bt02_SB05_Text="" Bt02_SB05_setPageTitle="" Bt02_SB06_Text="" Bt02_SB06_setPageTitle="" Bt02_SB07_Text="" Bt02_SB07_setPageTitle="" Bt02_SB08_Text="" Bt02_SB08_setPageTitle="" Bt02_SB09_Text="" Bt02_SB09_setPageTitle="" Bt02_SB10_Text="" Bt02_SB10_setPageTitle="" Bt_03_isVisible="True" Bt03_Text="BUTTON 03 (EDIT)" Bt03_opensMimic="0" Bt03_totalSubButtons="0" Bt03_setPageTitle="" Bt03_SB01_Text="" Bt03_SB01_setPageTitle="" Bt03_SB02_Text="" Bt03_SB02_setPageTitle="" Bt03_SB03_Text="" Bt03_SB03_setPageTitle="" Bt03_SB04_Text="" Bt03_SB04_setPageTitle="" Bt03_SB05_Text="" Bt03_SB05_setPageTitle="" Bt03_SB06_Text="" Bt03_SB06_setPageTitle="" Bt03_SB07_Text="" Bt03_SB07_setPageTitle="" Bt03_SB08_Text="" Bt03_SB08_setPageTitle="" Bt03_SB09_Text="" Bt03_SB09_setPageTitle="" Bt03_SB10_Text="" Bt03_SB10_setPageTitle="" Bt_04_isVisible="True" Bt04_Text="BUTTON 04 (EDIT)" Bt04_opensMimic="0" Bt04_totalSubButtons="0" Bt04_setPageTitle="" Bt04_SB01_Text="" Bt04_SB01_setPageTitle="" Bt04_SB02_Text="" Bt04_SB02_setPageTitle="" Bt04_SB03_Text="" Bt04_SB03_setPageTitle="" Bt04_SB04_Text="" Bt04_SB04_setPageTitle="" Bt04_SB05_Text="" Bt04_SB05_setPageTitle="" Bt04_SB06_Text="" Bt04_SB06_setPageTitle="" Bt04_SB07_Text="" Bt04_SB07_setPageTitle="" Bt04_SB08_Text="" Bt04_SB08_setPageTitle="" Bt04_SB09_Text="" Bt04_SB09_setPageTitle="" Bt04_SB010_Text="" Bt04_SB10_setPageTitle="" Bt_05_isVisible="True" Bt05_Text="BUTTON 05 (EDIT)" Bt05_opensMimic="0" Bt05_totalSubButtons="0" Bt05_setPageTitle="" Bt05_SB01_Text="" Bt05_SB01_setPageTitle="" Bt05_SB02_Text="" Bt05_SB02_setPageTitle="" Bt05_SB03_Text="" Bt05_SB03_setPageTitle="" Bt05_SB04_Text="" Bt05_SB04_setPageTitle="" Bt05_SB05_Text="" Bt05_SB05_setPageTitle="" Bt05_SB06_Text="" Bt05_SB06_setPageTitle="" Bt05_SB07_Text="" Bt05_SB07_setPageTitle="" Bt05_SB08_Text="" Bt05_SB08_setPageTitle="" Bt05_SB09_Text="" Bt05_SB09_setPageTitle="" Bt05_SB010_Text="" Bt05_SB10_setPageTitle="" Bt_06_isVisible="True" Bt06_Text="BUTTON 06 (EDIT)" Bt06_opensMimic="0" Bt06_totalSubButtons="0" Bt06_setPageTitle="" Bt06_SB01_Text="" Bt06_SB01_setPageTitle="" Bt06_SB02_Text="" Bt06_SB02_setPageTitle="" Bt06_SB03_Text="" Bt06_SB03_setPageTitle="" Bt06_SB04_Text="" Bt06_SB04_setPageTitle="" Bt06_SB05_Text="" Bt06_SB05_setPageTitle="" Bt06_SB06_Text="" Bt06_SB06_setPageTitle="" Bt06_SB07_Text="" Bt06_SB07_setPageTitle="" Bt06_SB08_Text="" Bt06_SB08_setPageTitle="" Bt06_SB09_Text="" Bt06_SB09_setPageTitle="" Bt06_SB10_Text="" Bt06_SB10_setPageTitle="" Bt_07_isVisible="True" Bt07_Text="BUTTON 07 (EDIT)" Bt07_opensMimic="0" Bt07_totalSubButtons="0" Bt07_setPageTitle="" Bt07_SB01_Text="" Bt07_SB01_setPageTitle="" Bt07_SB02_Text="" Bt07_SB02_setPageTitle="" Bt07_SB03_Text="" Bt07_SB03_setPageTitle="" Bt07_SB04_Text="" Bt07_SB04_setPageTitle="" Bt07_SB05_Text="" Bt07_SB05_setPageTitle="" Bt07_SB06_Text="" Bt07_SB06_setPageTitle="" Bt07_SB07_Text="" Bt07_SB07_setPageTitle="" Bt07_SB08_Text="" Bt07_SB08_setPageTitle="" Bt07_SB09_Text="" Bt07_SB09_setPageTitle="" Bt07_SB10_Text="" Bt07_SB10_setPageTitle="" Bt_08_isVisible="True" Bt08_Text="BUTTON 08 (EDIT)" Bt08_opensMimic="0" Bt08_totalSubButtons="0" Bt08_setPageTitle="" Bt08_SB01_Text="" Bt08_SB01_setPageTitle="" Bt08_SB02_Text="" Bt08_SB02_setPageTitle="" Bt08_SB03_Text="" Bt08_SB03_setPageTitle="" Bt08_SB04_Text="" Bt08_SB04_setPageTitle="" Bt08_SB05_Text="" Bt08_SB05_setPageTitle="" Bt08_SB06_Text="" Bt08_SB06_setPageTitle="" Bt08_SB07_Text="" Bt08_SB07_setPageTitle="" Bt08_SB08_Text="" Bt08_SB08_setPageTitle="" Bt08_SB09_Text="" Bt08_SB09_setPageTitle="" Bt08_SB10_Text="" Bt08_SB10_setPageTitle="" Bt_09_isVisible="True" Bt09_Text="BUTTON 09 (EDIT)" Bt09_opensMimic="0" Bt09_totalSubButtons="0" Bt09_setPageTitle="" Bt09_SB01_Text="" Bt09_SB01_setPageTitle="" Bt09_SB02_Text="" Bt09_SB02_setPageTitle="" Bt09_SB03_Text="" Bt09_SB03_setPageTitle="" Bt09_SB04_Text="" Bt09_SB04_setPageTitle="" Bt09_SB05_Text="" Bt09_SB05_setPageTitle="" Bt09_SB06_Text="" Bt09_SB06_setPageTitle="" Bt09_SB07_Text="" Bt09_SB07_setPageTitle="" Bt09_SB08_Text="" Bt09_SB08_setPageTitle="" Bt09_SB09_Text="" Bt09_SB09_setPageTitle="" Bt09_SB10_Text="" Bt09_SB10_setPageTitle="" Bt_10_isVisible="True" Bt10_Text="BUTTON 10 (EDIT)" Bt10_opensMimic="0" Bt10_totalSubButtons="0" Bt10_setPageTitle="" Bt10_SB01_Text="" Bt10_SB02_Text="" Bt10_SB02_setPageTitle="" Bt10_SB03_Text="" Bt10_SB03_setPageTitle="" Bt10_SB04_Text="" Bt10_SB04_setPageTitle="" Bt10_SB05_Text="" Bt10_SB05_setPageTitle="" Bt10_SB06_Text="" Bt10_SB06_setPageTitle="" Bt10_SB07_Text="" Bt10_SB07_setPageTitle="" Bt10_SB08_Text="" Bt10_SB08_setPageTitle="" Bt10_SB09_Text="" Bt10_SB09_setPageTitle="" Bt10_SB10_Text="" Bt10_SB10_setPageTitle="" Path=".\SideMenuVertical 1280x1024.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Highlight_Button_NR" ExportedPropertyName="Highlight_Button_NR"/>
+				<ValueTransitionBinding TargetPropertyName="Visible" Activate="True" TransitionTime="100">
+					<Bindings>
+						<VariableBinding TargetPropertyName="Activate">
+							<Variable>
+								<BoolVariable Name="Show_Side_Menu" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+					</Bindings>
+				</ValueTransitionBinding>
+			</Bindings>
+		</Frame>
+		<TextBox Width="420" Height="45" X="10" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;22.0;N;N;N" Text="PAGE TITLE">
+			<Bindings>
+				<SelectFirstTextBinding TargetPropertyName="Text" SelectedValue0="PAGE TITLE" DefaultValue="PAGE TITLE">
+					<Bindings>
+						<FrameBinding TargetPropertyName="DefaultValue" ExportedPropertyName="Page_Title"/>
+						<VariableBinding TargetPropertyName="SelectedValue0">
+							<ConvertParams>
+								<StringToTranslatableStringConvertParams/>
+							</ConvertParams>
+							<Variable>
+								<StringVariable Name="Top_Page_Title" IsLocal="False" IsRetain="True"/>
+							</Variable>
+						</VariableBinding>
+						<FrameBinding TargetPropertyName="ConditionValue0" ExportedPropertyName="MultiplePages"/>
+					</Bindings>
+				</SelectFirstTextBinding>
+			</Bindings>
+		</TextBox>
+		<Button Width="410" Height="35" X="435" Y="5" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Saira SemiCondensed;18.0;B;N;N">
+			<Children>
+				<TextBox Width="400" Height="35" X="5" BorderColor="Transparent" FillColor="BackgroundMenu" CornerRoundRadius="5" TextColor="TextInfo" Font="Praxis;20.0;N;N;N" Text="PATROL TIMER STATUS">
+					<Bindings>
+						<PatrolTimerStatusBinding TargetPropertyName="TextColor">
+							<ConvertParams>
+								<PatrolTimerStatusToColorConvertParams ColorWhenRunning="Barfill01"/>
+							</ConvertParams>
+						</PatrolTimerStatusBinding>
+						<PatrolTimerStatusBinding TargetPropertyName="Text">
+							<ConvertParams>
+								<PatrolTimerStatusToTextConvertParams TextWhenOff="PATROL TIMER: OFF" TextWhenAlarmPD="PATROL TIMER: ALARM">
+									<Bindings>
+										<PatrolTimerValueBinding TargetPropertyName="TextWhenWarning">
+											<ConvertParams>
+												<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" mm:ss WARNING" ConversionFormat="mm:ss"/>
+											</ConvertParams>
+										</PatrolTimerValueBinding>
+										<PatrolTimerValueBinding TargetPropertyName="TextWhenRunning">
+											<ConvertParams>
+												<UInt32ToStringConvertParams Prefix="PATROL TIMER: " Suffix=" MIN. RUNNING" ConversionFormat="mm"/>
+											</ConvertParams>
+										</PatrolTimerValueBinding>
+									</Bindings>
+								</PatrolTimerStatusToTextConvertParams>
+							</ConvertParams>
+						</PatrolTimerStatusBinding>
+					</Bindings>
+				</TextBox>
+			</Children>
+			<ClickActions>
+				<OpenFrameUserAction MovableByUser="False" AutoCloseTimeout="60" XOffset="-0.5" YOffset="383.5">
+					<Frame>
+						<FloatingFrame Width="1045" Height="700" X="117" Y="56" Path=".\Patrol Timer - Duty Selection.prax"/>
+					</Frame>
+				</OpenFrameUserAction>
+			</ClickActions>
+		</Button>
+		<Frame Width="1280" Height="60" Y="965" HornOutput_CH1="1013" HornOutput_CH2="0" HornOutput_CH3="0" Path=".\BottomAlarmLine 1280x1024.prax" Highlight_Button_NR="0" MultiplePages="False" ShowBackground="True" Page_Title="PAGE TITLE"/>
+	</Children>
+</RootElement>

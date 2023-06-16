@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PAL1131 version="1.0">
+  <PROJECT name="Greenhouse_simplified">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2015" month="10" day="17" hour="12" minutes="5" seconds="4" milisec="664" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="0000000B" />
+      <II value="00000038" />
+      <CPVis used="0" />
+      <LC year="2015" month="11" day="2" hour="11" minutes="1" seconds="15" milisec="62" />
+      <LCF>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\VM\VM-Praxis32.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis32.xml</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\VM\VM-Praxis32.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.1.1.19</CREATOR>
+      <LASTSAVEDWITH>1.1.1.19</LASTSAVEDWITH>
+      <DCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.dcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.dcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.dcp</ENVVARS>
+      </DCP>
+      <XCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.xcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.xcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.xcp</ENVVARS>
+      </XCP>
+      <HCP>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.hcp</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.hcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.hcp</ENVVARS>
+      </HCP>
+      <CST>
+        <ABSOLUTE>C:\Program Files\CPDevFBD\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.cst</ABSOLUTE>
+        <APPVARS>$AppDir\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.cst</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Moje projekty\LD - programy\Greenhouse  simplified\Greenhouse.cst</ENVVARS>
+      </CST>
+      <HCPFlags enabled="0" />
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131072" filename="C:\Program Files\CPDevFBD\Biblioteki\IEC 61131-3.lcp">
+        <CREATED year="2015" month="10" day="14" hour="13" minutes="0" seconds="9" milisec="969" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD\Biblioteki\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="LD" type="PRG" name="Greenhouse" editor="LDEditor-MarcinJamro"><![CDATA[PROGRAM Greenhouse
+
+VAR_EXTERNAL
+   S1: BOOL;
+   A: BOOL;
+   B: BOOL;
+   C: BOOL;
+   HEATER: BOOL;
+   FAN: BOOL;
+END_VAR
+
+VAR
+   S2: BOOL;
+   S3: BOOL;
+   S1n: BOOL;
+   S2n: BOOL;
+   S3n: BOOL;
+   out_contact_S2_150_130: BOOL;
+   out_contact_S1_110_170: BOOL;
+   out_contact_A_80_130: BOOL;
+   out_contact_B_240_130: BOOL;
+   out_contact_B_80_210: BOOL;
+   out_contact_S1_150_210: BOOL;
+   out_contact_S2_110_250: BOOL;
+   out_contact_S3_150_290: BOOL;
+   out_contact_B_80_290: BOOL;
+   out_contact_C_240_250: BOOL;
+   out_contact_A_300_250: BOOL;
+   out_contact_S3_110_340: BOOL;
+   out_contact_S2_80_380: BOOL;
+   out_contact_C_150_380: BOOL;
+   out_contact_B_240_340: BOOL;
+   out_contact_S1_90_450: BOOL;
+   out_contact_S3_90_500: BOOL;
+   out_contact_S1n_90_570: BOOL;
+   out_contact_S2n_90_610: BOOL;
+   out_contact_S3n_90_650: BOOL;
+   out_coil_S1n_390_130: BOOL;
+   out_coil_S2n_390_250: BOOL;
+   out_coil_S3n_390_340: BOOL;
+   out_coil_HEATER_390_450: BOOL;
+   out_coil_FAN_390_500: BOOL;
+   out_coil_S1_390_570: BOOL;
+   out_coil_S2_390_610: BOOL;
+   out_coil_S3_390_650: BOOL;
+   out_bp_160_120: BOOL;
+   out_bp_160_240: BOOL;
+   out_bp_160_330: BOOL;
+END_VAR
+
+out_contact_A_80_130 := NOT A;
+out_contact_S2_150_130 := out_contact_A_80_130 AND S2;
+out_contact_S1_110_170 := S1;
+out_bp_160_120 := out_contact_S2_150_130 OR out_contact_S1_110_170;
+out_contact_B_240_130 := out_bp_160_120 AND NOT B;
+out_coil_S1n_390_130 := out_contact_B_240_130;
+S1n := out_contact_B_240_130;
+
+out_contact_B_80_210 := B;
+out_contact_S1_150_210 := out_contact_B_80_210 AND S1;
+out_contact_S2_110_250 := S2;
+out_contact_B_80_290 := NOT B;
+out_contact_S3_150_290 := out_contact_B_80_290 AND S3;
+out_bp_160_240 := out_contact_S2_110_250 OR out_contact_S1_150_210 OR out_contact_S3_150_290;
+out_contact_C_240_250 := out_bp_160_240 AND NOT C;
+out_contact_A_300_250 := out_contact_C_240_250 AND A;
+out_coil_S2n_390_250 := out_contact_A_300_250;
+S2n := out_contact_A_300_250;
+
+out_contact_S3_110_340 := S3;
+out_contact_S2_80_380 := S2;
+out_contact_C_150_380 := out_contact_S2_80_380 AND C;
+out_bp_160_330 := out_contact_S3_110_340 OR out_contact_C_150_380;
+out_contact_B_240_340 := out_bp_160_330 AND B;
+out_coil_S3n_390_340 := out_contact_B_240_340;
+S3n := out_contact_B_240_340;
+
+out_contact_S1_90_450 := S1;
+out_coil_HEATER_390_450 := out_contact_S1_90_450;
+HEATER := out_contact_S1_90_450;
+
+out_contact_S3_90_500 := S3;
+out_coil_FAN_390_500 := out_contact_S3_90_500;
+FAN := out_contact_S3_90_500;
+
+out_contact_S1n_90_570 := S1n;
+out_coil_S1_390_570 := out_contact_S1n_90_570;
+S1 := out_contact_S1n_90_570;
+
+out_contact_S2n_90_610 := S2n;
+out_coil_S2_390_610 := out_contact_S2n_90_610;
+S2 := out_contact_S2n_90_610;
+
+out_contact_S3n_90_650 := S3n;
+out_coil_S3_390_650 := out_contact_S3n_90_650;
+S3 := out_contact_S3n_90_650;
+
+END_PROGRAM
+]]><EDITOR><![CDATA[<?xml version="1.0" encoding="utf-16"?><project><fileHeader companyName="" creationDateTime="2015-11-02T11:03:14" productName="Greenhouse" productVersion="" contentType="Program" /><contentHeader name="prj"><coordinateInfo><fbd><scaling x="10" y="10" /></fbd><ld><scaling x="10" y="10" /></ld><sfc><scaling x="10" y="10" /></sfc></coordinateInfo></contentHeader><types><dataTypes /><pous><pou name="FBD Diagram" pouType="functionBlock"><interface><localVars><variable name="S2"><type><BOOL /></type></variable><variable name="S1"><type><BOOL /></type></variable><variable name="A"><type><BOOL /></type></variable><variable name="B"><type><BOOL /></type></variable><variable name="B"><type><BOOL /></type></variable><variable name="S1"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="B"><type><BOOL /></type></variable><variable name="C"><type><BOOL /></type></variable><variable name="A"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="C"><type><BOOL /></type></variable><variable name="B"><type><BOOL /></type></variable><variable name="S1"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable><variable name="S1n"><type><BOOL /></type></variable><variable name="S2n"><type><BOOL /></type></variable><variable name="S3n"><type><BOOL /></type></variable><variable name="S1n"><type><BOOL /></type></variable><variable name="S2n"><type><BOOL /></type></variable><variable name="S3n"><type><BOOL /></type></variable><variable name="HEATER"><type><BOOL /></type></variable><variable name="FAN"><type><BOOL /></type></variable><variable name="S1"><type><BOOL /></type></variable><variable name="S2"><type><BOOL /></type></variable><variable name="S3"><type><BOOL /></type></variable></localVars></interface><body><LD><leftPowerRail localId="0" /><rightPowerRail localId="1"><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="40"><position x="420" y="130" /><position x="390" y="130" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="54"><position x="420" y="250" /><position x="390" y="250" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="61"><position x="420" y="340" /><position x="390" y="340" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="67"><position x="420" y="450" /><position x="390" y="450" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="73"><position x="420" y="500" /><position x="390" y="500" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="77"><position x="420" y="570" /><position x="390" y="570" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="81"><position x="420" y="610" /><position x="390" y="610" /></connection></connectionPointIn><connectionPointIn><relPosition x="0" y="0" /><connection formalParameter="" refLocalId="85"><position x="420" y="650" /><position x="390" y="650" /></connection></connectionPointIn></rightPowerRail><contact height="40" localId="3" width="20" type="NormallyOpenContact"><position x="120" y="100" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="5"><position x="110" y="130" /><position x="80" y="130" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></contact><contact height="40" localId="4" width="20" type="NormallyOpenContact"><position x="80" y="140" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="70" y="170" /><position x="10" y="170" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1</expression></contact><contact height="40" localId="5" width="20" type="NormallyClosedContact"><position x="50" y="100" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="40" y="130" /><position x="10" y="130" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>A</expression></contact><contact height="40" localId="6" width="20" type="NormallyClosedContact"><position x="210" y="100" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="3"><position x="200" y="130" /><position x="180" y="130" branchPoint="Output" branchPointLocation="160;120" branchPointDirection="Right" /><position x="160" y="130" branchPoint="Input" branchPointLocation="160;120" branchPointDirection="Left" /><position x="150" y="130" /></connection><connection formalParameter="" refLocalId="4"><position x="200" y="130" /><position x="180" y="130" branchPoint="Output" branchPointLocation="160;120" branchPointDirection="Right" /><position x="170" y="140" branchPoint="Input" branchPointLocation="160;120" branchPointDirection="Down" /><position x="170" y="170" /><position x="110" y="170" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>B</expression></contact><contact height="40" localId="46" width="20" type="NormallyOpenContact"><position x="50" y="180" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="40" y="210" /><position x="10" y="210" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>B</expression></contact><contact height="40" localId="47" width="20" type="NormallyOpenContact"><position x="120" y="180" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="46"><position x="110" y="210" /><position x="80" y="210" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1</expression></contact><contact height="40" localId="48" width="20" type="NormallyOpenContact"><position x="80" y="220" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="70" y="250" /><position x="10" y="250" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></contact><contact height="40" localId="49" width="20" type="NormallyOpenContact"><position x="120" y="260" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="50"><position x="110" y="290" /><position x="80" y="290" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="50" width="20" type="NormallyClosedContact"><position x="50" y="260" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="40" y="290" /><position x="10" y="290" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>B</expression></contact><contact height="40" localId="51" width="20" type="NormallyClosedContact"><position x="210" y="220" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="48"><position x="200" y="250" /><position x="180" y="250" branchPoint="Output" branchPointLocation="160;240" branchPointDirection="Right" /><position x="160" y="250" branchPoint="Input" branchPointLocation="160;240" branchPointDirection="Left" /><position x="110" y="250" /></connection><connection formalParameter="" refLocalId="47"><position x="200" y="250" /><position x="180" y="250" branchPoint="Output" branchPointLocation="160;240" branchPointDirection="Right" /><position x="170" y="240" branchPoint="Input" branchPointLocation="160;240" branchPointDirection="Up" /><position x="170" y="210" /><position x="150" y="210" /></connection><connection formalParameter="" refLocalId="49"><position x="200" y="250" /><position x="180" y="250" branchPoint="Output" branchPointLocation="160;240" branchPointDirection="Right" /><position x="170" y="260" branchPoint="Input" branchPointLocation="160;240" branchPointDirection="Down" /><position x="170" y="290" /><position x="150" y="290" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>C</expression></contact><contact height="40" localId="53" width="20" type="NormallyOpenContact"><position x="270" y="220" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="51"><position x="260" y="250" /><position x="240" y="250" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>A</expression></contact><contact height="40" localId="56" width="20" type="NormallyOpenContact"><position x="80" y="310" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="70" y="340" /><position x="10" y="340" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="57" width="20" type="NormallyOpenContact"><position x="50" y="350" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="40" y="380" /><position x="10" y="380" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></contact><contact height="40" localId="58" width="20" type="NormallyOpenContact"><position x="120" y="350" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="57"><position x="110" y="380" /><position x="80" y="380" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>C</expression></contact><contact height="40" localId="59" width="20" type="NormallyOpenContact"><position x="210" y="310" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="56"><position x="200" y="340" /><position x="180" y="340" branchPoint="Output" branchPointLocation="160;330" branchPointDirection="Right" /><position x="160" y="340" branchPoint="Input" branchPointLocation="160;330" branchPointDirection="Left" /><position x="110" y="340" /></connection><connection formalParameter="" refLocalId="58"><position x="200" y="340" /><position x="180" y="340" branchPoint="Output" branchPointLocation="160;330" branchPointDirection="Right" /><position x="170" y="350" branchPoint="Input" branchPointLocation="160;330" branchPointDirection="Down" /><position x="170" y="380" /><position x="150" y="380" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>B</expression></contact><contact height="40" localId="64" width="20" type="NormallyOpenContact"><position x="60" y="420" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="450" /><position x="10" y="450" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1</expression></contact><contact height="40" localId="72" width="20" type="NormallyOpenContact"><position x="60" y="470" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="500" /><position x="10" y="500" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></contact><contact height="40" localId="76" width="20" type="NormallyOpenContact"><position x="60" y="540" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="570" /><position x="10" y="570" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1n</expression></contact><contact height="40" localId="80" width="20" type="NormallyOpenContact"><position x="60" y="580" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="610" /><position x="10" y="610" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2n</expression></contact><contact height="40" localId="84" width="20" type="NormallyOpenContact"><position x="60" y="620" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="0"><position x="50" y="650" /><position x="10" y="650" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3n</expression></contact><coil height="40" localId="40" width="20" type="Coil"><position x="360" y="100" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="6"><position x="350" y="130" /><position x="240" y="130" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1n</expression></coil><coil height="40" localId="54" width="20" type="Coil"><position x="360" y="220" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="53"><position x="350" y="250" /><position x="300" y="250" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2n</expression></coil><coil height="40" localId="61" width="20" type="Coil"><position x="360" y="310" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="59"><position x="350" y="340" /><position x="240" y="340" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3n</expression></coil><coil height="40" localId="67" width="20" type="Coil"><position x="360" y="420" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="64"><position x="350" y="450" /><position x="90" y="450" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>HEATER</expression></coil><coil height="40" localId="73" width="20" type="Coil"><position x="360" y="470" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="72"><position x="350" y="500" /><position x="90" y="500" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>FAN</expression></coil><coil height="40" localId="77" width="20" type="Coil"><position x="360" y="540" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="76"><position x="350" y="570" /><position x="90" y="570" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S1</expression></coil><coil height="40" localId="81" width="20" type="Coil"><position x="360" y="580" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="80"><position x="350" y="610" /><position x="90" y="610" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S2</expression></coil><coil height="40" localId="85" width="20" type="Coil"><position x="360" y="620" /><connectionPointIn><relPosition x="-10" y="30" /><connection formalParameter="" refLocalId="84"><position x="350" y="650" /><position x="90" y="650" /></connection></connectionPointIn><connectionPointOut><relPosition x="30" y="30" /></connectionPointOut><expression>S3</expression></coil></LD></body></pou></pous></types><instances><configurations /></instances><globalVariables><globalVariable name="A" type="BOOL" /><globalVariable name="B" type="BOOL" /><globalVariable name="C" type="BOOL" /><globalVariable name="HEATER" type="BOOL" /><globalVariable name="FAN" type="BOOL" /><globalVariable name="S1" type="BOOL" /></globalVariables><comments><comment localId="106" width="60" height="20"><position x="170" y="410" /><expression>Controls</expression></comment><comment localId="107" width="80" height="20"><position x="160" y="530" /><expression>State update</expression></comment><comment localId="108" width="120" height="20"><position x="140" y="70" /><expression>Next state equations</expression></comment><comment localId="109" width="100" height="20"><position x="150" y="30" /><expression>GREENHOUSE</expression></comment></comments><breakpoints /><conditions /><safestatevalues /></project>]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL>
+      <ITEM type="VAR" name="A" flags="00004000"><![CDATA[VAR_GLOBAL 
+ A  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="B" flags="00004000"><![CDATA[VAR_GLOBAL 
+ B  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="C" flags="00004000"><![CDATA[VAR_GLOBAL 
+ C  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="HEATER" flags="00004000"><![CDATA[VAR_GLOBAL 
+ HEATER  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="FAN" flags="00004000"><![CDATA[VAR_GLOBAL 
+ FAN  : BOOL;
+END_VAR]]></ITEM>
+      <ITEM type="VAR" name="S1" flags="00004000"><![CDATA[VAR_GLOBAL 
+ S1  : BOOL := TRUE;
+END_VAR]]></ITEM>
+    </GLOBAL>
+    <TASK>
+      <ITEM type="TSK" name="TASK_LD" loop_kind="0" interval="50"><![CDATA[Greenhouse
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</PAL1131>

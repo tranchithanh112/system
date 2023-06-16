@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="110" Height="40">
+	<Children>
+		<Button Width="110" Height="40" Text="Call All" Font="Segoe UI-18.0-B-N-N">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="FillColor" ButtonType="CallAll">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill" ColorWhenTrue="ActiveEASButton"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+			<ClickActions>
+				<EASCommandClickAction EASCommands="Call All"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

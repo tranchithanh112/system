@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="300" Height="67">
+	<Children>
+		<Button Width="300" Height="67" Text="Along Side" Font="Segoe UI-24.0-B-N-N">
+			<Bindings>
+				<EASButtonStatusBinding TargetPropertyName="Visible" ButtonType="FollowDhvRules"/>
+				<EASButtonStatusBinding TargetPropertyName="FillColor" ButtonType="SetAlongside">
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="ButtonFill" ColorWhenTrue="ActiveEASButton"/>
+					</ConvertParams>
+				</EASButtonStatusBinding>
+			</Bindings>
+			<ClickActions>
+				<EASCommandClickAction EASCommands="Set AlongSide"/>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

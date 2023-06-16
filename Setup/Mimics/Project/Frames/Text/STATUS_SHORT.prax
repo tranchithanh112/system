@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="200" Height="200" PraxGraphVersion="1.0" ColorTableFile="..\..\Standard.colortable">
+	<Children>
+		<TextBox FlashColor="Comment" Width="200" Height="40" CornerRoundRadius="3" TextColor="InfoTextGrey" Font="Praxis;18.0;B;N;N">
+			<Bindings>
+				<ChannelCurrentAlarmBinding TargetPropertyName="TextColor">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToColorConvertParams ColorWhenFalse="InfoTextGrey" ColorWhenTrue="Comment"/>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<ChannelCurrentAlarmBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Channel_Ch"/>
+					</Bindings>
+					<ConvertParams>
+						<BoolToStringConvertParams TextWhenFalse="Stop" TextWhenTrue="Run">
+							<Bindings>
+								<FrameBinding TargetPropertyName="TextWhenFalse" ExportedPropertyName="text_when_false_txt"/>
+								<FrameBinding TargetPropertyName="TextWhenTrue" ExportedPropertyName="text_when_true_txt"/>
+							</Bindings>
+						</BoolToStringConvertParams>
+					</ConvertParams>
+				</ChannelCurrentAlarmBinding>
+				<FrameBinding TargetPropertyName="Width" ExportedPropertyName="WIDTH_BOX"/>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>

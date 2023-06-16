@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="250" Height="65" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<TextBox Width="215" Height="65" X="20" BorderColor="Transparent" FillColor="Transparent" CornerRoundRadius="5" HorzAlignment="Left" TextColor="TextInfo" Font="Praxis;18.0;N;N;N" Text="SUB BUTTON 00">
+			<Bindings>
+				<FrameBinding TargetPropertyName="Text" ExportedPropertyName="SubButtonText"/>
+			</Bindings>
+		</TextBox>
+		<Rectangle Width="240" Height="45" X="5" Y="10" BorderColor="TextInfo" FillColor="Transparent" CornerRoundRadius="5">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" SelectedValue0="TextInfo" DefaultValue="Transparent"/>
+			</Bindings>
+		</Rectangle>
+		<Button Width="243" Height="53" X="5" Y="5" ClipToBounds="True" Text="" BorderColor="Transparent" FillColor="Transparent" Font="Segoe UI;18.0;B;N;N">
+			<Bindings>
+				<SelectFirstColorBinding TargetPropertyName="BorderColor" DefaultValue="Transparent"/>
+			</Bindings>
+			<ClickActions>
+				<OpenMimicByNumberClickAction MimicNamePD="0">
+					<Bindings>
+						<FrameBinding TargetPropertyName="MimicNamePD" ExportedPropertyName="OpenMimicNumber"/>
+					</Bindings>
+				</OpenMimicByNumberClickAction>
+				<SetVariableValueClickAction>
+					<Variable>
+						<FloatVariable Name="Navframe_Index" IsRetain="True"/>
+					</Variable>
+					<VariableSetter>
+						<FloatVariableSetter>
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="Open_NAVFRAME_Index"/>
+							</Bindings>
+						</FloatVariableSetter>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+				<SetVariableValueClickAction>
+					<Variable>
+						<StringVariable Name="Top_Page_Title" IsLocal="False"/>
+					</Variable>
+					<VariableSetter>
+						<StringVariableSetter>
+							<Bindings>
+								<FrameBinding TargetPropertyName="Value" ExportedPropertyName="SetPageTitle"/>
+							</Bindings>
+						</StringVariableSetter>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+				<SetVariableValueClickAction>
+					<Variable>
+						<BoolVariable Name="Show_Side_Menu"/>
+					</Variable>
+					<VariableSetter>
+						<BoolVariableSetter/>
+					</VariableSetter>
+				</SetVariableValueClickAction>
+			</ClickActions>
+		</Button>
+	</Children>
+</RootElement>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="650" Height="650" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Frame Width="500" Height="500" X="75" Y="75" DialColor="ConningBackground" IndicatorLinesColor="ActiveText" FullDial="True" Path=".\Frame_GAUGE_points.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="IndicatorLinesColor" ExportedPropertyName="CentralDigitsColor"/>
+				<FrameBinding TargetPropertyName="DialColor" ExportedPropertyName="DialColor"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="40" Height="25" X="305" Y="25" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;48.0;N;N;N" Text="-6">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="590" Y="312" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="ActiveText" Font="Praxis;48.0;B;N;N" Text="0">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="305" Y="595" BorderWidth="0" FillColor="Transparent" TextColor="ActiveText" Font="Praxis;48.0;N;N;N" Text="6">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Ellipse BorderWidth="5" BorderColor="DarkShadow" LinePosition="Centered" FillColor="ActiveText" CenterX="325" CenterY="325" RadiusX="225" RadiusY="225" ArcEnd="20" ArcLength="20">
+			<Bindings>
+				<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="CentralDigitsColor"/>
+				<FilteredValueBinding TargetPropertyName="ArcLength">
+					<Bindings>
+						<RangeFormulaBinding TargetPropertyName="Value" InRangeBegin="-6" InRangeEnd="6" OutRangeBegin="-90" OutRangeEnd="90">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Trim_deg_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+		</Ellipse>
+		<Ellipse BorderWidth="3" BorderColor="Background" BorderStyle="Raised" LinePosition="Outside" CenterX="325" CenterY="325" RadiusX="180" RadiusY="180" ArcBegin="540" ArcEnd="900"/>
+		<TextBox Width="40" Height="25" X="515" Y="520" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="ActiveText" Font="Praxis;48.0;N;N;N" Text="3">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<TextBox Width="40" Height="25" X="510" Y="110" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="ActiveText" Font="Praxis;48.0;N;N;N" Text="-3">
+			<Bindings>
+				<FrameBinding TargetPropertyName="TextColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</TextBox>
+		<Ellipse BorderColor="Transparent" FillColor="ActiveText" CenterX="325" CenterY="325" RadiusX="178" RadiusY="178" ArcEnd="180" ArcLength="180">
+			<Bindings>
+				<FrameBinding TargetPropertyName="FillColor" ExportedPropertyName="CentralDigitsColor"/>
+			</Bindings>
+		</Ellipse>
+		<Panel Width="326" Height="360" X="160" Y="125" Rotation="20" GridSpacing="1" ClipToBounds="True" BorderWidth="0" FillColor="Transparent">
+			<Bindings>
+				<FilteredValueBinding TargetPropertyName="Rotation">
+					<Bindings>
+						<RangeFormulaBinding TargetPropertyName="Value" InRangeBegin="-6" InRangeEnd="6" OutRangeBegin="-90" OutRangeEnd="90">
+							<Bindings>
+								<ChannelValueBinding TargetPropertyName="Value">
+									<Bindings>
+										<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="Trim_deg_CH"/>
+									</Bindings>
+								</ChannelValueBinding>
+							</Bindings>
+						</RangeFormulaBinding>
+					</Bindings>
+				</FilteredValueBinding>
+			</Bindings>
+			<Children>
+				<Rectangle Width="86" Height="29" X="41" Y="138" BorderWidth="3" BorderColor="InfoTextWhite"/>
+				<Polyline Width="3" LineColor="InfoTextWhite" ClosedOutline="True" FillColor="Background">
+					<Points>
+						<Point Coord="22;166"/>
+						<Point Coord="126;166"/>
+						<Point Coord="306;145"/>
+						<Point Coord="239;240"/>
+						<Point Coord="31;241"/>
+					</Points>
+				</Polyline>
+				<Line Width="3" Color="InfoTextWhite" LineStyle="Dashed" X0="167" Y0="200" X1="345" Y1="200"/>
+			</Children>
+		</Panel>
+	</Children>
+</RootElement>

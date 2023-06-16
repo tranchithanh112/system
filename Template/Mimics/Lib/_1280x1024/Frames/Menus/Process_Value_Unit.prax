@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RootElement Width="110" Height="20" GridSpacing="10" PraxGraphVersion="1.0" ColorTableFile="..\..\..\Standard.colortable">
+	<Children>
+		<Frame Width="80" Height="20" CHANNELNR="0" Path=".\Process_Value.prax">
+			<Bindings>
+				<FrameBinding TargetPropertyName="CHANNELNR" ExportedPropertyName="CHANNELNR"/>
+			</Bindings>
+		</Frame>
+		<TextBox Width="30" Height="20" X="80" BorderWidth="0" FillColor="Transparent" HorzAlignment="Left" TextColor="TextInfoHeader" Font="Praxis;22.0;N;N;N" Text="">
+			<Bindings>
+				<ChannelUnitsBinding TargetPropertyName="Text">
+					<Bindings>
+						<FrameBinding TargetPropertyName="ChannelNumber" ExportedPropertyName="CHANNELNR"/>
+					</Bindings>
+				</ChannelUnitsBinding>
+			</Bindings>
+		</TextBox>
+	</Children>
+</RootElement>
